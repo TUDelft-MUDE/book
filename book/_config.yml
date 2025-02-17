@@ -44,6 +44,3 @@ sphinx:
 
 bibtex_bibfiles:
   - _bibliography/references.bib
-
-html:
-  use_multitoc_numbering: false
