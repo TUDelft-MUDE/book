@@ -1,6 +1,5 @@
 title: MUDE
-author: MUDE Teachers and the Student Army, built with <a href="https://teachbooks.tudelft.nl/">TeachBooks</a> and <a href="https://jupyterbook.org/">Jupyter Book</a>, <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="license noopener noreferrer"">CC BY 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg" alt=""></a>
-copyright: "2024"
+author: MUDE Teachers and the Student Army from Delft University of Technology, built with <a href="https://teachbooks.tudelft.nl/">TeachBooks</a> and <a href="https://jupyterbook.org/">Jupyter Book</a>, <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="license noopener noreferrer"">CC BY 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg" alt=""></a>
 logo: _static/MUDE_Logo-small.png
 
 execute:
@@ -21,10 +20,16 @@ sphinx:
       exclude_patterns: []
       # exclude_patterns: ["**/_*.yml", "**/*.md", "**/*.ipynb", "**/*.zip", "**.gif", "**/*.jpg", "**/*.tif", "**/*.shp", "**/*.pickle", "**/*.geojson"]
     html_theme_options:
-      repository_url: "https://gitlab.tudelft.nl/mude/book"
+      logo:
+        text: CEGM1000 Modelling, Uncertainty, and Data Analysis for Engineers
+      repository_url: "https://github.com/TUDelft-MUDE/book"
+      path_to_docs: "book"
+      repository_branch: "2025-draft"
+      use_edit_page_button: true
+      use_repository_button: true
       use_issues_button : true
       # START REMOVE-FROM-PUBLISH
-      announcement: "<p>This is the draft book. The published version is at <a href='https://mude.citg.tudelft.nl/book' style='color: cyan;'>mude.citg.tudelft.nl/book</a></p>"
+      announcement: "<p>This is the draft book. The published version is at <a href='https://tudelft-mude.github.io/book/2025' style='color: cyan;'>tudelft-mude.github.io/book/2025</a></p>"
       # END REMOVE-FROM-PUBLISH
       launch_buttons:
         thebe: true
@@ -44,6 +49,3 @@ sphinx:
 
 bibtex_bibfiles:
   - _bibliography/references.bib
-
-html:
-  use_multitoc_numbering: false

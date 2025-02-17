@@ -1,5 +1,0 @@
-# This is needed for Docker deployment on Windows systems
-# If applying this setup to a git repo that is already initialized, you should run these two commands:
-#   git rm --cached -r .
-#   git reset --hard
-*.sh eol=lf
