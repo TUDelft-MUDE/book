@@ -37,7 +37,6 @@ sphinx:
     bracket_citation_style: _ext/
   extra_extensions:
     - sphinx_inline_tabs
-    - sphinx_grasple
     - sphinx.ext.imgconverter
     - download_link_replacer
     - jupyterbook_patches
