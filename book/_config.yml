@@ -35,6 +35,7 @@ sphinx:
         thebe: true
     bibtex_default_style: myapastyle
     bibtex_reference_style: author_year_round
+    tud_change_logo: false
   local_extensions:
     apastyle: _ext/
     bracket_citation_style: _ext/
@@ -45,6 +46,7 @@ sphinx:
     - jupyterbook_patches
     - sphinx.ext.extlinks
     - sphinx_image_inverter
+    - sphinx_tudelft_theme
 
 bibtex_bibfiles:
   - _bibliography/references.bib

@@ -3,6 +3,7 @@ jupyterbook_patches
 download_link_replacer
 sphinx-image-inverter
 sphinx-inline-tabs
+sphinx-tudelft-theme
 
 docutils == 0.17.1
 
