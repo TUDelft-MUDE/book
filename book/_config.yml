@@ -8,6 +8,10 @@ execute:
 
 only_build_toc_files: true
 
+html:
+  baseurl :  "https://tudelft-mude.github.io/book/2024/"
+  use_multitoc_numbering: false
+
 sphinx:
   config:
     patch_config:
