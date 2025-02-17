@@ -8,7 +8,7 @@ execute:
 only_build_toc_files: true
 
 html:
-  baseurl :  "https://tudelft-mude.github.io/book/2025-draft/"
+  baseurl :  "https://tudelft-mude.github.io/book/2025/"
   use_multitoc_numbering: false
 
 sphinx:
