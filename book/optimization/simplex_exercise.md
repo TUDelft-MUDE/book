@@ -1,4 +1,9 @@
-# Exercise 1
+# Exercise 1: Simple Exercise
+
+```{admonition} MUDE Exam Information
+:class: tip, dropdown
+For the exam, you are expected to have a clear understanding behind the Simplex method and how to do it. you will not need to do the calculations by hand in the exam or on Friday’s assignment.
+```
 
 Consider the following problem:
 

@@ -3,7 +3,7 @@
 
 During the design phase of a coastal structure, it is needed to assess if its height is enough to protect the sheltered area from overtopping events (sea water overpassing the structure and reaching the lee side). The distribution of overtopping volumes is known to follow a Lognormal distribution. The engineer has already calculated the parameters of the Lognormal distribution ($\mu$=5.5 and $\sigma$=1.15) and has plotted the CDF for you.
 
-```{figure} /sandbox/continuous/figures/logn_ex.png
+```{figure} /probability/figures/logn_ex.png
 
 ---
 
@@ -24,7 +24,7 @@ $$
 
 The figure below illustrates the previous computation.
 
-```{figure} /sandbox/continuous/figures/logn_ex_c1.png
+```{figure} /probability/figures/logn_ex_c1.png
 
 ---
 
@@ -58,7 +58,7 @@ $$
 
 You can see that the mean = 474l/m >> median = 250l/m, indicating that the distribution is not symmetric and presents a positive tail. The process is illustrated in the following figure.
 
-```{figure} /sandbox/continuous/figures/logn_ex_c3.png
+```{figure} /probability/figures/logn_ex_c3.png
 
 ---
 

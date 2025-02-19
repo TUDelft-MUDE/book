@@ -1,3 +1,4 @@
+(oop)=
 # Week 1.7: OOP
 
 This chapter contains a lot of information that is useful for improving your programming skills, however you are not required to learn all of it, and not required to memorize everything for the exam.

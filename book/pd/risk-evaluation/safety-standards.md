@@ -1,6 +1,10 @@
 (safety_standards)=
 # Safety Standards
 
+```{note}
+This note has been updated on Friday, January 17, 2024. It previously said that you did _not_ need to know the content on this page, however, it was not true (and conflicted with the front page of this chapter). While you don't need to memorize everything, you are expected to understand the concept of a limit line and how to interpret it (i.e., section _Limits for Individual and Societal Risk_). If you are unsure of what this means, review WS 2.8, which will illustrate the scope that you are expected to understand. 
+```
+
 When answering the question “how safe is safe enough” a merely economic treatment with cost benefit analysis or economic optimization is often not sufficient for activities with risks to people. Therefore, criteria have been developed that focus on risks to human life. This section focuses on safety standards and criteria for evaluating the risk to life. 
 
 Two aspects are typically considered when evaluating and regulating risks to the public: the total or population-wide effects, and the distribution of effects within the affected population. {numref}`risk_evaluation` summarizes these perspectives. The societal perspective is concerned with ‘total effect’ and the effects of large-scale accidents on the society, in terms of economic damages and life loss. The individual perspective is concerned with distributive justice (‘equity’), i.e. the distribution of harm over the population.
@@ -202,7 +206,7 @@ Accident statistics reveal that the extent to which participation in the activit
 :name: accident_statistics
 
 * - Prob. of death(per year)
-  - Exmaple/application
+  - Example/application
   - $\beta$
   - Voluntariness
   - Benefit
@@ -266,12 +270,12 @@ A risk aversion index $k$ has been introduced to account for risk aversion. For 
 
 ````{admonition} Expected value and standard deviation for two systems
 
-We consider two sytems
+We consider two systems
 
-1. This sytem has a high failure probability of 0.01 per year and 1 fatality
+1. This system has a high failure probability of 0.01 per year and 1 fatality
 2. The second system has a smaller failure probability of 0.0001 per year but a higher number of 100 fatalities.
 
-For both systems a binomical distribution of the number of fatalities is applied meaning that the number of fatalities in case of failure is exactly known. The expected value and standard deviation of the number of fatalities are found as follows:
+For both systems a binomial distribution of the number of fatalities is applied meaning that the number of fatalities in case of failure is exactly known. The expected value and standard deviation of the number of fatalities are found as follows:
 
 $$
   E(N) = P_fN \;\;\;\; \sigma^2(N) = P_f(1-P_f)N
@@ -292,12 +296,12 @@ The resulting expected value and standard deviation are shown in {numref}`exp_va
   - $10^{-2}$
   - 1
   - $10^{-2}$
-  - 0.0099
+  - 0.0995
 * - 2 
   - $10^{-4}$
   - 100
   - $10^{-2}$
-  - 0.995
+  - 0.1000
 ```
 
 The next step would be to distribute this maximum allowable level of societal risk over individual installations. After all, locally imposed societal risk criteria are necessary for achieving the desired national level of societal risk. The translation of the nationally acceptable level of risk to a criterion for a single local installation depends on the type of probability distribution of the number of fatalities. In {cite:t}`vrijling1998` a formulation of the risk acceptance at a local level is presented conform {eq}`limit_line`:️
@@ -335,7 +339,7 @@ $$
     C = \left( \frac{\beta \cdot 100}{k \sqrt{N_a}} \right)^2 = \left( \frac{0.1 \cdot 1000}{3 \sqrt{100}} \right)^2 = 0.11
 $$ 
 
-The limit line for societal risk becomes $1 - F_N(n) \leq 0.11/n^2$. Both the individual and societal risk criteria are plotted in  below. As a third criterion the economic optimization can be added. The optimal or acceptable probability of failure depends on the damage and investment costs. A relationship with the graph below can be established by assuming that the number of fatalities is related to the economic damages. A dike ring with many inhabitants and potential fatalities will generally also represent a large economic value. For the sake of the example we assume that every fatality corresponds to an economic damage of €$5 \cdot 10^7$ (note: this is not equal to the value of a human life). To calculate the economic optimum for the example we assume arbitrary values of $r=0.025$ and  €$5 \cdot 10^6$ $B=0.33$. {numref}`combined_risk_criteria` below shows the combination for the three criteria. 
+The limit line for societal risk becomes $1 - F_N(n) \leq 0.11/n^2$. Both the individual and societal risk criteria are plotted below. As a third criterion the economic optimization can be added. The optimal or acceptable probability of failure depends on the damage and investment costs. A relationship with the graph below can be established by assuming that the number of fatalities is related to the economic damages. A dike ring with many inhabitants and potential fatalities will generally also represent a large economic value. For the sake of the example we assume that every fatality corresponds to an economic damage of €$5 \cdot 10^7$ (note: this is not equal to the value of a human life). To calculate the economic optimum for the example we assume arbitrary values of $r=0.025$ and  €$5 \cdot 10^6$ $B=0.33$. {numref}`combined_risk_criteria` below shows the combination for the three criteria. 
 
 For a given number of fatalities in a dike ring the acceptable failure probability according to the three criteria can be  derived. The individual risk criterion is independent on the  number of fatalities. The economic criterion shows a linear relation between the failure probability and damage or number of fatalities. The societal criterion is risk averse so shows a decreasing quadratic relationship between acceptable failure probability and consequences.
 

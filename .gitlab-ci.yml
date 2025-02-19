@@ -18,11 +18,14 @@ before_script:
   - pip install virtualenv
   - virtualenv venv
   - source venv/bin/activate
+  - pip install teachbooks
+  - pip install --upgrade teachbooks
   - pip install -r requirements.txt
 
 build-book:
   stage: build
   script:
+    # Previous build steps...
     - |
       if [ "$CI_COMMIT_BRANCH" == "release" ]; then
         echo "Building production version"
@@ -31,18 +34,79 @@ build-book:
         echo "Building draft version"
         teachbooks build book/ > >(tee stdout.log) 2> >(tee stderr.log >&2)
       fi
+
+    # Size analysis
+# Debug directory sizes
+    - echo "=== Size Analysis ===" | tee size_analysis.log
+    - cd book/_build
+    
+    # Overall sizes
+    - echo "Overall directory sizes:" >> ../../size_analysis.log
+    - du -sh * >> ../../size_analysis.log
+    
+    # HTML directory breakdown
+    - echo -e "\nHTML directory breakdown:" >> ../../size_analysis.log
+    - cd html
+    - echo "JavaScript files:" >> ../../../size_analysis.log
+    - du -ch $(find . -name "*.js") | tail -n1 >> ../../../size_analysis.log
+    
+    - echo "CSS files:" >> ../../../size_analysis.log
+    - du -ch $(find . -name "*.css") | tail -n1 >> ../../../size_analysis.log
+    
+    - echo "HTML files:" >> ../../../size_analysis.log
+    - du -ch $(find . -name "*.html") | tail -n1 >> ../../../size_analysis.log
+    
+    # Find largest files
+    - echo -e "\nLargest files (>1MB):" >> ../../../size_analysis.log
+    - find . -type f -size +1M -exec ls -lh {} \; | sort -hr >> ../../../size_analysis.log
+    
+    - cd ../../..
+
     - echo $CI_JOB_ID > build_job_id.txt
+
   artifacts:
     paths:
-      - book/_build/html
+      # Essential web content
+      - book/_build/html/**/*.{html,css,js}
+      - book/_build/html/_images/**
+      - book/_build/html/_static/**
+      - book/_build/html/_custom_downloads/**
+      - book/_build/html/genindex.html
+      - book/_build/html/search.html
+      - book/_build/html/**/*.py
+      - book/_build/html/optimization/figs/**
+      - book/_build/html/fundamentals/prob_tables/*.png
+      
+      # Required for interactive features
+      - book/_build/jupyter_execute/**/*.html
+      - book/_build/html/_static/scripts/**
+      
+      # Logs and build info
+      - build_job_id.txt
+      - build_debug.log
       - stdout.log
       - stderr.log
-      - build_job_id.txt
+
+    exclude:
+      # Development/build files
+      - "**/*.js.map"
+      - "**/_sources/**"
+      - "**/__pycache__/**"
+      - "**/*.pyc"
+      - "**/*.pickle"
+      - book/_build/.doctrees/**
+      - book/_build/jupyter_cache/**
+      # Keep notebooks for interactive features
+      # - "**/*.ipynb"
+      
+      # # Build artifacts
+      # - "**/__pycache__/**"
+      # - "**/*.pyc"
+      # - book/_build/.doctrees/**
+      # - book/_build/jupyter_cache/**
+      # - "**/*.pickle"
+
     expire_in: 1 week
-  rules:
-    - if: $CI_COMMIT_BRANCH == "main" || $CI_COMMIT_BRANCH == "release"
-    - if: $CI_MERGE_REQUEST_TARGET_BRANCH_NAME == "main" || $CI_MERGE_REQUEST_TARGET_BRANCH_NAME == "release"
-      when: always
 
 deploy-draft:
   stage: deploy

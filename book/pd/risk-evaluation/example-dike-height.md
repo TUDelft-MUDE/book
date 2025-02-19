@@ -1,7 +1,7 @@
 (ex-dike-height)=
-# Optimization Example
+# Economic Optimization Example
 
-Economic optimization is illustrated through the determination of an optimial dike height to protect against flooding.
+Economic optimization is illustrated through the determination of an optimal dike height to protect against flooding.
 
 Before the major floods of 1953, dikes in the Netherlands were not designed for a specified safety level but mainly strengthened based on practical experience. One of the main questions after the disaster was the optimal dike height and the “acceptable” probability of flooding. Van Dantzig was a professor in mathematics and a member of the first Delta  committee. He developed an econometric approach to determine the  optimal  probability of flooding (or protection level) and the corresponding dike height {cite:p}`vandantzig1956`.
 
@@ -15,7 +15,7 @@ $$ (prob_dist_water_levels)
 
 In which:
 - $h$ the water level [m]
-- $A,B$ constants of the exponential ditribution [m]
+- $A,B$ constants of the exponential distribution [m]
 
 Neglecting wave run-up, the probability of failure of the dikes - leading to flooding -  can be approximated by the probability of exceedance of the dike height $h_d$, i.e.
 

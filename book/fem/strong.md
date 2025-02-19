@@ -1,7 +1,14 @@
-# Strong form of the problem
+# Strong form of the 1D Poisson equation
 
-The *strong from* of the problem is a Partial Differential Equation (PDE), or a set of PDEs, describing the physics of the phenomena at hand, supplemented with appropriate boundary and initial conditions. Solving the strong form of the problem leads to the exact solution of the continuous system. However, for many engineering problems, it is not possible to obtain the exact solution, and numerical methods need to be employed to find an approximate solution. The Finite Element (FE) method is one approach to find approximate solutions that is applicable to a wide range of different problems. One of the key aspects of the FE method is that we express the set of governing equations in a [*weak form*](./chapter1-3_Weak_form_of_the_problem.md), also known as the *variational* form, we will see how to derive it in the following section.  
+The *strong from* of the problem is a Partial Differential Equation (PDE), or a set of PDEs, describing the physics of the phenomena at hand, supplemented with appropriate boundary and initial conditions. Solving the strong form of the problem leads to the exact solution of the continuous system. However, for many engineering problems, it is not possible to obtain the exact solution, and numerical methods need to be employed to find an approximate solution. The finite element method is one approach to find approximate solutions that is applicable to a wide range of different problems. In this chapter we will focus on problems for which the strong form is the Poisson equation. 
 
+The story told below and up to the [discrete form](./discrete.ipynb) section is also presented in this video: 
+
+```{eval-rst}
+.. raw:: html
+
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/VNfRdJdcSKM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+```
 
 ##  1D Poisson equation
 At this point, let's take as an example the one dimensional Poisson equation to illustrate at first the so-called strong form of the problem:

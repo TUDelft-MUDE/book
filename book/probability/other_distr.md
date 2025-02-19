@@ -7,7 +7,7 @@ So far, you have seen that we can use a parametric distribution to model the unc
 
 Asymmetry is a relevant property of a distribution which analyzes its shape. In the Figure below, you have the PDF of a Gaussian distribution.
 
-```{figure} /sandbox/continuous/figures/one_gaussian.png
+```{figure} /probability/figures/one_gaussian.png
 
 ---
 
@@ -19,9 +19,9 @@ As you can see, the shape of the PDF is perfectly symmetric with respect to the 
 
 As you can imagine, it is also possible to analyze the asymmetry of an empirical distribution. To this end, we can visually inspect the empirical PDF and compute the *sample coefficient of skewness* from a set of observations as
 
-$
-g_1 = \frac{\sum_{i=1}^n{(x_i-\overline{x})^3}}{n\sigma^3}
-$
+$$
+g_1 = \cfrac{\sum_{i=1}^n{(x_i-\overline{x})^3}}{n\sigma^3}
+$$
 
 where $x_i$ are the observations, $\overline{x}$ is the mean of the observations, $n$ is the number of observations, and $\sigma$ is the standard deviation.
 
@@ -31,7 +31,7 @@ In that case, Gaussian distribution may not be the most appropriate model and we
 
 If we go back to the wind data that we previously introduced and have a look at the PDF, we can easily notice that it is not symmetric. The mass in the PDF is not distributed equally at both sides of the mode. Actually, the shape is similar to a bell with the center around $W_s = 5m/s$, but we can see that the distribution expands towards the positive values creating what we call the **tail of the distribution**. Since the tail expands towards positive values, we say that the PDF has *positive skewness*.
 
-```{figure} /sandbox/continuous/figures/epdf_wind.png
+```{figure} /probability/figures/epdf_wind.png
 
 ---
 

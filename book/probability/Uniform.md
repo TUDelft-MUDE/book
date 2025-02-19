@@ -13,7 +13,7 @@ $$
 
 Note that all values in the distribution are between the lower limit $a$ and the higher limit $b$ and are equally likely to occur. The left pannel of the figure below, shows an example of a uniform PDF with $a=-1$ and $b=1$.
 
-```{figure} /sandbox/continuous/figures/uniform.png
+```{figure} /probability/figures/uniform.png
 
 ---
 
@@ -40,14 +40,14 @@ If we make $a=0$ and $b=1$, we obtain the standard or unity uniform distribution
 
 The mean of the uniform distribution can be computed based on its simple geometry as
 
-$
+$$
 E[X]=\frac{1}{2}(a+b)
-$
+$$
 
 The variance is given by
 
-$
+$$
 Var[X] = \frac{1}{12}(b-a)^2
-$
+$$
 
 Finally, note that uniform distribution is symmetric and presents 0 skewness. Thus, the median and the mean are identical. This is, it does not present any tail.

@@ -1,3 +1,4 @@
+(correl)=
 ## Random vectors, covariance and correlation
 
 When dealing with multiple random variables we need to consider that these may not be independent. Instead of considering the individual random variables, we will then need to work with a random vector $X= [\begin{array}{llll} X_1 & X_2 & \ldots &X_m \end{array}]^T$, which has a *multivariate* (or: joint) distribution. We will first introduce the covariance and correlation coefficient of two random variables, and then introduce the multivariate normal distribution.

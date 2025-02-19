@@ -3,7 +3,7 @@
 
 An engineer is characterizing the axle loads transmited by the traffic on a bridge. Based on the observations, a Normal and a Gumbel distributions are fitted, as shown in the figure below. 
 
-```{figure} /sandbox/continuous/figures/GOF_ex.png
+```{figure} /probability/figures/GOF_ex.png
 
 ---
 

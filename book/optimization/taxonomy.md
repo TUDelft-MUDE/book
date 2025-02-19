@@ -8,6 +8,10 @@ In this section we will discuss the difference between different types of optimi
 * Deterministic vs Stochastic
 * Constrained vs Unconstrained problems
 
+Below is an overview of the different types of optimization models and their relationship with each other:
+
+![taxonomy](./figs/taxonomy.png "taxonomy")
+
 ## Continuous vs Discrete variables
 
 The name is self-explanatory for the difference between these two types of variables:
@@ -53,10 +57,8 @@ $$\begin{gather*}nC\leq 50M\\ nC_m\leq 0.7M\end{gather*}$$
 **Definition:** A convex optimization problem is a problem where all the constraints and the objective are convex functions.
 
 
-<div style="display: flex; justify-content: space-between;">
-  <img src="./figs/convex.png" style="width: 65%;">
-  <img src="./figs/non-convex.png" style="width: 34%;">
-</div>
+![taxonomy](./figs/convex2.png "taxonomy")
+
 
 In the WT farm case, even though the constraints defined above are linear (convex), the objective function is not. Then, it is considered a non-convex optimization problem.
 

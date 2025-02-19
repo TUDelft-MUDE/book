@@ -9,7 +9,7 @@ Once we have accounted for the physical characteristics of the random variable, 
 
 In order to illustrate these techniques, the following toy example will be used. The set of observations is represented in the plots below by its pdf and cdf. A Gaussian ($N(5.17, 5.76)$) and an Exponential distributions ($Expon(-5.25, 10.42)$) are fitted to the data. GOF techniques will be applied to determine which one of the two models fits the data best.
 
-```{figure} /sandbox/continuous/figures/GOF_data.png
+```{figure} /probability/figures/GOF_data.png
 
 ---
 
@@ -27,7 +27,7 @@ This technique is as simple as comparing the observations used to fit the model 
 
 Let's see it applied to the example data. Note that the term *"quantile"* is used in statistics to denote the values of the random variable.
 
-```{figure} /sandbox/continuous/figures/QQplot.png
+```{figure} /probability/figures/QQplot.png
 ---
 scale: 75%
 name: rating_curve
@@ -70,7 +70,7 @@ Pseudo code is presented to illustrate the procedure to build a QQ-plot.
 
 As previously introduced, the tails of the distributions are key to allow the inference of values which have not been observed yet. Therefore, it is important to check whether the distribution used to model the observations is performing properly in that region. A simple trick to do so is to use a logarithmic scale (log-scale) to represent the exceedance probability plot. That way, we "zoom in" on those points in the tail instead of focusing on the bulk of the data. In the figure below, the representation of the cdf in regular and log-scale is shown.
 
-```{figure} /sandbox/continuous/figures/log-scale.png
+```{figure} /probability/figures/log-scale.png
 ---
 name: log-scale
 ---
@@ -86,15 +86,15 @@ This graphical technique consists on adapting the axis of the plot of the cdf ac
 
 Let's see it with the example of the Exponential distribution. Its cdf is given by
 
-$
+$$
 F(x) = 1 - exp(-\lambda[x-\mu])
-$
+$$
 
 where $\lambda$ is the scale parameter and $\mu$ is the location parameter. A transformation is performed on the cdf so a linear relationship is established between the value of the random variable X and the non-exceedance probabilities. In the case of the Exponential distribution, it is just a matter of calculating logarithms to both sides of the equation as
 
-$
+$$
 ln[1-F(x)] = -\lambda[x-\mu]
-$
+$$
 
 In this manner, there is a linear relationship between $ln[1-F(x)]$ and $x$. Note that in the case of the Exponential distribution, the probability plot is the same as the log-scale! Therefore, the Exponential distribution was shown as a straight line in the previous plot, while the Gaussian distribution was not.
 
@@ -104,21 +104,23 @@ Kolmogorov-Smirnov (KS) test is one of the most popular nonparametric formal hyp
 
 This test is based on the KS statistic, which is (roughly) the maximum distance between the empirical cumulative distribution and the parametric distribution fitted to those observations. This statistic is mathematically defined as
 
-$
+$$
 D_n = sup_x|\hat{F}(x)-F(x)|
-$
+$$
 
 where $D_n$ is the KS statistic, $sup_x$ is the supremum of the set distances (intuitively, the largest absolute difference between the two distribution functions across all the values of the random variable $X$), $\hat{F}(x)$ is the empirical cumulative distribution and $F(x)$ the fitted parametric cumulative distribution.
 
 Once $D_n$ is computed, a formal hypothesis test is performed. The null hypothesis corresponds to $\hat{F}$ having the same distribution as $F$. In mathematical terms:
 
-$H_0: \hat{F} \sim F$
+$$
+H_0: \hat{F} \sim F
+$$
 
 The distribution of $D_n$ has been already calculated and included in different statistic packages, since it depends on the considered parametric distribution. These distributions can be used to calculate the probability of the null hypothesis being true (called $p-value$). A significance level needs to be selected (typically, $\alpha=0.05$) as a threshold to determine whether the null hypothesis is rejected or accepted. This is, if the probability of $H_0$ being true ($p-value$) is below $\alpha$, $H_0$ is rejected, so the empirical cumulative distribution is not coming from the fitted parametric cumulative distribution.
 
 Let's see it in an example. In the figure below, both the empirical distribution (step function) and the fitted normal distribution are shown. The maximum distance between both distributions is also presented in red.
 
-```{figure} /sandbox/continuous/figures/sketch_KS.png
+```{figure} /probability/figures/sketch_KS.png
 ---
 name: KS
 ---
@@ -134,7 +136,7 @@ After that, the $p-value$ is also computed, obtaining $p-value = 0.93$. This mea
 
 An engineer is characterizing the axle loads transmited by the traffic on a bridge. Based on the observations, a Normal and a Gumbel distributions are fitted, as shown in the figure below. 
 
-```{figure} /sandbox/continuous/figures/GOF_ex.png
+```{figure} /probability/figures/GOF_ex.png
 
 ---
 

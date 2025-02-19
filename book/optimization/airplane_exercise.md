@@ -1,4 +1,9 @@
-# Exercise 2: Cargo airplane
+# Exercise 2: Cargo airplane (Optional)
+
+```{admonition} MUDE Exam Information
+:class: tip, dropdown
+For the exam, you are expected to have a clear understanding behind the Simplex method and how to do it. you will not need to do the calculations by hand in the exam or on Friday’s assignment.
+```
 
 ## Original problem
 A cargo airplane has three compartments for storing freight: Front, central and rear. Each one of those compartments has the following limitations in weight and space:

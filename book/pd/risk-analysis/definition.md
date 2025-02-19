@@ -90,6 +90,7 @@ Substantial research has also focused on factors that determine the perception o
 :::{list-table} Formal definitions of risk used in social sciences {cite:p}`vlek1996`
 :header-rows: 1
 :name: risk_definitions
+:widths: 10 90
 
 * - No.
   - Definition

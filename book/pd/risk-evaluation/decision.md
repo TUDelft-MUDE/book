@@ -1,11 +1,15 @@
 (decision)=
 # Decision Analysis
 
+```{note}
+It is important to read and understand the content on this page, however, it does _not_ need to be studied for the exam. 
+```
+
 Decision analysis, or decision-making under uncertain conditions is part of everyday life: when choosing to buy a lottery ticket or choosing to take an umbrella during cloudy weather. In contrast to the rather intuitive decision making in everyday matters, a structured analysis of different alternatives with associated risks, costs and benefits is very useful for decisions in (civil) engineering. This chapter offers a very basic introduction into the decision theory with applications to decision problems in the civil engineering domain. Further reference is made to the work by other scholars for more rigorous and detailed treatment of this topic. See, for example {cite:t}`raiffa1961`; {cite:t}`benjamin1970`.
 
 ## Introduction
 
-Making a decision is in fact choosing from alternatives. The decision theory is based on the classic “Homo Economicus” model assumes that the decision-maker:
+Making a decision is in fact choosing from alternatives. The decision theory is based on the classic “Homo Economicus” model. It assumes that the decision-maker:
 
  - has complete information about the decision situation;
  - knows all the alternatives;
@@ -33,7 +37,7 @@ Decision tree.
 
 Based on the possible results a choice is made for an action. To be able to assess the different results, a numerical value is assigned to each outcome, $\omega$, which can be used to establish the benefit of each outcome. This number can be a monetary value, a number on an arbitrary scale or utility--as long as the decision maker(s) can establish a consistent ranking of the outcomes with it. In the last two cases the benefit has no absolute value, but only gives the relative value of the different outcomes.
 
-Utility, $u$, is a concept used to rank the possible outcomes according to the preferences of the decision maker, with possible values $0\leq u \leq 1$ . A utility function can be used to characterize the relative utility of various outcomes. The elaborations below are based on the monetary values as a measure for the outcomes and assume a risk neutral decision maker. This is a decision maker who is indifferent between choices with equal expected outcomes, even if one choice is riskier than the other. For example, a risk neutral decision maker would have the same preference for a € 400 pay out, or a 50/50 bet with a coin toss with outcomes of € 0 (head) or € 800 (tail). Utility and risk aversion are further discussed in ater sections.
+Utility, $u$, is a concept used to rank the possible outcomes according to the preferences of the decision maker, with possible values $0\leq u \leq 1$ . A utility function can be used to characterize the relative utility of various outcomes. The elaborations below are based on the monetary values as a measure for the outcomes and assume a risk neutral decision maker. This is a decision maker who is indifferent between choices with equal expected outcomes, even if one choice is riskier than the other. For example, a risk neutral decision maker would have the same preference for a € 400 pay out, or a 50/50 bet with a coin toss with outcomes of € 0 (head) or € 800 (tail). Utility and risk aversion are further discussed in later sections.
 
 ## Decision rules
 
@@ -178,13 +182,15 @@ The previous analysis has shown that the probability of flooding of the excavati
 Without drainage, the risk, defined as the expected value of the loss, is
 
 $$
-\textrm{risk, without drainage = }0.12 \cdot \euro{} 5,000,000 = \euro{} 600,000
+\textrm{risk, without drainage = }0.12 \cdot \text{€ } 5,000,000 = \text{€ } 600,000
 $$
+
 With drainage the risk is:
 
 $$
-\textrm{risk, with drainage = }0.04 · \euro{} 5,000,000 = \euro{} 200,000
+\textrm{risk, with drainage = }0.04 · \text{€ } 5,000,000 = \text{€ } 200,000
 $$
+
 Costs and probabilities can also be shown in the decision tree (see Figure {numref}`example-river-excavation-3`). The expected values of the costs can be calculated for the different actions by adding the present values of the cost of actions and risk:
 - $\textit a_{1}$ : expected value (additional) costs = risk =€ 600,000
 - $\textit a_{2}$ : expected value (additional) costs 

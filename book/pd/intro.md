@@ -1,15 +1,7 @@
-(rr_intro2)=
-# Risk and Reliability, Part 2 
+(risk)=
+# Risk Analysis
 
-```{note}
-Before reading further than this page, be sure to review the {ref}`Part 1 Introduction Page on Risk and Reliability <rr_intro>`, which introduced and defined several key concepts.
-```
-
-Whereas Part 1 of Risk and Reliability defined risk and described how probability is used in the design process, this section focuses on the risk analysis and risk evaluation, and is organized around the following chapters: 
-
-- **Risk Analysis** as a process is formally defined and quantitative risk measures are introduced.
-- **Component Reliability** and **System Reliability** briefly introduce approaches for evaluating reliability, or $\text{P}_\text{bad thing}$, in order to carry out probabilistic assessment and design quantitatively. This is the *quantitative analysis* step of a risk analysis.
-- **Risk evaluation** provides simple quantitative tools and a framework for establishing risk-based safety standards and economic risk criteria. This is a key step in the risk analysis process.
+Throughout this book we have focused on a variety of deterministic and probabilistic topics, which probably appeared to be completely unrelated. However, in engineering practice we often need to combine deterministic and probabilistic approaches to design and assess the projects we work on and Risk Analysis concepts are an important way to facilitate this. In particular, concepts in this chapter are focused not so much on evaluating the behavior of a particular system, but rather _evaluating the risk associated with various outcomes_ and, most importantly, providing _a framework with which decisions can be made to improve it._
 
 **Risk and Reliability in Practice**
 
@@ -19,33 +11,26 @@ Despite the focus on flood management, many applications exist in other fields, 
 
 
 ```{admonition} MUDE exam information
-:class: tip, dropdown
+:class: tip
 
 Concepts in this section to focus on for the Q2 MUDE exam are:
-- Definitions of risk and steps of a risk analysis
-- Simple system and component reliability (quantitative risk analysis methods)
-- Use of probability to design and assess engineering systems and components
-- Influence of dependence on simple systems and components
-- Decision analysis, cost-benefit analysis and economic optimization (risk evaluation methods)
-- Evaluation and quantification of risks for a system with three different risk metrics: individual, societal and economic
-- Application and derivation of standards for human safety (individual and societal risk)
-- Application and derivation of standards based on economic risk
+- **Risk Definition** and the **Risk Curve** (Section 8.1)
+- Evaluation of risk using various **Safety Standards** (the last page of Section 8.2)
+- In particular, it is essential that you can construct a risk curve and interpret its meaning, as well as assess it using the limit line approach
 
-Although the list is long, the methods are introduced in a simple form and are always applied to simplified systems of engineering problems within Civil and Environmental Engineering and Geosciences.
+A few exercises are provided at the end of this chapter, but do not exhaustively illustrate the type of questions that you can expect on the exam. See exam questions from previous years, as well as in-class activities, for additional examples.
+
 ```
 
 ```{admonition} MUDE not-on-the-exam information
-:class: tip, dropdown
-The following concepts or methods are used in this book to illustrate key subjects and examples, but you will *not* be asked to do them on the exam:
-- List from memory the steps of a risk analysis and describe all aspects in detail
-- Set up a decision tree yourself (note that you may be given a tree with values filled in and asked to interpret it)
-- Define a limit-state function yourself and calculate failure probability
-- Schematize system reliability problems (we will give you one)
-- Evaluate risk curves with more than three scenarios
-- Perform complicated cost benefit analyses
-- By now this list should give you a good enough idea of what to (not) expect...
+:class: tip
 
-Exam questions are also designed such that specialized knowledge is not needed to solve them; however, you should be able to recognize loads and resistances and series and parallel systems for any simple civil engineering and geoscience application provided on the exam.
+There are several pages included in this chapter that provides useful pre-requisite ot background information and _you are expected to read and understand them;_ however, these pages do _not_ need to be studied intensively for the exam. This includes:
+
+- Steps of a Risk Analysis (second page in Section 8.1)
+- Decision analysis, cost benefit analysis and economic optimization (first 3 pages in Section 8.2)
+- The Paint System example (Section 8.3)
+
 ```
 
 [^dike]: A dike is a structure, typically made of soil, that protects a specific region from flooding by physically holding back water. Usually associated with rivers, such structures are also widely used on the coast, especially in low elevation areas such as the Netherlands. The Dutch word for levee is *dijk,* but English word *dike* is used in this book. Outside of the Netherlands the words *embankment* and *levee* are used.

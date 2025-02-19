@@ -37,7 +37,7 @@ A higher value of the scale parameter, $\sigma$, leads to a wider distribution, 
 Influence of the scale parameter in GEV distribution.
 ```
 
-Finally, the shape parameter, $\xi$, determines the tail of the distribution. This is, the behavior of the distribution at the tail changes based on the value of $\xi$. If $\xi \rightarrow 0$, the GEV is called type I or Gumbel distribution and presents an exponential decay at the tail. If $\xi>0$, the GEV is a type II or Fréchet distribution and the tail presents a polynomial decay. Finally, if $\xi>0$, the GEV is a type III or Reverse Weibull distribution, and it presents an upper bound.
+Finally, the shape parameter, $\xi$, determines the tail of the distribution. This is, the behavior of the distribution at the tail changes based on the value of $\xi$. If $\xi \rightarrow 0$, the GEV is called type I or Gumbel distribution and presents an exponential decay at the tail. If $\xi>0$, the GEV is a type II or Fréchet distribution and the tail presents a polynomial decay. Finally, if $\x<0$, the GEV is a type III or Reverse Weibull distribution, and it presents an upper bound.
 
 ```{figure} ../figures/EVA/GEV_xi.png
 

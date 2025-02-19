@@ -5,17 +5,17 @@ As part of the quality control of the construction of a building, lab tests are 
 
 The engineer responsible for quality assumes that the compressive strength follows a uniform distribution, whose CDF is given by 
 
-$
+$$
 F(x) = 0   \hspace{1cm}   for \ x<a
-$
+$$
 
-$
+$$
 F(x) = \frac{x-a}{b-a}   \hspace{1cm}   for \ a\leq x \leq b
-$
+$$
 
-$
+$$
 F(x) = 0  \hspace{1cm} for \ x>b
-$
+$$
 
 Determine the value of $a$ and $b$ based on the observations using the method of moments.
 

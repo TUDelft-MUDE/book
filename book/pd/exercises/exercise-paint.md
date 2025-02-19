@@ -1,5 +1,9 @@
 # Paint System
 
+```{note}
+This exercise is optional; it is provided to illustrate some of the concepts in the decision theory and economics-related pages of the Risk Evaluation chapter, which are not part of the exam material.  
+```
+
 In this assignment we will consider a paint system that prevents rust and corrosion on a steel structure. A high quality paint system costs €40 per square meter and has a failure probability of 0.002, which assumes that the old paint system is completely stripped off and the steel surface is cleaned prior to installation, which has an additional cost of €20 per square meter. 
 
 Common cost cutting measures are to use a cheaper paint that costs half as much, but is five times more likely to fail, or to simply sand the old paint rather than stripping it off prior to applying a new paint, which increases the failure probability by 10, but only costs €5 per square meter.

@@ -7,3 +7,5 @@ In this chapter you will learn all the basics of optimization. The chapter cover
 - Solve a linear program through the SIMPLEX method
 - Solve an integer programming problem with the branch and bound method
 - Solve an integer programming problem with a genetic algorithm (meta-heuristic method)
+
+Parts of this chapter are optional. In these cases, this will be indicated at the top of the page.

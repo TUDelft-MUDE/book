@@ -1,6 +1,10 @@
 (econ_optimization)=
 # Economic Optimization
 
+```{note}
+It is important to read and understand the content on this page, however, it does _not_ need to be studied for the exam. 
+```
+
 The previous sections have focussed on decisions for which the number of actions was limited, e.g. excavation with or without drainage and the associated costs and benefits. However, there are several situations in which the number of actions is unlimited. This occurs when the failure probability level has to be decided for a system that is yet to be designed, with an infinite number of design options. An example of this type of decision problem is the heightening of dikes, as in theory an unlimited amount of values can be chosen for the elevation, e.g. 2m, 5m, 5.1m, 5.11m, 5.1111m 6m etc.
 
 For this situation an economic optimization that takes into account the costs of increasing the safety level and reducing the risks can be applied to derive an optimal level of safety (or the optimal “failure probability”). The economic optimization was developed and applied by {cite:t}`vandantzig1956`, to derive the optimal dike height for South Holland after the 1953 storm surge disaster, as will be further elaborated in the next section.
@@ -10,7 +14,7 @@ $$
     C_{tot} = I + R
 $$
 
-The annual risk, or expected economic dagmage is found by:
+The annual risk, or expected economic damage is found by:
 
 $$
     E(D) = P_f D
@@ -19,7 +23,7 @@ $$
 where:
 
 - $E(D)$ the expected value of the risk [€/year]
-- $P_f$ the failure probablity of the system per year [1/year]
+- $P_f$ the failure probability of the system per year [1/year]
 - $D$ the damage in case of failure [€]
 
 In this approach it is thus assumed that all damages are expressed in monetary terms. Additional criteria for separately considering the loss of human life are included in the next section. 

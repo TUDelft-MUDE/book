@@ -1,6 +1,9 @@
 (risk_steps)=
 # Steps in a Risk Analysis
 
+```{note}
+It is important to read and understand the content on this page, however, it does _not_ need to be studied for the exam. 
+```
 
 The previous section made it clear that risk is a function of probabilities and consequences. Risk analysis, therefore, consists of an analysis of probabilities and consequences associated with undesired events in a given system. Alternative terms used in literature are risk assessment and quantitative risk analysis (QRA). 
 
@@ -50,7 +53,7 @@ The probabilities and consequences of the undesired events identified in step 2 
 
 In simple cases the probability can be computed directly, but generally the undesired event must broken down into multiple steps or processes to facilitate the computation of probability, which are then recombined using integration or the total probability theorem. Such an approach results in systems of systems, each of which is composed of individual *components* (or elements), each of which is typically evaluated using the limit state concepts defined above. Often this the probability of a limit state being exceeded is referred to as the probability of failure, which of course reflects the component, not necessarily the system. Techniques for computing the probability of failure are covered in the {ref}`rel_comp` and {ref}`rel_sys` Chapters.
 
-Whereas the most critical aspect of the previous step is identifying the most important failure modes, in the quantitative analysis it is critical to precisely define the quantity of interest, as ambiguity can lead to misunderstandings and incorrect assessment of risk. Often such ambiguities have a direct relationship with the conditional terms used inthe probability computations, which imply specific statements about dependence (or independence). Consider the previous example of river level exceeding the dike height $P(h_w>h_{dike})$: the probability can be significantly different if a design lifetime of one year or fifty years is considered. In addition, the time of year may also play a role as different types of floods may occur. If the seasonal probability of flooding is binary and mutually exclusive with wet and dry season each lasting 6 months of the year, the following expression holds (all values computed an a *per year* basis):
+Whereas the most critical aspect of the previous step is identifying the most important failure modes, in the quantitative analysis it is critical to precisely define the quantity of interest, as ambiguity can lead to misunderstandings and incorrect assessment of risk. Often such ambiguities have a direct relationship with the conditional terms used in the probability computations, which imply specific statements about dependence (or independence). Consider the previous example of river level exceeding the dike height $P(h_w>h_{dike})$: the probability can be significantly different if a design lifetime of one year or fifty years is considered. In addition, the time of year may also play a role as different types of floods may occur. If the seasonal probability of flooding is binary and mutually exclusive with wet and dry season each lasting 6 months of the year, the following expression holds (all values computed an a *per year* basis):
 
 $$
 P(h_w>h_{dike}) = 0.5 \cdot P(h_w>h_{dike}|\mathrm{wet}) + 0.5 \cdot P(h_w>h_{dike}|\mathrm{dry})
@@ -60,7 +63,7 @@ Thus, if the risk analysis were only focusing on floods during the wet season, t
 
 ### Consequences
 
-After failure has been defined, consequences of the events are quantified. First, physical effects associated with an undesired event are considered, sucha s heat and/or smoke from a fire, or inflow of water due to dike breach. Depending on the exposure of people or objects to the physical effects, damages, life loss or other impacts may occur. As an example, a specific consequence, $D$, of dike failure during a flood is considered as a sequence of three discrete events:
+After failure has been defined, consequences of the events are quantified. First, physical effects associated with an undesired event are considered, such as heat and/or smoke from a fire, or inflow of water due to dike breach. Depending on the exposure of people or objects to the physical effects, damages, life loss or other impacts may occur. As an example, a specific consequence, $D$, of dike failure during a flood is considered as a sequence of three discrete events:
 
 - The probability that a dike fails, $P(E_{1})$
 - The conditional probability that water flows into the polder given a dike breach $P(E_{2}|E_{1})$
@@ -133,7 +136,7 @@ In the risk evaluation phase a decision is made whether the risk is acceptable o
 
 **Cost Benefit Analysis**: costs and benefits of risk reduction measures are considered.  When a large number of design choices are possible, an **economic optimization** can be applied to select an optimal system design, based on the costs and benefits of risk reduction.
 
-**Safety Standards**: risk is compared with predetermined safety standards to directly determin acceptability. Such standards are typically imposed by government organizations or standards of practice and often focus on loss of life as the primary risk metric.
+**Safety Standards**: risk is compared with predetermined safety standards to directly determine acceptability. Such standards are typically imposed by government organizations or standards of practice and often focus on loss of life as the primary risk metric.
 
 Given the nature of the key question "how safe is safe enough?", several political, psychological and social processes play a role in the evaluation of risk---in other words: risk evaluation is not purely a technical process, but involves many subjective elements and decisions. One difficulty facing regulators is that preferences and risk attitudes within society may diverge and that costs and benefits may not be distributed evenly, and that a single, collective decision has to be based on strongly divergent individual preferences. In practice, this implies that the establishment of collective decision making procedures is inevitably a political process. This ambiguity can also be found in the numerous interpretations of “the” precautionary principle, which is interpreted by some as a decision making criterion that requires proof of harmlessness (a scientific impossibility), whereas it is seen by others as a decision making procedure that puts emphasis on dialogue and stakeholder involvement, (e.g. {cite:t}`jongejan2008`).
 

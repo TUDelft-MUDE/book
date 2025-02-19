@@ -1,4 +1,4 @@
-# Shape functions
+# Elements and shape functions
 
 So far you have seen simple linear shape functions and elements that are defined over a 1D subdomain with two nodes. Most applications of the finite element method are not in 1D but in 2D or 3D. In higher dimensional space, the same key concepts can be used. The central idea is that the solution space is reduced with the introduction of shape functions. This can also be done for 2D or 3D fields. 
 
@@ -9,6 +9,13 @@ In summary, there are two directions in which we can generalize the finite eleme
 - Increasing the interpolation order 
 
 In this section, we will start with the second of these. 
+
+
+```{eval-rst}
+.. raw:: html
+
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/pywJkVwAZJA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+```
 
 ## Recap of linear shape function 
 
@@ -153,7 +160,7 @@ The 9-node quadrilateral element
 A popular alternative is one where the center node is removed, resulting in an 8-node quadrilateral element with the following shape function:
 
 $$
-N_i=a_i+b_ix+c_iy+d_ix^2+e_ixy+f_iy^2+g_ix^2y+h_ixy
+N_i=a_i+b_ix+c_iy+d_ix^2+e_ixy+f_iy^2+g_ix^2y+h_ixy^2
 $$
 
 

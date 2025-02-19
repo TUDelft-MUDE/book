@@ -1,13 +1,13 @@
 teachbooks
-
-download_link_replacer @ git+https://gitlab.tudelft.nl/mude/sphinx-download-link-replacer@dlr-0.1.2
+jupyterbook_patches
+download_link_replacer
+sphinx-image-inverter
 jupyter-book
 sphinx-inline-tabs
 git+https://github.com/dbalague/sphinx-grasple
 jupyterquiz
+
 docutils == 0.17.1
---extra-index-url https://gitlab.tudelft.nl/api/v4/projects/17983/packages/pypi/simple
-jupyterbook_patches ~= 0.1.4
 
 --extra-index-url https://gitlab.tudelft.nl/api/v4/projects/11239/packages/pypi/simple
 sphinx-thebe ~= 0.9.9

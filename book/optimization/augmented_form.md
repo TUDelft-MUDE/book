@@ -23,15 +23,15 @@ Let us take a look, considering an objective function given by:
 
 $$\text{Max (Min) }Z=c_1x_1+c_2x_2+...+c_nx_n$$
 
-such that:
+subject to:
 
-$$\begin{cases}a_{11}x_1+a_{12}x_2+...+a_{1n}x_n=b_1\\ a_{21}x_1+a_{22}x_2+...+a_{2n}x_n=b_2\\...\\a_{m1}x_1+a_{m2}x_29+...+a_{mn}x_n=b_m\\ x_1,x_2,...,x_n\geq 0\\ b_1,b_2,...,b_m\geq 0\end{cases}$$
+$$\begin{cases}a_{11}x_1+a_{12}x_2+...+a_{1n}x_n=b_1\\ a_{21}x_1+a_{22}x_2+...+a_{2n}x_n=b_2\\...\\a_{m1}x_1+a_{m2}x_2+...+a_{mn}x_n=b_m\\ x_1,x_2,...,x_n\geq 0\\ b_1,b_2,...,b_m\geq 0\end{cases}$$
 
 As you can see, all the constraints here presented are equations, all the decision variables $x_i$ are positive and all the independent coefficients $b_i$ are positive as well. Using a more condensed mathematical notation:
 
 $$\text{Max (Min) }Z=\sum_jc_jx_j$$
 
-such that
+such that:
 
 $$\sum_{j=1}^na_{ij}x_j=b_i\hspace{5px}(i=1,2,...,m)$$
 
@@ -81,7 +81,7 @@ When one solves the problem, one must not forget to get the original value of $x
 
 ```
 
-## Example on how to get the augmented form of an LP problem
+## Example: Getting the augmented form of an LP problem
 
 Consider the optimization problem defined by:
 
@@ -91,11 +91,11 @@ such that:
 
 $$\begin{cases}3x_1+4x_2+12x_3\geq 300\\ 8x_1+6x_2-x_4\leq 220\\ 6x_1+5x_2+3x_3\leq 150\\ x_1,x_3,x_4\geq 0\\ x_2\leq 0\end{cases}$$
 
-We have a problem with the last condition, as we should have $x_2\geq 0$. Therefore, we introduce a new variable given by $x_2'=-x_2$, and then we write
+We have a problem with the last condition, as we should have $x_2\geq 0$. Therefore, we introduce a new variable given by $x_2'=-x_2$, and then we write:
 
 $$\text{Max }Z=2x_1-6x'_2+13x_3+7x_4$$
 
-with
+with:
 
 $$\begin{cases}3x_1-4x'_2+12x_3-s_1 = 300\\ 8x_1-6x'_2-x_4+s_2 = 220\\ 6x_1-5x'_2+3x_3+s_3 = 150\\ x_1,x'_2,x_3,x_4\geq 0\\ s_1,s_2,s_3\geq 0\end{cases}$$
 

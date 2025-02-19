@@ -1,9 +1,9 @@
-# Overview of Q2 Topics
+# Overview of following Q2 Topics
 
 The topics for Q2 are organized by week. As the reading material is finalized, it will be added to this online textbook.
 
 Q2 Topics:
-1. Finite Volume Method (FVM)
+
 2. Finite Element Method (FEM)
 3. Signal Processing (SP)
 4. Time Series Analysis (TSA)

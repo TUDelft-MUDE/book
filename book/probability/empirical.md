@@ -3,7 +3,7 @@
 As you can imagine, it is possible to define a PDF and a CDF based on observations. Let's see it with an example dataset of wind speeds close to Schiphold Airport. The figure below shows the dataset which spans for 1 year.
 
 
-```{figure} /sandbox/continuous/figures/data_overview.png
+```{figure} /probability/figures/data_overview.png
 ---
 scale: 100%
 name: data_wind
@@ -26,7 +26,7 @@ Let's start computing the empirical CDF. We need to assign to each observation a
 
 Using the above algorithm, the following figure is obtained. Note that empirical CDFs are usually plotted using a step plot.
 
-```{figure} /sandbox/continuous/figures/ecdf_wind.png
+```{figure} /probability/figures/ecdf_wind.png
 ---
 scale: 75%
 name: ecdf
@@ -37,9 +37,9 @@ Empirical cumulative distribution function of the wind speed data.
 
 It can be useful to also visualize the empirical PDF. As mentioned above, the PDF is the derivative of the CDF, leading to the following equation.
 
-$
+$$
 f(x) = F'(x) = \lim_{\Delta x \to 0} \frac{F(x+\Delta x)-F(x)}{\Delta x}
-$
+$$
 
 Thus, we can compute the empirical PDF assuming a bin size. To do so, we need to count the number of observations in each bin and calculate the relative frequency of each bin by dividing that count with the total number of observations. The density will be then those relative frequencies divided by the bin size. This process is illustrated with the following pseudo-code [^density].
 
@@ -72,7 +72,7 @@ Thus, we can compute the empirical PDF assuming a bin size. To do so, we need to
 
 Using the above algorithm, the following figure is obtained. We can see that most of the density is concentrated between 2 and 9 m/s.
 
-```{figure} /sandbox/continuous/figures/epdf_wind.png
+```{figure} /probability/figures/epdf_wind.png
 ---
 scale: 75%
 name: epdf

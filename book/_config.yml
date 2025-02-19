@@ -10,8 +10,6 @@ only_build_toc_files: true
 
 sphinx:
   config:
-    # Bibliography style
-    bibtex_reference_style: author_year
     patch_config:
       disabled-patches: []
     html_show_copyright: false
@@ -20,7 +18,8 @@ sphinx:
     - https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js
     thebe_config:
       use_thebe_lite: true
-      exclude_patterns: ["**/**"]
+      exclude_patterns: []
+      # exclude_patterns: ["**/_*.yml", "**/*.md", "**/*.ipynb", "**/*.zip", "**.gif", "**/*.jpg", "**/*.tif", "**/*.shp", "**/*.pickle", "**/*.geojson"]
     html_theme_options:
       repository_url: "https://gitlab.tudelft.nl/mude/book"
       use_issues_button : true
@@ -29,6 +28,11 @@ sphinx:
       # END REMOVE-FROM-PUBLISH
       launch_buttons:
         thebe: true
+    bibtex_default_style: myapastyle
+    bibtex_reference_style: author_year_round
+  local_extensions:
+    apastyle: _ext/
+    bracket_citation_style: _ext/
   extra_extensions:
     - sphinx_inline_tabs
     - sphinx_grasple
@@ -36,6 +40,7 @@ sphinx:
     - download_link_replacer
     - jupyterbook_patches
     - sphinx.ext.extlinks
+    - sphinx_image_inverter
 
 bibtex_bibfiles:
   - _bibliography/references.bib

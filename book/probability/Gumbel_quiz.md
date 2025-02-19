@@ -28,7 +28,7 @@ $$
 
 The figure below illustrates the area to integrate in the PDF (blue area in the left pannel) and the probabilities computed in the CDF (right pannel).
 
-```{figure} /sandbox/continuous/figures/gumbel_concentration.png
+```{figure} /probability/figures/gumbel_concentration.png
 
 ---
 

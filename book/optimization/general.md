@@ -9,7 +9,7 @@ this objective function is subject to a set of constraints given by:
 
 $$\begin{cases}a_{11}x_1+a_{12}x_2+...+a_{1n}x_n(\leq,=,\geq)b_1\\a_{21}x_1+a_{22}x_2+...+a_{2n}x_n(\leq,=,\geq)b_2\\...\\ a_{m1}x_1+a_{m2}x_2+...+a_{mn}x_n(\leq,=,\geq)b_m\end{cases}$$
 
-In this case $a_{ij}$ refer to technology coefficients that measure the usage of a resource, $b_m$ is an independent term, which usually translates as an available resource, $n$ is the number of variables, and $m$ is the number of constraints.
+In this case $a_{ij}$ refer to technology coefficients that measure the usage of a resource, $x$ refers to the decision variables, $b_m$ is an independent term, which usually translates as an available resource, $n$ is the number of variables, and $m$ is the number of constraints.
 
 ## Optimization vs Simulation
 
@@ -21,7 +21,7 @@ Some modeling approaches attempt to provide optimal answers for problems (e.g., 
 
 A simulation model predicts the performance of a system under a specific set of inputs (experimental parameters).In general, with simulation, we are not searching for an optimal solution but for the system’s performance under different scenarios that are selected according to their importance or likelihood.
 
-**Understand the difference between both**
+**Understanding the difference between both**
 
 Imagine the case of planning a bus line through simulation. You have your route defined (the streets where it’s going to go through) and the demand around that route is dependent on the
 frequency of the buses and the bus stop distance. You want to simulate the bus operation in order to maximize your profit.
@@ -54,6 +54,15 @@ This is a concept that is usually misused. Stating something like "optimizing th
 ```
 
 Optimization techniques have multiple applications as part of other mathematical tools (as LS, MLE, or ML), but also direct applications as optimal structural design, resource distribution, logistics, etc. Let us take a deeper look into some of these examples
+
+### What is included under the concept of optimization?
+
+```{figure} ./figs/concept.png
+---
+width: 90%
+---
+
+```
 
 ### Examples of optimization problems
 
@@ -162,14 +171,5 @@ This example is taken from the MSc thesis ​of Stavros Xanthopoulos
 </div>
 
 This example is taken from the PhD thesis ​of Bahman Madadi​
-
-```
-
-### What is included under the concept of optimization?
-
-```{figure} ./figs/concept.png
----
-width: 90%
----
 
 ```

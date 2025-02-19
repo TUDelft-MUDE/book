@@ -26,7 +26,7 @@ The story is told in a video. The video has a one-to-one correspondence with thi
 
 There are multiple ways to improve the performance of a certain model when it comes do data pre-processing. Some of the most common steps involve:
 
-* **Missing values:** dealing with missing values, wrong values, outliers, etc. $\implies$ **imputed or dropped**
+* **Missing values:** dealing with missing values, wrong values, outliers, etc. $\implies$ **inputed or dropped**
 * **Filtering:** filtering what you do not need from the data (what you do not need is not necessarily useless, though!)
 * **Sampling:** sometimes, and specially when working with large datasets, a simple small sample of the data would do the job
 * **Transformation:** data manipulation and transformation (this is where you transform raw data into useful information for your models; efficiency often matters in this step)
@@ -77,7 +77,7 @@ In Gurobi (Python API), building large linear models and compiling them can take
 
 ```{note}
 
-Note that building a model in Gurobi-Python means executing the python code that builds the model. Compilinga model means executing the "model.update()" command, which transforms your Python code into a Gurobi model object. If you do not use this command, it is automatically done prior to solving when you execute "model.solve()" command.
+Note that building a model in Gurobi-Python means executing the python code that builds the model. Compiling a model means executing the "model.update()" command, which transforms your Python code into a Gurobi model object. If you do not use this command, it is automatically done prior to solving when you execute "model.solve()" command.
 
 ```
 

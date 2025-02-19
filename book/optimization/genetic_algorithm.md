@@ -4,6 +4,11 @@
 
 The story is told once in a video. The video below has a one-to-one correspondence with this book
 
+```{admonition} MUDE Exam Information
+:class: tip, dropdown
+For the exam, you are expected to have a clear understanding of the Genetic Algorithm described and its steps. You do not need to know  how to implement it in code!
+```
+
 ```{eval-rst}
 .. raw:: html
 

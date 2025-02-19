@@ -87,7 +87,7 @@ $$E=\int_{-\infty}^{\infty}|x(t)|^2dt=\int_{-\infty}^{\infty}x^*(t)\left(\int_{-
 
 Reversing the integration order:
 
-$$E=\int_{-\infty}^{\infty}X(f)\left(\int_{-\infty}^{\infty}x(t)e^{j2\pi ft}dt\right)^*df=\int_{-\infty}^{\infty}X(f)X^*(f)df$$
+$$E=\int_{-\infty}^{\infty}X(f)\left(\int_{-\infty}^{\infty}x(t)e^{-j2\pi ft}dt\right)^*df=\int_{-\infty}^{\infty}X(f)X^*(f)df$$
 
 We obtain Parseval's theorem for Fourier transforms that can be expressed as:
 
