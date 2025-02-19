@@ -20,3 +20,7 @@ If you've a question regarding any content, look at [https://answers.citg.tudelf
 
 ## Confused?
 That can happen, let us know how we can make it work for you! Send an email to [MUDE-CEG@tudelft.nl](mailto:MUDE-CEG@tudelft.nl)
+
+## Credits and Additional Information
+
+For more information about the Editors and Authors, how this book is made and how to reuse the material yourself, see the {ref}`credits and license page <credits>`.
