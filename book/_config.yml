@@ -8,7 +8,7 @@ execute:
 only_build_toc_files: true
 
 html:
-  baseurl :  "https://tudelft-mude.github.io/book/2025-draft/"
+  baseurl :  "https://tudelft-mude.github.io/book/2025/"
   use_multitoc_numbering: false
 
 sphinx:
@@ -28,13 +28,10 @@ sphinx:
         text: CEGM1000 Modelling, Uncertainty, and Data for Engineers
       repository_url: "https://github.com/TUDelft-MUDE/book"
       path_to_docs: "book"
-      repository_branch: "2025-draft"
+      repository_branch: "2025"
       use_edit_page_button: true
       use_repository_button: true
       use_issues_button : true
-      # START REMOVE-FROM-PUBLISH
-      announcement: "<p>This is the draft book. The published version is at <a href='https://tudelft-mude.github.io/book/2025' style='color: cyan;'>tudelft-mude.github.io/book/2025</a></p>"
-      # END REMOVE-FROM-PUBLISH
       launch_buttons:
         thebe: true
     bibtex_default_style: myapastyle
