@@ -22,7 +22,7 @@ sphinx:
     thebe_config:
       use_thebe_lite: true
       exclude_patterns: []
-      # exclude_patterns: ["**/_*.yml", "**/*.md", "**/*.ipynb", "**/*.zip", "**.gif", "**/*.jpg", "**/*.tif", "**/*.shp", "**/*.pickle", "**/*.geojson"]
+      exclude_patterns: ["**/*.JPG", "**/*.PNG", "**/*.bib", "**/*.cpg", "**/*.csv", "**/*.dbf", "**/*.geojson", "**/*.gif", "**/*.html", "**/*.ico", "**/*.ipynb", "**/*.jl", "**/*.jpeg", "**/*.jpg", "**/*.json", "**/*.md", "**/*.npy", "**/*.pdf", "**/*.png", "**/*.prj", "**/*.py", "**/*.sbn", "**/*.sbx", "**/*.shp", "**/*.shx", "**/*.svg", "**/*.tif", "**/*.tiff", "**/*.txt", "**/*.webp", "**/*.whl", "**/*.xlsx", "**/*.xml", "**/*.yml", "**/*.zip"]
     html_theme_options:
       logo:
         text: CEGM1000 Modelling, Uncertainty, and Data for Engineers
