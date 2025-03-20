@@ -9,6 +9,7 @@ only_build_toc_files: true
 
 html:
   baseurl :  "https://tudelft-mude.github.io/book/2025/"
+  announcement: "This book is under construction and should not be regarded as published. Please report any issues on the GitHub repository."
   use_multitoc_numbering: false
 
 sphinx:
