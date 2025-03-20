@@ -9,7 +9,6 @@ only_build_toc_files: true
 
 html:
   baseurl :  "https://tudelft-mude.github.io/book/2025/"
-  announcement: "This book is under construction and should not be regarded as published. Please report any issues on the GitHub repository."
   use_multitoc_numbering: false
 
 sphinx:
@@ -23,7 +22,7 @@ sphinx:
     thebe_config:
       use_thebe_lite: true
       exclude_patterns: []
-      # exclude_patterns: ["**/_*.yml", "**/*.md", "**/*.ipynb", "**/*.zip", "**.gif", "**/*.jpg", "**/*.tif", "**/*.shp", "**/*.pickle", "**/*.geojson"]
+      exclude_patterns: ["**/*.JPG", "**/*.PNG", "**/*.bib", "**/*.cpg", "**/*.csv", "**/*.dbf", "**/*.geojson", "**/*.gif", "**/*.html", "**/*.ico", "**/*.ipynb", "**/*.jl", "**/*.jpeg", "**/*.jpg", "**/*.json", "**/*.md", "**/*.npy", "**/*.pdf", "**/*.png", "**/*.prj", "**/*.py", "**/*.sbn", "**/*.sbx", "**/*.shp", "**/*.shx", "**/*.svg", "**/*.tif", "**/*.tiff", "**/*.txt", "**/*.webp", "**/*.whl", "**/*.xlsx", "**/*.xml", "**/*.yml", "**/*.zip"]
     html_theme_options:
       logo:
         text: CEGM1000 Modelling, Uncertainty, and Data for Engineers
@@ -35,6 +34,7 @@ sphinx:
       use_issues_button : true
       launch_buttons:
         thebe: true
+      announcement: "This book is under construction and should not be regarded as published. Please report any issues on the GitHub repository."
     bibtex_default_style: myapastyle
     bibtex_reference_style: author_year_round
     tud_change_logo: false
