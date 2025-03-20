@@ -205,13 +205,13 @@ parts:
       - file: optimization/genetic_algorithm
       - file: optimization/airlines.ipynb
         title: Airline Exercise (Optional)
-      #  # START REMOVE-FROM-PUBLISH
+      #  
       #- file: optimization/performance
       #  title: Performance Considerations in LP (Optional)
       #  sections:
       #  - file: optimization/airlines_performance.ipynb
       #  - file: optimization/performance_generic_LP.ipynb
-      #  # END REMOVE-FROM-PUBLISH
+      # 
       - file: optimization/project
         title: Road Network Design Problem (GA)
         sections:
