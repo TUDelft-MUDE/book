@@ -23,9 +23,7 @@ sphinx:
     html_theme_options:
       repository_url: "https://gitlab.tudelft.nl/mude/book"
       use_issues_button : true
-      # START REMOVE-FROM-PUBLISH
-      announcement: "<p>This is the draft book. The published version is at <a href='https://mude.citg.tudelft.nl/book' style='color: cyan;'>mude.citg.tudelft.nl/book</a></p>"
-      # END REMOVE-FROM-PUBLISH
+      announcement: "<p>This is the most recent published book. The version currently used in education is at <a href='https://mude.citg.tudelft.nl/book/2025' style='color: cyan;'>mude.citg.tudelft.nl/book/2025</a></p>"
       launch_buttons:
         thebe: true
     bibtex_default_style: myapastyle
