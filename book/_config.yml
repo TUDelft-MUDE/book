@@ -32,9 +32,9 @@ sphinx:
       use_edit_page_button: true
       use_repository_button: true
       use_issues_button : true
+      announcement: "<p>This book is under construction and should not be regarded as published. The version currently used in education is at <a href='https://mude.citg.tudelft.nl/book/2025' style='color: cyan;'>mude.citg.tudelft.nl/book/2025</a></p>"
       launch_buttons:
         thebe: true
-      announcement: "This book is under construction and should not be regarded as published. Please report any issues on the GitHub repository."
     bibtex_default_style: myapastyle
     bibtex_reference_style: author_year_round
     tud_change_logo: false
