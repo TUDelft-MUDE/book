@@ -38,6 +38,7 @@ sphinx:
     bibtex_default_style: myapastyle
     bibtex_reference_style: author_year_round
     tud_change_logo: false
+    named_colors_custom_colors: {'attributiongrey':[200,200,200]}
   local_extensions:
     apastyle: _ext/
     bracket_citation_style: _ext/
@@ -49,6 +50,7 @@ sphinx:
     - sphinx.ext.extlinks
     - sphinx_image_inverter
     - sphinx_tudelft_theme
+    - sphinx_named_colors
 
 bibtex_bibfiles:
   - _bibliography/references.bib
