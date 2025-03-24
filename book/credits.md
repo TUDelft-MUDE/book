@@ -60,6 +60,7 @@ Parts of this book are taken from other external resources and reused in various
 
 The following chapters/pages are included directly from an external resource and is not edited by MUDE authors:
 
+- page [](./external/learn-python/book/08/sympy.ipynb). Original content licensed under CC BY.
 - Programming Chapters REFERENCE are from CITATION/LINK. Original content licensed under CC BY.
 - Page REFERENCE are from CITATION/LINK. Original content licensed under CC BY.
 
