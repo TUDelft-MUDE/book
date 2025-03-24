@@ -38,7 +38,7 @@ sphinx:
     bibtex_default_style: myapastyle
     bibtex_reference_style: author_year_round
     tud_change_logo: false
-    named_colors_custom_colors: {'attributiongrey':[220,220,220]}
+    named_colors_custom_colors: {'attributiongrey':[170,170,170]}
   local_extensions:
     apastyle: _ext/
     bracket_citation_style: _ext/
