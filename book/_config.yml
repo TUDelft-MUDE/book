@@ -1,12 +1,15 @@
-title: MUDE
-author: MUDE Teachers and the Student Army, built with <a href="https://teachbooks.tudelft.nl/">TeachBooks</a> and <a href="https://jupyterbook.org/">Jupyter Book</a>, <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="license noopener noreferrer"">CC BY 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg" alt=""></a>
-copyright: "2024"
+title: MUDE textbook
+author: MUDE Teachers and the Student Army from Delft University of Technology, built with <a href="https://teachbooks.tudelft.nl/">TeachBooks</a> and <a href="https://jupyterbook.org/">Jupyter Book</a>, <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="license noopener noreferrer"">CC BY 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg" alt=""></a>
 logo: _static/MUDE_Logo-small.png
 
 execute:
   execute_notebooks: "off"
 
 only_build_toc_files: true
+
+html:
+  baseurl :  "https://tudelft-mude.github.io/book/2025/"
+  use_multitoc_numbering: false
 
 sphinx:
   config:
@@ -19,29 +22,33 @@ sphinx:
     thebe_config:
       use_thebe_lite: true
       exclude_patterns: []
-      # exclude_patterns: ["**/_*.yml", "**/*.md", "**/*.ipynb", "**/*.zip", "**.gif", "**/*.jpg", "**/*.tif", "**/*.shp", "**/*.pickle", "**/*.geojson"]
+      exclude_patterns: ["**/*.JPG", "**/*.PNG", "**/*.bib", "**/*.cpg", "**/*.csv", "**/*.dbf", "**/*.geojson", "**/*.gif", "**/*.html", "**/*.ico", "**/*.ipynb", "**/*.jl", "**/*.jpeg", "**/*.jpg", "**/*.json", "**/*.md", "**/*.npy", "**/*.pdf", "**/*.png", "**/*.prj", "**/*.py", "**/*.sbn", "**/*.sbx", "**/*.shp", "**/*.shx", "**/*.svg", "**/*.tif", "**/*.tiff", "**/*.txt", "**/*.webp", "**/*.whl", "**/*.xlsx", "**/*.xml", "**/*.yml", "**/*.zip"]
     html_theme_options:
-      repository_url: "https://gitlab.tudelft.nl/mude/book"
+      logo:
+        text: CEGM1000 Modelling, Uncertainty, and Data for Engineers
+      repository_url: "https://github.com/TUDelft-MUDE/book"
+      path_to_docs: "book"
+      repository_branch: "2025"
+      use_edit_page_button: true
+      use_repository_button: true
       use_issues_button : true
-      announcement: "<p>This is the most recent published book. The version currently used in education is at <a href='https://mude.citg.tudelft.nl/book/2025' style='color: cyan;'>mude.citg.tudelft.nl/book/2025</a></p>"
+      announcement: "<p>This book is under construction and should not be regarded as published. The version currently used in education is at <a href='https://mude.citg.tudelft.nl/book/2025' style='color: cyan;'>mude.citg.tudelft.nl/book/2025</a></p>"
       launch_buttons:
         thebe: true
     bibtex_default_style: myapastyle
     bibtex_reference_style: author_year_round
+    tud_change_logo: false
   local_extensions:
     apastyle: _ext/
     bracket_citation_style: _ext/
   extra_extensions:
     - sphinx_inline_tabs
-    - sphinx_grasple
     - sphinx.ext.imgconverter
     - download_link_replacer
     - jupyterbook_patches
     - sphinx.ext.extlinks
     - sphinx_image_inverter
+    - sphinx_tudelft_theme
 
 bibtex_bibfiles:
   - _bibliography/references.bib
-
-html:
-  use_multitoc_numbering: false

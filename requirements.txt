@@ -2,10 +2,8 @@ teachbooks
 jupyterbook_patches
 download_link_replacer
 sphinx-image-inverter
-jupyter-book
 sphinx-inline-tabs
-git+https://github.com/dbalague/sphinx-grasple
-jupyterquiz
+sphinx-tudelft-theme
 
 docutils == 0.17.1
 

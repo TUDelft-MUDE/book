@@ -1,8 +1,0 @@
-services:
-  web:
-    container_name: mude-book
-    build: .
-    ports:
-      - "8000:80"
-    stdin_open: true 
-    tty: true

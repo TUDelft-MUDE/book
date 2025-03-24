@@ -10,9 +10,10 @@ In any engineering discipline, **we interact with a system** (Earth, ecosystem, 
 
 To answer that, we build an abstraction of the system which can mimic those aspects we are interested in. For instance, if we focus on the example from the cooling water and the water body, we can model the heat distribution in the water body to know the final temperature. Here we are only modelling some aspects of the system we are studying. What about the response from the species living there? Well, **if we do not need to know about this, and this doesnt affect our results in a meaningful way, our model is good enough to answer our question!**
 
-| ![diagram](./figs/modelling/diagram.png "diagram") |
+% ./figs/modelling/diagram.png "diagram" *Modelling procedure diagram [[1]](https://schoolbag.info/mathematics/numbers/103.html)*
+| ![diagram](../replacement.svg) |
 | :--: |
-| *Modelling procedure diagram [[1]](https://schoolbag.info/mathematics/numbers/103.html)* |
+| ... |
 
 Once we are sure that the model can reproduce the behaviors we are interested in through **mathematization** ,i.e, the implimentation of the abstraction, we can further use it to make **computations**. Those computations need to be **interpreted** to get the answer to our actual question. We can also check if our model realistically represents the system we are modelling through **verification** - more about that later.
 
@@ -36,8 +37,8 @@ Our model will be based on a series of assumptions depending on the problem we a
 
 Imagine you want to predict what would be the choice made by a rational individual to travel from Delft to Paris (i.e. given origin and destination). Would he choose to go by car or by train?
 
-![distances](./figs/modelling/distances.png "distances")
-
+%![distances](./figs/modelling/distances.png "distances")
+![](../replacement.svg)
 We can consider the simplest model: the traveller will choose the shortest travelling time. In this case, according to our model, the traveller will choose to go by car. However, does this model accurately asess the travellers preference? **No.** Modelling people choices is way more complicated, since they also depend on other factors such as travel cost, comfort, sustainability, etc.
 
 ### Example 2: modelling car emissions
