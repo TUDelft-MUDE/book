@@ -1,0 +1,21 @@
+# Credits
+
+sources:
+  - title: Example Title
+    week_number: 1
+    authors:
+      - Author One
+      - Author Two
+  - title: Another Example
+    week_number: 2
+    authors:
+      - Author Three
+  - title: Yet Another Example
+    week_number: 3
+    authors:
+      - Author Four
+      - Author Five
+  - title: Final Example
+    week_number: 4
+    authors:
+      - Author Six
