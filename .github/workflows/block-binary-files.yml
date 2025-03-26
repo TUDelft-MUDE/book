@@ -1,9 +1,6 @@
 name: Block Binary Files
 
 on:
-  push:
-    branches:
-      - main
   pull_request:
 
 jobs:
