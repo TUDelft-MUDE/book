@@ -52,7 +52,7 @@ Let us consider one of the most typical Physics examples: the simple pendulum.
 
 %![pendulum](./figs/modelling/pendulum.png "pendulum") https://edurev.in/chapter/questions/46463/63808/Simple-Harmonic-Motion--SHM-
 
-![](../replacement.svg)
+![](https://files.mude.citg.tudelft.nl/replacement.svg)
 
 The moment equation around the pivot point corresponds to a nonlinear dynamic model:
 

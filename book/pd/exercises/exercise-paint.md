@@ -21,7 +21,7 @@ This problem can be visualized using a decision tree as shown below. However, it
 
 Although the decision tree is not part of the exam, this illustrates an important lesson: it is very easy to accidentally make probability calculations that are inconsistent with the situation you are trying to evaluate!
 
-```{figure} ../figures/exercise-decision-tree.png
+```{figure} https://files.mude.citg.tudelft.nl/exercise-decision-tree.png
 ---
 width: 600px
 name: decision-tree
@@ -167,7 +167,7 @@ Which results in a maximum of 17 inspections per year.
 
 As shown in the figure, the optimum is 3 per year.
 
-```{figure} ../figures/exercise-optimization.png
+```{figure} https://files.mude.citg.tudelft.nl/exercise-optimization.png
 ---
 width: 600px
 name: optimization-curve

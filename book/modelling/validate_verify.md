@@ -12,7 +12,7 @@ Let us consider two different models, the mass-spring system (model 1) and a tow
 
 % ![models](figs/modelling/models.png "models") source unknown
 
-![](../replacement.svg)
+![](https://files.mude.citg.tudelft.nl/replacement.svg)
 
 Both models do **not exactly represent** the real structure, but they can be valid models in which we can trust to answer to certain research questions. For example:
 

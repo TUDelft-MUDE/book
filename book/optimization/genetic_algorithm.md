@@ -20,7 +20,7 @@ For the exam, you are expected to have a clear understanding of the Genetic Algo
 * Linear programming problems and integer programming problems
 * Simplex and Branch and Bound
 
-![Untitled](./figs/Untitled.png)
+![Untitled](https://files.mude.citg.tudelft.nl/Untitled.png)
 
 Exact optimization approaches basically guarantees to find the optimal solution to a problem!
 
@@ -28,7 +28,7 @@ Exact optimization approaches basically guarantees to find the optimal solution 
 
 These methods can be time-consuming and computationally expensive, especially for large, complex problems. Many exact algorithms have exponential time complexity.
 
-![Untitled](./figs/Untitled_1.png)
+![Untitled](https://files.mude.citg.tudelft.nl/Untitled_1.png)
 
 Numerous real-life optimization problems in science, engineering, economics, and business are complex and difficult to solve. They cannot be solved in an exact manner within a reasonable amount of time. 
 
@@ -38,11 +38,11 @@ Consequently, the use of meta-heuristic algorithms, a form of approximate techni
 
 A (meta-)heuristic approach is a procedure that determines near-optimal solutions to an optimization problem.
 
-![Untitled](./figs/Untitled_2.png)
+![Untitled](https://files.mude.citg.tudelft.nl/Untitled_2.png)
 
 Metaheuristics represents a family of approximate optimization techniques. They provide “acceptable” solutions in a reasonable time for solving hard and complex problems in science and engineering. Generally, metaheuristics can be classified into Single-solution based meta-heuristics and Population based meta-heuristics. Evolutionary algorithm is a kind of population based meta-heuristics.
 
-![Untitled](./figs/Untitled_3.png)
+![Untitled](https://files.mude.citg.tudelft.nl/Untitled_3.png)
 
 ### Evolutionary algorithm - a high level structure
 
@@ -60,7 +60,7 @@ $$
 
 The evolutionary algorithm to solve an optimization problem like the one described above is described by the following scheme:
 
-![Untitled](./figs/Untitled_4.png)
+![Untitled](https://files.mude.citg.tudelft.nl/Untitled_4.png)
 
 #### General structure of evolutionary algorithms
 
@@ -108,13 +108,13 @@ $$
 
 The algorithm stops after running this cyclic process for a predetermined number of iterations, such as 500 or 5000 generations.
 
-![Untitled](./figs/Untitled_5.png)
+![Untitled](https://files.mude.citg.tudelft.nl/Untitled_5.png)
 
 ## Genetic algorithm
 
 A genetic algorithm (GA) is a metaheuristic inspired by the process of natural selection that belongs to the larger class of evolutionary algorithms.
 
-![Untitled](./figs/Untitled_6.png)
+![Untitled](https://files.mude.citg.tudelft.nl/Untitled_6.png)
 
 ### Population Initialization
 
@@ -315,12 +315,12 @@ As an example, consider we adopt roulette wheel selection, single-point crossove
 
 Applying **single-point crossover:**
 
-![Untitled](./figs/Untitled_7.png)
+![Untitled](https://files.mude.citg.tudelft.nl/Untitled_7.png)
 
 After this, we apply the **single-point crossover** to get:
 
-![Untitled](./figs/Untitled_8.png)
+![Untitled](https://files.mude.citg.tudelft.nl/Untitled_8.png)
 
 Finally, using complete replacement our new population is given by:
 
-![Untitled](./figs/Untitled_9.png)
+![Untitled](https://files.mude.citg.tudelft.nl/Untitled_9.png)

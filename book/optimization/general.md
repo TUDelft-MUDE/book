@@ -57,7 +57,7 @@ Optimization techniques have multiple applications as part of other mathematical
 
 ### What is included under the concept of optimization?
 
-```{figure} ./figs/concept.png
+```{figure} https://files.mude.citg.tudelft.nl/concept.png
 ---
 width: 90%
 ---

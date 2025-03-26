@@ -27,7 +27,7 @@ This technique is as simple as comparing the observations used to fit the model 
 
 Let's see it applied to the example data. Note that the term *"quantile"* is used in statistics to denote the values of the random variable.
 
-```{figure} /probability/figures/QQplot.png
+```{figure} https://files.mude.citg.tudelft.nl/QQplot.png
 ---
 scale: 75%
 name: rating_curve
@@ -70,7 +70,7 @@ Pseudo code is presented to illustrate the procedure to build a QQ-plot.
 
 As previously introduced, the tails of the distributions are key to allow the inference of values which have not been observed yet. Therefore, it is important to check whether the distribution used to model the observations is performing properly in that region. A simple trick to do so is to use a logarithmic scale (log-scale) to represent the exceedance probability plot. That way, we "zoom in" on those points in the tail instead of focusing on the bulk of the data. In the figure below, the representation of the cdf in regular and log-scale is shown.
 
-```{figure} /probability/figures/log-scale.png
+```{figure} https://files.mude.citg.tudelft.nl/log-scale.png
 ---
 name: log-scale
 ---
@@ -120,7 +120,7 @@ The distribution of $D_n$ has been already calculated and included in different 
 
 Let's see it in an example. In the figure below, both the empirical distribution (step function) and the fitted normal distribution are shown. The maximum distance between both distributions is also presented in red.
 
-```{figure} /probability/figures/sketch_KS.png
+```{figure} https://files.mude.citg.tudelft.nl/sketch_KS.png
 ---
 name: KS
 ---

@@ -57,7 +57,7 @@ subject to:
 The above mentioned constraints define the feasible region of the solution space. The feasible region is represented by the yellow polygon on the graph below:
 
 
-```{figure} ./figs/output.png
+```{figure} https://files.mude.citg.tudelft.nl/output.png
 ---
 width: 95%
 ---
@@ -85,7 +85,7 @@ To find the optimal solution, we can start now by computing the gradient vector 
 $$\nabla L = \begin{bmatrix}\dfrac{dL}{dx_1}\\\dfrac{dL}{dx_2}\end{bmatrix}=\begin{bmatrix}57\\60\end{bmatrix}$$
 
 
-```{figure} ./figs/sand_clay.png
+```{figure} https://files.mude.citg.tudelft.nl/sand_clay.png
 ---
 width: 70%
 ---

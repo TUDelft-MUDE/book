@@ -5,7 +5,7 @@
 
 Consider a river that is protected by dikes: earthen embankments with the purpose of keeping water in the river channel and preventing flooding of the hinterland. The dikes should be designed and built such that the height allows the river to safely pass the maximum discharge every year, measured in m$^3$/s. A rating curve ({numref}`rating_curve`) gives us the relationship between discharge and water depth, $H_w$, so if we know what the maximum discharge is, we can build our dikes to the critical height, $h_{dike}\geq H_w$. But there is a problem---what is the maximum discharge in the river each year? How would we even go about determining this value? One way is to make observations and find the highest recorded data point.
 
-```{figure} ../../figures/pd/rating_curve.svg
+```{figure} https://files.mude.citg.tudelft.nl/rating_curve.svg
 ---
 height: 400px
 name: rating_curve
@@ -34,7 +34,7 @@ The distribution in the example is Lognormal; however, we leave out the details 
 
 The only other piece of information needed is a design standard---a probability that defines the discharge to use for our design. Other chapters in this book cover the derivation of a design standard, so for this discussion we will assume that a flooding probability of 1/100 has already been determined as the acceptable level. Because there is only one random variable, we can use the CDF to determine the design discharge ({numref}`design_1_rv`).
 
-```{figure} ../../figures/pd/design_1_rv.svg
+```{figure} https://files.mude.citg.tudelft.nl/design_1_rv.svg
 ---
 height: 400px
 name: design_1_rv

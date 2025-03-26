@@ -184,7 +184,7 @@ P[Q_1 \leq q_1, Q_2 \leq q_2]
 = 21/34 = 0.62
 $$
 
-```{figure} ./figures/and.svg
+```{figure} https://files.mude.citg.tudelft.nl/and.svg
 ---
 width: 60%
 ---
@@ -305,7 +305,7 @@ $$
 P[q_1 > 100, q_2 > 120] = 3/34 \approx 0.09
 $$
 
-```{figure} ./figures/and_exceed.svg
+```{figure} https://files.mude.citg.tudelft.nl/and_exceed.svg
 ---
 width: 60%
 ---
@@ -416,7 +416,7 @@ Assuming that the complement of the multivariate CDF is equal to the joint excee
 
 Using only empirical probabilities for the marginal random variables and the joint CDF, apply the graphical approach illustrated in the preceding section to find the joint exceedance probability $p=P[q_1 > 100  \;\textrm{m}^3\textrm{/s} \;\cap\;  q_2 > 120  \;\textrm{m}^3\textrm{/s}]$, the area illustrated here:
 
-```{figure} ./figures/and_exceed_exercise.svg
+```{figure} https://files.mude.citg.tudelft.nl/and_exceed_exercise.svg
 ---
 width: 40%
 ---

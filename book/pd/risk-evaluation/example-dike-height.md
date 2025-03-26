@@ -37,7 +37,7 @@ $$
     I = I_0 + I(h_d - h0)
 $$ (dike_investments)
 
-```{figure} ../figures/dike_heightening_schematic.png
+```{figure} https://files.mude.citg.tudelft.nl/dike_heightening_schematic.png
 ---
 height: 200px
 name: dike_heightening_schematic
@@ -96,7 +96,7 @@ Using these values, the following optimal dike height and optimal failure probab
 
 Although the optimal safety level was determined at a failure probability of $P_{f,opt}$ =  1/125,000 per year, in later political discussions a value of 1/10,000 per year was selected for the probability of exceedance of design water levels. This implied that the dikes of South Holland would need to be designed for hydraulic conditions (water levels and waves) with a probability of exceedance of---on average---1/10,000 per year. In later decision-making, safety standards were derived for other dike rings (see {numref}`dike_rings`), for example, flood defenses in the river system are designed for a safety standard of 1/1250 per year.
 
-```{figure} ../figures/dike_rings.jpg
+```{figure} https://files.mude.citg.tudelft.nl/dike_rings.jpg
 ---
 width: 400px
 name: dike_rings
@@ -112,7 +112,7 @@ The model by van Dantzig was primarily focused on finding what the optimal safet
 
 {numref}`periodic_investments` below depicts the “saw-tooth” curve that shows the periodic interventions: both the extent of the intervention (vertical) as well as the timing between interventions (horizontal). In between interventions, the safety will gradually decrease due to sea level rise and / or subsidence of the dike. Over a longer period of time, the dike heightening (or strengthening) should follow sea level rise. Additional dike heightening (lower the failure probability even further) could be considered in case of economic growth, which will lead to an increase of damages and increase of protection standards. The length of the optimal interval between interventions is largely dependent on the initial or mobilization costs. If these are high, for example in the case of structural interventions such as storm surge barriers, a long interval or life time of almost 100 years can be chosen. For regular dike reinforcements this interval will be more in the range of several decades (e.g. 50 years). For interventions with no or very small initial costs, such as nourishments along the coast, it is optimal to intervene more frequently.
 
-```{figure} ../figures/periodic_investments.png
+```{figure} https://files.mude.citg.tudelft.nl/periodic_investments.png
 ---
 width: 400px
 name: periodic_investments

@@ -38,7 +38,7 @@ The position of the object is described by the complex number $\tilde{x}(t)$, wh
 * $\text{Im}(\tilde{x}(t))=\sin(\omega_0 t)$
 
 
-```{figure} ./figs/Unitycircle-complex.gif
+```{figure} https://files.mude.citg.tudelft.nl/Unitycircle-complex.gif
 ---
 height: 300px
 name: unitycircle
