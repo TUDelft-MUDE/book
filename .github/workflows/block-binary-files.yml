@@ -45,6 +45,7 @@ jobs:
 
           # Exit with an error if any binary files or SVGs were found
           if [[ $error_flag -eq 1 ]]; then
+            echo "" >> $summary_file # Add a blank line for proper formatting
             echo "Please remove the binary and/or SVG files and add them with FTP (explained here: https://tudelft-mude.github.io/teacher/FTP.html)." >> $summary_file
             exit 1
           fi
