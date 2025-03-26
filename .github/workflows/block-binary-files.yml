@@ -15,9 +15,6 @@ jobs:
 
       - name: Find binary files and SVGs
         run: |
-          # Extract the repository name from GITHUB_REPOSITORY (e.g., owner/repo -> repo)
-          repo_name=$(basename "${GITHUB_REPOSITORY}")
-
           # Get a list of all files changed in the pull request
           files=$(git diff --name-only origin/${{ github.event.pull_request.base.ref }})
 
@@ -30,20 +27,17 @@ jobs:
           for file in $files; do
             # Check if the file exists (it might have been deleted)
             if [[ -f "$file" ]]; then
-              # Get the adjusted file path (replace /home/runner/work/<repo_name>/ with "")
-              adjusted_path=$(realpath "$file" | sed "s|/home/runner/work/${repo_name}/||")
-
               # Check if the file is binary
               if ! grep -Iq . "$file"; then
-                echo "Error: Binary file detected: $file (full path: $adjusted_path)"
-                echo "- Binary file detected: \`$file\` (full path: \`$adjusted_path\`)" >> $summary_file
+                echo "Error: Binary file detected: $file"
+                echo "- Binary file detected: \`$file\`" >> $summary_file
                 error_flag=1
               fi
 
               # Check if the file is an SVG
               if [[ "$file" == *.svg ]]; then
-                echo "Error: SVG file detected: $file (full path: $adjusted_path)"
-                echo "- SVG file detected: \`$file\` (full path: \`$adjusted_path\`)" >> $summary_file
+                echo "Error: SVG file detected: $file"
+                echo "- SVG file detected: \`$file\`" >> $summary_file
                 error_flag=1
               fi
             fi
@@ -54,4 +48,7 @@ jobs:
             echo "" >> $summary_file # Add a blank line for proper formatting
             echo "Please remove the binary and/or SVG files and add them with FTP (explained here: https://tudelft-mude.github.io/teacher/FTP.html)." >> $summary_file
             exit 1
+          else
+            echo "" >> $summary_file # Add a blank line for proper formatting
+            echo "All checks passed! No binary or SVG files detected. 🎉" >> $summary_file
           fi
