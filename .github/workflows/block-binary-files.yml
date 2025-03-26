@@ -15,6 +15,9 @@ jobs:
 
       - name: Find binary files and SVGs
         run: |
+          # Extract the repository name from GITHUB_REPOSITORY (e.g., owner/repo -> repo)
+          repo_name=$(basename "${GITHUB_REPOSITORY}")
+
           # Get a list of all files changed in the pull request
           files=$(git diff --name-only origin/${{ github.event.pull_request.base.ref }})
 
@@ -27,8 +30,8 @@ jobs:
           for file in $files; do
             # Check if the file exists (it might have been deleted)
             if [[ -f "$file" ]]; then
-              # Get the adjusted file path (remove /home/runner/work/repo/)
-              adjusted_path=$(realpath "$file" | sed "s|/home/runner/work/repo/||")
+              # Get the adjusted file path (replace /home/runner/work/<repo_name>/ with "")
+              adjusted_path=$(realpath "$file" | sed "s|/home/runner/work/${repo_name}/||")
 
               # Check if the file is binary
               if ! grep -Iq . "$file"; then
