@@ -21,7 +21,7 @@ $$\underbrace{\sum_i^n F_i}_{\text{sum of all external forces}} = \overbrace{m\t
 
 Let us consider the mass-spring system as a first example.
 
-![mass-spring](./figs/modelling/mass-spring-system.png "mass-spring")
+![mass-spring](https://files.mude.citg.tudelft.nl/mass-spring-system.png "mass-spring")
 
 For this system, Newton's equations of motion sketch as:
 

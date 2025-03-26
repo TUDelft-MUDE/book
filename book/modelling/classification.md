@@ -25,7 +25,7 @@ $$\begin{cases}x=v_0t\cos\theta \\ y=v_0t\sin\theta-\frac{1}{2}gt^2\end{cases}$$
 
 where $x$ and $y$ are the horizontal and vertical components of the position of the ball at time $t$, $v_0$ is the initial velocity, $\theta$ is the initial angle and $g$ is the gravity acceleration. The trajectory of the projectile depends on the velocity and angle we shoot the ball. In the figure below, different trajectories depending on $\theta$ and $v_0$ are shown. These are our predicted trajectories based on our very basic model.
 
-![projectile](./figs/modelling/projectile.png "projectile")
+![projectile](https://files.mude.citg.tudelft.nl/projectile.png)
 
 We will discuss other outside factors that may affect the validity of the model in the following sections. For now, can you think of how you may modify this model to reflect the real-life behaviour more accurately?
 
@@ -82,7 +82,7 @@ In the case of both these examples, it is advisable to build the model in a diff
 * **Accuracy and complexity:** very realistic models, but prohibitively expensive. i.e., not affordable
 * **Complexity and affordability:** the unicorn icon might speak for itself - difficult to achieve! i.e., its almost impossible to get an amazing model on a budget, that also accurately shows us what we need!
 
-![tradeoff](./figs/modelling/tradeoff.png "tradeoff")
+![tradeoff](https://files.mude.citg.tudelft.nl/tradeoff.png "tradeoff")
 
 ## Classifying Models
 

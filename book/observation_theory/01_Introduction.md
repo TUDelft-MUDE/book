@@ -91,7 +91,7 @@ This is model is linear in $\mathrm{x}$, therefore we refer to it as a linear mo
 #### Step function
 Consider a process with unknown parameter $x_1$ assumed to be constant up till time $t_{i-1}$, and a sudden change (step) at time $t_i$, after which the parameter remains constant at $x_2$. See {numref}`stepfun`.
 
-```{figure} ./figures/00_step.png
+```{figure} https://files.mude.citg.tudelft.nl/00_step.png
 ---
 height: 300px
 name: stepfun
@@ -129,7 +129,7 @@ $$
 #### Positioning model
 As a final example we will consider a non-linear functional model for estimating the unknown position $\mathrm{x}=\begin{bmatrix} x, y, z\end{bmatrix}^T$ of a satellite. The observables are distance measured with laser ranging from $m$ ground stations at known positions $\begin{bmatrix} x_i, y_i, z_i\end{bmatrix}^T$.
 
-```{figure} ./figures/01_laser.png
+```{figure} https://files.mude.citg.tudelft.nl/01_laser.png
 ---
 height: 200px
 name: LSfit
@@ -176,7 +176,7 @@ In this part, we will introduce different estimation principles, starting with (
 
 Note that regression analysis is not restricted to linear nor to bivariate cases.
 
-```{figure} ./figures/01_Regression.png
+```{figure} https://files.mude.citg.tudelft.nl/01_Regression.png
 ---
 height: 350px
 name: Regres
