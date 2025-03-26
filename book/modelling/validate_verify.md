@@ -10,7 +10,7 @@ We have already discussed that, when building a model, we have to make some deci
 
 Let us consider two different models, the mass-spring system (model 1) and a tower (described by a complex numerical model, making using of the Finite Element Method).
 
-% ![models](figs/modelling/models.png "models") source unknown
+% ![models](https://files.mude.citg.tudelft.nl/models.png "models") source unknown
 
 ![](https://files.mude.citg.tudelft.nl/replacement.svg)
 

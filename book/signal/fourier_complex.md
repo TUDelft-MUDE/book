@@ -72,7 +72,7 @@ $$\begin{gather*}X_1=\frac{1}{2}(a_1-jb_1), X_2=\frac{1}{2}(a_2-jb_2)\\ X_{-1}=\
 
 And we clearly see that $X_k=X^*_{-k}$, with $*$ denoting the complex conjugate. The visual representation of $X_k$ and $X_{-k}$ will be, therefore:
 
-![complex_plane](./figs/complex_plane.png "complex_plane")
+![complex_plane](https://files.mude.citg.tudelft.nl/complex_plane.png "complex_plane")
 
 We have $a_k=2\text{Re}(X_k)$ and $b_k=-2\text{Im}(X_k)$ for $k>0$
 
@@ -104,7 +104,7 @@ $$x(t)=\cos(2\pi f_0t)+2\cos(2\pi 2f_0t)+\cos(2\pi 3f_0t)+\sin(2\pi f_0t)$$
 
 Real and complex Fourier coefficients are shown below
 
-![coeffs](./figs/coeffs.png "coeffs")
+![coeffs](https://files.mude.citg.tudelft.nl/coeffs.png "coeffs")
 
 ## Summary
 

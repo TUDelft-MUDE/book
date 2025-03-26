@@ -37,7 +37,7 @@ Our model will be based on a series of assumptions depending on the problem we a
 
 Imagine you want to predict what would be the choice made by a rational individual to travel from Delft to Paris (i.e. given origin and destination). Would he choose to go by car or by train?
 
-%![distances](./figs/modelling/distances.png "distances")
+%![distances](https://files.mude.citg.tudelft.nl/distances.png "distances")
 ![](https://files.mude.citg.tudelft.nl/replacement.svg)
 We can consider the simplest model: the traveller will choose the shortest travelling time. In this case, according to our model, the traveller will choose to go by car. However, does this model accurately asess the travellers preference? **No.** Modelling people choices is way more complicated, since they also depend on other factors such as travel cost, comfort, sustainability, etc.
 

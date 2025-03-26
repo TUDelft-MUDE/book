@@ -1,3 +1,37 @@
+"""
+Script: parse_images.py
+
+Description:
+This script processes Markdown (.md) and Jupyter Notebook (.ipynb) files listed in a `_toc.yml` file.
+It identifies local image references (including MyST `figure` syntax) in these files, copies the images
+to a specified folder (`new_images`), and replaces the local image paths with a public URL
+(e.g., `https://files.mude.citg.tudelft.nl/<image_name>`).
+
+Key Features:
+- Parses `_toc.yml` to extract all Markdown and Notebook files.
+- Detects image references in Markdown files (e.g., `![alt text](image.png)`).
+- Detects MyST `figure` syntax (e.g., `{figure} /path/to/image.png`).
+- Resolves image paths relative to the file or project root.
+- Copies images to the `new_images` folder.
+- Updates the files to replace local image paths with public URLs.
+
+How to Use:
+1. Place this script in the root directory of your project (where `_toc.yml` is located).
+2. Ensure `_toc.yml` contains the list of files to process.
+3. Run the script using Python: python parse_images.py
+4. The script will:
+- Copy referenced images to the `new_images` folder.
+- Update the Markdown and Notebook files with the new image URLs.
+
+Dependencies:
+- Python 3.x
+- PyYAML (install using `pip install pyyaml`)
+
+Notes:
+- Ensure the script is run from the project root directory.
+- The `base_url` variable should be updated to match your desired public URL prefix.
+"""
+
 import os
 import re
 import shutil
@@ -68,16 +102,22 @@ def process_markdown(file_path):
     with open(file_path, "r", encoding="utf-8") as f:
         content = f.read()
 
-    # Find all standard Markdown image references
-    matches = re.findall(r"!\[.*?\]\((.*?)\)", content)
-    # Find all MyST figure syntax references
+    # Find all standard Markdown image references (e.g., ![alt text](path "title"))
+    matches = re.findall(r"!\[.*?\]\((.*?)(?:\s+\".*?\")?\)", content)
+    # Find all MyST figure syntax references (e.g., {figure} path)
     myst_matches = re.findall(r"\{figure\}\s+(.*?)\n---", content)
     matches.extend(myst_matches)
 
     for match in matches:
+        # Skip if the image path is already converted to the public URL
+        if match.startswith(base_url):
+            continue
+
         # Normalize and resolve the image path
         image_path = normalize_image_path(file_dir, match)
+
         if os.path.isfile(image_path):
+            print(f"Image found: {image_path}")  # Debugging output
             # Copy the image to the output folder
             image_name = os.path.basename(image_path)
             new_path = os.path.join(output_folder, image_name)
@@ -86,6 +126,8 @@ def process_markdown(file_path):
             # Replace the local URL with the new URL
             new_url = base_url + image_name
             content = content.replace(match, new_url)
+        else:
+            print(f"Warning: Image not found: {image_path}")  # Debugging output
 
     # Write the updated content back to the file
     with open(file_path, "w", encoding="utf-8") as f:
@@ -101,17 +143,22 @@ def process_notebook(file_path):
     for cell in notebook.get("cells", []):
         if cell.get("cell_type") == "markdown":
             for i, line in enumerate(cell.get("source", [])):
-                # Find all standard Markdown image references
-                matches = re.findall(r"!\[.*?\]\((.*?)\)", line)
-                # Find all MyST figure syntax references
+                # Find all standard Markdown image references (e.g., ![alt text](path "title"))
+                matches = re.findall(r"!\[.*?\]\((.*?)(?:\s+\".*?\")?\)", line)
+                # Find all MyST figure syntax references (e.g., {figure} path)
                 myst_matches = re.findall(r"\{figure\}\s+(.*?)\n---", line)
                 matches.extend(myst_matches)
 
                 for match in matches:
+                    # Skip if the image path is already converted to the public URL
+                    if match.startswith(base_url):
+                        continue
+                    
                     # Normalize and resolve the image path
                     image_path = normalize_image_path(file_dir, match)
-                    print(f"Resolved image path: {image_path}")  # Debugging output
+
                     if os.path.isfile(image_path):
+                        print(f"Image found: {image_path}")  # Debugging output
                         # Copy the image to the output folder
                         image_name = os.path.basename(image_path)
                         new_path = os.path.join(output_folder, image_name)
@@ -121,6 +168,8 @@ def process_notebook(file_path):
                         new_url = base_url + image_name
                         cell["source"][i] = cell["source"][i].replace(match, new_url)
                         updated = True
+                    else:
+                        print(f"Warning: Image not found: {image_path}")  # Debugging output
 
     # Write the updated notebook back to the file if changes were made
     if updated:
