@@ -3,16 +3,16 @@
 # Make key unique
 
 sources:
-  - key: model_concepts
+  modelling_concepts:
     title: Example key
     authors:
       - Author One
       - Author Two
-  - key: uncertainty_propagation
+  uncertainty_propagation:
     title: Another Example
     authors:
       - Author Three
-  - key: observation_theory
+  observation_theory:
     title: Yet Another Example
     authors:
       - Author Four

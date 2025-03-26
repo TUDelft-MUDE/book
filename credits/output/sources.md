@@ -1,0 +1,14 @@
+Summary of Individual Sources
+================================================
+modelling_concepts
+    title:Example key
+    authors: Author One, Author Two
+================================================
+uncertainty_propagation
+    title:Another Example
+    authors: Author Three
+================================================
+observation_theory
+    title:Yet Another Example
+    authors: Author Four, Author Five
+================================================

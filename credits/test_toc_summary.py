@@ -23,5 +23,5 @@ print(f"First section has these files:")
 for f in toc_data['parts'][0]['chapters'][0]['sections']:
     print(f"- {f['file']}")
 
-output_file_toc = Path.joinpath(OUTPUT, "toc_summary.md")
+output_file_toc = Path.joinpath(OUTPUT, SUMMARY_OF_TOC_FILES)
 summarize_toc(toc_data, output_file_toc)
