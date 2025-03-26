@@ -9,7 +9,7 @@ Once we have accounted for the physical characteristics of the random variable, 
 
 In order to illustrate these techniques, the following toy example will be used. The set of observations is represented in the plots below by its pdf and cdf. A Gaussian ($N(5.17, 5.76)$) and an Exponential distributions ($Expon(-5.25, 10.42)$) are fitted to the data. GOF techniques will be applied to determine which one of the two models fits the data best.
 
-```{figure} /probability/figures/GOF_data.png
+```{figure} https://files.mude.citg.tudelft.nl/GOF_data.png
 
 ---
 
@@ -136,7 +136,7 @@ After that, the $p-value$ is also computed, obtaining $p-value = 0.93$. This mea
 
 An engineer is characterizing the axle loads transmited by the traffic on a bridge. Based on the observations, a Normal and a Gumbel distributions are fitted, as shown in the figure below. 
 
-```{figure} /probability/figures/GOF_ex.png
+```{figure} https://files.mude.citg.tudelft.nl/GOF_ex.png
 
 ---
 

@@ -10,7 +10,7 @@ In order to illustrate these techniques, the following example will be used. Wav
 
 The first step when addressing a problem is to visualize it. Thus, the first GOF technique recommended here (note that it is not a metric) is visual inspection. It is common practice to plot the reference values against the predictions given by our model, as shown below. The perfect fit would correspond to all the points aligned with the 45-degrees line.
 
-%```{figure} ./figs/Visual_inspection.png
+%```{figure} https://files.mude.citg.tudelft.nl/Visual_inspection.png
 %
 %---
 %

@@ -8,7 +8,7 @@ This page covers fundamental concepts for _continuous random variables._ As we a
 
 Here we will illustrate probability computations using a bivariate case. Consider the discharge of two rivers that are located in the same watershed, $Q_1$ and $Q_2$. There are 34 observations each of the discharges that were taken at the same time (this is important for multivariate distributions!). The observations are illustrated in the figure below (panel (a)).
 
-```{figure} ./figures/samples_marginal.svg
+```{figure} https://files.mude.citg.tudelft.nl/samples_marginal.svg
 
 ---
 width:90%
@@ -382,7 +382,7 @@ $$
 P[q_1 \leq 100  \;\textrm{m}^3\textrm{/s} \;\cup\; q_2 \leq 75  \;\textrm{m}^3\textrm{/s}]=24/34 = 0.71
 $$
 
-```{figure} ./figures/or.svg
+```{figure} https://files.mude.citg.tudelft.nl/or.svg
 
 ---
 name: or_empirical
@@ -627,7 +627,7 @@ $$
 P[q_2 > 150  \;\textrm{m}^3\textrm{/s}|q_1 > 130 \;\textrm{m}^3\textrm{/s}]=2/6 = 0.33
 $$
 
-```{figure} ./figures/conditional.svg
+```{figure} https://files.mude.citg.tudelft.nl/conditional.svg
 
 ---
 
