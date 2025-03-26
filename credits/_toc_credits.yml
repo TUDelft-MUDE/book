@@ -53,7 +53,8 @@ parts:
       - file: observation_theory/99_NotationFormulas
     
     - file: numerical_methods/overview
-      title: Numerical Modelling
+      title: Numerical Modelling\
+      credit: numerical_modelling
       sections:
       - file: numerical_methods/1-revision-of-concepts.ipynb
       - file: numerical_methods/2-derivative.ipynb
@@ -69,6 +70,7 @@ parts:
 
     - file: probability/Reminder_intro
       title: Univariate Continuous Distributions
+      credit: continuous_distributions
       sections:
       - file: probability/PDF_CDF
       - file: probability/empirical
@@ -92,6 +94,7 @@ parts:
 
     - file: multivariate/overview
       title: Multivariate Distributions
+      credit: multivariate_distributions
       sections:
       - file: multivariate/events
         title: Discrete Events
@@ -119,6 +122,7 @@ parts:
     chapters:
     - file: fvm/intro.md
       title: Finite Volume Method
+      credit: finite_volume_method
       sections:
       - file: fvm/getting_started_new.ipynb
         title: Getting Started
@@ -131,6 +135,7 @@ parts:
 
     - file: fem/intro.md
       title: Finite Element Method
+      credit: finite_element_method
       sections:
       - file: fem/strong.md
       - file: fem/weak.md

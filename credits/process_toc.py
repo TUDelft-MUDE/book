@@ -7,7 +7,7 @@ def summarize_toc(data, output_file):
 
     sources = load_sources()
 
-    toc_summary = "Summary of ToC and Files\n"
+    toc_summary = ""
     toc_summary += "Summary of Files\n"
     count_all = [0, 0, 0, 0, 0]
     Np = 0
@@ -27,7 +27,7 @@ def summarize_toc(data, output_file):
             credited[0] = True
             if p['credit'] not in sources.keys():
                 toc_summary += not_in_sources(p['credit'])
-        elif not credited:
+        elif not credited[0]:
             toc_summary += not_credited()
 
         for c in p['chapters']:
@@ -45,7 +45,7 @@ def summarize_toc(data, output_file):
                 credited[1] = True
                 if c['credit'] not in sources.keys():
                     toc_summary += not_in_sources(c['credit'])
-            elif not credited:
+            elif not credited[0:1]:
                 toc_summary += not_credited()
 
             if 'sections' in c.keys():
@@ -68,7 +68,7 @@ def summarize_toc(data, output_file):
                         credited[2] = True
                         if s['credit'] not in sources.keys():
                             toc_summary += not_in_sources(s['credit'])
-                    elif not credited:
+                    elif not credited[0:2]:
                         toc_summary += not_credited()
 
                     if 'sections' in s.keys():
@@ -91,7 +91,7 @@ def summarize_toc(data, output_file):
                                 credited[3] = True
                                 if ss['credit'] not in sources.keys():
                                     toc_summary += not_in_sources(ss['credit'])
-                            elif not credited:
+                            elif not credited[0:3]:
                                 toc_summary += not_credited()
 
                             if 'sections' in ss.keys():
@@ -114,12 +114,16 @@ def summarize_toc(data, output_file):
                                         credited[4] = True
                                         if sss['credit'] not in sources.keys():
                                             toc_summary += not_in_sources(sss['credit'])
-                                    elif not credited:
+                                    elif not credited[0:4]:
                                         toc_summary += not_credited()
 
                                 if 'sections' in sss.keys():
                                     toc_summary += f"WARNING-----------^^^^^^^^^ this sub-sub-section has unprocessed sub-sub-sub-sections\n"
-        credited = False # reset for next part
+                        credited[4] = False
+                    credited[3] = False
+                credited[2] = False
+            credited[1] = False
+        credited[0] = False # reset for next part
     toc_summary_header = "File Count\n==========\n"
     toc_summary_header += f"  Parts:            {count_all[0]:4}\n"
     toc_summary_header += f"  Chapters:         {count_all[1]:4}\n"

@@ -4,16 +4,65 @@
 
 sources:
   modelling_concepts:
-    title: Example key
-    authors:
-      - Author One
-      - Author Two
+    author:
+      - Alessandro Cabboi
+      - Patricia Mares Nasarre
+      - Robert Lanzafame
+    acknowledgements:
+      - João Moura Pereira de Lucas Teixeira
+    type: internal
+    note: |
+      Alessandro made most of the slides, which were transcribed by Joao in 2023. Robert and Patricia modified and re-wrote some material into book format for 2023. Patricia especially added to the GoF page.
+      
+      Status of figures is unclear.
+
   uncertainty_propagation:
-    title: Another Example
-    authors:
-      - Author Three
+    author:
+      - Sandra Verhagen
+    type: internal
+
   observation_theory:
-    title: Yet Another Example
-    authors:
-      - Author Four
-      - Author Five
+    author:
+      - Sandra Verhagen
+    type: external
+    note: |
+      Special case!!!
+
+  numerical_modelling:
+    author:
+      - Hmmmmm
+      - Justin Pitman
+      - more
+    type: internal
+
+  continuous_distributions:
+    author:
+      - Patricia Mares Nasarre
+      - ???
+    type: internal
+    note: |
+      Not sure if/when we move it to another book, and how to handle that.
+
+  multivariate_distributions:
+    author:
+      - Robert Lanzafame
+      - Patricia Mares Nasarre
+    type: internal
+    note: |
+      Not sure if/when we move it to another book, and how to handle that.
+
+  finite_volume_method:
+    author:
+      - Robert Lanzafame
+      - Jaime Arriaga Garcia
+    type: internal
+    license: CC BY
+
+  finite_element_method:
+    author:
+      - Frans van der Meer
+      - Oriol?
+      - Martin?
+    type: external
+    license: CC-BY (but not yet confirmed?)
+

@@ -9,3 +9,10 @@ Eventually the `_toc_credits.yml` will be part of our long-dreamed-for "table of
 Features to add:
 - check for missing entries between `_toc.yml` and `_toc_credits.yml`
 - itemize files for which each credit/source applies
+
+
+Keys for sources:
+- type:
+  - internal = distributed as part of MUDE book
+  - external = from somewhere else
+  - processed based on yet-to-be-determined metadata
