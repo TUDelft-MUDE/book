@@ -16,8 +16,7 @@ jobs:
       - name: Find binary files and SVGs
         run: |
           # Get a list of all files changed in the pull request
-          files=$(git diff --name-only origin/${{ github.event.pull_request.base.ref }})
-
+          files=$(git diff --name-only -z origin/${{ github.event.pull_request.base.ref }})
           # Initialize a flag to track errors
           error_flag=0
           summary_file="$GITHUB_STEP_SUMMARY"
