@@ -1,0 +1,46 @@
+name: Block Binary Files
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  check-binary-files:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Find binary files and SVGs
+        run: |
+          # Get a list of all files in the commit
+          files=$(git diff --name-only HEAD^ HEAD)
+
+          # Initialize a flag to track errors
+          error_flag=0
+
+          for file in $files; do
+            # Check if the file exists (it might have been deleted)
+            if [[ -f "$file" ]]; then
+              # Check if the file is binary
+              if ! grep -Iq . "$file"; then
+                echo "Error: Binary file detected: $file"
+                error_flag=1
+              fi
+
+              # Check if the file is an SVG
+              if [[ "$file" == *.svg ]]; then
+                echo "Error: SVG file detected: $file"
+                error_flag=1
+              fi
+            fi
+          done
+
+          # Exit with an error if any binary files or SVGs were found
+          if [[ $error_flag -eq 1 ]]; then
+            echo "Commit contains binary files or SVGs. Please remove them and add them with FTP."
+            exit 1
+          fi
