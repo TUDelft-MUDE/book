@@ -1,6 +1,15 @@
-Summary of ToC and Files
+File Count
+==========
+  Parts:               5
+  Chapters:           36
+  Sections:          112
+  Sub-sections:       61
+  Sub-sub-sections:   11
+  ----------------------
+  Total files:       225
 
-summarize_toc: Table of Contents Summary
+Summary of ToC and Files
+Summary of Files
 ========
 Part 1: Q1 Topics
 ========
@@ -8,6 +17,7 @@ Part 1: Q1 Topics
 	========
 	  1:  file: ./modelling/overview
 	     title: Modelling Concepts
+CREDIT FOUND	     credit: modelling_concepts
 		Sections in Chapter 1
 		======================
 		  1:  file: ./modelling/classification
@@ -19,6 +29,8 @@ Part 1: Q1 Topics
 		  4:  file: ./modelling/gof
 		     title: Goodness of Fit
 	  2:  file: ./propagation_uncertainty/overview
+WARNING-----------^^^^^^^^^
+     file has a credit that conflicts with a higher level in toc tree credits
 		Sections in Chapter 2
 		======================
 		  1:  file: ./propagation_uncertainty/00a_CovCorr.md
@@ -27,6 +39,8 @@ Part 1: Q1 Topics
 		  4:  file: ./propagation_uncertainty/01_ErrorPropagation.md
 		  5:  file: ./propagation_uncertainty/02_LinearPropagation.md
 	  3:  file: ./observation_theory/overview.md
+WARNING-----------^^^^^^^^^
+     file has a credit that conflicts with a higher level in toc tree credits
 		Sections in Chapter 3
 		======================
 		  1:  file: ./observation_theory/01_Introduction.md

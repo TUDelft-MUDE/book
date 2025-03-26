@@ -4,7 +4,7 @@ from config import *
 from process_toc import summarize_toc
 
 # Load the table of contents information from the YAML file
-with TOC_FILE.open() as file:
+with TOC_FILE_CREDITS.open() as file:
     toc_data = yaml.safe_load(file)
 
 print(f"Processing file {TOC_FILE}:\n")
