@@ -11,7 +11,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0 # Fetch all history so we can compare branche
+          fetch-depth: 0 # Fetch all history so we can compare branches
 
       - name: Find binary files and SVGs
         run: |
@@ -20,6 +20,9 @@ jobs:
 
           # Initialize a flag to track errors
           error_flag=0
+          summary_file="$GITHUB_STEP_SUMMARY"
+
+          echo "### Errors Found in Pull Request" > $summary_file
 
           for file in $files; do
             # Check if the file exists (it might have been deleted)
@@ -27,12 +30,14 @@ jobs:
               # Check if the file is binary
               if ! grep -Iq . "$file"; then
                 echo "Error: Binary file detected: $file"
+                echo "- Binary file detected: \`$file\`" >> $summary_file
                 error_flag=1
               fi
 
               # Check if the file is an SVG
               if [[ "$file" == *.svg ]]; then
                 echo "Error: SVG file detected: $file"
+                echo "- SVG file detected: \`$file\`" >> $summary_file
                 error_flag=1
               fi
             fi
@@ -40,6 +45,6 @@ jobs:
 
           # Exit with an error if any binary files or SVGs were found
           if [[ $error_flag -eq 1 ]]; then
-            echo "Commit contains binary files or SVGs. Please remove them and add them with FTP (explained here: https://tudelft-mude.github.io/teacher/FTP.html)."
+            echo "Please remove the binary and/or SVG files and add them with FTP (explained here: https://tudelft-mude.github.io/teacher/FTP.html)." >> $summary_file
             exit 1
           fi
