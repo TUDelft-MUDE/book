@@ -9,9 +9,11 @@ to a specified folder (`new_images`), and replaces the local image paths with a 
 
 Key Features:
 - Parses `_toc.yml` to extract all Markdown and Notebook files.
-- Detects image references in Markdown files (e.g., `![alt text](image.png)`).
+- Detects image references in Markdown files (e.g., `![alt text](image.png "title")`).
 - Detects MyST `figure` syntax (e.g., `{figure} /path/to/image.png`).
 - Resolves image paths relative to the file or project root.
+- Handles image paths with optional titles (e.g., `"title"`) in Markdown and Notebook files.
+- Skips processing images that are already converted to the public URL.
 - Copies images to the `new_images` folder.
 - Updates the files to replace local image paths with public URLs.
 
@@ -30,6 +32,10 @@ Dependencies:
 Notes:
 - Ensure the script is run from the project root directory.
 - The `base_url` variable should be updated to match your desired public URL prefix.
+- The script handles image paths in the following formats:
+  - Relative paths (e.g., `image.png`, `./image.png`).
+  - Absolute paths (e.g., `/path/to/image.png`).
+  - Paths with optional titles (e.g., `![alt text](image.png "title")`).
 """
 
 import os
@@ -142,34 +148,39 @@ def process_notebook(file_path):
     updated = False
     for cell in notebook.get("cells", []):
         if cell.get("cell_type") == "markdown":
-            for i, line in enumerate(cell.get("source", [])):
-                # Find all standard Markdown image references (e.g., ![alt text](path "title"))
-                matches = re.findall(r"!\[.*?\]\((.*?)(?:\s+\".*?\")?\)", line)
-                # Find all MyST figure syntax references (e.g., {figure} path)
-                myst_matches = re.findall(r"\{figure\}\s+(.*?)\n---", line)
-                matches.extend(myst_matches)
+            # Join all lines in the cell into a single string
+            cell_content = "".join(cell.get("source", []))
 
-                for match in matches:
-                    # Skip if the image path is already converted to the public URL
-                    if match.startswith(base_url):
-                        continue
-                    
-                    # Normalize and resolve the image path
-                    image_path = normalize_image_path(file_dir, match)
+            # Find all standard Markdown image references (e.g., ![alt text](path "title"))
+            matches = re.findall(r"!\[.*?\]\((.*?)(?:\s+\".*?\")?\)", cell_content)
+            # Find all MyST figure syntax references (e.g., {figure} path)
+            myst_matches = re.findall(r"\{figure\}\s+(.*?)\s*\n---", cell_content)
+            matches.extend(myst_matches)
 
-                    if os.path.isfile(image_path):
-                        print(f"Image found: {image_path}")  # Debugging output
-                        # Copy the image to the output folder
-                        image_name = os.path.basename(image_path)
-                        new_path = os.path.join(output_folder, image_name)
-                        shutil.copy(image_path, new_path)
+            for match in matches:
+                # Skip if the image path is already converted to the public URL
+                if match.startswith(base_url):
+                    continue
 
-                        # Replace the local URL with the new URL
-                        new_url = base_url + image_name
-                        cell["source"][i] = cell["source"][i].replace(match, new_url)
-                        updated = True
-                    else:
-                        print(f"Warning: Image not found: {image_path}")  # Debugging output
+                # Normalize and resolve the image path
+                image_path = normalize_image_path(file_dir, match)
+
+                if os.path.isfile(image_path):
+                    print(f"Image found: {image_path}")  # Debugging output
+                    # Copy the image to the output folder
+                    image_name = os.path.basename(image_path)
+                    new_path = os.path.join(output_folder, image_name)
+                    shutil.copy(image_path, new_path)
+
+                    # Replace the local URL with the new URL
+                    new_url = base_url + image_name
+                    cell_content = cell_content.replace(match, new_url)
+                    updated = True
+                else:
+                    print(f"Warning: Image not found: {image_path}")  # Debugging output
+
+            # Split the updated content back into lines and update the cell
+            cell["source"] = cell_content.splitlines(keepends=True)
 
     # Write the updated notebook back to the file if changes were made
     if updated:
