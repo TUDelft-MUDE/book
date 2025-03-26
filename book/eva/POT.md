@@ -5,7 +5,7 @@ The second technique for sampling extremes is Peak Over Threshold (POT). This te
 
 Let's apply it to our time series. We are going to use a threshold $th = 2.5m$ and a declustering time $dl = 48h$. This is, we will select the values higher than 2.5m that have a 'distance' between them of at least 48h. In the figure below, you can see how the application of this method looks like.
 
-```{figure} ../figures/EVA/POT.png
+```{figure} https://files.mude.citg.tudelft.nl/POT.png
 
 ---
 
@@ -15,7 +15,7 @@ Application of POT to $H_s$ time series with $th = 2.5m$ and $dl = 48h$.
 
 We can see in the figure a concentration of extremes during the first months of 1991 and 1992, even if we have set $dl = 48h$. This means that there were several storms in the beginning of the year. When comparing POT with Block Maxima (see Figure below), we can see that more extremes are sampled using POT. The main disadvantage of Block Maxima is derived from its simplicity: only one maxima is sampled in each block. Thus, there may be other extreme observations (storms in this example) which are not sampled within the same block. Consequently, a higher number of extremes is usually sampled when using POT, although its application is a bit more complicated, as we will see in the following sections. For instance, in our example we obtained 20 extreme observations when applying Yearly Maxima (20 years of observations), while we sampled 54 extreme observations when using POT.
 
-```{figure} ../figures/EVA/POT_Block.png
+```{figure} https://files.mude.citg.tudelft.nl/POT_Block.png
 
 ---
 
@@ -33,7 +33,7 @@ When introducing the concept of $RT$, we saw that one of the basic assumptions o
 
 A storm is a phenomenom which lasts several hours, so if we take a look at the time series of hourly $H_s$ during a storm (see Figure below) we see how registered $H_s$ goes up, stays around the maximum values for a while and, later, goes down. Therefore, we can say that there is a concentration of extreme values in the storms. For instance, there are 5 observations in a row above $th = 2.5m$. However, these extremes are caused by the same drivers and are thus dependent. If we included all of them in our EVA analysis, we would be violating the basic assumption of EVA of *iid* extremes. This phenomenom of concentration of extremes in time is called **clustering**: we say that extremes cluster in time, since an extreme phenomenom is not composed by a single observation. 
 
-```{figure} ../figures/EVA/clustering.png
+```{figure} https://files.mude.citg.tudelft.nl/clustering.png
 
 ---
 

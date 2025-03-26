@@ -92,7 +92,7 @@ def normalize_image_path(file_dir, image_path):
         resolved_path = os.path.join(project_root, image_path.lstrip("/"))
     else:
         # Resolve the path relative to the file's directory
-        resolved_path = os.path.join(file_dir, image_path.lstrip("./"))
+        resolved_path = os.path.normpath(os.path.join(file_dir, image_path))
     return resolved_path
 
 # Function to find and replace local image references
@@ -112,7 +112,7 @@ def process_markdown(file_path):
     matches = re.findall(r"!\[.*?\]\((.*?)(?:\s+\".*?\")?\)", content)
     # Find all MyST figure syntax references (e.g., {figure} path)
     # Handles cases where the `---` block is missing or caption follows directly
-    myst_matches = re.findall(r"\{figure\}\s+(.*?)\s*\n", content)
+    myst_matches = re.findall(r"\{figure\}\s+(.*?)\s*(?:\n|$)", content)
     matches.extend(myst_matches)
 
     for match in matches:
@@ -155,7 +155,7 @@ def process_notebook(file_path):
             # Find all standard Markdown image references (e.g., ![alt text](path "title"))
             matches = re.findall(r"!\[.*?\]\((.*?)(?:\s+\".*?\")?\)", cell_content)
             # Find all MyST figure syntax references (e.g., {figure} path)
-            myst_matches = re.findall(r"\{figure\}\s+(.*?)\s*\n", cell_content)
+            myst_matches = re.findall(r"\{figure\}\s+(.*?)\s*(?:\n|$)", cell_content)
             matches.extend(myst_matches)
 
             for match in matches:

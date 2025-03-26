@@ -52,7 +52,7 @@ $
 
 Note that $th$ acts like a location parameter for the GPD distribution. In the plot below, this effect is illustrated.
 
-```{figure} ../figures/EVA/GPD_loc.png
+```{figure} https://files.mude.citg.tudelft.nl/GPD_loc.png
 
 ---
 
@@ -62,7 +62,7 @@ Influence of shape parameter on pareto distribution.
 
 Similarly to the GEV, $\xi$ determines the behavior of the tail of the distribution. If $\xi<0$, the distribution presents an upper bound at $th-\sigma_{th}/\xi$. If $\xi>0$, the distribution has a heavy upper tail that behaves like a power function of the exponent $-1/\xi$. If both $\xi=0$ and $th=0$, GPD reduces to the Exponential distribution and if $\xi=-1$, to the uniform distribution. We can see it in the following plot.
 
-```{figure} ../figures/EVA/GPD_shape_2.png
+```{figure} https://files.mude.citg.tudelft.nl/GPD_shape_2.png
 
 ---
 
@@ -74,7 +74,7 @@ In the above plot, we have the cdf of four GPDs with a $th=0$, $\sigma_{th}=1$ a
 
 Regarding the scale parameter $\sigma_{th}$, it presents a behavior equivalent to that observed on $\sigma$ for the GEV distribution. The higher $\sigma_{th}$, the wider the pdf of the distribution.
 
-```{figure} ../figures/EVA/GPD_scale.png
+```{figure} https://files.mude.citg.tudelft.nl/GPD_scale.png
 
 ---
 
