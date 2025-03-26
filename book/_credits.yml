@@ -1,21 +1,19 @@
 # Credits
 
+# Make key unique
+
 sources:
-  - title: Example Title
-    week_number: 1
+  - key: model_concepts
+    title: Example key
     authors:
       - Author One
       - Author Two
-  - title: Another Example
-    week_number: 2
+  - key: uncertainty_propagation
+    title: Another Example
     authors:
       - Author Three
-  - title: Yet Another Example
-    week_number: 3
+  - key: observation_theory
+    title: Yet Another Example
     authors:
       - Author Four
       - Author Five
-  - title: Final Example
-    week_number: 4
-    authors:
-      - Author Six
