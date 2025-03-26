@@ -62,10 +62,10 @@ $$ (1drodNeumann)
 ````{admonition} Strange formula?
 :class: dropdown
 For some reason we don't fully understand the formula's above might show some strang colorred-statement. You can solve this by opening this page in a incognito window or by clearing your cache. The formula's should look like this:
-```{figure} https://files.mude.citg.tudelft.nl//equation1.png
+```{figure} https://files.mude.citg.tudelft.nl/equation1.png
 :width: 300px
 ```
-```{figure} https://files.mude.citg.tudelft.nl//equation2.png
+```{figure} https://files.mude.citg.tudelft.nl/equation2.png
 :width: 200px
 ```
 ````
