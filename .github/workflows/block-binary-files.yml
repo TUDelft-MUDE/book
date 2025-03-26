@@ -27,17 +27,20 @@ jobs:
           for file in $files; do
             # Check if the file exists (it might have been deleted)
             if [[ -f "$file" ]]; then
+              # Get the adjusted file path (remove /home/runner/work/repo/)
+              adjusted_path=$(realpath "$file" | sed "s|/home/runner/work/repo/||")
+
               # Check if the file is binary
               if ! grep -Iq . "$file"; then
-                echo "Error: Binary file detected: $file"
-                echo "- Binary file detected: \`$file\`" >> $summary_file
+                echo "Error: Binary file detected: $file (full path: $adjusted_path)"
+                echo "- Binary file detected: \`$file\` (full path: \`$adjusted_path\`)" >> $summary_file
                 error_flag=1
               fi
 
               # Check if the file is an SVG
               if [[ "$file" == *.svg ]]; then
-                echo "Error: SVG file detected: $file"
-                echo "- SVG file detected: \`$file\`" >> $summary_file
+                echo "Error: SVG file detected: $file (full path: $adjusted_path)"
+                echo "- SVG file detected: \`$file\` (full path: \`$adjusted_path\`)" >> $summary_file
                 error_flag=1
               fi
             fi
