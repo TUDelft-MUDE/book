@@ -1,9 +1,6 @@
 name: Block Binary Files
 
 on:
-  push:
-    branches:
-      - main
   pull_request:
 
 jobs:
@@ -16,8 +13,8 @@ jobs:
 
       - name: Find binary files and SVGs
         run: |
-          # Get a list of all files in the commit
-          files=$(git diff --name-only HEAD^ HEAD)
+          # Get a list of all files changed in the pull request
+          files=$(git diff --name-only origin/${{ github.event.pull_request.base.ref }})
 
           # Initialize a flag to track errors
           error_flag=0
