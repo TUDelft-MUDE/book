@@ -6,7 +6,7 @@ def summarize_toc(data, output_file):
     toc_summary += "Summary of Files\n"
     count_all = [0, 0, 0, 0, 0]
     Np = 0
-    credited = False
+    credited = [False, False, False, False, False]
     for p in data['parts']:
         Np += 1
         count_all[0] +=1
@@ -19,7 +19,9 @@ def summarize_toc(data, output_file):
 
         if 'credit' in p.keys():
             toc_summary += f"\t    credit: {p['credit']}\n"
-            credited = True
+            credited[0] = True
+        elif not credited:
+            toc_summary += not_credited()
 
         for c in p['chapters']:
             Nc += 1
@@ -28,14 +30,17 @@ def summarize_toc(data, output_file):
             if 'title' in c.keys():
                 toc_summary += f"\t     title: {c['title']}\n"
             
-            if 'credit' in c.keys() and credited:
+            if 'credit' in c.keys() and credited[0]:
                 toc_summary += f"WARNING-----------^^^^^^^^^\n"
                 toc_summary += f"     file has a credit that conflicts with a higher level in toc tree credits\n"
             elif 'credit' in c.keys():
-                toc_summary += f"\tt    credit: {c['credit']}\n"
-                credited = True
+                toc_summary += f"\t    credit: {c['credit']}\n"
+                credited[1] = True
+            elif not credited:
+                toc_summary += not_credited()
 
             if 'sections' in c.keys():
+                # process sections
                 toc_summary += f"\t\tSections in Chapter {Nc}\n"
                 toc_summary += f"\t\t======================\n"
                 Ns = 0
@@ -46,7 +51,17 @@ def summarize_toc(data, output_file):
                     if 'title' in s.keys():
                         toc_summary += f"\t\t     title: {s['title']}\n"
 
+                    if 'credit' in s.keys() and credited[1]:
+                        toc_summary += f"WARNING---------------^^^^^^^^^\n"
+                        toc_summary += f"     file has a credit that conflicts with a higher level in toc tree credits\n"
+                    elif 'credit' in s.keys():
+                        toc_summary += f"\t\t    credit: {s['credit']}\n"
+                        credited[2] = True
+                    elif not credited:
+                        toc_summary += not_credited()
+
                     if 'sections' in s.keys():
+                        # process SUB-sections
                         toc_summary += f"\t\t\tSub-sections in Section {Ns}\n"
                         toc_summary += f"\t\t\t==========================\n"
                         Nss = 0
@@ -57,7 +72,17 @@ def summarize_toc(data, output_file):
                             if 'title' in ss.keys():
                                 toc_summary += f"\t\t\t     title: {ss['title']}\n"
 
+                            if 'credit' in s.keys() and credited[2]:
+                                toc_summary += f"WARNING---------------^^^^^^^^^\n"
+                                toc_summary += f"     file has a credit that conflicts with a higher level in toc tree credits\n"
+                            elif 'credit' in s.keys():
+                                toc_summary += f"\t\t\t    credit: {s['credit']}\n"
+                                credited[3] = True
+                            elif not credited:
+                                toc_summary += not_credited()
+
                             if 'sections' in ss.keys():
+                                # process SUB-SUB-sections
                                 toc_summary += f"\t\t\t\tSub-sub-sections in Sub-section {Nss}\n"
                                 toc_summary += f"\t\t\t\t====================================\n"
                                 Nsss = 0
@@ -68,12 +93,18 @@ def summarize_toc(data, output_file):
                                     if 'title' in sss.keys():
                                         toc_summary += f"\t\t\t\t     title: {sss['title']}\n"
 
+                                    if 'credit' in ss.keys() and credited[3]:
+                                        toc_summary += f"WARNING-------------------^^^^^^^^^\n"
+                                        toc_summary += f"     file has a credit that conflicts with a higher level in toc tree credits\n"
+                                    elif 'credit' in ss.keys():
+                                        toc_summary += f"\t\t\t\t    credit: {ss['credit']}\n"
+                                        credited[4] = True
+                                    elif not credited:
+                                        toc_summary += not_credited()
+
                                 if 'sections' in sss.keys():
                                     toc_summary += f"WARNING-----------^^^^^^^^^ this sub-sub-section has unprocessed sub-sub-sub-sections\n"
-                        else:
-                            toc_summary += f"\t\t\tSection {Ns:2} has no sub-sections\n"
-
-        credited = False
+        credited = False # reset for next part
     toc_summary_header = "File Count\n==========\n"
     toc_summary_header += f"  Parts:            {count_all[0]:4}\n"
     toc_summary_header += f"  Chapters:         {count_all[1]:4}\n"
@@ -86,3 +117,11 @@ def summarize_toc(data, output_file):
     with open(output_file, 'w') as f:
         f.write(toc_summary_header)
         f.write(toc_summary)
+
+def not_credited():
+    message = "WARNING----------------------------------\n"
+    message += f"        file listed above has no credit,\n"
+    message += f"        nor any credit higher in tree\n"
+    message += "-----------------------------------------\n"
+    # message = ""
+    return message
