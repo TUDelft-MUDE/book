@@ -10,6 +10,8 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # Fetch all history so we can compare branche
 
       - name: Find binary files and SVGs
         run: |
@@ -38,6 +40,6 @@ jobs:
 
           # Exit with an error if any binary files or SVGs were found
           if [[ $error_flag -eq 1 ]]; then
-            echo "Commit contains binary files or SVGs. Please remove them and add them with FTP."
+            echo "Commit contains binary files or SVGs. Please remove them and add them with FTP (explained here: https://tudelft-mude.github.io/teacher/FTP.html)."
             exit 1
           fi
