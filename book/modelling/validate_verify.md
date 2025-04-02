@@ -10,9 +10,9 @@ We have already discussed that, when building a model, we have to make some deci
 
 Let us consider two different models, the mass-spring system (model 1) and a tower (described by a complex numerical model, making using of the Finite Element Method).
 
-% ![models](figs/modelling/models.png "models") source unknown
+% ![models](https://files.mude.citg.tudelft.nl/models.png "models") source unknown
 
-![](../replacement.svg)
+![](https://files.mude.citg.tudelft.nl/replacement.svg)
 
 Both models do **not exactly represent** the real structure, but they can be valid models in which we can trust to answer to certain research questions. For example:
 

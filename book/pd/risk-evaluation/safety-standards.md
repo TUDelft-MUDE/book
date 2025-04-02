@@ -110,7 +110,7 @@ Safety standards can be used to set limits to the individual and societal risk. 
 
 Societal risk can be evaluated by means of an FN limit line. The calculated FN curve of the system should, in principle, not exceed the limit line. An FN-criterion is defined by three variables: (1) its base point (the exceedance probability of 1 fatality, i.e. C), (2) its slope ($\alpha$), and (3) its probability and/or consequence cut-off ($A$ and $B$). {numref}`limit_line` shows the different constraints that could make up an FN limit line. 
 
-```{figure} ../figures/fn_limit_eq.png
+```{figure} https://files.mude.citg.tudelft.nl/fn_limit_eq.png
 ---
 height: 400px
 name: limit_line
@@ -135,7 +135,7 @@ For different applications limit lines have been developed with varying constant
 
 ````{admonition} Exaple: Risk Matrix
 Risk matrices are often used in various industries for risk evaluation and decision support, for example, to quickly prioritize actions, especially in time-sensitive situations. For a given undesired event the extent of probability and consequences are estimated on a qualitative or semi-quantitative scale, see {numref}`risk_matrix` for an example. Ranges of failure probabilities or consequences can be assigned to the qualitative terms on the axes in the example. The combination of probability and consequence determines the level of risk, and depending on the application, whether it is acceptable or whether it requires more attention and risk reduction efforts. However, unlike the FN curve, the cumulative effects of multiple possible events are generally not considered in a risk matrix.
-```{figure} ../figures/risk_matrix.png
+```{figure} https://files.mude.citg.tudelft.nl/risk_matrix.png
 ---
 width: 500px
 name: risk_matrix
@@ -151,7 +151,7 @@ The cornerstones of the Dutch major hazards policy are a) the use of quantitativ
 
 Within the Dutch major hazards policy, individual risk is defined as the probability of death of an average, unprotected person that is constantly present at a certain location. It is thereby a property of location and iso-risk contours can be plotted on a map (see {numref}`risk_contour`). Individual risk is therefore also named local risk (“plaatsgebonden risico”) in the Netherlands. The shape of the risk contours for other applications will look different. For airports the contours will follow the shape of the runway and flight paths, for polders and flooding the risk contours will be highest in the deepest part of the polder. 
 
-```{figure} ../figures/risk_contour.png
+```{figure} https://files.mude.citg.tudelft.nl/risk_contour.png
 ---
 height: 400px
 name: risk_contour
@@ -184,7 +184,7 @@ A distinction is made between vulnerable objects such as schools and houses and 
 
 The criterion for societal risk that is used in the Netherlands for evaluating the third party risks posed by major industrial hazards is shown in {numref}`fn_limit` below. It serves as a reference in the broader assessment of third party risks by competent authorities. Exceedances of the criterion line also have to be motivated by competent authorities. When the criterion line is not exceeded, the acceptability of the third party risk still has to be motivated. The limit line is characterized by $C=10^{-3}$ and a steepness of $\alpha = 2$, making it a risk averse criterion. The criterion is used to assess the acceptability of the risks of individual facilities.  
 
-```{figure} ../figures/fn_limit.png
+```{figure} https://files.mude.citg.tudelft.nl/fn_limit.png
 ---
 width: 400px
 name: fn_limit
@@ -355,7 +355,7 @@ Several extensions of this model are possible. One can consider to add the econo
 ```
 ```` -->
 
-```{figure} ../figures/risk_types_py.svg
+```{figure} https://files.mude.citg.tudelft.nl/risk_types_py.svg
 ---
 width: 400
 name: combined_risk_criteria

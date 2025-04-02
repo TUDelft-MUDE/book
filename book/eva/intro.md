@@ -6,7 +6,7 @@ The chapter on {ref}`Continuous Distributions <cond_dist>` introduced additional
 
 Continuous parametric distributions are relatively simple models to apply, and allow one to make inferences of values of the modelled random variable that occur infrequently, or not at all, within the available observations (i.e., the data set) due to a key concept: the *tail of the distribution.* When extrapolating to values outside a set of observations, fitting of the parametric distribution to the tail is crucial to provide a reasonable extrapolation. Consider the following figure, which was covered earlier in this book:
 
-```{figure} ../figures/EVA/previous_work.png
+```{figure} https://files.mude.citg.tudelft.nl/previous_work.png
 
 ---
 

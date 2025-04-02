@@ -3,7 +3,7 @@
 As you can imagine, it is possible to define a PDF and a CDF based on observations. Let's see it with an example dataset of wind speeds close to Schiphold Airport. The figure below shows the dataset which spans for 1 year.
 
 
-```{figure} /probability/figures/data_overview.png
+```{figure} https://files.mude.citg.tudelft.nl/data_overview.png
 ---
 scale: 100%
 name: data_wind
@@ -26,7 +26,7 @@ Let's start computing the empirical CDF. We need to assign to each observation a
 
 Using the above algorithm, the following figure is obtained. Note that empirical CDFs are usually plotted using a step plot.
 
-```{figure} /probability/figures/ecdf_wind.png
+```{figure} https://files.mude.citg.tudelft.nl/ecdf_wind.png
 ---
 scale: 75%
 name: ecdf
@@ -72,7 +72,7 @@ Thus, we can compute the empirical PDF assuming a bin size. To do so, we need to
 
 Using the above algorithm, the following figure is obtained. We can see that most of the density is concentrated between 2 and 9 m/s.
 
-```{figure} /probability/figures/epdf_wind.png
+```{figure} https://files.mude.citg.tudelft.nl/epdf_wind.png
 ---
 scale: 75%
 name: epdf

@@ -3,7 +3,7 @@
 
 Lognormal distribution is the continuous distribution of a random variable whose natural logarithm is normally distributed. This is, if the random variable $X \sim Lognormal$, then the random variable $Y=ln(X) \sim Normal$.
 
-```{figure} /probability/figures/Lognormal_Distribution.svg
+```{figure} https://files.mude.citg.tudelft.nl/Lognormal_Distribution.svg
 Relationship between Lognormal and Normal distribution[^ref].
 ```
 
@@ -17,7 +17,7 @@ where $\mu$ and $\sigma$ are the mean and standard deviation of the variable's n
 
 Let's see how these parameters influence the shape of the distribution. In the figure below, two sets of three PDFs are displayed. In the left pannel, the displayed distributions present the same $\sigma$ and different values of $\mu=$0.5, 1 and 2. The lower the value of $\mu$, the more peaked is the distribution and the mode of the distribution moves towards 0. In the right pannel, all the distributions present the same value of $\mu$ and different values of $\sigma=$0.5, 1 and 2. When $\sigma$ grows ($\sigma>1$), the peak of the distribution moves towards 0 and increases in height. Similarly, when $\sigma$ is reduced below 1, the distribution becomes more peaked; however, it also moves towards positive values. Therefore, the influence of this parameter is different if $\sigma$ is above or below 1. 
 
-```{figure} /probability/figures/logn_density.png
+```{figure} https://files.mude.citg.tudelft.nl/logn_density.png
 PDF of Lognormal distribution: (left) influence of parameter $\mu$, and (right) influence of parameter $\sigma$.
 ```
 
@@ -29,7 +29,7 @@ $$
 
 where $\Phi$ is the cumulative distribution function of of the standard Normal distribution function ($N(0,1)$). The CDF of the Lognormal distribution is displayed in the figure below.
 
-```{figure} /probability/figures/logn_cdf.png
+```{figure} https://files.mude.citg.tudelft.nl/logn_cdf.png
 CDF of Lognormal distribution: (left) influence of parameter $\mu$, and (right) influence of parameter $\sigma$.
 ```
 
@@ -58,7 +58,7 @@ Also, the **Lognormal distiribution is bounded in 0**. This is, the random varia
 ````{card} Exercises
 During the design phase of a coastal structure, it is needed to assess if its height is enough to protect the sheltered area from overtopping events (sea water overpassing the structure and reaching the lee side). The distribution of overtopping volumes is known to follow a Lognormal distribution. The engineer has already calculated the parameters of the Lognormal distribution ($\mu$=5.5 and $\sigma$=1.15) and has plotted the CDF for you.
 
-```{figure} /probability/figures/logn_ex.png
+```{figure} https://files.mude.citg.tudelft.nl/logn_ex.png
 PDF and CDF of Lognormal distribution to describe overtopping volumes $V (l/m)$.
 ```
 

@@ -45,7 +45,7 @@ To deal with the dependence between the random variables using copulas, we trans
 In the figure below, in panel (a), you have observations of discharges of two rivers, $Q_1$ and $Q_2$. In panel (b) you see how we have transformed the observations to uniform space. Note that the marginal distributions in panel (b) are uniform and defined in [0,1].
 
 
-```{figure} ./figures/copula_samples_together.png
+```{figure} https://files.mude.citg.tudelft.nl/copula_samples_together.png
 
 ---
 
@@ -62,7 +62,7 @@ This approach has several advantages when modelling joint multivariate distribut
 When we were studying univariate distributions, we fitted parametric univariate distributions (e.g. Gaussian or Gumbel) to the empirical distribution (the observations). Here, we can do the same with copulas: we can fit a parametric copula to the observations. There are different copula families such as Gaussian, Clayton, or Gumbel, with different shapes. For instance, Gaussian copula is symmetric, while Clayton copula is not. As you can see in the Figure below, the lower values are more correlated than the higher values in Clayton copula. During the course, you will only use Gaussian copula. 
 
 
-```{figure} ./figures/examples_copulas.png
+```{figure} https://files.mude.citg.tudelft.nl/examples_copulas.png
 
 ---
 

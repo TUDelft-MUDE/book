@@ -8,7 +8,7 @@ This page covers fundamental concepts for _continuous random variables._ As we a
 
 Here we will illustrate probability computations using a bivariate case. Consider the discharge of two rivers that are located in the same watershed, $Q_1$ and $Q_2$. There are 34 observations each of the discharges that were taken at the same time (this is important for multivariate distributions!). The observations are illustrated in the figure below (panel (a)).
 
-```{figure} ./figures/samples_marginal.svg
+```{figure} https://files.mude.citg.tudelft.nl/samples_marginal.svg
 
 ---
 width:90%
@@ -184,7 +184,7 @@ P[Q_1 \leq q_1, Q_2 \leq q_2]
 = 21/34 = 0.62
 $$
 
-```{figure} ./figures/and.svg
+```{figure} https://files.mude.citg.tudelft.nl/and.svg
 ---
 width: 60%
 ---
@@ -305,7 +305,7 @@ $$
 P[q_1 > 100, q_2 > 120] = 3/34 \approx 0.09
 $$
 
-```{figure} ./figures/and_exceed.svg
+```{figure} https://files.mude.citg.tudelft.nl/and_exceed.svg
 ---
 width: 60%
 ---
@@ -382,7 +382,7 @@ $$
 P[q_1 \leq 100  \;\textrm{m}^3\textrm{/s} \;\cup\; q_2 \leq 75  \;\textrm{m}^3\textrm{/s}]=24/34 = 0.71
 $$
 
-```{figure} ./figures/or.svg
+```{figure} https://files.mude.citg.tudelft.nl/or.svg
 
 ---
 name: or_empirical
@@ -416,7 +416,7 @@ Assuming that the complement of the multivariate CDF is equal to the joint excee
 
 Using only empirical probabilities for the marginal random variables and the joint CDF, apply the graphical approach illustrated in the preceding section to find the joint exceedance probability $p=P[q_1 > 100  \;\textrm{m}^3\textrm{/s} \;\cap\;  q_2 > 120  \;\textrm{m}^3\textrm{/s}]$, the area illustrated here:
 
-```{figure} ./figures/and_exceed_exercise.svg
+```{figure} https://files.mude.citg.tudelft.nl/and_exceed_exercise.svg
 ---
 width: 40%
 ---
@@ -627,7 +627,7 @@ $$
 P[q_2 > 150  \;\textrm{m}^3\textrm{/s}|q_1 > 130 \;\textrm{m}^3\textrm{/s}]=2/6 = 0.33
 $$
 
-```{figure} ./figures/conditional.svg
+```{figure} https://files.mude.citg.tudelft.nl/conditional.svg
 
 ---
 

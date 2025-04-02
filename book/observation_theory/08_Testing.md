@@ -8,7 +8,7 @@ In some cases, a first indication that something may be wrong can be obtained by
 
 For the [volcano deforomation example](volcano_example), the observed and modelled deformations are shown in {numref}`volcano`, as well as the residuals (on the right). In this case, we can see some 'patterns': two clusters with positive residuals in the upper-left and lower-right corner, where an uplift is observed which is not accounted for by the model. There is also a cluster of negative residuals, where the subsidence is larger than the model predicts. The model assumed a spherical deformation, which is apparently too simplistic.
 
-```{figure} ./figures/08_volcano.png
+```{figure} https://files.mude.citg.tudelft.nl//08_volcano.png
 ---
 height: 200px
 name: volcano
@@ -60,7 +60,7 @@ $$
 
 {numref}`H0Ha` shows the PDFs of the test statistic under the null and alternative hypothesis. Based on the distributions, the null hypothesis is obviously more likely in case the observed mean error (realization of $T$) is smaller than $k$. Therefore the null hypothesis would be accepted if $T \leq k$ and rejected otherwise. The corresponding *acceptance* and *critical region* are also shown.
 
-```{figure} ./figures/08_H0Ha.png
+```{figure} https://files.mude.citg.tudelft.nl/08_H0Ha.png
 ---
 height: 250px
 name: H0Ha
@@ -84,7 +84,7 @@ In the example, the bias was assumed to be positive, such that there is a right-
 
 See {numref}`H0Ha_alpha`, where the principle has been applied for the same example as above. Given that under the null hypothesis $T\sim N(0,\sigma^2/m)$, we can easily determine the threshold value $k_{\alpha}$ for a given $\alpha$ using the inverse CDF. The critical region $\mathcal{C}$ is thus given by $T>k_{\alpha}$.
 
-```{figure} ./figures/08_H0Ha_2.png
+```{figure} https://files.mude.citg.tudelft.nl/08_H0Ha_2.png
 ---
 height: 250px
 name: H0Ha_alpha
@@ -114,7 +114,7 @@ Ideally, both the type I and type II error probabilities should be small. Howeve
 
 The *decision matrix* in {numref}`decision` summarizes the four types of decisions and corresponding probabilities.
 
-```{figure} ./figures/08_decision.png
+```{figure} https://files.mude.citg.tudelft.nl/08_decision.png
 ---
 height: 150px
 name: decision

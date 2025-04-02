@@ -32,7 +32,7 @@ E(d) = \sum_{S_{i=1}}^{n}p_{i} \cdot d_{i}
 ```
 For the set of scenarios considered, the expected value quantifies risk precisely; however, it does not give insight in the magnitude of probability and consequences and the contribution of individual scenarios. For example, a single value does not indicate whether the risk is governed by a large number of scenarios with small consequences, or a few scenarios with large consequences and low probabilities. Therefore, an often-used companion risk-based tool is the risk curve, which shows the probability of exceedance and consequence for all scenarios. A well-known example of such a risk curve is the *FN curve*, which displays the probability of exceedance associated with $N$ (human) fatalities, schematized in {numref}`FN-curve-simple`. It is easy to compare the probability of exceeding a relatively low or high number of fatalities.
 
-```{figure} ../figures/FN-simple.PNG
+```{figure} https://files.mude.citg.tudelft.nl/FN-simple.PNG
 ---
 height: 200px
 name: FN-curve-simple
@@ -42,7 +42,7 @@ FN curve, showing the probability of exceedance of a certain number of fatalitie
 
 The FN curve was originally introduced in the 1960's for the assessment of risks in the nuclear industry {cite}`farmer1967,kendall1977` and is now used to display and limit risks in a wide variety of industries around the world. It is an extremely useful way to quantitatively compare risk associated with a broad range of scenarios, and to make decisions. A famous example of this is shown in {numref}`risk-curve-baecher`, which compares the risk estimated for a wide variety of engineering infrastructure. This figure is described further in the {ref}`risk_curve` Section, and also illustrates the concept of acceptable risk, which is discussed in the Section on {ref}`safety_standards`. In short, it allows one to begin answering the question 'how safe is safe enough?'
 
-```{figure} ../figures/risk-curve-baecher.PNG
+```{figure} https://files.mude.citg.tudelft.nl/risk-curve-baecher.PNG
 ---
 height: 400px
 name: risk-curve-baecher
@@ -57,7 +57,7 @@ Engineering disciplines that are focused on decision making where natural hazard
 * Vulnerability: The characteristics and circumstances of a community, system or asset that make it susceptible to the damaging effects of a hazard
 * Exposure: People, property, systems, or other elements present in hazard zones that are thereby subject to potential losses
 
-```{figure} ../figures/risk-hazard.svg
+```{figure} https://files.mude.citg.tudelft.nl/risk-hazard.svg
 ---
 height: 200px
 name: risk-hazard
