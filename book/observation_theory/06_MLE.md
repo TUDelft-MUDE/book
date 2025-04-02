@@ -28,7 +28,7 @@ $$
 
 for different values of $\lambda$. The likelihood function for the given $\mathrm{y_{obs}}$ is shown on the right-hand side. It is shown that for instance the likelihood value for $\lambda_1$ is equal to the corresponding density value in the left panel. The maximum likelihood estimate $\hat{\lambda}$ is the value for which the likelihood function is maximized, in this case $\hat{\lambda}=\lambda_2$, as shown in the figure.
 
-```{figure} ./figures/06_MLEexp.png
+```{figure} https://files.mude.citg.tudelft.nl/06_MLEexp.png
 ---
 height: 350px
 name: MLEexp

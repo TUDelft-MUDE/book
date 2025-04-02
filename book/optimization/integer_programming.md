@@ -43,7 +43,7 @@ $$\begin{gather}-x_1+3x_2\leq 6\\ x_1+x_2\leq 8\\ x_1,x_2\in\mathbb{N}_0\end{gat
 
 ### So how can we solve this?
 
-![integer1](./figs/integer1.png)
+![integer1](https://files.mude.citg.tudelft.nl/integer1.png)
 
 Rounding with two variables is not such a big problem and we can easily find a feasible integer solution. This solution, however, is not yet proven to be optimal.
 
@@ -59,11 +59,11 @@ Solve the original **relaxed problem** (i.e. assuming the variables are all cont
 
 From this point onwards, the initial problem is decomposed... Adding new constraints to guarantee the integrality of the variables one by one.
 
-![integer2](./figs/integer2.png)
+![integer2](https://files.mude.citg.tudelft.nl/integer2.png)
 
 Solve the two problems using the SIMPLEX method. For each solution of those two problems do the same step of dividing the problem but now with another variable. The solution search procedure ends when an integer solution is found ($x_k\in\mathbb{N}_0$) and no better objective function can be found.
 
-![integer3](./figs/integer3.png)
+![integer3](https://files.mude.citg.tudelft.nl/integer3.png)
 
 The optimal solution is the one with $L2^*=62$ since in the other branch the value of the objective function is smaller and with $L2^*=62$, the solution is already an integer like we wanted.
 
@@ -79,21 +79,21 @@ $$\begin{cases}-x_1+3x_2\leq 6\\ 7x_1+x_2\leq 35\\ x_1,x_2\in\mathbb{N}_0\end{ca
 
 Let us take a look into the solving process using the branch-and-bound method:
 
-![integer4](./figs/integer4.png)
+![integer4](https://files.mude.citg.tudelft.nl/integer4.png)
 
-![integer5](./figs/integer5.png)
+![integer5](https://files.mude.citg.tudelft.nl/integer5.png)
 
 **Horizontal progression**
 
-![integer6](./figs/integer6.png)
+![integer6](https://files.mude.citg.tudelft.nl/integer6.png)
 
-![integer7](./figs/integer7.png)
+![integer7](https://files.mude.citg.tudelft.nl/integer7.png)
 
 #### Gap concept (example for maximization)
 
-![integer8](./figs/integer8.png)
+![integer8](https://files.mude.citg.tudelft.nl/integer8.png)
 
-![integer9](./figs/integer9.png)
+![integer9](https://files.mude.citg.tudelft.nl/integer9.png)
 
 ### Computational efficiency
 

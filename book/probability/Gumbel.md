@@ -13,7 +13,7 @@ In the right pannel of the figure below, an example of the PDF of three Gumbel E
 
 Regarding the third distribution (red crosses in the left pannel and red dashed line in the right pannel), it presents the same $\mu=0$ than the first distribution (black dots in the left pannel and continuous black line in the right pannel) but different $\beta$: $\beta_{black}=1$ and $\beta_{red}=3$. In the right pannel, it can be observed that both distributions present the same mode in $x=0$. However, the dispersion of the distribution with $\beta_{red}=3$ is way higher. This effect can also be seen in the random samples in the left pannel. Random samples from $\beta_{black}=1$ range from -2 to 4 approximately, while random samples from $\beta_{red}=3$ range from -2 to 8 approximately, having one sample a value of almost 14. 
 
-```{figure} /probability/figures/gumbel.png
+```{figure} https://files.mude.citg.tudelft.nl/gumbel.png
 Gumbel distribution function: (left) random samples, and (right) PDF.
 ```
 
@@ -25,7 +25,7 @@ $$
 
 which is displayed in the figure below.
 
-```{figure} /probability/figures/gumbel_cdf.png
+```{figure} https://files.mude.citg.tudelft.nl/gumbel_cdf.png
 Gumbel distribution function: CDF.
 ```
 
@@ -57,7 +57,7 @@ $$
 
 where $\mu$ is the location parameter and $\beta>0$ is the scale parameter. In the figure below the influence of these parameters is presented. Parameter interpretation is equivalent to that for the parameters of the right-tailed one.
 
-```{figure} /probability/figures/left_gumbel.png
+```{figure} https://files.mude.citg.tudelft.nl/left_gumbel.png
 Left-tailed Gumbel distribution function: (left) random samples, and (right) PDF.
 ```
 
@@ -69,13 +69,13 @@ $$
 
 which is displayed in the figure below. Note how the difference in a symbol switches the distribution.
 
-```{figure} /probability/figures/left_gumbel_cdf.png
+```{figure} https://files.mude.citg.tudelft.nl/left_gumbel_cdf.png
 Left-tailed Gumbel distribution function: CDF.
 ```
 
 Actually, if we compare the PDF of a right-tailed and left-tailed Gumbel distributions with the same parameters ($\mu$=0 and  $\beta$=1 in the figure below), the mode of the distribution is the same in both distributions and one PDF is the symmetrical of the other.
 
-```{figure} /probability/figures/left_right_gumbel_pdf.png
+```{figure} https://files.mude.citg.tudelft.nl/left_right_gumbel_pdf.png
 Comparison between the left-tailed and right-tailed Gumbel distribution.
 ```
 

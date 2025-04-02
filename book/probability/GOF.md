@@ -9,7 +9,7 @@ Once we have accounted for the physical characteristics of the random variable, 
 
 In order to illustrate these techniques, the following toy example will be used. The set of observations is represented in the plots below by its pdf and cdf. A Gaussian ($N(5.17, 5.76)$) and an Exponential distributions ($Expon(-5.25, 10.42)$) are fitted to the data. GOF techniques will be applied to determine which one of the two models fits the data best.
 
-```{figure} /probability/figures/GOF_data.png
+```{figure} https://files.mude.citg.tudelft.nl/GOF_data.png
 
 ---
 
@@ -27,7 +27,7 @@ This technique is as simple as comparing the observations used to fit the model 
 
 Let's see it applied to the example data. Note that the term *"quantile"* is used in statistics to denote the values of the random variable.
 
-```{figure} /probability/figures/QQplot.png
+```{figure} https://files.mude.citg.tudelft.nl/QQplot.png
 ---
 scale: 75%
 name: rating_curve
@@ -70,7 +70,7 @@ Pseudo code is presented to illustrate the procedure to build a QQ-plot.
 
 As previously introduced, the tails of the distributions are key to allow the inference of values which have not been observed yet. Therefore, it is important to check whether the distribution used to model the observations is performing properly in that region. A simple trick to do so is to use a logarithmic scale (log-scale) to represent the exceedance probability plot. That way, we "zoom in" on those points in the tail instead of focusing on the bulk of the data. In the figure below, the representation of the cdf in regular and log-scale is shown.
 
-```{figure} /probability/figures/log-scale.png
+```{figure} https://files.mude.citg.tudelft.nl/log-scale.png
 ---
 name: log-scale
 ---
@@ -120,7 +120,7 @@ The distribution of $D_n$ has been already calculated and included in different 
 
 Let's see it in an example. In the figure below, both the empirical distribution (step function) and the fitted normal distribution are shown. The maximum distance between both distributions is also presented in red.
 
-```{figure} /probability/figures/sketch_KS.png
+```{figure} https://files.mude.citg.tudelft.nl/sketch_KS.png
 ---
 name: KS
 ---
@@ -136,7 +136,7 @@ After that, the $p-value$ is also computed, obtaining $p-value = 0.93$. This mea
 
 An engineer is characterizing the axle loads transmited by the traffic on a bridge. Based on the observations, a Normal and a Gumbel distributions are fitted, as shown in the figure below. 
 
-```{figure} /probability/figures/GOF_ex.png
+```{figure} https://files.mude.citg.tudelft.nl/GOF_ex.png
 
 ---
 

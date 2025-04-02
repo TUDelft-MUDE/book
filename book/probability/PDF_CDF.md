@@ -43,7 +43,7 @@ As you have already seen, the previous expression provides us with probability d
 Let's see how the distribution looks. In the figure below, the PDF and CDF of the Gaussian distribution are shown for different values of its parameters. In the PDF plot, you can see the bell shape that was already mentioned. You will learn more about how this distribution behaves later on.
 
 
-```{figure} /probability/figures/gaussian.png
+```{figure} https://files.mude.citg.tudelft.nl/gaussian.png
 ---
 scale: 75%
 name: gaussian distr
@@ -66,7 +66,7 @@ $$
 
 The figure below shows both the CDF and the complementary CDF.
 
-```{figure} /probability/figures/survival.png
+```{figure} https://files.mude.citg.tudelft.nl/survival.png
 ---
 scale: 75%
 name: survival gaussian

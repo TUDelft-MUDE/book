@@ -23,7 +23,7 @@ where $(x_s,y_s)$ are the unknown horizontal coordinates of the centre of the ma
 
 {numref}`volcano_obs` shows a spatial dataset with 10,000 observed deformation rates above a magma chamber. Hence we have a system of 10,000 non-linear observation equations in four unknowns. How to solve it?
 
-```{figure} ./figures/07_volcano_obs.png
+```{figure} https://files.mude.citg.tudelft.nl/07_volcano_obs.png
 ---
 height: 300px
 name: volcano_obs
@@ -85,7 +85,7 @@ However, the quality of the linear approximation depends very much on the closen
 
 See {numref}`gn` for an illustration of the iterative procedure, referred to as the Gauss-Newton iteration.
 
-```{figure} ./figures/07_gn.png
+```{figure} https://files.mude.citg.tudelft.nl/07_gn.png
 ---
 height: 250px
 name: gn

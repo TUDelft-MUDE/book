@@ -1,0 +1,54 @@
+name: Block Binary Files
+
+on:
+  pull_request:
+
+jobs:
+  check-binary-files:
+    name: Check for Binary and SVG Files
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # Fetch all history so we can compare branches
+
+      - name: Find binary files and SVGs
+        run: |
+          # Get a list of all files changed in the pull request
+          files=$(git diff --name-only -z origin/${{ github.event.pull_request.base.ref }})
+          # Initialize a flag to track errors
+          error_flag=0
+          summary_file="$GITHUB_STEP_SUMMARY"
+
+          echo "### Errors Found in Pull Request" > $summary_file
+
+          for file in $files; do
+            # Check if the file exists (it might have been deleted)
+            if [[ -f "$file" ]]; then
+              # Check if the file is binary
+              if ! grep -Iq . "$file"; then
+                echo "Error: Binary file detected: $file"
+                echo "- Binary file detected: \`$file\`" >> $summary_file
+                error_flag=1
+              fi
+
+              # Check if the file is an SVG
+              if [[ "$file" == *.svg ]]; then
+                echo "Error: SVG file detected: $file"
+                echo "- SVG file detected: \`$file\`" >> $summary_file
+                error_flag=1
+              fi
+            fi
+          done
+
+          # Exit with an error if any binary files or SVGs were found
+          if [[ $error_flag -eq 1 ]]; then
+            echo "" >> $summary_file # Add a blank line for proper formatting
+            echo "Please remove the binary and/or SVG files and add them with FTP (explained here: https://tudelft-mude.github.io/teacher/FTP.html)." >> $summary_file
+            exit 1
+          else
+            echo "" >> $summary_file # Add a blank line for proper formatting
+            echo "All checks passed! No binary or SVG files detected. 🎉" >> $summary_file
+          fi

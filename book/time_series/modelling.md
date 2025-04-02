@@ -145,7 +145,7 @@ The design matrix $\mathrm{A}$ is usually assumed to be known. So far, we have a
 
 {numref}`ls-psd` shows on the left the original time series as well as the estimated linear trend and seasonal signal. The sine wave has a period ($T=1/f$) of 100. Indeed the PSD as function of period on the right shows a peak at a period of 100.
 
-```{figure} ./figs/ls-psd.png
+```{figure} https://files.mude.citg.tudelft.nl/ls-psd.png
 :name: ls-psd
 :width: 600px
 :align: center

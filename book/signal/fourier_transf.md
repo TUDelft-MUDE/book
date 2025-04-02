@@ -18,7 +18,7 @@ When the period $T_0$ increases, the frequencies belonging to the Fourier series
 
 Fourier coefficients will lie infinitesimally close to each other, so they define **continuous function of frequency**, $f\approx kf_0$
 
-![frequencies](./figs/frequencies.png "frequencies")
+![frequencies](https://files.mude.citg.tudelft.nl/frequencies.png "frequencies")
 
 :::{card} Derivation
 
@@ -77,7 +77,7 @@ with
 
 $$\begin{gather*}|X(f)|=\sqrt{\left(\text{Re}(X(f)) \right)^2+\left(\text{Im}(X(f))\right)^2}\\ \theta(f)=\arctan\left(\frac{\text{Im}(X(f))}{\text{Re}(X(f))}\right)\end{gather*}$$
 
-![complex_plane_2](./figs/complex_plane_2.png "complex_plane_2")
+![complex_plane_2](https://files.mude.citg.tudelft.nl/complex_plane_2.png "complex_plane_2")
 
 When $x(t)$ is real, then
 
@@ -86,7 +86,7 @@ $$|X(f)|=|X(-f)|\hspace{10px}\text{and}\hspace{10px}\theta(f)=-\theta(-f)$$
 * Magnitude $|X(f)|$ is an **even** function of $f \to$ **amplitude spectrum**
 * Phase $\theta(f)$ is an **odd** function of $f \to$ **phase spectrum**
 
-![odd_even](./figs/odd_even.png "odd_even")
+![odd_even](https://files.mude.citg.tudelft.nl/odd_even.png "odd_even")
 
 The figure above illustrates an example of $|X(f)|$ and $\theta(f)$ both as a function of frequency.
 

@@ -27,7 +27,7 @@ $
 
 We are going to generate 100 samples with length N = 30 using a Normal distribution $N(6,1)$. From each sample (block), we are going to store the maximum observation ($x_{max}$). Note that we are applying Block Maxima here. In the figure below, you can see in grey the full samples and in blue the maxima from each sample.
 
-```{figure} ../figures/EVA/asymptotic_sampling.png
+```{figure} https://files.mude.citg.tudelft.nl/asymptotic_sampling.png
 
 ---
 
@@ -37,7 +37,7 @@ Random samples using $N(6,1)$ and maxima from each sample.
 
 If we plot the histogram of the samples and the plot of the maxima from each sample (see left image below), we can see that the histogram of the maxima is placed on the right tail of the histogram build with all the samples. Also, in the empirical cumulative distribution function (cdf) plot, we can see that the samples follow a $F(x) \sim N(6, 1)$ as expected, while the maxima follow $F(x)^n$ as we previously stated.
 
-```{figure} ../figures/EVA/asymptotic_hist.png
+```{figure} https://files.mude.citg.tudelft.nl/asymptotic_hist.png
 
 ---
 
