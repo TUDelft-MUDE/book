@@ -5,6 +5,7 @@ on:
 
 jobs:
   check-binary-files:
+    name: Check for Binary and SVG Files
     runs-on: ubuntu-latest
 
     steps:
