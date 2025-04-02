@@ -18,3 +18,4 @@ There are several directories:
 If you encounter any issues, report it by clicking the GitHub icon and lightbulb on the top right corner of this page. Or contribute directly by creating a pull request in the [repository](https://github.com/TUDelft-MUDE/book).
 
 If you have questions on the contact, contact the MUDE team at MUDE-CEG@tudelft.nl. If you've technical questions regarding this book, contact the IT-coordinator of MUDE: T.R.vanWoudenberg@tudelft.nl
+
