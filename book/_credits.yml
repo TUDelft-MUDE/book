@@ -1,6 +1,15 @@
 # Credits
+book:
+  credit:
+    author:
+      - Robert Lanzafame
+      - Tom van Woudenberg
+      - Sandra Verhagen
+    title: _config.yml
+    license: LICENSE
+    copyright: Delft University of Technology
+    type: editor-author
 
-# Make key unique
 
 sources:
   modelling_concepts:
@@ -8,7 +17,7 @@ sources:
       - Alessandro Cabboi
       - Patricia Mares Nasarre
       - Robert Lanzafame
-    acknowledgements:
+    acknowledgement:
       - João Moura Pereira de Lucas Teixeira
     type: internal
     note: |
@@ -24,9 +33,9 @@ sources:
   observation_theory:
     author:
       - Sandra Verhagen
-    type: external
+    type: internal
     note: |
-      Special case!!!
+      
 
   numerical_modelling:
     author:

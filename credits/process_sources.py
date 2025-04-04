@@ -10,8 +10,13 @@ def load_sources(credits_file=CREDITS):
 
     sources = credits_data['sources']
 
-    keys_required = ['author', 'license', 'type']
-    keys_optional = ['title', 'status', 'note']
+    keys_required = ['author',
+                     'license',
+                     'type']
+    keys_optional = ['title',
+                     'status',
+                     'note',
+                     'acknowledgement']
 
     for s in sources:
         sources[s]['keys_missing'] = []
