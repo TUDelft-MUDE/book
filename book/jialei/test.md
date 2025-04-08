@@ -1,3 +1,5 @@
+# Duck
+
 Hello, this is a test.
 
 Here, I add a nice picture:
