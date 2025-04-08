@@ -23,8 +23,11 @@ parts:
       - file: propagation_uncertainty/uncertainty
       - file: propagation_uncertainty/01_ErrorPropagation.md
       - file: propagation_uncertainty/02_LinearPropagation.md
-  
 
+  - caption: Duck
+    - file: jialei/test.md
+      title: Duck pic
+  
     - file: observation_theory/overview.md
       sections:
       - file: observation_theory/01_Introduction.md
