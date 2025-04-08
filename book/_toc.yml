@@ -2,11 +2,6 @@ format: jb-book
 root: intro
 
 parts:
-  - caption: Duck
-    chapters:
-    - file: jialei/test.md
-      title: Duck pic
-  
   - caption: Q1 Topics
     numbered: 2
     chapters: 
@@ -15,6 +10,8 @@ parts:
       sections:
       - file: modelling/classification
         title: Classification
+      - file: jialei/test.md
+        title: Duck pic
       - file: modelling/decisions
         title: Decisions
       - file: modelling/validate_verify
