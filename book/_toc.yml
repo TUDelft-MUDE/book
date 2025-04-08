@@ -25,6 +25,7 @@ parts:
       - file: propagation_uncertainty/02_LinearPropagation.md
 
   - caption: Duck
+    chapters:
     - file: jialei/test.md
       title: Duck pic
   
