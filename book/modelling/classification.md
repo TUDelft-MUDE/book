@@ -15,7 +15,7 @@ To answer that, we build an abstraction of the system which can mimic those aspe
 | :--: |
 | ... |
 
-Once we are sure that the model can reproduce the behaviors we are interested in through **mathematization** ,i.e, the implimentation of the abstraction, we can further use it to make **computations**. Those computations need to be **interpreted** to get the answer to our actual question. We can also check if our model realistically represents the system we are modelling through **verification** - more about that later.
+Once we are sure that the model can reproduce the behaviors we are interested in through **mathematization** ,i.e, the implementation of the abstraction, we can further use it to make **computations**. Those computations need to be **interpreted** to get the answer to our actual question. We can also check if our model realistically represents the system we are modelling through **verification** - more about that later.
 
 ***
 
