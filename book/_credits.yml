@@ -21,13 +21,29 @@ sources:
       - João Moura Pereira de Lucas Teixeira
     type: internal
     note: |
-      Alessandro made most of the slides, which were transcribed by Joao in 2023. Robert and Patricia modified and re-wrote some material into book format for 2023. Patricia especially added to the GoF page.
+      Alessandro made most of the slides, which were transcribed by João in 2023. Robert and Patricia modified and re-wrote some material into book format for 2023. Patricia especially added to the GoF page.
       
       Status of figures is unclear.
 
   uncertainty_propagation:
     author:
       - Sandra Verhagen
+    title: Propagation of Uncertainty
+    license: CC BY 4.0
+    copyright: Delft University of Technology
+    acknowledgement:
+      - who: Robert Lanzafame, Patricia Mares Nasarre, Max Ramgraber
+        what: reviewed, commented and/or modified content
+      - who: Antonio Magherini
+        what: converted the slides to book format
+    resources:
+      - who: Max Ramgraber
+        what: interactive figure
+        where: https://mude.citg.tudelft.nl/2024/book/_static/elements/element_2D_Gaussian.html
+      - who: Robert Lanzafame, Patricia Mares Nasarre
+        what: page
+        where: book/propagation_uncertainty/uncertainty.md
+      
     type: internal
 
   observation_theory:

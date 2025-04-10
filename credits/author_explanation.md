@@ -45,8 +45,25 @@ On the first page of a chapter, the following text will be included:
 
 > This Chapter is written by `<Primary Authors>`. Find out more here.
 
-The "Find out more here" link will point to the Credits page of the book, which will be a list of all authors and their contributions, including the text shown above.
+The "Find out more here" link will point to the Credits page of the book, which will include a list of all authors and their contributions, including the text shown above.
 
 At the bottom of each page in a chapter (except the first page), a piece of text like this may be included (still working this part out):
 
 > This page is part of Chapter `<Title of Chapter>` written by `<Primary Authors>`. Find out more here.
+
+=====================
+
+Within the git repository of the book we will also include a file that includes additional information for each chapter, some of which can also be included in the text of the book on an as-needed basis. For example, if the chapter also (re)uses material from other sources like images, special licenses, a few notes about where it came from, etc. At the moment, the (draft) record for your chapter is shown here:
+
+```yaml
+  uncertainty_propagation:
+    author:
+      - Sandra Verhagen
+    title: Propagation of Uncertainty
+    license: CC BY 4.0
+    acknowledgement:
+      - who: Robert Lanzafame, Patricia Mares Nasarre, Max Ramgraber
+        what: reviewed, commented and/or modified content
+      - who: Antonio Magherini
+        what: converted the slides to book format
+```
