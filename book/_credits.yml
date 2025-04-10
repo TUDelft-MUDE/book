@@ -36,6 +36,8 @@ sources:
         what: reviewed, commented and/or modified content
       - who: Antonio Magherini
         what: converted the slides to book format
+        license: CC BY 4.0
+        copyright: Delft University of Technology
     resources:
       - who: Max Ramgraber
         what: interactive figure
@@ -43,6 +45,9 @@ sources:
       - who: Robert Lanzafame, Patricia Mares Nasarre
         what: page
         where: book/propagation_uncertainty/uncertainty.md
+        license: CC BY 4.0
+        copyright: Delft University of Technology
+
       
     type: internal
 
