@@ -60,10 +60,12 @@ sources:
 
   numerical_modelling:
     author:
-      - Hmmmmm
+      - Jaime
       - Justin Pitman
       - more
     type: internal
+    acknowledgements:
+    isabel, mona
 
   continuous_distributions:
     author:

@@ -1,11 +1,11 @@
 
 DRAFT TEXT of email from Robert to MUDE authors:
 
-Dear MUDE author,
+Dear MUDE Textbook author,
 
-We are currently working hard to make the MUDE Textbook completely open: no longer password protected, and with a clear open source license (CC BY). There are many reasons for doing this, most important of which are to make sure: students can use it after they graduate, we can share the amazing resource we have created and that everyone can be recognized for their contributions.
+We are currently working hard to make the MUDE Textbook completely open: no longer password protected, and with a clear open source license (CC BY). There are many reasons for doing this, most important of which are to make sure students can use it after they graduate; we can share the amazing resource we have created; and that everyone can be recognized for their contributions.
 
-This email is to inform you how the attribution and referencing will be done, and, since you are a primary author. As there is a lot of information in this email, note that the most important thing is to let us know if you think the way we are describing your chapter is appropriate, and to make any corrections you think are necessary.
+This email is to inform you how the attribution and referencing will be done, since you are a primary author. As there is a lot of information in this email, note that the most important thing is to let us know if you think the way we are describing your chapter is appropriate, and to make any corrections to the information provided below that you think are necessary.
 
 While we think that the general structure and editor-author arrangement is nearly final, any other feedback you have is still very much welcome!
 
