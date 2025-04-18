@@ -57,7 +57,7 @@ $$\int_{-\infty}^{\infty}x(t)\delta(t-t_0)dt=x(t_0)$$
 
 ![sifting](https://files.mude.citg.tudelft.nl/sifting.png "sifting")
 
-The conclusion is that this blue area equals $x(t_0)$.
+The conclusion is that this blue area equals $x(t_0)$ (in the above diagram $\epsilon=1$ was taken).
 
 ## Analog-to-digital conversion
 
