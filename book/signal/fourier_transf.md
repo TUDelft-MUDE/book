@@ -79,7 +79,7 @@ $$\begin{gather*}|X(f)|=\sqrt{\left(\text{Re}(X(f)) \right)^2+\left(\text{Im}(X(
 
 ![complex_plane_2](https://files.mude.citg.tudelft.nl/complex_plane_2.png "complex_plane_2")
 
-When $x(t)$ is real, then
+When $x(t)$ is real, we have $X(f)=X^*(-f)$, and then
 
 $$|X(f)|=|X(-f)|\hspace{10px}\text{and}\hspace{10px}\theta(f)=-\theta(-f)$$
 
