@@ -85,7 +85,7 @@ and we find:
 * **Magnitude** $|X_k|=\frac{1}{2}\sqrt{a_k^2+b_k^2}$, k>0
 * **Argument** $\theta_k=\arctan\left(-\frac{b_k}{a_k}\right)$, k>0
 
-Note that for real signals $x(t)$, as we use in this practical course, $|X_k|=|X_{-k}|$ and $\theta_k=-\theta_{-k}$
+For real signals $x(t)$, as we use in this practical course, we have $|X_k|=|X_{-k}|$ and $\theta_k=-\theta_{-k}$
 
 ## Line Spectra
 
