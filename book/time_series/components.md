@@ -49,7 +49,7 @@ Monthly time series of global mean sea level measurements using Satellite Altime
 
 {numref}`trend` shows a positive trend (red line) of around $3.5$ mm/year, which in this case indicates sea level rise. This however needs to be further investigated and tested statistically (see {ref}`hypothesis_testing` and also {ref}`modelling_tsa`).
 
-Trend analysis expresses the changes of the variable of interest with respect to time $t$. Different types of trend are possible and for now we will mainly focus on linear trend, i.e. the time-dependent variable $Y(t)$ changes at a (constant) linear rate over time: $Y_t = y_0 + r t + \epsilon_t$. Other trends are however also possible, for example, quadratic, which includes $c t^2$, or log linear $\log(Y_t) = y_0 + r t + \epsilon_t$.
+Trend analysis expresses the changes of the variable of interest with respect to time $t$. Different types of trend are possible and for now we will mainly focus on linear trend, i.e. the time-dependent variable $Y(t)$ changes at a (constant) linear rate over time: $Y_t = y_0 + r t + \epsilon(t)$. Other trends are however also possible, for example, quadratic, which includes $c t^2$, or log linear $\log(Y_t) = y_0 + r t + \epsilon(t)$.
 
 
 ## Seasonality
@@ -62,8 +62,8 @@ Regular seasonal variations in a time series might be handled by using a sinusoi
 
 $$ 
 \begin{align*}
-Y(t) &= \sum_{k=1} ^p A_k  \cos(k \omega_0  t + \theta_k)  + \epsilon_t\\
-&= \sum_{k=1} ^p \left(a_k  \cos(k \omega_0  t) + b_k  \sin(k \omega_0 t) \right)+ \epsilon_t
+Y(t) &= \sum_{k=1} ^p A_k  \cos(k \omega_0  t + \theta_k)  + \epsilon(t)\\
+&= \sum_{k=1} ^p \left(a_k  \cos(k \omega_0  t) + b_k  \sin(k \omega_0 t) \right)+ \epsilon(t)
 \end{align*}
 $$
 
