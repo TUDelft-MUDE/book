@@ -150,7 +150,7 @@ As a deterministic sudden change, offsets can be handled by a step function such
 
 In this case the time series is written as: 
 
-$$ Y(t) = \sum_{k=1}^q o_k u_k(t)+\epsilon_t$$
+$$ Y(t) = \sum_{k=1}^q o_k u_k(t)+\\epsilon(t)$$
 
 where $q$ is the series of offsets (in {numref}`offset` there are two offsets, hence $q=2$) and each of them is expressed as a Heaviside step function 
 
@@ -177,7 +177,7 @@ A purely stationary random process (or white noise process) yields a sequence of
 
 $$ Y(t)=Y_t=\epsilon(t)$$
 
-where $\epsilon_t$ is the independent identically distributed (i.i.d.) error at epoch $t$. Therefore, the observation/noise at time $t$ is not dependent on any of the previous observations $Y_t$.
+where $\\epsilon(t)$ is the independent identically distributed (i.i.d.) error at epoch $t$. Therefore, the observation/noise at time $t$ is not dependent on any of the previous observations $Y_t$.
 
 :::{card} Example - time series consisting of a trend, annual signal (seasonality), an offset and pure random noise (white noise)
 
