@@ -179,22 +179,6 @@ $$ Y(t)=Y_t=\epsilon_t $$
 
 where $\epsilon_t$ is the independent identically distributed (i.i.d.) error at epoch $t$. Therefore, the observation/noise at time $t$ is not dependent on any of the previous observations $Y_t$.
 
-### Stochastic model
-
-A stationary zero-mean random process has an expectation of zero (functional model), and a scaled identity matrix as its covariance matrix (stochastic model). The functional and stochastic models of white noise are of the form 
-
-$$
-\mathbb{E}(Y) =  \mathbb{E} \left[\begin{array}{c} y_1 \\ y_2 \\ \vdots \\ y_m \end{array}\right] = \left[\begin{array}{c} 0 \\ 0 \\ \vdots \\ 0 \end{array}\right]
-$$
-
-and 
-
-$$
-\mathbb{D}(Y) =  \Sigma_{Y} = \sigma^2 \left[\begin{array}{ccc} 1 & 0 & \ldots{} & 0 \\ 0 & 1 & \ldots{} & 0 \\ \vdots & \vdots & \ddots & \vdots \\ 0 & 0 & \ldots{} & 1 \end{array}\right]
-$$
-
-The noise can be represented with, for example, a Gaussian distribution with mean $\mu=0$ and variance $\sigma^2$, that is $\epsilon(t) \sim \textbf{N}(0, \sigma^2)$.
-
 :::{card} Example - time series consisting of a trend, annual signal (seasonality), an offset and pure random noise (white noise)
 
 It can be written as 
