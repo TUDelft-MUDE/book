@@ -39,7 +39,7 @@ $$\hat{\epsilon}=Y-\hat{Y},\hspace{10px}\Sigma_{\hat{\epsilon}}=\Sigma_{Y}-\Sigm
 
 The linear model, consisting of the above three components plus noise, is of the form
 
-$$Y_t = y_0+rt+a\cos{\omega_0 t}+b\sin{\omega_0 t}+ou_k(t)+\epsilon_t$$
+$$Y_t = y_0+rt+a\cos{\omega_0 t}+b\sin{\omega_0 t}+ou_k(t)+\epsilon(t)$$
 
 The linear model should indeed be written for all time instances $t_1,...,t_m$, resulting in $m$ equations as:
 
