@@ -62,16 +62,16 @@ Regular seasonal variations in a time series might be handled by using a sinusoi
 
 $$ 
 \begin{align*}
-Y(t) &= \sum_{k=1} ^p A_k  \cos(k \omega_0  t + \theta_k)  + \epsilon(t)\\
-&= \sum_{k=1} ^p \left(a_k  \cos(k \omega_0  t) + b_k  \sin(k \omega_0 t) \right)+ \epsilon(t)
+Y(t) &= \sum_{i=1} ^p A_i  \cos(2\pi f_i t + \theta_i)  + \epsilon(t)\\
+&= \sum_{i=1} ^p \left(a_i  \cos(2\pi f_i t) + b_k  \sin(2\pi f_i t) \right)+ \epsilon(t)
 \end{align*}
 $$
 
-With the coefficients $a_k = A_k\cos\theta_k$ and $b_k=-A_k\sin\theta_k$, and where $\omega_0$ is the base (fundamental) frequency of the seasonal variation and is fixed or is determined by Spectral Analysis. To be more specific, we can use the {ref}`psd` to determine the unknown frequencies. 
+With the coefficients $a_i = A_i\cos\theta_i$ and $b_i=-A_i\sin\theta_i$, and where $f_i$ is the $i$-th frequency of the seasonal variation and is fixed or determined by Spectral Analysis. To be more specific, we can use the {ref}`psd` to determine the unknown frequencies. 
 
 Once $\omega_ 0$ is set, the coefficients $a_k $ and $b_k$ can be determined using the least-squares method, since the equation is linear in $a_k$ and $b_k$. From this the original sinusoids can be obtained using:
 
-$$ A_k = \sqrt{a_k^2 + b_k^2}, \hspace{1cm} \theta_k = \arctan(-\frac{b_k}{a_k}), \hspace{1cm} k = 1, \ldots{}, p $$
+$$ A_i = \sqrt{a_i^2 + b_i^2}, \hspace{1cm} \theta_i = \arctan\left(-\frac{b_i}{a_i}\right), \hspace{1cm} i = 1, \ldots{}, p $$
 
 ```{note}
 This transformation is necessary to make the seasonal component phase-independent. Using regular estimation methods, we cannot linearly estimate the phase of the sinusoidal function. However by transforming the sinusoidal function into a linear combination of sine and cosine functions, we can estimate the phase of the seasonal component.
@@ -81,11 +81,11 @@ This transformation is necessary to make the seasonal component phase-independen
 
 Show that the time series 
 
-$$Y(t)=A \cos(\omega_0 t + \theta)$$ 
+$$Y(t)=A \cos(2\pi f_1 t + \theta)$$ 
 
-with given $\omega_0$, can be rewritten as
+with given $2\pi f_1$, can be rewritten as
 
-$$Y(t)=a \cos(\omega_0 t) + b \sin(\omega_0 t)$$
+$$Y(t)=a \cos(2\pi f_1 t) + b \sin(2\pi f_1 t)$$
 
 and derive the formulation of $A$ and $\theta$.
 
@@ -96,7 +96,7 @@ Hint: you might need to know trigonometric identity $\cos(u+v)=\cos(u)\cos(v)-\s
 
 Using the trigonometric identity to rewrite:
 
-$ Y(t)=A \cos(\omega_0 t + \theta) = A (\cos(\omega_0 t)\cos(\theta)-\sin(\omega_0 t)\sin(\theta)) $
+$ Y(t)=A \cos(2\pi f_1 t + \theta) = A (\cos(2\pi f_1 t)\cos(\theta)-\sin(2\pi f_1 t)\sin(\theta)) $
 
 Retrieving the functions for a and b
 
@@ -177,19 +177,19 @@ A purely stationary random process (or white noise process) yields a sequence of
 
 $$ Y(t)=Y_t=\epsilon(t)$$
 
-where $\\epsilon(t)$ is the independent identically distributed (i.i.d.) error at epoch $t$. Therefore, the observation/noise at time $t$ is not dependent on any of the previous observations $Y_t$.
+where $\epsilon(t)$ is the independent identically distributed (i.i.d.) error at epoch $t$. Therefore, the observation/noise at time $t$ is not dependent on any of the previous observations $Y_t$.
 
 :::{card} Example - time series consisting of a trend, annual signal (seasonality), an offset and pure random noise (white noise)
 
 It can be written as 
 
-$$Y(t) = y_0 + rt + a \text{cos}(\omega_0 t) + b \text{sin}(\omega_0 t) + o u_k(t) + \epsilon(t)$$
+$$Y(t) = y_0 + rt + a \text{cos}(2\pi f_1 t) + b \text{sin}(2\pi f_1 t) + o u_k(t) + \epsilon(t)$$
 
 where 
 - $y_0$ is the intercept (e.g. in mm)
 - $r$ is the rate (e.g. in mm/year)
 - $a$ and $b$ are the coefficients of the signal, (e.g. annual signal)
-- $\omega_0$ is the frequency (e.g. 1 cycle/year)
+- $f_1$ is the frequency of the seasonal component (e.g. 1 cycle/year)
 - $o$ is the offset starting at time $t_k$
 - $u_k(t)$ is the Heaviside step function
 - $\epsilon(t)$ is the i.i.d. random Gaussian noise, i.e. $\epsilon(t) \sim \textbf{N}(0, \sigma^2)$.

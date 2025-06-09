@@ -62,21 +62,21 @@ name: least_squares
 Example of a time series (right graph) with linear and seasonal trend. The residuals (= stationary time series) after applying BLUE are shown on the left.
 ```
 
-In the example above, for each observation $Y_i = y_0+ rt_i+a\cos{\omega_0t_i}+b \sin{\omega_0t_i} +\epsilon_i$, where $a$ and $b$ describe the seasonality and $y_0$ and $r$ the trend. The time series then is:
+In the example above, for each observation $Y_i = y_0+ rt_i+a\cos{2\pi f_1t_i}+b \sin{2\pi f_1t_i} +\epsilon_i$, where $a$ and $b$ describe the seasonality and $y_0$ and $r$ the trend. The time series then is:
 
 $$
 \begin{bmatrix}
     Y_1 \\ Y_2 \\  \vdots \\ Y_m
 \end{bmatrix} = \begin{bmatrix}
-    1&t_1&\cos{\omega_0 t_1} & \sin{\omega_0 t_1} \\
-     1&t_2&\cos{\omega_0 t_2} & \sin{\omega_0 t_2} \\
+    1&t_1&\cos{2\pi f_1 t_1} & \sin{2\pi f_1 t_1} \\
+     1&t_2&\cos{2\pi f_1 t_2} & \sin{2\pi f_1 t_2} \\
        \vdots & \vdots & \vdots & \vdots \\ 
-     1&t_m&\cos{\omega_0 t_m} & \sin{\omega_0 t_m}
+     1&t_m&\cos{2\pi f_1 t_m} & \sin{2\pi f_1 t_m}
 \end{bmatrix}
 \begin{bmatrix}
 y_0 \\ r \\ a \\ b \end{bmatrix} + 
 \begin{bmatrix}
-    \epsilon_1 \\ \epsilon_2 \\  \vdots \\ \epsilon_m
+    \epsilon(t_1) \\ \epsilon(t_2) \\  \vdots \\ \epsilon(t_m)
 \end{bmatrix}
 $$
 

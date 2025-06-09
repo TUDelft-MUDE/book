@@ -11,7 +11,7 @@ The goal is now to:
 As already discussed, we will distinguish the following components in a time series:
 
 * **Trend:** General behavior and variation of the process. This often is a linear trend with an unknown intercept $y_0$ and a rate $r$.
-* **Seasonality:** Regular seasonal variations, which can be expressed as sine functions with (un)known angular frequency $\omega_0$, and unknown amplitude $A$ and phase $\theta$.
+* **Seasonality:** Regular seasonal variations, which can be expressed as sine functions with (un)known frequency $f_1$, and unknown amplitude $A$ and phase $\theta$.
 * **Offset:** A jump of size $o$ in a time series starting at epoch $t_k$.
 * **Noise:** White or colored noise (e.g., AR process).
 
@@ -39,16 +39,16 @@ $$\hat{\epsilon}=Y-\hat{Y},\hspace{10px}\Sigma_{\hat{\epsilon}}=\Sigma_{Y}-\Sigm
 
 The linear model, consisting of the above three components plus noise, is of the form
 
-$$Y_t = y_0+rt+a\cos{\omega_0 t}+b\sin{\omega_0 t}+ou_k(t)+\epsilon(t)$$
+$$Y_t = y_0+rt+a\cos{2\pi f_1 t}+b\sin{2\pi f_1 t}+ou_k(t)+\epsilon(t)$$
 
 The linear model should indeed be written for all time instances $t_1,...,t_m$, resulting in $m$ equations as:
 
 $$
 \begin{align*}
-Y(t_1) &= y_0+rt_1+a\cos{\omega_0 t_1}+b\sin{\omega_0 t_1}+ou_k(t_1)+\epsilon(t_1)\\ 
-Y(t_2) &= y_0+rt_2+a\cos{\omega_0 t_2}+b\sin{\omega_0 t_2}+ou_k(t_2)+\epsilon(t_2)\\ 
+Y(t_1) &= y_0+rt_1+a\cos{2\pi f_1 t_1}+b\sin{2\pi f_1 t_1}+ou_k(t_1)+\epsilon(t_1)\\ 
+Y(t_2) &= y_0+rt_2+a\cos{2\pi f_1 t_2}+b\sin{2\pi f_1 t_2}+ou_k(t_2)+\epsilon(t_2)\\ 
 &\vdots \\ 
-Y(t_k) &= y_0+rt_k+a\cos{\omega_0 t_k}+b\sin{\omega_0 t_k}+ou_k(t_k)+\epsilon(t_k)\\ &\vdots \\ Y(t_m) &= y_0+rt_m+a\cos{\omega_0 t_m}+b\sin{\omega_0 t_m}+ou_k(t_m)+\epsilon(t_m)
+Y(t_k) &= y_0+rt_k+a\cos{2\pi f_1 t_k}+b\sin{2\pi f_1 t_k}+ou_k(t_k)+\epsilon(t_k)\\ &\vdots \\ Y(t_m) &= y_0+rt_m+a\cos{2\pi f_1 t_m}+b\sin{2\pi f_1 t_m}+ou_k(t_m)+\epsilon(t_m)
 \end{align*}
 $$
 
@@ -63,12 +63,12 @@ $$
 Y_1\\ \vdots\\ Y_{k-1}\\  Y_k\\ \vdots\\ 
 Y_m\end{bmatrix}}^{Y} = 
 \overbrace{\begin{bmatrix}
-1&t_1&\cos{\omega_0 t_1}&\sin{\omega_0 t_1}&0
+1&t_1&\cos{2\pi f_1 t_1}&\sin{2\pi f_1 t_1}&0
 \\  \vdots&\vdots&\vdots&\vdots&\vdots\\ 
-1&t_{k-1}&\cos{\omega_0 t_{k-1}}&\sin{\omega_0 t_{k-1}}&0\\ 
-1&t_k&\cos{\omega_0 t_k}&\sin{\omega_0 t_k}&1\\ 
+1&t_{k-1}&\cos{2\pi f_1 t_{k-1}}&\sin{2\pi f_1 t_{k-1}}&0\\ 
+1&t_k&\cos{2\pi f_1 t_k}&\sin{2\pi f_1 t_k}&1\\ 
 \vdots&\vdots&\vdots&\vdots&\vdots\\ 
-1&t_m&\cos{\omega_0 t_m}&\sin{\omega_0 t_m}&1\end{bmatrix}}^{\mathrm{A}}\overbrace{\begin{bmatrix}y_0\\ r\\ a\\ b\\ o\end{bmatrix}}^{\mathrm{x}}+\overbrace{\begin{bmatrix}\epsilon_1\\ \vdots\\ \epsilon_{k-1} \\ \epsilon_k\\ \vdots\\ \epsilon_m\end{bmatrix}}^{\epsilon}$$
+1&t_m&\cos{2\pi f_1 t_m}&\sin{2\pi f_1 t_m}&1\end{bmatrix}}^{\mathrm{A}}\overbrace{\begin{bmatrix}y_0\\ r\\ a\\ b\\ o\end{bmatrix}}^{\mathrm{x}}+\overbrace{\begin{bmatrix}\epsilon(t_1)\\ \vdots\\ \epsilon(t_{k-1}) \\ \epsilon(t_k)\\ \vdots\\ \epsilon(t_m)\end{bmatrix}}^{\epsilon}$$
 
 with the $m\times m$ covariance matrix
 %MMMMM should we keep sigma for the diagonal and c_i for the non-diagonal elements?
@@ -137,9 +137,9 @@ where $\sigma_{\hat{r}} = \sqrt{(\Sigma_{\hat{X}})_{22}}$ is the standard deviat
 
 ## How to find the frequencies?
 
-The design matrix $\mathrm{A}$ is usually assumed to be known. So far, we have assumed the frequency $\omega_0$ of the periodic pattern (seasonality, for example) in a $a\cos{\omega_0 t} + b\sin{\omega_0 t}$ is known, so the design matrix $\mathrm{A}$ can be directly obtained. In some applications, however, such information is hidden in the data, and needs to be determined.
+The design matrix $\mathrm{A}$ is usually assumed to be known. So far, we have assumed the frequency $2\pi f_1$ of the periodic pattern (seasonality, for example) in a $a\cos{2\pi f_1 t} + b\sin{2\pi f_1 t}$ is known, so the design matrix $\mathrm{A}$ can be directly obtained. In some applications, however, such information is hidden in the data, and needs to be determined.
 
-***How to determine $\omega_0$ if it is unknown a priori?***
+***How to determine $f_1$ if it is unknown a priori?***
 
 #### Example power spectral density
 
@@ -152,6 +152,6 @@ The design matrix $\mathrm{A}$ is usually assumed to be known. So far, we have a
 
 Left: time series (grey) and estimated linear trend and sine wave with period of 100. Right: estimated PSD.
 ```
-This means we can estimate the frequency $\omega_0$ of the periodic pattern using the techniques discussed in the chapter on signal processing. Once we have the frequency, we can construct the design matrix $\mathrm{A}$. 
+This means we can estimate the frequency $f_1$ of the periodic pattern using the techniques discussed in the chapter on signal processing. Once we have the frequency, we can construct the design matrix $\mathrm{A}$. 
 
 It is also possible to infer the frequency of the periodic pattern by reasoning. For example, if we know our model depends on temperature, we can assume that the frequency of the seasonal pattern is related to the temperature cycle (e.g., 24 hours). However, this is a more qualitative approach and should be used with caution. Best practice is to use the DFT or PSD to estimate the frequency.
