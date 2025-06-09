@@ -175,7 +175,7 @@ Noise simply refers to random fluctuations in the time series about its typical 
 
 A purely stationary random process (or white noise process) yields a sequence of uncorrelated zero-mean random variables. This zero-mean random process is of the form
 
-$$ Y(t)=Y_t=\epsilon_t $$
+$$ Y(t)=Y_t=\epsilon(t)$$
 
 where $\epsilon_t$ is the independent identically distributed (i.i.d.) error at epoch $t$. Therefore, the observation/noise at time $t$ is not dependent on any of the previous observations $Y_t$.
 
