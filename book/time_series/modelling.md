@@ -135,9 +135,9 @@ $$\hat{r}\pm k\sigma_{\hat{r}}$$
 
 where $\sigma_{\hat{r}} = \sqrt{(\Sigma_{\hat{X}})_{22}}$ is the standard deviation of $\hat{r}$ and $k=2.58$ is the critical value obtained from the [standard normal distribution](table_standardnormal) (using $0.5\alpha$).
 
-## Model identification
+## How to find the frequencies?
 
-The design matrix $\mathrm{A}$ is usually assumed to be known. So far, we have assumed the frequency $\omega_0$ of the periodic pattern (seasonality, for example) in a $a\cos{\omega_0 t} + b\sin{\omega_0 t}$ is known, so the design matrix $\mathrm{A}$ can be directly obtained. In some applications, however, such information is hidden in the data, and needs to be identified/detected. Linear model identification is a way to reach this goal.
+The design matrix $\mathrm{A}$ is usually assumed to be known. So far, we have assumed the frequency $\omega_0$ of the periodic pattern (seasonality, for example) in a $a\cos{\omega_0 t} + b\sin{\omega_0 t}$ is known, so the design matrix $\mathrm{A}$ can be directly obtained. In some applications, however, such information is hidden in the data, and needs to be determined.
 
 ***How to determine $\omega_0$ if it is unknown a priori?***
 
