@@ -1,20 +1,5 @@
 # Genetic Algorithm
 
-## Video
-
-The story is told once in a video. The video below has a one-to-one correspondence with this book
-
-```{admonition} MUDE Exam Information
-:class: tip, dropdown
-For the exam, you are expected to have a clear understanding of the Genetic Algorithm described and its steps. You do not need to know  how to implement it in code!
-```
-
-```{eval-rst}
-.. raw:: html
-
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/iDxEgEyjRYE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-```
-
 ## Recap - Optimization Models & Exact optimization approaches
 
 * Linear programming problems and integer programming problems
