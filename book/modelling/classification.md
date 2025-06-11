@@ -6,16 +6,16 @@
 **In short:** A model is a purpose built abstraction of physical reality.
 ```
 
-In any engineering discipline, **we interact with a system** (Earth, ecosystem, water network…). Usually, we have questions about how the system behaves and how our intervention will affect it (e.g.: how a water body reacts when the cooling water from a nuclear power plant is discharged), or how the system will impact a proposed intervention (e.g.: a river which may flood close to our road). 
+In any engineering discipline, **we interact with a system** (Earth, ecosystem, water network, structure, …). Usually, we have questions about how the system behaves and how our intervention will affect it (e.g.: how a water body reacts when the cooling water from a nuclear power plant is discharged), or how the system will impact a proposed intervention (e.g.: a river which may flood close to our road). 
 
-To answer that, we build an abstraction of the system which can mimic those aspects we are interested in. For instance, if we focus on the example from the cooling water and the water body, we can model the heat distribution in the water body to know the final temperature. Here we are only modelling some aspects of the system we are studying. What about the response from the species living there? Well, **if we do not need to know about this, and this doesnt affect our results in a meaningful way, our model is good enough to answer our question!**
+To answer that, we build an abstraction of the system which can mimic those aspects we are interested in. For instance, if we focus on the example from the cooling water and the water body, we can model the heat distribution in the water body to know the final temperature. Here we are only modelling some aspects of the system we are studying. What about the response from the species living there? Well, **if we do not need to know about this, and this doesn't affect our results in a meaningful way, our model is good enough to answer our question!**
 
 % ./figs/modelling/diagram.png "diagram" *Modelling procedure diagram [[1]](https://schoolbag.info/mathematics/numbers/103.html)*
 | ![diagram](https://files.mude.citg.tudelft.nl/replacement.svg) |
 | :--: |
 | ... |
 
-Once we are sure that the model can reproduce the behaviors we are interested in through **mathematization** ,i.e, the implimentation of the abstraction, we can further use it to make **computations**. Those computations need to be **interpreted** to get the answer to our actual question. We can also check if our model realistically represents the system we are modelling through **verification** - more about that later.
+Once we are sure that the model can reproduce the behaviors we are interested in through **mathematization** ,i.e, the implementation of the abstraction, we can further use it to make **computations**. Those computations need to be **interpreted** to get the answer to our actual question. We can also check if our model realistically represents the system we are modelling through **verification** - more about that later.
 
 ***
 
