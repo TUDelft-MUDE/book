@@ -1,7 +1,9 @@
 format: jb-book
 root: intro
 
+
 parts:
+# START REMOVE-FROM-PUBLISH
   - caption: Q1 Topics
     numbered: 2
     chapters: 
@@ -103,13 +105,12 @@ parts:
         sections:
         - file: multivariate/design/one-random-variable
         - file: multivariate/design/two-random-variables
-      # START REMOVE-FROM-PUBLISH
+
         - file: multivariate/design/exercise
           sections:
           - file: multivariate/design/exercise_solutions
       - file: multivariate/test_pyvinecopulib
       - file: multivariate/test_bivariate
-      # END REMOVE-FROM-PUBLISH
 
   - caption: Q2 Topics
     numbered: 2
@@ -204,13 +205,13 @@ parts:
       - file: optimization/genetic_algorithm
       - file: optimization/airlines.ipynb
         title: Airline Exercise (Optional)
-        # START REMOVE-FROM-PUBLISH
-      - file: optimization/performance
-        title: Performance Considerations in LP (Optional)
-        sections:
-        - file: optimization/airlines_performance.ipynb
-        - file: optimization/performance_generic_LP.ipynb
-        # END REMOVE-FROM-PUBLISH
+      #  
+      #- file: optimization/performance
+      #  title: Performance Considerations in LP (Optional)
+      #  sections:
+      #  - file: optimization/airlines_performance.ipynb
+      #  - file: optimization/performance_generic_LP.ipynb
+      # 
       - file: optimization/project
         title: Road Network Design Problem (GA)
         sections:
@@ -415,6 +416,7 @@ parts:
         title: Chi-Squared
     - file: probability/python
     - file: fundamentals/eemc-stuff
+# END REMOVE-FROM-PUBLISH
   - caption: Miscellaneous
     numbered: false
     chapters:
