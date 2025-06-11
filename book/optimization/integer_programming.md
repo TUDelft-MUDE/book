@@ -9,16 +9,6 @@ There are many linear programming problems in which all or some of the variables
 
 These problems are called integer programming problems (IP) or mixed integer programming problems (MIP), if there are some continuous variables. Obtaining a solution for these problems can be quite difficult as the simplex method is not prepared for integer variables.
 
-## Video
-
-The story is told  in a video. The video has a one-to-one correspondence with this book
-
-```{eval-rst}
-.. raw:: html
-
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/ViA1X6X3Rhs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-```
-
 ## Integer or binary variables definition
 
 $\mathbb{N}_0$ is the set of natural numbers meaning the integer ones and it includes in this case the zero. You can have:

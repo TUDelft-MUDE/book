@@ -11,16 +11,6 @@ When working with linear programming, we should give particular attention to the
 * Modelling
 * Solving
 
-## Video
-
-The story is told in a video. The video has a one-to-one correspondence with this book
-
-```{eval-rst}
-.. raw:: html
-
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/0x7bkzHJZ1I" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-```
-
 
 ## Data pre-processing
 

@@ -1,23 +1,5 @@
 # Example Linear Programming
 
-## Videos
-
-The story is told in two videos. The videos have a one-to-one correspondence with this book
-
-### The sand and clay extraction problem
-```{eval-rst}
-.. raw:: html
-
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/0bSIL1k_618" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-```
-
-### Solving the sand and clay extraction problem with the graphical solution method
-```{eval-rst}
-.. raw:: html
-
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/OEApSyGRZPI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-```
-
 ## The problem
 
 A company extracts sand and clay from a site which when sold gives a profit of 57 and 60 monetary units per thousand units of product, respectively. For this extraction, sand needs a manpower of 50 workers x hours to extract 1000 units of product whilst clay needs 13 workers x hours for 1000 units.

@@ -7,16 +7,6 @@ In the augmented form of a mathematical program:
 * All the variables must be positive defined
 * The objective function can be of type maximization or minimization
 
-## Video
-
-The story is told in a video. The video has a one-to-one correspondence with this book.
-
-```{eval-rst}
-.. raw:: html
-
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/-jQKtC2Xvcs?si=nlX_yEmByU7CA8rO" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-```
-
 ## Augmented form of a LP problem
 
 Let us take a look, considering an objective function given by:
