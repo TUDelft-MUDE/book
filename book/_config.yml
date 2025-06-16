@@ -51,6 +51,8 @@ sphinx:
     - sphinx_image_inverter
     - sphinx_tudelft_theme
     - sphinx_named_colors
+    - teachbooks_software_project_extension_name
+
 
 bibtex_bibfiles:
   - _bibliography/references.bib
