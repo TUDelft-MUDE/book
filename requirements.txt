@@ -8,3 +8,6 @@ sphinx-named-colors
 docutils == 0.17.1
 
 git+https://github.com/TeachBooks/Sphinx-Thebe
+
+--extra-index-url https://test.pypi.org/simple/
+teachbooks_software_project_extension_name==0.1.3
