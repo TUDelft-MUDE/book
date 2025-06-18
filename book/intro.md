@@ -1,7 +1,7 @@
 +++
 # Welcome to the MUDE Textbook
 
-Welcome to the MUDE textbook for the 2024-25 academic year. This is where assigned reading is located, along with interactive exercises to practice and study the module material.
+Welcome to the MUDE textbook for the 2025-26 academic year. This is where assigned reading is located, along with interactive exercises to practice and study the module material.
 
 :::{admonition} Interactive Pages---Use Python in your Browser!
 This online textbook has a number of pages that are set up to be used interactively. You can use the “Live Code” button under the Rocket Ship icon in the top right to activate the interactive features and use Python interactively!
