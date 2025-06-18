@@ -21,7 +21,7 @@ If you’ve a question regarding any content, look at [https://​answers​.cit
 
 ## Confused?
 
-That can happen, let us know how we can make it work for you! Send an email to <MUDE-CEG@tudelft.nl>
+That can happen, let us know how we can make it work for you! Send an email to <MUDE-CEG@tudelft.nl> and we will assist you!
 
 ## Credits and Additional Information
 
