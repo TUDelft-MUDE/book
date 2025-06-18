@@ -1,4 +1,4 @@
-# Introduction to finite elements
+# Introduction to Finite Elements Methods
 
 In this chapter we will introduce all the steps that are usually followed to solve a PDE using the finite element method, from the definition of the PDE to the solution of a linear system of equations. To make the learning curve ease, we focus on the simplest PDE for finite elements: the Poisson equation, first in 1D and then in 2D. Note that the laplacian operator with second derivatives in space that appears in th Poisson equation is an ingredient in many different engineering problems, so this is not only a convenient place to start but also a fundamental one.  
 
