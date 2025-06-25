@@ -50,8 +50,8 @@ defines an interval of the random variable $X$ between $x=a$ and $x=b$. Such int
 
 $$
 \begin{cases} 
-   &x \leq a \\
-   &x > b 
+   &x \geq a \\
+   &x < b 
 \end{cases}
 $$
 
@@ -163,7 +163,7 @@ P[X\leq x,Y\leq y]
   f_{X,Y}(x, y)\,\textrm{d}x\,\textrm{d}y
 $$
 
-The equation above is the the multivariate CDF and also illustrates a specific combination of two intervals (a region in the $X,Y$ plane), described here with $x^*$ and $y^*$ as arbitrary values of interest:
+The equation above is the multivariate CDF and also illustrates a specific combination of two intervals (a region in the $X,Y$ plane), described here with $x^*$ and $y^*$ as arbitrary values of interest:
 
 $$
 \Omega = \big\{\Omega_{x,ne}, \Omega_{y,ne} \big\} = 
@@ -180,7 +180,7 @@ Let us now apply this equation to compute a probability: returning to our case s
 
 $$
 P[Q_1 \leq q_1, Q_2 \leq q_2]
-= F_{Q_1,Q_2}(\;\textrm{m}^3\textrm{/s}, \;\textrm{m}^3\textrm{/s})
+= F_{Q_1,Q_2}(100\;\textrm{m}^3\textrm{/s}, 75\;\textrm{m}^3\textrm{/s})
 = 21/34 = 0.62
 $$
 
