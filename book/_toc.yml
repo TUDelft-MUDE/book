@@ -96,8 +96,8 @@ parts:
         title: Continuous Variables
       - file: multivariate/gaussian
         title: Multivariate Gaussian
-      - file: multivariate/nongaussian
-        title: Non-Gaussian Distributions
+      # - file: multivariate/nongaussian
+      #   title: Non-Gaussian Distributions
       - file: multivariate/design
         title: Practical Applications
         sections:
