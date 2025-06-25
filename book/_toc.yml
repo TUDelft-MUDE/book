@@ -94,7 +94,9 @@ parts:
         title: Discrete Events
       - file: multivariate/variables
         title: Continuous Variables
-      - file: multivariate/gaussian
+      - file: multivariate/Correlation_and_Covariance
+        title: Covariance and correlation coefficient
+      - file: multivariate/bivariate
         title: Multivariate Gaussian
       # - file: multivariate/nongaussian
       #   title: Non-Gaussian Distributions
