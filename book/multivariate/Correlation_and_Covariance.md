@@ -9,7 +9,7 @@ In order to assess the streght of the dependence in these complex relationships 
 
 ## Covariance: definition
 
-Covariance is a measure of the joint variability of two variables. The definition of Covariance is given by
+Covariance is a measure of the joint variability of two variables. The definition of Covariance for two random variables $X_1$ and $X_2$ is given by
 
 $$
 \text{Cov}(X_1, X_2) = \mathbb{E}[(X_{1,i} - \mathbb{E}(X_1))(X_{2,i} - \mathbb{E}(X_2))] = \mathbb{E}(X_1 X_2)-\mathbb{E}(X_1)\mathbb{E}(X_2)
