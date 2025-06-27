@@ -2,7 +2,7 @@
 
 :::::{dropdown} Week 1.1
 
-### Modelling Concepts
+## Modelling Concepts
 
 - Book theory
   - [](./modelling/classification)
@@ -17,7 +17,7 @@
   - 
 --->
 
-### Programming: Getting started!
+## Programming: Getting started!
 
 - Book theory
   - [](./programming/week_1_1/environments)
@@ -29,122 +29,125 @@
 --->
 :::::
 
+<!---
 :::::{dropdown} Week 1.2
 
-### Numerical Modelling 1
+## Numerical Modelling 1
 
-### Programming: reporting
+## Programming: reporting
 
 :::::
 
 :::::{dropdown} Week 1.3
 
-### Numerical Modelling 2
+## Numerical Modelling 2
 
-### Programming: collaborating
+## Programming: collaborating
 
 ::::
 
 :::::{dropdown} Week 1.4
 
-### Univariate Distributions
+## Univariate Distributions
 
-### Programming: git
+## Programming: git
 
 :::::
 
 :::::{dropdown} Week 1.5
 
-### Multivariate Distributions
+## Multivariate Distributions
 
-### Programming: versioning
+## Programming: versioning
 
 :::::
 
 :::::{dropdown} Week 1.6
 
-### Uncertainty Propagation
+## Uncertainty Propagation
 
-### Programming: prompting
+## Programming: prompting
 
 :::::
 
 :::::{dropdown} Week 1.7
 
-### Observation Theory 1
+## Observation Theory 1
 
-### Programming: ...
+## Programming: ...
 
 :::::
 
 :::::{dropdown} Week 1.8
 
-### Observation Theory 2
+## Observation Theory 2
 
-### Programming: ...
+## Programming: ...
 
 :::::
 
 :::::{dropdown} Week 2.1
 
-### PDE's, FDM, FVM
+## PDE's, FDM, FVM
 
-### Programming: object-oriented programming
+## Programming: object-oriented programming
 
 :::::
 
 :::::{dropdown} Week 2.2
 
-### FEM
+## FEM
 
-### Programming: sparse matrices
+## Programming: sparse matrices
 
 :::::
 
 :::::{dropdown} Week 2.3
 
-### Signal processing
+## Signal processing
 
-### Programming: errors
+## Programming: errors
 
 :::::
 
 :::::{dropdown} Week 2.4
 
-### Time series analysis
+## Time series analysis
 
-### Programming: tests
+## Programming: tests
 
 :::::
 
 :::::{dropdown} Week 2.5
 
-### Optimization
+## Optimization
 
-### Programming: packages and modules
+## Programming: packages and modules
 
 :::::
 
 :::::{dropdown} Week 2.6
 
-### Machine learning
+## Machine learning
 
-### Programming: ...
+## Programming: ...
 
 :::::
 
 :::::{dropdown} Week 2.7
 
-### Extreme Value Analysis
+## Extreme Value Analysis
 
-### Programming: ...
+## Programming: ...
 
 :::::
 
 :::::{dropdown} Week 2.8
 
-### Risk Analysis
+## Risk Analysis
 
-### Programming: ...
+## Programming: ...
 
 :::::
+
+--->
