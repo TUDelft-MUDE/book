@@ -9,13 +9,12 @@
   - [](./modelling/decisions)
   - [](./modelling/validate_verify)
   - [](./modelling/gof)
-<!---
 - Lecture slides
 - [Workshop](https://tudelft-mude.github.io/workbook-2025/assignments/WS1.1/README.html)
 - [Group assignment](https://tudelft-mude.github.io/workbook-2025/assignments/GA1.1/README.html)
 - Fundamental concepts
-  - 
---->
+  - tbd
+
 
 ## Programming: Getting started!
 
@@ -23,10 +22,8 @@
   - [](./programming/week_1_1/environments)
 - Fundamental programming concepts
   - [Files and Folders book](https://teachbooks.io/files-and-folders/EN/)
-<!---
   - [Python basics](https://teachbooks.io/learn-python/restructure-book/basics/intro.html)
 - [Programming assignment](https://tudelft-mude.github.io/workbook-2025/assignments/PA1.1/README.html)
---->
 :::::
 
 <!---
