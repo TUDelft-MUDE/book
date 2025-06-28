@@ -1,0 +1,107 @@
+# Credits
+book:
+  credit:
+    author:
+      - Robert Lanzafame
+      - Tom van Woudenberg
+      - Sandra Verhagen
+    title: _config.yml
+    license: LICENSE
+    copyright: Delft University of Technology
+    type: editor-author
+
+
+sources:
+  modelling_concepts:
+    author:
+      - Alessandro Cabboi
+      - Patricia Mares Nasarre
+      - Robert Lanzafame
+    acknowledgement:
+      - João Moura Pereira de Lucas Teixeira
+    type: internal
+    note: |
+      Alessandro made most of the slides, which were transcribed by João in 2023. Robert and Patricia modified and re-wrote some material into book format for 2023. Patricia especially added to the GoF page.
+      
+      Status of figures is unclear.
+
+  uncertainty_propagation:
+    license: CC BY 4.0
+    copyright: Delft University of Technology
+    author:
+      - Sandra Verhagen
+    title: Propagation of Uncertainty
+    acknowledgement:
+      - name: Robert Lanzafame, Patricia Mares Nasarre, Max Ramgraber
+        contribution: reviewed, commented and/or modified content
+      - name: Antonio Magherini
+        contribution: converted the slides and exercises to book format
+    resource:
+      - name: Max Ramgraber
+        what: interactive figure
+        where: https://mude.citg.tudelft.nl/2024/book/_static/elements/element_2D_Gaussian.html
+        license: CC BY 4.0
+        copyright: Delft University of Technology
+      - name: Robert Lanzafame, Patricia Mares Nasarre
+        what: page
+        where: book/propagation_uncertainty/uncertainty.md
+        license: CC BY 4.0
+        copyright: Delft University of Technology
+
+      
+    type: internal
+
+  observation_theory:
+    author:
+      - Sandra Verhagen
+    type: internal
+    note: |
+      
+
+  numerical_modelling:
+    author:
+      - Jaime
+      - Justin Pitman
+      - more
+    type: internal
+    acknowledgements:
+    isabel, mona
+
+  continuous_distributions:
+    author:
+      - Patricia Mares Nasarre
+      - ???
+    type: internal
+    note: |
+      Not sure if/when we move it to another book, and how to handle that.
+
+  multivariate_distributions:
+    author:
+      - Robert Lanzafame
+      - Patricia Mares Nasarre
+    type: internal
+    note: |
+      Not sure if/when we move it to another book, and how to handle that.
+
+  finite_volume_method:
+    author:
+      - Robert Lanzafame
+      - Jaime Arriaga Garcia
+    type: internal
+    license: CC BY
+
+  finite_element_method:
+    author:
+      - Frans van der Meer
+      - Oriol?
+      - Martin?
+    type: external
+    license: CC-BY (but not yet confirmed?)
+
+machine_learning:
+  title: Introduction to Machine Learning
+  author:
+    - Iuri Rocha
+    - Anne Poot
+    - Joep Storm
+    - Leon Riccius
