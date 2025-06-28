@@ -2,7 +2,7 @@
 
 In this section, we are going to focus on the decisions we make when setting up a model. We will start seeing models as part of the creative and decision making process!
 
-When building a model, we need to identify which simplifications we can make to keep our model as simple as possible, while modelling the system we are interested in with the appropriate accuracy. In real-life applications, simpler models also equates to lower costs, so it is often one of the main considerations in model design. In short, the simpler, the better, as long as it answers our questions. We are going to talk about the following chaaracteristics of a model:
+When building a model, we need to identify which simplifications we can make to keep our model as simple as possible, while modelling the system we are interested in with the appropriate accuracy. In real-life applications, simpler models also equates to lower costs, so it is often one of the main considerations in model design. In short, the simpler, the better, as long as it answers our questions. We are going to talk about the following characteristics of a model:
 
 - Dynamic vs. static models
 - Linear vs. non-linear models
@@ -89,6 +89,4 @@ Note that there are also uncertainties regarding the measurement of the observat
 
 **Cases of deterministic systems:**
 
-Known structures subject to known static or dynamic loads. For instance, when we decide to model the response of a building (deformations) under a certain wind load.
-
-
+Known structures subject to known static or dynamic loads. For instance, when we decide to model the response of a building (deformations) under a specific (known) load. Note, however, that in practice loads are almost always variable, or impossible to predict with certainty; thus we will often use deterministic models to understand the behavior of the structure of interest, while also using a stochastic models to check whether the structure will perform well under the range of loads that can be expected.
