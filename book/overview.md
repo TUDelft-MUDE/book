@@ -4,7 +4,7 @@
 
 **Modelling concepts**
 
-- [Book theory](./modelling/overview)
+- [Book chapter](./modelling/overview)
   - [](./modelling/classification)
   - [](./modelling/decisions)
   - [](./modelling/validate_verify)
@@ -17,7 +17,7 @@
 
 **Programming: getting started!**
 
-- [Book theory](./programming/week_1_1.md)
+- [Book chapter](./programming/week_1_1.md)
   - [](./programming/week_1_1/environments)
 - Fundamental programming concepts
   - [Files and Folders book](https://teachbooks.io/files-and-folders/EN/)

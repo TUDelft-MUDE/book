@@ -10,16 +10,11 @@ parts:
     numbered: 2
     chapters: 
     - file: modelling/overview
-      title: Modelling Concepts
       sections:
       - file: modelling/classification
-        title: Classification
       - file: modelling/decisions
-        title: Decisions
       - file: modelling/validate_verify
-        title: Calibration, Validation & Verification
       - file: modelling/gof
-        title: Goodness of Fit
     - file: propagation_uncertainty/overview
       sections:
       - file: propagation_uncertainty/00a_CovCorr.md
