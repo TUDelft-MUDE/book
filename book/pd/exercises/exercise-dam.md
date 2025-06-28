@@ -15,7 +15,7 @@ You are tasked to analyse the safety of a dam and the downstream river system. D
 
 %Downstream of the dam there is an area protected by two main dike sections which must be able to contain water released from the reservoir. A dike section fails if the river discharge exceeds a critical discharge $Q_c$ with a probability of exceedance of 1/100 per year, which leads to flooding of the area. There appears to be a correlation between failures of both sections, $\rho_{1,2}=0.9$, and the figure below shows the effect of the correlation coefficient on the joint failure of the two sections.
 
-```{figure} ../figures/system-corr-coeff.PNG
+```{figure} https://files.mude.citg.tudelft.nl/system-corr-coeff.PNG
 ---
 width: 400px
 name: corr-coeff-or
@@ -122,7 +122,7 @@ We know that mortality in case of dam failure is $F_{d|f} = 0.1$ and that the po
 ````{admonition} Answer
 :class: tip, dropdown
 
-```{figure} ../figures/exercise-dam-fn-limit-line.png
+```{figure} https://files.mude.citg.tudelft.nl/exercise-dam-fn-limit-line.png
 ---
 width: 500px
 ---

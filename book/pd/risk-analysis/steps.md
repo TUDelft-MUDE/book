@@ -18,7 +18,7 @@ In general, the following elements can be identified within a risk analysis, (ba
 
 Each of these steps is illustrated in {numref}`risk-steps` and described in more detail below, providing context for the following chapters in this book. In addition to the risk analysis of a given system, *risk management* also includes the element ‘risk reduction and control’. Depending on the outcome of the first four steps of the analysis, measures can be taken to reduce the risk, which will lead to changes in the system configuration and risk level. Steps 1--4 are often repeated several times with adjusted system specifications to obtain an optimal design. 
 
-```{figure} ../figures/risk-steps.PNG
+```{figure} https://files.mude.citg.tudelft.nl/risk-steps.PNG
 ---
 width: 250px
 name: risk-steps

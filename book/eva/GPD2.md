@@ -126,7 +126,7 @@ First, we fit the parameters of our distribution using the sampled **excesses** 
 Once we have fitted the parameters, we check the goodness of fit of such fitting. Below, the QQ-plot and the exceedance probability plot in logarithmic scale are presented.
 
 
-```{figure} ../figures/EVA/GOF_GPD.png
+```{figure} https://files.mude.citg.tudelft.nl/GOF_GPD.png
 
 ---
 

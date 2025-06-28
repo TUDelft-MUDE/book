@@ -5,7 +5,7 @@ Block maxima consists of defining a time block, for instance a year, and selecti
 
 Let's apply it to our time series. We are going to use a block = 1 year, so we will obtain 20 extreme observations for the subsequent phases of our analysis. In the figure below, you can see how the application of this method looks.
 
-```{figure} ../figures/EVA/BlockMaxima.png
+```{figure} https://files.mude.citg.tudelft.nl/BlockMaxima.png
 
 ---
 

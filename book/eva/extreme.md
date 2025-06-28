@@ -5,7 +5,7 @@ If you hear the word "**extreme**", the first thing that may come to your mind a
 
 We want to perform a market study of the prices of sold t-shirts to start a new clothing brand. We perform a survey and build the probability density function (pdf) of prices that we can see below. The peak of the distribution, the mode, would correspond to fast fashion brands since they are afordable and sell a lot of product. If we start moving towards the right tail of the distribution, high end brands appear, which are a bit more expensive but still sell a reasonable amount of product. If we keep moving towards the right, we will find luxury brands which are really exclusive, so they sell little amount of product at very high prices. Finally, even further in the tail, we would find the world record: the most expensive t-shirt sold in the world, the one which Maradona wore when did the goal with the "hand of God" help, sold by $\approx$ $9M. It is extreme, right?
 
-```{figure} ../figures/EVA/pdf_tshirts.png
+```{figure} https://files.mude.citg.tudelft.nl/pdf_tshirts.png
 
 ---
 

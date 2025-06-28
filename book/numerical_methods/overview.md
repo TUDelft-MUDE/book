@@ -6,7 +6,7 @@ In this Chapter, the fundamentals of numerical modelling and basic numerical met
 
 % MMMMM the following gif is large (30MB) and is manually added to server at the URL location below to prevent the book from becoming too large.
 
-```{figure} https://mude.citg.tudelft.nl/fileshare/public/book-media/NumericalMethodsRiver.gif
+```{figure} https://files.mude.citg.tudelft.nl/NumericalMethodsRiver.gif
 :name: NumericalMethodsRiver
 
 Cool numerical model of the Yamuna river. Thanks to Amgad Omer (Deltares).

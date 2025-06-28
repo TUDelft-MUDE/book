@@ -15,7 +15,7 @@ The time instants, also defined as epochs, are $t_i = i \Delta t$, indicating th
 
 $$Y(t) = [Y(1), Y(2), \ldots{}, Y(m)]^T = [Y_1, Y_2, \ldots{}, Y_m]^T$$
 
-```{figure} ./figs/time_series.png
+```{figure} https://files.mude.citg.tudelft.nl/time_series.png
 :name: time_series
 :width: 700px
 :align: center
@@ -39,7 +39,7 @@ where we distinguish the following components:
 
 The trend is the general pattern of the time series and shows its long-term changes. The trend can be linear, however higher order polynomials are also possible.
 
-```{figure} ./figs/trend.png
+```{figure} https://files.mude.citg.tudelft.nl/trend.png
 :name: trend
 :width: 600px
 :align: center
@@ -138,7 +138,7 @@ $ \theta = \arctan(\frac{-b}{a}) $
 
 Offsets are sudden changes or shifts in time series. There are different underlying reasons why we encounter offsets in time series. 
 
-```{figure} ./figs/offset.png
+```{figure} https://files.mude.citg.tudelft.nl/offset.png
 :name: offset
 :width: 700px
 :align: center

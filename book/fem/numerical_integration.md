@@ -50,7 +50,7 @@ $$ p= 2 n_{ip} -1 $$
 This information can be summarised in the following manner. 
 
 
-```{figure} ./figures/numericalIntegration1D.png
+```{figure} https://files.mude.citg.tudelft.nl/numericalIntegration1D.png
 ---
 height: 300px
 name: 1_8_2

@@ -32,7 +32,7 @@ A basic solution to this problem will have three variables different from zero (
 
 From the three equations, one obvious apparent basic solution is $s_1=40$, $s_2=40$, $s_3=200$, with $x_1=0$ and $x_2=0$. A basic variable can be recognized in its contraint because it has a positive unitary coefficient in its constraint (+1) and it does not appear (has 0 coefficient) in the other constraints.
 
-![sand_clay_1](./figs/sand_clay_1.png)
+![sand_clay_1](https://files.mude.citg.tudelft.nl/sand_clay_1.png)
 
 In order to search for the best solution, we should move from one system of equations to another that is equivalent to the first (it has the same solution space) but in which **another apparent basic solution comes up**.
 
@@ -43,7 +43,7 @@ There are two types of operations to transform the system of equations into anot
 
 Graphically:
 
-![sand_clay_2](./figs/sand_clay_2.png)
+![sand_clay_2](https://files.mude.citg.tudelft.nl/sand_clay_2.png)
 
 The problem is that even though this is a vertex, it is not a feasible solution - note that $s_1$ is negative!
 
@@ -53,7 +53,7 @@ $$C_n^m=\frac{n!}{m!(n-m)!}$$
 
 where $n$ represents the number of variables and $m$ the total number of constraints. The feasible basic solutions are, therefore, given by:
 
-![sand_clay_3](./figs/sand_clay_3.png)
+![sand_clay_3](https://files.mude.citg.tudelft.nl/sand_clay_3.png)
 
 We need a systematic method (algorithm) that applies changes to the system of equations going from feasible basic solution to feasible basic solutions without leaving the feasible space. This is the so-called **SIMPLEX method** (created by Dantzig in the 1950s).
 
@@ -144,7 +144,7 @@ Changing the system, our table will start looking like:
 
 And our current solution has $[s_1,x_2,s_3]=[8,8,96]$ as basic variables and $[x_1,s_2]=[0,0]$ as non-basic variables. With this scenario, the objective function is now $L=480$. Graphically speaking:
 
-![sand_clay_8](./figs/sand_clay_8.png)
+![sand_clay_8](https://files.mude.citg.tudelft.nl/sand_clay_8.png)
 
 **But is it already the optimal solution?**
 
@@ -184,7 +184,7 @@ Transforming the table again, we will obtain:
 
 The current solution is now given by $L=495$, which results from having $[x_1,x_2,s_3]=[1.67,6.67,30]$ as basic variables and $[s_1,s_2]=[0,0]$ as non-basic variables. Graphically speaking:
 
-![sand_clay_12](./figs/sand_clay_12.png)
+![sand_clay_12](https://files.mude.citg.tudelft.nl/sand_clay_12.png)
 
 Now we just need to check if the solution we have just obtained is optimal and, in this case, it is!
 
@@ -206,4 +206,4 @@ So, this is the optimal solution
 
 The SIMPLEX workflow is shown in the scheme below:
 
-![sand_clay_14](./figs/sand_clay_14.png)
+![sand_clay_14](https://files.mude.citg.tudelft.nl/sand_clay_14.png)

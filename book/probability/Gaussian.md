@@ -28,7 +28,7 @@ Let's see how the distribution looks.
  Regarding the standard deviation ($\sigma$), it can be interpreted as the dispersion around the mean ($\mu$). Thus, you can see in the PDF plot the the red distribution is wider that the black or blue ones, since the standard deviation is the double of the other two. You can also see the effect in the CDF plot, where the slope of the red distribution is more gentle than those of the black and blue distributions.
 
 
-```{figure} /probability/figures/gaussian.png
+```{figure} https://files.mude.citg.tudelft.nl/gaussian.png
 ---
 scale: 75%
 name: gaussian distr

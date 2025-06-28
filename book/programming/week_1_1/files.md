@@ -94,7 +94,7 @@ This is additionally explained in a section below.
 
 Within each **working directory** you will collect a wide variety of files. It is important to keep these well organized so that when you return to work on a project in the future, it is easy to pick up where you left off. As a preview of the types of analyses we will do, a typical MUDE working directory is illustrated in the figure below. Note in particular that it contains several file types, along with a few sub-directories for organizing content. The files that are edited directly (e.g., the Analysis or Report files) are included in the top level directory. In addition, a README file is included to provide general information about the working directory and its contents.
 
-```{figure} figures/working_dir.svg
+```{figure} https://files.mude.citg.tudelft.nl/working_dir.svg
 ---
 width: 40%
 name: working_dir

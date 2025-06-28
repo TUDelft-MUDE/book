@@ -12,7 +12,7 @@ In this part of the book, you first learned about the components that can be dis
 
 Modelling and estimating the signal-of-interest ([Chapter 4.3](modelling_tsa)) using the concepts of observation theory. The remainder of this chapter focused on the noise modelling. In order to do so, we need to work with *stationary*, i.e., time series of which the statistical properties do not depend on the time of observation ([Chapter 4.4](stationary)). An example of a stationary time series are the residuals after best linear unbiased estimation. Using these residuals as the input for noise modelling makes sense, since in fact the residuals are estimates of the noise. 
 
-A problem with the noise process of a time series is that often there is auto-correlation: in contrast to a white noise signal, the observations with different time lags depend on each other - this is referred to as colored noise. The dependency can be modelled by the autocovariance function ([Chapter 4.5](ACF)). With that, the noise process can be modelled using the Autoregressive model ([Chapter 4.6](AR)).
+A problem with the noise process of a time series is that often there is auto-correlation: in contrast to a white noise signal, the observations with different time lags depend on each other - this is referred to as colored noise. The dependence can be modelled by the autocovariance function ([Chapter 4.5](ACF)). With that, the noise process can be modelled using the Autoregressive model ([Chapter 4.6](AR)).
 
 Now that we are able to model both signal-of-interest and the noise process, we can start forecasting.
 

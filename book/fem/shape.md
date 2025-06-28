@@ -22,7 +22,7 @@ In this section, we will start with the second of these.
 The linear shape functions are visualized once more in {numref}`line2funcs`. They can be interpreted as global functions (left image), but are typically evaluated and implemented element-by-element (right image). In the figure, there are five nodes and four elements. The two shape functions in every element are each equal to 1 at one of the nodes and equal to 0 at the others. 
 
 :::{card}
-```{figure} ./figures/lineFuncs-1.png
+```{figure} https://files.mude.citg.tudelft.nl/lineFuncs-1.png
 ---
 name: line2funcs
 ---
@@ -68,7 +68,7 @@ Every shape function is equal to one at one of the nodes and equal to zero at al
 To improve the quality of the approximation, it is possible to introduce more nodes. The solution will converge to the exact solution. However, it is possible to make it converge faster and that is by increasing the polynomial order of the shape functions. Similar to the linear shape functions, quadratic shape functions can be introduced, see {numref}`line3funcs`. The approximate solution is then not piecewise linear as we have seen so far, but piecewise quadratic. 
 
 :::{card}
-```{figure} ./figures/lineFuncs-2.png
+```{figure} https://files.mude.citg.tudelft.nl/lineFuncs-2.png
 ---
 name: line3funcs
 ---
@@ -109,7 +109,7 @@ $$
 where the coefficients $a_i$, $b_i$ and $c_i$ depend on the coordinates of the element. Again, for given coordinates, the Kronecker delta properties defines what the values of the coefficients should be for the shape functions of an element. 
 
 :::{card}
-```{figure} ./figures/triangleFuncs.png
+```{figure} https://files.mude.citg.tudelft.nl/triangleFuncs.png
 ---
 name: triangleFuncs
 ---
@@ -134,7 +134,7 @@ N_i = a_i + b_ix + c_iy + d_ixy
 $$
 
 :::{card}
-```{figure} ./figures/quadFuncs-1.png
+```{figure} https://files.mude.citg.tudelft.nl/quadFuncs-1.png
 ---
 name: quad4Funcs
 ---
@@ -149,7 +149,7 @@ N_i=a_i+b_ix+c_iy+d_ix^2+e_ixy+f_iy^2+g_ix^2y+h_ixy^2+j_ix^2y^2
 $$
 
 :::{card}
-```{figure} ./figures/quadFuncs-2.png
+```{figure} https://files.mude.citg.tudelft.nl/quadFuncs-2.png
 ---
 name: quad4Funcs
 ---
@@ -180,7 +180,7 @@ $$
 
 
 :::{card}
-```{figure} ./figures/3dElements.png
+```{figure} https://files.mude.citg.tudelft.nl/3dElements.png
 ---
 name: 3dElements
 ---

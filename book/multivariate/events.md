@@ -35,7 +35,7 @@ Each of these events will have a probability of occurring, denoted here as $P(A)
 
 These observations and concepts are defined in more detail below.
 
-```{figure} ./figures/venn-events.png
+```{figure} https://files.mude.citg.tudelft.nl/venn-events.png
 ---
 width: 60%
 ---
@@ -51,7 +51,7 @@ The **AND probability** is the _intersection_ of two events $P(A \cap B)$.
 :::
 
 
-```{figure} ./figures/venn-intersection.png
+```{figure} https://files.mude.citg.tudelft.nl/venn-intersection.png
 ---
 width: 60%
 ---

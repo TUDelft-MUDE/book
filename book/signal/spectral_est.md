@@ -134,7 +134,7 @@ The product $\Delta fS(k\Delta f)$ will, therefore, represent the contribution b
 
 The periodogram, $S(f)$, defined for $0\leq f<f_s$ or, equivalently, $-\frac{f_s}{2}<f\leq\frac{f_s}{2}$, with $f_s=\frac{1}{\Delta t}$ will be given by:
 
-![periodogram](./figs/periodogram.png "periodogram")
+![periodogram](https://files.mude.citg.tudelft.nl/periodogram.png "periodogram")
 
 (psd)=
 ## Power Spectral Density (PSD)

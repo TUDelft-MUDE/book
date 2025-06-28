@@ -41,7 +41,7 @@ This leads to an impractical number of scenarios to test in simulation! This pro
 
 The typical workflow of an optimization process looks like the schematic shown below:
 
-![workflow](./figs/workflow.png "workflow")
+![workflow](https://files.mude.citg.tudelft.nl/workflow.png "workflow")
 
 ### Why optimization?
 
@@ -57,7 +57,7 @@ Optimization techniques have multiple applications as part of other mathematical
 
 ### What is included under the concept of optimization?
 
-```{figure} ./figs/concept.png
+```{figure} https://files.mude.citg.tudelft.nl/concept.png
 ---
 width: 90%
 ---

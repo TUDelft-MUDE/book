@@ -27,7 +27,7 @@ Within a decision problem the following characteristics can be distinguished:
 
 The actions, natural circumstances and the outcomes can be shown in a so-called decision tree (Figure {numref}`decision-tree-blank`).
 
-```{figure} ../figures/decision-tree-blank.png
+```{figure} https://files.mude.citg.tudelft.nl/decision-tree-blank.png
 ---
 height: 300px
 name: decision-tree-blank
@@ -96,7 +96,7 @@ Note that for the bonds the net outcome always yields $\omega_{2}$  =1% (i.e. 3%
   - 1 %
 ```
 
-```{figure} ../figures/decision-tree-example.png
+```{figure} https://files.mude.citg.tudelft.nl/decision-tree-example.png
 ---
 height: 300px
 name: decision-tree-example
@@ -123,7 +123,7 @@ In a river polder a basement has to be built in an excavated construction site. 
 
 The river cuts through the clay layer and the underlying sand layer is fed by the river, which causes high uplift pressures on the clay which is exposed in the excavation (see Figure {numref}`example-river-excavation`). If the pressure becomes too high the excavation base will push upward and water will enter the excavation in an uncontrolled way, damaging property and perhaps risking human life.
 
-```{figure} ../figures/example-river-excavation.png
+```{figure} https://files.mude.citg.tudelft.nl/example-river-excavation.png
 ---
 height: 300px
 name: example-river-excavation
@@ -153,7 +153,7 @@ $$
 p_f=P(Z<0)=\Phi\left(-\mu_z / \sigma_z\right)=\Phi(-1.17)=0.12
 $$
 
-```{figure} ../figures/example-river-excavation-2.png
+```{figure} https://files.mude.citg.tudelft.nl/example-river-excavation-2.png
 ---
 height: 300px
 name: example-river-excavation-2
@@ -198,7 +198,7 @@ Costs and probabilities can also be shown in the decision tree (see Figure {numr
 
 This implies that the construction of the drainage system is rationally speaking the best decision for a risk neutral decision maker.
  
-```{figure} ../figures/example-river-excavation-3.PNG
+```{figure} https://files.mude.citg.tudelft.nl/example-river-excavation-3.PNG
 ---
 height: 300px
 name: example-river-excavation-3

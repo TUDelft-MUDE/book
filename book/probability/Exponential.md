@@ -13,7 +13,7 @@ $$
 
 where $\lambda$ is the parameter of the distribution, which is often called *rate*. In the right pannel of the figure below, an example of two Exponential distributions with $\lambda =1$ and $\lambda = 2$ is shown. As you can see, the maximum density in the PDF of en Exponential distribution is located at zero and it is followed by an Exponential decay. The higher the parameter $\lambda$, the higher the value of the density in $x=0$ and the faster the decay. In other words, the higher the parameter $\lambda$, the more concentrated the values of the random variable which are likely to occur and, thus, the lower the standard deviation. This can be seen on the left pannel of the figure, where random samples of the distribution are plotted. There you can see how higher values of the random variable $x$ appear when $\lambda = 1$, presenting then a higher dispersion.
 
-```{figure} /probability/figures/exponential.png
+```{figure} https://files.mude.citg.tudelft.nl/exponential.png
 
 ---
 
@@ -31,7 +31,7 @@ $$
 
 which is visually represented in the figure below.
 
-```{figure} /probability/figures/exponential_cdf.png
+```{figure} https://files.mude.citg.tudelft.nl/exponential_cdf.png
 
 ---
 

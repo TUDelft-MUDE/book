@@ -17,7 +17,7 @@ The precision of the estimated parameters is provided by the covariance matrix $
 ### Review normal distribution and probabilities
 Let's start with a standard normally distributed random variable $Z\sim N(0,1)$, which has an expectation equal to 0, and standard deviation (for us: precision) of 1. {numref}`standard` shows the corresponding PDF.
 
-```{figure} ./figures/05_standard.png
+```{figure} https://files.mude.citg.tudelft.nl/05_standard.png
 ---
 height: 250px
 name: standard
@@ -80,7 +80,7 @@ So far we considered the confidence level of a single random error. If we have m
 
 {numref}`CI` shows how the confidence intervals can be visualized as error bars for the corresponding observations $y_i$.
 
-```{figure} ./figures/05_CI.png
+```{figure} https://files.mude.citg.tudelft.nl/05_CI.png
 ---
 height: 350px
 name: CI
@@ -118,7 +118,7 @@ where $k$ is determined by the chosen confidence level.
 
 {numref}`CI_model` shows a visualization of the confidence interval of the *predicted* observations, i.e., the fitted model.
 
-```{figure} ./figures/05_CI_model.png
+```{figure} https://files.mude.citg.tudelft.nl/05_CI_model.png
 ---
 height: 350px
 name: CI_model

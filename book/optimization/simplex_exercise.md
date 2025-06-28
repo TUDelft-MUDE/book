@@ -50,7 +50,7 @@ Find the graphical solution of this problem. Does it give the same solution as u
 ````{admonition} Solution
 :class: tip, dropdown
 
-```{figure} ./figs/Graphical_solution.png
+```{figure} https://files.mude.citg.tudelft.nl/Graphical_solution.png
 :height: 300px
 ```
 

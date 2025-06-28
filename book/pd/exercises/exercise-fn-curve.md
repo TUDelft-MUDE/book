@@ -58,7 +58,7 @@ If you are not sure what the limit line is, wait for this question until you rea
 ````{admonition} Answer
 :class: tip, dropdown
 
-```{figure} ../figures/exercise-FN-curve.png
+```{figure} https://files.mude.citg.tudelft.nl/exercise-FN-curve.png
 ---
 width: 600px
 name: FN-curve

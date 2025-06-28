@@ -22,7 +22,7 @@ In this assignment, the goal is to minimize the total travel time on the network
 ### 1. Link travel time function
 The travel time on a stretch of road (i.e., a link) depends on the flow of vehicles (vehicles/hour) on that link and the capacity of the link (maximum of vehicles/hour). The most common function to calculate travel time on a link is the so-called Bureau of Public Roads (BPR) function, which is a polynomial (degree 4) function. That function, if used in the assignment, would make the problem non-linear and therefore very hard to solve. So we use a simplified linear function where travel time increases linearly with the flow of vehicles on a road link. More details are provided within the formulation section.
 
-```{figure} ./figs/link_travel_time_function.png
+```{figure} https://files.mude.citg.tudelft.nl/link_travel_time_function.png
 ---
 height: 250px
 ---
@@ -44,7 +44,7 @@ The SO equilibrium is easier to compute than the UE. However, it is important to
 
 Example of a perfect user equilibrium in a very simple road:
 
-```{figure} ./figs/sketchoptimization.png
+```{figure} https://files.mude.citg.tudelft.nl/sketchoptimization.png
 ---
 height: 500px
 ---
@@ -63,7 +63,7 @@ In this assignment, we will proceed with a quadratic term in the objective funct
 
 We are using the Sioux Falls network which is one of the [most used networks in transportation research](https://github.com/bstabler/TransportationNetworks/blob/master/SiouxFalls/Sioux-Falls-Network.pdf)
 
-```{figure} ./figs/SiouxFallsMap_AAA1998.jpg
+```{figure} https://files.mude.citg.tudelft.nl/SiouxFallsMap_AAA1998.jpg
 ---
 height: 500px
 ---
@@ -155,7 +155,7 @@ $$ \sum_{j \in N; (i,j) \in A}{ x_{ijs}} - \sum_{j \in N; (j,i) \in A}{ x_{jis}}
 
 The figure gives an example:
 
-```{figure} ./figs/equil.png
+```{figure} https://files.mude.citg.tudelft.nl/equil.png
 ---
 width: 80%
 ---
@@ -233,7 +233,7 @@ Where the values of $y_{ij}$ are constant and are defined by GA.
 
 The following is a diagram that shows what you are finally doing to solve the same problem but with a meta-heuristic approach:
 
-```{figure} ./figs/GAdiagram.png
+```{figure} https://files.mude.citg.tudelft.nl/GAdiagram.png
 ---
 height: 500px
 ---
@@ -248,7 +248,7 @@ PyMOO is a Python library that provides a comprehensive and easy-to-use framewor
 The implementation in Python is shown in the notebooks for [MILP](./Project_MILP.ipynb) and [GA](./Project_GA.ipynb). The full notebooks including source data are provided [here](https://surfdrive.surf.nl/files/index.php/s/8DNGkJs54KzEnLB)
 
 We can now start solving our problem!
-```{figure} ./figs/outputopt.png
+```{figure} https://files.mude.citg.tudelft.nl/outputopt.png
 ---
 height: 500px
 ---

@@ -3,7 +3,7 @@
 
 The goal of this week is to be able to identify and analyze frequency components in a signal; this is referred to as _spectral analysis._ The following chapters are told in a story-like sequence that will guide you through this process naturally.
 
-![Time and frequency domain](./figs/fft_illustration.png "Time and frequency domain")
+![Time and frequency domain](https://files.mude.citg.tudelft.nl/fft_illustration.png "Time and frequency domain")
 
 We generally work with recordings of a signal in the _time domain._ Since it can be difficult to interpret such a signal, we will explore techniques for converting and evaluating this record in the _frequency domain._ The story first begins with a theoretical perspective (e.g., working with continuous-time functions), after which we consider the discrete-time case. The latter is what we use in practice. Our objective is to understand and work with signals that have been measured and recorded, i.e., understand and work with a discrete-time data set.
 
