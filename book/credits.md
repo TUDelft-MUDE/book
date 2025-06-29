@@ -23,18 +23,9 @@ This book is created using open source tools: it is a Jupyter Book that uses a n
 
 ## Acknowledgements
 
-This book has many contributors, many of whom are also key members of the MUDE Team:
+This book has many contributors, many of whom are also key members of the MUDE Team, as well as critical feedback from MUDE students. The sections below list the primary authors and contributors for each chapter, buit is unfortunately not possible to list all of the small contributions from various people from within and outside Delft University of Technology, not list all contributions in detail.
 
-- xxx
-- yyy
-- zzz
-- MUDE students 
-
-All from Delft University of Technology.
-
-This doesn't include small contributions from various people from within and outside Delft University of Technology.
-
-A better way to see the contributions is to check the [Contributors Page](https://github.com/TUDelft-MUDE/book/graphs/contributors) of the GitHub repository.
+A  better way to see the contributions is to check the [Contributors Page](https://github.com/TUDelft-MUDE/book/graphs/contributors) of the GitHub repository.
 
 A big "thank you" is also due to the Educational Management Team of the Civil Engineering and Geosciences Faculty at Delft University of Technology for giving the MUDE Team financial and organizational support during the early years of MUDE (especially 2022-2024), in particular Hans Welleman, Director of Education of the faculty. Without the freedom and support to experiment with new tools, this book (and [TeachBooks](https://teachbooks.io/) as well!) would not exist!
 
@@ -44,18 +35,17 @@ And in the end, none of this would have happened if it weren't for the quick mee
 
 This manual is [CC BY 4.0 licensed](https://creativecommons.org/licenses/by/4.0/) allowing you to share and adapt the material, as long as the source is named. Resources that are _not_ included under the CC BY license and external resources that are reused in this book are listed in the sections below.
 
+If an author is not listed on a particular page, it is by the Editors (for example, the introduction page of some chapters).
+
 (not_cc_by)=
 ### Resources not under CC BY
 
-CC BY conditions are not applicable to the following resources included in this book. These resources cannot be reused without explicit permission from the original copyright holder.
-
-In chapter CHAPTER:
-- RESOURCE
+CC BY conditions are _not_ applicable to some resources included in this book which resources cannot be reused without explicit permission from the original copyright holder. These resources are listed individually within the summary of each chapter or page.
 
 (external_resources)=
 ### External resources
 
-Parts of this book are taken from other external resources and reused in various ways. If an author is not listed on a particular page, it is by the Editors, except as follows:
+Parts of this book are taken from other external resources and reused in various ways. 
 
 The following chapters/pages are included directly from an external resource and is not edited by MUDE authors:
 
@@ -67,6 +57,9 @@ The following pages contain content written by others, part of which has been re
 - Pages REFERENCE and REFERENCE include text from CITATION that is used EXPLANATION. Original content licensed under CC BY. 
 - more as needed
 
+## Individual Chapters and Pages
 
+Credits are described here and can be used in combination with the guidance provided above to properly share, reuse and cite relevant chapters, pages or any other resources from this book.
 
+> Chapter <title> is written by <authors>. Special thanks goes to <name> for <contribution>.
 
