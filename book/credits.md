@@ -42,16 +42,15 @@ And in the end, none of this would have happened if it weren't for the quick mee
 
 ## License
 
-This manual is [CC BY 4.0 licensed](https://creativecommons.org/licenses/by/4.0/) allowing you to share and adapt the material, as long as the source is named. External resources that are reused in this manual are listed below.
+This manual is [CC BY 4.0 licensed](https://creativecommons.org/licenses/by/4.0/) allowing you to share and adapt the material, as long as the source is named. Resources that are _not_ included under the CC BY license and external resources that are reused in this book are listed in the sections below.
 
 (not_cc_by)=
 ### Resources not under CC BY
 
-CC BY conditions are not applicable to: ...
+CC BY conditions are not applicable to the following resources included in this book. These resources cannot be reused without explicit permission from the original copyright holder.
 
-
-
-Note that REFERENCE/CITATION cannot be reused without explicit permission from the original copyright holder.
+In chapter CHAPTER:
+- RESOURCE
 
 (external_resources)=
 ### External resources
