@@ -1,5 +1,7 @@
 (multivariate_events)=
-# Events: Fundamentally Refreshing
+# Discrete events
+
+% Old title: Fundamentally Refreshing
 
 Before going further into _continuous multivariate distributions,_ we will start with a reminder of some basic concepts you have seen previously: independence and conditional probability, illustrated by considering the probability of _events._
 

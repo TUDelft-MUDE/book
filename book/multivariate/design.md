@@ -1,5 +1,5 @@
 (multivar_design)=
-# Practical Applications: Designing with Probability
+# Designing with Probability
 
 % MMMMM This material is not in R&R book
 

@@ -1,5 +1,5 @@
 
-# Non-Gaussian Multivariate Distributions
+# Non-Gaussian Distributions
 
 The multivariate Gaussian distribution $\Phi_X(x)$ is a simple, effective and widely used approach for capturing dependence in multivariate situations. However, for continuous random variables, it has limitations due to its inability to capture:
 
