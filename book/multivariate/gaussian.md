@@ -1,5 +1,5 @@
 
-# Multivariate Gaussian distribution
+# Gaussian distribution
 
 One of the simplest approaches we have to define a multivariate distribution, $F(x, y)$, is through the multivariate Gaussian distribution. This model assumes that both the marginals and the dependence are Gaussian. As you saw in previous chapters, the Gaussian distribution is not always the best model so the applicability of the multivariate Gaussian is limited. However, it is a convenient model since it can be manipulated analytically and we can use it as a first approach to model the dependence. 
 

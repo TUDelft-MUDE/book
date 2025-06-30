@@ -1,4 +1,4 @@
-# Model Decisions
+# Model decisions
 
 In this section, we are going to focus on the decisions we make when setting up a model. We will start seeing models as part of the creative and decision making process!
 
