@@ -1,5 +1,5 @@
 (dft)=
-# Discrete Fourier Transform (DFT)
+# Discrete Fourier Transform
 
 ## Discrete time Fourier Transform (DTFT)
 

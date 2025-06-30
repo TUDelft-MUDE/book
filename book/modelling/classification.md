@@ -1,4 +1,4 @@
-# Introduction to modelling
+# Model classification
 
 ## What is a Model?
 
