@@ -1,4 +1,4 @@
-# Model Verification, Calibration and Validation
+# Verification, Calibration and Validation
 
 ```{note}
 *All models are wrong, but some are useful.*

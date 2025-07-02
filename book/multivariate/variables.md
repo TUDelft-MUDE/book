@@ -1,5 +1,5 @@
 (multivariate_variables)=
-# Multivariate Continuous Random Variables
+# Continuous Random Variables
 
 This page covers fundamental concepts for _continuous random variables._ As we are interested in considering more than one variable simultaneously, the term _multivariate_ is used. We will start by translating the concepts covered on the previous page from _discrete events_, allowing us to arrive at a clear understanding of the concept of probabilistic _dependence_ for multivariate continuous random variables.
 
