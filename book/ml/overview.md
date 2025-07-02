@@ -3,12 +3,10 @@
 
 % START-CREDIT
 % source: machine_learning
-````{margin}
 ```{attributiongrey} Attribution
 :class: attribution
-This chapter is written by Iuri Rocha, Anne Poot, Joep Storm and Leon Riccius. {fa}`quote-left`{ref}`Find out more here <machine_learning_credit>`
+This chapter is written by Iuri Rocha, Anne Poot, Joep Storm and Leon Riccius. {fa}`quote-left`{ref}`Find out more here <machine_learning_credit>`.
 ```
-````
 % END-CREDIT
 
 _Machine learning_ is a set of techniques that uses computer algorithms to fit the parameters of a model. In the context of MUDE, it is a set of data-driven modelling techniques, closely related to the methods used in observation theory. However, whereas in observation theory we constructed the design matrix ourselves, based on some physics-based knowledge of the system of interest, in machine learning applications, we allow the algorithm more freedom to build (and refine) the model. Although this comes at the cost of less control over model parameters (the "unknowns" from observation theory) and increased complexity, the benefit is a more flexible model that is capable of capturing key characteristics of the problem at hand. For example, a neural network can be defined using thousands of weights (model parameters); far more than we can create with more "hands-on" techniques!
