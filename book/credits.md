@@ -40,12 +40,25 @@ If an author is not listed on a particular page, it is by the Editors (for examp
 Auxiliary files such as figures, code, videos, etc, are included under the license of this book and should be attributed to the authors of the chapter or page where they are used, unless otherwise stated below or in the file itself. Text-based files (i.e., non-binary) are typically stored in the repository, within the subdirectory where the source file of the chapter or page is located. Binary files are stored in an FTP server (`https://files.mude.citg.tudelft.nl/<binary_file_name>`). Videos and quiz questions are stored in and served from YouTube and H5p; contact the MUDE Team directly if you are interested in source materials for these resources.
 
 (not_cc_by)=
-### Resources not under CC BY
+### Resources _not_ under CC BY
 
 CC BY conditions are _not_ applicable to some resources included in this book which resources cannot be reused without explicit permission from the original copyright holder. These resources are listed individually within the summary of each chapter or page.
 
+## Individual Chapters and Pages
+
+Credits are described here and can be used in combination with the guidance provided above to properly share, reuse and cite relevant chapters, pages or any other resources from this book.
+
+(machine_learning_credit)=
+### Chapter: {ref}`machine_learning`
+
+> Chapter {ref}`machine_learning` is written by Iuri Rocha, Anne Poot, Joep Storm and Leon Riccius.
+>
+> This chapter is released under the license for this book, and can be cited as described above.
+
+> Chapter `<title>` is written by `<authors>`. Special thanks goes to `<name>` for `<contribution>`.
+
 (external_resources)=
-### External resources
+## External resources
 
 Parts of this book are taken from other external resources and reused in various ways. 
 
@@ -58,19 +71,6 @@ The following chapters/pages are included directly from an external resource and
 The following pages contain content written by others, part of which has been reused and/or modified by MUDE authors:
 - Pages REFERENCE and REFERENCE include text from CITATION that is used EXPLANATION. Original content licensed under CC BY. 
 - more as needed
-
-## Individual Chapters and Pages
-
-Credits are described here and can be used in combination with the guidance provided above to properly share, reuse and cite relevant chapters, pages or any other resources from this book.
-
-(machine_learning_credit)=
-### Chapter - {ref}`machine_learning`
-
-> Chapter {ref}`machine_learning` is written by Iuri Rocha, Anne Poot, Joep Storm and Leon Riccius.
->
-> This chapter is released under the license for this book, and can be cited as described above.
-
-> Chapter <title> is written by <authors>. Special thanks goes to <name> for <contribution>.
 
 ## Contact
 
