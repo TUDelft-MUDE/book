@@ -1,3 +1,13 @@
+# START-CREDIT
+# source: machine_learning
+#
+# This file is released under the license for the MUDE Book:
+#   https://github.com/TUDelft-MUDE/book
+# Authors: Iuri Rocha, Anne Poot, Joep Storm and Leon Riccius.
+#
+# See the Credits section of the book additional information.
+# END-CREDIT
+
 # Import necessary packages
 import numpy as np
 import matplotlib.pyplot as plt

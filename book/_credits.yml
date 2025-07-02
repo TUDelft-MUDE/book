@@ -6,7 +6,7 @@ book:
       - Tom van Woudenberg
       - Sandra Verhagen
     title: _config.yml
-    license: LICENSE
+    license: CC BY 4.0
     copyright: Delft University of Technology
     type: editor-author
 
@@ -18,7 +18,8 @@ sources:
       - Patricia Mares Nasarre
       - Robert Lanzafame
     acknowledgement:
-      - João Moura Pereira de Lucas Teixeira
+      - name: João Moura Pereira de Lucas Teixeira
+        contribution: Created first draft of pages from powerpoint slides.
     type: internal
     note: |
       Alessandro made most of the slides, which were transcribed by João in 2023. Robert and Patricia modified and re-wrote some material into book format for 2023. Patricia especially added to the GoF page.
@@ -47,8 +48,6 @@ sources:
         where: book/propagation_uncertainty/uncertainty.md
         license: CC BY 4.0
         copyright: Delft University of Technology
-
-      
     type: internal
 
   observation_theory:
@@ -98,10 +97,74 @@ sources:
     type: external
     license: CC-BY (but not yet confirmed?)
 
-machine_learning:
-  title: Introduction to Machine Learning
-  author:
-    - Iuri Rocha
-    - Anne Poot
-    - Joep Storm
-    - Leon Riccius
+  machine_learning:
+    title: Introduction to Machine Learning
+    author:
+      - Iuri Rocha
+      - Anne Poot
+      - Joep Storm
+      - Leon Riccius
+    type: internal
+
+  signal_processing:
+    title: Signal Processing
+    author:
+      - Christiaan Tiberius
+    acknowledgement:
+      - name: Max Mulder
+        contribution: being a signal processing soul-mate, sparring-partner and TU Delft colleague of the author who co-shaped the material, indirectly, through collaboration since early 2000's.
+      - name: João Moura Pereira de Lucas Teixeira
+        contribution: created first draft of pages from powerpoint slides.
+      - name: Antonio Magherini
+        contribution: reviewed, commented and/or modified content
+      - name: Jelle Knibbe
+        contribution: reviewed, commented and/or modified content of original powerpoint slides.
+    type: internal
+    note:
+      - id: other_book
+        public: true
+        text: |
+          The material in this chapter will be closely related to a future book written by Christiaan Tiberius and Max Mulder (late 2025 target publishing date, via TU Delft Open Publishing).
+      - text: |
+          Note from Christian about the chapter and Max Mulder: I would consider one more person here, namely prof Max Mulder from Aerospace Engineering, as my signal processing soul-mate, sparring-partner and TU Delft colleague...Long time ago we developed and taught a course on this subject together, at Aerospace. We kept in touch (and as you know, we’re actually preparing, together, an Open Textbook on just this subject, hopefully appearing by the end of this year). So, directly his contribution is zero, but indirectly, he co-shaped this material. To say, my way of approaching and teaching signal processing has been determined in a large part by our joint teaching at that time (20 years ago).
+      - text: |
+          Robert went through the figures quickly but asked Christian to double-check via [Issue 45](https://github.com/TUDelft-MUDE/book/issues/45)
+    resources:
+      - name: unitycircle
+        what: animated figure
+        filename: unitycircle.gif
+        filepath: https://files.mude.citg.tudelft.nl/
+        where: book/2024/signal_processing/fourier_real.md
+        source_url: https://commons.wikimedia.org/wiki/File:Unitycircle-complex.gif
+        bibtex_key: BFD
+        license: CC BY SA 4.0
+
+  time_series:
+    title: Time Series Analysis
+    author:
+      - Alireza Amiri-Simkooei
+      - Christiaan Tiberius
+      - Sandra Verhagen
+    acknowledgement:
+      - name: João Moura Pereira de Lucas Teixeira
+        contribution: Created first draft of pages from powerpoint slides
+      - name: Antonio Magherini
+        contribution: reviewed, commented and/or modified content
+      - name: Berend Bouvy
+        contribution: created and improved many of the exercises and interactive pages
+    note:
+      - text: |
+          Alireza Amiri-Simkooei created the main framework of this chapter, which was then revised by Sandra and Christian.
+    resource:
+      - name: cover
+        what: figure
+        filename: tsa_cover.png
+        filepath: https://files.mude.citg.tudelft.nl/
+        where: book/2024/time_series/intro.md
+        source_url: https://www.researchgate.net/profile/Peter-Marcotullio/publication/330090901_Sustainable_development_poverty_eradication_and_reducing_inequalities_In_Global_warming_of_15C_An_IPCC_Special_Report/links/6386062b48124c2bc68128da/Sustainable-development-poverty-eradication-and-reducing-inequalities-In-Global-warming-of-15C-An-IPCC-Special-Report.pdf
+      - name: trend
+        what: figure
+        filename: trend.png
+        filepath: https://files.mude.citg.tudelft.nl/
+        where: book/2024/time_series/components.md
+        source_url: https://www.cmar.csiro.au/sealevel/sl_hist_last_decades.html

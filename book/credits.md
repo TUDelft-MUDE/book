@@ -23,18 +23,9 @@ This book is created using open source tools: it is a Jupyter Book that uses a n
 
 ## Acknowledgements
 
-This book has many contributors, many of whom are also key members of the MUDE Team:
+This book has many contributors, many of whom are also key members of the MUDE Team, as well as critical feedback from MUDE students. The sections below list the primary authors and contributors for each chapter, buit is unfortunately not possible to list all of the small contributions from various people from within and outside Delft University of Technology, not list all contributions in detail.
 
-- xxx
-- yyy
-- zzz
-- MUDE students 
-
-All from Delft University of Technology.
-
-This doesn't include small contributions from various people from within and outside Delft University of Technology.
-
-A better way to see the contributions is to check the [Contributors Page](https://github.com/TUDelft-MUDE/book/graphs/contributors) of the GitHub repository.
+A  better way to see the contributions is to check the [Contributors Page](https://github.com/TUDelft-MUDE/book/graphs/contributors) of the GitHub repository.
 
 A big "thank you" is also due to the Educational Management Team of the Civil Engineering and Geosciences Faculty at Delft University of Technology for giving the MUDE Team financial and organizational support during the early years of MUDE (especially 2022-2024), in particular Hans Welleman, Director of Education of the faculty. Without the freedom and support to experiment with new tools, this book (and [TeachBooks](https://teachbooks.io/) as well!) would not exist!
 
@@ -42,32 +33,80 @@ And in the end, none of this would have happened if it weren't for the quick mee
 
 ## License
 
-This manual is [CC BY 4.0 licensed](https://creativecommons.org/licenses/by/4.0/) allowing you to share and adapt the material, as long as the source is named. External resources that are reused in this manual are listed below.
+This manual is [CC BY 4.0 licensed](https://creativecommons.org/licenses/by/4.0/) allowing you to share and adapt the material, as long as the source is named. Resources that are _not_ included under the CC BY license and external resources that are reused in this book are listed in the sections below.
 
-(not_cc_by)=
-### Resources not under CC BY
+If an author is not listed on a particular page, it is by the Editors (for example, the introduction page of some chapters).
 
-CC BY conditions are not applicable to: ...
-
-
-
-Note that REFERENCE/CITATION cannot be reused without explicit permission from the original copyright holder.
+Auxiliary files such as figures, code, videos, etc, are included under the license of this book and should be attributed to the authors of the chapter or page where they are used, unless otherwise stated below or in the file itself. Text-based files (i.e., non-binary) are typically stored in the repository, within the subdirectory where the source file of the chapter or page is located. Binary files are stored in an FTP server (`https://files.mude.citg.tudelft.nl/<binary_file_name>`). Videos and quiz questions are stored in and served from YouTube and H5p; contact the MUDE Team directly if you are interested in source materials for these resources.
 
 (external_resources)=
-### External resources
+### External Resources
 
-Parts of this book are taken from other external resources and reused in various ways. If an author is not listed on a particular page, it is by the Editors, except as follows:
+Parts of this book are taken from other external resources and reused in various ways. Entire chapters or pages are listed individually in the {ref}`external_resources` section below. Resources that are used _within_ a page and/or are modified by MUDE authors are listed individually in the {ref}`internal_resources` section below.
 
-The following chapters/pages are included directly from an external resource and is not edited by MUDE authors:
+(credits_not_cc_by)=
+### Resources _not_ under CC BY
+
+CC BY conditions are _not_ applicable to some resources included in this book which resources cannot be reused without explicit permission from the original copyright holder. These resources are listed individually within the summary of each chapter or page.
+
+(internal_resources)=
+## Individual Chapters and Pages
+
+Credits are provided here for chapters and pages that are released under the license of this book (internal resources). Use the guidance provided above to properly share, reuse and cite relevant chapters, pages or any other resources from this book.
+
+(machine_learning_credit)=
+### Chapter: Introduction to Machine Learning
+% CREDIT-NOTE: note that the title ref is not included because
+%   the tag is displayed in the rhs toc.
+% Future dev may use templating to automatically include the
+%   right text in these sections
+
+> {ref}`machine_learning` is written by Iuri Rocha, Anne Poot, Joep Storm and Leon Riccius.
+
+(generic_credit)=
+### `<resource_type>`: `<title>`
+
+> `<title>` is written by `<authors>`.
+> 
+> Special thanks goes to `<name>` for `<contribution>`.
+>
+> _or_
+>
+> Special thanks goes to:
+>  - `<name>` for `<contribution>`
+>  - `<name>` for `<contribution>`.
+>
+> Note: `<note-public>`
+>
+> The following resources are used in this `<resource_type>` but are _not_ included under the CC BY license of this book and cannot be reused without explicit permission from the original copyright holder:
+> - `resource_type>` `<resource>` is used in `<page>` (not modified). Original content licensed under `<license>`.
+> - `resource_type>` `<resource>` is used in `<page>` and `<modification>`. Original content licensed under `<license>`.
+> - `resource_type>` `<resource>` (`<bibtex>`) is used in `<page>` (unmodified). Original content licensed under `<license>` and is available `<resource_location>`.
+> - ...
+> 
+
+(external_resources_credits)=
+## External resources
+
+The following chapters and pages are included directly from an external resource, are not included under the CC BY license of this book and cannot be reused without explicit permission from the original copyright holder. Unless otherwise noted below, the contents have not been edited by the authors of this book.
+
+(finite_element_method_credit)=
+### Chapter: Introduction to Finite Elements
+
+> _WIP_
+
+### Programming Chapters
+
+> Programming Chapters REFERENCE are from CITATION/LINK. Original content licensed under CC BY.
+
+### Individual External Pages
+
+The pages listed here are not 
 
 - page [](./external/learn-python/book/08/sympy.ipynb). Original content licensed under CC BY.
-- Programming Chapters REFERENCE are from CITATION/LINK. Original content licensed under CC BY.
 - Page REFERENCE are from CITATION/LINK. Original content licensed under CC BY.
 
-The following pages contain content written by others, part of which has been reused and/or modified by MUDE authors:
-- Pages REFERENCE and REFERENCE include text from CITATION that is used EXPLANATION. Original content licensed under CC BY. 
-- more as needed
 
+## Contact
 
-
-
+If you have questions on the content, contact the MUDE team at MUDE-CEG@tudelft.nl. If you have technical questions regarding this book, contact the IT-coordinator of MUDE (Tom): T.R.vanWoudenberg@tudelft.nl
