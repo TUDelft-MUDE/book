@@ -68,7 +68,7 @@ Credits are described here and can be used in combination with the guidance prov
 
 > Chapter {ref}`machine_learning` is written by Iuri Rocha, Anne Poot, Joep Storm and Leon Riccius.
 >
-> This chapter is released under the CC BY license for this book, and can be cited as described above.
+> This chapter is released under the license for this book, and can be cited as described above.
 
 > Chapter <title> is written by <authors>. Special thanks goes to <name> for <contribution>.
 
