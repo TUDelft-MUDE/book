@@ -64,7 +64,7 @@ The following pages contain content written by others, part of which has been re
 Credits are described here and can be used in combination with the guidance provided above to properly share, reuse and cite relevant chapters, pages or any other resources from this book.
 
 (machine_learning_credit)=
-### Chapter: Machine Learning
+### Chapter - {ref}`machine_learning`
 
 > Chapter {ref}`machine_learning` is written by Iuri Rocha, Anne Poot, Joep Storm and Leon Riccius.
 >
