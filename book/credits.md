@@ -54,17 +54,22 @@ CC BY conditions are _not_ applicable to some resources included in this book wh
 
 Credits are provided here for chapters and pages that are released under the license of this book (internal resources). Use the guidance provided above to properly share, reuse and cite relevant chapters, pages or any other resources from this book.
 
+(optimization_credit)=
+### Chapter: Optimization
+
+> {ref}`optimization` is written by Gonçalo Homem de Almeida Correia...
+
 (machine_learning_credit)=
 ### Chapter: Introduction to Machine Learning
-% CREDIT-NOTE: note that the title ref is not included because
-%   the tag is displayed in the rhs toc.
-% Future dev may use templating to automatically include the
-%   right text in these sections
 
 > {ref}`machine_learning` is written by Iuri Rocha, Anne Poot, Joep Storm and Leon Riccius.
 
 (generic_credit)=
 ### `<resource_type>`: `<title>`
+% CREDIT-NOTE: note that the title ref is not included because
+%   the tag is displayed in the rhs toc.
+% Future dev may use templating to automatically include the
+%   right text in these sections
 
 > `<title>` is written by `<authors>`.
 > 

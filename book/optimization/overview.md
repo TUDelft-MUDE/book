@@ -1,5 +1,13 @@
 # Optimization
 
+% START-CREDIT
+% source: optimization
+```{attributiongrey} Attribution
+:class: attribution
+This chapter is primarily written by Gonçalo Homem de Almeida Correia, with some pages written by additional authors: Maria Nogal Macho, Jie Gao and Bahman Ahmadi. {fa}`quote-left`{ref}`Find out more here <optimization_credit>`.
+```
+% END-CREDIT
+
 In this chapter you will learn all the basics of optimization. The chapter covers the origins of optimization as well as the main methods that exist to solve these problems. You will learn the following:
 
 - Formulate a mathematical program
