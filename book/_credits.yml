@@ -97,6 +97,15 @@ sources:
     type: external
     license: CC-BY (but not yet confirmed?)
 
+  optimization:
+    title: Optimization
+    author:
+      - Gonçalo Homem de Almeida Correia
+    type: internal
+    note:
+      - text: |
+          Gonçalo instructions via email to Robert, April 18: Most of that material was created by me in the University of Coimbra and here [TUD]. But there’s material of Bahnam Madadi, Maria Nogal, Jie Gao, etc
+
   machine_learning:
     title: Introduction to Machine Learning
     author:
