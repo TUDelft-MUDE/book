@@ -50,7 +50,11 @@ CC BY conditions are _not_ applicable to some resources included in this book wh
 Credits are provided here for chapters and pages that are released under the license of this book (internal resources). Use the guidance provided above to properly share, reuse and cite relevant chapters, pages or any other resources from this book.
 
 (machine_learning_credit)=
-### Chapter: {ref}`machine_learning`
+### Chapter: Machine Learning
+% CREDIT-NOTE: note that the title ref is not included because
+%   the tag is displayed in the rhs toc.
+% Future dev may use templating to automatically include the
+%   right text in these sections
 
 > Chapter {ref}`machine_learning` is written by Iuri Rocha, Anne Poot, Joep Storm and Leon Riccius.
 
