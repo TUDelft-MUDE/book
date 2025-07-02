@@ -104,6 +104,7 @@ sources:
       - Anne Poot
       - Joep Storm
       - Leon Riccius
+    type: internal
 
   signal_processing:
     title: Signal Processing
