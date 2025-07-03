@@ -109,9 +109,11 @@ sources:
       - id: authorship
         public: true
         text: |
-          Gonçalo Homem de Almeida Correia created most of the material, as well as the overall structure of this chapter. Maria Nogal Macho and Bahman Ahmadi made contributions to various parts of the material. Bahman Ahmadi developed the traffic exercise. Jie Gao created the genetic algorithm material.
+          Gonçalo Homem de Almeida Correia created most of the material, as well as the overall structure of this chapter. Maria Nogal Macho and Bahman Ahmadi made contributions to various parts of the material. Bahman Ahmadi developed the exercises in Python and Jupyter notebooks. Jie Gao created the genetic algorithm material.
       - text: |
           Gonçalo instructions via email to Robert, April 18: Most of that material was created by me in the University of Coimbra and here [TUD]. But there’s material of Bahman Ahmadi, Maria Nogal, Jie Gao, etc.
+      - text: |
+          There are two types of files to consider in this chapter: 1) external files related to the Project (see resource below), and 2) stripped notebooks (for download link replacer). Each type have had special notes added in the CREDIT comment (text search "source: optimization").
     acknowledgement:
       - name:
           - Jialei Ding
@@ -121,6 +123,18 @@ sources:
         contribution: edited text and improved content and structure for online interactive textbook format.
       - name: João Moura Pereira de Lucas Teixeira
         contribution: created first draft of pages from powerpoint slides.
+    resource:
+      - name: Road Network Design Problem
+        what: Jupyter notebooks and associated files
+        where:
+          - book\optimization\project.md
+          - book\book\optimization\Project_MILP.ipynb
+          - book\optimization\Project_GA.ipynb
+        source: URL not yet available
+        license: CC BY 4.0
+        copyright: Delft University of Technology
+        note: |
+          Not yet published. Only the md and ipynb files are included here, not the py files. Once published, update URL and citation. Citation will be Ahmadi, et al. (2024) and the full bib entry will be similar to a MUDE chapter (e.g., Ahmadi...in Lanzafame et al., (2024) MUDE Files...)
 
   machine_learning:
     title: Introduction to Machine Learning

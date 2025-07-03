@@ -59,12 +59,14 @@ Credits are provided here for chapters and pages that are released under the lic
 
 > {ref}`optimization` is written by Gonçalo Homem de Almeida Correia, Maria Nogal Macho, Jie Gao and Bahman Ahmadi.
 >
-> Note: Gonçalo Homem de Almeida Correia created most of the material, as well as the overall structure of this chapter. Maria Nogal Macho and Bahman Ahmadi made contributions to various parts of the material. Bahman Ahmadi developed the traffic exercise. Jie Gao created the genetic algorithm material.
+> Note: Gonçalo Homem de Almeida Correia created most of the material. Maria Nogal Macho and Bahman Ahmadi made contributions to various parts. Bahman Ahmadi developed the exercises in Python and Jupyter notebooks. Jie Gao created the genetic algorithm material.
 >
 > Special thanks goes to:
 > - Jialei Ding and Nadia Pourmohammadzia, who reviewed material and made improvements to the traffic exercise.
-  - Tom van Woudenberg, who edited text and improved content and structure for online interactive textbook format.
-  - João Moura Pereira de Lucas Teixeira, who created first draft of pages from powerpoint slides.
+> - Tom van Woudenberg, who edited text and improved content and structure for online interactive textbook format.
+> - João Moura Pereira de Lucas Teixeira, who created first draft of pages from powerpoint slides.
+>
+> The {ref}`optimization_project` pages are included in this chapter but are _not_ included under the CC BY license of this book; they are in-class exercises that will be shared by the authors of this book as part of a future publication (also under a CC BY license; citation will be provided here after publication).
 
 (machine_learning_credit)=
 ### Chapter: Introduction to Machine Learning
