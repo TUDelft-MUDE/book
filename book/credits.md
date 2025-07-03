@@ -67,7 +67,7 @@ Credits are provided here for chapters and pages that are released under the lic
 > - João Moura Pereira de Lucas Teixeira, created first draft of pages from powerpoint slides.
 > - Antonio Magherini, who reviewed, commented and/or modified content.
 >
-> 
+> {numref}`unitycircle` is included on page {ref}`fourier_real` but is _not_ included under the CC BY license of this book and cannot be reused without explicit permission from the original copyright holder. Original content licensed under CC BY-SA 4.0 by {cite:t}`BFG` and can be found [here](https://commons.wikimedia.org/wiki/File:Unitycircle-complex.gif); used here without modification.
 
 (optimization_credit)=
 ### Chapter: Optimization
