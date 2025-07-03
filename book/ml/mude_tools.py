@@ -1,11 +1,13 @@
 # START-CREDIT
 # source: machine_learning
 #
-# This file is released under the license for the MUDE Book:
-#   https://github.com/TUDelft-MUDE/book
-# Authors: Iuri Rocha, Anne Poot, Joep Storm and Leon Riccius.
+# This file is from the 2024 edition of the MUDE Textbook, released
+# with a CC BY License. See the Credits section for more information:
+# https://mude.citg.tudelft.nl/2024/book/credits
 #
-# See the Credits section of the book additional information.
+# Authors: Iuri Rocha, Anne Poot, Joep Storm and Leon Riccius.
+# Copyright: Delft University of Technology.
+#
 # END-CREDIT
 
 # Import necessary packages
