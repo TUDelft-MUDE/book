@@ -54,6 +54,21 @@ CC BY conditions are _not_ applicable to some resources included in this book wh
 
 Credits are provided here for chapters and pages that are released under the license of this book (internal resources). Use the guidance provided above to properly share, reuse and cite relevant chapters, pages or any other resources from this book.
 
+(signal_processing_credit)=
+### Chapter: Signal Processing
+
+> {ref}`signal_processing` is written by Christiaan Tiberius.
+>
+> _The material in this chapter is closely related to an in-depth book "Engineering signal analysis - from Fourier to filtering" by Christiaan Tiberius and Max Mulder (TU Delft Open Publishing, 2025)._
+>
+> Special thanks goes to:
+> - Max Mulder for being a signal processing soul-mate, sparring-partner and TU Delft colleague of the author who co-shaped the material, indirectly, through collaboration since early 2000's.
+> - Jelle Knibbe, who reviewed, commented and/or modified content of original powerpoint slides.
+> - João Moura Pereira de Lucas Teixeira, created first draft of pages from powerpoint slides.
+> - Antonio Magherini, who reviewed, commented and/or modified content.
+>
+> 
+
 (optimization_credit)=
 ### Chapter: Optimization
 
