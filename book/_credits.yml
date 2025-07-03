@@ -9,6 +9,11 @@ book:
     license: CC BY 4.0
     copyright: Delft University of Technology
     type: editor-author
+  version:
+    type: semantic-year
+    year: 2024
+  
+
 
 
 sources:
