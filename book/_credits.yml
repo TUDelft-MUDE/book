@@ -95,12 +95,22 @@ sources:
     license: CC BY
 
   finite_element_method:
+    title: Finite Elements in Civil Engineering and Geosciences
     author:
+      - Oriol Colomés
+      - Iuri Rocha
       - Frans van der Meer
-      - Oriol?
-      - Martin?
+      - Martin Lesueur
     type: external
     license: CC-BY (but not yet confirmed?)
+    note: 
+      - text: |
+          Frans confirmed that the he and the co-authors want to release the book under CC BY, but have not done so yet. There may be some copyright concerns in the book, but the chapters used in MUDE are fine.
+      - id: fem-source
+        public: true
+        text: |
+          Specifically, the chapter "Introduction to finite elements" is used. The book can be accessed at: [interactivetextbooks.citg.tudelft.nl/computational-modelling](https://interactivetextbooks.citg.tudelft.nl/computational-modelling). This resource will soon be published with a CC BY license.
+
 
   optimization:
     title: Optimization
