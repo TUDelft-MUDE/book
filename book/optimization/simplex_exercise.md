@@ -57,3 +57,11 @@ Find the graphical solution of this problem. Does it give the same solution as u
 ````
 
 **Note:** in this problem and solution the intersection between the gradient and the constraints is not important (see figure), but rather the _direction_ that is important! It is a coincidence that the intersection is the optimal solution.
+
+% START-CREDIT
+% source: optimization
+```{attributiongrey} Attribution
+:class: attribution
+This chapter is written by Gonçalo Homem de Almeida Correia, Maria Nogal Macho, Jie Gao and Bahman Ahmadi. {fa}`quote-left`{ref}`Find out more here <optimization_credit>`.
+```
+% END-CREDIT

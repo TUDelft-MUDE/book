@@ -53,3 +53,11 @@ The product $x_1x_2$ of the binary variable $x_1$ and the continuous variable $x
 $$\begin{cases}y\leq ux_1\\ y\leq x_2\\ y\geq x_2-u(1-x_1)\\ y\geq 0\end{cases}$$
 
 $y$ is obviously the continuous variable you want to get.
+
+% START-CREDIT
+% source: optimization
+```{attributiongrey} Attribution
+:class: attribution
+This chapter is written by Gonçalo Homem de Almeida Correia, Maria Nogal Macho, Jie Gao and Bahman Ahmadi. {fa}`quote-left`{ref}`Find out more here <optimization_credit>`.
+```
+% END-CREDIT

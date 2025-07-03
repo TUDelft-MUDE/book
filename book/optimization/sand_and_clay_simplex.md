@@ -207,3 +207,11 @@ So, this is the optimal solution
 The SIMPLEX workflow is shown in the scheme below:
 
 ![sand_clay_14](https://files.mude.citg.tudelft.nl/sand_clay_14.png)
+
+% START-CREDIT
+% source: optimization
+```{attributiongrey} Attribution
+:class: attribution
+This chapter is written by Gonçalo Homem de Almeida Correia, Maria Nogal Macho, Jie Gao and Bahman Ahmadi. {fa}`quote-left`{ref}`Find out more here <optimization_credit>`.
+```
+% END-CREDIT
