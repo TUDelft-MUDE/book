@@ -1,4 +1,14 @@
+(optimization_project)=
 # Road Network Design Problem
+
+% START-CREDIT
+% source: optimization
+```{attributiongrey} Attribution
+:class: attribution
+This chapter reuses content Bahman Ahmadi et al. (2024). {fa}`quote-left`{ref}`Find out more here <optimization_credit>`.
+```
+% END-CREDIT
+
 During Friday’s session, you will work on the road Network Design Problem (NDP) and explore its implementation using two optimization approaches: Mixed-Integer Linear Programming (MILP) and a Genetic Algorithm (GA). The problem description, mathematical formulation, and Python implementation are provided in this book, should you wish to prepare in advance for the session.
 
 ```{admonition} MUDE Exam Information
@@ -254,3 +264,11 @@ height: 500px
 ---
 A solution of the problem
 ```
+
+% START-CREDIT
+% source: optimization
+```{attributiongrey} Attribution
+:class: attribution
+This chapter is written by Gonçalo Homem de Almeida Correia, Maria Nogal Macho, Jie Gao and Bahman Ahmadi. {fa}`quote-left`{ref}`Find out more here <optimization_credit>`.
+```
+% END-CREDIT

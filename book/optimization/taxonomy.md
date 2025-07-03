@@ -71,3 +71,11 @@ In the WT farm case, even though the constraints defined above are linear (conve
 The problem as defined with the constraints above is deterministic. However, in case the construction, $C$, and the maintenance costs, $C_m$, present variability, the problem is stochastic and we find, for example:
 
 $$\begin{gather*}\text{Prob}(nC\leq 50M)\geq 0.9\\ \text{Prob}(nC_m\leq 0.7M)\geq 0.95\end{gather*}$$
+
+% START-CREDIT
+% source: optimization
+```{attributiongrey} Attribution
+:class: attribution
+This chapter is written by Gonçalo Homem de Almeida Correia, Maria Nogal Macho, Jie Gao and Bahman Ahmadi. {fa}`quote-left`{ref}`Find out more here <optimization_credit>`.
+```
+% END-CREDIT

@@ -54,27 +54,41 @@ CC BY conditions are _not_ applicable to some resources included in this book wh
 
 Credits are provided here for chapters and pages that are released under the license of this book (internal resources). Use the guidance provided above to properly share, reuse and cite relevant chapters, pages or any other resources from this book.
 
+(optimization_credit)=
+### Chapter: Optimization
+
+> {ref}`optimization` is written by Gonçalo Homem de Almeida Correia, Maria Nogal Macho, Jie Gao and Bahman Ahmadi.
+>
+> _Gonçalo Homem de Almeida Correia created most of the material. Maria Nogal Macho and Bahman Ahmadi made contributions to various parts. Bahman Ahmadi developed the exercises in Python and Jupyter notebooks. Jie Gao created the genetic algorithm material._
+>
+> Special thanks goes to:
+> - Jialei Ding and Nadia Pourmohammadzia, who reviewed material and made improvements to the traffic exercise.
+> - Tom van Woudenberg, who edited text and improved content and structure for online interactive textbook format.
+> - João Moura Pereira de Lucas Teixeira, who created first draft of pages from powerpoint slides.
+>
+> The {ref}`optimization_project` pages are included in this chapter but are _not_ included under the CC BY license of this book; they are in-class exercises that will be shared by the authors of this book as part of a future publication (also under a CC BY license; citation will be provided here after publication).
+
 (machine_learning_credit)=
 ### Chapter: Introduction to Machine Learning
-% CREDIT-NOTE: note that the title ref is not included because
-%   the tag is displayed in the rhs toc.
-% Future dev may use templating to automatically include the
-%   right text in these sections
 
 > {ref}`machine_learning` is written by Iuri Rocha, Anne Poot, Joep Storm and Leon Riccius.
 
 (generic_credit)=
 ### `<resource_type>`: `<title>`
+% CREDIT-NOTE: note that the title ref is not included because
+%   the tag is displayed in the rhs toc.
+% Future dev may use templating to automatically include the
+%   right text in these sections
 
 > `<title>` is written by `<authors>`.
 > 
-> Special thanks goes to `<name>` for `<contribution>`.
+> Special thanks goes to `<name>`, who `<contribution>`.
 >
 > _or_
 >
 > Special thanks goes to:
->  - `<name>` for `<contribution>`
->  - `<name>` for `<contribution>`.
+> - `<name>`, who `<contribution>`
+> - `<name>`, who `<contribution>`.
 >
 > Note: `<note-public>`
 >
