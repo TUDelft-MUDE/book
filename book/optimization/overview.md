@@ -1,10 +1,11 @@
+(optimization)=
 # Optimization
 
 % START-CREDIT
 % source: optimization
 ```{attributiongrey} Attribution
 :class: attribution
-This chapter is primarily written by Gonçalo Homem de Almeida Correia, with some pages written by additional authors: Maria Nogal Macho, Jie Gao and Bahman Ahmadi. {fa}`quote-left`{ref}`Find out more here <optimization_credit>`.
+This chapter is written by Gonçalo Homem de Almeida Correia, Maria Nogal Macho, Jie Gao and Bahman Ahmadi. {fa}`quote-left`{ref}`Find out more here <optimization_credit>`.
 ```
 % END-CREDIT
 

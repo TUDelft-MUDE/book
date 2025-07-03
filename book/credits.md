@@ -57,7 +57,14 @@ Credits are provided here for chapters and pages that are released under the lic
 (optimization_credit)=
 ### Chapter: Optimization
 
-> {ref}`optimization` is written by Gonçalo Homem de Almeida Correia...
+> {ref}`optimization` is written by Gonçalo Homem de Almeida Correia, Maria Nogal Macho, Jie Gao and Bahman Ahmadi.
+>
+> Note: Gonçalo Homem de Almeida Correia created most of the material, as well as the overall structure of this chapter. Maria Nogal Macho and Bahman Ahmadi made contributions to various parts of the material. Bahman Ahmadi developed the traffic exercise. Jie Gao created the genetic algorithm material.
+>
+> Special thanks goes to:
+> - Jialei Ding and Nadia Pourmohammadzia, who reviewed material and made improvements to the traffic exercise.
+  - Tom van Woudenberg, who edited text and improved content and structure for online interactive textbook format.
+  - João Moura Pereira de Lucas Teixeira, who created first draft of pages from powerpoint slides.
 
 (machine_learning_credit)=
 ### Chapter: Introduction to Machine Learning
@@ -73,13 +80,13 @@ Credits are provided here for chapters and pages that are released under the lic
 
 > `<title>` is written by `<authors>`.
 > 
-> Special thanks goes to `<name>` for `<contribution>`.
+> Special thanks goes to `<name>`, who `<contribution>`.
 >
 > _or_
 >
 > Special thanks goes to:
->  - `<name>` for `<contribution>`
->  - `<name>` for `<contribution>`.
+> - `<name>`, who `<contribution>`
+> - `<name>`, who `<contribution>`.
 >
 > Note: `<note-public>`
 >

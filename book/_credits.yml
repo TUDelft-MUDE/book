@@ -101,10 +101,26 @@ sources:
     title: Optimization
     author:
       - Gonçalo Homem de Almeida Correia
+      - Maria Nogal Macho
+      - Bahman Madadi
+      - Jie Gao
     type: internal
     note:
+      - id: authorship
+        public: true
+        text: |
+          Gonçalo Homem de Almeida Correia created most of the material, as well as the overall structure of this chapter. Maria Nogal Macho and Bahman Ahmadi made contributions to various parts of the material. Bahman Ahmadi developed the traffic exercise. Jie Gao created the genetic algorithm material.
       - text: |
-          Gonçalo instructions via email to Robert, April 18: Most of that material was created by me in the University of Coimbra and here [TUD]. But there’s material of Bahnam Madadi, Maria Nogal, Jie Gao, etc
+          Gonçalo instructions via email to Robert, April 18: Most of that material was created by me in the University of Coimbra and here [TUD]. But there’s material of Bahman Ahmadi, Maria Nogal, Jie Gao, etc.
+    acknowledgement:
+      - name:
+          - Jialei Ding
+          - Nadia Pourmohammadzia
+        contribution: reviewed material and made improvements to the traffic exercise.
+      - name: Tom van Woudenberg
+        contribution: edited text and improved content and structure for online interactive textbook format.
+      - name: João Moura Pereira de Lucas Teixeira
+        contribution: created first draft of pages from powerpoint slides.
 
   machine_learning:
     title: Introduction to Machine Learning
