@@ -187,3 +187,11 @@ $$
 ````
 
 :::
+
+% START-CREDIT
+% source: signal_processing
+```{attributiongrey} Attribution
+:class: attribution
+This chapter is written by Christian Tiberius. {fa}`quote-left`{ref}`Find out more here <signal_processing_credit>`.
+```
+% END-CREDIT

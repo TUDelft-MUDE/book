@@ -74,3 +74,11 @@ These videos overlap to some extent with the theory presented in the book, and a
 
     <iframe width="560" height="315" src="https://www.youtube.com/embed/q7diLuuvSRU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 ```
+
+% START-CREDIT
+% source: signal_processing
+```{attributiongrey} Attribution
+:class: attribution
+This chapter is written by Christian Tiberius. {fa}`quote-left`{ref}`Find out more here <signal_processing_credit>`.
+```
+% END-CREDIT

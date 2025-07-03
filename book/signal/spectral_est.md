@@ -166,3 +166,11 @@ $$\begin{gather*}E=\lim_{T\to\infty}\int_{-T}^{T}|x(t)|^2dt\\ P=\lim_{T\to\infty
 Finally, we derived and gave a formal definition for **Parseval's theorem** which reads (for an a-periodic signal) as:
 
 $$E=\int_{-\infty}^{\infty}|x(t)|^2dt=\int_{-\infty}^{\infty}|X(f)|^2df$$
+
+% START-CREDIT
+% source: signal_processing
+```{attributiongrey} Attribution
+:class: attribution
+This chapter is written by Christian Tiberius. {fa}`quote-left`{ref}`Find out more here <signal_processing_credit>`.
+```
+% END-CREDIT
