@@ -1,3 +1,4 @@
+(fourier_real)=
 # Fourier Series
 
 Our goal in this chapter is to be able to express a periodic signal $x(t)$ as a sum of harmonically related cosines and sines
