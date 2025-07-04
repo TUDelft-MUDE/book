@@ -64,5 +64,10 @@ Gauss Integration points
 | $2$ |   $-\frac{1}{\sqrt{3}} ,  \frac{1}{\sqrt{3}} $ |  $1, 1$ | $2$ or $3$ |
 | $3$ | $-\frac{3}{\sqrt{5}}, 0, \frac{3}{\sqrt{5}}$ |  $\frac{5}{9}, \frac{8}{9}, \frac{5}{9}$ | $4$ or $5$ |
 
-
-
+% START-CREDIT
+% source: finite_element_method
+```{attributiongrey} Attribution
+:class: attribution
+This chapter uses CC BY content written by Oriol Colomés, Iuri Rocha, Frans van der Meer and Martin Lesueur. {fa}`quote-left`{ref}`Find out more here <finite_element_method_credit>`.
+```
+% END-CREDIT

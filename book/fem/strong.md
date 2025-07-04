@@ -73,3 +73,10 @@ As can be seen, the form of equation {eq}`1drod` is exactly the same as the 1D P
 <iframe src="https://tudelft.h5p.com/content/1292102761306552137/embed" aria-label="Boundary conditions for heat equation" width="1088" height="637" frameborder="0" allowfullscreen="allowfullscreen" allow="autoplay *; geolocation *; microphone *; camera *; midi *; encrypted-media *"></iframe><script src="https://tudelft.h5p.com/js/h5p-resizer.js" charset="UTF-8"></script>
 :::
 
+% START-CREDIT
+% source: finite_element_method
+```{attributiongrey} Attribution
+:class: attribution
+This chapter uses CC BY content written by Oriol Colomés, Iuri Rocha, Frans van der Meer and Martin Lesueur. {fa}`quote-left`{ref}`Find out more here <finite_element_method_credit>`.
+```
+% END-CREDIT
