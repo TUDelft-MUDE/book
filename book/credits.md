@@ -135,7 +135,6 @@ The pages listed here are not
 - page [](./external/learn-python/book/08/sympy.ipynb). Original content licensed under CC BY.
 - Page REFERENCE are from CITATION/LINK. Original content licensed under CC BY.
 
-
 ## Contact
 
 If you have questions on the content, contact the MUDE team at MUDE-CEG@tudelft.nl. If you have technical questions regarding this book, contact the IT-coordinator of MUDE (Tom): T.R.vanWoudenberg@tudelft.nl
