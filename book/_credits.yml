@@ -64,12 +64,28 @@ sources:
 
   numerical_modelling:
     author:
-      - Jaime
-      - Justin Pitman
-      - more
+      - Jaime Arriaga Garcia
+      - Justin Pittman
+      - Robert Lanzafame
     type: internal
     acknowledgements:
-    isabel, mona
+      - name:
+          - Isabel Slingerland
+          - Mona Devos
+        contribution: critical feedback and development of exercises, figures and related content.
+      - name:
+          - Dhruv Mehta
+          - Ajay Jagadeesh
+        contribution: feedback on structure, content.
+    resource:
+      - name: Deltares
+        name_ref: NumericalMethodsRiver
+        what: animated figure (gif)
+        where: book\numerical_methods\overview.md
+        source: https://files.mude.citg.tudelft.nl/NumericalMethodsRiver.gif
+        license: unclear
+        copyright: Deltares
+        note: Original caption from Jaime "Cool numerical model of the Yamuna river. Thanks to Amgad Omer (Deltares).""
 
   continuous_distributions:
     author:
@@ -92,7 +108,13 @@ sources:
       - Robert Lanzafame
       - Jaime Arriaga Garcia
     type: internal
-    license: CC BY
+    acknowledgements:
+      - name:
+          - Isabel Slingerland
+          - Mona Devos
+        contribution: critical feedback and development of exercises, figures and related content.
+      - name: Dhruv Mehta
+        contribution: providing a first draft of the chapter structure and contents.
 
   finite_element_method:
     title: Finite Elements in Civil Engineering and Geosciences

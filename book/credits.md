@@ -54,6 +54,29 @@ CC BY conditions are _not_ applicable to some resources included in this book wh
 
 Credits are provided here for chapters and pages that are released under the license of this book (internal resources). Use the guidance provided above to properly share, reuse and cite relevant chapters, pages or any other resources from this book.
 
+(numerical_modelling_credit)=
+### Chapter: Numerical Modelling
+
+
+> {ref}`numerical_modelling` is written by Jaime Arriaga Garcia, Justin Pittman and Robert Lanzafame.
+>
+> Special thanks goes to:
+> - Isabel Slingerland and Mona Devos for critical feedback and development of exercises, figures and related content.
+> - Dhruv Mehta and Ajay Jagadeesh for feedback on structure, content.
+>
+> {numref}`NumericalMethodsRiver` is included on page {ref}`numerical_modelling` but is _not_ included under the CC BY license of this book and cannot be reused without explicit permission from the original copyright holder (Deltares). Original content is used here with explicit permission of Amgad Omer on behalf of Deltares.
+
+
+(finite_volume_method_credit)=
+### Chapter: Numerical Modelling
+
+
+> {ref}`fvm` is written by Robert Lanzafame and Jaime Arriaga Garcia.
+>
+> Special thanks goes to:
+> - Isabel Slingerland and Mona Devos for critical feedback and development of exercises, figures and related content.
+> - Dhruv Mehta for providing a first draft of the chapter structure and contents.
+
 (signal_processing_credit)=
 ### Chapter: Signal Processing
 
