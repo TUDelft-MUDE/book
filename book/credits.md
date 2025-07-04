@@ -122,8 +122,7 @@ The following chapters and pages are included directly from an external resource
 (finite_element_method_credit)=
 ### Chapter: Introduction to Finite Elements
 
->{ref}`finite_element_method` is written by Oriol Colomés, Iuri Rocha, Frans van der Meer and Martin Lesueur; specifically, the chapter "Introduction to finite elements." The book can be accessed at [interactivetextbooks.citg.tudelft.nl/computational-modelling](https://interactivetextbooks.citg.tudelft.nl/computational-modelling) and will soon be published with a CC BY license.
-
+>{ref}`finite_element_method` is from "Finite Elements in Civil Engineering and Geosciences" by Oriol Colomés, Iuri Rocha, Frans van der Meer and Martin Lesueur; specifically, the chapter "Introduction to finite elements." The original source can be accessed at [interactivetextbooks.citg.tudelft.nl/computational-modelling](https://interactivetextbooks.citg.tudelft.nl/computational-modelling) and will soon be published with a CC BY license.
 
 ### Programming Chapters
 
