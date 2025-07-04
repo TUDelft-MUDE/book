@@ -150,4 +150,10 @@ The finite element derivation for the Poisson equation in 2D follows the same li
 The derivation above also holds for 3D. Expressions and steps are exactly the same, although the interpretation of some of the symbols changes:  in 3D, $\Omega$ is a volume, $\Gamma$ is a surface and the $\bB$ matrix has three rows.
 ```
 
-
+% START-CREDIT
+% source: finite_element_method
+```{attributiongrey} Attribution
+:class: attribution
+This chapter uses CC BY content written by Oriol Colomés, Iuri Rocha, Frans van der Meer and Martin Lesueur. {fa}`quote-left`{ref}`Find out more here <finite_element_method_credit>`.
+```
+% END-CREDIT

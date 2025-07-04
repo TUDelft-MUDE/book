@@ -53,3 +53,10 @@ To complete the story of how shape functions and numerical integration are usual
     <iframe width="560" height="315" src="https://www.youtube.com/embed/C_DtidjOPB4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 ```
 
+% START-CREDIT
+% source: finite_element_method
+```{attributiongrey} Attribution
+:class: attribution
+This chapter uses CC BY content written by Oriol Colomés, Iuri Rocha, Frans van der Meer and Martin Lesueur. {fa}`quote-left`{ref}`Find out more here <finite_element_method_credit>`.
+```
+% END-CREDIT
