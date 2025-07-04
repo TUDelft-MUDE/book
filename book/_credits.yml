@@ -63,6 +63,7 @@ sources:
       
 
   numerical_modelling:
+    name: PDEs and the Finite Volume Method
     author:
       - Jaime Arriaga Garcia
       - Justin Pittman

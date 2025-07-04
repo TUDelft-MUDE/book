@@ -68,7 +68,7 @@ Credits are provided here for chapters and pages that are released under the lic
 
 
 (finite_volume_method_credit)=
-### Chapter: Numerical Modelling
+### Chapter: PDEs and the Finite Volume Method
 
 
 > {ref}`fvm` is written by Robert Lanzafame and Jaime Arriaga Garcia.
