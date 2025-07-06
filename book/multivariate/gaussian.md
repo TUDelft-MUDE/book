@@ -48,6 +48,14 @@ Also, you can plan with the interactive element below changing the correlation v
 
 <iframe src="../_static/elements/element_correlation.html" width="600" height="400" frameborder="0"></iframe>
 
+% START-CREDIT
+% source: risk
+```{attributiongrey} Attribution
+:class: attribution
+This interactive figure is created by Max Ramgraber. {ref}`Find out more here <distributions_credit>`.
+```
+% END-CREDIT
+
 ## Conditionalizing a bivariate Gaussian distribution
 
 Multivariate Gaussian distributions are useful because we can derive results analytically. Here, we are going to conditionalize a bivariate Gaussian distribution to exemplify it.

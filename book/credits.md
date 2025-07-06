@@ -61,6 +61,11 @@ Credits are provided here for chapters and pages that are released under the lic
 >
 > Special thanks goes to João Moura Pereira de Lucas Teixeira, who created first draft of pages from powerpoint slides.
 
+(uncertainty_propagation_credit)=
+### Chapter: Uncertainty Propagation
+
+> This chapter includes interactive figures created by Max Ramgraber ([maxramgraber.com/interactive](https://www.maxramgraber.com/interactive)).
+
 (numerical_modelling_credit)=
 ### Chapter: Numerical Modelling
 
@@ -80,6 +85,8 @@ Credits are provided here for chapters and pages that are released under the lic
 > Special thanks goes to Oswaldo Morales Napoles and Elisa Ragno for suggestions on the theoretical and didactic framework, as well as critical feedback and review.
 >
 > Pages {ref}`prob_design_1_rv` and {ref}`prob_design_2_rv` are from the Chapter _Probabilistic Design_ {cite:p}`lanzafame2024-pd` from the book Risk and Reliability for Engineers {cite:p}`lanzafame2024`, published  with a CC BY license. Files are included without modification.
+>
+> This chapter includes interactive figures created by Max Ramgraber ([maxramgraber.com/interactive](https://www.maxramgraber.com/interactive)).
 
 (finite_volume_method_credit)=
 ### Chapter: PDEs and the Finite Volume Method

@@ -25,6 +25,14 @@ Below, you find an interactive element that illustrates the relationship between
 
 <iframe src="../_static/elements/element_pdf_and_cdf.html" width="800" height="400" frameborder="0"></iframe>
 
+% START-CREDIT
+% source: risk
+```{attributiongrey} Attribution
+:class: attribution
+This interactive figure is created by Max Ramgraber. {ref}`Find out more here <distributions_credit>`.
+```
+% END-CREDIT
+
 It should be easy to see from the definition of the CDF that the probability of observing an exact value of a continuous random variable is exactly zero. This is an important observation, and also an important characteristic that separates continuous and discrete random variables.
 
 ## PDF and CDF of Gaussian distribution
@@ -55,6 +63,14 @@ Gaussian distribution function: PDF and CDF.
 Below, you will find an interactive element that allows you to explore the influence of different means and standard deviations on the pdf and cdf. Experiment with both options and observe how it affects the shape of both distributions.
 
 <iframe src="../_static/elements/element_Gaussian_cdf_moments.html" width="800" height="445" frameborder="0"></iframe>
+
+% START-CREDIT
+% source: risk
+```{attributiongrey} Attribution
+:class: attribution
+This interactive figure is created by Max Ramgraber. {ref}`Find out more here <distributions_credit>`.
+```
+% END-CREDIT
 
 ## Probability of other intervals
 

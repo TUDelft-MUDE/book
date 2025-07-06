@@ -28,6 +28,14 @@ where $X_1$ and $X_2$ are random variables, $Cov(X_1,X_2)$ is their covariance, 
 
 <iframe src="../_static/elements/element_correlation.html" width="600" height="400" frameborder="0"></iframe>
 
+% START-CREDIT
+% source: risk
+```{attributiongrey} Attribution
+:class: attribution
+This interactive figure is created by Max Ramgraber. {ref}`Find out more here <distributions_credit>`.
+```
+% END-CREDIT
+
 **Overview of this Chapter**
 
 Our ultimate goal is to construct and validate a model to quantify probability for combinations of more than one random variable of interest (i.e., to quantify various types of uncertainty). Specifically, 
