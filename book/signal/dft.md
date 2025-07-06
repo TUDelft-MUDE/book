@@ -113,6 +113,6 @@ Hence, *without* factors $\Delta t$ and $\frac{1}{\Delta t}$. This is also how D
 % source: signal_processing
 ```{attributiongrey} Attribution
 :class: attribution
-This chapter is written by Christian Tiberius. `{ref}`Find out more here <signal_processing_credit>`.
+This chapter is written by Christian Tiberius. {ref}`Find out more here <signal_processing_credit>`.
 ```
 % END-CREDIT
