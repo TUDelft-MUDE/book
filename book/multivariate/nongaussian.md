@@ -81,3 +81,11 @@ You will be provided Python code to evaluate multivariate distributions construc
 If you want to learn more about bivariate copulas and other multivariate joint distributions in higher dimensions, you can study them in the Cross Over "MORE: Probabilistic Modelling of real-world phenomena through ObseRvations and Elicitation".
 
 ```
+
+% START-CREDIT
+% source: distributions
+```{attributiongrey} Attribution
+:class: attribution
+This chapter was written by Patricia Mares Nasarre and Robert Lanzafame. {ref}`Find out more here <distributions_credit>`.
+```
+% END-CREDIT

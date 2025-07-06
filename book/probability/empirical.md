@@ -82,3 +82,11 @@ Empirical probability density function of the wind speed data.
 ```
 
 [^density]: Happily, in most coding languages, the algorithm to compute the pdf is already implemented and we just need to plot a histogram selecting the option to show us the densities.
+
+% START-CREDIT
+% source: distributions
+```{attributiongrey} Attribution
+:class: attribution
+This chapter was written by Patricia Mares Nasarre and Robert Lanzafame. {ref}`Find out more here <distributions_credit>`.
+```
+% END-CREDIT

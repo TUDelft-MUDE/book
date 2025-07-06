@@ -2,6 +2,14 @@
 (mult_dist_)=
 # Multivariate Distributions
 
+% START-CREDIT
+% source: distributions
+```{attributiongrey} Attribution
+:class: attribution
+This chapter was written by Patricia Mares Nasarre and Robert Lanzafame. {ref}`Find out more here <distributions_credit>`.
+```
+% END-CREDIT
+
 Challenges in all branches of science and engineering involve working in situations where uncertainty plays a significant role: prior chapters of this book focused a lot on _error_, but often we must also deal with data scarce scenarios (often categorized as _epistemic_ uncertainty) and natural phenomena with a significant _stochastic_ nature (often categorized as _aleatoric_ uncertainty). As seen in the previous chapter, univariate continuous distributions can assist us in modelling uncertainty associated with a specific variable in order to quantitatively account for uncertainty in general; the distribution helps inform the decision-making process or risk analysis. However, our problems of interest are typically complex and usually involve more than one variable: a _multivariate_ situation.
 
 Consider, for example, when assessing algae blooms in a water body (e.g., a freshwater lake), different variables must be considered, such as nutrients in the water (nitrogen and phosphorus) and their concentration, dissolved oxygen and temperature of the water body. Sometimes (although not frequently), these variables are not related to each other, so we can consider them _independent._ For example, one may assume (for simplicity) that the amount of nitrogen and phosphorous that reaches the lake is not be related to the water temperature of the lake. However, truly _independent_ situations rarely occur in reality, and the variables are _dependent_ on each other. For example, the concentration of nitrogen and phosphorous changes with time and the reaction rates are dependent on the temperature of the water; thus if you are interested in these quantities over time, temperature is certainly a _dependent variable_ of interest.

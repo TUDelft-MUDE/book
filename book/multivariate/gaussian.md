@@ -160,3 +160,11 @@ If you need to refresh the concept of covariance and correlation and want to see
 ```
 
 [^note]: You already studied covariance matrices [here](correl).
+
+% START-CREDIT
+% source: distributions
+```{attributiongrey} Attribution
+:class: attribution
+This chapter was written by Patricia Mares Nasarre and Robert Lanzafame. {ref}`Find out more here <distributions_credit>`.
+```
+% END-CREDIT

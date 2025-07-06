@@ -68,3 +68,11 @@ $$
 
 Thus, there is a probability of 0.80 to fulfill the required resistence and a probabiltiy of 0.20 of not doing it. He will have to contact the contractor!
 ```
+
+% START-CREDIT
+% source: distributions
+```{attributiongrey} Attribution
+:class: attribution
+This chapter was written by Patricia Mares Nasarre and Robert Lanzafame. {ref}`Find out more here <distributions_credit>`.
+```
+% END-CREDIT
