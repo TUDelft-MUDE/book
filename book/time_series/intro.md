@@ -1,3 +1,4 @@
+(tsa)=
 # Time Series Analysis 
 
 In this chapter, we will first introduce the components to describe a time series: trend, signal, offsets, irregularities and noise. It will then be shown how to estimate the signal-of-interest (everything except noise).

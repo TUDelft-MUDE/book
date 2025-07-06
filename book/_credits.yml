@@ -219,12 +219,10 @@ sources:
       - Christiaan Tiberius
       - Sandra Verhagen
     acknowledgement:
-      - name: João Moura Pereira de Lucas Teixeira
-        contribution: Created first draft of pages from powerpoint slides
-      - name: Antonio Magherini
-        contribution: reviewed, commented and/or modified content
       - name: Berend Bouvy
-        contribution: created and improved many of the exercises and interactive pages
+        contribution: created a number ofinteractive figures and exercises, as well as provided critical feedback.
+      - name: Antonio Magherini
+        contribution: created the first draft material from powerpoint slides and prepared notebooks as exercises.
     note:
       - text: |
           Alireza Amiri-Simkooei created the main framework of this chapter, which was then revised by Sandra and Christian.
