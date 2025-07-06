@@ -79,6 +79,7 @@ Credits are provided here for chapters and pages that are released under the lic
 > {ref}`OT` is written by Sandra Verhagen.
 >
 > Special thanks goes to:
+> - Peter Teunissen and Christiaan Tiberius who co-shaped the material, indirectly, through collaboration with the author as TU Delft colleagues.
 > - Sophie Keemink, Caspar Jungbacker and Thirza Feenstra, who provided feedback and helped develop exercises.
 
 (numerical_modelling_credit)=
