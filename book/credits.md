@@ -77,6 +77,16 @@ Credits are provided here for chapters and pages that are released under the lic
 > - Isabel Slingerland and Mona Devos for critical feedback and development of exercises, figures and related content.
 > - Dhruv Mehta for providing a first draft of the chapter structure and contents.
 
+
+(finite_element_method_credit)=
+### Chapter: Finite Element Method
+
+> {ref}`finite_element_method` is written by Frans van der Meer. 
+>
+> _The material in this chapter is also incorporated in an in-depth book "Finite Elements in Civil Engineering and Geosciences" by Oriol Colomés, Iuri Rocha, Frans van der Meer and Martin Lesueur which can be found [here](interactivetextbooks.citg.tudelft.nl/computational-modelling)._
+>
+> Special thanks goes to Lex Niessen who greatly assisted in developing material on the finite element method for the first edition of MUDE, which was the starting point for this chapter. 
+
 (signal_processing_credit)=
 ### Chapter: Signal Processing
 
@@ -142,10 +152,6 @@ Credits are provided here for chapters and pages that are released under the lic
 
 The following chapters and pages are included directly from an external resource, are not included under the CC BY license of this book and cannot be reused without explicit permission from the original copyright holder. Unless otherwise noted below, the contents have not been edited by the authors of this book.
 
-(finite_element_method_credit)=
-### Chapter: Introduction to Finite Elements
-
->{ref}`finite_element_method` is from "Finite Elements in Civil Engineering and Geosciences" by Oriol Colomés, Iuri Rocha, Frans van der Meer and Martin Lesueur; specifically, the chapter "Introduction to finite elements." The original source can be accessed at [interactivetextbooks.citg.tudelft.nl/computational-modelling](https://interactivetextbooks.citg.tudelft.nl/computational-modelling) and will soon be published with a CC BY license.
 
 ### Programming Chapters
 
