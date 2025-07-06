@@ -45,7 +45,7 @@ sources:
     resource:
       - name: Max Ramgraber
         what: interactive figure
-        where: https://mude.citg.tudelft.nl/2024/book/_static/elements/element_2D_Gaussian.html
+        where: https://mude.citg.tudelft.nl/2024/book/_static/elements/element_correlation.html
         license: CC BY 4.0
         copyright: Delft University of Technology
       - name: Robert Lanzafame, Patricia Mares Nasarre
@@ -95,6 +95,15 @@ sources:
     type: internal
     note: |
       2 pages are from R&R book. Tried to keep things simple and combined univariate and continuous distributions chapter. listed elisa and oswaldo as contributors for now, but expect them to become authors in the future.
+    resource:
+      - name: Max Ramgraber
+        what: interactive figures
+        where:
+          - https://mude.citg.tudelft.nl/2024/book/_static/elements/element_correlation.html
+          - https://mude.citg.tudelft.nl/2024/book/_static/elements/element_Gaussian_cdf_moments.html
+          - https://mude.citg.tudelft.nl/2024/book/_static/elements/element_pdf_and_cdf.html
+        license: CC BY 4.0
+        copyright: Delft University of Technology
 
   finite_volume_method:
     author:
