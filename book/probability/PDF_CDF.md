@@ -26,7 +26,7 @@ Below, you find an interactive element that illustrates the relationship between
 <iframe src="../_static/elements/element_pdf_and_cdf.html" width="800" height="400" frameborder="0"></iframe>
 
 % START-CREDIT
-% source: risk
+% source: maxramgraber
 ```{attributiongrey} Attribution
 :class: attribution
 This interactive figure is created by Max Ramgraber. {ref}`Find out more here <distributions_credit>`.
@@ -65,7 +65,7 @@ Below, you will find an interactive element that allows you to explore the influ
 <iframe src="../_static/elements/element_Gaussian_cdf_moments.html" width="800" height="445" frameborder="0"></iframe>
 
 % START-CREDIT
-% source: risk
+% source: maxramgraber
 ```{attributiongrey} Attribution
 :class: attribution
 This interactive figure is created by Max Ramgraber. {ref}`Find out more here <distributions_credit>`.
