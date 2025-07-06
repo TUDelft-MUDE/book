@@ -180,32 +180,6 @@ Credits are provided here for chapters and pages that are released under the lic
 >
 > Special thanks goes to Oswaldo Morales Napoles, Elisa Ragno and Robert Lanzafame for suggestions on the theoretical and didactic framework, as well as critical feedback and review.
 
-(generic_credit)=
-### `<resource_type>`: `<title>`
-% CREDIT-NOTE: note that the title ref is not included because
-%   the tag is displayed in the rhs toc.
-% Future dev may use templating to automatically include the
-%   right text in these sections
-
-> `<title>` is written by `<authors>`.
-> 
-> Special thanks goes to `<name>`, who `<contribution>`.
->
-> _or_
->
-> Special thanks goes to:
-> - `<name>`, who `<contribution>`
-> - `<name>`, who `<contribution>`.
->
-> Note: `<note-public>`
->
-> The following resources are used in this `<resource_type>` but are _not_ included under the CC BY license of this book and cannot be reused without explicit permission from the original copyright holder:
-> - `resource_type>` `<resource>` is used in `<page>` (not modified). Original content licensed under `<license>`.
-> - `resource_type>` `<resource>` is used in `<page>` and `<modification>`. Original content licensed under `<license>`.
-> - `resource_type>` `<resource>` (`<bibtex>`) is used in `<page>` (unmodified). Original content licensed under `<license>` and is available `<resource_location>`.
-> - ...
-> 
-
 (external_resources_credits)=
 ## External resources
 
