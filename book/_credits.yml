@@ -88,21 +88,13 @@ sources:
         copyright: Deltares
         note: Original caption from Jaime "Cool numerical model of the Yamuna river. Thanks to Amgad Omer (Deltares).""
 
-  continuous_distributions:
+  distributions:
     author:
       - Patricia Mares Nasarre
-      - ???
-    type: internal
-    note: |
-      Not sure if/when we move it to another book, and how to handle that.
-
-  multivariate_distributions:
-    author:
       - Robert Lanzafame
-      - Patricia Mares Nasarre
     type: internal
     note: |
-      Not sure if/when we move it to another book, and how to handle that.
+      2 pages are from R&R book. Tried to keep things simple and combined univariate and continuous distributions chapter. listed elisa and oswaldo as contributors for now, but expect them to become authors in the future.
 
   finite_volume_method:
     author:
@@ -254,3 +246,6 @@ sources:
           - Oswaldo Morales Napoles
           - Elisa Ragno
         contribution: suggestions on the theoretical and didactic framework, as well as critical feedback and review.
+
+  risk_analysis:
+    see credits page
