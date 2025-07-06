@@ -1,5 +1,5 @@
 
-(mulitivar)=
+(mult_dist_)=
 # Multivariate Distributions
 
 Challenges in all branches of science and engineering involve working in situations where uncertainty plays a significant role: prior chapters of this book focused a lot on _error_, but often we must also deal with data scarce scenarios (often categorized as _epistemic_ uncertainty) and natural phenomena with a significant _stochastic_ nature (often categorized as _aleatoric_ uncertainty). As seen in the previous chapter, univariate continuous distributions can assist us in modelling uncertainty associated with a specific variable in order to quantitatively account for uncertainty in general; the distribution helps inform the decision-making process or risk analysis. However, our problems of interest are typically complex and usually involve more than one variable: a _multivariate_ situation.

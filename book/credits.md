@@ -72,6 +72,14 @@ Credits are provided here for chapters and pages that are released under the lic
 >
 > {numref}`NumericalMethodsRiver` is included on page {ref}`numerical_modelling` but is _not_ included under the CC BY license of this book and cannot be reused without explicit permission from the original copyright holder (Deltares). Original content is used here with explicit permission of Amgad Omer on behalf of Deltares.
 
+(distributions_credit)=
+### Chapters: Univariate and Multivariate Continuous Distributions
+
+> {ref}`cont_dist` and {ref}`mult_dist` are written by Patricia Mares Nasarre and Robert Lanzafame.
+>
+> Special thanks goes to Oswaldo Morales Napoles and Elisa Ragno for suggestions on the theoretical and didactic framework, as well as critical feedback and review.
+>
+> Pages {ref}`prob_design_1_rv` and {ref}`prob_design_2_rv` are from the Chapter _Probabilistic Design_ from the book Risk and Reliability for Engineers by Robert Lanzafame {cite:p}`lanzafame2024-pd`, published  with a CC BY license. Files are included without modification.
 
 (finite_volume_method_credit)=
 ### Chapter: PDEs and the Finite Volume Method
@@ -142,6 +150,13 @@ Credits are provided here for chapters and pages that are released under the lic
 
 > {ref}`machine_learning` is written by Iuri Rocha, Anne Poot, Joep Storm and Leon Riccius.
 
+(extreme_value_analysis_credit)=
+### Chapter: Extreme Value Analysis
+
+> {ref}`eva` is written by Patricia Mares Nasarre.
+>
+> Special thanks goes to Oswaldo Morales Napoles, Elisa Ragno and Robert Lanzafame for suggestions on the theoretical and didactic framework, as well as critical feedback and review.
+
 (generic_credit)=
 ### `<resource_type>`: `<title>`
 % CREDIT-NOTE: note that the title ref is not included because
@@ -173,6 +188,10 @@ Credits are provided here for chapters and pages that are released under the lic
 
 The following chapters and pages are included directly from an external resource, are not included under the CC BY license of this book and cannot be reused without explicit permission from the original copyright holder. Unless otherwise noted below, the contents have not been edited by the authors of this book.
 
+(risk_analysis_credit)=
+### Chapter: Extreme Value Analysis
+
+> {ref}`risk` resuses the Chapter _Risk Analysis_ and associated exercises from the book Risk and Reliability for Engineers by Robert Lanzafame {cite:p}`lanzafame2024-risk`, published with a CC BY license. Files were modified to provide short introduction and explanation for readers (i.e., MUDE students).
 
 ### Programming Chapters
 

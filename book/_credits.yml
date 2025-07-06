@@ -243,3 +243,14 @@ sources:
         filepath: https://files.mude.citg.tudelft.nl/
         where: book/2024/time_series/components.md
         source_url: https://www.cmar.csiro.au/sealevel/sl_hist_last_decades.html
+
+  extreme_value_analysis:
+    title: Extreme Value Analysis
+    authro: Patricia Mares Nasarre
+    type: internal
+    acknowledgement:
+      - name:
+          - Robert Lanzafame
+          - Oswaldo Morales Napoles
+          - Elisa Ragno
+        contribution: suggestions on the theoretical and didactic framework, as well as critical feedback and review.
