@@ -112,3 +112,11 @@ $$
 
 ```
 :::
+
+% START-CREDIT
+% source: uncertainty_propagation
+```{attributiongrey} Attribution
+:class: attribution
+This chapter was written by Sandra Verhagen. {ref}`Find out more here <uncertainty_propagation_credit>`.
+```
+% END-CREDIT

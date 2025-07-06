@@ -249,3 +249,11 @@ In some cases, you may immediately want to test between two competing models, fo
 2. Apply BLUE for both models
 3. Apply the generalized likelihood ratio test (GLRT)
 4. Present estimates, precision and testing results for accepted model
+
+% START-CREDIT
+% source: observation_theory
+```{attributiongrey} Attribution
+:class: attribution
+This chapter was written by Sandra Verhagen. {ref}`Find out more here <observation_theory_credit>`.
+```
+% END-CREDIT

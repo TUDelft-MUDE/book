@@ -51,3 +51,11 @@ $$
 This probability is very small, so the engineers can conclude that the water in the aquifer seems to present the characteristics of fresh water regarding the concentration of Chlorides.
 
 ```
+
+% START-CREDIT
+% source: distributions
+```{attributiongrey} Attribution
+:class: attribution
+This chapter was written by Patricia Mares Nasarre and Robert Lanzafame. {ref}`Find out more here <distributions_credit>`.
+```
+% END-CREDIT

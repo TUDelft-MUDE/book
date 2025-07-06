@@ -42,3 +42,11 @@ Gaussian distribution function: PDF and CDF.
 ## Some properties
 
 The mean, median and mode of the Normal distribution is equal to $\mu$. The variance is $\sigma^2$. Note that Normal distribution is symmetric and presents 0 skewness. 
+
+% START-CREDIT
+% source: distributions
+```{attributiongrey} Attribution
+:class: attribution
+This chapter was written by Patricia Mares Nasarre and Robert Lanzafame. {ref}`Find out more here <distributions_credit>`.
+```
+% END-CREDIT

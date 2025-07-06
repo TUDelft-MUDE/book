@@ -61,6 +61,27 @@ Credits are provided here for chapters and pages that are released under the lic
 >
 > Special thanks goes to João Moura Pereira de Lucas Teixeira, who created first draft of pages from powerpoint slides.
 
+(uncertainty_propagation_credit)=
+### Chapter: Uncertainty Propagation
+
+> {ref}`01_errorprop` is written by Sandra Verhagen.
+>
+> Special thanks goes to:
+> - Robert Lanzafame, Patricia Mares Nasarre and Max Ramgraber, who reviewed, commented and/or modified content. Robert and Patricia wrote the page {ref}`uncertainty_classification`.
+> - Sophie Keemink, Caspar Jungbacker and Thirza Feenstra, who provided feedback and helped develop exercises.
+> - Antonio Magherini, who created first draft of pages from powerpoint slides.
+>
+> This chapter includes interactive figures created by Max Ramgraber ([maxramgraber.com/interactive](https://www.maxramgraber.com/interactive)).
+
+(observation_theory_credit)=
+### Chapter: Observation Theory
+
+> {ref}`OT` is written by Sandra Verhagen.
+>
+> Special thanks goes to:
+> - Peter Teunissen and Christiaan Tiberius who co-shaped the material, indirectly, through collaboration with the author as TU Delft colleagues.
+> - Sophie Keemink, Caspar Jungbacker and Thirza Feenstra, who provided feedback and helped develop exercises.
+
 (numerical_modelling_credit)=
 ### Chapter: Numerical Modelling
 
@@ -72,10 +93,19 @@ Credits are provided here for chapters and pages that are released under the lic
 >
 > {numref}`NumericalMethodsRiver` is included on page {ref}`numerical_modelling` but is _not_ included under the CC BY license of this book and cannot be reused without explicit permission from the original copyright holder (Deltares). Original content is used here with explicit permission of Amgad Omer on behalf of Deltares.
 
+(distributions_credit)=
+### Chapters: Univariate and Multivariate Continuous Distributions
+
+> {ref}`cont_dist` and {ref}`mult_dist` are written by Patricia Mares Nasarre and Robert Lanzafame.
+>
+> Special thanks goes to Oswaldo Morales Napoles and Elisa Ragno for suggestions on the theoretical and didactic framework, as well as critical feedback and review.
+>
+> Pages {ref}`prob_design_1_rv` and {ref}`prob_design_2_rv` are from the Chapter _Probabilistic Design_ {cite:p}`lanzafame2024-pd` from the book Risk and Reliability for Engineers {cite:p}`lanzafame2024`, published  with a CC BY license. Files are included without modification.
+>
+> This chapter includes interactive figures created by Max Ramgraber ([maxramgraber.com/interactive](https://www.maxramgraber.com/interactive)).
 
 (finite_volume_method_credit)=
 ### Chapter: PDEs and the Finite Volume Method
-
 
 > {ref}`fvm` is written by Robert Lanzafame and Jaime Arriaga Garcia.
 >
@@ -117,6 +147,7 @@ Credits are provided here for chapters and pages that are released under the lic
 >
 > Special thanks goes to:
 > - Berend Bouvy, who created a number ofinteractive figures and exercises, as well as provided critical feedback.
+> - Serge Kaplev, who provided critical feedback and suggestions for the theoretical content.
 > - Antonio Magherini, who created the first draft material from powerpoint slides and prepared notebooks as exercises.
 > 
 > The following resources are used in this chapter but are _not_ included under the CC BY license of this book and cannot be reused without explicit permission from the original copyright holder:
@@ -142,37 +173,22 @@ Credits are provided here for chapters and pages that are released under the lic
 
 > {ref}`machine_learning` is written by Iuri Rocha, Anne Poot, Joep Storm and Leon Riccius.
 
-(generic_credit)=
-### `<resource_type>`: `<title>`
-% CREDIT-NOTE: note that the title ref is not included because
-%   the tag is displayed in the rhs toc.
-% Future dev may use templating to automatically include the
-%   right text in these sections
+(extreme_value_analysis_credit)=
+### Chapter: Extreme Value Analysis
 
-> `<title>` is written by `<authors>`.
-> 
-> Special thanks goes to `<name>`, who `<contribution>`.
+> {ref}`eva` is written by Patricia Mares Nasarre.
 >
-> _or_
->
-> Special thanks goes to:
-> - `<name>`, who `<contribution>`
-> - `<name>`, who `<contribution>`.
->
-> Note: `<note-public>`
->
-> The following resources are used in this `<resource_type>` but are _not_ included under the CC BY license of this book and cannot be reused without explicit permission from the original copyright holder:
-> - `resource_type>` `<resource>` is used in `<page>` (not modified). Original content licensed under `<license>`.
-> - `resource_type>` `<resource>` is used in `<page>` and `<modification>`. Original content licensed under `<license>`.
-> - `resource_type>` `<resource>` (`<bibtex>`) is used in `<page>` (unmodified). Original content licensed under `<license>` and is available `<resource_location>`.
-> - ...
-> 
+> Special thanks goes to Oswaldo Morales Napoles, Elisa Ragno and Robert Lanzafame for suggestions on the theoretical and didactic framework, as well as critical feedback and review.
 
 (external_resources_credits)=
 ## External resources
 
 The following chapters and pages are included directly from an external resource, are not included under the CC BY license of this book and cannot be reused without explicit permission from the original copyright holder. Unless otherwise noted below, the contents have not been edited by the authors of this book.
 
+(risk_analysis_credit)=
+### Chapter: Risk Analysis
+
+> {ref}`risk` resuses the Chapters _Risk Analysis_ {cite:p}`lanzafame2024-risk` and _Risk Evaluation_ {cite:p}`lanzafame2024-risk-eval` and associated exercises from the book _Risk and Reliability for Engineers_ {cite:p}`lanzafame2024`, published with a CC BY license. Files were modified to provide short introduction and explanation for readers (i.e., MUDE students).
 
 ### Programming Chapters
 

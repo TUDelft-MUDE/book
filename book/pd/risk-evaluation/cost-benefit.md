@@ -146,3 +146,11 @@ An extensive study on  values in various sectors, see {cite:t}`tengs1995` showed
 
 One other approach is to base the value of a human life on macro-economic indicators. Several metrics have been proposed that relate this value to a person’s economic production.
 Given the difficulties associated with economic valuation of human life and the associated risk reduction, it is decided in some domains to develop separate criteria for considering the risk to life. This topic is further elaborated in ⚠️section 3.5.
+
+% START-CREDIT
+% source: risk
+```{attributiongrey} Attribution
+:class: attribution
+This chapter reuses content written by Bas Jonkman. {ref}`Find out more here <risk_analysis_credit>`.
+```
+% END-CREDIT

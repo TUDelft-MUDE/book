@@ -51,3 +51,11 @@ Var[X] = \frac{1}{12}(b-a)^2
 $$
 
 Finally, note that uniform distribution is symmetric and presents 0 skewness. Thus, the median and the mean are identical. This is, it does not present any tail.
+
+% START-CREDIT
+% source: distributions
+```{attributiongrey} Attribution
+:class: attribution
+This chapter was written by Patricia Mares Nasarre and Robert Lanzafame. {ref}`Find out more here <distributions_credit>`.
+```
+% END-CREDIT

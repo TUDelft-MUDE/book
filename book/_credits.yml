@@ -40,17 +40,14 @@ sources:
     acknowledgement:
       - name: Robert Lanzafame, Patricia Mares Nasarre, Max Ramgraber
         contribution: reviewed, commented and/or modified content
+      - name: Sophie Keemink, Caspar Jungbacker and Thirza Feenstra
+        contribution: provided feedback and helped develop exercises.
       - name: Antonio Magherini
         contribution: converted the slides and exercises to book format
     resource:
       - name: Max Ramgraber
         what: interactive figure
-        where: https://mude.citg.tudelft.nl/2024/book/_static/elements/element_2D_Gaussian.html
-        license: CC BY 4.0
-        copyright: Delft University of Technology
-      - name: Robert Lanzafame, Patricia Mares Nasarre
-        what: page
-        where: book/propagation_uncertainty/uncertainty.md
+        where: https://mude.citg.tudelft.nl/2024/book/_static/elements/element_correlation.html
         license: CC BY 4.0
         copyright: Delft University of Technology
     type: internal
@@ -59,6 +56,11 @@ sources:
     author:
       - Sandra Verhagen
     type: internal
+    acknowledgement:
+      - name: Sophie Keemink, Caspar Jungbacker and Thirza Feenstra
+        contribution: provided feedback and helped develop exercises.
+      - name: Antonio Magherini
+        contribution: converted the slides and exercises to book format
     note: |
       
 
@@ -88,21 +90,22 @@ sources:
         copyright: Deltares
         note: Original caption from Jaime "Cool numerical model of the Yamuna river. Thanks to Amgad Omer (Deltares).""
 
-  continuous_distributions:
+  distributions:
     author:
       - Patricia Mares Nasarre
-      - ???
-    type: internal
-    note: |
-      Not sure if/when we move it to another book, and how to handle that.
-
-  multivariate_distributions:
-    author:
       - Robert Lanzafame
-      - Patricia Mares Nasarre
     type: internal
     note: |
-      Not sure if/when we move it to another book, and how to handle that.
+      2 pages are from R&R book. Tried to keep things simple and combined univariate and continuous distributions chapter. listed elisa and oswaldo as contributors for now, but expect them to become authors in the future.
+    resource:
+      - name: Max Ramgraber
+        what: interactive figures
+        where:
+          - https://mude.citg.tudelft.nl/2024/book/_static/elements/element_correlation.html
+          - https://mude.citg.tudelft.nl/2024/book/_static/elements/element_Gaussian_cdf_moments.html
+          - https://mude.citg.tudelft.nl/2024/book/_static/elements/element_pdf_and_cdf.html
+        license: CC BY 4.0
+        copyright: Delft University of Technology
 
   finite_volume_method:
     author:
@@ -243,3 +246,17 @@ sources:
         filepath: https://files.mude.citg.tudelft.nl/
         where: book/2024/time_series/components.md
         source_url: https://www.cmar.csiro.au/sealevel/sl_hist_last_decades.html
+
+  extreme_value_analysis:
+    title: Extreme Value Analysis
+    authro: Patricia Mares Nasarre
+    type: internal
+    acknowledgement:
+      - name:
+          - Robert Lanzafame
+          - Oswaldo Morales Napoles
+          - Elisa Ragno
+        contribution: suggestions on the theoretical and didactic framework, as well as critical feedback and review.
+
+  risk_analysis:
+    see credits page. complicated because of the need to cite specific chapters. note that the attributions are also unique in that the chapter attribution mentions that some pages/sections are by Robert and Bas (but leaves credits page to distinguish).
