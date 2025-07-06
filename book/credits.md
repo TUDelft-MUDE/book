@@ -54,9 +54,15 @@ CC BY conditions are _not_ applicable to some resources included in this book wh
 
 Credits are provided here for chapters and pages that are released under the license of this book (internal resources). Use the guidance provided above to properly share, reuse and cite relevant chapters, pages or any other resources from this book.
 
+(modelling_concepts_credit)=
+### Chapter: Modelling Concepts
+
+> {ref}`modelling_concepts` is written by Alessandro Cabboi, Patricia Mares Nasarre and Robert Lanzafame.
+>
+> Special thanks goes to João Moura Pereira de Lucas Teixeira, who created first draft of pages from powerpoint slides.
+
 (numerical_modelling_credit)=
 ### Chapter: Numerical Modelling
-
 
 > {ref}`numerical_modelling` is written by Jaime Arriaga Garcia, Justin Pittman and Robert Lanzafame.
 >

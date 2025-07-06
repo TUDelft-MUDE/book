@@ -90,3 +90,11 @@ Note that there are also uncertainties regarding the measurement of the observat
 **Cases of deterministic systems:**
 
 Known structures subject to known static or dynamic loads. For instance, when we decide to model the response of a building (deformations) under a specific (known) load. Note, however, that in practice loads are almost always variable, or impossible to predict with certainty; thus we will often use deterministic models to understand the behavior of the structure of interest, while also using a stochastic models to check whether the structure will perform well under the range of loads that can be expected.
+
+% START-CREDIT
+% source: modelling_concepts
+```{attributiongrey} Attribution
+:class: attribution
+This chapter was written by Alessandro Cabboi, Patricia Mares Nasarre and Robert Lanzafame. {ref}`Find out more here <modelling_concepts_credit>`.
+```
+% END-CREDIT
