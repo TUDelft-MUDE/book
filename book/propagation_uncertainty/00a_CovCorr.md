@@ -60,6 +60,14 @@ The interactive element below allows you to play around with the correlation val
 
 <iframe src="../_static/elements/element_correlation.html" width="600" height="400" frameborder="0"></iframe>
 
+% START-CREDIT
+% source: maxramgraber
+```{attributiongrey} Attribution
+:class: attribution
+This interactive figure is created by Max Ramgraber. {ref}`Find out more here <uncertainty_propagation_credit>`.
+```
+% END-CREDIT
+
 ### Covariance matrix
 
 When considering a random vector $X= [\begin{array}{llll} X_1 & X_2 & \ldots &X_m \end{array}]^T$, we can 'collect' all covariances in the so-called *covariance matrix*:
@@ -71,3 +79,11 @@ $$
 Note that the covariance matrix is symmetric, since $Cov(X_i,X_j)= Cov(X_j,X_i)$. 
 
 If all measurements are independent, all covariances will be equal to zero, and the covariance matrix becomes a diagonal matrix with the variances on the diagonal. 
+
+% START-CREDIT
+% source: uncertainty_propagation
+```{attributiongrey} Attribution
+:class: attribution
+This chapter was written by Sandra Verhagen. {ref}`Find out more here <uncertainty_propagation_credit>`.
+```
+% END-CREDIT

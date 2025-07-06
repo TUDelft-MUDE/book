@@ -63,3 +63,11 @@ You can see that the mean = 474l/m >> median = 250l/m, indicating that the distr
 ---
 
 ```
+
+% START-CREDIT
+% source: distributions
+```{attributiongrey} Attribution
+:class: attribution
+This chapter was written by Patricia Mares Nasarre and Robert Lanzafame. {ref}`Find out more here <distributions_credit>`.
+```
+% END-CREDIT

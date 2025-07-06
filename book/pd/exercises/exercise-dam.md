@@ -163,3 +163,11 @@ $$
  
 The most stringent of the two criteria applies, so the proposed safety standard would be $10^{-6}$ per year for the given inputs.
 ```
+
+% START-CREDIT
+% source: risk
+```{attributiongrey} Attribution
+:class: attribution
+This chapter reuses content written by Bas Jonkman and Robert Lanzafame. {ref}`Find out more here <risk_analysis_credit>`.
+```
+% END-CREDIT
