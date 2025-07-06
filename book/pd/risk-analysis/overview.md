@@ -1,5 +1,13 @@
 # Introduction to Risk Analysis
 
+% START-CREDIT
+% source: risk
+```{attributiongrey} Attribution
+:class: attribution
+This chapter reuses content written by Bas Jonkman and Robert Lanzafame. {ref}`Find out more here <risk_analysis_credit>`.
+```
+% END-CREDIT
+
 This book splits risk into two parts: risk *introduction* and risk *evaluation.* This chapter in particular introduces the _analysis_ of risks from a broad perspective, beginning with definitions and key steps of a risk analysis, illustrated quantitatively through an FN curve. The next chapter covers risk _evaluation_ concepts decision theory, cost benefit analysis and safety standards, where the principal focus is on making decisions and answering the question 'how safe is safe enough?'
 
 ```{note}

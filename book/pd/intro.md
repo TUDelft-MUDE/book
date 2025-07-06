@@ -1,6 +1,14 @@
 (risk)=
 # Risk Analysis
 
+% START-CREDIT
+% source: risk
+```{attributiongrey} Attribution
+:class: attribution
+This chapter reuses content written by Bas Jonkman and Robert Lanzafame. {ref}`Find out more here <risk_analysis_credit>`.
+```
+% END-CREDIT
+
 Throughout this book we have focused on a variety of deterministic and probabilistic topics, which probably appeared to be completely unrelated. However, in engineering practice we often need to combine deterministic and probabilistic approaches to design and assess the projects we work on and Risk Analysis concepts are an important way to facilitate this. In particular, concepts in this chapter are focused not so much on evaluating the behavior of a particular system, but rather _evaluating the risk associated with various outcomes_ and, most importantly, providing _a framework with which decisions can be made to improve it._
 
 **Risk and Reliability in Practice**

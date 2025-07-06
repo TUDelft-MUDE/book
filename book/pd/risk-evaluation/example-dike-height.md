@@ -119,3 +119,11 @@ name: periodic_investments
 ---
 Periodic investments in dike reinforcement for a situation with sea level rise.
 ```
+
+% START-CREDIT
+% source: risk
+```{attributiongrey} Attribution
+:class: attribution
+This chapter reuses content written by Bas Jonkman. {ref}`Find out more here <risk_analysis_credit>`.
+```
+% END-CREDIT
