@@ -40,6 +40,8 @@ sources:
     acknowledgement:
       - name: Robert Lanzafame, Patricia Mares Nasarre, Max Ramgraber
         contribution: reviewed, commented and/or modified content
+      - name: Sophie Keemink, Caspar Jungbacker and Thirza Feenstra
+        contribution: provided feedback and helped develop exercises.
       - name: Antonio Magherini
         contribution: converted the slides and exercises to book format
     resource:
@@ -48,17 +50,17 @@ sources:
         where: https://mude.citg.tudelft.nl/2024/book/_static/elements/element_correlation.html
         license: CC BY 4.0
         copyright: Delft University of Technology
-      - name: Robert Lanzafame, Patricia Mares Nasarre
-        what: page
-        where: book/propagation_uncertainty/uncertainty.md
-        license: CC BY 4.0
-        copyright: Delft University of Technology
     type: internal
 
   observation_theory:
     author:
       - Sandra Verhagen
     type: internal
+    acknowledgement:
+      - name: Sophie Keemink, Caspar Jungbacker and Thirza Feenstra
+        contribution: provided feedback and helped develop exercises.
+      - name: Antonio Magherini
+        contribution: converted the slides and exercises to book format
     note: |
       
 

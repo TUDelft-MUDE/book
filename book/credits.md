@@ -64,7 +64,22 @@ Credits are provided here for chapters and pages that are released under the lic
 (uncertainty_propagation_credit)=
 ### Chapter: Uncertainty Propagation
 
+> {ref}`01_errorprop` is written by Sandra Verhagen.
+>
+> Special thanks goes to:
+> - Robert Lanzafame, Patricia Mares Nasarre and Max Ramgraber, who reviewed, commented and/or modified content.
+> - Sophie Keemink, Caspar Jungbacker and Thirza Feenstra, who provided feedback and helped develop exercises.
+> - Antonio Magherini, who created first draft of pages from powerpoint slides.
+>
 > This chapter includes interactive figures created by Max Ramgraber ([maxramgraber.com/interactive](https://www.maxramgraber.com/interactive)).
+
+(observation_theory_credit)=
+### Chapter: Observation Theory
+
+> {ref}`OT` is written by Sandra Verhagen.
+>
+> Special thanks goes to:
+> - Sophie Keemink, Caspar Jungbacker and Thirza Feenstra, who provided feedback and helped develop exercises.
 
 (numerical_modelling_credit)=
 ### Chapter: Numerical Modelling
@@ -90,7 +105,6 @@ Credits are provided here for chapters and pages that are released under the lic
 
 (finite_volume_method_credit)=
 ### Chapter: PDEs and the Finite Volume Method
-
 
 > {ref}`fvm` is written by Robert Lanzafame and Jaime Arriaga Garcia.
 >
