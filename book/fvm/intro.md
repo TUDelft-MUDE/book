@@ -5,7 +5,7 @@
 % source: finite_volume_method
 ```{attributiongrey} Attribution
 :class: attribution
-This chapter is written by Robert Lanzafame and Jaime Arriaga Garcia. Find out more here <finite_volume_method_credit>`.
+This chapter is written by Robert Lanzafame and Jaime Arriaga Garcia. `{ref}`Find out more here <finite_volume_method_credit>`.
 ```
 % END-CREDIT
 

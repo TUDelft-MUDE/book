@@ -79,6 +79,6 @@ These videos overlap to some extent with the theory presented in the book, and a
 % source: signal_processing
 ```{attributiongrey} Attribution
 :class: attribution
-This chapter is written by Christiaan Tiberius. Find out more here <signal_processing_credit>`.
+This chapter is written by Christiaan Tiberius. `{ref}`Find out more here <signal_processing_credit>`.
 ```
 % END-CREDIT

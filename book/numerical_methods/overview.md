@@ -5,7 +5,7 @@
 % source: numerical_modelling
 ```{attributiongrey} Attribution
 :class: attribution
-This chapter is written by Jaime Arriaga Garcia, Justin Pittman and Robert Lanzafame. Find out more here <numerical_modelling_credit>`.
+This chapter is written by Jaime Arriaga Garcia, Justin Pittman and Robert Lanzafame. `{ref}`Find out more here <numerical_modelling_credit>`.
 ```
 % END-CREDIT
 
