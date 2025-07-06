@@ -79,3 +79,11 @@ $$
 Note that the covariance matrix is symmetric, since $Cov(X_i,X_j)= Cov(X_j,X_i)$. 
 
 If all measurements are independent, all covariances will be equal to zero, and the covariance matrix becomes a diagonal matrix with the variances on the diagonal. 
+
+% START-CREDIT
+% source: uncertainty_propagation
+```{attributiongrey} Attribution
+:class: attribution
+This chapter was written by Sandra Verhagen. {ref}`Find out more here <uncertainty_propagation_credit>`.
+```
+% END-CREDIT
