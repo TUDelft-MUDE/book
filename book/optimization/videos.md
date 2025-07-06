@@ -19,6 +19,6 @@ _In case small errors are present in the videos, please refer to the appropriate
 % source: optimization
 ```{attributiongrey} Attribution
 :class: attribution
-This chapter is written by Gonçalo Homem de Almeida Correia, Maria Nogal Macho, Jie Gao and Bahman Ahmadi. {fa}`quote-left`{ref}`Find out more here <optimization_credit>`.
+This chapter is written by Gonçalo Homem de Almeida Correia, Maria Nogal Macho, Jie Gao and Bahman Ahmadi. Find out more here <optimization_credit>`.
 ```
 % END-CREDIT

@@ -131,6 +131,6 @@ $\implies$ periodic signal written in terms of sum of cosines and sines, togethe
 % source: signal_processing
 ```{attributiongrey} Attribution
 :class: attribution
-This chapter is written by Christiaan Tiberius. {fa}`quote-left`{ref}`Find out more here <signal_processing_credit>`.
+This chapter is written by Christiaan Tiberius. Find out more here <signal_processing_credit>`.
 ```
 % END-CREDIT

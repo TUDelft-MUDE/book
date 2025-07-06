@@ -5,7 +5,7 @@
 % source: machine_learning
 ```{attributiongrey} Attribution
 :class: attribution
-This chapter is written by Iuri Rocha, Anne Poot, Joep Storm and Leon Riccius. {fa}`quote-left`{ref}`Find out more here <machine_learning_credit>`.
+This chapter is written by Iuri Rocha, Anne Poot, Joep Storm and Leon Riccius. Find out more here <machine_learning_credit>`.
 ```
 % END-CREDIT
 
