@@ -76,6 +76,6 @@ $$\begin{gather*}\text{Prob}(nC\leq 50M)\geq 0.9\\ \text{Prob}(nC_m\leq 0.7M)\ge
 % source: optimization
 ```{attributiongrey} Attribution
 :class: attribution
-This chapter is written by Gonçalo Homem de Almeida Correia, Maria Nogal Macho, Jie Gao and Bahman Ahmadi. {fa}`quote-left`{ref}`Find out more here <optimization_credit>`.
+This chapter is written by Gonçalo Homem de Almeida Correia, Maria Nogal Macho, Jie Gao and Bahman Ahmadi. {ref}`Find out more here <optimization_credit>`.
 ```
 % END-CREDIT

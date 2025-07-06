@@ -329,6 +329,6 @@ Finally, using complete replacement our new population is given by:
 % source: optimization
 ```{attributiongrey} Attribution
 :class: attribution
-This chapter is written by Gonçalo Homem de Almeida Correia, Maria Nogal Macho, Jie Gao and Bahman Ahmadi. {fa}`quote-left`{ref}`Find out more here <optimization_credit>`.
+This chapter is written by Gonçalo Homem de Almeida Correia, Maria Nogal Macho, Jie Gao and Bahman Ahmadi. {ref}`Find out more here <optimization_credit>`.
 ```
 % END-CREDIT

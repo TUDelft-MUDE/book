@@ -154,6 +154,6 @@ The derivation above also holds for 3D. Expressions and steps are exactly the sa
 % source: finite_element_method
 ```{attributiongrey} Attribution
 :class: attribution
-This chapter uses CC BY content written by Oriol Colomés, Iuri Rocha, Frans van der Meer and Martin Lesueur. {fa}`quote-left`{ref}`Find out more here <finite_element_method_credit>`.
+This chapter was written by Frans van der Meer. {ref}`Find out more here <finite_element_method_credit>`.
 ```
 % END-CREDIT

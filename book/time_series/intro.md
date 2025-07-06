@@ -1,4 +1,13 @@
+(tsa)=
 # Time Series Analysis 
+
+% START-CREDIT
+% source: time_series_analysis
+```{attributiongrey} Attribution
+:class: attribution
+This chapter was written by Alireza Amiri-Simkooei, Christiaan Tiberius and Sandra Verhagen. {ref}`Find out more here <time_series_analysis_credit>`.
+```
+% END-CREDIT
 
 In this chapter, we will first introduce the components to describe a time series: trend, signal, offsets, irregularities and noise. It will then be shown how to estimate the signal-of-interest (everything except noise).
 
@@ -9,5 +18,5 @@ Next, we will consider stationary time series, meaning that the statistical prop
 :width: 600px
 :align: center
 
-Recorded and expected global warming from 1960 to 2100, from IPCC report ([Masson-Delmotte, et al. (20219)](https://www.researchgate.net/profile/Peter-Marcotullio/publication/330090901_Sustainable_development_poverty_eradication_and_reducing_inequalities_In_Global_warming_of_15C_An_IPCC_Special_Report/links/6386062b48124c2bc68128da/Sustainable-development-poverty-eradication-and-reducing-inequalities-In-Global-warming-of-15C-An-IPCC-Special-Report.pdf))
+Recorded and expected global warming from 1960 to 2100, from {cite:t}`ipcc2018`.
 ```

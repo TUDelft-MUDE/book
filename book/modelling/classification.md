@@ -129,3 +129,10 @@ Imagine we want to predict the force of waves acting on a wall. To do so, we sta
 
 This is purely empirical and, thus, a data-driven model! We have simply used data to fit a relationship **input -> output**. These models can be very useful when trying to model very complex systems when there is lots of data available.
 
+% START-CREDIT
+% source: modelling_concepts
+```{attributiongrey} Attribution
+:class: attribution
+This chapter was written by Alessandro Cabboi, Patricia Mares Nasarre and Robert Lanzafame. {ref}`Find out more here <modelling_concepts_credit>`.
+```
+% END-CREDIT
