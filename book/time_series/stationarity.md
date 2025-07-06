@@ -122,3 +122,11 @@ We have seen different ways of obtaining a stationary time series from the origi
 4. Predict the noise $\hat{\epsilon}_p$ based on the AR model.
 
 5. Predict future values of the time series: $\hat{Y}_p=\mathrm{A}_p\hat{X}+\hat{\epsilon}_p$ (Section [Forecasting](forecast)).
+
+% START-CREDIT
+% source: time_series_analysis
+```{attributiongrey} Attribution
+:class: attribution
+This chapter was written by Alireza Amiri-Simkooei, Christiaan Tiberius and Sandra Verhagen. {ref}`Find out more here <time_series_analysis_credit>`.
+```
+% END-CREDIT

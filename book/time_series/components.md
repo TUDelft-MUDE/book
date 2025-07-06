@@ -210,3 +210,11 @@ where
 - $u_k(t)$ is the Heaviside step function
 - $\epsilon(t)$ is the i.i.d. random Gaussian noise, i.e. $\epsilon(t) \sim \textbf{N}(0, \sigma^2)$.
 :::
+
+% START-CREDIT
+% source: time_series_analysis
+```{attributiongrey} Attribution
+:class: attribution
+This chapter was written by Alireza Amiri-Simkooei, Christiaan Tiberius and Sandra Verhagen. {ref}`Find out more here <time_series_analysis_credit>`.
+```
+% END-CREDIT
