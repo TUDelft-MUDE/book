@@ -121,7 +121,7 @@ Credits are provided here for chapters and pages that are released under the lic
 > 
 > The following resources are used in this chapter but are _not_ included under the CC BY license of this book and cannot be reused without explicit permission from the original copyright holder:
 > - {numref}`cover` is used on page {ref}`tsa` (not modified) and is from {cite:t}`ipcc2018`.
-> - {numref}`cover` is used on page {ref}`components` (not modified) and is from {cite:t}`csiro`
+> - {numref}`trend` is used on page {ref}`components` (not modified) and is from {cite:t}`csiro`
 
 (optimization_credit)=
 ### Chapter: Optimization
