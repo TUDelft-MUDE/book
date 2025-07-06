@@ -1,13 +1,3 @@
----
-layout: page
-title: Gurobi
-# description: 
-# nav_order: 6
-nav_exclude: true
----
-
-<!-- [deepnote.com](https://deepnote.com/) -->
-
 # Gurobi
 
 Gurobi is an optimizer written in Python. It's not open-source, but an academic license is available. This page shows how to activate the license. General instructions are available on [their support website](https://support.gurobi.com/hc/en-us/articles/14799677517585) as well, if additional information is needed.
