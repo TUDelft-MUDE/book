@@ -79,7 +79,7 @@ Credits are provided here for chapters and pages that are released under the lic
 >
 > Special thanks goes to Oswaldo Morales Napoles and Elisa Ragno for suggestions on the theoretical and didactic framework, as well as critical feedback and review.
 >
-> Pages {ref}`prob_design_1_rv` and {ref}`prob_design_2_rv` are from the Chapter _Probabilistic Design_ from the book Risk and Reliability for Engineers by Robert Lanzafame {cite:p}`lanzafame2024-pd`, published  with a CC BY license. Files are included without modification.
+> Pages {ref}`prob_design_1_rv` and {ref}`prob_design_2_rv` are from the Chapter _Probabilistic Design_ {cite:p}`lanzafame2024-pd` from the book Risk and Reliability for Engineers {cite:p}`lanzafame2024`, published  with a CC BY license. Files are included without modification.
 
 (finite_volume_method_credit)=
 ### Chapter: PDEs and the Finite Volume Method
@@ -191,7 +191,7 @@ The following chapters and pages are included directly from an external resource
 (risk_analysis_credit)=
 ### Chapter: Extreme Value Analysis
 
-> {ref}`risk` resuses the Chapter _Risk Analysis_ and associated exercises from the book Risk and Reliability for Engineers by Robert Lanzafame {cite:p}`lanzafame2024-risk`, published with a CC BY license. Files were modified to provide short introduction and explanation for readers (i.e., MUDE students).
+> {ref}`risk` resuses the Chapters _Risk Analysis_ {cite:p}`lanzafame2024-risk` and _Risk Evaluation_ {cite:p}`lanzafame2024-risk-eval` and associated exercises from the book _Risk and Reliability for Engineers_ {cite:p}`lanzafame2024`, published with a CC BY license. Files were modified to provide short introduction and explanation for readers (i.e., MUDE students).
 
 ### Programming Chapters
 
