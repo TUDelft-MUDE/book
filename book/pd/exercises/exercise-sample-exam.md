@@ -246,3 +246,11 @@ Comments about answers that were not quite right (points were not deduced for th
 
 Common ‘objects’: -->
 
+
+% START-CREDIT
+% source: risk
+```{attributiongrey} Attribution
+:class: attribution
+This chapter reuses content written by Bas Jonkman and Robert Lanzafame. {ref}`Find out more here <risk_analysis_credit>`.
+```
+% END-CREDIT
