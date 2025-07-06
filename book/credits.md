@@ -108,7 +108,7 @@ Credits are provided here for chapters and pages that are released under the lic
 >
 > {numref}`unitycircle` is included on page {ref}`fourier_real` but is _not_ included under the CC BY license of this book and cannot be reused without explicit permission from the original copyright holder. Original content licensed under CC BY-SA 4.0 by {cite:t}`BFG` and can be found [here](https://commons.wikimedia.org/wiki/File:Unitycircle-complex.gif); used here without modification.
 
-(time_series_credit)=
+(time_series_analysis_credit)=
 ### Chapter: Time Series Analysis
 
 > {ref}`tsa` is written by Alireza Amiri-Simkooei, Christiaan Tiberius and Sandra Verhagen.
