@@ -1,5 +1,5 @@
 
-(mult_dist_)=
+(mult_dist)=
 # Multivariate Distributions
 
 % START-CREDIT
