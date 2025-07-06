@@ -44,7 +44,7 @@ The trend is the general pattern of the time series and shows its long-term chan
 :width: 600px
 :align: center
 
-Monthly time series of global mean sea level measurements using Satellite Altimetry technique. Source image: https://www.cmar.csiro.au/sealevel/sl_hist_last_decades.html
+Monthly time series of global mean sea level measurements using Satellite Altimetry technique. Source image: {cite:t}`csiro`.
 ```
 
 {numref}`trend` shows a positive trend (red line) of around $3.5$ mm/year, which in this case indicates sea level rise. This however needs to be further investigated and tested statistically (see {ref}`hypothesis_testing` and also {ref}`modelling_tsa`).

@@ -229,13 +229,17 @@ sources:
       - text: |
           Alireza Amiri-Simkooei created the main framework of this chapter, which was then revised by Sandra and Christian.
     resource:
-      - name: cover
+      - name_ref: cover
         what: figure
         filename: tsa_cover.png
+        bibtex: ipcc2018
         filepath: https://files.mude.citg.tudelft.nl/
         where: book/2024/time_series/intro.md
-        source_url: https://www.researchgate.net/profile/Peter-Marcotullio/publication/330090901_Sustainable_development_poverty_eradication_and_reducing_inequalities_In_Global_warming_of_15C_An_IPCC_Special_Report/links/6386062b48124c2bc68128da/Sustainable-development-poverty-eradication-and-reducing-inequalities-In-Global-warming-of-15C-An-IPCC-Special-Report.pdf
-      - name: trend
+        source_url: https://www.researchgate.net/publication/330090901_Sustainable_development_poverty_eradication_and_reducing_inequalities_In_Global_warming_of_15C_An_IPCC_Special_Report
+        note: |
+          This figure is used as cover for the chapter. It is unmodified from PDFsource report.
+      - name_ref: trend
+        bibtex: csiro
         what: figure
         filename: trend.png
         filepath: https://files.mude.citg.tudelft.nl/
