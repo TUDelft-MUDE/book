@@ -190,11 +190,12 @@ The following chapters and pages are included directly from an external resource
 
 > {ref}`risk` resuses the Chapters _Risk Analysis_ {cite:p}`lanzafame2024-risk` and _Risk Evaluation_ {cite:p}`lanzafame2024-risk-eval` and associated exercises from the book _Risk and Reliability for Engineers_ {cite:p}`lanzafame2024`, published with a CC BY license. Files were modified to provide short introduction and explanation for readers (i.e., MUDE students).
 
+(programming_credit)=
 ### Programming Chapters
 
 The chapters in the Programming part of this book are reused from two sources: _Learn Programming for Engineers_ {cite:p}`learn-programming` and _Python for Engineers_ {cite:p}`learn-python`. Both books are published with a CC BY license and are available online at [[teachbooks.](teachbooks.io/learn-programming)](https://teachbooks.io/learn-programming) and [teachbooks.io/learn-python](https://teachbooks.io/learn-python).
 
-All chapters are from _Learn Programming for Engineers_, except Chapters 1.6, 1.8 and 2.4 (OOP, Sympy and Gurobi, respectively), which are from _Python for Engineers._ Content has been modified slightly to fit the MUDE context.
+All chapters are from _Learn Programming for Engineers_, except Chapters 1.6, 1.8 and 2.4 (Errors, Sympy and Gurobi, respectively), which are from _Python for Engineers._ Content has been modified slightly to fit the MUDE context.
 
 ### Individual External Pages
 
