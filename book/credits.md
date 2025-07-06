@@ -54,9 +54,15 @@ CC BY conditions are _not_ applicable to some resources included in this book wh
 
 Credits are provided here for chapters and pages that are released under the license of this book (internal resources). Use the guidance provided above to properly share, reuse and cite relevant chapters, pages or any other resources from this book.
 
+(modelling_concepts_credit)=
+### Chapter: Modelling Concepts
+
+> {ref}`modelling_concepts` is written by Alessandro Cabboi, Patricia Mares Nasarre and Robert Lanzafame.
+>
+> Special thanks goes to João Moura Pereira de Lucas Teixeira, who created first draft of pages from powerpoint slides.
+
 (numerical_modelling_credit)=
 ### Chapter: Numerical Modelling
-
 
 > {ref}`numerical_modelling` is written by Jaime Arriaga Garcia, Justin Pittman and Robert Lanzafame.
 >
@@ -101,6 +107,21 @@ Credits are provided here for chapters and pages that are released under the lic
 > - Antonio Magherini, who reviewed, commented and/or modified content.
 >
 > {numref}`unitycircle` is included on page {ref}`fourier_real` but is _not_ included under the CC BY license of this book and cannot be reused without explicit permission from the original copyright holder. Original content licensed under CC BY-SA 4.0 by {cite:t}`BFG` and can be found [here](https://commons.wikimedia.org/wiki/File:Unitycircle-complex.gif); used here without modification.
+
+(time_series_analysis_credit)=
+### Chapter: Time Series Analysis
+
+> {ref}`tsa` is written by Alireza Amiri-Simkooei, Christiaan Tiberius and Sandra Verhagen.
+>
+> _The initial framework and contents of this chapter were created by Alireza Amiri-Simkooei, which was then revised and updated by Sandra and Christian._
+>
+> Special thanks goes to:
+> - Berend Bouvy, who created a number ofinteractive figures and exercises, as well as provided critical feedback.
+> - Antonio Magherini, who created the first draft material from powerpoint slides and prepared notebooks as exercises.
+> 
+> The following resources are used in this chapter but are _not_ included under the CC BY license of this book and cannot be reused without explicit permission from the original copyright holder:
+> - {numref}`cover` is used on page {ref}`tsa` (not modified) and is from {cite:t}`ipcc2018`.
+> - {numref}`trend` is used on page {ref}`components` (not modified) and is from {cite:t}`csiro`
 
 (optimization_credit)=
 ### Chapter: Optimization

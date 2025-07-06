@@ -112,3 +112,11 @@ Be very systematic in verifying and validating models:
 * Keep note of what changed in the results, for each modification performed in
 the model;
 * Clearly highlight for which parameter space the model is valid.
+
+% START-CREDIT
+% source: modelling_concepts
+```{attributiongrey} Attribution
+:class: attribution
+This chapter was written by Alessandro Cabboi, Patricia Mares Nasarre and Robert Lanzafame. {ref}`Find out more here <modelling_concepts_credit>`.
+```
+% END-CREDIT

@@ -92,3 +92,11 @@ If we compute this metric for our example, we obtain $rbias(H_{m0})=0.05$ and $r
 
 
 [^reference]: Data extracted from Mares-Nasarre et al. (2022). Hydraulic stability of cube-armored mound breakwaters in depth-limited breaking wave conditions, *Ocean Engineering* 259, 111845.  https://doi.org/10.1016/j.oceaneng.2022.111845
+
+% START-CREDIT
+% source: modelling_concepts
+```{attributiongrey} Attribution
+:class: attribution
+This chapter was written by Alessandro Cabboi, Patricia Mares Nasarre and Robert Lanzafame. {ref}`Find out more here <modelling_concepts_credit>`.
+```
+% END-CREDIT
