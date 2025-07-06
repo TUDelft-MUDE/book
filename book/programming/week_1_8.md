@@ -4,7 +4,7 @@
 % source: programming
 ```{attributiongrey} Attribution
 :class: attribution
-This chapter reuses material from _Python_ for Engineers_. {ref}`Find out more here <programming_credit>`.
+This chapter reuses material from _Python for Engineers_. {ref}`Find out more here <programming_credit>`.
 ```
 % END-CREDIT
 
