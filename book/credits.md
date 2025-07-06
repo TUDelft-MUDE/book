@@ -195,7 +195,7 @@ The following chapters and pages are included directly from an external resource
 
 The chapters in the Programming part of this book are reused from two sources: _Learn Programming for Engineers_ {cite:p}`learn-programming` and _Python for Engineers_ {cite:p}`learn-python`. Both books are published with a CC BY license and are available online at [teachbooks.io/learn-programming](https://teachbooks.io/learn-programming) and [teachbooks.io/learn-python](https://teachbooks.io/learn-python).
 
-All chapters are from _Learn Programming for Engineers_, except Chapters 1.6, 1.8 and 2.4 (Errors, Sympy and Gurobi, respectively), which are from _Python for Engineers._ Content has been modified slightly to fit the MUDE context.
+All chapters are from _Learn Programming for Engineers_, except Chapters 1.6 and 1.8 (Errors and Sympy, respectively), which are from _Python for Engineers._ Content has been modified slightly to fit the MUDE context.
 
 ## Contact
 
