@@ -53,7 +53,7 @@ Also, you can plan with the interactive element below changing the correlation v
 :class: attribution
 This interactive figure is created by Max Ramgraber. {ref}`Find out more here <distributions_credit>`.
 ```
-````{margin}
+````
 % END-CREDIT
 
 ````{iframe-figure} ../_static/elements/element_correlation.html

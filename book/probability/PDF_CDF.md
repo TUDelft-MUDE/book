@@ -30,7 +30,7 @@ Below, you find an interactive element that illustrates the relationship between
 :class: attribution
 This interactive figure is created by Max Ramgraber. {ref}`Find out more here <distributions_credit>`.
 ```
-````{margin}
+````
 % END-CREDIT
 
 ````{iframe-figure} ../_static/elements/element_pdf_and_cdf.html
@@ -76,7 +76,7 @@ Below, you will find an interactive element that allows you to explore the influ
 :class: attribution
 This interactive figure is created by Max Ramgraber. {ref}`Find out more here <distributions_credit>`.
 ```
-````{margin}
+````
 % END-CREDIT
 
 ````{iframe-figure} ../_static/elements/element_Gaussian_cdf_moments.html

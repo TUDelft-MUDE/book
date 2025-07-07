@@ -33,7 +33,7 @@ where $X_1$ and $X_2$ are random variables, $Cov(X_1,X_2)$ is their covariance, 
 :class: attribution
 This interactive figure is created by Max Ramgraber. {ref}`Find out more here <distributions_credit>`.
 ```
-````{margin}
+````
 % END-CREDIT
 
 ````{iframe-figure} ../_static/elements/element_correlation.html

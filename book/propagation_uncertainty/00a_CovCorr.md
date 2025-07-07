@@ -60,12 +60,14 @@ The interactive element below allows you to play around with the correlation val
 
 % START-CREDIT
 % source: maxramgraber
+
 ````{margin}
 ```{attributiongrey} Attribution
 :class: attribution
 This interactive figure is created by Max Ramgraber. {ref}`Find out more here <distributions_credit>`.
 ```
-````{margin}
+````
+
 % END-CREDIT
 
 ````{iframe-figure} ../_static/elements/element_correlation.html
@@ -92,4 +94,5 @@ If all measurements are independent, all covariances will be equal to zero, and 
 :class: attribution
 This chapter was written by Sandra Verhagen. {ref}`Find out more here <uncertainty_propagation_credit>`.
 ```
+
 % END-CREDIT
