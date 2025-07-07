@@ -23,6 +23,12 @@ $X$ has a value less than $x$**.
 
 Below, you find an interactive element that illustrates the relationship between the integral of the pdf and the cdf value. They grey-shaded area in the left subplot corresponds to the integral from $-\infty$ to $x$. Move your mouse over either the subplots and try to develop an intuition for how both distributions relate to each other. When is the cdf steep, when is it flat?
 
+````{iframe-figure} ../_static/elements/element_pdf_and_cdf.html
+:name: pdf_cdg
+
+Relationship between integral of the pdf and the cdf value
+````
+
 <iframe src="../_static/elements/element_pdf_and_cdf.html" width="800" height="400" frameborder="0"></iframe>
 
 % START-CREDIT
