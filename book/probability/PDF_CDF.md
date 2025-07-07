@@ -29,14 +29,14 @@ Below, you find an interactive element that illustrates the relationship between
 Relationship between integral of the pdf and the cdf value
 ````
 
-<iframe src="../_static/elements/element_pdf_and_cdf.html" width="800" height="400" frameborder="0"></iframe>
-
 % START-CREDIT
 % source: maxramgraber
+````{margin}
 ```{attributiongrey} Attribution
 :class: attribution
 This interactive figure is created by Max Ramgraber. {ref}`Find out more here <distributions_credit>`.
 ```
+````{margin}
 % END-CREDIT
 
 It should be easy to see from the definition of the CDF that the probability of observing an exact value of a continuous random variable is exactly zero. This is an important observation, and also an important characteristic that separates continuous and discrete random variables.
