@@ -12,7 +12,7 @@ The **joint probability distribution** describes the likelihood of two (or more)
 Let $X$ and $Y$ be continuous random variables with joint probability density function (PDF) $ p_{XY}(x, y) $. Then:
 
 $$
-p(a < X < b, \, c < Y < d) = \int_c^d \int_a^b p_{XY}(x, y) \, dx \, dy
+P(a < X < b, \, c < Y < d) = \int_c^d \int_a^b p_{XY}(x, y) \, dx \, dy
 $$
 
 **Properties:**
