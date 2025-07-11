@@ -68,11 +68,13 @@ The following pages contain content written by others, part of which has been re
 - Pages REFERENCE and REFERENCE include text from CITATION that is used EXPLANATION. Original content licensed under CC BY. 
 - more as needed
 
+(programming_credit_2)=
+### Programming chapters
+
+> [](./programming/week_1_1/week_1_1.md) is written by Robert Lanzafame and Tom van Woudenberg.
 
 (programming_credit)=
 ### Programming Chapters
 
-The chapters in the Programming part of this book are reused from two sources: _Learn Programming for Engineers_ {cite:p}`learn-programming` and _Python for Engineers_ {cite:p}`learn-python`. Both books are published with a CC BY license and are available online at [teachbooks.io/learn-programming](https://teachbooks.io/learn-programming) and [teachbooks.io/learn-python](https://teachbooks.io/learn-python).
-
-All chapters are from _Learn Programming for Engineers_, except Chapters 1.6 and 1.8 (Errors and Sympy, respectively), which are from _Python for Engineers._ Content has been modified slightly to fit the MUDE context.
+The chapters in the Programming part of this book are partly reused from two sources: _Learn Programming for Engineers_ {cite:p}`learn-programming` and _Python for Engineers_ {cite:p}`learn-python`. Both books are published with a CC BY license and are available online at [teachbooks.io/learn-programming](https://teachbooks.io/learn-programming) and [teachbooks.io/learn-python](https://teachbooks.io/learn-python).
 

@@ -1,12 +1,5 @@
 # Files and Folders
 
-% START-CREDIT
-```{attributiongrey} Attribution
-:class: attribution
-This chapter is written by Robert Lanzafame. {ref}`Find out more here <programming-chapters>`.
-```
-% END-CREDIT
-
 MUDE has a repetetive weekly workflow and a _lot_ of different technical topics. Because of this, it is important to keep our files well organized. This page gives you the background information to do this efficiently. Your weekly assignments will also guide you through the process of setting this up in a gradual way.
 
 ```{tip}
@@ -122,3 +115,10 @@ Over the course of the semester we will gradually increase our reliance on `git`
 * once you are comfortable with `git`, we recommend that you permanently move your code folder somewhere that is not backed up by cloud software and use your GitLab repository instead.
 
 In case the text above was not clear: to avoid syncing problems, use a system like `git` to backup code, _not_ a cloud service like OneDrive!
+
+% START-CREDIT
+```{attributiongrey} Attribution
+:class: attribution
+This chapter is written by Robert Lanzafame. {ref}`Find out more here <programming_credit>`.
+```
+% END-CREDIT
