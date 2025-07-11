@@ -8,7 +8,7 @@ The software installation pages guide you through the process for installing sev
 - Visual Studio Code (abbreviated VS Code or VSC):
   - this is our Integrated Development Environment (IDE) of choice becuase of its ease-of-use, flexibility and collaboration features
   - note that VSC is an alternative to Jupyter Notebook or Jupyter Lab IDE's, which you may have used in the past
-- Jupyter: a Python-based software that allows you to run parts of code at a time using a notebook interface
+- Jupyter: a Python-based software
   - Note that Jupyter Notebooks are a file format (extension `*.ipynb`), and Jupyter Notebook is also an IDE
   - We will install Jupyter in our computing environment using `conda` and interact with the Jupyter Notebook `*.ipynb` files using VSC as our IDE
 
