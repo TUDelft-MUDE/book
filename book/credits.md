@@ -80,7 +80,7 @@ Credits are provided here for chapters and pages that are released under the lic
 >
 > Special thanks goes to:
 > - Peter Teunissen and Christiaan Tiberius who co-shaped the material, indirectly, through collaboration with the author as TU Delft colleagues.
-> - The book _Adjustment theory: an introduction_ {cite:p}`adjustment_thoery` and _Testing theory: an introduction_ {cite:p}`testing_theory` which provided the framework for this chapter.
+> - The book _Adjustment theory: an introduction_ {cite:p}`adjustment_theory` and _Testing theory: an introduction_ {cite:p}`testing_theory` which provided the framework for this chapter.
 > - Sophie Keemink, Caspar Jungbacker and Thirza Feenstra, who provided feedback and helped develop exercises.
 
 (numerical_modelling_credit)=
