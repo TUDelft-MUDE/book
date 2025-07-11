@@ -6,6 +6,7 @@ parts:
     numbered: false
     chapters:
     - file: overview
+# START REMOVE-FROM-RELEASE
   - caption: Q1 Topics
     numbered: 2
     chapters: 
@@ -266,36 +267,10 @@ parts:
     numbered: false
     chapters:
     - file: programming/week_1_1
-      title: "Week 1.1: Getting Started!"
       sections:
-      - file: programming/week_1_1/environments
-        title: Computers and Environments
-        sections:
-        - file: external/learn-programming/book/computers
-          title: Computers
-        - file: external/learn-programming/book/environments
-          title: Computing Environments
-      - file: programming/week_1_1/install
-        title: Software Installation
-        sections:
-        - file: external/learn-programming/book/install/python/miniconda
-          title: Install Miniconda
-          sections:
-          - file: external/learn-programming/book/install/common/hidden
-            title: Hidden Files
-          - file: external/learn-programming/book/install/common/cli
-            title: Command Line Interface (CLI)
-          - file: external/learn-programming/book/install/common/env_vars_windows
-            title: Environment Variables (Windows)
-        - file: external/learn-programming/book/install/ide/vsc
-          title: Visual Studio 
-          sections:
-          - file: external/learn-programming/book/install/ide/vsc/extensions
-            title: Extensions
-      - file: programming/week_1_1/files
-        title: Files and Folders
-      - file: programming/week_1_1/warmup
-        title: Python Warmup
+      - external: https://github.com/TeachBooks/learn-programming/blob/mude-2025/book/computers.md
+      - external: https://github.com/TeachBooks/learn-programming/blob/mude-2025/book/environments.md
+      - external: https://github.com/TeachBooks/learn-programming/blob/mude-2025/book/install/common/cli.md
     - file: programming/week_1_2
     - file: programming/week_1_3
       sections:
@@ -360,6 +335,8 @@ parts:
         title: Chi-Squared
     - file: probability/python
     - file: fundamentals/eemc-stuff
+
+# END REMOVE-FROM-RELEASE
   - caption: Miscellaneous
     numbered: false
     chapters:
