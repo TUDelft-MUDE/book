@@ -4,7 +4,7 @@
 % START-CREDIT
 ```{attributiongrey} Attribution
 :class: attribution
-This chapter is written by Tom van Woudenberg Robert Lanzafame. {ref}`Find out more here <programming_credit_2>`. Furthermore, content from  _Learn Programming for Engineers_ {cite:p}`learn-programming` is used. {ref}`Find out more here <programming_credit>`.
+This chapter is written by Tom van Woudenberg and Robert Lanzafame. {ref}`Find out more here <programming_credit_2>`. Furthermore, content from  _Learn Programming for Engineers_ {cite:p}`learn-programming` is used. {ref}`Find out more here <programming_credit>`.
 ```
 % END-CREDIT
 
