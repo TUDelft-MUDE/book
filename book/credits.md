@@ -73,6 +73,8 @@ The following pages contain content written by others, part of which has been re
 
 > [](./programming/week_1_1/week_1_1.md) is written by Robert Lanzafame and Tom van Woudenberg.
 
+## External content
+
 (programming_credit)=
 ### Programming Chapters
 
