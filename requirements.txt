@@ -6,5 +6,7 @@ sphinx-inline-tabs
 sphinx-tudelft-theme
 sphinx-named-colors
 docutils == 0.17.1
+teachbooks-sphinx-tippy
+sphinx-dropdown-toggle
 
 git+https://github.com/TeachBooks/Sphinx-Thebe
