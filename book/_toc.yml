@@ -271,6 +271,7 @@ parts:
       - external: https://github.com/TeachBooks/learn-programming/blob/mude-2025/book/computers.md
       - external: https://github.com/TeachBooks/learn-programming/blob/mude-2025/book/environments.md
       - external: https://github.com/TeachBooks/learn-programming/blob/mude-2025/book/install/common/cli.md
+      - file: programming/week_1_1/files.md
     - file: programming/week_1_2
     - file: programming/week_1_3
       sections:
