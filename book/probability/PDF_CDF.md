@@ -36,7 +36,7 @@ This interactive figure is created by Max Ramgraber. {ref}`Find out more here <d
 ````{iframe-figure} ../_static/elements/element_pdf_and_cdf.html
 :name: pdf_cdf
 
-Relationship between integral of the pdf and the cdf value
+Interactively visualize the relationship between the PDF and the CDF (the integral of the PDF value).
 ````
 
 It should be easy to see from the definition of the CDF that the probability of observing an exact value of a continuous random variable is exactly zero. This is an important observation, and also an important characteristic that separates continuous and discrete random variables.
@@ -66,7 +66,7 @@ name: gaussian distr
 Gaussian distribution function: PDF and CDF.
 ```
 
-Below, you will find an interactive element that allows you to explore the influence of different means and standard deviations on the pdf and cdf. Experiment with both options and observe how it affects the shape of both distributions.
+Below, you will find an interactive element that allows you to explore the influence of different means and standard deviations on the PDF and CDF. Experiment with both options and observe how it affects the shape of both distributions.
 
 
 % START-CREDIT
@@ -82,7 +82,7 @@ This interactive figure is created by Max Ramgraber. {ref}`Find out more here <d
 ````{iframe-figure} ../_static/elements/element_Gaussian_cdf_moments.html
 :name: pdf_cdf_2
 
-PDF and CDF for means and standard deviation
+Interactively change the mean and standard deviation of the Gaussian distribution to visualize the effect on the PDF and CDF.
 ````
 
 ## Probability of other intervals
