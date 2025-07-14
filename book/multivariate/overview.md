@@ -39,7 +39,7 @@ This interactive figure is created by Max Ramgraber. {ref}`Find out more here <d
 ````{iframe-figure} ../_static/elements/element_correlation.html
 :name: density_scatter
 
-Density contours and scatter plot
+Interactively change the correlation coefficient to visualize the effect on density contours or samples of the bivariate Gaussian distribution.
 ````
 
 **Overview of this Chapter**
