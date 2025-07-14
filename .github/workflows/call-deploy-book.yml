@@ -16,7 +16,7 @@ on:
 
 jobs: 
   merge-to-2025:
-    if: github.ref == 'refs/heads/2025-draft'
+    if: ${{ github.ref == 'refs/heads/2025-draft' }}
     runs-on: ubuntu-latest
     permissions:
       contents: write
