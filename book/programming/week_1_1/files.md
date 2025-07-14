@@ -110,8 +110,15 @@ Markdown is a text-based file format that is used to easily make nicely formatte
 
 It is important to keep a backup of your work, and to save these files in a consistent way. Your typical cloud-based backup software is OK for many types of files, but you should note that sometimes there can be issues when running code on your compter in these special sync folders. Imagine: your Python code is running and loading or saving data into files in the same folders that the cloud backup software is using: there are bound to be conflicts!
 
-Over the course of the semester we will gradually increase our reliance on `git` and GitLab, a widely used set of tools meant to store, track and archive files. As you become more comfortable with this tool, you will learn to `git push` more and rely on your cloud storage system less! In summary:
+Over the course of the semester we will gradually increase our reliance on `git` and GitHub, a widely used set of tools meant to store, track and archive files. As you become more comfortable with this tool, you will learn to `git push` more and rely on your cloud storage system less! In summary:
 * for now, we recommend you store everything in a location that is backed-up regularly, but keep code and data files in a separate folder. If your backup software causes issues with notebooks or other Python code, move the working directory temporarily to another location on your computer.
 * once you are comfortable with `git`, we recommend that you permanently move your code folder somewhere that is not backed up by cloud software and use your GitLab repository instead.
 
 In case the text above was not clear: to avoid syncing problems, use a system like `git` to backup code, _not_ a cloud service like OneDrive!
+
+% START-CREDIT
+```{attributiongrey} Attribution
+:class: attribution
+This chapter is written by Robert Lanzafame. {ref}`Find out more here <programming_credit>`.
+```
+% END-CREDIT
