@@ -71,7 +71,7 @@ Credits are provided here for chapters and pages that are released under the lic
 > - Sophie Keemink, Caspar Jungbacker and Thirza Feenstra, who provided feedback and helped develop exercises.
 > - Antonio Magherini, who created first draft of pages from powerpoint slides.
 >
-> This chapter includes interactive figures created by Max Ramgraber ([maxramgraber.com/interactive](https://www.maxramgraber.com/interactive)).
+> {numref}`density_scatter_3` is created by Max Ramgraber ([maxramgraber.com/interactive](https://www.maxramgraber.com/interactive)), which is published with a CC BY license and included in this book without modification.
 
 (observation_theory_credit)=
 ### Chapter: Observation Theory
@@ -101,9 +101,9 @@ Credits are provided here for chapters and pages that are released under the lic
 >
 > Special thanks goes to Oswaldo Morales Napoles and Elisa Ragno for suggestions on the theoretical and didactic framework, as well as critical feedback and review.
 >
-> Pages {ref}`prob_design_1_rv` and {ref}`prob_design_2_rv` are from the Chapter _Probabilistic Design_ {cite:p}`lanzafame2024-pd` from the book Risk and Reliability for Engineers {cite:p}`lanzafame2024`, published  with a CC BY license. Files are included without modification.
+> Pages {ref}`prob_design_1_rv` and {ref}`prob_design_2_rv` are from the Chapter _Probabilistic Design_ {cite:p}`lanzafame2024-pd` from the book Risk and Reliability for Engineers {cite:p}`lanzafame2024`, published with a CC BY license. Files are included without modification.
 >
-> {numref}`density_scatter_3`, {numref}`pdf_cdf`, {numref}`pdf_cdf_2`, {numref}`density_scatter` and {numref}`density_scatter_2` are created by Max Ramgraber ([maxramgraber.com/interactive](https://www.maxramgraber.com/interactive)).
+> {numref}`density_scatter_3`, {numref}`pdf_cdf`, {numref}`pdf_cdf_2`, {numref}`density_scatter` and {numref}`density_scatter_2` are created by Max Ramgraber ([maxramgraber.com/interactive](https://www.maxramgraber.com/interactive)), which are published with a CC BY license and included in this book without modification.
 
 (finite_volume_method_credit)=
 ### Chapter: PDEs and the Finite Volume Method
