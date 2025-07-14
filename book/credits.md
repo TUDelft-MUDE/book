@@ -42,12 +42,12 @@ Auxiliary files such as figures, code, videos, etc, are included under the licen
 (external_resources)=
 ### External Resources
 
-Parts of this book are taken from other external resources and reused in various ways. Entire chapters or pages are listed individually in the {ref}`external_resources` section below. Resources that are used _within_ a page and/or are modified by MUDE authors are listed individually in the {ref}`internal_resources` section below.
+Parts of this book are taken from other external resources and reused in various ways (some of which are _not_ shared with a permissive license). Entire chapters or pages are listed individually in the {ref}`external_resources` section below. Resources that are used _within_ a page and/or are modified by MUDE authors are listed individually in the {ref}`internal_resources` section below.
 
 (credits_not_cc_by)=
 ### Resources _not_ under CC BY
 
-CC BY conditions are _not_ applicable to some resources included in this book which resources cannot be reused without explicit permission from the original copyright holder. These resources are listed individually within the summary of each chapter or page.
+CC BY conditions are _not_ applicable to some resources included in this book which resources cannot be reused without explicit permission from the original copyright holder. In some cases, external resources are provided under their own permissive license (e.g., CC BY), in which case permission and instructions for use are already explicitly provided by the copyright holder; however this is not always the case. All resources that are _not_ included in the CC BY license of this book are listed individually in the sections below, either: within the summary of each chapter or page, or as entire chapters or pages in {ref}`external_resources_credits`.
 
 (internal_resources)=
 ## Individual Chapters and Pages
@@ -92,7 +92,7 @@ Credits are provided here for chapters and pages that are released under the lic
 > - Isabel Slingerland and Mona Devos for critical feedback and development of exercises, figures and related content.
 > - Dhruv Mehta and Ajay Jagadeesh for feedback on structure, content.
 >
-> {numref}`NumericalMethodsRiver` is included on page {ref}`numerical_modelling` but is _not_ included under the CC BY license of this book and cannot be reused without explicit permission from the original copyright holder (Deltares). Original content is used here with explicit permission of Amgad Omer on behalf of Deltares.
+> {numref}`NumericalMethodsRiver` is included on page {ref}`numerical_modelling` but is _not_ included under the CC BY license of this book. Original content is used here with explicit permission of Amgad Omer on behalf of Deltares.
 
 (distributions_credit)=
 ### Chapters: Univariate and Multivariate Continuous Distributions
@@ -137,7 +137,7 @@ Credits are provided here for chapters and pages that are released under the lic
 > - João Moura Pereira de Lucas Teixeira, created first draft of pages from powerpoint slides.
 > - Antonio Magherini, who reviewed, commented and/or modified content.
 >
-> {numref}`unitycircle` is included on page {ref}`fourier_real` but is _not_ included under the CC BY license of this book and cannot be reused without explicit permission from the original copyright holder. Original content licensed under CC BY-SA 4.0 by {cite:t}`BFG` and can be found [here](https://commons.wikimedia.org/wiki/File:Unitycircle-complex.gif); used here without modification.
+> {numref}`unitycircle` is included on page {ref}`fourier_real` but is _not_ included under the CC BY license of this book. Original content licensed under CC BY-SA 4.0 by {cite:t}`BFG` and can be found [here](https://commons.wikimedia.org/wiki/File:Unitycircle-complex.gif); used here without modification.
 
 (time_series_analysis_credit)=
 ### Chapter: Time Series Analysis
@@ -151,9 +151,9 @@ Credits are provided here for chapters and pages that are released under the lic
 > - Serge Kaplev, who provided critical feedback and suggestions for the theoretical content.
 > - Antonio Magherini, who created the first draft material from powerpoint slides and prepared notebooks as exercises.
 > 
-> The following resources are used in this chapter but are _not_ included under the CC BY license of this book and cannot be reused without explicit permission from the original copyright holder:
+> The following resources are used in this chapter but are _not_ included under the CC BY license of this book:
 > - {numref}`cover` is used on page {ref}`tsa` (not modified) and is from {cite:t}`ipcc2018`.
-> - {numref}`trend` is used on page {ref}`components` (not modified) and is from {cite:t}`csiro`
+> - {numref}`trend` is used on page {ref}`components` (not modified) and is from {cite:t}`csiro`.
 
 (optimization_credit)=
 ### Chapter: Optimization
@@ -182,9 +182,9 @@ Credits are provided here for chapters and pages that are released under the lic
 > Special thanks goes to Oswaldo Morales Napoles, Elisa Ragno and Robert Lanzafame for suggestions on the theoretical and didactic framework, as well as critical feedback and review.
 
 (external_resources_credits)=
-## External resources
+## External Resources
 
-The following chapters and pages are included directly from an external resource, are not included under the CC BY license of this book and cannot be reused without explicit permission from the original copyright holder. Unless otherwise noted below, the contents have not been edited by the authors of this book.
+The following chapters and pages are included directly from an external resource, are not included under the CC BY license of this book. Unless otherwise noted below, the contents have not been edited by the authors of this book.
 
 (risk_analysis_credit)=
 ### Chapter: Risk Analysis
