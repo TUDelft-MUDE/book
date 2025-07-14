@@ -58,15 +58,23 @@ Scatterplots of outcomes of ($X_1,X_2$) with different correlation coefficients.
 
 The interactive element below allows you to play around with the correlation value yourself. Observe how the distribution's density contours, or the scattered data, changes when you adapt the correlation value.
 
-<iframe src="../_static/elements/element_correlation.html" width="600" height="400" frameborder="0"></iframe>
-
 % START-CREDIT
 % source: maxramgraber
+
+````{margin}
 ```{attributiongrey} Attribution
 :class: attribution
 This interactive figure is created by Max Ramgraber. {ref}`Find out more here <uncertainty_propagation_credit>`.
 ```
+````
+
 % END-CREDIT
+
+````{iframe-figure} ../_static/elements/element_correlation.html
+:name: density_scatter_3
+
+Interactively change the correlation coefficient to visualize the effect on density contours or samples of the bivariate Gaussian distribution.
+````
 
 ### Covariance matrix
 
@@ -86,4 +94,5 @@ If all measurements are independent, all covariances will be equal to zero, and 
 :class: attribution
 This chapter was written by Sandra Verhagen. {ref}`Find out more here <uncertainty_propagation_credit>`.
 ```
+
 % END-CREDIT
