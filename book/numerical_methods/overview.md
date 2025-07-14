@@ -18,7 +18,7 @@ In this Chapter, the fundamentals of numerical modelling and basic numerical met
 ```{figure} https://files.mude.citg.tudelft.nl/NumericalMethodsRiver.gif
 :name: NumericalMethodsRiver
 
-Cool numerical model of the Yamuna river. Thanks to Amgad Omer (Deltares).
+Cool numerical model of the Yamuna river. Included here with permission of Amgad Omer of Deltares. {ref}`Find out more here <numerical_modelling_credit>`
 
 ```
 
