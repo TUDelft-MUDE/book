@@ -1,4 +1,11 @@
 (week_1_2_programming)=
-# Week 1.2: Python Topics
+# Sharing code in reports
 
-This week the programming topics were covered in a Jupyter notebook and based on general Python topics, most of which should have been covered in a BSc course on programming. The [Learn Python book](https://teachbooks.github.io/learn-python) may be a useful reference.
+% START-CREDIT
+```{attributiongrey} Attribution
+:class: attribution
+This chapter is written by Tom van Woudenberg and Robert Lanzafame. {ref}`Find out more here <programming_credit_2>`.
+```
+% END-CREDIT
+
+This week's theory focusses on how to share code, or rather, how to share reports which are supported by code.
