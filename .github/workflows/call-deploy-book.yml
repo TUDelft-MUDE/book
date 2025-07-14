@@ -4,6 +4,7 @@ on:
   push:
     branches:
     - '**'
+    - '!2025' # Exclude the 2025 branch to avoid triggering the deploy workflow on its own changes
     # If your git repository has the Jupyter Book within some-subfolder next to
     # unrelated files, you can make this run only if a file within that specific
     # folder (or the workflow file itself) has been modified.
