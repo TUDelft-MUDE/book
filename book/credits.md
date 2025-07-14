@@ -103,7 +103,7 @@ Credits are provided here for chapters and pages that are released under the lic
 >
 > Pages {ref}`prob_design_1_rv` and {ref}`prob_design_2_rv` are from the Chapter _Probabilistic Design_ {cite:p}`lanzafame2024-pd` from the book Risk and Reliability for Engineers {cite:p}`lanzafame2024`, published  with a CC BY license. Files are included without modification.
 >
-> {numref}`pdf_cdf`, {numref}`pdf_cdf_2`, {numref}`density_scatter`, {numref}`density_scatter_2` and {numref}`density_scatter_3` are created by Max Ramgraber ([maxramgraber.com/interactive](https://www.maxramgraber.com/interactive)).
+> {numref}`density_scatter_3`, {numref}`pdf_cdf`, {numref}`pdf_cdf_2`, {numref}`density_scatter` and {numref}`density_scatter_2` are created by Max Ramgraber ([maxramgraber.com/interactive](https://www.maxramgraber.com/interactive)).
 
 (finite_volume_method_credit)=
 ### Chapter: PDEs and the Finite Volume Method
