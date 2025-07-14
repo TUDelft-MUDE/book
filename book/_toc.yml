@@ -6,7 +6,7 @@ parts:
     numbered: false
     chapters:
     - file: overview
-# START REMOVE-FROM-RELEASE
+# START REMOVE-FROM-PUBLISH
   - caption: Q1 Topics
     numbered: 2
     chapters: 
@@ -93,13 +93,11 @@ parts:
         sections:
         - file: multivariate/design/one-random-variable
         - file: multivariate/design/two-random-variables
-      # START REMOVE-FROM-PUBLISH
-        - file: multivariate/design/exercise
-          sections:
-          - file: multivariate/design/exercise_solutions
-      - file: multivariate/test_pyvinecopulib
-      - file: multivariate/test_bivariate
-      # END REMOVE-FROM-PUBLISH
+        #- file: multivariate/design/exercise
+        #  sections:
+        #  - file: multivariate/design/exercise_solutions
+      #- file: multivariate/test_pyvinecopulib
+      #- file: multivariate/test_bivariate
 
   - caption: Q2 Topics
     numbered: 2
@@ -169,12 +167,11 @@ parts:
       - file: optimization/some_constraints
       - file: optimization/genetic_algorithm
       - file: optimization/airlines.ipynb
-        # START REMOVE-FROM-PUBLISH
-      - file: optimization/performance
-        sections:
-        - file: optimization/airlines_performance.ipynb
-        - file: optimization/performance_generic_LP.ipynb
-        # END REMOVE-FROM-PUBLISH
+      #- file: optimization/performance
+      #  sections:
+      #  - file: optimization/airlines_performance.ipynb
+      #  - file: optimization/performance_generic_LP.ipynb
+      #
       - file: optimization/project
         sections:
         - file: optimization/Project_MILP.ipynb
@@ -336,8 +333,7 @@ parts:
         title: Chi-Squared
     - file: probability/python
     - file: fundamentals/eemc-stuff
-
-# END REMOVE-FROM-RELEASE
+# END REMOVE-FROM-PUBLISH
   - caption: Miscellaneous
     numbered: false
     chapters:
