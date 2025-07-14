@@ -12,6 +12,8 @@ book:
   version:
     type: semantic-year
     year: 2024
+  note: |
+      There are 4 interactive figures from Max Ramgraber (see resources per chapter). They are located in book/_static/elements/ and can be hard to track down as the figure tags (used for numref) are different than the file names _and_ each file can have more than one name (so that it is easy to list each time that file is used on the credits page). They are (file name/figure name): element_correlation.html/density_scatter, density_scatter_2 and density_scatter_3; element_2D_Gaussian/2D_Gaussian ; element_Gaussian_cdf_moments/pdf_cdf_2; and element_pdf_and_cdf/pdf_cdf.
   
 
 
