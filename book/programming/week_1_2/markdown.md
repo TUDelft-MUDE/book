@@ -2,7 +2,7 @@
 
 Programming yourself is one thing, communicating it with others equally as important. imagine you will be sending some code to a classmate or a teacher and you really want them to be able to see the final answer easily, while also being able to understand how you arrived at it. Sending them python file (e.g. `.py` or `.ipynb`) might confuse them, even if you add a lot of comments. Therefore, you could accompany it with a nice report, with your code only as an appendix and way to generate result you present in the report.
 
-Markdown is a _markup language_ that makes it possible to write richly-formatted text in markdown files (`.md`) or Jupyter notebooks (`.ipynb`). We will use Markdown on a weekly basis in our MUDE project reports, so this is a good chance to use it for the first time, if you never have.
+Markdown is a _markup language_ that makes it possible to write richly-formatted text in markdown files (`.md`) or Jupyter notebooks (`.ipynb`). It's a very basic formatting language, which is very useful with version-control systems like git. We will use Markdown on a weekly basis in our MUDE project reports, so this is a good chance to use it for the first time, if you never have.
 
 ## Basic markdown formatting
 
@@ -24,6 +24,8 @@ print('hello world')
 ```
 - Create [hyperlinks](https://mude.citg.tudelft.nl) with `[text to display](link)`
 - Create titles using hashtags `#`. You can use more hashtags `##`, `###` for subtitles.
+
+Many more tips are available here: https://www.markdownguide.org/basic-syntax/
 
 If you are viewing this file inside the book, all the markup has been converted properly. If you download the file and open it in a text-editor, you'll see the raw source code. To make your life easier, there are many tools available to render the markdown live. In VS code, this can be done by clicking 'Open preview to the side' in the toolbar (shortcut `CTRL` + `K` --> `V` ):
 
