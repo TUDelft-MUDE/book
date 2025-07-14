@@ -6,10 +6,10 @@ parts:
     numbered: false
     chapters:
     - file: overview
+# START REMOVE-FROM-PUBLISH
   - caption: Q1 Topics
     numbered: 2
     chapters: 
-# START REMOVE-FROM-PUBLISH
     - file: modelling/overview
       sections:
       - file: modelling/classification
