@@ -54,3 +54,6 @@ sphinx:
 
 bibtex_bibfiles:
   - _bibliography/references.bib
+
+teachbooks:
+  attribution_color: attributiongrey
