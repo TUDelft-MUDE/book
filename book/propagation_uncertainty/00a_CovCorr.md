@@ -64,7 +64,7 @@ The interactive element below allows you to play around with the correlation val
 ````{margin}
 ```{attributiongrey} Attribution
 :class: attribution
-This interactive figure is created by Max Ramgraber. {ref}`Find out more here <distributions_credit>`.
+This interactive figure is created by Max Ramgraber. {ref}`Find out more here <uncertainty_propagation_credit>`.
 ```
 ````
 
