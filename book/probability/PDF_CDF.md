@@ -82,7 +82,7 @@ This interactive figure is created by Max Ramgraber. {ref}`Find out more here <d
 ````{iframe-figure} ../_static/elements/element_Gaussian_cdf_moments.html
 :name: pdf_cdf_2
 
-Pdf and cdf for means and standard deviation
+PDF and CDF for means and standard deviation
 ````
 
 ## Probability of other intervals
