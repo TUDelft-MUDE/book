@@ -26,15 +26,21 @@ $$
 
 where $X_1$ and $X_2$ are random variables, $Cov(X_1,X_2)$ is their covariance, and $\sigma_{X_1}$ and $\sigma_{X_2}$ are the standard deviations of $X_1$ and $X_2$. $-1 \leq \rho(X_1,X_2) \leq 1$, being $\rho(X_1,X_2)=-1$ a perfect negative linear correlation, and $\rho(X_1,X_2)=1$ a perfect positive linear correlation. If $X_1$ and $X_2$ are independent, then $\rho(X_1,X_2) \to 0$[^note]. This is, that having information about $X_1$ does not provide us with information about $X_2$. The interactive element below allows you to play around with the correlation value yourself. Observe how the distribution's _density_ contours, or a scatter plot of _samples,_ change when you adjust the correlation.
 
-<iframe src="../_static/elements/element_correlation.html" width="600" height="400" frameborder="0"></iframe>
-
 % START-CREDIT
 % source: maxramgraber
+````{margin}
 ```{attributiongrey} Attribution
 :class: attribution
 This interactive figure is created by Max Ramgraber. {ref}`Find out more here <distributions_credit>`.
 ```
+````
 % END-CREDIT
+
+````{iframe-figure} ../_static/elements/element_correlation.html
+:name: density_scatter
+
+Interactively change the correlation coefficient to visualize the effect on density contours or samples of the bivariate Gaussian distribution.
+````
 
 **Overview of this Chapter**
 

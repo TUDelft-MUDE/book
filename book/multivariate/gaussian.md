@@ -46,15 +46,21 @@ Bivariate Gaussian distribution: (left) probability density function, and (right
 
 Also, you can plan with the interactive element below changing the correlation value yourself. Observe how the distribution's _density_ contours, or a scatter plot of _samples,_ change when you adjust the correlation.
 
-<iframe src="../_static/elements/element_correlation.html" width="600" height="400" frameborder="0"></iframe>
-
 % START-CREDIT
 % source: maxramgraber
+````{margin}
 ```{attributiongrey} Attribution
 :class: attribution
 This interactive figure is created by Max Ramgraber. {ref}`Find out more here <distributions_credit>`.
 ```
+````
 % END-CREDIT
+
+````{iframe-figure} ../_static/elements/element_correlation.html
+:name: density_scatter_2
+
+Interactively change the correlation coefficient to visualize the effect on density contours or samples of the bivariate Gaussian distribution.
+````
 
 ## Conditionalizing a bivariate Gaussian distribution
 

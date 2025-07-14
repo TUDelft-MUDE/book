@@ -50,6 +50,7 @@ sphinx:
     - sphinx_image_inverter
     - sphinx_tudelft_theme
     - sphinx_named_colors
+    - sphinx_iframes
 
 bibtex_bibfiles:
   - _bibliography/references.bib
