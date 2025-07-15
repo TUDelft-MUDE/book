@@ -275,20 +275,9 @@ parts:
       - file: programming/week_1_2/markdown
     - file: programming/week_1_4
       sections:
-      - file: external/learn-programming/book/version_control/version_control
-      - file: external/learn-programming/book/install/git/intro
-        title: Install git
-      - file: external/learn-programming/book/workflows/git/intro
-        title: Git workflow
+      - external: https://github.com/TeachBooks/learn-programming/blob/mude-2025/book/version_control/version_control.md
         sections:
-        - file: external/learn-programming/book/workflows/git/github
-          sections:
-          - file: external/learn-programming/book/workflows/git/commits_remote
-        - file: external/learn-programming/book/workflows/git/vscode
-          sections:
-          - file: external/learn-programming/book/workflows/git/cloning
-          - file: external/learn-programming/book/workflows/git/commits_local
-          - file: external/learn-programming/book/workflows/git/fetch_pull
+        - external: https://github.com/TeachBooks/learn-programming/blob/mude-2025/book/version_control/notebooks.md
     - file: programming/week_1_5
       sections:
       - file: external/learn-programming/book/workflows/git/branch_merge
