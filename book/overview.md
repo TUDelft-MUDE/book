@@ -2,9 +2,11 @@
 
 This page shows an overview of the book theory, lecture slides, assignments and fundamental concepts per week.
 
-<!---
+
 
 :::::{dropdown} Week 1.1
+
+<!---
 
 **Modelling concepts**
 
@@ -18,19 +20,32 @@ This page shows an overview of the book theory, lecture slides, assignments and 
 - [Group assignment](https://tudelft-mude.github.io/workbook-2025/assignments/GA1.1/README.html)
 - Fundamental concepts
   - tbd
+-->
 
-**Programming: getting started!**
+**Programming: Getting started!**
 
 - [Book chapter](./programming/week_1_1.md)
-  - [](./programming/week_1_1/environments)
+  - [](./_git/github.com_TeachBooks_learn-programming/mude-2025/book/computers.md)
+  - [](./_git/github.com_TeachBooks_learn-programming/mude-2025/book/environments.md)
+  - [](./_git/github.com_TeachBooks_learn-programming/mude-2025/book/install/common/cli.md)
+  - [](./programming/week_1_1/files.md)
+- [Programming assignment](https://mude.citg.tudelft.nl/workbook-2025/assignments/PA1.1/README.html)
+  - [](https://mude.citg.tudelft.nl/workbook-2025/assignments/PA1.1/1_enable_hidden_files.html)
+  - [](https://mude.citg.tudelft.nl/workbook-2025/assignments/PA1.1/2_install_conda.html)
+  - [](https://mude.citg.tudelft.nl/workbook-2025/assignments/PA1.1/3_install_VS_code.html)
+  - [](https://mude.citg.tudelft.nl/workbook-2025/assignments/PA1.1/4_install_mude_environment.html)
+  - [](https://mude.citg.tudelft.nl/workbook-2025/assignments/PA1.1/5_test.html)
+  - [](https://mude.citg.tudelft.nl/workbook-2025/assignments/PA1.1/6_github_copilot.html)
 - Fundamental programming concepts
-  - [Files and Folders book](https://teachbooks.io/files-and-folders/EN/)
+  - tbd
+  - tbd
   - [Python basics in Learn-Python book](https://teachbooks.io/learn-python/restructure-book/basics/intro.html)
-- [Programming assignment](https://tudelft-mude.github.io/workbook-2025/assignments/PA1.1/README.html)
 
 :::::
 
 :::::{dropdown} Week 1.2
+
+<!---
 
 ## Numerical Modelling 1
 
@@ -46,9 +61,23 @@ This page shows an overview of the book theory, lecture slides, assignments and 
 - Fundamental concepts
   - tbd
 
-## Programming: reporting
+-->
+
+**Programming: Sharing code in reports**
+
+- [Book chapter](./programming/week_1_2.md)
+  - [](./programming/week_1_2/filepaths.md)
+  - [](./programming/week_1_2/markdown.md)
+- [Programming assignment](https://mude.citg.tudelft.nl/workbook-2025/assignments/PA1.2/README.html)
+  - [](https://mude.citg.tudelft.nl/workbook-2025/assignments/PA1.2/1_markdown.html)
+  - [](https://mude.citg.tudelft.nl/workbook-2025/assignments/PA1.2/2_markdown_ipynb.html)
+- Fundamental programming concepts
+  - tbd
+  - tbd
 
 :::::
+
+<!---
 
 :::::{dropdown} Week 1.3
 
