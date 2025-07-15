@@ -648,3 +648,11 @@ The large difference between both probabilities, illustrates the role of depende
 As we have seen in the preceding examples, dependence can have a significant role in the computation of probabilities. In particular, the examples illustrate very clearly that we should no longer be satisfied with the simplifying assumption of independence, and that for many problems $P(A\;\cap\;B)\neq P(A)P(B)$. But how can we compute it?
 
 The following pages will explore methods to describe dependence quantitatively for continuous random variables.
+
+% START-CREDIT
+% source: distributions
+```{attributiongrey} Attribution
+:class: attribution
+This chapter was written by Patricia Mares Nasarre and Robert Lanzafame. {ref}`Find out more here <distributions_credit>`.
+```
+% END-CREDIT
