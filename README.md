@@ -4,7 +4,7 @@ This repository contains the source code for the MUDE Online Textbook from the 2
 
 This book is constantly in development, so feel free to contribute! You can do so directly by forking this repository and creating a pull request. If you have access to this repository, create a branch and pull request to contribute directly.
 
-The released book can be found on on https://tudelft-mude.github.io/book/. This page shows the built book of the default branch (it will be the upcoming academic year). All branches will also be visible as seen in the action's summaries: https://github.com/TUDelft-MUDE/book/actions
+The released book can be found on on https://mude.citg.tudelft.nl/book/. This page shows the built book of the default branch (it will be the upcoming academic year). All branches will also be visible as seen in the action's summaries: https://github.com/TUDelft-MUDE/book/actions
 
 Development of the book is focused around its use as an online textbook for students in MUDE, which takes place from September through January each year. During this period improvements are generally released on a weekly basis. Major updates (for example, to the structure or layout of a page/chapter) are reserved for the following academic year, in order to avoid confusing students that actively used the book in class during the Fall. Therefore, to view the most recent "complete" version of this textbook, one should view the previous academic year, in this case, 2024 (this book!). 
 
