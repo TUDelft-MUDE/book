@@ -4,7 +4,7 @@
 % START-CREDIT
 ```{attributiongrey} Attribution
 :class: attribution
-This chapter is written by Tom van Woudenberg and Robert Lanzafame. {ref}`Find out more here <programming_credit_2>`.
+This chapter is written by Tom van Woudenberg and Robert Lanzafame. {ref}`Find out more here <programming_credit>`.
 ```
 % END-CREDIT
 

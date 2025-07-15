@@ -18,6 +18,6 @@ As a general rule, **always use forward slashes whenever possible.** Although ba
 % START-CREDIT
 ```{attributiongrey} Attribution
 :class: attribution
-This chapter is written by Robert Lanzafame and Tom van Woudenberg. {ref}`Find out more here <programming_credit_2>`.
+This chapter is written by Robert Lanzafame and Tom van Woudenberg. {ref}`Find out more here <programming_credit>`.
 ```
 % END-CREDIT
