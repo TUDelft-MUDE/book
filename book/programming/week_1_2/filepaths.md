@@ -14,3 +14,10 @@ where:
 - Do not include spaces in your file path or file names; if it is unavoidable replace the space with `%20`, for example: `![My image](./my%20image.png)`
 
 As a general rule, **always use forward slashes whenever possible.** Although backward slashes are the default and must be used at times on Windows, they don't work on Mac or Linux systems. This causes problems when sharing code with others running these systems. Remember that we try to do things in a way that allows easy collaboration: using approaches that are agnostic of the operating system (i.e., works on all platforms). This is hard to guarantee in practice, but consistently using forward slashes will get us close!
+
+% START-CREDIT
+```{attributiongrey} Attribution
+:class: attribution
+This chapter is written by Robert Lanzafame and Tom van Woudenberg. {ref}`Find out more here <programming_credit_2>`.
+```
+% END-CREDIT

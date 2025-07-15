@@ -81,3 +81,10 @@ As you can create a wider variety of figures in code, we should be able to inclu
 ## Markdown in Jupyter notebooks
 
 Jupyter notebooks generally consist of code cells and text cells. And the most common formatting for these text cells is again Markdown! All of the above can also be applied in a Jupyter Notebook!
+
+% START-CREDIT
+```{attributiongrey} Attribution
+:class: attribution
+This chapter is written by Robert Lanzafame and Tom van Woudenberg. {ref}`Find out more here <programming_credit_2>`.
+```
+% END-CREDIT
