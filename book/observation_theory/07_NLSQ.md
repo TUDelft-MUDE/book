@@ -137,3 +137,11 @@ although this is not strictly true. The estimator $\hat X$ is namely NOT a best 
 However, in practice the linear (first-order Taylor) approximation often works so well that the performance is very close to that of BLUE and we may assume the normal distribution.
 
 As a final note we would like to mention that the Gauss-Newton method is just one approach for solving a non-linear least-squares problem. In practice, especially for highly non-linear problems, the Levenberg-Marquardt method is often used. It can be considered as a refinement of the Gauss-Newton method with a higher chance of convergence.
+
+% START-CREDIT
+% source: observation_theory
+```{attributiongrey} Attribution
+:class: attribution
+This chapter was written by Sandra Verhagen. {ref}`Find out more here <observation_theory_credit>`.
+```
+% END-CREDIT

@@ -155,3 +155,11 @@ Left: time series (grey) and estimated linear trend and sine wave with period of
 This means we can estimate the frequency $\omega_0$ of the periodic pattern using the techniques discussed in the chapter on signal processing. Once we have the frequency, we can construct the design matrix $\mathrm{A}$. 
 
 It is also possible to infer the frequency of the periodic pattern by reasoning. For example, if we know our model depends on temperature, we can assume that the frequency of the seasonal pattern is related to the temperature cycle (e.g., 24 hours). However, this is a more qualitative approach and should be used with caution. Best practice is to use the DFT or PSD to estimate the frequency.
+
+% START-CREDIT
+% source: time_series_analysis
+```{attributiongrey} Attribution
+:class: attribution
+This chapter was written by Alireza Amiri-Simkooei, Christiaan Tiberius and Sandra Verhagen. {ref}`Find out more here <time_series_analysis_credit>`.
+```
+% END-CREDIT

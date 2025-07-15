@@ -1,6 +1,14 @@
 (prob_design_1_rv)=
 # One Random Variable
 
+% START-CREDIT
+% source: distributions
+```{attributiongrey} Attribution
+:class: attribution
+This page reuses material from another book. {ref}`Find out more here <distributions_credit>`.
+```
+% END-CREDIT
+
 % MMMMM: this page is from 2023 book and has been modified for the 2024 book. Sometime in between this page was also added to the risk and reliability book, which has _not_ been kept in sync.
 
 Consider a river that is protected by dikes: earthen embankments with the purpose of keeping water in the river channel and preventing flooding of the hinterland. The dikes should be designed and built such that the height allows the river to safely pass the maximum discharge every year, measured in m$^3$/s. A rating curve ({numref}`rating_curve`) gives us the relationship between discharge and water depth, $H_w$, so if we know what the maximum discharge is, we can build our dikes to the critical height, $h_{dike}\geq H_w$. But there is a problem---what is the maximum discharge in the river each year? How would we even go about determining this value? One way is to make observations and find the highest recorded data point.

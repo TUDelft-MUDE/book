@@ -36,3 +36,11 @@ $$
 This means that there is a probability of observing a flood of 1 - 0.82 = 0.18, which is actually pretty high! Maybe the engineer should think about a tighter schedule or using some adaptive techniques so the construction works are not affected by events that low.
 
 ```
+
+% START-CREDIT
+% source: distributions
+```{attributiongrey} Attribution
+:class: attribution
+This chapter was written by Patricia Mares Nasarre and Robert Lanzafame. {ref}`Find out more here <distributions_credit>`.
+```
+% END-CREDIT

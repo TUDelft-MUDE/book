@@ -324,3 +324,11 @@ After this, we apply the **single-point crossover** to get:
 Finally, using complete replacement our new population is given by:
 
 ![Untitled](https://files.mude.citg.tudelft.nl/Untitled_9.png)
+
+% START-CREDIT
+% source: optimization
+```{attributiongrey} Attribution
+:class: attribution
+This chapter is written by Gonçalo Homem de Almeida Correia, Maria Nogal Macho, Jie Gao and Bahman Ahmadi. {ref}`Find out more here <optimization_credit>`.
+```
+% END-CREDIT

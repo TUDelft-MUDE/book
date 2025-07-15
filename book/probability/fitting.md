@@ -7,3 +7,11 @@ In the previous sections, we introduced parametric distributions as mathematical
 - Maximum loglikelihood estimator (MLE)
 
 Note that it assumes that we know the parametric distribution we want to fit. For instance, fitting an Exponential distribution to a sample of observations. So, how do I choose between them? The choice of the appropriate distribution function needs to be based first on the physics of the random variable we are studying. Once we have accounted for those physical characteristics, we can make use of goodness of fit (GOF) techniques to support our decision. In the subsequent sections, some commonly used GOF techniques in the statistics field are also presented.
+
+% START-CREDIT
+% source: distributions
+```{attributiongrey} Attribution
+:class: attribution
+This chapter was written by Patricia Mares Nasarre and Robert Lanzafame. {ref}`Find out more here <distributions_credit>`.
+```
+% END-CREDIT

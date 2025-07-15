@@ -1,5 +1,7 @@
 # Note about FEM Materials
 
+June, 2025: Robert set up credits and attribution. Search `source: finite_element_method` to find sections of text/cell that were modified. Only files in fem subdir were modified (ignored files in Exercises and Tutorials because they did not show up in toc).
+
 Nov, 2024: Robert copy/pasted entire contents from computational modelling (commit hash [72b865ba](https://gitlab.tudelft.nl/interactivetextbooks-citg/computational-modelling/-/commit/72b865baafb124801b2661dfc33ab01eb7aa269f))
 - repo is https://gitlab.tudelft.nl/interactivetextbooks-citg/computational-modelling/
 - comp modelling subdirectory on `main` branch: `\computational-modelling-main\book\introduction\.`
