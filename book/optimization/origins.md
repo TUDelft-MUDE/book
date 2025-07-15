@@ -45,3 +45,11 @@ Input/output matrix in a simple economy:
 Without an objective, a vast number of solutions can be feasible. To find the "best" feasible solution, we need an expression to describe how goals can be achieved as opposed to specifying a specific value for this goal on itself. For example, it’s not about transporting 1000 soldiers but finding a way to transport as many as possible with the existing resources.
 
 Dantzig's core insight was to realize that most such ground objectives can many times be translated into a **linear objective function** that needs to be maximized (or minimized) that measures the quality/performance of the solutions. Development of the final method, the so-called **simplex** method, was evolutionary and happened over a period of about a year.
+
+% START-CREDIT
+% source: optimization
+```{attributiongrey} Attribution
+:class: attribution
+This chapter is written by Gonçalo Homem de Almeida Correia, Maria Nogal Macho, Jie Gao and Bahman Ahmadi. {ref}`Find out more here <optimization_credit>`.
+```
+% END-CREDIT

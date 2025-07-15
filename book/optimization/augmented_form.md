@@ -100,3 +100,11 @@ with:
 $$\begin{cases}3x_1-4x'_2+12x_3-s_1 = 300\\ 8x_1-6x'_2-x_4+s_2 = 220\\ 6x_1-5x'_2+3x_3+s_3 = 150\\ x_1,x'_2,x_3,x_4\geq 0\\ s_1,s_2,s_3\geq 0\end{cases}$$
 
 And the problem is transformed in its augmented form and ready to be used in the SIMPLEX method!
+
+% START-CREDIT
+% source: optimization
+```{attributiongrey} Attribution
+:class: attribution
+This chapter is written by Gonçalo Homem de Almeida Correia, Maria Nogal Macho, Jie Gao and Bahman Ahmadi. {ref}`Find out more here <optimization_credit>`.
+```
+% END-CREDIT

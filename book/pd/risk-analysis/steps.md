@@ -145,3 +145,11 @@ Given the nature of the key question "how safe is safe enough?", several politic
 If the risks evaluated in first four steps of a risk analysis are considered unacceptable, several forms of risk reduction can be implemented, such as changes to the engineered system, or changes to its organization and management. It can be helpful to determine how risk can be controlled, for example by monitoring, inspection or maintenance.
 
 Post-accident analysis indicates that human and organizational errors are still a major cause of failure in civil engineering systems, and it seems that the only suitable way to reduce human errors is by the incorporation of sufficient control in different phases of the construction process {cite:p}`taerwe1986`, and by a thorough education of all personnel involved. Therefore, an extensive interaction between the safety methodology and quality management is a necessity in order to guarantee the safety of infrastructure.
+
+% START-CREDIT
+% source: risk
+```{attributiongrey} Attribution
+:class: attribution
+This chapter reuses content written by Bas Jonkman and Robert Lanzafame. {ref}`Find out more here <risk_analysis_credit>`.
+```
+% END-CREDIT

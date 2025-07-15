@@ -66,3 +66,11 @@ name: FN-curve
 FN-curve for exercise 4
 ```
 ````
+
+% START-CREDIT
+% source: risk
+```{attributiongrey} Attribution
+:class: attribution
+This chapter reuses content written by Bas Jonkman and Robert Lanzafame. {ref}`Find out more here <risk_analysis_credit>`.
+```
+% END-CREDIT
