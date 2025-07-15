@@ -1,3 +1,4 @@
+(fourier_real)=
 # Fourier Series
 
 Our goal in this chapter is to be able to express a periodic signal $x(t)$ as a sum of harmonically related cosines and sines
@@ -201,3 +202,11 @@ $$
 ````
 
 :::
+
+% START-CREDIT
+% source: signal_processing
+```{attributiongrey} Attribution
+:class: attribution
+This chapter is written by Christiaan Tiberius. {ref}`Find out more here <signal_processing_credit>`.
+```
+% END-CREDIT

@@ -1,6 +1,14 @@
 (gurobi)=
 # Gurobi Optimization Software
 
+% START-CREDIT
+% source: programming
+```{attributiongrey} Attribution
+:class: attribution
+This chapter reuses material from _Python for Engineers_. {ref}`Find out more here <programming_credit>`.
+```
+% END-CREDIT
+
 Gurobi is an optimization software that consists of two parts:
 
 1. A closed-source optimizer software that can be installed on your computer and requires a license (an academic license is free).

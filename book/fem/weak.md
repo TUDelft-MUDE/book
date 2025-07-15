@@ -121,3 +121,11 @@ The boundary condition $EA\frac{\partial u}{\partial x}=F$ at $x=L$ involves eva
 [^BC_types]: We can also find Robin type of boundary conditions, which are a mix between Dirichlet and Neumann type, for example: $\alpha u + EA \frac{\partial u}{\partial x}=F$.
 
 [^weak_bc]: We can also enforce Dirichlet boundary conditions in a *weak* sense, by introducing additional terms on the weak form that penalize the difference between the solution and the prescribed value at the boundary. This will not be covered in this chapter.
+
+% START-CREDIT
+% source: finite_element_method
+```{attributiongrey} Attribution
+:class: attribution
+This chapter was written by Frans van der Meer. {ref}`Find out more here <finite_element_method_credit>`.
+```
+% END-CREDIT

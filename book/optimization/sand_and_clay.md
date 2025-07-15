@@ -107,3 +107,11 @@ If we calculate the value of the objective function for the remaining vertices w
 :::{card} Quiz questions
 <iframe src="https://tudelft.h5p.com/content/1292121213033110307/embed" aria-label="2_3_2_2_graphical_solution_method" width="1088" height="637" frameborder="0" allowfullscreen="allowfullscreen" allow="autoplay *; geolocation *; microphone *; camera *; midi *; encrypted-media *"></iframe><script src="https://tudelft.h5p.com/js/h5p-resizer.js" charset="UTF-8"></script>
 :::
+
+% START-CREDIT
+% source: optimization
+```{attributiongrey} Attribution
+:class: attribution
+This chapter is written by Gonçalo Homem de Almeida Correia, Maria Nogal Macho, Jie Gao and Bahman Ahmadi. {ref}`Find out more here <optimization_credit>`.
+```
+% END-CREDIT

@@ -206,3 +206,11 @@ name: example-river-excavation-3
 Decision tree with probabilities and costs.
 ```
 ````
+
+% START-CREDIT
+% source: risk
+```{attributiongrey} Attribution
+:class: attribution
+This chapter reuses content written by Bas Jonkman. {ref}`Find out more here <risk_analysis_credit>`.
+```
+% END-CREDIT

@@ -1,6 +1,14 @@
 (oop)=
 # Week 1.7: OOP
 
+% START-CREDIT
+% source: programming
+```{attributiongrey} Attribution
+:class: attribution
+This chapter reuses material from _Learn Programming for Engineers_. {ref}`Find out more here <programming_credit>`.
+```
+% END-CREDIT
+
 This chapter contains a lot of information that is useful for improving your programming skills, however you are not required to learn all of it, and not required to memorize everything for the exam.
 
 You should be able to understand the fundamental concepts of classes and object-oriented programming (OOP) in Python as well as the key principles of encapsulation, inheritance, and polymorphism in OOP, which will enable you to better understand and use the classes that are everywhere in Python packages. For example, the class `rv_continuous` in `scipy.stats`, which is used for defining probability distributions, are used heavily in MUDE!
