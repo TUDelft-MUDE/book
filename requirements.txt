@@ -1,4 +1,5 @@
-teachbooks
+#teachbooks # depends on jupyter-book
+git+https://github.com/TeachBooks/teachbooks@fix-nested-external #temporary fix
 jupyterbook_patches
 download_link_replacer
 sphinx-image-inverter
