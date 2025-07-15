@@ -57,129 +57,129 @@ Credits are provided here for chapters and pages that are released under the lic
 (modelling_concepts_credit)=
 ### Chapter: Modelling Concepts
 
-> {ref}`modelling_concepts` is written by Alessandro Cabboi, Patricia Mares Nasarre and Robert Lanzafame.
->
-> Special thanks goes to João Moura Pereira de Lucas Teixeira, who created first draft of pages from powerpoint slides.
+{ref}`modelling_concepts` is written by Alessandro Cabboi, Patricia Mares Nasarre and Robert Lanzafame.
+
+Special thanks goes to João Moura Pereira de Lucas Teixeira, who created first draft of pages from powerpoint slides.
 
 (uncertainty_propagation_credit)=
 ### Chapter: Uncertainty Propagation
 
-> {ref}`01_errorprop` is written by Sandra Verhagen.
->
-> Special thanks goes to:
-> - Robert Lanzafame, Patricia Mares Nasarre and Max Ramgraber, who reviewed, commented and/or modified content. Robert and Patricia wrote the page {ref}`uncertainty_classification`.
-> - Sophie Keemink, Caspar Jungbacker and Thirza Feenstra, who provided feedback and helped develop exercises.
-> - Antonio Magherini, who created first draft of pages from powerpoint slides.
->
-> {numref}`density_scatter_3` and {numref}`2D_Gaussian` are created by Max Ramgraber ([maxramgraber.com/interactive](https://www.maxramgraber.com/interactive)), which are published with a CC BY license and included in this book without modification.
+{ref}`01_errorprop` is written by Sandra Verhagen.
+
+Special thanks goes to:
+- Robert Lanzafame, Patricia Mares Nasarre and Max Ramgraber, who reviewed, commented and/or modified content. Robert and Patricia wrote the page {ref}`uncertainty_classification`.
+- Sophie Keemink, Caspar Jungbacker and Thirza Feenstra, who provided feedback and helped develop exercises.
+- Antonio Magherini, who created first draft of pages from powerpoint slides.
+
+{numref}`density_scatter_3` and {numref}`2D_Gaussian` are created by Max Ramgraber ([maxramgraber.com/interactive](https://www.maxramgraber.com/interactive)), which are published with a CC BY license and included in this book without modification.
 
 (observation_theory_credit)=
 ### Chapter: Observation Theory
 
-> {ref}`OT` is written by Sandra Verhagen.
->
-> Special thanks goes to:
-> - Peter Teunissen and Christiaan Tiberius who co-shaped the material, indirectly, through collaboration with the author as TU Delft colleagues.
-> - The book _Adjustment theory: an introduction_ {cite:p}`adjustment_theory` and _Testing theory: an introduction_ {cite:p}`testing_theory` which provided the framework for this chapter.
-> - Sophie Keemink, Caspar Jungbacker and Thirza Feenstra, who provided feedback and helped develop exercises.
+{ref}`OT` is written by Sandra Verhagen.
+
+Special thanks goes to:
+- Peter Teunissen and Christiaan Tiberius who co-shaped the material, indirectly, through collaboration with the author as TU Delft colleagues.
+- The book _Adjustment theory: an introduction_ {cite:p}`adjustment_theory` and _Testing theory: an introduction_ {cite:p}`testing_theory` which provided the framework for this chapter.
+- Sophie Keemink, Caspar Jungbacker and Thirza Feenstra, who provided feedback and helped develop exercises.
 
 (numerical_modelling_credit)=
 ### Chapter: Numerical Modelling
 
-> {ref}`numerical_modelling` is written by Jaime Arriaga Garcia, Justin Pittman and Robert Lanzafame.
->
-> Special thanks goes to:
-> - Isabel Slingerland and Mona Devos for critical feedback and development of exercises, figures and related content.
-> - Dhruv Mehta and Ajay Jagadeesh for feedback on structure, content.
->
-> {numref}`NumericalMethodsRiver` is included on page {ref}`numerical_modelling` but is _not_ included under the CC BY license of this book and cannot be reused without explicit permission from the original copyright holder (Deltares). Original content is used here with explicit permission of Amgad Omer on behalf of Deltares.
+{ref}`numerical_modelling` is written by Jaime Arriaga Garcia, Justin Pittman and Robert Lanzafame.
+
+Special thanks goes to:
+- Isabel Slingerland and Mona Devos for critical feedback and development of exercises, figures and related content.
+- Dhruv Mehta and Ajay Jagadeesh for feedback on structure, content.
+
+{numref}`NumericalMethodsRiver` is included on page {ref}`numerical_modelling` but is _not_ included under the CC BY license of this book and cannot be reused without explicit permission from the original copyright holder (Deltares). Original content is used here with explicit permission of Amgad Omer on behalf of Deltares.
 
 (distributions_credit)=
 ### Chapters: Univariate and Multivariate Continuous Distributions
 
-> {ref}`cont_dist` and {ref}`mult_dist` are written by Patricia Mares Nasarre and Robert Lanzafame.
->
-> Special thanks goes to Oswaldo Morales Napoles and Elisa Ragno for suggestions on the theoretical and didactic framework, as well as critical feedback and review.
->
-> Pages {ref}`prob_design_1_rv` and {ref}`prob_design_2_rv` are from the Chapter _Probabilistic Design_ {cite:p}`lanzafame2024-pd` from the book Risk and Reliability for Engineers {cite:p}`lanzafame2024`, published with a CC BY license. Files are included without modification.
->
-> {numref}`density_scatter_3`, {numref}`pdf_cdf`, {numref}`pdf_cdf_2`, {numref}`density_scatter` and {numref}`density_scatter_2` are created by Max Ramgraber ([maxramgraber.com/interactive](https://www.maxramgraber.com/interactive)), which are published with a CC BY license and included in this book without modification.
+{ref}`cont_dist` and {ref}`mult_dist` are written by Patricia Mares Nasarre and Robert Lanzafame.
+
+Special thanks goes to Oswaldo Morales Napoles and Elisa Ragno for suggestions on the theoretical and didactic framework, as well as critical feedback and review.
+
+Pages {ref}`prob_design_1_rv` and {ref}`prob_design_2_rv` are from the Chapter _Probabilistic Design_ {cite:p}`lanzafame2024-pd` from the book Risk and Reliability for Engineers {cite:p}`lanzafame2024`, published with a CC BY license. Files are included without modification.
+
+{numref}`density_scatter_3`, {numref}`pdf_cdf`, {numref}`pdf_cdf_2`, {numref}`density_scatter` and {numref}`density_scatter_2` are created by Max Ramgraber ([maxramgraber.com/interactive](https://www.maxramgraber.com/interactive)), which are published with a CC BY license and included in this book without modification.
 
 (finite_volume_method_credit)=
 ### Chapter: PDEs and the Finite Volume Method
 
-> {ref}`fvm` is written by Robert Lanzafame and Jaime Arriaga Garcia.
->
-> Special thanks goes to:
-> - Isabel Slingerland and Mona Devos for critical feedback and development of exercises, figures and related content.
-> - Dhruv Mehta for providing a first draft of the chapter structure and contents.
+{ref}`fvm` is written by Robert Lanzafame and Jaime Arriaga Garcia.
+
+Special thanks goes to:
+- Isabel Slingerland and Mona Devos for critical feedback and development of exercises, figures and related content.
+- Dhruv Mehta for providing a first draft of the chapter structure and contents.
 
 
 (finite_element_method_credit)=
 ### Chapter: Finite Element Method
 
-> {ref}`finite_element_method` is written by Frans van der Meer. 
->
-> _The material in this chapter is also incorporated in an in-depth book "Finite Elements in Civil Engineering and Geosciences" by Oriol Colomés, Iuri Rocha, Frans van der Meer and Martin Lesueur which can be found [here](interactivetextbooks.citg.tudelft.nl/computational-modelling)._
->
-> Special thanks goes to Lex Niessen who greatly assisted in developing material on the finite element method for the first edition of MUDE, which was the starting point for this chapter. 
+{ref}`finite_element_method` is written by Frans van der Meer. 
+
+_The material in this chapter is also incorporated in an in-depth book "Finite Elements in Civil Engineering and Geosciences" by Oriol Colomés, Iuri Rocha, Frans van der Meer and Martin Lesueur which can be found [here](interactivetextbooks.citg.tudelft.nl/computational-modelling)._
+
+Special thanks goes to Lex Niessen who greatly assisted in developing material on the finite element method for the first edition of MUDE, which was the starting point for this chapter. 
 
 (signal_processing_credit)=
 ### Chapter: Signal Processing
 
-> {ref}`signal_processing` is written by Christiaan Tiberius.
->
-> _The material in this chapter is related to an in-depth book "Engineering signal analysis - from Fourier to filtering" by Christiaan Tiberius and Max Mulder (TU Delft Open Publishing, 2025)._
->
-> Special thanks goes to:
-> - Max Mulder for being a signal processing soul-mate, sparring-partner and TU Delft colleague of the author who co-shaped the material, indirectly, through collaboration since early 2000's.
-> - Jelle Knibbe, who reviewed, commented and/or modified content of original powerpoint slides.
-> - João Moura Pereira de Lucas Teixeira, created first draft of pages from powerpoint slides.
-> - Antonio Magherini, who reviewed, commented and/or modified content.
->
-> {numref}`unitycircle` is included on page {ref}`fourier_real` but is _not_ included under the CC BY license of this book and cannot be reused without explicit permission from the original copyright holder. Original content licensed under CC BY-SA 4.0 by {cite:t}`BFG` and can be found [here](https://commons.wikimedia.org/wiki/File:Unitycircle-complex.gif); used here without modification.
+{ref}`signal_processing` is written by Christiaan Tiberius.
+
+_The material in this chapter is related to an in-depth book "Engineering signal analysis - from Fourier to filtering" by Christiaan Tiberius and Max Mulder (TU Delft Open Publishing, 2025)._
+
+Special thanks goes to:
+- Max Mulder for being a signal processing soul-mate, sparring-partner and TU Delft colleague of the author who co-shaped the material, indirectly, through collaboration since early 2000's.
+- Jelle Knibbe, who reviewed, commented and/or modified content of original powerpoint slides.
+- João Moura Pereira de Lucas Teixeira, created first draft of pages from powerpoint slides.
+- Antonio Magherini, who reviewed, commented and/or modified content.
+
+{numref}`unitycircle` is included on page {ref}`fourier_real` but is _not_ included under the CC BY license of this book and cannot be reused without explicit permission from the original copyright holder. Original content licensed under CC BY-SA 4.0 by {cite:t}`BFG` and can be found [here](https://commons.wikimedia.org/wiki/File:Unitycircle-complex.gif); used here without modification.
 
 (time_series_analysis_credit)=
 ### Chapter: Time Series Analysis
 
-> {ref}`tsa` is written by Alireza Amiri-Simkooei, Christiaan Tiberius and Sandra Verhagen.
->
-> _The initial framework and contents of this chapter were created by Alireza Amiri-Simkooei, which was then revised and updated by Sandra and Christian._
->
-> Special thanks goes to:
-> - Berend Bouvy, who created a number ofinteractive figures and exercises, as well as provided critical feedback.
-> - Serge Kaplev, who provided critical feedback and suggestions for the theoretical content.
-> - Antonio Magherini, who created the first draft material from powerpoint slides and prepared notebooks as exercises.
-> 
-> The following resources are used in this chapter but are _not_ included under the CC BY license of this book and cannot be reused without explicit permission from the original copyright holder:
-> - {numref}`cover` is used on page {ref}`tsa` (not modified) and is from {cite:t}`ipcc2018`.
-> - {numref}`trend` is used on page {ref}`components` (not modified) and is from {cite:t}`csiro`
+{ref}`tsa` is written by Alireza Amiri-Simkooei, Christiaan Tiberius and Sandra Verhagen.
+
+_The initial framework and contents of this chapter were created by Alireza Amiri-Simkooei, which was then revised and updated by Sandra and Christian._
+
+Special thanks goes to:
+- Berend Bouvy, who created a number ofinteractive figures and exercises, as well as provided critical feedback.
+- Serge Kaplev, who provided critical feedback and suggestions for the theoretical content.
+- Antonio Magherini, who created the first draft material from powerpoint slides and prepared notebooks as exercises.
+ 
+The following resources are used in this chapter but are _not_ included under the CC BY license of this book and cannot be reused without explicit permission from the original copyright holder:
+- {numref}`cover` is used on page {ref}`tsa` (not modified) and is from {cite:t}`ipcc2018`.
+- {numref}`trend` is used on page {ref}`components` (not modified) and is from {cite:t}`csiro`
 
 (optimization_credit)=
 ### Chapter: Optimization
 
-> {ref}`optimization` is written by Gonçalo Homem de Almeida Correia, Maria Nogal Macho, Jie Gao and Bahman Ahmadi.
->
-> _Gonçalo Homem de Almeida Correia created most of the material. Maria Nogal Macho and Bahman Ahmadi made contributions to various parts. Bahman Ahmadi developed the exercises in Python and Jupyter notebooks. Jie Gao created the genetic algorithm material._
->
-> Special thanks goes to:
-> - Jialei Ding and Nadia Pourmohammadzia, who reviewed material and made improvements to the traffic exercise.
-> - Tom van Woudenberg, who edited text and improved content and structure for online interactive textbook format.
-> - João Moura Pereira de Lucas Teixeira, who created first draft of pages from powerpoint slides.
->
-> The {ref}`optimization_project` pages are included in this chapter but are _not_ included under the CC BY license of this book; they are in-class exercises that will be shared by the authors of this book as part of a future publication (also under a CC BY license; citation will be provided here after publication).
+{ref}`optimization` is written by Gonçalo Homem de Almeida Correia, Maria Nogal Macho, Jie Gao and Bahman Ahmadi.
+
+_Gonçalo Homem de Almeida Correia created most of the material. Maria Nogal Macho and Bahman Ahmadi made contributions to various parts. Bahman Ahmadi developed the exercises in Python and Jupyter notebooks. Jie Gao created the genetic algorithm material._
+
+Special thanks goes to:
+- Jialei Ding and Nadia Pourmohammadzia, who reviewed material and made improvements to the traffic exercise.
+- Tom van Woudenberg, who edited text and improved content and structure for online interactive textbook format.
+- João Moura Pereira de Lucas Teixeira, who created first draft of pages from powerpoint slides.
+
+The {ref}`optimization_project` pages are included in this chapter but are _not_ included under the CC BY license of this book; they are in-class exercises that will be shared by the authors of this book as part of a future publication (also under a CC BY license; citation will be provided here after publication).
 
 (machine_learning_credit)=
 ### Chapter: Introduction to Machine Learning
 
-> {ref}`machine_learning` is written by Iuri Rocha, Anne Poot, Joep Storm and Leon Riccius.
+{ref}`machine_learning` is written by Iuri Rocha, Anne Poot, Joep Storm and Leon Riccius.
 
 (extreme_value_analysis_credit)=
 ### Chapter: Extreme Value Analysis
 
-> {ref}`eva` is written by Patricia Mares Nasarre.
->
-> Special thanks goes to Oswaldo Morales Napoles, Elisa Ragno and Robert Lanzafame for suggestions on the theoretical and didactic framework, as well as critical feedback and review.
+{ref}`eva` is written by Patricia Mares Nasarre.
+
+Special thanks goes to Oswaldo Morales Napoles, Elisa Ragno and Robert Lanzafame for suggestions on the theoretical and didactic framework, as well as critical feedback and review.
 
 (external_resources_credits)=
 ## External resources
@@ -189,7 +189,7 @@ The following chapters and pages are included directly from an external resource
 (risk_analysis_credit)=
 ### Chapter: Risk Analysis
 
-> {ref}`risk` resuses the Chapters _Risk Analysis_ {cite:p}`lanzafame2024-risk` and _Risk Evaluation_ {cite:p}`lanzafame2024-risk-eval` and associated exercises from the book _Risk and Reliability for Engineers_ {cite:p}`lanzafame2024`, published with a CC BY license. Files were modified to provide short introduction and explanation for readers (i.e., MUDE students).
+{ref}`risk` resuses the Chapters _Risk Analysis_ {cite:p}`lanzafame2024-risk` and _Risk Evaluation_ {cite:p}`lanzafame2024-risk-eval` and associated exercises from the book _Risk and Reliability for Engineers_ {cite:p}`lanzafame2024`, published with a CC BY license. Files were modified to provide short introduction and explanation for readers (i.e., MUDE students).
 
 (programming_credit)=
 ### Programming Chapters
