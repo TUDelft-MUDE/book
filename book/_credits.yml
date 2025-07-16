@@ -91,6 +91,9 @@ sources:
         license: unclear
         copyright: Deltares
         note: Original caption from Jaime "Cool numerical model of the Yamuna river. Thanks to Amgad Omer (Deltares).""
+      - name: openstax_calculus
+        note: |
+          
 
   distributions:
     author:
