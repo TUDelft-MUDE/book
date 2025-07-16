@@ -1,4 +1,4 @@
-# Week 1.4: Version control with Git!
+# Version control with Git!
 
 % START-CREDIT
 % source: programming
@@ -8,4 +8,4 @@ This chapter reuses material from _Learn Programming for Engineers_. {ref}`Find 
 ```
 % END-CREDIT
 
-This week you'll learn how to do version control with Git
+Git provides a very neat way to do version control for text-based files.
