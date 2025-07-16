@@ -274,7 +274,6 @@ parts:
       - external: https://github.com/TeachBooks/learn-programming/blob/mude-2025/book/version_control/version_control.md
         sections:
         - external: https://github.com/TeachBooks/learn-programming/blob/mude-2025/book/version_control/notebooks.iypnb
-      - file: programming/week_1_4/cloning
     - file: programming/week_1_5
       sections:
       - file: external/learn-programming/book/workflows/git/branch_merge
