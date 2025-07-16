@@ -2,10 +2,6 @@ format: jb-book
 root: intro
 
 parts:
-  - caption: Introduction
-    numbered: false
-    chapters:
-    - file: overview
 # START REMOVE-FROM-PUBLISH
   - caption: Q1 Topics
     numbered: 2
