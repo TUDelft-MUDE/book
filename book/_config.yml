@@ -24,7 +24,7 @@ sphinx:
       exclude_patterns: ["**/*.JPG", "**/*.PNG", "**/*.bib", "**/*.cpg", "**/*.csv", "**/*.dbf", "**/*.geojson", "**/*.gif", "**/*.html", "**/*.ico", "**/*.ipynb", "**/*.jl", "**/*.jpeg", "**/*.jpg", "**/*.json", "**/*.md", "**/*.npy", "**/*.pdf", "**/*.png", "**/*.prj", "**/*.sbn", "**/*.sbx", "**/*.shp", "**/*.shx", "**/*.svg", "**/*.tif", "**/*.tiff", "**/*.txt", "**/*.webp", "**/*.whl", "**/*.xlsx", "**/*.xml", "**/*.yml", "**/*.zip"]
     html_theme_options:
       logo:
-        text: CEGM1000 Modelling, Uncertainty, and Data for Engineers
+        text: Textbook
       repository_url: "https://github.com/TUDelft-MUDE/book"
       path_to_docs: "book"
       repository_branch: "2025"
