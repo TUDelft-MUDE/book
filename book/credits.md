@@ -93,6 +93,8 @@ Credits are provided here for chapters and pages that are released under the lic
 > - Dhruv Mehta and Ajay Jagadeesh for feedback on structure, content.
 >
 > {numref}`NumericalMethodsRiver` is included on page {ref}`numerical_modelling` but is _not_ included under the CC BY license of this book and cannot be reused without explicit permission from the original copyright holder (Deltares). Original content is used here with explicit permission of Amgad Omer on behalf of Deltares.
+>
+> {numref}`openstax_fig_01` is reproduced from {cite:t}`openstax_calculus` without modification and is _not_ included under the CC BY license of this book. The source content is provided with a CC BY NC SA license and can be accessed for free at [https://openstax.org/books/calculus-volume-2/pages/1-introduction](https://openstax.org/books/calculus-volume-2/pages/1-introduction).
 
 (distributions_credit)=
 ### Chapters: Univariate and Multivariate Continuous Distributions

@@ -15,6 +15,16 @@ In this Chapter, the fundamentals of numerical modelling and basic numerical met
 
 % MMMMM the following gif is large (30MB) and is manually added to server at the URL location below to prevent the book from becoming too large.
 
+% START-CREDIT
+% source: numerical_modelling
+````{margin}
+```{attributiongrey} Attribution
+:class: attribution
+This figure was made by Amgad Omer of Deltares. {ref}`Find out more here <numerical_modelling_credit>`.
+```
+````
+% END-CREDIT
+
 ```{figure} https://files.mude.citg.tudelft.nl/NumericalMethodsRiver.gif
 :name: NumericalMethodsRiver
 
