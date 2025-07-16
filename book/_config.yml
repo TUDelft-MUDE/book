@@ -32,7 +32,7 @@ sphinx:
       use_repository_button: true
       use_issues_button : true
 # START REMOVE-FROM-PUBLISH
-      announcement: "<p>This book is under construction. The version currently shared with students: <a href='https://mude.citg.tudelft.nl/2025/book' style='color: cyan;'>mude.citg.tudelft.nl/2024/book</a></p>"
+      announcement: "<p>This book is under construction. The version currently shared with students: <a href='https://mude.citg.tudelft.nl/book/2025' style='color: cyan;'>mude.citg.tudelft.nl/book/2025</a></p>"
 # END REMOVE-FROM-PUBLISH
       launch_buttons:
         thebe: true
