@@ -35,6 +35,8 @@ and $\epsilon$ is:
 
 $$\hat{\epsilon}=Y-\hat{Y},\hspace{10px}\Sigma_{\hat{\epsilon}}=\Sigma_{Y}-\Sigma_{\hat{Y}}$$
 
+Note that the BLUE can only be used for prediction when the noise is white and uncorrelated in time ([Chapter 4.7](forecasting)).
+
 ### Model of observation equations
 
 The linear model, consisting of the above three components plus noise, is of the form
