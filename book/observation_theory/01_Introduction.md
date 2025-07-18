@@ -127,7 +127,7 @@ $$
 
 (positioning)=
 #### GNSS Positioning 
-As a final example we will consider a non-linear functional model for estimating the unknown position $\mathrm{x}=\begin{bmatrix} x, y, z\end{bmatrix}^T$ of a GNSS receiver on Earth. The observables are distance measured from four or more $m$ GNSS satellites with known positions $\begin{bmatrix} x_i, y_i, z_i\end{bmatrix}^T$.
+As a final example we will consider a non-linear functional model for estimating the unknown position $\mathrm{x}=\begin{bmatrix} x, y, z\end{bmatrix}^T$ of a Global Navigation Satellite System (GNSS) receiver on Earth. The observables are distance measured for $m \geq 4$ GNSS satellites with known positions $\begin{bmatrix} x_i, y_i, z_i\end{bmatrix}^T$.
 
 ```{figure} https://upload.wikimedia.org/wikipedia/commons/9/91/GDOP_good.svg
 ---
