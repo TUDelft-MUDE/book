@@ -165,19 +165,7 @@ Once the time instant ($t_k$) of the offset is known, the amplitude can be estim
 
 ## Noise 
 
-Noise simply refers to random fluctuations in the time series about its typical pattern. In general we can talk about white and colored noise in time series analysis. The following characteristics are associated with noise:
-
-- Noise is not synonymous with error, although random variation, including measurement errors, contributes to noise. Essentially, noise represents the unpredictable fluctuations in data, while errors encompass any inaccuracies that may arise from a range of factors, including both random variations and systematic issues.
-- It is required to filter out unwanted random variations, and detect meaningful information (i.e., a signal) from noise processes.
-- Transforming data from the time domain to the frequency domain allows to filter out the frequencies that pollute the data.
-- White noise can be decomposed into its constituent components (frequencies).  In principle, white noise contains all wavelengths/colors (like white light), each contributing equally to the fluctuations observed in the data.
-- Colored noise can seriously affect the analysis of time series, and their parameters of interest. Short-term colored noise has also predictive property (used for forecasting).
-
-A purely stationary random process (or white noise process) yields a sequence of uncorrelated zero-mean random variables. This zero-mean random process is of the form
-
-$$ Y(t)=Y_t=\epsilon(t)$$
-
-where $\epsilon(t)$ is the independent identically distributed (i.i.d.) error at epoch $t$. Therefore, the observation/noise at time $t$ is not dependent on any of the previous observations $Y_t$.
+Noise refers to random fluctuations in the time series about its typical pattern. In general we can talk about white and colored noise in time series analysis. Until now we only considered white noise , i.e., $\epsilon(t) \sim N(0, \sigma^2_{\epsilon})$, and we didn't have to deal with time correlation, but in this chapter we will also consider other types of noise (see {ref}`noise`) and time correlation.
 
 :::{card} Example - time series consisting of a trend, annual signal (seasonality), an offset and pure random noise (white noise)
 
@@ -192,5 +180,5 @@ where
 - $f_1$ is the frequency of the seasonal component (e.g. 1 cycle/year)
 - $o$ is the offset starting at time $t_k$
 - $u_k(t)$ is the Heaviside step function
-- $\epsilon(t)$ is the i.i.d. random Gaussian noise, i.e. $\epsilon(t) \sim \textbf{N}(0, \sigma^2)$.
+- $\epsilon(t)$ is the i.i.d. random Gaussian noise, i.e. $\epsilon(t) \sim \textbf{N}(0, \sigma_{\epsilon}^2)$.
 :::
