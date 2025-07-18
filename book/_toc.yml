@@ -405,6 +405,7 @@ parts:
     - file: fundamentals/00_03_PreMath
     - file: fundamentals/prob-background.md   
     - file: fundamentals/prob-rv.md
+    - file: fundamentals/joint_marginal_conditional.md
     - file: fundamentals/00_04_MeanVar
     - file: fundamentals/prob_tables/overview
       title: Probability Tables
