@@ -135,6 +135,8 @@ $$\hat{r}\pm k\sigma_{\hat{r}}$$
 
 where $\sigma_{\hat{r}} = \sqrt{(\Sigma_{\hat{X}})_{22}}$ is the standard deviation of $\hat{r}$ and $k=2.58$ is the critical value obtained from the [standard normal distribution](table_standardnormal) (using $0.5\alpha$).
 
+In many practical applications, the covariance matrix $\Sigma_{Y}$ is not known. In such cases we can estimate $\mathrm{x}$ using the [unweighted least squares](LeastSquares), as the covariance is not needed. Alternatively, it is possible to estimate the variance matrix, or components/parameters of it, based on the observed data through variance component estimation techniques, which are beyond the scope of the MUDE.
+
 ## How to find the frequencies?
 
 The design matrix $\mathrm{A}$ is usually assumed to be known. So far, we have assumed the frequency $2\pi f_1$ of the periodic pattern (seasonality, for example) in a $a\cos{2\pi f_1 t} + b\sin{2\pi f_1 t}$ is known, so the design matrix $\mathrm{A}$ can be directly obtained. In some applications, however, such information is hidden in the data, and needs to be determined.
