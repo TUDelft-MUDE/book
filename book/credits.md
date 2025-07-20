@@ -3,9 +3,24 @@
 
 You can refer to this book in its entirety as:
 
-> Lanzafame, R., van Woudenberg, T., Verhagen, S. (2024), Modelling, Uncertainty and Data for Engineers (MUDE) Textbook, Delft University of Technology. https://mude.citg.tudelft.nl/book, CC BY 4.0. [doi:10.5281/zenodo.16223062](https://doi.org/10.5281/zenodo.16223062).
+> Lanzafame, R., van Woudenberg, T., Verhagen, S. (2024), Modelling, Uncertainty and Data for Engineers (MUDE) Textbook, Delft University of Technology. https://mude.citg.tudelft.nl/book/2024, CC BY 4.0. [doi:10.5281/zenodo.16223062](https://doi.org/10.5281/zenodo.16223062).
 
-Test: {cite:p}`mude2024` and {cite:t}`mude2024`.
+````{admonition} BibTeX Citation for use in a TeachBook or Jupyter Book
+:class: tip, dropdown
+
+If you would like to refer to the MUDE Textbook in a TeachBook or Jupyter Book, the following entry can be used in a  `bib` file to get close to the reference shown above. Use the GitHub repository for this book as a reference for setting up APA citations (if desired).
+
+```bibtex
+@misc{mude2024,
+  title={Modelling, {U}ncertainty and {D}ata for {E}ngineers ({MUDE}) {T}extbook},
+  author={Lanzafame, Robert and van Woudenberg, Tom and Verhagen, Sandra},
+  year={2024},
+  note={Delft University of Technology. {https://mude.citg.tudelft.nl/book/2024} CC BY 4.0},
+  doi={10.5281/zenodo.16223062},
+}
+```
+
+````
 
 The introduction, structure of the book and formatting of contents is done under direction of the Editors (Robert Lanzafame, Tom van Woudenberg and Sandra Verhagen), in collaboration with a large team of co-authors and student assistants. Some chapters and pages have additional primary authors who are identified within the book either at the bottom of the first page in a chapter, or at the bottom of an individual page, as necessary. If an author is not listed on a particular chapter or page, the editors may be attributed as the authors.
 
