@@ -5,6 +5,8 @@ You can refer to this book in its entirety as:
 
 > Lanzafame, R., van Woudenberg, T., Verhagen, S. (2024), Modelling, Uncertainty and Data for Engineers (MUDE) Textbook, Delft University of Technology. https://mude.citg.tudelft.nl/book. Retrieved [Month, Year]. CC BY 4.0.
 
+Test: {cite:p}`mude2024` and {cite:t}`mude2024`.
+
 The introduction, structure of the book and formatting of contents is done under direction of the Editors (Robert Lanzafame, Tom van Woudenberg and Sandra Verhagen), in collaboration with a large team of co-authors and student assistants. Some chapters and pages have additional primary authors who are identified within the book either at the bottom of the first page in a chapter, or at the bottom of an individual page, as necessary. If an author is not listed on a particular chapter or page, the editors may be attributed as the authors.
 
 You can refer to individual chapters or pages within this book as:
