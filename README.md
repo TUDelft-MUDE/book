@@ -43,7 +43,7 @@ To create a new release, follow these steps:
 3. Create a new release in the GitHub repository and set the new version number per the description above.
 4. Add release notes to summarize the changes: errata should be described concisely when `C` is advanced; more detailed description is required if `B` is advanced.
 5. Download the HTML files from the Actions page as a zip file (choose the branch on which the new release was made.
-6. Manually update the Zenodo record for the book website ([zenodo.org/records/16223062](https://zenodo.org/records/16223062)) by: uploading the zip file, changing the version number and updating metadata as needed (e.g., add new editors).
+6. Manually update the Zenodo record for the book website ([zenodo.org/records/16223062](https://zenodo.org/records/16223062)) by: uploading the zip file and changing metadata as needed. Make sure to update the version number and URL's in the description when the academic year (`A`) changes. The DOI should not be changed, as it is automatically updated and resolved by Zenodo.
 7. Confirm that the Zenodo record for the source code ([zenodo.org/records/16227602](https://zenodo.org/records/16227602)) was automatically advanced.
 
 ## Additional Information
