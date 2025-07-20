@@ -3,7 +3,7 @@
 
 You can refer to this book in its entirety as:
 
-> Lanzafame, R., van Woudenberg, T., Verhagen, S. (2024), Modelling, Uncertainty and Data for Engineers (MUDE) Textbook, Delft University of Technology. https://mude.citg.tudelft.nl/book/2024, CC BY 4.0. [doi:10.5281/zenodo.16223062](https://doi.org/10.5281/zenodo.16223062).
+> Lanzafame, R., van Woudenberg, T., Verhagen, S. (2024), Modelling, Uncertainty and Data for Engineers (MUDE) Textbook, Delft University of Technology. https://mude.citg.tudelft.nl/book/2024, CC BY 4.0. [doi:10.5281/zenodo.xxxxxxxx](https://doi.org/10.5281/zenodo.xxxxxxxx).
 
 ````{admonition} BibTeX Citation
 :class: tip, dropdown
@@ -16,7 +16,7 @@ If you would like to refer to the MUDE Textbook with BibTeX (e.g., in a TeachBoo
   author={Lanzafame, Robert and van Woudenberg, Tom and Verhagen, Sandra},
   year={2024},
   note={Delft University of Technology. {https://mude.citg.tudelft.nl/book/2024} CC BY 4.0},
-  doi={10.5281/zenodo.16223062},
+  doi={10.5281/zenodo.xxxxxxxx},
 }
 ```
 
@@ -38,7 +38,7 @@ Better yet, include a link to the specific commit! _If you know what this means,
 
 ## How the book is made
 
-This book is created using open source tools: it is a Jupyter Book that uses a number of features from [TeachBooks](https://teachbooks.io/) and is written using Markdown, Jupyter notebooks and Python files to generate some figures. The source files are stored on a public GitHub repository [github.com/TUDelft-MUDE/book](https://github.com/tudelft-mude/book/). Zenodo is used to archive all open versions of the book (beginning with the 2024-25 academic year) and to provide a DOI ([10.5281/zenodo.16223062](https://doi.org/10.5281/zenodo.16223062)).  View the repository README file or contact the editors for additional and up-to-date information.
+This book is created using open source tools: it is a Jupyter Book that uses a number of features from [TeachBooks](https://teachbooks.io/) and is written using Markdown, Jupyter notebooks and Python files to generate some figures. The source files are stored on a public GitHub repository [github.com/TUDelft-MUDE/book](https://github.com/tudelft-mude/book/). Zenodo is used to archive all open versions of the book (beginning with the 2024-25 academic year) and to provide a DOI ([10.5281/zenodo.xxxxxxxx](https://doi.org/10.5281/zenodo.xxxxxxxx)).  View the repository README file or contact the editors for additional and up-to-date information.
 
 ## Acknowledgements
 
