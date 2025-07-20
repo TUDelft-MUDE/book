@@ -26,25 +26,29 @@ As the book consists of source code and a rendered website (HTML), versioning, r
 
 [TeachBooks Versioning](https://teachbooks.io/manual/features/versioning.html) is used (a special type of semantic numbering for educational purposes) with generic format `vA.B.C`, where `A` is the academic year for which the book is made (e.g., `2024` is for the 2024-25 academic year). The first complete version of the book for a give academic year uses `B=1` (e.g., `v2024.1.0` is the first complete version for 2024) and `C` is used to denote errata `C`. As the book is "complete" after the first `B=1` release for a given year, `B` should only be advanced is major changes or additions are made (i.e., to correct a major omission) and communicated clearly in the release notes. 
 
-The HTML files associated with each release are archived to Zenodo in a zip file with DOI [10.5281/zenodo.16223062](https://doi.org/10.5281/zenodo.16223062). The zip file is the artifact downloaded manually from the Actions page and updloaded to Zenodo to (manually) create a new version.
+The HTML files associated with each release are archived to Zenodo in a zip file with DOI [10.5281/zenodo.16223061](https://doi.org/10.5281/zenodo.16223061), which will automatically resolve to the newest DOI (not necessarily the most recent GitHub release). The zip file is the artifact downloaded manually from the Actions page and uploaded to Zenodo to (manually) create a new version.
 
-Source code is versioned using Git and stored on GitHub in repository [TUDelft-MUDE/book](https://github.com/TUDelft-MUDE/book). Zenodo is used to automatically archive the source code for every release and associated with DOI [10.5281/zenodo.16227602](https://doi.org/10.5281/zenodo.16227602). The metadata for this Zenodo record comes from the file `CITATION.cff`; besides updating the list of editors, no metadata should be changed in this file (use the README, Credits page and/or other Zenodo record instead).
+Source code is versioned using Git and stored on GitHub in repository [TUDelft-MUDE/book](https://github.com/TUDelft-MUDE/book). Zenodo is used to automatically archive the source code for every release and associated with DOI [10.5281/zenodo.16227601](https://doi.org/10.5281/zenodo.16227601), which will automatically resolve to the newest DOI, as well as the most recent GitHub release. The metadata for this Zenodo record comes from the file `CITATION.cff`; besides updating the list of editors, no metadata should be changed in this file (use the README, Credits page and/or other Zenodo record instead).
 
 A PDF of the book will eventually be generated and uploaded to the TU Delft Repository (PURE) _work in progress._ The PDF is intended only for archival purposes in PURE and is not intended to be read.
 
 In the future, additional records may be created to more easily enable citation of individual book chapters (e.g., Zenodo or PURE records for each chapter).
+
+Note that there are effectively two numeric ways of versioning the book: the version number (defined by GitHub Releases manually, according to the rules above) and the Zenodo-generated DOI. There should be a one-to-one correspondence between the two, but the Zenodo DOI will not necessarily be sequential. Because the Zenodo DOI is both a permanent identifier _and_ a hyperlink, it is used in the recommended citation format for the book and its chapters. If desired, the book version can also be used, but this should only be necessary if it is important to distinguish between two versions of the book that were published for the same academic year (e.g., if a major change was made after the first release of the book for that year).
 
 ### Instructions for Creating a New Release
 
 To create a new release, follow these steps:
 
 1. If new editors are added, update the `CITATION.cff` file.
-2. Ensure the book is built successfully in the Actions tab.
-3. Create a new release in the GitHub repository and set the new version number per the description above.
-4. Add release notes to summarize the changes: errata should be described concisely when `C` is advanced; more detailed description is required if `B` is advanced.
-5. Download the HTML files from the Actions page as a zip file (choose the branch on which the new release was made.
-6. Manually update the Zenodo record for the book website ([zenodo.org/records/16223062](https://zenodo.org/records/16223062)) by: uploading the zip file and changing metadata as needed. Make sure to update the version number and URL's in the description when the academic year (`A`) changes. The DOI should not be changed, as it is automatically updated and resolved by Zenodo.
-7. Confirm that the Zenodo record for the source code ([zenodo.org/records/16227602](https://zenodo.org/records/16227602)) was automatically advanced.
+2. Visit [zenodo.org/records/16223061](https://zenodo.org/records/16223061) and create a new (draft!) version of the HTML files record. Manually update the version number and URL's in the description when the academic year (`A`) changes. Generate a new DOI, which will be used in the following step.
+3. Use the DOI generated in the previous step to update source code of the book. This is best accomplished by doing a text find-and-replace search, and should modify files `README.md`, `credits.md`, `CITATION.cff`, and `references.bib`. The version number (e.g., year) should only be updated when a new academic year is released. Do not replace DOI's `16223061` or `16227601`, as these will automatically resolve to the newest DOI for each Zenodo record and are important for these README instructions and the reference in the `cff` file.
+4. Commit changes and ensure the book is built successfully in the Actions tab on the desired branch.
+5. Create a new release in the GitHub repository and set the new version number per the description above (`vA.B.C`) as the tag and Release title (be sure to choose the correct target branch; the default branch is typically not the branch containing the version intended for readers).
+6. Add release notes to summarize the changes: errata should be described concisely when `C` is advanced; more detailed description is required if `B` is advanced.
+7. Download the HTML files from the Actions page as a zip file (choose the branch on which the new release was made), then upload the zip file to Zenodo and publish the record.
+8. Confirm that the Zenodo record DOI for the book ([zenodo.org/records/16223061](https://doi.org/10.5281/zenodo.16223061)) was updated and matches that in the book on the README, Credits and References pages. 
+9. Confirm that the Zenodo record DOI for the source code ([zenodo.org/records/16227601](https://zenodo.org/records/16227601)) was automatically advanced.
 
 ## Additional Information
 
