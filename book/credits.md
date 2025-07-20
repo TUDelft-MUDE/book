@@ -3,7 +3,7 @@
 
 You can refer to this book in its entirety as:
 
-> Lanzafame, R., van Woudenberg, T., Verhagen, S. (2024), Modelling, Uncertainty and Data for Engineers (MUDE) Textbook, Delft University of Technology. https://mude.citg.tudelft.nl/book. Retrieved [Month, Year]. CC BY 4.0.
+> Lanzafame, R., van Woudenberg, T., Verhagen, S. (2024), Modelling, Uncertainty and Data for Engineers (MUDE) Textbook, Delft University of Technology. https://mude.citg.tudelft.nl/book, CC BY 4.0. [doi:10.5281/zenodo.16223062](https://doi.org/10.5281/zenodo.16223062).
 
 Test: {cite:p}`mude2024` and {cite:t}`mude2024`.
 
