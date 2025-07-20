@@ -1,3 +1,4 @@
+(optimization_genetic_algorithm)=
 # Genetic Algorithm
 
 ## Video
@@ -20,7 +21,13 @@ For the exam, you are expected to have a clear understanding of the Genetic Algo
 * Linear programming problems and integer programming problems
 * Simplex and Branch and Bound
 
-![Untitled](https://files.mude.citg.tudelft.nl/Untitled.png)
+```{figure} https://files.mude.citg.tudelft.nl/Untitled.png
+:name: recap_simple_branch_bound
+
+The figure on the left is from {cite:t}`Danshian2025` and the figure on the right is from an unknown source. {ref}`Find out more here <optimization_credit>`.
+% CREDIT-NOTE source: optimization
+
+```
 
 Exact optimization approaches basically guarantees to find the optimal solution to a problem!
 
