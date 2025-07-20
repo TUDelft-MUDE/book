@@ -10,7 +10,7 @@ Development of the book is focused around its use as an online textbook for stud
 
 Some parts of this book are taken directly from other git repositories (either as submodules or external resources). To contribute to those pages, contribute to the source repository directly with a fork and merge/pull request. If you intend to clone this book including its submodules, clone using: `git clone --recurse-submodules git@github.com:TeachBooks/manual.git`
 
-Additional information about the book (especially for MUDE teachers) can be found at the MUDE Teacher site: [tudelft-mude.github.io/teacher/book](https://tudelft-mude.github.io/teacher/book).
+Additional information about the book (especially for MUDE teachers) can be found at the MUDE Teacher site: [mude.citg.tudelft.nl/teacher/book](https://mude.citg.tudelft.nl/teacher/book).
 
 Happy book building!
 

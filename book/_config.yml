@@ -8,7 +8,7 @@ execute:
 only_build_toc_files: true
 
 html:
-  baseurl :  "https://tudelft-mude.github.io/book/2025/"
+  baseurl :  "https://mude.citg.tudelft.nl/book/2025/"
   use_multitoc_numbering: false
 
 sphinx:
@@ -24,14 +24,16 @@ sphinx:
       exclude_patterns: ["**/*.JPG", "**/*.PNG", "**/*.bib", "**/*.cpg", "**/*.csv", "**/*.dbf", "**/*.geojson", "**/*.gif", "**/*.html", "**/*.ico", "**/*.ipynb", "**/*.jl", "**/*.jpeg", "**/*.jpg", "**/*.json", "**/*.md", "**/*.npy", "**/*.pdf", "**/*.png", "**/*.prj", "**/*.sbn", "**/*.sbx", "**/*.shp", "**/*.shx", "**/*.svg", "**/*.tif", "**/*.tiff", "**/*.txt", "**/*.webp", "**/*.whl", "**/*.xlsx", "**/*.xml", "**/*.yml", "**/*.zip"]
     html_theme_options:
       logo:
-        text: CEGM1000 Modelling, Uncertainty, and Data for Engineers
+        text: Textbook
       repository_url: "https://github.com/TUDelft-MUDE/book"
       path_to_docs: "book"
       repository_branch: "2025"
       use_edit_page_button: true
       use_repository_button: true
       use_issues_button : true
-      announcement: "<p>This book is from the 2024-25 academic year. The version currently used in education is at <a href='https://mude.citg.tudelft.nl/book' style='color: cyan;'>mude.citg.tudelft.nl/book</a></p>"
+# START REMOVE-FROM-PUBLISH
+      announcement: "<p>This book is under construction. The version currently shared with students: <a href='https://mude.citg.tudelft.nl/book' style='color: cyan;'>mude.citg.tudelft.nl/book</a></p>"
+# END REMOVE-FROM-PUBLISH
       launch_buttons:
         thebe: true
     bibtex_default_style: myapastyle
@@ -50,6 +52,8 @@ sphinx:
     - sphinx_image_inverter
     - sphinx_tudelft_theme
     - sphinx_named_colors
+    - teachbooks_sphinx_tippy
+    - sphinx_dropdown_toggle
     - sphinx_iframes
 
 bibtex_bibfiles:
