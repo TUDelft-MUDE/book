@@ -170,6 +170,11 @@ Credits are provided here for chapters and pages that are released under the lic
 > - João Moura Pereira de Lucas Teixeira, who created first draft of pages from powerpoint slides.
 >
 > The {ref}`optimization_project` pages are included in this chapter but are _not_ included under the CC BY license of this book; they are in-class exercises that will be shared by the authors of this book as part of a future publication (also under a CC BY license; citation will be provided here after publication).
+>
+> Several figures are included in this chapter but are _not_ included under the CC BY license of this book:
+> - {numref}`convex_non_convex` is used on page {ref}`optimization_taxonomy`; the convex 3D figure is from {cite:t}`Agrawal2021` and the non-convex 3D figures is from {cite:t}`Nogal2021`. Both are included as part of the figure shown in this book modification.
+> - {numref}`recap_simple_branch_bound` is used on page {ref}`optimization_genetic_algorithm` and is from {cite:t}`Danshian2025` (left) and the figure on the right is from an unknown source. Both are included as part of the figure shown in this book without modification.
+> - Figures {numref}`computation_complexity`, {numref}`metaheuristic_approach`, {numref}`metaheuristic_approach2`, {numref}`evolutionary_algorithm`, {numref}`termination`, {numref}`genetic_algorithm_diagram`, {numref}`single_point_crossover_diagram`, {numref}`single_point_crossover_diagram2` and {numref}`genetic_new_population` on page {ref}`optimization_genetic_algorithm`  are included under the CC BY license of this book, as they are from unknown sources and will be replaced.
 
 (machine_learning_credit)=
 ### Chapter: Introduction to Machine Learning
