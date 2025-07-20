@@ -90,7 +90,10 @@ sources:
         source: https://files.mude.citg.tudelft.nl/NumericalMethodsRiver.gif
         license: unclear
         copyright: Deltares
-        note: caption "Cool numerical model of the Yamuna river. Included here with permission of Amgad Omer of Deltares. {ref}`Find out more here <numerical_modelling_credit>`"
+        note: Original caption from Jaime "Cool numerical model of the Yamuna river. Thanks to Amgad Omer (Deltares).""
+      - name: openstax_calculus
+        note: |
+          
 
   distributions:
     author:
