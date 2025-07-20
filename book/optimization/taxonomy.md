@@ -1,3 +1,4 @@
+(optimization_taxonomy)=
 # Taxonomy of optimization models
 
 In this section we will discuss the difference between different types of optimization models:
@@ -57,8 +58,17 @@ $$\begin{gather*}nC\leq 50M\\ nC_m\leq 0.7M\end{gather*}$$
 **Definition:** A convex optimization problem is a problem where all the constraints and the objective are convex functions.
 
 
-![taxonomy](https://files.mude.citg.tudelft.nl/convex2.png "taxonomy")
+![taxonomy]( "taxonomy")
 
+Agrawal2021
+
+```{figure} https://files.mude.citg.tudelft.nl/convex2.png
+:name: convex_non_convex
+
+This figure includes content from {cite:t}`Agrawal2021` and {cite:t}`Nogal2021`. {ref}`Find out more here <optimization_credit>`.
+% CREDIT-NOTE source: optimization
+
+```
 
 In the WT farm case, even though the constraints defined above are linear (convex), the objective function is not. Then, it is considered a non-convex optimization problem.
 
