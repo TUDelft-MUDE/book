@@ -23,7 +23,7 @@ identifiers:
     value: 10.5281/zenodo.16223062
     description: Zenodo DOI for the book (not the source code)
   - type: doi
-    value: 10.5281/zenodo.16223602
+    value: 10.5281/zenodo.16227602
     description: Zenodo DOI for the source code
 repository-code: 'https://github.com/TUDelft-MUDE/book'
 abstract: >-
