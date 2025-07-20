@@ -1,6 +1,6 @@
 # The MUDE Book
 
-This repository contains the source code for the MUDE Online Textbook from the 2024-25 academic year. It is the first version released with a CC BY license.  MUDE stands for Modelling, Uncertainty and Data for Engineers, a required module in the MSc programs from the faculty of Civil Engineering and Geosciences at Delft University of Technology in the Netherlands.
+This repository contains the source code for the MUDE Textbook from the 2024-25 academic year. It is the first version released with a CC BY license.  MUDE stands for Modelling, Uncertainty and Data for Engineers, a required module in the MSc programs from the faculty of Civil Engineering and Geosciences at Delft University of Technology in the Netherlands.
 
 This book is constantly in development, so feel free to contribute! You can do so directly by forking this repository and creating a pull request. If you have access to this repository, create a branch and pull request to contribute directly.
 
