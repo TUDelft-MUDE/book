@@ -3,7 +3,7 @@
 
 You can refer to this book in its entirety as:
 
-> Lanzafame, R., van Woudenberg, T., Verhagen, S. (2024), Modelling, Uncertainty and Data for Engineers (MUDE) Textbook, Delft University of Technology. https://mude.citg.tudelft.nl/book/2024, CC BY 4.0. [doi:10.5281/zenodo.16227602](https://doi.org/10.5281/zenodo.16227602).
+> Lanzafame, R., van Woudenberg, T., Verhagen, S. (2024), Modelling, Uncertainty and Data for Engineers (MUDE) Textbook, Delft University of Technology. https://mude.citg.tudelft.nl/book/2024, CC BY 4.0. [doi:10.5281/zenodo.16223062](https://doi.org/10.5281/zenodo.16223062).
 
 ````{admonition} BibTeX Citation
 :class: tip, dropdown
@@ -16,7 +16,7 @@ If you would like to refer to the MUDE Textbook with BibTeX (e.g., in a TeachBoo
   author={Lanzafame, Robert and van Woudenberg, Tom and Verhagen, Sandra},
   year={2024},
   note={Delft University of Technology. {https://mude.citg.tudelft.nl/book/2024} CC BY 4.0},
-  doi={10.5281/zenodo.16227602},
+  doi={10.5281/zenodo.16223062},
 }
 ```
 
