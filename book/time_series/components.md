@@ -150,7 +150,94 @@ As a deterministic sudden change, offsets can be handled by a step function such
 
 In this case the time series is written as: 
 
-$$ Y(t) = \sum_{k=1}^q o_k u_k(t)+\\epsilon(t)$$
+$$ Y(t) = \sum_{k=1}^q o_k u_k(t)+### Model of observation equations
+
+The linear model, consisting of the above three components plus noise, is of the form
+
+$$Y_t = y_0+rt+a\cos{2\pi f_1 t}+b\sin{2\pi f_1 t}+ou_k(t)+\epsilon(t)$$
+
+The linear model should indeed be written for all time instances $t_1,...,t_m$, resulting in $m$ equations as:
+
+$$
+\begin{align*}
+Y(t_1) &= y_0+rt_1+a\cos{2\pi f_1 t_1}+b\sin{2\pi f_1 t_1}+ou_k(t_1)+\epsilon(t_1)\\ 
+Y(t_2) &= y_0+rt_2+a\cos{2\pi f_1 t_2}+b\sin{2\pi f_1 t_2}+ou_k(t_2)+\epsilon(t_2)\\ 
+&\vdots \\ 
+Y(t_k) &= y_0+rt_k+a\cos{2\pi f_1 t_k}+b\sin{2\pi f_1 t_k}+ou_k(t_k)+\epsilon(t_k)\\ &\vdots \\ Y(t_m) &= y_0+rt_m+a\cos{2\pi f_1 t_m}+b\sin{2\pi f_1 t_m}+ou_k(t_m)+\epsilon(t_m)
+\end{align*}
+$$
+
+These equations can be written in a compact matrix notation as
+
+$$Y=\mathrm{Ax}+\epsilon$$
+
+where
+
+$$
+\overbrace{\begin{bmatrix}
+Y_1\\ \vdots\\ Y_{k-1}\\  Y_k\\ \vdots\\ 
+Y_m\end{bmatrix}}^{Y} = 
+\overbrace{\begin{bmatrix}
+1&t_1&\cos{2\pi f_1 t_1}&\sin{2\pi f_1 t_1}&0
+\\  \vdots&\vdots&\vdots&\vdots&\vdots\\ 
+1&t_{k-1}&\cos{2\pi f_1 t_{k-1}}&\sin{2\pi f_1 t_{k-1}}&0\\ 
+1&t_k&\cos{2\pi f_1 t_k}&\sin{2\pi f_1 t_k}&1\\ 
+\vdots&\vdots&\vdots&\vdots&\vdots\\ 
+1&t_m&\cos{2\pi f_1 t_m}&\sin{2\pi f_1 t_m}&1\end{bmatrix}}^{\mathrm{A}}\overbrace{\begin{bmatrix}y_0\\ r\\ a\\ b\\ o\end{bmatrix}}^{\mathrm{x}}+\overbrace{\begin{bmatrix}\epsilon(t_1)\\ \vdots\\ \epsilon(t_{k-1}) \\ \epsilon(t_k)\\ \vdots\\ \epsilon(t_m)\end{bmatrix}}^{\epsilon}$$
+
+with the $m\times m$ covariance matrix
+%MMMMM should we keep sigma for the diagonal and c_i for the non-diagonal elements?
+$$\Sigma_{Y}=\begin{bmatrix}\sigma_1^2&\sigma_{12}&\dots&\sigma_{1m}\\ \sigma_{21}&\sigma_{2}^2&&\\ \vdots&\vdots&\ddots&\\ 
+\sigma_{m1}&\sigma_{m2}&\dots&\sigma_{m}^2\end{bmatrix}$$
+
+:::{card} Exercise
+
+A time series exhibits a linear regression model $Y(t)=y_0 + rt + \epsilon(t)$. The measurements have also been taken at a measurement frequency of 10 Hz, producing epochs of $t=0.1,0.2, \dots,100$ seconds, so $m=1000$. Later an offset was also detected at epoch 260 using statistical hypothesis testing. For the linear model $Y=\mathrm{Ax}+\epsilon$, establish an appropriate design matrix that can capture all the above effects.
+
+```{admonition} Solution
+:class: tip, dropdown
+
+In the linear regression case, the design matrix consists of two columns, one for the unknown $y_0$ (a column of ones), and the other for $r$ (a column of time, $t$). Due to the presence of an offset, the mathematical model should be modified to:
+
+$$
+Y(t) = y_0 +rt +o_k u_k(t) + \epsilon(t)
+$$
+
+where $u_k(t)$ is the Heaviside step function:
+
+$$
+u_k(t) = 
+\begin{cases}
+0, & \textrm{if} & t<t_k=26 \\
+1, & \textrm{if} & t\geq t_k=26
+\end{cases}
+$$
+
+and $o_k$ is the magnitude of the offset. This means that we have to add a third column to the design matrix having zeros before the epoch 260, and ones afterwards. Since epoch 260 corresponds to $t=26$ s (noting that we have 10 Hz data), in $\mathrm{A}$ we begin to have 1's in that row:
+
+$$
+\mathrm{A} = 
+\begin{bmatrix}
+1 & t_1 & 0 \\
+\vdots & \vdots & \vdots\\
+1 & t_{259} & 1\\
+1 & t_{260} & 1\\
+\vdots & \vdots & \vdots \\
+1 & t_{1000} & 1 \\
+\end{bmatrix}
+= 
+\begin{bmatrix}
+1 & 0.1 & 0 \\
+\vdots & \vdots & \vdots\\
+1 & 25.9 & 0 \\
+1 & 26 & 1\\
+\vdots & \vdots & \vdots \\
+1 & 100 & 1 \\
+\end{bmatrix}
+$$
+```
+:::
+\epsilon(t)$$
 
 where $q$ is the series of offsets (in {numref}`offset` there are two offsets, hence $q=2$) and each of them is expressed as a Heaviside step function 
 
@@ -171,7 +258,7 @@ Noise refers to random fluctuations in the time series about its typical pattern
 
 It can be written as 
 
-$$Y(t) = y_0 + rt + a \text{cos}(2\pi f_1 t) + b \text{sin}(2\pi f_1 t) + o u_k(t) + \epsilon(t)$$
+$$Y(t) = y_0 + rt + a \cos(2\pi f_1 t) + b \sin(2\pi f_1 t) + o u_k(t) + \epsilon(t)$$
 
 where 
 - $y_0$ is the intercept (e.g. in mm)
@@ -180,5 +267,5 @@ where
 - $f_1$ is the frequency of the seasonal component (e.g. 1 cycle/year)
 - $o$ is the offset starting at time $t_k$
 - $u_k(t)$ is the Heaviside step function
-- $\epsilon(t)$ is the i.i.d. random Gaussian noise, i.e. $\epsilon(t) \sim \textbf{N}(0, \sigma_{\epsilon}^2)$.
+- $\epsilon(t)$ is the i.i.d. random Gaussian noise, i.e. $\epsilon(t) \sim \mathcal{N}(0, \sigma_{\epsilon}^2)$.
 :::
