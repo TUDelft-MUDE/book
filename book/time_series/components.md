@@ -54,7 +54,7 @@ Trend analysis expresses the changes of the variable of interest with respect to
 
 ## Seasonality
 
-Seasonal variations explain regular fluctuations in a certain period of time (e.g. a year), usually caused by climate and weather conditions (e.g. temperature, rainfall), cycles of seasons, customs, traditional habits, weekends, or holidays. For example, the weekly signal is usually evident in the volume of people engaged in shopping (likely more people prefer going shopping in the weekends)
+Seasonal variations explain regular fluctuations in a certain period of time (e.g. a year), usually caused by climate and weather conditions (e.g. temperature, rainfall), cycles of seasons, customs, traditional habits, weekends, or holidays. For example, the weekly signal is usually evident in the volume of people engaged in shopping (likely more people prefer going shopping in the weekends).
 
 From {numref}`trend` it is also possible to see the seasonal variations: in fact sea levels are higher in summer and lower in winter. The annual warming/cooling cycle is the main contributor to these seasonal variations.
 
@@ -124,7 +124,7 @@ For $\theta$ we rewrite the second function
 
 $ a = A \cos(\theta) \hspace{1cm} -b = A \sin(\theta)$
 
-$ \frac{-b}{a} = \frac{\sin(\theta)}{\cos(\theta)} = \tan\left(\theta\right)$
+$ \frac{-b}{a} = \frac{\sin(\theta)}{\cos(\theta)} = \operatorname{tan}\left(\theta\right)$
 
 $ \theta = \arctan(\frac{-b}{a}) $
 
