@@ -1,7 +1,7 @@
 (components)=
 # Components of time series
 
-A time series is a discrete time sequence of data points indexed in time which can be used to study a phenomenon. It is a record of the data collected at different points in time, it consists of discrete time samples of typically a continuous-time phenomenon in reality.  The data are usually collected at fixed time intervals rather than just recording them intermittently or randomly. The fixed interval $\Delta t$, in the time domain, is defined as 'sampling interval' and, in the frequency domain, is defined as 'sampling rate' or 'sampling frequency', expressed for example in Hz.
+A time series is a discrete time sequence of data points indexed in time which can be used to study a phenomenon. It is a record of the data collected at different points in time, it consists of discrete time samples of typically a continuous-time phenomenon in reality.  The data are usually collected at fixed time intervals rather than just recording them intermittently or randomly. The fixed interval $\Delta t$, in the time domain, is defined as 'sampling interval' and, in the frequency domain, is defined as 'sampling rate' or 'sampling frequency' $f_s$, expressed for example in Hz.
 
 $$ \Delta t = \frac{1}{f_s} $$
 
@@ -29,9 +29,9 @@ $$Y(t) = tr(t) + s(t) + o(t) + b(t) + \epsilon(t)$$
 
 where we distinguish the following components:
 
-1. $tr(t)$ = trend, provides the general behavior and variation of the process
-2. $s(t)$ = seasonality, shows the regular seasonal variations
-3. $o(t)$ = offset, is a discontinuity (or jump) in the data
+1. $tr(t)$ = trend, provides the general behavior and variation of the process.
+2. $s(t)$ = seasonality, shows the regular seasonal variations.
+3. $o(t)$ = offset, is a discontinuity (or jump) in the data.
 4. $b(t)$ = irregularities and outliers (also referred to as biases), due to unexpected reasons. Irregularities will not be considered in this book.
 5. $\epsilon(t)$ = noise process, can be white or colored noise.
 
@@ -47,7 +47,7 @@ The trend is the general pattern of the time series and shows its long-term chan
 Monthly time series of global mean sea level measurements using Satellite Altimetry technique. Source image: https://www.cmar.csiro.au/sealevel/sl_hist_last_decades.html
 ```
 
-{numref}`trend` shows a positive trend (red line) of around $3.5$ mm/year, which in this case indicates sea level rise. This however needs to be further investigated and tested statistically (see {ref}`hypothesis_testing` and also {ref}`modelling_tsa`).
+{numref}`trend` shows a positive trend (red line) of around $3.5$ mm/year, which in this case indicates sea level rise. This however needs to be further investigated and tested statistically (see {ref}`08_Testing` and also {ref}`modelling_tsa`).
 
 Trend analysis expresses the changes of the variable of interest with respect to time $t$. Different types of trend are possible and for now we will mainly focus on linear trend, i.e. the time-dependent variable $Y(t)$ changes at a (constant) linear rate over time: $Y_t = y_0 + r t + \epsilon(t)$. Other trends are however also possible, for example, quadratic, which includes $c t^2$, or log linear $\log(Y_t) = y_0 + r t + \epsilon(t)$.
 
@@ -63,13 +63,13 @@ Regular seasonal variations in a time series might be handled by using a sinusoi
 $$ 
 \begin{align*}
 Y(t) &= \sum_{i=1} ^p A_i  \cos(2\pi f_i t + \theta_i)  + \epsilon(t)\\
-&= \sum_{i=1} ^p \left(a_i  \cos(2\pi f_i t) + b_k  \sin(2\pi f_i t) \right)+ \epsilon(t)
+&= \sum_{i=1} ^p \left(a_i  \cos(2\pi f_i t) + b_i  \sin(2\pi f_i t) \right)+ \epsilon(t)
 \end{align*}
 $$
 
 With the coefficients $a_i = A_i\cos\theta_i$ and $b_i=-A_i\sin\theta_i$, and where $f_i$ is the $i$-th frequency of the seasonal variation and is fixed or determined by Spectral Analysis. To be more specific, we can use the {ref}`psd` to determine the unknown frequencies. 
 
-Once $\omega_ 0$ is set, the coefficients $a_k $ and $b_k$ can be determined using the least-squares method, since the equation is linear in $a_k$ and $b_k$. From this the original sinusoids can be obtained using:
+Once $\omega_ 0$ is set, the coefficients $a_i $ and $b_i$ can be determined using the least-squares method, since the equation is linear in $a_i$ and $b_i$. From this the original sinusoids can be obtained using:
 
 $$ A_i = \sqrt{a_i^2 + b_i^2}, \hspace{1cm} \theta_i = \arctan\left(-\frac{b_i}{a_i}\right), \hspace{1cm} i = 1, \ldots{}, p $$
 
@@ -124,7 +124,7 @@ For $\theta$ we rewrite the second function
 
 $ a = A \cos(\theta) \hspace{1cm} -b = A \sin(\theta)$
 
-$ \frac{-b}{a} = \frac{\sin(\theta)}{\cos(\theta)} = \tan(\theta) $
+$ \frac{-b}{a} = \frac{\sin(\theta)}{\cos(\theta)} = \tan(\theta)$
 
 $ \theta = \arctan(\frac{-b}{a}) $
 
@@ -173,11 +173,11 @@ It can be written as
 $$Y(t) = y_0 + rt + a \cos(2\pi f_1 t) + b \sin(2\pi f_1 t) + o u_k(t) + \epsilon(t)$$
 
 where 
-- $y_0$ is the intercept (e.g. in mm)
-- $r$ is the rate (e.g. in mm/year)
-- $a$ and $b$ are the coefficients of the signal, (e.g. annual signal)
-- $f_1$ is the frequency of the seasonal component (e.g. 1 cycle/year)
-- $o$ is the offset starting at time $t_k$
-- $u_k(t)$ is the Heaviside step function
-- $\epsilon(t)$ is the i.i.d. random Gaussian noise, i.e. $\epsilon(t) \sim \mathcal{N}(0, \sigma_{\epsilon}^2)$.
+- $y_0$ is the intercept (e.g. in mm).
+- $r$ is the rate (e.g. in mm/year).
+- $a$ and $b$ are the coefficients of the signal, (e.g. annual signal).
+- $f_1$ is the frequency of the seasonal component (e.g. 1 cycle/year).
+- $o$ is the offset starting at time $t_k$.
+- $u_k(t)$ is the Heaviside step function.
+- $\epsilon(t)$ is the i.i.d. random Gaussian noise, i.e. $\epsilon(t) \sim N(0, \sigma_{\epsilon}^2)$.
 :::
