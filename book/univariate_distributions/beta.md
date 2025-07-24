@@ -64,12 +64,6 @@ The beta pdf can be useful in many settings you will encounter in your professio
 - similarly, this can be used for other binary choices, such as the **path drivers take at a fork in the road**. If we designate left as zero and right as one, then the average choice must be between zero (all drivers go left) over 0.5 (exactly half the drivers go left, and half go right) to one (all drivers go right).
 More generally, beta pdfs can also be rescaled and used for variables that have natural lower and upper bounds, such as *dissolved concentrations* of a chemical compound. Such concentrations can never be negative (i.e., $x \geq 0$) but cannot exceed some saturation concentration ($x \leq C_{\text{sat.}}$), which makes beta pdfs a natural choice for such quantities.
 
-
-
-
-
-Blorb
-
 ```
 
 % START-CREDIT

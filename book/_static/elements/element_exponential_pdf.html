@@ -108,9 +108,10 @@
       }
       `;
 
-      // Parameters for Normal distribution
-      var Loc = 0;     // mean
-      var Scale = 1;   // standard deviation (> 0)
+      // Parameters for exponential distribution with rate (lambda), location (Loc), and scale
+      var Lambda = 1;   // rate > 0
+      var Loc = 0;      // shift
+      var Scale = 1;    // stretch > 0
 
       function linspace(start, end, resolution) {
         var spacing = [];
@@ -118,25 +119,25 @@
         return spacing;
       }
 
-      function normalPDF(x) {
-        var z = (x - Loc) / Scale;
-        return (1 / (Scale * Math.sqrt(2 * Math.PI))) * Math.exp(-0.5 * z * z);
+      function expPDF(x) {
+        if (x < Loc) return 0;
+        return (Lambda / Scale) * Math.exp(-Lambda * (x - Loc) / Scale);
       }
 
-      function normalCDF(x) {
-        var z = (x - Loc) / (Scale * Math.sqrt(2));
-        return 0.5 * (1 + math.erf(z));
+      function expCDF(x) {
+        if (x < Loc) return 0;
+        return 1 - Math.exp(-Lambda * (x - Loc) / Scale);
       }
 
       function evaluate_pdf(arr) {
         var out = [];
-        for (let i = 0; i < arr.length; i++) out.push(normalPDF(arr[i]));
+        for (let i = 0; i < arr.length; i++) out.push(expPDF(arr[i]));
         return out;
       }
 
       function evaluate_cdf(arr) {
         var out = [];
-        for (let i = 0; i < arr.length; i++) out.push(normalCDF(arr[i]));
+        for (let i = 0; i < arr.length; i++) out.push(expCDF(arr[i]));
         return out;
       }
 
@@ -146,11 +147,11 @@
       const window_x_cdf = [width * 0.6, width * 0.95];
       const window_y_cdf = [height * 0.1, height * 0.6];
 
-      // Scales (domains will update with Loc/Scale)
-      const xScale_pdf = d3.scaleLinear().domain([Loc - 4 * Scale, Loc + 4 * Scale]).range(window_x_pdf);
+      // Scales (domains update with Loc/Scale)
+      const xScale_pdf = d3.scaleLinear().domain([Loc, Loc + 5 * Scale]).range(window_x_pdf);
       const yScale_pdf = d3.scaleLinear().domain([0, 1]).range([window_y_pdf[1], window_y_pdf[0]]);
 
-      const xScale_cdf = d3.scaleLinear().domain([Loc - 4 * Scale, Loc + 4 * Scale]).range(window_x_cdf);
+      const xScale_cdf = d3.scaleLinear().domain([Loc, Loc + 5 * Scale]).range(window_x_cdf);
       const yScale_cdf = d3.scaleLinear().domain([0, 1]).range([window_y_cdf[1], window_y_cdf[0]]);
 
       var xAxis_pdf = d3.axisBottom(xScale_pdf).ticks(5);
@@ -206,7 +207,7 @@
 
       // Initial data
       var N = 401;
-      var xVals = linspace(Loc - 4 * Scale, Loc + 4 * Scale, N);
+      var xVals = linspace(Loc, Loc + 5 * Scale, N);
       var pdfVals = evaluate_pdf(xVals);
       var cdfVals = evaluate_cdf(xVals);
 
@@ -233,18 +234,18 @@
         .attr('id','line_cdf');
 
       function updatePlots(duration = 300){
-        var xVals = linspace(Loc - 4 * Scale, Loc + 4 * Scale, N);
+        var xVals = linspace(Loc, Loc + 5 * Scale, N);
         var pdfVals = evaluate_pdf(xVals);
         var cdfVals = evaluate_cdf(xVals);
 
         var data_pdf = xVals.map((xi,i)=>({x:xi,y:pdfVals[i]}));
         var data_cdf = xVals.map((xi,i)=>({x:xi,y:cdfVals[i]}));
 
-        var maxval = d3.max(pdfVals); if (isNaN(maxval) || maxval < 0.7) maxval = 0.7;
+        var maxval = d3.max(pdfVals); if (isNaN(maxval) || maxval < 1) maxval = 1;
         yScale_pdf.domain([0, maxval * 1.2]);
 
-        xScale_pdf.domain([Loc - 4 * Scale, Loc + 4 * Scale]);
-        xScale_cdf.domain([Loc - 4 * Scale, Loc + 4 * Scale]);
+        xScale_pdf.domain([Loc, Loc + 5 * Scale]);
+        xScale_cdf.domain([Loc, Loc + 5 * Scale]);
 
         d3.select('#line_pdf')
           .transition().duration(duration)
@@ -260,30 +261,30 @@
         xaxis_cdf.transition().duration(300).call(d3.axisBottom(xScale_cdf).ticks(5));
       }
 
-      // Mean slider (replaces alpha position)
+      // Lambda slider (left, replaces alpha)
       svg.append('text')
         .attr('transform', 'translate(' + ((window_x_pdf[0] + window_x_pdf[1]) / 2) + ',' + (height * 0.75) + ')')
         .style('text-anchor', 'middle')
-        .text('mean (location)')
+        .text('λ')
         .style('font-size', tickFontSize);
 
-      var meanSlider = document.createElement('input');
-      meanSlider.type = 'range';
-      meanSlider.id   = 'meanSlider';
-      meanSlider.min  = -3;
-      meanSlider.max  = 3;
-      meanSlider.step = 0.01;
-      meanSlider.value = Loc;
-      meanSlider.style.position = 'absolute';
-      meanSlider.style.left = (width * 0.1) + 'px';
-      meanSlider.style.top  = (height * 0.775) + 'px';
-      meanSlider.style.width = (width * 0.35) + 'px';
-      meanSlider.style.margin = '0';
-      meanSlider.style.padding = '0';
-      document.body.appendChild(meanSlider);
+      var lambdaSlider = document.createElement('input');
+      lambdaSlider.type = 'range';
+      lambdaSlider.id   = 'lambdaSlider';
+      lambdaSlider.min  = 0.1;
+      lambdaSlider.max  = 5;
+      lambdaSlider.step = 0.01;
+      lambdaSlider.value = Lambda;
+      lambdaSlider.style.position = 'absolute';
+      lambdaSlider.style.left = (width * 0.1) + 'px';
+      lambdaSlider.style.top  = (height * 0.775) + 'px';
+      lambdaSlider.style.width = (width * 0.35) + 'px';
+      lambdaSlider.style.margin = '0';
+      lambdaSlider.style.padding = '0';
+      document.body.appendChild(lambdaSlider);
 
-      [-3, -1.5, 0, 1.5, 3].forEach(function(v){
-        var pct = (v + 3) / 6;
+      [0.1, 1, 2, 3, 4, 5].forEach(function(v){
+        var pct = (v - 0.1) / (5 - 0.1);
         svg.append('text')
           .attr('transform', 'translate(' + ((width * 0.1) + pct * (width * 0.35)) + ',' + (height * 0.835) + ')')
           .style('text-anchor', 'middle')
@@ -291,35 +292,36 @@
           .style('font-size', tickFontSize);
       });
 
-      meanSlider.addEventListener('input', function(){
-        Loc = +this.value;
+      lambdaSlider.addEventListener('input', function(){
+        Lambda = +this.value;
+        if (Lambda <= 0) Lambda = 0.1;
         updatePlots(0);
       });
 
-      // Standard deviation slider (replaces location slider position on right)
+      // Location slider (right top)
       svg.append('text')
         .attr('transform', 'translate(' + ((window_x_cdf[0] + window_x_cdf[1]) / 2) + ',' + (height * 0.75) + ')')
         .style('text-anchor', 'middle')
-        .text('standard deviation (scale)')
+        .text('location')
         .style('font-size', tickFontSize);
 
-      var stdSlider = document.createElement('input');
-      stdSlider.type = 'range';
-      stdSlider.id   = 'stdSlider';
-      stdSlider.min  = 0.1;
-      stdSlider.max  = 5;
-      stdSlider.step = 0.01;
-      stdSlider.value = Scale;
-      stdSlider.style.position = 'absolute';
-      stdSlider.style.left = window_x_cdf[0] + 'px';
-      stdSlider.style.top  = (height * 0.775) + 'px';
-      stdSlider.style.width = (window_x_cdf[1] - window_x_cdf[0]) + 'px';
-      stdSlider.style.margin = '0';
-      stdSlider.style.padding = '0';
-      document.body.appendChild(stdSlider);
+      var locSlider = document.createElement('input');
+      locSlider.type = 'range';
+      locSlider.id   = 'locSlider';
+      locSlider.min  = -10;
+      locSlider.max  = 10;
+      locSlider.step = 0.01;
+      locSlider.value = Loc;
+      locSlider.style.position = 'absolute';
+      locSlider.style.left = window_x_cdf[0] + 'px';
+      locSlider.style.top  = (height * 0.775) + 'px';
+      locSlider.style.width = (window_x_cdf[1] - window_x_cdf[0]) + 'px';
+      locSlider.style.margin = '0';
+      locSlider.style.padding = '0';
+      document.body.appendChild(locSlider);
 
-      [0.1, 1, 2, 3, 4, 5].forEach(function(v){
-        var pct = (v - 0.1) / (5 - 0.1);
+      [-10, -5, 0, 5, 10].forEach(function(v){
+        var pct = (v + 10) / 20;
         svg.append('text')
           .attr('transform', 'translate(' + (window_x_cdf[0] + pct * (window_x_cdf[1] - window_x_cdf[0])) + ',' + (height * 0.835) + ')')
           .style('text-anchor', 'middle')
@@ -327,7 +329,43 @@
           .style('font-size', tickFontSize);
       });
 
-      stdSlider.addEventListener('input', function(){
+      locSlider.addEventListener('input', function(){
+        Loc = +this.value;
+        updatePlots(0);
+      });
+
+      // Scale slider (right bottom)
+      svg.append('text')
+        .attr('transform', 'translate(' + ((window_x_cdf[0] + window_x_cdf[1]) / 2) + ',' + (height * 0.8975) + ')')
+        .style('text-anchor', 'middle')
+        .text('scale')
+        .style('font-size', tickFontSize);
+
+      var scaleSlider = document.createElement('input');
+      scaleSlider.type = 'range';
+      scaleSlider.id   = 'scaleSlider';
+      scaleSlider.min  = 0.1;
+      scaleSlider.max  = 5;
+      scaleSlider.step = 0.01;
+      scaleSlider.value = Scale;
+      scaleSlider.style.position = 'absolute';
+      scaleSlider.style.left = window_x_cdf[0] + 'px';
+      scaleSlider.style.top  = (height * 0.925) + 'px';
+      scaleSlider.style.width = (window_x_cdf[1] - window_x_cdf[0]) + 'px';
+      scaleSlider.style.margin = '0';
+      scaleSlider.style.padding = '0';
+      document.body.appendChild(scaleSlider);
+
+      [0.1, 1, 2, 3, 4, 5].forEach(function(v){
+        var pct = (v - 0.1) / (5 - 0.1);
+        svg.append('text')
+          .attr('transform', 'translate(' + (window_x_cdf[0] + pct * (window_x_cdf[1] - window_x_cdf[0])) + ',' + (height * 0.985) + ')')
+          .style('text-anchor', 'middle')
+          .text(v)
+          .style('font-size', tickFontSize);
+      });
+
+      scaleSlider.addEventListener('input', function(){
         Scale = +this.value;
         if (Scale <= 0) Scale = 0.1;
         updatePlots(0);
