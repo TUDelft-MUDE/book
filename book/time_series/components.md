@@ -47,7 +47,7 @@ The trend is the general pattern of the time series and shows its long-term chan
 Monthly time series of global mean sea level measurements using Satellite Altimetry technique. Source image: https://www.cmar.csiro.au/sealevel/sl_hist_last_decades.html
 ```
 
-{numref}`trend` shows a positive trend (red line) of around $3.5$ mm/year, which in this case indicates sea level rise. This however needs to be further investigated and tested statistically (see {ref}`08_Testing` and also {ref}`modelling_tsa`).
+{numref}`trend` shows a positive trend (red line) of around $3.5$ mm/year, which in this case indicates sea level rise. This however needs to be further investigated and tested statistically (see {ref}`08_testing` and also {ref}`modelling_tsa`).
 
 Trend analysis expresses the changes of the variable of interest with respect to time $t$. Different types of trend are possible and for now we will mainly focus on linear trend, i.e. the time-dependent variable $Y(t)$ changes at a (constant) linear rate over time: $Y_t = y_0 + r t + \epsilon(t)$. Other trends are however also possible, for example, quadratic, which includes $c t^2$, or log linear $\log(Y_t) = y_0 + r t + \epsilon(t)$.
 
