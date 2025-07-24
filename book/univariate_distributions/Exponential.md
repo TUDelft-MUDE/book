@@ -1,7 +1,6 @@
-
 # Exponential distribution
 
-Another widely used distribution function is the Exponential distribution. For instance, it is applied to model the waiting time between succesive events of a Poisson process. The PDF of the Exponential distribution is given by
+Another widely used distribution function is the **Exponential distribution**. For instance, it is applied to model the waiting time between successive events of a Poisson process. The PDF of the Exponential distribution is given by
 
 $$
 f(x) = \lambda e^{-\lambda x} \hspace{1cm} for \ x \geq 0, \lambda>0
@@ -21,8 +20,6 @@ where $\lambda$ is the parameter of the distribution, which is often called *rat
 Exponential distribution function: (left) random samples, and (right) PDF.
 ```
 
-
-
 Integrating the PDF, the following expression of the CDF is obtained
 
 $$
@@ -41,7 +38,27 @@ Exponential distribution function: CDF.
 
 The influence of the parameter $\lambda$ can also be observed in the CDF. The higher the parameter $\lambda$, the faster the CDF reaches values of the non-exceedance probability close to 1. Thus, lower variability of the random variable is obtained.
 
-## Some interesting properties
+## Interactive Element
+
+Below, you find an interactive element that shows the pdf and cdf of an exponential distribution. The element also includes sliders for the **location** and **scale** which allow us to scale this element to intervals other than $\[0,+\infty\[$.
+
+% START-CREDIT
+% source: maxramgraber
+````{margin}
+```{attributiongrey} Attribution
+:class: attribution
+This interactive figure is created by Max Ramgraber. {ref}`Find out more here <distributions_credit>`.
+```
+````
+% END-CREDIT
+
+````{iframe-figure} ../_static/elements/element_exponential_pdf.html
+:name: beta_pdf
+
+Interactively visualize the relationship between the PDF and the CDF of an exponential distribution.
+````
+
+## Intuition & Interesting Properties
 
 The mean of the exponential distribution can be obtained integrating by parts as
 
@@ -59,7 +76,7 @@ $$
 
 It should be noted that the coefficient of variation $CV = \sqrt{Var[X]}/E[X] = 1$.
 
-If you remember the Poisson process is characterized by independent events. Thus, the time of the next occurrence modelled by the Exponential distribution is independent of the present and past occurrences. This is called the *memoryless property of the exponential distribution*. We can show it calculating the probability of the waiting time until the next ocurrence $X$ being higher than the sum of the two previous ones $X>x_1+x_2$, given that it is already bigger than one of them $X>x_1$ (conditional probability) as follows
+If you remember the Poisson process is characterized by independent events. Thus, the time of the next occurrence modelled by the Exponential distribution is independent of the present and past occurrences. This is called the **memoryless property of the exponential distribution**. We can show it calculating the probability of the waiting time until the next ocurrence $X$ being higher than the sum of the two previous ones $X>x_1+x_2$, given that it is already bigger than one of them $X>x_1$ (conditional probability) as follows
 
 $$
 P[X>x_1+x_2|X>x_1]=\cfrac{P[X>x_1+x_2]}{P[X>x_1]}=\cfrac{e^{\normalsize{\lambda (x_1+x_2)}}}{e^{\normalsize{\lambda x_1}}}=e^{\normalsize{\lambda x_2}}=P[X>x_2]

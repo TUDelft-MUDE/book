@@ -1,9 +1,7 @@
 
 # Beta distribution
 
-## PDF
-
-Beta distributions are a very useful choice for univariate variables that have a natural lower and upper bound. By default, a beta distribution is defined for $0 \leq x \leq 1$ as
+**Beta distributions** are a very useful choice for univariate variables that have a natural lower and upper bound. By default, a beta distribution is defined for $0 \leq x \leq 1$ as
 
 $$
 p(x) = \frac{x^{\alpha - 1} (1 - x)^{\beta - 1}}{B(\alpha, \beta)}, 
@@ -16,8 +14,6 @@ B(\alpha, \beta) = \int_0^1 t^{\alpha - 1} (1 - t)^{\beta - 1} dt = \frac{\Gamma
 $$
 
 where $\Gamma$ is the Gamma function. The parameters $\alpha$ and $\beta$ must both be larger or equal to one ($\alpha,\beta \geq 1$) and affect the shape of the pdf: high values of $\alpha$ shift the pdf towards the right, high values of $\beta$ shift the pdf towards the left.
-
-## CDF
 
 The cdf of the Beta distribution describes the probability that a Beta-distributed random variable $X$ takes a value less than or equal to some $x \in [0, 1]$. It is defined as
 
