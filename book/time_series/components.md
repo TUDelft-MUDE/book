@@ -58,7 +58,7 @@ Seasonal variations explain regular fluctuations in a certain period of time (e.
 
 From {numref}`trend` it is also possible to see the seasonal variations: in fact sea levels are higher in summer and lower in winter. The annual warming/cooling cycle is the main contributor to these seasonal variations.
 
-Regular seasonal variations in a time series might be handled by using a sinusoidal model with one or more sinusoids with frequency that may be known or unknown depending on the context. In fig {numref}`trend`, cyclical behavior with a period of 1 year can be observed. A harmonic model for seasonal variation can be of the following two equivalent forms (using that $\cos(u+v)= \cos u \cos v - \sin u \sin v$):
+Regular seasonal variations in a time series might be handled by using a sinusoidal model with one or more sinusoids with frequency that may be known or unknown depending on the context. In {numref}`trend`, cyclical behavior with a period of 1 year can be observed. A harmonic model for seasonal variation can be of the following two equivalent forms (using that $\cos(u+v)= \cos u \cos v - \sin u \sin v$):
 
 $$ 
 \begin{align*}
