@@ -59,19 +59,19 @@ parts:
       - file: numerical_methods/8-boundary-value-problem.ipynb
       - file: numerical_methods/9-starting_with_PDEs.ipynb
 
-    - file: probability/Reminder_intro
+    - file: univariate_distributions/introduction
       sections:
-      - file: probability/PDF_CDF
-      - file: probability/empirical
-      - file: probability/Param_distr.md
+      - file: univariate_distributions/PDF_CDF
+      - file: univariate_distributions/empirical
+      - file: univariate_distributions/Param_distr.md
         sections: 
-        - file: probability/Gaussian.md
-        - file: probability/other_distr.md
-        - file: probability/Uniform.md
-        - file: probability/Exponential.md
-        - file: probability/Gumbel.md
-        - file: probability/Lognormal.md
-        - file: probability/summary.md
+        - file: univariate_distributions/Gaussian.md
+        - file: univariate_distributions/other_distr.md
+        - file: univariate_distributions/Uniform.md
+        - file: univariate_distributions/Exponential.md
+        - file: univariate_distributions/Gumbel.md
+        - file: univariate_distributions/Lognormal.md
+        - file: univariate_distributions/summary.md
       - file: probability/fitting.md
         sections: 
         - file: probability/moments.md
