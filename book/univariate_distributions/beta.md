@@ -4,7 +4,7 @@
 **Beta distributions** are a very useful choice for univariate variables that have a natural lower and upper bound. By default, a beta distribution is defined for $0 \leq x \leq 1$ as
 
 $$
-p(x) = \frac{x^{\alpha - 1} (1 - x)^{\beta - 1}}{B(\alpha, \beta)}, 
+f(x) = \frac{x^{\alpha - 1} (1 - x)^{\beta - 1}}{B(\alpha, \beta)}, 
 $$
 
 where $B(\alpha, \beta)$ is the *Beta function*. This Beta function is, defined as

@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Inverse-CDF Sampler Demo</title>
+
+    <!-- D3 -->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <!-- jStat -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jstat/1.9.4/jstat.min.js"></script>
+
+    <style>
+      /* basic look & feel — sizing now comes from JS */
+      html,body{margin:0;padding:0;font-family:Helvetica,Arial,sans-serif;}
+      #click{display:flex;justify-content:center;align-items:center;height:100vh;width:100vw;}
+      .pdf-area{fill:rgba(31,119,180,.15);}
+      .hist-bar{fill:#4e79a7;}
+      .sample{pointer-events:none;}
+      .uniform-label{writing-mode:vertical-rl;text-orientation:mixed;direction:rtl;}
+    </style>
+  </head>
+
+  <body>
+    <div id="click"></div>
+
+    <script>
+      /* ────────────── responsive geometry & single scale factor ───────────── */
+      const vw=Math.max(document.documentElement.clientWidth||0,window.innerWidth||0),
+            vh=Math.max(document.documentElement.clientHeight||0,window.innerHeight||0),
+            aspect=2;                       // desired width : height
+      let width,height;
+      if(vw/aspect<vh){width=vw;height=vw/aspect;}else{width=vh*aspect;height=vh;}
+
+      const BASE = 600;                     // reference width
+      const scale= width/BASE;              // master multiplier
+      const PAD  = 20*scale;                // replaces all old “20px” gutters
+
+      const halfW=width/2, halfH=height/2;
+
+      /* ────────────── SVG & quadrant groups ───────────── */
+      const svg=d3.select('#click').append('svg')
+                  .attr('width',width).attr('height',height);
+
+      const gTL=svg.append('g'),
+            gTR=svg.append('g').attr('transform',`translate(${halfW},0)`),
+            gBL=svg.append('g').attr('transform',`translate(0,${halfH})`),
+            gBR=svg.append('g').attr('transform',`translate(${halfW},${halfH})`);
+
+      /* ────────────── distributions ───────────── */
+      const DISTS={
+        normal:{label:'Gaussian (0,1)',domain:[-4,4],
+                pdf:x=>jStat.normal.pdf(x,0,1),
+                cdf:x=>jStat.normal.cdf(x,0,1),
+                inv:u=>jStat.normal.inv(u,0,1)},
+        exponential:{label:'Exponential (λ = 1)',domain:[0,8],
+                     pdf:x=>jStat.exponential.pdf(x,1),
+                     cdf:x=>jStat.exponential.cdf(x,1),
+                     inv:u=>jStat.exponential.inv(u,1)},
+        beta:{label:'Beta (α = 2, β = 5)',domain:[0,1],
+              pdf:x=>jStat.beta.pdf(x,2,5),
+              cdf:x=>jStat.beta.cdf(x,2,5),
+              inv:u=>jStat.beta.inv(u,2,5)}
+      };
+      let currentKey='normal', dist=DISTS[currentKey];
+
+      /* ────────────── helpers to style axes & lines ───────────── */
+      function styleAxis(sel){
+        sel.selectAll('path,line').style('stroke','#555')
+                                  .style('stroke-width',(1*scale)+'px');
+        sel.selectAll('text').style('font-size',(10*scale)+'px');
+      }
+
+      function styleCdfLine(path){
+        path.attr('stroke','#e15759')
+            .attr('stroke-width',(2*scale)+'px')
+            .attr('fill','none');
+      }
+
+      /* ────────────── uniform axis (TL) ───────────── */
+      const uniformX = halfW*0.4;
+      const uniformScaleY=d3.scaleLinear().domain([1,0]).range([PAD,halfH-PAD]);
+      const axisUniform = d3.axisLeft(uniformScaleY).ticks(5);
+
+      const gUniform=gTL.append('g')
+                        .attr('class','axis')
+                        .attr('transform',`translate(${uniformX},0)`)
+                        .call(axisUniform);
+      styleAxis(gUniform);
+
+      svg.append('text')
+         .attr('transform',`translate(${width*0.10},${height*0.25}) rotate(270)`)
+         .style('text-anchor','middle')
+         .style('font-size',(12*scale)+'px')
+         .text('uniform random values');
+
+      /* ────────────── CDF labels (TR edge) ───────────── */
+      svg.append('text')
+         .attr('transform',`translate(${width*0.45},${height*0.25}) rotate(270)`)
+         .style('text-anchor','middle')
+         .style('font-size',(12*scale)+'px')
+         .text('cumulative probability');
+
+      svg.append('text')
+         .attr('transform',`translate(${width*0.475},${height*0.25}) rotate(270)`)
+         .style('text-anchor','middle')
+         .style('font-size',(12*scale)+'px')
+         .text('F(x) = P(X ≤ x)');
+
+      /* ────────────── PDF label (BR edge) ───────────── */
+      svg.append('text')
+         .attr('transform',`translate(${width*0.475},${height*0.75}) rotate(270)`)
+         .style('text-anchor','middle')
+         .style('font-size',(12*scale)+'px')
+         .text('probability density');
+
+      /* ────────────── controls (foreignObject in BL) ───────────── */
+      const cFO=gBL.append('foreignObject')
+                   .attr('x',height/10)
+                   .attr('y',height/8)
+                   .attr('width',halfW-PAD)
+                   .attr('height',halfH-PAD);
+
+      const controls=cFO.append('xhtml:div');
+      controls.html(`
+        <button id="resetBtn">Reset</button>
+        <select id="distSelect"></select>
+        <span style="display:inline-flex;align-items:center;gap:${8*scale}px;">
+          <label for="speedSlider" style="margin:0;">Speed</label>
+          <input id="speedSlider" type="range" min="1" max="1000" step="1" value="500">
+        </span>`);
+
+      /* programmatic font size for ALL form controls */
+      controls.selectAll('button,select,input,label')
+              .style('font-size',(12*scale)+'px');
+
+      /* widen slider proportionally */
+      controls.select('#speedSlider')
+              .style('width',(155*scale)+'px');
+
+      /* populate drop-down */
+      const selectEl=controls.select('#distSelect').node();
+      Object.entries(DISTS).forEach(([k,v])=>{
+        const opt=document.createElement('option');
+        opt.value=k; opt.textContent=v.label;
+        if(k===currentKey) opt.selected=true;
+        selectEl.appendChild(opt);
+      });
+
+      /* ────────────── drawing helpers ───────────── */
+      let xScaleCdf,yScaleCdf,cdfPath,xScalePdf,yScalePdf;
+      const histBins=40, histogramData=new Array(histBins).fill(0);
+      let histBars,maxCount=1;
+
+      function drawCdf(){
+        xScaleCdf=d3.scaleLinear().domain(dist.domain).range([PAD,halfW-PAD]);
+        yScaleCdf=d3.scaleLinear().domain([0,1]).range([halfH-PAD,PAD]);
+
+        gTR.selectAll('*').remove();   // clear quadrant
+
+        /* axes */
+        const axB=gTR.append('g').attr('class','axis')
+                     .attr('transform',`translate(0,${halfH-PAD})`)
+                     .call(d3.axisBottom(xScaleCdf));
+        const axL=gTR.append('g').attr('class','axis')
+                     .attr('transform',`translate(${PAD},0)`)
+                     .call(d3.axisLeft(yScaleCdf));
+        styleAxis(axB); styleAxis(axL);
+
+        /* CDF line */
+        const pts=d3.range(0,201).map(i=>{
+          const x=dist.domain[0]+(i/200)*(dist.domain[1]-dist.domain[0]);
+          return [xScaleCdf(x),yScaleCdf(dist.cdf(x))];
+        });
+        cdfPath=gTR.append('path').attr('d',d3.line()(pts));
+        styleCdfLine(cdfPath);
+      }
+
+      function drawPdf(){
+        xScalePdf=xScaleCdf.copy();
+        const xs=d3.range(0,201).map(i=>dist.domain[0]+(i/200)*(dist.domain[1]-dist.domain[0]));
+        const pdfVals=xs.map(dist.pdf),maxPdf=d3.max(pdfVals);
+        yScalePdf=d3.scaleLinear().domain([0,maxPdf]).range([halfH-PAD,PAD]);
+
+        gBR.selectAll('*').remove();
+
+        /* axes */
+        const axB=gBR.append('g').attr('class','axis')
+                     .attr('transform',`translate(0,${halfH-PAD})`)
+                     .call(d3.axisBottom(xScalePdf));
+        const axL=gBR.append('g').attr('class','axis')
+                     .attr('transform',`translate(${PAD},0)`)
+                     .call(d3.axisLeft(yScalePdf));
+        styleAxis(axB); styleAxis(axL);
+
+        /* PDF shaded area */
+        gBR.append('path').attr('class','pdf-area')
+           .attr('d',
+             d3.area()
+               .x((d,i)=>xScalePdf(xs[i]))
+               .y0(halfH-PAD)
+               .y1(d=>yScalePdf(d))(pdfVals));
+
+        /* histogram container */
+        histBars=gBR.append('g');
+        histogramData.fill(0);
+        updateHistogram();
+      }
+
+      function updateHistogram(){
+        const binW=(halfW-2*PAD)/histBins;
+        maxCount=d3.max(histogramData.concat([1]));
+        const yHist=d3.scaleLinear().domain([0,maxCount]).range([halfH-PAD,PAD]);
+
+        const bars=histBars.selectAll('rect').data(histogramData);
+        bars.enter().append('rect').attr('class','hist-bar')
+            .merge(bars)
+            .attr('x',(d,i)=>PAD+i*binW)
+            .attr('y',d=>yHist(d))
+            .attr('width',binW-1)
+            .attr('height',d=>halfH-PAD-yHist(d));
+        bars.exit().remove();
+      }
+
+      /* ────────────── sampling / animation ───────────── */
+      let spawnInterval=500, spawner;
+      function startSpawner(){ if(spawner)spawner.stop(); spawner=d3.interval(createSample,spawnInterval); }
+
+      function createSample(){
+        const u=Math.random(), sampleVal=dist.inv(u);
+        if(isNaN(sampleVal)||sampleVal<dist.domain[0]||sampleVal>dist.domain[1])return;
+
+        const startX=uniformX, startY=uniformScaleY(u),
+              bounceX=xScaleCdf(sampleVal)+halfW,
+              targetY=halfH+yScalePdf(0);
+
+        const circ=svg.append('circle').attr('class','sample')
+                      .attr('cx',startX).attr('cy',startY)
+                      .attr('r',4*scale).attr('fill','#e15759');
+
+        circ.transition().duration(600).attr('cx',bounceX).attr('cy',startY)
+            .transition().duration(600).attr('cy',targetY)
+            .on('end',()=>{
+              const bin=Math.floor(((sampleVal-dist.domain[0])/(dist.domain[1]-dist.domain[0]))*histBins);
+              if(bin>=0&&bin<histBins){histogramData[bin]++;updateHistogram();}
+              circ.remove();
+            });
+      }
+
+      /* ────────────── UI events ───────────── */
+      d3.select('#resetBtn').on('click',resetAll);
+      d3.select('#distSelect').on('change',function(){currentKey=this.value;dist=DISTS[currentKey];resetAll();});
+      d3.select('#speedSlider').on('input',function(){spawnInterval=1001-this.value;startSpawner();});
+
+      function resetAll(){
+        svg.selectAll('.sample').interrupt().remove();
+        histogramData.fill(0);
+        drawCdf(); drawPdf(); updateHistogram();
+      }
+
+      /* ────────────── initial render ───────────── */
+      drawCdf(); drawPdf(); startSpawner();
+
+      /* force full reload on resize (simplest responsive strategy) */
+      window.addEventListener('resize',()=>location.reload());
+    </script>
+  </body>
+</html>
