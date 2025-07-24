@@ -182,6 +182,8 @@ parts:
         - file: time_series/ar_exercise.ipynb
       - file: time_series/forecasting
         title: "Time Series forecasting"
+        sections:
+        - file: time_series/forecasting_example.ipynb
   
     - file: optimization/overview
       title: Optimization
