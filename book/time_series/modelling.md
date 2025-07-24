@@ -11,7 +11,7 @@ The goal is now to:
 As already discussed, we will distinguish the following components in a time series:
 
 * **Trend:** General behavior and variation of the process. This often is a linear trend with an unknown intercept $y_0$ and a rate $r$.
-* **Seasonality:** Regular seasonal variations, which can be expressed as sine functions with (un)known frequency $f_1$, and unknown amplitude $A$ and phase $\phi_0$.
+* **Seasonality:** Regular seasonal variations, which can be expressed as sine functions with (un)known frequency $f_1$, and unknown amplitude $A$ and phase $\theta$.
 * **Offset:** A jump of size $o$ in a time series starting at epoch $t_k$.
 * **Noise:** White or colored noise (e.g., AR process).
 
@@ -19,7 +19,7 @@ As already discussed, we will distinguish the following components in a time ser
 
 The linear model, consisting of the above four components, is of the form
 
-$$Y_t = y_0+rt+\underbrace{ a \cos(2\pi f_1t) + b\sin(2\pi f_1t)}_{A \cos(2\pi f_1 t+\phi_0)}+ou_k(t)+\epsilon(t)$$
+$$Y_t = y_0+rt+\underbrace{ a \cos(2\pi f_1t) + b\sin(2\pi f_1t)}_{A \cos(2\pi f_1 t+\theta)}+ou_k(t)+\epsilon(t)$$
 
 The linear model should indeed be written for all time instances $t_1,...,t_m$, resulting in $m$ equations as:
 
@@ -111,7 +111,7 @@ We have seen that to obtain a linear model of observation equations in the prese
 
 ***How to determine $f_1$ if it is unknown a priori?***
 
-We can determine the dominant frequency $f_1$ by analysing the power spectral density (PSD) of the data. The dominant frequency corresponds to the frequency at which the PSD reaches its maximum value. If the time-series contains $N$ periodic components, the PSD will exhibit $N$ prominent peaks, one corresponding to each component.
+We can determine the dominant frequency $f_1$ by analysing the power spectral density (PSD) of the data. The dominant frequency corresponds to the frequency at which the PSD reaches its maximum value. If the time series contains $N$ periodic components, the PSD will exhibit $N$ prominent peaks, one corresponding to each component.
 
 #### Example power spectral density
 
