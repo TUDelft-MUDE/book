@@ -111,7 +111,7 @@ We have seen that to obtain a linear model of observation equations in the prese
 
 ***How to determine $f_1$ if it is unknown a priori?***
 
-We can determine the dominant frequency $f_1$ by analysing the power spectral density (PSD) of the data. The dominant frequency corresponds to the frequency at which the PSD reaches its maximum value.
+We can determine the dominant frequency $f_1$ by analysing the power spectral density (PSD) of the data. The dominant frequency corresponds to the frequency at which the PSD reaches its maximum value. If the time-series contains $N$ periodic components, the PSD will exhibit $N$ prominent peaks, one corresponding to each component.
 
 #### Example power spectral density
 
