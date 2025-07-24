@@ -6,13 +6,13 @@
 A stationary time series $S(t)$ is a stochastic process whose statistical properties do not depend on the time at which it is observed.
 ```
 
-This means that parameters such as *mean* and *(co)variance* should remain constant over time and not follow any trend, seasonality or irregularity.
+This means that parameters such as *mean* and *(co)variance* should remain constant over time and not follow any trend, seasonality or irregularity:
 
 * Mean of the process is time-independent
 
 $$\mathbb{E}(S(t))=\mathbb{E}(S_t)=\mu$$
 
-* Covariance of the process is independent of $t$ for each time shift $\tau$ (so only a function of τ  and not t):
+* Covariance of the process is independent of $t$ for each time shift $\tau$ (so only a function of $\tau$ and not t):
 
 $$
 Cov(S_t,S_{t-\tau})= Cov(S_t,S_{t+\tau}) =\mathbb{E}((S_t-\mu)(S_{t-\tau}-\mu))=c_\tau
@@ -62,7 +62,7 @@ name: least_squares
 Example of a time series (right graph) with linear and seasonal trend. The residuals (= stationary time series) after applying BLUE are shown on the left.
 ```
 
-In the example above, for each observation $Y_i = y_0+ rt_i+a\cos(2\pi f_1t_i)+b \sin(2\pi f_1t_i) +\epsilon_i$, where $a$ and $b$ describe the seasonality and $y_0$ and $r$ the trend. The time series then is:
+In the example above, for each observation $Y_i = y_0+ rt_i+a\cos(2\pi f_1t_i)+b \sin(2\pi f_1t_i) +\epsilon_i$, where $a$ and $b$ describe the seasonality and $y_0$ and $r$ the trend. The time series is then:
 
 $$
 \begin{bmatrix}
@@ -80,7 +80,7 @@ y_0 \\ r \\ a \\ b \end{bmatrix} +
 \end{bmatrix}
 $$
 
-The time series of residuals (left panel) is indeed a stationary time series.
+The time series of the residuals (left graph) is indeed a stationary time series.
 
 :::{card} Question Stationary Time Series
 
