@@ -131,7 +131,7 @@ This interactive figure is created by Max Ramgraber. {ref}`Find out more here <d
 ````
 % END-CREDIT
 
-````{iframe-figure} ../_static/elements/element_sampling_inverse_cdf.html.html
+````{iframe-figure} ../_static/elements/element_sampling_inverse_cdf.html
 :name: inverse_cdf_sampling
 
 Change the probability distribution and observe how the inverse cdf transforms (top-right quadrant) the uniform random samples (top-left quadrant) into samples from the corresponding pdf (bottom-right quadrant).
