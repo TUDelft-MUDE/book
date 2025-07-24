@@ -36,7 +36,7 @@ This interactive figure is created by Max Ramgraber. {ref}`Find out more here <d
 ````{iframe-figure} ../_static/elements/element_pdf_and_cdf.html
 :name: pdf_cdf
 
-Interactively visualize the relationship between the PDF and the CDF (the integral of the PDF value).
+Interactively visualize the relationship between the PDF and the CDF (the integral of the PDF value). The shaded region in the left subplot represents the area integrated by the CDF.
 ````
 
 It should be easy to see from the definition of the CDF that the probability of observing an exact value of a continuous random variable is exactly zero. This is an important observation, and also an important characteristic that separates continuous and discrete random variables.

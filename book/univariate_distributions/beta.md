@@ -18,10 +18,10 @@ where $\Gamma$ is the Gamma function. The parameters $\alpha$ and $\beta$ must b
 The cdf of the Beta distribution describes the probability that a Beta-distributed random variable $X$ takes a value less than or equal to some $x \in [0, 1]$. It is defined as
 
 $$
-F(x; \alpha, \beta) = \int_0^x p(t) \, dt = \frac{1}{B(\alpha, \beta)} \int_0^x t^{\alpha - 1} (1 - t)^{\beta - 1} dt,
+F(x; \alpha, \beta) = \int_0^x f(t) \, dt = \frac{1}{B(\alpha, \beta)} \int_0^x t^{\alpha - 1} (1 - t)^{\beta - 1} dt,
 $$
 
-where $p(t)$ is the probability density function given above. This integral does not, in general, have a closed-form solution, but it is commonly expressed in terms of the **regularized incomplete Beta function** $I_x(\alpha, \beta)$:
+where $f(t)$ is the probability density function given above. This integral does not, in general, have a closed-form solution, but it is commonly expressed in terms of the **regularized incomplete Beta function** $I_x(\alpha, \beta)$:
 
 $$
 F(x; \alpha, \beta) = I_x(\alpha, \beta) = \frac{1}{B(\alpha, \beta)} \int_0^x t^{\alpha - 1} (1 - t)^{\beta - 1} dt.
