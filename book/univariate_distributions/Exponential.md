@@ -43,7 +43,7 @@ This interactive figure is created by Max Ramgraber. {ref}`Find out more here <d
 % END-CREDIT
 
 ````{iframe-figure} ../_static/elements/element_exponential_pdf.html
-:name: beta_pdf
+:name: exponential_pdf
 
 Interactively visualize the relationship between the PDF and the CDF of an exponential distribution.
 ````
