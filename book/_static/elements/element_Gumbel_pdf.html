@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://unpkg.com/mathjs/lib/browser/math.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js"></script>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <style>
+      body {
+        margin: 0;
+        overflow: hidden;
+        font-family: Helvetica, sans-serif;
+      }
+      .tickLabel {
+        position: absolute;
+        transform: translateX(-50%);
+        pointer-events: none;
+      }
+      .sliderLabel {
+        position: absolute;
+        pointer-events: none;
+      }
+    </style>
+  </head>
+  <body>
+
+    <div id="my_datavisualization">
+      <svg id="click" xmlns="http://www.w3.org/2000/svg"></svg>
+    </div>
+
+    <script>
+      // Viewport & SVG sizing
+      const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0) * 0.95;
+      const vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0) * 0.95;
+      const aspect = 1.5;
+      let width, height;
+      if (vw / aspect < vh) { width = vw; height = vw / aspect; } else { width = vh * aspect; height = vh; }
+
+      var svg = d3.select('#click').attr('width', width).attr('height', height);
+
+      // Slider UI scaling
+      const uiScale = height / 600;
+      const trackH  = 15 * uiScale;
+      const thumbSz = 25 * uiScale;
+
+      let styleEl = document.getElementById('sliderDynCSS');
+      if (!styleEl) {
+        styleEl = document.createElement('style');
+        styleEl.id = 'sliderDynCSS';
+        document.head.appendChild(styleEl);
+      }
+
+      styleEl.textContent = `
+      input[type=range]{
+        -webkit-appearance: none;
+        appearance: none;
+        width: auto;
+        height: ${trackH}px;
+        background: transparent;
+        margin: 0;
+        padding: 0;
+      }
+      input[type=range]::-webkit-slider-runnable-track{
+        height: ${trackH}px;
+        background: #ccc;
+        border-radius: ${trackH/2}px;
+      }
+      input[type=range]::-webkit-slider-thumb{
+        -webkit-appearance: none;
+        appearance: none;
+        width: ${thumbSz}px;
+        height: ${thumbSz}px;
+        border-radius: 50%;
+        background: #666;
+        margin-top: calc(${trackH}px / 2 - ${thumbSz}px / 2);
+      }
+      input[type=range]::-moz-range-track{
+        height: ${trackH}px;
+        background: #ccc;
+        border-radius: ${trackH/2}px;
+      }
+      input[type=range]::-moz-range-thumb{
+        width: ${thumbSz}px;
+        height: ${thumbSz}px;
+        border-radius: 50%;
+        background: #666;
+        border: none;
+      }
+      input[type=range]::-ms-track{
+        height: ${trackH}px;
+        background: transparent;
+        border-color: transparent;
+        color: transparent;
+      }
+      input[type=range]::-ms-fill-lower{
+        background: #ccc;
+        border-radius: ${trackH/2}px;
+      }
+      input[type=range]::-ms-fill-upper{
+        background: #ccc;
+        border-radius: ${trackH/2}px;
+      }
+      input[type=range]::-ms-thumb{
+        width: ${thumbSz}px;
+        height: ${thumbSz}px;
+        border-radius: 50%;
+        background: #666;
+        border: none;
+      }
+      select{
+        position: absolute;
+        font-family: Helvetica, sans-serif;
+      }
+      `;
+
+      // Parameters for Gumbel distribution
+      var Shape = 1;   // shape > 0 (controls steepness) kept constant
+      var Loc   = 0;   // location
+      var Scale = 1;   // scale > 0
+      var Tail  = 'right'; // 'right' (max) or 'left' (min)
+
+      function linspace(start, end, resolution) {
+        var spacing = [];
+        for (var i = 0; i < resolution; i++) spacing.push(start + (end - start) * i / (resolution - 1));
+        return spacing;
+      }
+
+      function gumbelPDF(x) {
+        var z = (x - Loc) / Scale;
+        var t = Shape * z;
+        if (Tail === 'right') {
+          return (Shape / Scale) * Math.exp(-(t + Math.exp(-t)));
+        } else {
+          return (Shape / Scale) * Math.exp(t - Math.exp(t));
+        }
+      }
+
+      function gumbelCDF(x) {
+        var z = (x - Loc) / Scale;
+        var t = Shape * z;
+        if (Tail === 'right') {
+          return Math.exp(-Math.exp(-t));
+        } else {
+          return 1 - Math.exp(-Math.exp(t));
+        }
+      }
+
+      function evaluate_pdf(arr) {
+        var out = [];
+        for (let i = 0; i < arr.length; i++) out.push(gumbelPDF(arr[i]));
+        return out;
+      }
+
+      function evaluate_cdf(arr) {
+        var out = [];
+        for (let i = 0; i < arr.length; i++) out.push(gumbelCDF(arr[i]));
+        return out;
+      }
+
+      // Plot windows
+      const window_x_pdf = [width * 0.1,  width * 0.45];
+      const window_y_pdf = [height * 0.1, height * 0.6];
+      const window_x_cdf = [width * 0.6, width * 0.95];
+      const window_y_cdf = [height * 0.1, height * 0.6];
+
+      // Scales
+      const xScale_pdf = d3.scaleLinear().domain([Loc - 5 * Scale, Loc + 5 * Scale]).range(window_x_pdf);
+      const yScale_pdf = d3.scaleLinear().domain([0, 1]).range([window_y_pdf[1], window_y_pdf[0]]);
+
+      const xScale_cdf = d3.scaleLinear().domain([Loc - 5 * Scale, Loc + 5 * Scale]).range(window_x_cdf);
+      const yScale_cdf = d3.scaleLinear().domain([0, 1]).range([window_y_cdf[1], window_y_cdf[0]]);
+
+      var xAxis_pdf = d3.axisBottom(xScale_pdf).ticks(5);
+      var yAxis_pdf = d3.axisLeft(yScale_pdf);
+      var xAxis_cdf = d3.axisBottom(xScale_cdf).ticks(5);
+      var yAxis_cdf = d3.axisLeft(yScale_cdf);
+
+      var tickFontSize = (12 * width / 600) + 'px';
+
+      var xaxis_pdf = svg.append('g')
+        .attr('transform', 'translate(0,' + window_y_pdf[1] + ')')
+        .call(xAxis_pdf)
+        .style('font-size', tickFontSize);
+
+      svg.append('text')
+        .attr('transform', 'translate(' + ((window_x_pdf[0] + window_x_pdf[1]) / 2) + ',' + (height * 0.675) + ')')
+        .style('text-anchor', 'middle')
+        .text('x')
+        .style('font-size', tickFontSize);
+
+      var yaxis_pdf = svg.append('g')
+        .attr('transform', 'translate(' + window_x_pdf[0] + ',0)')
+        .call(yAxis_pdf)
+        .style('font-size', tickFontSize);
+
+      svg.append('text')
+        .attr('transform', 'translate(' + (width * 0.05) + ',' + ((window_y_pdf[0] + window_y_pdf[1]) / 2) + ') rotate(270)')
+        .style('text-anchor', 'middle')
+        .text('probability density')
+        .style('font-size', tickFontSize);
+
+      var xaxis_cdf = svg.append('g')
+        .attr('transform', 'translate(0,' + window_y_cdf[1] + ')')
+        .call(xAxis_cdf)
+        .style('font-size', tickFontSize);
+
+      svg.append('text')
+        .attr('transform', 'translate(' + ((window_x_cdf[0] + window_x_cdf[1]) / 2) + ',' + (height * 0.675) + ')')
+        .style('text-anchor', 'middle')
+        .text('x')
+        .style('font-size', tickFontSize);
+
+      var yaxis_cdf = svg.append('g')
+        .attr('transform', 'translate(' + window_x_cdf[0] + ',0)')
+        .call(yAxis_cdf)
+        .style('font-size', tickFontSize);
+
+      svg.append('text')
+        .attr('transform', 'translate(' + (width * 0.55) + ',' + ((window_y_cdf[0] + window_y_cdf[1]) / 2) + ') rotate(270)')
+        .style('text-anchor', 'middle')
+        .text('cumulative probability')
+        .style('font-size', tickFontSize);
+
+      var N = 401;
+      var xVals = linspace(Loc - 5 * Scale, Loc + 5 * Scale, N);
+      var pdfVals = evaluate_pdf(xVals);
+      var cdfVals = evaluate_cdf(xVals);
+
+      var data_pdf = xVals.map((xi,i)=>({x:xi,y:pdfVals[i]}));
+      var data_cdf = xVals.map((xi,i)=>({x:xi,y:cdfVals[i]}));
+
+      var valueline_pdf = d3.svg.line().x(d=>xScale_pdf(d.x)).y(d=>yScale_pdf(d.y));
+      var valueline_cdf = d3.svg.line().x(d=>xScale_cdf(d.x)).y(d=>yScale_cdf(d.y));
+
+      svg.append('path')
+        .attr('class','line')
+        .attr('d', valueline_pdf(data_pdf))
+        .attr('fill','none')
+        .attr('stroke-width', 3 * height / 600)
+        .attr('stroke','#666666')
+        .attr('id','line_pdf');
+
+      svg.append('path')
+        .attr('class','line')
+        .attr('d', valueline_cdf(data_cdf))
+        .attr('fill','none')
+        .attr('stroke-width', 3 * height / 600)
+        .attr('stroke','#666666')
+        .attr('id','line_cdf');
+
+      // Store initial x values and domains to keep x axis fixed
+      var xVals_fixed = xVals.slice();
+      var xDomain_pdf_fixed = xScale_pdf.domain().slice();
+      var xDomain_cdf_fixed = xScale_cdf.domain().slice();
+
+      function updatePlots(duration = 300){
+        // Use fixed x values for plotting so x axis remains unchanged
+        var xVals = xVals_fixed;
+        var pdfVals = evaluate_pdf(xVals);
+        var cdfVals = evaluate_cdf(xVals);
+
+        var data_pdf = xVals.map((xi,i)=>({x:xi,y:pdfVals[i]}));
+        var data_cdf = xVals.map((xi,i)=>({x:xi,y:cdfVals[i]}));
+
+        var maxval = d3.max(pdfVals); if (isNaN(maxval) || maxval < 0.5) maxval = 0.5;
+        yScale_pdf.domain([0, maxval * 1.2]);
+
+        // Keep x scales fixed
+        xScale_pdf.domain(xDomain_pdf_fixed);
+        xScale_cdf.domain(xDomain_cdf_fixed);
+
+        d3.select('#line_pdf')
+          .transition().duration(duration)
+          .attr('d', valueline_pdf(data_pdf));
+        d3.select('#line_cdf')
+          .transition().duration(duration)
+          .attr('d', valueline_cdf(data_cdf));
+
+        yaxis_pdf.transition().duration(300).call(d3.axisLeft(yScale_pdf));
+        // x axis remains unchanged
+
+        yaxis_cdf.transition().duration(300).call(d3.axisLeft(yScale_cdf));
+        // x axis remains unchanged
+      }
+
+      // Tail dropdown (left, above where the shape slider was)
+      var tailSelect = document.createElement('select');
+      tailSelect.id = 'tailSelect';
+      tailSelect.style.left = (width * 0.25) + 'px';
+      tailSelect.style.top  = (height * 0.875) + 'px';
+      tailSelect.style.fontSize = tickFontSize;
+      var optR = document.createElement('option'); optR.value = 'right'; optR.text = 'right-tailed';
+      var optL = document.createElement('option'); optL.value = 'left';  optL.text = 'left-tailed';
+      tailSelect.appendChild(optR);
+      tailSelect.appendChild(optL);
+      tailSelect.value = Tail;
+      tailSelect.addEventListener('change', function(){
+        Tail = this.value;
+        updatePlots(0);
+      });
+      document.body.appendChild(tailSelect);
+
+      // Location slider (right top)
+      svg.append('text')
+        .attr('transform', 'translate(' + ((window_x_cdf[0] + window_x_cdf[1]) / 2) + ',' + (height * 0.75) + ')')
+        .style('text-anchor', 'middle')
+        .text('location')
+        .style('font-size', tickFontSize);
+
+      var locSlider = document.createElement('input');
+      locSlider.type = 'range';
+      locSlider.id   = 'locSlider';
+      locSlider.min  = -2;
+      locSlider.max  = 2;
+      locSlider.step = 0.01;
+      locSlider.value = Loc;
+      locSlider.style.position = 'absolute';
+      locSlider.style.left = window_x_cdf[0] + 'px';
+      locSlider.style.top  = (height * 0.775) + 'px';
+      locSlider.style.width = (window_x_cdf[1] - window_x_cdf[0]) + 'px';
+      locSlider.style.margin = '0';
+      locSlider.style.padding = '0';
+      document.body.appendChild(locSlider);
+
+      [-2, -1, 0, 1, 2].forEach(function(v){
+        var pct = (v + 2) / 4;
+        svg.append('text')
+          .attr('transform', 'translate(' + (window_x_cdf[0] + pct * (window_x_cdf[1] - window_x_cdf[0])) + ',' + (height * 0.835) + ')')
+          .style('text-anchor', 'middle')
+          .text(v)
+          .style('font-size', tickFontSize);
+      });
+
+      locSlider.addEventListener('input', function(){
+        Loc = +this.value;
+        updatePlots(0);
+      });
+
+      // Scale slider (right bottom)
+      svg.append('text')
+        .attr('transform', 'translate(' + ((window_x_cdf[0] + window_x_cdf[1]) / 2) + ',' + (height * 0.8975) + ')')
+        .style('text-anchor', 'middle')
+        .text('scale')
+        .style('font-size', tickFontSize);
+
+      var scaleSlider = document.createElement('input');
+      scaleSlider.type = 'range';
+      scaleSlider.id   = 'scaleSlider';
+      scaleSlider.min  = 0.1;
+      scaleSlider.max  = 5;
+      scaleSlider.step = 0.01;
+      scaleSlider.value = Scale;
+      scaleSlider.style.position = 'absolute';
+      scaleSlider.style.left = window_x_cdf[0] + 'px';
+      scaleSlider.style.top  = (height * 0.925) + 'px';
+      scaleSlider.style.width = (window_x_cdf[1] - window_x_cdf[0]) + 'px';
+      scaleSlider.style.margin = '0';
+      scaleSlider.style.padding = '0';
+      document.body.appendChild(scaleSlider);
+
+      [0.1, 1, 2, 3, 4, 5].forEach(function(v){
+        var pct = (v - 0.1) / (5 - 0.1);
+        svg.append('text')
+          .attr('transform', 'translate(' + (window_x_cdf[0] + pct * (window_x_cdf[1] - window_x_cdf[0])) + ',' + (height * 0.985) + ')')
+          .style('text-anchor', 'middle')
+          .text(v)
+          .style('font-size', tickFontSize);
+      });
+
+      scaleSlider.addEventListener('input', function(){
+        Scale = +this.value;
+        if (Scale <= 0) Scale = 0.1;
+        updatePlots(0);
+      });
+
+      updatePlots();
+
+    </script>
+  </body>
+</html>

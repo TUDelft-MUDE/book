@@ -26,21 +26,11 @@ $$
 F(x) = 1 - e^{-\lambda x}
 $$
 
-which is visually represented in the figure below.
-
-```{figure} https://files.mude.citg.tudelft.nl/exponential_cdf.png
-
----
-
----
-Exponential distribution function: CDF.
-```
-
-The influence of the parameter $\lambda$ can also be observed in the CDF. The higher the parameter $\lambda$, the faster the CDF reaches values of the non-exceedance probability close to 1. Thus, lower variability of the random variable is obtained.
+which is visually represented in the interactive element below. 
 
 ## Interactive Element
 
-Below, you find an interactive element that shows the pdf and cdf of an exponential distribution. The element also includes sliders for the **location** and **scale** which allow us to scale this element to intervals other than $\[0,+\infty\[$.
+Below, you find an interactive element that shows the pdf and cdf of an exponential distribution. The element also includes sliders for the **location** and **scale** which allow us to scale this element to intervals other than $\[0,+\infty\[$. The influence of the parameter $\lambda$ can also be observed in the CDF. The higher the parameter $\lambda$, the faster the CDF reaches values of the non-exceedance probability close to 1. Thus, lower variability of the random variable is obtained.
 
 % START-CREDIT
 % source: maxramgraber
