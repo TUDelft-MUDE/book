@@ -48,15 +48,15 @@ $F(x_2)-F(x_1)$. When working with a finite set of samples, we can compute the d
 The element below illustrates the resulting histogram: 
 
 
-````{iframe-figure} ../_static/elements/element_empirical_wind_speed.html
-:name: empirical_wind_speed  
+````{iframe-figure} ../_static/elements/element_empirical_wind_speed_pdf.html
+:name: empirical_wind_speed_pdf
 
 Empirical PDF derived from wind speed estimates at 10m height in Delft over the past year. Hover over the bars to highlight the interval probabilities. [^ref]
 ````                                
 
 <iframe
   loading="lazy"
-  src="../_static/elements/element_empirical_wind_speed.html"
+  src="../_static/elements/element_empirical_wind_speed_pdf.html"
   style="width: 100%; aspect-ratio: 2 / 1; border: none; border-radius: 8px;">
 </iframe>
 
@@ -93,6 +93,12 @@ Using the above algorithm, the following figure is obtained. Note that empirical
 
 Empirical CDF derived from wind speed estimates at 10m height in Delft over the past year. Hover over the graph to highlight individual data points. The red vertical lines demarkate the latest wind speed estimate in Delft. [^ref]
 ````
+
+<iframe
+  loading="lazy"
+  src="../_static/elements/element_empirical_wind_speed_cdf.html"
+  style="width: 100%; aspect-ratio: 1 / 1; border: none; border-radius: 8px;">
+</iframe>
 
 [^density]: Happily, in most coding languages, the algorithm to compute the pdf is already implemented and we just need to plot a histogram selecting the option to show us the densities.
 
