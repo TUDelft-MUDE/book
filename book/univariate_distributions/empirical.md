@@ -13,12 +13,6 @@ As an example, let us consider a dataset of wind speeds in Delft. The figure bel
 Wind speed estimates at 10m height in Delft over the past year. Hover over the graph to highlight individual data points. This element, and all subsequent elements on this page, access the latest available wind speed data from an online resource. If you come back later, these plots may look different. [^ref]
 ````
 
-<iframe
-  loading="lazy"
-  src="../_static/elements/element_empirical_wind_speed.html"
-  style="width: 100%; aspect-ratio: 2 / 1; border: none; border-radius: 8px;">
-</iframe>
-
 ## Step 2: Computing the empirical PDF
 
 A histogram can fulfill a similar purpose to a PDF, but instead of continuous probability densities it displays the **frequency** of events in a certain discrete value range. We have discussed in the previous section how the probability to obtain a sample in a value between $x_1$ and $x_2$ can be obtained from the CDF as
@@ -60,12 +54,6 @@ The element below illustrates the resulting histogram:
 Empirical PDF derived from wind speed estimates at 10m height in Delft over the past year. Hover over the bars to highlight the interval probabilities. [^ref]
 ````                                
 
-<iframe
-  loading="lazy"
-  src="../_static/elements/element_empirical_wind_speed_pdf.html"
-  style="width: 100%; aspect-ratio: 1 / 1; border: none; border-radius: 8px;">
-</iframe>
-
 ## Step 3: Computing the empirical CDF
 
 As we have discussed in the previous sections, the CDF defines the non-exceedance probabilities for certain values of the random variable $x$, in this case: wind speed. In the empirical setting, this means that we need to assign to each observation a non-exceedance probability. In this instance, we are neglecting the time dimension, and sort the hourly wind speed measurements in ascending order, which assigns to each data point its corresponding rank.
@@ -75,12 +63,6 @@ As we have discussed in the previous sections, the CDF defines the non-exceedanc
 
 Wind speed estimates at 10m height in Delft over the past year. Click the button on the right to sort the data set. The red vertical lines demarkate the latest wind speed estimate in Delft. [^ref]
 ````
-
-<iframe
-  loading="lazy"
-  src="../_static/elements/element_empirical_wind_speed_sorting.html"
-  style="width: 100%; aspect-ratio: 2 / 1; border: none; border-radius: 8px;">
-</iframe>
 
 If we assume that our data set represent **independent and identically distributed** (i.i.d.) samples from the underlying distribution, we can derive the empirical non-exceedance probabilities by sorting the data and computing the non-exceedance probabilities from their rank.
 
@@ -105,12 +87,6 @@ Using the above algorithm, the following figure is obtained. Note that empirical
 
 Empirical CDF derived from wind speed estimates at 10m height in Delft over the past year. Hover over the graph to highlight individual data points. The red vertical lines demarkate the latest wind speed estimate in Delft. [^ref]
 ````
-
-<iframe
-  loading="lazy"
-  src="../_static/elements/element_empirical_wind_speed_cdf.html"
-  style="width: 100%; aspect-ratio: 1 / 1; border: none; border-radius: 8px;">
-</iframe>
 
 [^density]: Happily, in most coding languages, the algorithm to compute the pdf is already implemented and we just need to plot a histogram selecting the option to show us the densities.
 
