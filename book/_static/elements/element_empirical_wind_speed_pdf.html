@@ -9,7 +9,7 @@
       position:absolute; top:6px; margin:0; font-weight:normal;
       transform:translateX(-50%);
     }
-    .tooltip{
+    .tooltip_pdf{
       position:absolute; background:#fff; border:1px solid #999;
       padding:3px 6px; font-size:12px; pointer-events:none;
     }
@@ -18,8 +18,8 @@
 </head>
 <body>
   <h2 id="chart-title">loading…</h2>
-  <div id="tooltip" class="tooltip" style="display:none;"></div>
-  <svg id="click"></svg>
+  <div id="tooltip_pdf" class="tooltip_pdf" style="display:none;"></div>
+  <svg id="click_pdf"></svg>
 
 <script>
 /* ============================================================
@@ -29,7 +29,7 @@ const side = Math.min(
   Math.max(document.documentElement.clientWidth , window.innerWidth ) * 0.95,
   Math.max(document.documentElement.clientHeight, window.innerHeight) * 0.95
 );
-const svg  = d3.select('#click').attr('width',side).attr('height',side);
+const svg  = d3.select('#click_pdf').attr('width',side).attr('height',side);
 const fsz  = (12 * side / 600) + 'px';
 const titleSel = d3.select('#chart-title').style('font-size',fsz);
 
@@ -65,7 +65,7 @@ svg.append('text')
   .text('interval probability');
 
 /* Tooltip */
-const tip = d3.select('#tooltip');
+const tip = d3.select('#tooltip_pdf');
 
 /* ============================================================
    1.  DATA (live fetch with local fallback)

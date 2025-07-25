@@ -12,7 +12,7 @@
   <body>
     <h2 id="chart-title">loading…</h2>
     <button id="sort-reset-btn" style="display:none;">Sort</button>
-    <svg id="click" xmlns="http://www.w3.org/2000/svg"></svg>
+    <svg id="click_sorting" xmlns="http://www.w3.org/2000/svg"></svg>
 
     <script>
     /* ---------- layout & scales ---------- */
@@ -22,7 +22,7 @@
     let width, height;
     if(vw/aspect < vh){ width = vw; height = vw/aspect; } else { width = vh*aspect; height = vh; }
 
-    const svg = d3.select('#click').attr('width',width).attr('height',height);
+    const svg = d3.select('#click_sorting').attr('width',width).attr('height',height);
     const fsz = (12*width/600)+'px', stroke=3*height/600, r=2.5*height/600, rAct=4*height/600;
     d3.select('#chart-title').style('font-size',fsz).style('left',(width/2)+'px');
 
