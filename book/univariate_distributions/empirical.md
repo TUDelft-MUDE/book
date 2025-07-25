@@ -51,12 +51,6 @@ The element below illustrates the resulting histogram:
 ````{iframe-figure} ../_static/elements/element_empirical_wind_speed.html
 :name: empirical_wind_speed  
 
-<iframe
-  loading="lazy"
-  src="../_static/elements/element_empirical_wind_speed.html"
-  style="width: 100%; aspect-ratio: 2 / 1; border: none; border-radius: 8px;">
-</iframe>
-
 Empirical PDF derived from wind speed estimates at 10m height in Delft over the past year. Hover over the bars to highlight the interval probabilities. [^ref]
 ````                                
 
