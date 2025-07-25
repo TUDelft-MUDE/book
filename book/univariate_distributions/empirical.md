@@ -4,37 +4,26 @@ As you can imagine, it is also possible to define a PDF and a CDF based on obser
 
 ## Step 1: Analyzing the data
 
-As an example, let us consider a dataset of wind speeds close to Schiphol Airport. The figure below shows the wind speeds measured over 1 year. We can see that there are wind speeds between 0 m/s and about 18 m/s, and that there are some weak seasonal trends.
+As an example, let us consider a dataset of wind speeds in Delft. The figure below shows wind speed estimates in Delft at 10m height over the past year[^ref]. To the right of the time series is a **histogram** of the wind speeds. Observe how some wind speeds are more common than others. A histogram can fulfill a similar purpose to a PDF, but instead of continuous probability densities it displays the frequency of events in a certain discrete value range. Histogram counts can be converted into probabilities by dividing the counts in each bin by the total number of data points, ensuring that the histogram bins sum to one.
 
-
-```{figure} https://files.mude.citg.tudelft.nl/data_overview.png
----
-scale: 100%
-name: data_wind
-
----
-Time series of wind speed close to Schiphol Airport.
-```
-
-% START-CREDIT
-% source: maxramgraber
-````{margin}
-```{attributiongrey} Attribution
-:class: attribution
-This interactive figure is created by Max Ramgraber. {ref}`Find out more here <distributions_credit>`.
-```
-````
-% END-CREDIT
 
 ````{iframe-figure} ../_static/elements/element_empirical_wind_speed.html
 :name: empirical_wind_speed
 
-Live read wind speeds at 10m height in Delft over the past year. Hover over the graph to highlight individual data points. If the graph only shows data from January to December 2024, the server is currently unreachable and a backup dataset has been loaded. <a href="https://open-meteo.com/">Weather data by Open-Meteo.com</a>. [^ref]
+Live wind speeds at 10m height in Delft over the past year. Hover over the graph to highlight individual data points. If the graph only shows data from January to December 2024, the server is currently unreachable and a backup dataset has been loaded. <a href="https://open-meteo.com/">Weather data by Open-Meteo.com</a>. [^ref]
 ````
 
 ## Step 2: Computing the empirical CDF
 
-As we have discussed in the previous sections, the CDF defines the non-exceedance probabilities for certain values of the random variable $x$, in this case: wind speed. In the empirical setting, this means that we need to assign to each observation a non-exceedance probability. To do so, we just need to sort the observations and compute the non-exceedance probabilities using the ranks. This is illustrated below with pseudo-code.
+As we have discussed in the previous sections, the CDF defines the non-exceedance probabilities for certain values of the random variable $x$, in this case: wind speed. In the empirical setting, this means that we need to assign to each observation a non-exceedance probability. In this instance, we are neglecting the time dimension, and sort the hourly wind speed measurements in ascending order, which assigns to each data point its corresponding rank.
+
+````{iframe-figure} ../_static/elements/element_empirical_wind_speed_sorting.html
+:name: empirical_wind_speed_sorting
+
+Live wind speeds at 10m height in Delft over the past year. Click the button on the right to sort the data set. If the graph only shows data from January to December 2024, the server is currently unreachable and a backup dataset has been loaded. <a href="https://open-meteo.com/">Weather data by Open-Meteo.com</a>. [^ref]
+````
+
+To do so, we just need to sort the observations and compute the non-exceedance probabilities using the ranks. This is illustrated below with pseudo-code.
 
     read observations
 

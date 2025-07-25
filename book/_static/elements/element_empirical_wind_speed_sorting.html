@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <style>
+      body{ margin:0; overflow:hidden; font-family:Helvetica, sans-serif; }
+      #chart-title{ position:absolute; top:6px; margin:0; font-weight:normal; transform:translateX(-50%); }
+      #sort-reset-btn{ position:absolute; top:40px; transform:translateY(-50%); cursor:pointer; }
+    </style>
+  </head>
+  <body>
+    <h2 id="chart-title">loading…</h2>
+    <button id="sort-reset-btn" style="display:none;">Sort</button>
+    <svg id="click" xmlns="http://www.w3.org/2000/svg"></svg>
+
+    <script>
+    /* ---------- layout & scales ---------- */
+    const vw = Math.max(document.documentElement.clientWidth||0, window.innerWidth||0)*0.95,
+          vh = Math.max(document.documentElement.clientHeight||0,window.innerHeight||0)*0.95,
+          aspect = 2.0;
+    let width, height;
+    if(vw/aspect < vh){ width = vw; height = vw/aspect; } else { width = vh*aspect; height = vh; }
+
+    const svg = d3.select('#click').attr('width',width).attr('height',height);
+    const fsz = (12*width/600)+'px', stroke=3*height/600, r=2.5*height/600, rAct=4*height/600;
+    d3.select('#chart-title').style('font-size',fsz).style('left',(width/2)+'px');
+
+    const rightMar = width*0.14, gap=width*0.02;
+    const plotX=[width*0.08,width-rightMar-gap], plotY=[height*0.10,height*0.75];
+    d3.select('#sort-reset-btn').style('left',(width-rightMar/2)+'px')
+                                .style('top',((plotY[0]+plotY[1])/2)+'px')
+                                .style('font-size',fsz);
+
+    const xTime=d3.scaleTime().range(plotX), xRank=d3.scaleLinear().range(plotX), y=d3.scaleLinear().range([plotY[1],plotY[0]]);
+    const xAxisTime=d3.axisBottom(xTime).ticks(d3.timeMonth.every(3)).tickFormat(d3.timeFormat('%m/%Y'));
+    const xAxisRank=d3.axisBottom(xRank).ticks(6);
+    const yAxis=d3.axisLeft(y);
+
+    const gXTime=svg.append('g').attr('transform',`translate(0,${plotY[1]})`).style('font-size',fsz);
+    const gXRank=svg.append('g').attr('transform',`translate(0,${plotY[1]})`).style('font-size',fsz).style('opacity',0);
+    const gY=svg.append('g').attr('transform',`translate(${plotX[0]},0)`).style('font-size',fsz);
+
+    const xLabTime=svg.append('text').attr('transform',`translate(${(plotX[0]+plotX[1])/2},${height*0.875})`)
+                      .style('text-anchor','middle').text('time').style('font-size',fsz);
+    const xLabRank=svg.append('text').attr('transform',`translate(${(plotX[0]+plotX[1])/2},${height*0.875})`)
+                      .style('text-anchor','middle').text('rank').style('font-size',fsz).style('opacity',0);
+    svg.append('text').attr('transform',`translate(${width*0.03},${(plotY[0]+plotY[1])/2}) rotate(-90)`)
+       .style('text-anchor','middle').text('wind speed [m/s]').style('font-size',fsz);
+
+    /* ---------- data load with fallback ---------- */
+    const now=new Date(), end=now.toISOString().slice(0,10), startD=new Date(now); startD.setDate(startD.getDate()-364); const start=startD.toISOString().slice(0,10);
+    const lat=52.00667, lon=4.35556;
+    const live=`https://archive-api.open-meteo.com/v1/archive?latitude=${lat}&longitude=${lon}&start_date=${start}&end_date=${end}&hourly=wind_speed_10m&timezone=Europe%2FAmsterdam`;
+    const backup='delft_2024_wind.json';
+
+    let dataOrig=null, dataSort=null, latest=null, sorted=false;
+    fetchData(live).catch(e=>fetchData(backup,true)).catch(showFatal);
+
+    async function fetchData(url,isBackup=false){
+      const r=await fetch(url); if(!r.ok) throw new Error(r.statusText);
+      const j=await r.json(), t=j.hourly.time, s=j.hourly.wind_speed_10m; if(!t||!s) throw new Error('schema');
+      dataOrig=[]; for(let i=0;i<t.length;i++){ const d=new Date(t[i]); if((isBackup||d<=now)&&s[i]!=null) dataOrig.push({date:d,speed:+s[i]}); }
+      if(!dataOrig.length) throw new Error('no data');
+      latest=dataOrig[dataOrig.length-1];
+      dataSort=dataOrig.slice().sort((a,b)=>a.speed-b.speed).map((d,i)=>({...d,rank:i}));
+      drawInitial(isBackup);
+    }
+
+    /* ---------- draw initial time‑series ---------- */
+    let lineT, points, lineR, vline, hline;
+    const btn=d3.select('#sort-reset-btn').on('click',toggle);
+
+    function drawInitial(isBackup){
+      d3.select('#chart-title').text(`Wind speed in Delft at ${d3.timeFormat('%H:%M')(latest.date)}: ${latest.speed.toFixed(1)} m/s${isBackup?' (backup data)':''}`);
+      xTime.domain(d3.extent(dataOrig,d=>d.date)); xRank.domain([0,dataOrig.length-1]); y.domain([0,d3.max(dataOrig,d=>d.speed)]).nice();
+      gXTime.call(xAxisTime); gY.call(yAxis);
+
+      lineT=svg.append('path').datum(dataOrig).attr('fill','none').attr('stroke','#666').attr('stroke-width',stroke)
+              .attr('d',d3.line().x(d=>xTime(d.date)).y(d=>y(d.speed)));
+
+      points=svg.append('g').selectAll('circle').data(dataOrig).enter().append('circle')
+               .attr('cx',d=>xTime(d.date)).attr('cy',d=>y(d.speed)).attr('r',d=>d===latest?rAct:r)
+               .attr('fill',d=>d===latest?'red':'#444').style('opacity',0);
+
+      vline=svg.append('line').attr('x1',xTime(latest.date)).attr('x2',xTime(latest.date))
+              .attr('y1',plotY[0]).attr('y2',plotY[1]).attr('stroke','red').attr('stroke-width',1.5);
+      hline=svg.append('line').attr('x1',plotX[0]).attr('x2',plotX[1])
+              .attr('y1',y(latest.speed)).attr('y2',y(latest.speed)).attr('stroke','red').attr('stroke-width',1.5);
+      btn.style('display','block');
+    }
+
+    /* ---------- interaction ---------- */
+    function toggle(){ sorted?reset():sort(); }
+
+    function sort(){
+      sorted=true; btn.text('Reset');
+      const F=1000, M=2000, L=1000; // fade‑in, move, line fade
+
+      /* phase 1: points fade in, time line/axis fade out */
+      lineT.transition().duration(F).style('opacity',0);
+      gXTime.transition().duration(F).style('opacity',0);
+      xLabTime.transition().duration(F).style('opacity',0);
+      points.transition().duration(F).style('opacity',1);
+
+      /* phase 2: after fade, move points & guides, show rank axis */
+      const latestRank=dataSort.find(d=>d.date.getTime()===latest.date.getTime()).rank;
+      points.transition().delay(F).duration(M)
+            .attr('cx',d=>xRank(dataSort.find(sd=>sd.date.getTime()===d.date.getTime()).rank));
+      gXRank.call(xAxisRank).transition().delay(F).duration(M).style('opacity',1);
+      xLabRank.transition().delay(F).duration(M).style('opacity',1);
+
+      const x0=xTime(latest.date), x1=xRank(latestRank);
+      vline.transition().delay(F).duration(M)
+           .attrTween('x1',()=>t=>x0+(x1-x0)*t).attrTween('x2',()=>t=>x0+(x1-x0)*t);
+
+      /* phase 3: line in, points out */
+      lineR=svg.append('path').datum(dataSort).attr('fill','none').attr('stroke','#888').attr('stroke-width',stroke)
+              .attr('d',d3.line().x((d,i)=>xRank(i)).y(d=>y(d.speed))).style('opacity',0);
+      lineR.transition().delay(F+M).duration(L).style('opacity',1);
+      points.transition().delay(F+M).duration(L).style('opacity',0);
+    }
+
+    function reset(){
+      sorted=false; btn.text('Sort');
+      const D=3000;
+      /* axis back */
+      gXTime.transition().duration(D).style('opacity',1);
+      gXRank.transition().duration(D).style('opacity',0);
+      xLabTime.transition().duration(D).style('opacity',1);
+      xLabRank.transition().duration(D).style('opacity',0);
+
+      /* points move back & fade out */
+      points.transition().duration(D)
+            .attr('cx',d=>xTime(d.date))
+            .style('opacity',0);
+
+      /* rank line fades out then removed */
+      if(lineR) lineR.transition().duration(D).style('opacity',0).remove(), lineR=null;
+
+      /* time line fades in */
+      lineT.transition().duration(D).style('opacity',1);
+
+      /* guide back */
+      const xBack=xTime(latest.date);
+      vline.transition().duration(D).attr('x1',xBack).attr('x2',xBack);
+    }
+
+    function showFatal(e){ console.error(e); svg.append('text').attr('x',width/2).attr('y',height/2)
+      .style('text-anchor','middle').style('font-size',fsz).style('fill','red').text('Data load failed'); }
+    </script>
+  </body>
+</html>
