@@ -65,20 +65,6 @@ As we have discussed in the previous sections, the CDF defines the non-exceedanc
 Wind speed estimates at 10m height in Delft over the past year. Click the button on the right to sort the data set. The red vertical lines demarkate the latest wind speed estimate in Delft. [^ref]
 ````
 
-````{iframe-figure} ../_static/elements/element_empirical_wind_speed_sorting.html
-:name: empirical_wind_speed_sortingv2
-:width: 100%
-
-Wind speed estimates at 10m height in Delft over the past year. Click the button on the right to sort the data set. The red vertical lines demarkate the latest wind speed estimate in Delft. [^ref]
-````
-
-````{iframe-figure} ../_static/elements/element_empirical_wind_speed_sorting.html
-:name: empirical_wind_speed_sortingv3
-:width: 100vw
-
-Wind speed estimates at 10m height in Delft over the past year. Click the button on the right to sort the data set. The red vertical lines demarkate the latest wind speed estimate in Delft. [^ref]
-````
-
 If we assume that our data set represent **independent and identically distributed** (i.i.d.) samples from the underlying distribution, we can derive the empirical non-exceedance probabilities by sorting the data and computing the non-exceedance probabilities from their rank.
 
 To do so, we just need to sort the observations and compute the non-exceedance probabilities using the ranks. This is illustrated below with pseudo-code.
