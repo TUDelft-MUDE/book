@@ -48,10 +48,8 @@ $F(x_2)-F(x_1)$. When working with a finite set of samples, we can compute the d
 The element below illustrates the resulting histogram: 
 
 
-````{iframe-figure} 
-:src: ../_static/elements/element_empirical_wind_speed.html
+````{iframe-figure} ../_static/elements/element_empirical_wind_speed.html
 :name: empirical_wind_speed  
-:width: 100% 
 
 Empirical PDF derived from wind speed estimates at 10m height in Delft over the past year. Hover over the bars to highlight the interval probabilities. [^ref]
 ````                                
@@ -61,10 +59,8 @@ Empirical PDF derived from wind speed estimates at 10m height in Delft over the 
 
 As we have discussed in the previous sections, the CDF defines the non-exceedance probabilities for certain values of the random variable $x$, in this case: wind speed. In the empirical setting, this means that we need to assign to each observation a non-exceedance probability. In this instance, we are neglecting the time dimension, and sort the hourly wind speed measurements in ascending order, which assigns to each data point its corresponding rank.
 
-````{iframe-figure} 
-:src: ../_static/elements/element_empirical_wind_speed_sorting.html
-:name: empirical_wind_speed_sorting  
-:width: 100% 
+````{iframe-figure} ../_static/elements/element_empirical_wind_speed_sorting.html
+:name: empirical_wind_speed_sorting
 
 Wind speed estimates at 10m height in Delft over the past year. Click the button on the right to sort the data set. The red vertical lines demarkate the latest wind speed estimate in Delft. [^ref]
 ````
@@ -87,10 +83,8 @@ To do so, we just need to sort the observations and compute the non-exceedance p
 Using the above algorithm, the following figure is obtained. Note that empirical CDFs are usually plotted using a step plot to highlight their empirical nature. From this plot, we can read the non-exceedance probability of the latest wind speed estimate in Delft (since this plot is updated dynamically, you may see a different number when you next load this page). 
 
 
-````{iframe-figure} 
-:src: ../_static/elements/element_empirical_wind_speed_cdf.html
-:name: empirical_wind_speed_cdf  
-:width: 100% 
+````{iframe-figure} ../_static/elements/element_empirical_wind_speed_cdf.html
+:name: empirical_wind_speed_cdf
 
 Empirical CDF derived from wind speed estimates at 10m height in Delft over the past year. Hover over the graph to highlight individual data points. The red vertical lines demarkate the latest wind speed estimate in Delft. [^ref]
 ````
