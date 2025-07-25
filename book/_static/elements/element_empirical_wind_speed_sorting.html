@@ -52,7 +52,7 @@
     const now=new Date(), end=now.toISOString().slice(0,10), startD=new Date(now); startD.setDate(startD.getDate()-364); const start=startD.toISOString().slice(0,10);
     const lat=52.00667, lon=4.35556;
     const live=`https://archive-api.open-meteo.com/v1/archive?latitude=${lat}&longitude=${lon}&start_date=${start}&end_date=${end}&hourly=wind_speed_10m&timezone=Europe%2FAmsterdam`;
-    const backup='delft_2024_wind.json';
+    const backup='wind_speed_Delft_2024.json';
 
     let dataOrig=null, dataSort=null, latest=null, sorted=false;
     fetchData(live).catch(e=>fetchData(backup,true)).catch(showFatal);

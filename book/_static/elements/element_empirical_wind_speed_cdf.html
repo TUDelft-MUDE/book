@@ -78,7 +78,7 @@ const startStr = startDate.toISOString().slice(0,10);
 
 const lat=52.00667, lon=4.35556;
 const liveURL = `https://archive-api.open-meteo.com/v1/archive?latitude=${lat}&longitude=${lon}&start_date=${startStr}&end_date=${endDate}&hourly=wind_speed_10m&timezone=Europe%2FAmsterdam`;
-const backupURL = 'delft_2024_wind.json';
+const backupURL = 'wind_speed_Delft_2024.json';
 
 load(liveURL).catch(e=>load(backupURL,true)).catch(fatal);
 

@@ -4,23 +4,63 @@ As you can imagine, it is also possible to define a PDF and a CDF based on obser
 
 ## Step 1: Analyzing the data
 
-As an example, let us consider a dataset of wind speeds in Delft. The figure below shows wind speed estimates in Delft at 10m height over the past year[^ref]. To the right of the time series is a **histogram** of the wind speeds. Observe how some wind speeds are more common than others. A histogram can fulfill a similar purpose to a PDF, but instead of continuous probability densities it displays the frequency of events in a certain discrete value range. Histogram counts can be converted into probabilities by dividing the counts in each bin by the total number of data points, ensuring that the histogram bins sum to one.
+As an example, let us consider a dataset of wind speeds in Delft. The figure below shows wind speed estimates in Delft at 10m height over the past year[^ref]. To the right of the time series is a **histogram** of the wind speeds. Observe how some wind speeds are more common than others.
 
 
 ````{iframe-figure} ../_static/elements/element_empirical_wind_speed.html
 :name: empirical_wind_speed
 
-Live wind speeds at 10m height in Delft over the past year. Hover over the graph to highlight individual data points. [^ref]
+Live wind speeds at 10m height in Delft over the past year. Hover over the graph to highlight individual data points. This element, and all subsequent elements on this page, access the latest available wind speed data from an online source. If you come back later, these plots may look different. [^ref]
 ````
 
-## Step 2: Computing the empirical CDF
+## Step 2: Computing the empirical PDF
+
+A histogram can fulfill a similar purpose to a PDF, but instead of continuous probability densities it displays the **frequency** of events in a certain discrete value range. We have discussed in the previous section how the probability to obtain a sample in a value between $x_1$ and $x_2$ can be obtained from the CDF as
+$F(x_2)-F(x_1)$. When working with a finite set of samples, we can compute the discrete interval probability $P(x_1 < x \leq x_2)$ from the histogram by dividing the counts in each bin by the total number of data points. This process is illustrated with the following pseudo-code [^density].
+
+
+    read observations
+
+    #Assume the bin size
+    bin_size = 2
+
+    #Calculate the number of bins and the bin edges given the bin size
+    min_value = minimum value of observations
+    max_value = maximum value of observations 
+    n_bins = (max_value - min_value) / bin_size 
+    bin_edges = range of n_bins + 1 values between the truncated value \
+                of min_value and the ceiling value of max_value
+
+    #Count the number of observations in each bin
+    count = empty list
+    for each bin:
+        append the number of observations between the bin_edges to count
+
+    #Compute relative frequencies
+    freq = count / number of observations
+
+    #Compute densities
+    densities = freq / bin_size
+
+    #plot epdf
+    barplot densities
+
+The element below illustrates the resulting histogram: 
+
+````{iframe-figure} ../_static/elements/element_empirical_wind_speed_pdf.html
+:name: empirical_wind_speed_sorting
+
+Empirical PDF derived from lwind speeds at 10m height in Delft over the past year. Hover over the bars to highlight the interval probabilities. [^ref]
+````
+
+## Step 3: Computing the empirical CDF
 
 As we have discussed in the previous sections, the CDF defines the non-exceedance probabilities for certain values of the random variable $x$, in this case: wind speed. In the empirical setting, this means that we need to assign to each observation a non-exceedance probability. In this instance, we are neglecting the time dimension, and sort the hourly wind speed measurements in ascending order, which assigns to each data point its corresponding rank.
 
 ````{iframe-figure} ../_static/elements/element_empirical_wind_speed_sorting.html
 :name: empirical_wind_speed_sorting
 
-Live wind speeds at 10m height in Delft over the past year. Click the button on the right to sort the data set. [^ref]
+Live wind speeds at 10m height in Delft over the past year. Click the button on the right to sort the data set. The red vertical lines demarkate the latest wind speed estimate in Delft. [^ref]
 ````
 
 If we assume that our data set represent **independent and identically distributed** (i.i.d.) samples from the underlying distribution, we can derive the empirical non-exceedance probabilities by sorting the data and computing the non-exceedance probabilities from their rank.
@@ -41,59 +81,12 @@ To do so, we just need to sort the observations and compute the non-exceedance p
 Using the above algorithm, the following figure is obtained. Note that empirical CDFs are usually plotted using a step plot to highlight their empirical nature. From this plot, we can read the non-exceedance probability of the latest wind speed estimate in Delft (since this plot is updated dynamically, you may see a different number when you next load this page). 
 
 
-````{iframe-figure} ../_static/elements/element_empirical_wind_speed.html
-:name: empirical_wind_speed
+````{iframe-figure} ../_static/elements/element_empirical_wind_speed_cdf.html
+:name: empirical_wind_speed_cdf
 
-Empirical cdf derived from live wind speeds at 10m height in Delft over the past year. Hover over the graph to highlight individual data points. [^ref]
+Empirical cdf derived from live wind speeds at 10m height in Delft over the past year. Hover over the graph to highlight individual data points. The red vertical lines demarkate the latest wind speed estimate in Delft. [^ref]
 ````
 
-## Step 3: Computing the empirical PDF
-
-It can be useful to also visualize the empirical PDF. As mentioned above, the PDF is the derivative of the CDF, leading to the following equation.
-
-$$
-f(x) = F'(x) = \lim_{\Delta x \to 0} \frac{F(x+\Delta x)-F(x)}{\Delta x}
-$$
-
-Thus, we can compute the empirical PDF assuming a bin size. To do so, we need to count the number of observations in each bin and calculate the relative frequency of each bin by dividing that count with the total number of observations. The density will be then those relative frequencies divided by the bin size. This process is illustrated with the following pseudo-code [^density].
-
-
-    read observations
-
-    #Assume the bin size
-    bin_size = 2
-
-    #Calculate the number of bins and the bin edges given the bin size
-    min_value = minimum value of observations
-    max_value = maximum value observations 
-    n_bins = (max_value - min_value) / bin_size 
-    bin_edges = range of n_bins + 1 values between the truncated value \
-                of min_value and the ceiling value of max_value
-
-    #Count the number of observations in each bin
-    count = empty list
-    for each bin:
-        append the number of observations between the bin_edges to count
-
-    #Compute relative frequencies
-    freq = count / number of observations
-
-    #Compute densities
-    densities = freq / bin_size
-
-    #plot epdf
-    barplot densities
-
-Using the above algorithm, the following figure is obtained. We can see that most of the density is concentrated between 2 and 9 m/s.
-
-```{figure} https://files.mude.citg.tudelft.nl/epdf_wind.png
----
-scale: 75%
-name: epdf
-
----
-Empirical probability density function of the wind speed data.
-```
 
 [^density]: Happily, in most coding languages, the algorithm to compute the pdf is already implemented and we just need to plot a histogram selecting the option to show us the densities.
 

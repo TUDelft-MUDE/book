@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <style>
+    body{ margin:0; overflow:hidden; font-family:Helvetica, sans-serif; }
+    #chart-title{
+      position:absolute; top:6px; margin:0; font-weight:normal;
+      transform:translateX(-50%);
+    }
+    .tooltip{
+      position:absolute; background:#fff; border:1px solid #999;
+      padding:3px 6px; font-size:12px; pointer-events:none;
+    }
+    rect.bin:hover{ cursor:pointer; }
+  </style>
+</head>
+<body>
+  <h2 id="chart-title">loading…</h2>
+  <div id="tooltip" class="tooltip" style="display:none;"></div>
+  <svg id="click"></svg>
+
+<script>
+/* ============================================================
+   0.  SQUARE CANVAS & PLOT FRAME
+============================================================ */
+const side = Math.min(
+  Math.max(document.documentElement.clientWidth , window.innerWidth ) * 0.95,
+  Math.max(document.documentElement.clientHeight, window.innerHeight) * 0.95
+);
+const svg  = d3.select('#click').attr('width',side).attr('height',side);
+const fsz  = (12 * side / 600) + 'px';
+const titleSel = d3.select('#chart-title').style('font-size',fsz);
+
+/* Plot margins */
+const margin = {top: side*0.08, right: side*0.08, bottom: side*0.10, left: side*0.12};
+const plotW  = side - margin.left - margin.right,
+      plotH  = side - margin.top  - margin.bottom;
+
+/* Position title in the centre of x‑axis */
+titleSel.style('left', (margin.left + plotW/2) + 'px');
+
+/* Scales (x‑axis = wind speed, y‑axis = interval probability) */
+const x = d3.scaleLinear().range([margin.left, margin.left+plotW]);
+const y = d3.scaleLinear().range([margin.top+plotH, margin.top]);  // inverted
+
+/* Axes */
+const gX = svg.append('g')
+  .attr('transform',`translate(0,${margin.top+plotH})`)
+  .style('font-size',fsz);
+const gY = svg.append('g')
+  .attr('transform',`translate(${margin.left},0)`)
+  .style('font-size',fsz);
+
+/* Axis labels */
+svg.append('text')
+  .attr('transform',`translate(${margin.left+plotW/2},${side-margin.bottom*0.4})`)
+  .style('text-anchor','middle').style('font-size',fsz)
+  .text('wind speed [m/s]');
+
+svg.append('text')
+  .attr('transform',`translate(${margin.left*0.4},${margin.top+plotH/2}) rotate(-90)`)
+  .style('text-anchor','middle').style('font-size',fsz)
+  .text('interval probability');
+
+/* Tooltip */
+const tip = d3.select('#tooltip');
+
+/* ============================================================
+   1.  DATA (live fetch with local fallback)
+============================================================ */
+const now = new Date();
+const endDate = now.toISOString().slice(0,10);
+const startDate = new Date(now); startDate.setDate(startDate.getDate()-364);
+const startStr = startDate.toISOString().slice(0,10);
+
+const lat=52.00667, lon=4.35556;
+const liveURL = `https://archive-api.open-meteo.com/v1/archive?latitude=${lat}&longitude=${lon}&start_date=${startStr}&end_date=${endDate}&hourly=wind_speed_10m&timezone=Europe%2FAmsterdam`;
+const backupURL = 'wind_speed_Delft_2024.json';
+
+load(liveURL).catch(e=>load(backupURL,true)).catch(fatal);
+
+let latestObs;         // latest real observation
+let bins;              // histogram bins (for hover highlight)
+
+/* ------------------------------------------------------------ */
+async function load(url,isBackup=false){
+  const r=await fetch(url);
+  if(!r.ok) throw new Error(r.statusText);
+  const j=await r.json();
+  const t=j.hourly?.time, s=j.hourly?.wind_speed_10m;
+  if(!t||!s) throw new Error('schema');
+
+  const data=[];
+  for(let i=0;i<t.length;i++){
+    const d=new Date(t[i]), v=s[i];
+    if((isBackup||d<=now)&&v!=null&&isFinite(v)) data.push({date:d,speed:+v});
+  }
+  if(!data.length) throw new Error('no data');
+
+  latestObs = data[data.length-1];
+  drawHistogram(data,isBackup);
+}
+
+/* ============================================================
+   2.  HISTOGRAM
+============================================================ */
+function drawHistogram(data,isBackup){
+  /* ---------- bins ---------- */
+  const maxSpeed = d3.max(data,d=>d.speed);
+  const edges = d3.ticks(0, maxSpeed, 10);           // same idea as early histogram
+  bins = [];
+  for(let i=0;i<edges.length-1;i++){
+    bins.push({x0:edges[i], x1:edges[i+1], cnt:0});
+  }
+  data.forEach(d=>{
+    const b = bins.find(b=>d.speed>=b.x0 && d.speed<b.x1) || bins[bins.length-1];
+    b.cnt++;
+  });
+
+  /* convert counts to probabilities */
+  const N = data.length;
+  bins.forEach(b=> b.prob = b.cnt / N);
+  const maxProb = d3.max(bins,b=>b.prob);
+  /* sanity: sum ≈ 1 */
+  const probSum = bins.reduce((a,b)=>a+b.prob,0);
+  if(Math.abs(probSum-1) > 1e-6) console.warn('Probabilities sum to',probSum);
+
+  /* ---------- scales & axes ---------- */
+  x.domain([0,maxSpeed*1.05]);
+  y.domain([0,maxProb*1.1]);        // little headroom
+
+  gX.call(d3.axisBottom(x));
+  gY.call(d3.axisLeft(y));
+
+  /* ---------- bars ---------- */
+  const barG = svg.append('g');
+  const barRatio = 0.8;             // 80 % width
+  const bars = barG.selectAll('rect')
+    .data(bins)
+    .enter().append('rect')
+      .attr('class','bin')
+      .attr('x',b=>{ const bw=x(b.x1)-x(b.x0); return x(b.x0)+(1-barRatio)*bw/2; })
+      .attr('width',b=> (x(b.x1)-x(b.x0))*barRatio)
+      .attr('y', b=> y(b.prob))
+      .attr('height',b=> y(0)-y(b.prob))
+      .attr('fill','#ccc');
+
+  /* ---------- highlight latest observation ---------- */
+  const latestBin = bins.find(b=>latestObs.speed>=b.x0 && latestObs.speed<b.x1) || bins[bins.length-1];
+
+
+  /* starting title */
+  titleSel.text(
+      `Wind speed in Delft at ${d3.timeFormat('%H:%M')(latestObs.date)}: `
+    + `${latestObs.speed.toFixed(1)} m/s`
+    + `  (interval P≈${(latestBin.prob*100).toFixed(1)} %)`
+    + (isBackup?'  [backup]':''));
+
+  /* ---------- hover interaction ---------- */
+  bars.on('mouseover',function(ev,b){
+        d3.select(this).attr('fill','red');
+        titleSel.text(
+          `Wind speed interval ${b.x0.toFixed(1)}–${b.x1.toFixed(1)} m/s`
+          + `  →  P≈${(b.prob*100).toFixed(2)} %`);
+      })
+      .on('mousemove',ev=>{
+        tip.style('left',(ev.pageX+10)+'px')
+           .style('top',(ev.pageY-28)+'px')
+           .style('display','none'); // tooltip not needed; title updates
+      })
+      .on('mouseout',function(ev,b){
+        d3.select(this).attr('fill','#ccc');
+        /* restore original title */
+        titleSel.text(
+          `Wind speed in Delft at ${d3.timeFormat('%H:%M')(latestObs.date)}: `
+          + `${latestObs.speed.toFixed(1)} m/s`
+          + `  (interval P≈${(latestBin.prob*100).toFixed(1)} %)`
+          + (isBackup?'  [backup]':''));
+      });
+}
+
+/* error */
+function fatal(e){
+  console.error(e);
+  svg.append('text').attr('x',side/2).attr('y',side/2)
+     .style('text-anchor','middle').style('font-size',fsz)
+     .style('fill','red').text('Data load failed');
+}
+</script>
+</body>
+</html>
