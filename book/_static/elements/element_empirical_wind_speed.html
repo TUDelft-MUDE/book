@@ -106,12 +106,14 @@
 
     const backupURL = 'wind_speed_Delft_2024.json';  // same‑folder fallback file
 
-    loadData(liveURL)
-      .catch(err => {
-        console.warn('Live fetch failed, switching to local backup:', err);
-        return loadData(backupURL, /*isBackup=*/true);
-      })
-      .catch(err => showFatal(err));
+    loadData(backupURL)
+
+    //loadData(liveURL)
+    //  .catch(err => {
+    //    console.warn('Live fetch failed, switching to local backup:', err);
+    //    return loadData(backupURL, /*isBackup=*/true);
+    //  })
+    //  .catch(err => showFatal(err));
 
 
     async function loadData(url, isBackup=false){

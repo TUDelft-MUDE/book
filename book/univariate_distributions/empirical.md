@@ -29,7 +29,7 @@ This interactive figure is created by Max Ramgraber. {ref}`Find out more here <d
 ````{iframe-figure} ../_static/elements/element_empirical_wind_speed.html
 :name: empirical_wind_speed
 
-Hover over the graph to read wind speeds in Delft over the past year. If the graph only shows data from January to December 2024, the server is currently unreachable and a backup dataset has been loaded.
+Live read wind speeds at 10m height in Delft over the past year. Hover over the graph to highlight individual data points. If the graph only shows data from January to December 2024, the server is currently unreachable and a backup dataset has been loaded. <a href="https://open-meteo.com/">Weather data by Open-Meteo.com</a>. [^ref]
 ````
 
 ## Step 2: Computing the empirical CDF
@@ -106,6 +106,8 @@ Empirical probability density function of the wind speed data.
 ```
 
 [^density]: Happily, in most coding languages, the algorithm to compute the pdf is already implemented and we just need to plot a histogram selecting the option to show us the densities.
+
+[^ref]: The API data shown here are offered under Attribution 4.0 International (CC BY 4.0). Zippenfenig, P. (2023). Open-Meteo.com Weather API [Computer software]. Zenodo. https://doi.org/10.5281/ZENODO.7970649.
 
 % START-CREDIT
 % source: distributions
