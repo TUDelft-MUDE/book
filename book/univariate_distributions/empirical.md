@@ -10,7 +10,7 @@ As an example, let us consider a dataset of wind speeds in Delft. The figure bel
 ````{iframe-figure} ../_static/elements/element_empirical_wind_speed.html
 :name: empirical_wind_speed
 
-Live wind speeds at 10m height in Delft over the past year. Hover over the graph to highlight individual data points. If the graph only shows data from January to December 2024, the server is currently unreachable and a backup dataset has been loaded. <a href="https://open-meteo.com/">Weather data by Open-Meteo.com</a>. [^ref]
+Live wind speeds at 10m height in Delft over the past year. Hover over the graph to highlight individual data points. [^ref]
 ````
 
 ## Step 2: Computing the empirical CDF
@@ -20,31 +20,32 @@ As we have discussed in the previous sections, the CDF defines the non-exceedanc
 ````{iframe-figure} ../_static/elements/element_empirical_wind_speed_sorting.html
 :name: empirical_wind_speed_sorting
 
-Live wind speeds at 10m height in Delft over the past year. Click the button on the right to sort the data set. If the graph only shows data from January to December 2024, the server is currently unreachable and a backup dataset has been loaded. <a href="https://open-meteo.com/">Weather data by Open-Meteo.com</a>. [^ref]
+Live wind speeds at 10m height in Delft over the past year. Click the button on the right to sort the data set. [^ref]
 ````
+
+If we assume that our data set represent **independent and identically distributed** (i.i.d.) samples from the underlying distribution, we can derive the empirical non-exceedance probabilities by sorting the data and computing the non-exceedance probabilities from their rank.
 
 To do so, we just need to sort the observations and compute the non-exceedance probabilities using the ranks. This is illustrated below with pseudo-code.
 
     read observations
 
-    x = sort observations in ascending order
+    length = number of observations
 
-    length = the number of observations
-    probability of not exceeding = (range of integer values from 1 \
-                                    to length) / length + 1
+    x = sort observations in ascending order
+    rank = range of integer values from 1 to length
+
+    probability of not exceeding = (range of integer values from 1 to length) / length + 1
 
     plot x versus probability of not exceeding 
 
-Using the above algorithm, the following figure is obtained. Note that empirical CDFs are usually plotted using a step plot.
+Using the above algorithm, the following figure is obtained. Note that empirical CDFs are usually plotted using a step plot to highlight their empirical nature. From this plot, we can read the non-exceedance probability of the latest wind speed estimate in Delft (since this plot is updated dynamically, you may see a different number when you next load this page). 
 
-```{figure} https://files.mude.citg.tudelft.nl/ecdf_wind.png
----
-scale: 75%
-name: ecdf
 
----
-Empirical cumulative distribution function of the wind speed data.
-```
+````{iframe-figure} ../_static/elements/element_empirical_wind_speed.html
+:name: empirical_wind_speed
+
+Empirical cdf derived from live wind speeds at 10m height in Delft over the past year. Hover over the graph to highlight individual data points. [^ref]
+````
 
 ## Step 3: Computing the empirical PDF
 
@@ -96,7 +97,7 @@ Empirical probability density function of the wind speed data.
 
 [^density]: Happily, in most coding languages, the algorithm to compute the pdf is already implemented and we just need to plot a histogram selecting the option to show us the densities.
 
-[^ref]: The API data shown here are offered under Attribution 4.0 International (CC BY 4.0). Zippenfenig, P. (2023). Open-Meteo.com Weather API [Computer software]. Zenodo. https://doi.org/10.5281/ZENODO.7970649.
+[^ref]: <a href="https://open-meteo.com/">Weather data by Open-Meteo.com</a>. The API data shown here are offered under Attribution 4.0 International (CC BY 4.0). If the graph only shows data from January to December 2024, the server is currently unavailable and a backup dataset has been loaded. 
 
 % START-CREDIT
 % source: distributions
