@@ -41,7 +41,7 @@ Interactively visualize the relationship between the PDF and the CDF (the integr
 
 It should be easy to see from the definition of the CDF that the probability of observing an exact value of a continuous random variable is exactly zero. This is an important observation, and also an important characteristic that separates continuous and discrete random variables.
 
-## PDF and CDF of Gaussian distribution
+## The PDF and CDF of Gaussian distribution
 
 There is at least one parametric pdf which you will have certainly encountered in your studies so far. Does the term 'the bell curve' ring any bells? [Pun intended; We'll see ourselves out.] During your BSc, you have probably used the Normal or Gaussian distribution, whose PDF resembles a bell shape. The PDF of the Normal distribution is given by
 

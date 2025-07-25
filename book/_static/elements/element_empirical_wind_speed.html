@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <style>
+      body{ margin:0; overflow:hidden; font-family:Helvetica, sans-serif; }
+      /* Title will be absolutely positioned and centred in JS */
+      #chart-title{
+        position:absolute;           /* taken out of normal flow */
+        top:6px;                     /* vertical offset */
+        margin:0;
+        font-weight:normal;
+        transform:translateX(-50%);  /* true centring */
+      }
+    </style>
+  </head>
+  <body>
+    <h2 id="chart-title">loading…</h2>
+
+    <svg id="click" xmlns="http://www.w3.org/2000/svg"></svg>
+
+    <script>
+    /* ============================================================
+       0.  VIEWPORT‑AWARE SIZING  (aspect 2.0)
+    ============================================================ */
+    const vw = Math.max(document.documentElement.clientWidth,  window.innerWidth ) * 0.95,
+          vh = Math.max(document.documentElement.clientHeight, window.innerHeight) * 0.95,
+          aspect = 2.0;
+
+    let width, height;
+    if (vw / aspect < vh){ width = vw;          height = vw / aspect; }
+    else                 { width = vh * aspect; height = vh;          }
+
+    const svg = d3.select('#click')
+                  .attr('width',  width)
+                  .attr('height', height);
+
+    const tickFontSize = (12 * width / 600) + 'px',
+          lineStroke   = 3  * height / 600;
+
+    /* Re‑centre the HTML title now that we know the full width */
+    const titleSel = d3.select('#chart-title')
+                       .style('font-size', tickFontSize)
+                       .style('left', (width/2) + 'px');     // <‑ centre of svg
+
+    /* ============================================================
+       1.  LAYOUT CONSTANTS
+    ============================================================ */
+    const rightMargin = width * 0.14,
+          gap         = width * 0.02;
+
+    const plotX  = [width * 0.08, width - rightMargin - gap],
+          plotY  = [height * 0.10, height * 0.75];
+
+    const histX0 = plotX[1] + gap,
+          histX1 = width  - width * 0.02;
+
+    /* Scales */
+    const xScale = d3.scaleTime().range([plotX[0], plotX[1]]);
+    const yScale = d3.scaleLinear().range([plotY[1], plotY[0]]);
+
+    /* Axes */
+    const xAxis = d3.axisBottom(xScale)
+                    .ticks(d3.timeMonth.every(3))
+                    .tickFormat(d3.timeFormat('%m/%Y'));
+    const yAxis = d3.axisLeft(yScale);
+
+    const gX = svg.append('g')
+                  .attr('transform', `translate(0,${plotY[1]})`)
+                  .style('font-size', tickFontSize);
+
+    const gY = svg.append('g')
+                  .attr('transform', `translate(${plotX[0]},0)`)
+                  .style('font-size', tickFontSize);
+
+    /* Axis labels */
+    svg.append('text')
+       .attr('transform',
+              `translate(${(plotX[0]+plotX[1])/2},${height*0.875})`)
+       .style('text-anchor','middle')
+       .text('time')
+       .style('font-size', tickFontSize);
+
+    svg.append('text')
+       .attr('transform',
+              `translate(${width*0.03},${(plotY[0]+plotY[1])/2}) rotate(-90)`)
+       .style('text-anchor','middle')
+       .text('wind speed [m/s]')
+       .style('font-size', tickFontSize);
+
+    /* ============================================================
+       2.  DATA LOADER  (live ➜ fallback)
+    ============================================================ */
+    const now       = new Date(),
+          endDate   = now.toISOString().slice(0,10),
+          startDate = new Date(now);
+    startDate.setDate(startDate.getDate() - 364);
+    const startStr  = startDate.toISOString().slice(0,10);
+
+    const lat = 52.00667, lon = 4.35556;   // Delft
+    const liveURL = `https://archive-api.open-meteo.com/v1/archive`
+                  + `?latitude=${lat}&longitude=${lon}`
+                  + `&start_date=${startStr}&end_date=${endDate}`
+                  + `&hourly=wind_speed_10m`
+                  + `&timezone=Europe%2FAmsterdam`;
+
+    const backupURL = 'wind_speed_Delft_2024.json';  // same‑folder fallback file
+
+    loadData(liveURL)
+      .catch(err => {
+        console.warn('Live fetch failed, switching to local backup:', err);
+        return loadData(backupURL, /*isBackup=*/true);
+      })
+      .catch(err => showFatal(err));
+
+
+    async function loadData(url, isBackup=false){
+      const resp = await fetch(url);
+      if(!resp.ok) throw new Error(`${resp.status} ${resp.statusText}`);
+
+      const json = await resp.json();
+      if(!json.hourly || !json.hourly.time) throw new Error('Unexpected format');
+
+      const {time:times, wind_speed_10m:speeds} = json.hourly;
+      const data = [];
+
+      for(let i=0; i<times.length; i++){
+        const t = new Date(times[i]);
+        const s = speeds[i];
+        if((isBackup || t <= now) && s !== null && isFinite(s))
+          data.push({date:t, speed:+s});
+      }
+      if(!data.length) throw new Error('No usable data in file');
+
+      render(data, isBackup);
+    }
+
+    /* ============================================================
+       3.  RENDER  (time series + histogram + interaction)
+    ============================================================ */
+    function render(data, fromBackup){
+      /* ----- title text (use latest actual point) -------------- */
+      const last = data[data.length-1];
+      titleSel.text(
+        `Wind speed in Delft at ${d3.timeFormat('%H:%M')(last.date)}: `
+        + `${last.speed.toFixed(1)} m/s`
+        + (fromBackup ? '  (backup data)' : '')
+      );
+
+      /* ----- time‑series plot ---------------------------------- */
+      xScale.domain(d3.extent(data,d=>d.date));
+      yScale.domain([0, d3.max(data,d=>d.speed)]).nice();
+      gX.call(xAxis); gY.call(yAxis);
+
+      svg.append('path')
+         .datum(data)
+         .attr('fill','none')
+         .attr('stroke','#666')
+         .attr('stroke-width',lineStroke)
+         .attr('d', d3.line().x(d=>xScale(d.date)).y(d=>yScale(d.speed)));
+
+      /* ----- histogram  (two bins per y tick) ------------------ */
+      const ticks = yScale.ticks();
+      const bins = [];
+      for(let i=0;i<ticks.length-1;i++){
+        const mid=(ticks[i]+ticks[i+1])/2;
+        bins.push({y0:ticks[i],y1:mid,count:0});
+        bins.push({y0:mid,     y1:ticks[i+1],count:0});
+      }
+      data.forEach(d=>{
+        const b = bins.find(b=>d.speed>=b.y0 && d.speed<b.y1);
+        if(b) b.count++;
+      });
+      const maxC = d3.max(bins,b=>b.count),
+            cScale = d3.scaleLinear().domain([0,maxC]).range([0, histX1-histX0]);
+
+      const bars = svg.selectAll('.histbar')
+                      .data(bins).enter().append('rect')
+                      .attr('class','histbar')
+                      .attr('x',histX0)
+                      .attr('y',b=>yScale(b.y1))
+                      .attr('width',b=>cScale(b.count))
+                      .attr('height',b=>yScale(b.y0)-yScale(b.y1))
+                      .attr('fill','#ccc');
+
+      /* Histogram label */
+      svg.append('text')
+         .attr('transform',
+                `translate(${histX1},${(plotY[0]+plotY[1])/2}) rotate(90)`)
+         .style('text-anchor','middle')
+         .style('font-size',tickFontSize)
+         .text('frequency');
+
+      /* ----- interaction --------------------------------------- */
+      const focus = svg.append('circle')
+                       .attr('r',3.5)
+                       .attr('fill','red')
+                       .style('display','none');
+
+      const tooltip = d3.select('body').append('div')
+        .style('position','absolute')
+        .style('background','#fff')
+        .style('border','1px solid #999')
+        .style('padding','3px 6px')
+        .style('font-size',tickFontSize)
+        .style('pointer-events','none')
+        .style('display','none');
+
+      svg.on('mousemove',ev=>{
+        const [mx] = d3.pointer(ev,svg.node());
+        const xDate = xScale.invert(mx);
+        const i = d3.bisector(d=>d.date).left(data,xDate,1);
+        const d0=data[i-1], d1=data[i]||d0,
+              d = xDate-d0.date > d1.date-xDate ? d1 : d0;
+
+        focus.attr('cx',xScale(d.date)).attr('cy',yScale(d.speed))
+             .style('display',null);
+        tooltip.html(
+            `${d3.timeFormat('%d %b %Y %H:%M')(d.date)}<br>${d.speed.toFixed(1)} m/s`)
+          .style('left',(ev.pageX+10)+'px')
+          .style('top', (ev.pageY-28)+'px')
+          .style('display','block');
+
+        bars.attr('fill','#ccc');
+        const idx=bins.findIndex(b=>d.speed>=b.y0 && d.speed<b.y1);
+        if(idx!==-1) d3.select(bars.nodes()[idx]).attr('fill','red');
+      }).on('mouseleave',()=>{
+        focus.style('display','none');
+        tooltip.style('display','none');
+        bars.attr('fill','#ccc');
+      });
+    }
+
+    function showFatal(err){
+      console.error(err);
+      svg.append('text')
+         .attr('x',width/2).attr('y',height/2)
+         .style('text-anchor','middle')
+         .style('font-size',tickFontSize)
+         .style('fill','red')
+         .text('Data load failed');
+    }
+    </script>
+  </body>
+</html>

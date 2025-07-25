@@ -1,6 +1,10 @@
 # Empirical Distributions
 
-As you can imagine, it is possible to define a PDF and a CDF based on observations. Let's see it with an example dataset of wind speeds close to Schiphold Airport. The figure below shows the dataset which spans for 1 year.
+As you can imagine, it is also possible to define a PDF and a CDF based on observations. In this section we will walk you through the process of constructing an empirical PDF and CDF.
+
+## Step 1: Analyzing the data
+
+As an example, let us consider a dataset of wind speeds close to Schiphol Airport. The figure below shows the wind speeds measured over 1 year. We can see that there are wind speeds between 0 m/s and about 18 m/s, and that there are some weak seasonal trends.
 
 
 ```{figure} https://files.mude.citg.tudelft.nl/data_overview.png
@@ -12,7 +16,25 @@ name: data_wind
 Time series of wind speed close to Schiphol Airport.
 ```
 
-Let's start computing the empirical CDF. We need to assign to each observation a non-exceedance probability. To do so, we just need to sort the observations and compute the non-exceedance probabilities using the ranks. This is illustrated below with pseudo-code.
+% START-CREDIT
+% source: maxramgraber
+````{margin}
+```{attributiongrey} Attribution
+:class: attribution
+This interactive figure is created by Max Ramgraber. {ref}`Find out more here <distributions_credit>`.
+```
+````
+% END-CREDIT
+
+````{iframe-figure} ../_static/elements/element_empirical_wind_speed.html
+:name: empirical_wind_speed
+
+Hover over the graph to read wind speeds in Delft over the past year. If the graph only shows data from January to December 2024, the server is currently unreachable and a backup dataset has been loaded.
+````
+
+## Step 2: Computing the empirical CDF
+
+As we have discussed in the previous sections, the CDF defines the non-exceedance probabilities for certain values of the random variable $x$, in this case: wind speed. In the empirical setting, this means that we need to assign to each observation a non-exceedance probability. To do so, we just need to sort the observations and compute the non-exceedance probabilities using the ranks. This is illustrated below with pseudo-code.
 
     read observations
 
@@ -34,6 +56,8 @@ name: ecdf
 ---
 Empirical cumulative distribution function of the wind speed data.
 ```
+
+## Step 3: Computing the empirical PDF
 
 It can be useful to also visualize the empirical PDF. As mentioned above, the PDF is the derivative of the CDF, leading to the following equation.
 
