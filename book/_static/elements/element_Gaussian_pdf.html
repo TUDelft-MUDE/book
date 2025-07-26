@@ -147,10 +147,10 @@
       const window_y_cdf = [height * 0.1, height * 0.6];
 
       // Scales (domains will update with Loc/Scale)
-      const xScale_pdf = d3.scaleLinear().domain([Loc - 4 * Scale, Loc + 4 * Scale]).range(window_x_pdf);
+      const xScale_pdf = d3.scaleLinear().domain([Loc - 4, Loc + 4]).range(window_x_pdf);
       const yScale_pdf = d3.scaleLinear().domain([0, 1]).range([window_y_pdf[1], window_y_pdf[0]]);
 
-      const xScale_cdf = d3.scaleLinear().domain([Loc - 4 * Scale, Loc + 4 * Scale]).range(window_x_cdf);
+      const xScale_cdf = d3.scaleLinear().domain([Loc - 4, Loc + 4]).range(window_x_cdf);
       const yScale_cdf = d3.scaleLinear().domain([0, 1]).range([window_y_cdf[1], window_y_cdf[0]]);
 
       var xAxis_pdf = d3.axisBottom(xScale_pdf).ticks(5);
@@ -206,7 +206,7 @@
 
       // Initial data
       var N = 401;
-      var xVals = linspace(Loc - 4 * Scale, Loc + 4 * Scale, N);
+      var xVals = linspace(Loc - 4, Loc + 4, N);
       var pdfVals = evaluate_pdf(xVals);
       var cdfVals = evaluate_cdf(xVals);
 
@@ -233,7 +233,7 @@
         .attr('id','line_cdf');
 
       function updatePlots(duration = 300){
-        var xVals = linspace(Loc - 4 * Scale, Loc + 4 * Scale, N);
+        // var xVals = linspace(Loc - 4 * Scale, Loc + 4 * Scale, N);
         var pdfVals = evaluate_pdf(xVals);
         var cdfVals = evaluate_cdf(xVals);
 
@@ -243,8 +243,8 @@
         var maxval = d3.max(pdfVals); if (isNaN(maxval) || maxval < 0.7) maxval = 0.7;
         yScale_pdf.domain([0, maxval * 1.2]);
 
-        xScale_pdf.domain([Loc - 4 * Scale, Loc + 4 * Scale]);
-        xScale_cdf.domain([Loc - 4 * Scale, Loc + 4 * Scale]);
+        // xScale_pdf.domain([Loc - 4 * Scale, Loc + 4 * Scale]);
+        // xScale_cdf.domain([Loc - 4 * Scale, Loc + 4 * Scale]);
 
         d3.select('#line_pdf')
           .transition().duration(duration)
