@@ -51,19 +51,7 @@ $$
 
 where $x$ is the value of the random variable and $\mu$ and $\sigma$ are the two parameters that define the shape of the distribution. In the case of the Normal distribution, the parameters $\mu$ and $\sigma$ correspond to the mean and standard deviation of the random variable, respectively. However, this is not the case for all the distributions and it is also dependent on how it is parameterized. We will see some examples of different parametrized distributions in the following.
 
-As outlined above, the PDF provides us with probability densities, so we need to integrate it to obtain actual probabilities through the CDF. In the case of the Normal distribution, there is no closed form of the CDF (the integral). Let's see how the distribution looks. In the figure below, the PDF and CDF of the Gaussian distribution are shown for different values of its parameters. In the PDF plot, you can see the bell shape that was already mentioned. You will learn more about how this distribution behaves later on.
-
-
-```{figure} https://files.mude.citg.tudelft.nl/gaussian.png
----
-scale: 75%
-name: gaussian distr
-
----
-Gaussian distribution function: PDF and CDF.
-```
-
-Below, you will find an interactive element that allows you to explore the influence of different means and standard deviations on the PDF and CDF. Experiment with both options and observe how it affects the shape of both distributions.
+As outlined above, the PDF provides us with probability densities, so we need to integrate it to obtain actual probabilities through the CDF. In the case of the Normal distribution, there is no closed form of the CDF (the integral). Let's see how the distribution looks. In the interactive element below, the PDF and CDF of the Gaussian distribution are shown. You can adjust the parameters to see how the shape of the PDF and CDF change for different values of its parameters. In the PDF plot, you can see the bell shape that was already mentioned. You will learn more about how this distribution behaves later on.
 
 
 % START-CREDIT
@@ -76,8 +64,9 @@ This interactive figure is created by Max Ramgraber. {ref}`Find out more here <d
 ````
 % END-CREDIT
 
-````{iframe-figure} ../_static/elements/element_Gaussian_cdf_moments.html
-:name: pdf_cdf_2
+````{iframe-figure} ../_static/elements/element_Gaussian_pdf.html
+:name: Gaussian_pdf_intro
+:aspectratio: 1.5 / 1
 
 Interactively change the mean and standard deviation of the Gaussian distribution to visualize the effect on the PDF and CDF.
 ````
