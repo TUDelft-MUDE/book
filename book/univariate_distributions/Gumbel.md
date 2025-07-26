@@ -47,6 +47,7 @@ This interactive figure is created by Max Ramgraber. {ref}`Find out more here <d
 
 ````{iframe-figure} ../_static/elements/element_Gumbel_pdf.html
 :name: gumbel_pdf
+:aspectratio: 1.5 / 1
 
 Interactively visualize the relationship between the PDF and the CDF of a Gumbel distribution.
 ````
