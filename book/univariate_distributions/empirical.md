@@ -84,6 +84,7 @@ Using the above algorithm, the following figure is obtained. Note that empirical
 
 ````{iframe-figure} ../_static/elements/element_empirical_wind_speed_cdf.html
 :name: empirical_wind_speed_cdf
+:aspectratio: 1 / 1
 
 Empirical CDF derived from wind speed estimates at 10m height in Delft over the past year. Hover over the graph to highlight individual data points. The red vertical lines demarkate the latest wind speed estimate in Delft. [^ref]
 ````
