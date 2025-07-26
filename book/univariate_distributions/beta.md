@@ -46,6 +46,7 @@ This interactive figure is created by Max Ramgraber. {ref}`Find out more here <d
 
 ````{iframe-figure} ../_static/elements/element_beta_pdf.html
 :name: beta_pdf
+:aspectratio: 1.5 / 1
 
 Interactively visualize the relationship between the PDF and the CDF of a beta distribution.
 ````
