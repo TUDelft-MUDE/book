@@ -109,7 +109,7 @@ async function load(url,isBackup=false){
 function drawHistogram(data,isBackup){
   /* ---------- bins ---------- */
   const maxSpeed = d3.max(data,d=>d.speed);
-  const edges = d3.ticks(0, maxSpeed, 10);           // same idea as early histogram
+  const edges = d3.ticks(0, maxSpeed, 20);           // same idea as early histogram
   bins = [];
   for(let i=0;i<edges.length-1;i++){
     bins.push({x0:edges[i], x1:edges[i+1], cnt:0});
