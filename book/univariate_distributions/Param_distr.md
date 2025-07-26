@@ -17,7 +17,7 @@ In the following sections, you will be introduced to some of the most commonly u
 
 ```{admonition} MUDE exam information
 :class: tip, dropdown
-You do not need to know the equations of the distribution functions by heart. You just need to know how the distribution looks (PDF/CDF), how it responds to changes in the parameters and some basic properties (symmetry or bounds).
+You do not need to know the equations of the distribution functions by heart. You just need to know how the distribution looks (PDF/CDF), how it responds to changes in the parameters, and some basic properties (symmetry or bounds).
 ```
 
 % START-CREDIT
