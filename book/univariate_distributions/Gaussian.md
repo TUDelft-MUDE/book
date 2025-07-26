@@ -3,7 +3,7 @@
 Most of you should have already encountered the **Gaussian distribution** (also sometimes known as the **Normal distribution**) during your studies. This distribution is one of the most widely-used PDFs since it occurs commonly in nature and engineering and has many elegant mathematical properties. The PDF of the Normal distribution is given by
 
 $$
-f(x) = \cfrac{1}{\sigma \sqrt{2 \pi}} \e^{\normalsize{-}\cfrac{1}{2}\left(\cfrac{x-\mu}{\sigma}\right)^2}
+f(x) = \cfrac{1}{\sigma \sqrt{2 \pi}} e^{\normalsize{-}\cfrac{1}{2}\left(\cfrac{x-\mu}{\sigma}\right)^2}
 $$
 
 where $x$ is the value of the random variable and $\mu \in \mathbb{R}$ and $\sigma \in \mathbb{R}^{+}$ are the two parameters of the distribution, the mean and standard deviation. If we integrate the PDF, we obtain the CDF. In the case of the Normal distribution, there is no closed form of the CDF, but it can be expressed as
@@ -36,6 +36,7 @@ This interactive figure is created by Max Ramgraber. {ref}`Find out more here <d
 
 ````{iframe-figure} ../_static/elements/element_Gaussian_pdf.html
 :name: Gaussian_pdf
+:aspectratio: 1.5 / 1
 
 Interactively visualize the relationship between the PDF and the CDF of a Gaussian distribution.
 ````
