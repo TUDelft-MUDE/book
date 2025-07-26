@@ -51,8 +51,6 @@ This interactive figure is created by Max Ramgraber. {ref}`Find out more here <d
 Interactively visualize the relationship between the PDF and the CDF of a beta distribution.
 ````
 
-<iframe src="../_static/elements/element_beta_pdf.html" style="width: 100%; aspect-ratio: 1.5 / 1; border: none; border-radius: 8px;"></iframe>
-
 ## Intuition & Interesting Properties
 
 The beta pdf can be useful in many settings you will encounter in your professional lives. Beta pdfs (and their multivariate counterpart, Dirichlet pdfs) are often used for **simplex variables**, which are variables that must add up to a certain value. Examples of simplex variables include 
