@@ -9,6 +9,7 @@ As an example, let us consider a dataset of wind speeds in Delft. The figure bel
 
 ````{iframe-figure} ../_static/elements/element_empirical_wind_speed.html
 :name: empirical_wind_speed
+:aspectratio: 2 / 1
 
 Wind speed estimates at 10m height in Delft over the past year. Hover over the graph to highlight individual data points. This element, and all subsequent elements on this page, access the latest available wind speed data from an online resource. If you come back later, these plots may look different. [^ref]
 ````
@@ -50,6 +51,7 @@ The element below illustrates the resulting histogram:
 
 ````{iframe-figure} ../_static/elements/element_empirical_wind_speed_pdf.html
 :name: empirical_wind_speed_pdf
+:aspectratio: 1 / 1
 
 Empirical PDF derived from wind speed estimates at 10m height in Delft over the past year. Hover over the bars to highlight the interval probabilities. [^ref]
 ````                                
@@ -60,6 +62,7 @@ As we have discussed in the previous sections, the CDF defines the non-exceedanc
 
 ````{iframe-figure} ../_static/elements/element_empirical_wind_speed_sorting.html
 :name: empirical_wind_speed_sorting
+:aspectratio: 2 / 1
 
 Wind speed estimates at 10m height in Delft over the past year. Click the button on the right to sort the data set. The red vertical lines demarkate the latest wind speed estimate in Delft. [^ref]
 ````
