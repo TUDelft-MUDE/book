@@ -142,7 +142,7 @@
       /* ----- title text (use latest actual point) -------------- */
       const last = data[data.length-1];
       titleSel.text(
-        `Most recent wind speed in Delft at ${d3.timeFormat('%H:%M')(last.date)}: `
+        `Wind speed in Delft on ${d3.timeFormat('%e. %b at %H:%M %p')(last.date)}: `
         + `${last.speed.toFixed(1)} m/s`
         + (fromBackup ? '  (backup data)' : '')
       );

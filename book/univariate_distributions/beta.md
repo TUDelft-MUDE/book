@@ -51,13 +51,13 @@ This interactive figure is created by Max Ramgraber. {ref}`Find out more here <d
 Interactively visualize the relationship between the PDF and the CDF of a beta distribution.
 ````
 
-## Intuition & Interesting Properties
+## Interesting Properties
 
 The beta pdf can be useful in many settings you will encounter in your professional lives. Beta pdfs (and their multivariate counterpart, Dirichlet pdfs) are often used for **simplex variables**, which are variables that must add up to a certain value. Examples of simplex variables include 
 - the **sea ice area fraction**, which describes the percentage of a certain area of sea that is covered by sea ice (naturally, the open and ice-covered percentages must add to 100%). 
-- the **expected value of a coin**, that is to say the probability that a flipped coin comes up either head (zero) or tails (one). Since a flipped coin only has binary outcomes (head *or* tails; we neglect the chance that it may land on its side), the expected value of repeated coin flipping must lie between zero (a loaded coin that only ever lands on "head") and one (a loaded coin that only ever lands on "tails").
-- similarly, this can be used for other binary choices, such as the **path drivers take at a fork in the road**. If we designate left as zero and right as one, then the average choice must be between zero (all drivers go left) over 0.5 (exactly half the drivers go left, and half go right) to one (all drivers go right).
-More generally, beta pdfs can also be rescaled and used for variables that have natural lower and upper bounds, such as *dissolved concentrations* of a chemical compound. Such concentrations can never be negative (i.e., $x \geq 0$) but cannot exceed some saturation concentration ($x \leq C_{\text{sat.}}$), which makes beta pdfs a natural choice for such quantities.
+- the **expected value of a coin flip**, the probability that a flipped coin comes up either head (zero) or tails (one). Since a flipped coin only has binary outcomes (head *or* tails; we neglect the chance that it may land on its side), the expected value of repeated coin flipping must lie between zero (a loaded coin that only ever lands on "head") and one (a loaded coin that only ever lands on "tails").
+- similarly, this distribution can be used for other **binary choices**, such as the path drivers choose when encountering a fork in the road. If we designate left as zero and right as one, then the average choice drivers take must be between zero (all drivers go left) through 0.5 (exactly half the drivers go left and half go right) to one (all drivers go right).
+More generally, beta pdfs can also be rescaled (by adjusting the location and scale parameters) and used for variables that have natural lower and upper bounds, such as *dissolved concentrations* of a chemical compound. Such concentrations can never be negative (i.e., $x \geq 0$) but cannot exceed some saturation concentration ($x \leq C_{\text{sat.}}$), which makes the beta distribution a natural choice for such quantities.
 
 ```
 
