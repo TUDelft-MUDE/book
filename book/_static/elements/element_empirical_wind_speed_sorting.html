@@ -72,7 +72,7 @@
     const btn=d3.select('#sort-reset-btn').on('click',toggle);
 
     function drawInitial(isBackup){
-      d3.select('#chart-title').text(`Wind speed in Delft on ${d3.timeFormat('%e. %b at %H:%M %p')(last.date)}: ${latest.speed.toFixed(1)} m/s${isBackup?' (backup data)':''}`);
+      d3.select('#chart-title').text(`Wind speed in Delft on ${d3.timeFormat('%e. %b at %H:%M %p')(latest.date)}: ${latest.speed.toFixed(1)} m/s${isBackup?' (backup data)':''}`);
       xTime.domain(d3.extent(dataOrig,d=>d.date)); xRank.domain([0,dataOrig.length-1]); y.domain([0,d3.max(dataOrig,d=>d.speed)]).nice();
       gXTime.call(xAxisTime); gY.call(yAxis);
 

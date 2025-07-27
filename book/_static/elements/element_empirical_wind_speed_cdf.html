@@ -148,7 +148,7 @@ function draw(data,isBackup){
      .attr('r',4).attr('fill','red');
 
   titleSel.text(
-      `Wind speed in Delft on ${d3.timeFormat('%e. %b at %H:%M %p')(last.date)}: `
+      `Wind speed in Delft on ${d3.timeFormat('%e. %b at %H:%M %p')(latest.date)}: `
     + `${latest.speed.toFixed(1)} m/s  (P≤x ≈ ${(latestEntry.nep*100).toFixed(1)} %)`
     + (isBackup?'  [backup]':''));
 

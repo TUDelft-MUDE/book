@@ -153,7 +153,7 @@ function drawHistogram(data,isBackup){
 
   /* starting title */
   titleSel.text(
-      `Wind speed in Delft on ${d3.timeFormat('%e. %b at %H:%M %p')(last.date)}: `
+      `Wind speed in Delft on ${d3.timeFormat('%e. %b at %H:%M %p')(latestObs.date)}: `
     + `${latestObs.speed.toFixed(1)} m/s`
     + `  (interval P≈${(latestBin.prob*100).toFixed(1)} %)`
     + (isBackup?'  [backup]':''));
