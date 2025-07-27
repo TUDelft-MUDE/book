@@ -89,7 +89,7 @@ Using the above algorithm, the following figure is obtained. Note that empirical
 :name: empirical_wind_speed_cdf
 :aspectratio: 1 / 1
 
-Empirical CDF derived from wind speed estimates at 10m height in Delft over the past year. Hover over the graph to highlight individual data points. The red vertical lines demarkate the latest wind speed estimate in Delft. [^ref]
+Empirical CDF derived from wind speed estimates at 10m height in Delft over the past year. Hover over the graph to highlight individual data points. Note that the wind speed is now plotted on the x-axis. The red vertical lines demarkate the latest wind speed estimate in Delft. [^ref]
 ````
 
 [^density]: Happily, in most coding languages, the algorithm to compute the pdf is already implemented and we just need to plot a histogram selecting the option to show us the densities.
