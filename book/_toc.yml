@@ -182,6 +182,7 @@ parts:
       - file: ml/ridge_sgd_interactive
       - file: ml/nn_interactive
       - file: ml/review
+      - file: ml/mlp
 
     - file: eva/intro.md
       sections:
