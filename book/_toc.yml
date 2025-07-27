@@ -65,13 +65,13 @@ parts:
       - file: univariate_distributions/empirical
       - file: univariate_distributions/Param_distr.md
         sections: 
+        - file: univariate_distributions/Uniform.md
         - file: univariate_distributions/Gaussian.md
+        - file: univariate_distributions/Lognormal.md
+        - file: univariate_distributions/Gumbel.md
+        - file: univariate_distributions/Exponential.md
         - file: univariate_distributions/beta.md
         - file: univariate_distributions/other_distr.md
-        - file: univariate_distributions/Uniform.md
-        - file: univariate_distributions/Exponential.md
-        - file: univariate_distributions/Gumbel.md
-        - file: univariate_distributions/Lognormal.md
         - file: univariate_distributions/summary.md
       - file: probability/fitting.md
         sections: 
