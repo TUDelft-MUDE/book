@@ -20,7 +20,6 @@
         pointer-events:none;
         transform:translateX(-50%);
       }
-
     </style>
   </head>
   <body>
@@ -120,32 +119,26 @@
         return spacing;
       }
 
-      // Uniform PDF (constant inside [a,b])
-      function uniformPDF(x) {
-        var a = Loc;
-        var b = Loc + Scale;
-        if (x < a || x > b) return 0;
-        return 1 / (Scale);
+      function lognormalPDF(x){                              // LOGNORM EDIT
+        if(x<=0) return 0;                                   // LOGNORM EDIT
+        var z=(Math.log(x)-Loc)/Scale;                       // LOGNORM EDIT
+        return (1/(x*Scale*Math.sqrt(2*Math.PI)))*Math.exp(-0.5*z*z); // LOGNORM EDIT
       }
-
-      // Uniform CDF (piecewise linear)
-      function uniformCDF(x) {
-        var a = Loc;
-        var b = Loc + Scale;
-        if (x < a) return 0;
-        if (x > b) return 1;
-        return (x - a) / (Scale);
+      function lognormalCDF(x){                              // LOGNORM EDIT
+        if(x<=0) return 0;                                   // LOGNORM EDIT
+        var z=(Math.log(x)-Loc)/(Scale*Math.sqrt(2));        // LOGNORM EDIT
+        return 0.5*(1+math.erf(z));                          // LOGNORM EDIT
       }
 
       function evaluate_pdf(arr) {
         var out = [];
-        for (let i = 0; i < arr.length; i++) out.push(uniformPDF(arr[i]));
+        for (let i = 0; i < arr.length; i++) out.push(lognormalPDF(arr[i]));
         return out;
       }
 
       function evaluate_cdf(arr) {
         var out = [];
-        for (let i = 0; i < arr.length; i++) out.push(uniformCDF(arr[i]));
+        for (let i = 0; i < arr.length; i++) out.push(lognormalCDF(arr[i]));
         return out;
       }
 
@@ -156,10 +149,10 @@
       const window_y_cdf = [height * 0.1, height * 0.6];
 
       // Scales (domains will update with Loc/Scale)
-      const xScale_pdf = d3.scaleLinear().domain([Loc - 3, Loc + 3]).range(window_x_pdf);
+      const xScale_pdf = d3.scaleLinear().domain([0, 6]).range(window_x_pdf);
       const yScale_pdf = d3.scaleLinear().domain([0, 1]).range([window_y_pdf[1], window_y_pdf[0]]);
 
-      const xScale_cdf = d3.scaleLinear().domain([Loc - 3, Loc + 3]).range(window_x_cdf);
+      const xScale_cdf = d3.scaleLinear().domain([0, 6]).range(window_x_cdf);
       const yScale_cdf = d3.scaleLinear().domain([0, 1]).range([window_y_cdf[1], window_y_cdf[0]]);
 
       var xAxis_pdf = d3.axisBottom(xScale_pdf).ticks(5);
@@ -215,7 +208,7 @@
 
       // Initial data
       var N = 401;
-      var xVals = linspace(Loc - 3, Loc + 3, N);
+      var xVals = linspace(0, 6, N);
       var pdfVals = evaluate_pdf(xVals);
       var cdfVals = evaluate_cdf(xVals);
 
@@ -273,14 +266,14 @@
       svg.append('text')
         .attr('transform','translate('+((window_x_pdf[0]+window_x_pdf[1])/2)+','+(height*0.75)+')')
         .style('text-anchor','middle')
-        .text('location')
+        .text('mean')
         .style('font-size',tickFontSize);
 
       var meanSlider=document.createElement('input');
       meanSlider.type='range';
       meanSlider.id='meanSlider';
-      meanSlider.min=-3;
-      meanSlider.max=3;
+      meanSlider.min=-2;
+      meanSlider.max=2;
       meanSlider.step=0.01;
       meanSlider.value=Loc;
       Object.assign(meanSlider.style,{
@@ -316,14 +309,14 @@
       svg.append('text')
         .attr('transform','translate('+((window_x_cdf[0]+window_x_cdf[1])/2)+','+(height*0.75)+')')
         .style('text-anchor','middle')
-        .text('scale')
+        .text('standard deviation')
         .style('font-size',tickFontSize);
 
       var stdSlider=document.createElement('input');
       stdSlider.type='range';
       stdSlider.id='stdSlider';
       stdSlider.min=0.1;
-      stdSlider.max=5;
+      stdSlider.max=3;
       stdSlider.step=0.01;
       stdSlider.value=Scale;
       Object.assign(stdSlider.style,{
