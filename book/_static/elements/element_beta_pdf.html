@@ -15,9 +15,10 @@
         transform: translateX(-50%);
         pointer-events: none;
       }
-      .sliderLabel {
-        position: absolute;
-        pointer-events: none;
+      .sliderLabel{
+        position:absolute;
+        pointer-events:none;
+        transform:translateX(-50%);
       }
     </style>
   </head>
@@ -311,18 +312,23 @@
       alphaSlider.style.padding = '0';
       document.body.appendChild(alphaSlider);
 
-      for (let v = 1; v <= 5; v++) {
-        var pct = (v - 1) / 4;
-        svg.append('text')
-          .attr('transform', 'translate(' + ((width * 0.1) + pct * (width * 0.35)) + ',' + (height * 0.835) + ')')
-          .style('text-anchor', 'middle')
-          .text(v)
-          .style('font-size', tickFontSize);
-      }
+      // live value under thumb
+      var alphaLabel=document.createElement('div');
+      alphaLabel.className='sliderLabel';
+      alphaLabel.style.top=(height*0.815)+'px';
+      document.body.appendChild(alphaLabel);
 
-      alphaSlider.addEventListener('input', function(){
-        Beta_a = +this.value;
+      function updatealphaLabel(){
+        var pct=(alphaSlider.value-alphaSlider.min)/(alphaSlider.max-alphaSlider.min);
+        alphaLabel.style.left=(window_x_pdf[0]+pct*(width*0.35))+'px';
+        alphaLabel.textContent=(+alphaSlider.value).toFixed(2);
+      }
+      updatealphaLabel();
+
+      alphaSlider.addEventListener('input',function(){
+        Beta_a=+this.value;
         updatePlots(0);
+        updatealphaLabel();
       });
 
       // Beta label and ticks
@@ -347,19 +353,25 @@
       betaSlider.style.padding = '0';
       document.body.appendChild(betaSlider);
 
-      for (let v = 1; v <= 5; v++) {
-        var pct = (v - 1) / 4;
-        svg.append('text')
-          .attr('transform', 'translate(' + ((width * 0.1) + pct * (width * 0.35)) + ',' + (height * 0.985) + ')')
-          .style('text-anchor', 'middle')
-          .text(v)
-          .style('font-size', tickFontSize);
-      }
+      // live value under thumb
+      var betaLabel=document.createElement('div');
+      betaLabel.className='sliderLabel';
+      betaLabel.style.top=(height*0.965)+'px';
+      document.body.appendChild(betaLabel);
 
-      betaSlider.addEventListener('input', function(){
-        Beta_b = +this.value;
+      function updatebetaLabel(){
+        var pct=(betaSlider.value-betaSlider.min)/(betaSlider.max-betaSlider.min);
+        betaLabel.style.left=(window_x_pdf[0]+pct*(width*0.35))+'px';
+        betaLabel.textContent=(+betaSlider.value).toFixed(2);
+      }
+      updatebetaLabel();
+
+      betaSlider.addEventListener('input',function(){
+        Beta_b=+this.value;
         updatePlots(0);
+        updatebetaLabel();
       });
+
 
       // Location label and ticks
       svg.append('text')
@@ -383,19 +395,26 @@
       locSlider.style.padding = '0';
       document.body.appendChild(locSlider);
 
-      [-2, -1, 0, 1, 2].forEach(function(v){
-        var pct = (v + 2) / 4;
-        svg.append('text')
-          .attr('transform', 'translate(' + (window_x_cdf[0] + pct * (window_x_cdf[1] - window_x_cdf[0])).toString() + ',' + (height * 0.835).toString() + ')')
-          .style('text-anchor', 'middle')
-          .text(v)
-          .style('font-size', tickFontSize);
+      // live value under thumb
+      var locLabel=document.createElement('div');
+      locLabel.className='sliderLabel';
+      locLabel.style.top=(height*0.815)+'px';
+      document.body.appendChild(locLabel);
+
+      function updatelocLabel(){
+        var pct=(locSlider.value-locSlider.min)/(locSlider.max-locSlider.min);
+        locLabel.style.left=(window_x_cdf[0]+pct*(width*0.35))+'px';
+        locLabel.textContent=(+locSlider.value).toFixed(2);
+      }
+      updatelocLabel();
+
+      locSlider.addEventListener('input',function(){
+        Loc=+this.value;
+        updatePlots(0);
+        updatelocLabel();
       });
 
-      locSlider.addEventListener('input', function(){
-        Loc = +this.value;
-        updatePlots(0);
-      });
+
 
       // Scale label and ticks
       svg.append('text')
@@ -419,19 +438,23 @@
       scaleSlider.style.padding = '0';
       document.body.appendChild(scaleSlider);
 
-      [0.1,  1, 2, 3, 4, 5].forEach(function(v){
-        var pct = (v - 0.1) / ( 5 - 0.1);
-        svg.append('text')
-          .attr('transform', 'translate(' + (window_x_cdf[0] + pct * (window_x_cdf[1] - window_x_cdf[0])) + ',' + (height * 0.985) + ')')
-          .style('text-anchor', 'middle')
-          .text(v)
-          .style('font-size', tickFontSize);
-      });
+      // live value under thumb
+      var scaleLabel=document.createElement('div');
+      scaleLabel.className='sliderLabel';
+      scaleLabel.style.top=(height*0.965)+'px';
+      document.body.appendChild(scaleLabel);
 
-      scaleSlider.addEventListener('input', function(){
-        Scale = +this.value;
-        if (Scale <= 0) Scale = 0.1;
+      function updatescaleLabel(){
+        var pct=(scaleSlider.value-scaleSlider.min)/(scaleSlider.max-scaleSlider.min);
+        scaleLabel.style.left=(window_x_cdf[0]+pct*(width*0.35))+'px';
+        scaleLabel.textContent=(+scaleSlider.value).toFixed(2);
+      }
+      updatescaleLabel();
+
+      scaleSlider.addEventListener('input',function(){
+        Scale=+this.value;
         updatePlots(0);
+        updatescaleLabel();
       });
 
       updatePlots();

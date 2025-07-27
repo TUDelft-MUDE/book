@@ -15,9 +15,10 @@
         transform: translateX(-50%);
         pointer-events: none;
       }
-      .sliderLabel {
-        position: absolute;
-        pointer-events: none;
+      .sliderLabel{
+        position:absolute;
+        pointer-events:none;
+        transform:translateX(-50%);
       }
     </style>
   </head>
@@ -283,19 +284,24 @@
       lambdaSlider.style.padding = '0';
       document.body.appendChild(lambdaSlider);
 
-      [0.1, 1, 2, 3, 4, 5].forEach(function(v){
-        var pct = (v - 0.1) / (5 - 0.1);
-        svg.append('text')
-          .attr('transform', 'translate(' + ((width * 0.1) + pct * (width * 0.35)) + ',' + (height * 0.835) + ')')
-          .style('text-anchor', 'middle')
-          .text(v)
-          .style('font-size', tickFontSize);
-      });
+      // live value under thumb
+      var lambdaLabel=document.createElement('div');
+      lambdaLabel.className='sliderLabel';
+      lambdaLabel.style.top=(height*0.815)+'px';
+      lambdaLabel.style.fontsize=tickFontSize+'px';
+      document.body.appendChild(lambdaLabel);
 
-      lambdaSlider.addEventListener('input', function(){
-        Lambda = +this.value;
-        if (Lambda <= 0) Lambda = 0.1;
+      function updateLambdaLabel(){
+        var pct=(lambdaSlider.value-lambdaSlider.min)/(lambdaSlider.max-lambdaSlider.min);
+        lambdaLabel.style.left=(width*0.1+pct*(width*0.35))+'px';
+        lambdaLabel.textContent=(+lambdaSlider.value).toFixed(2);
+      }
+      updateLambdaLabel();
+
+      lambdaSlider.addEventListener('input',function(){
+        Lambda=+this.value;
         updatePlots(0);
+        updateLambdaLabel();
       });
 
       // Location slider (right top)
@@ -320,18 +326,24 @@
       locSlider.style.padding = '0';
       document.body.appendChild(locSlider);
 
-      [-10, -5, 0, 5, 10].forEach(function(v){
-        var pct = (v + 10) / 20;
-        svg.append('text')
-          .attr('transform', 'translate(' + (window_x_cdf[0] + pct * (window_x_cdf[1] - window_x_cdf[0])) + ',' + (height * 0.835) + ')')
-          .style('text-anchor', 'middle')
-          .text(v)
-          .style('font-size', tickFontSize);
-      });
+      // live value under thumb
+      var locLabel=document.createElement('div');
+      locLabel.className='sliderLabel';
+      locLabel.style.top=(height*0.815)+'px';
+      locLabel.style.fontsize=tickFontSize+'px';
+      document.body.appendChild(locLabel);
 
-      locSlider.addEventListener('input', function(){
-        Loc = +this.value;
+      function updatelocLabel(){
+        var pct=(locSlider.value-locSlider.min)/(locSlider.max-locSlider.min);
+        locLabel.style.left=(window_x_cdf[0]+pct*(width*0.35))+'px';
+        locLabel.textContent=(+locSlider.value).toFixed(2);
+      }
+      updatelocLabel();
+
+      locSlider.addEventListener('input',function(){
+        Loc=+this.value;
         updatePlots(0);
+        updatelocLabel();
       });
 
       // Scale slider (right bottom)
@@ -356,19 +368,24 @@
       scaleSlider.style.padding = '0';
       document.body.appendChild(scaleSlider);
 
-      [0.1, 1, 2, 3, 4, 5].forEach(function(v){
-        var pct = (v - 0.1) / (5 - 0.1);
-        svg.append('text')
-          .attr('transform', 'translate(' + (window_x_cdf[0] + pct * (window_x_cdf[1] - window_x_cdf[0])) + ',' + (height * 0.985) + ')')
-          .style('text-anchor', 'middle')
-          .text(v)
-          .style('font-size', tickFontSize);
-      });
+      // live value under thumb
+      var scaleLabel=document.createElement('div');
+      scaleLabel.className='sliderLabel';
+      scaleLabel.style.top=(height*0.965)+'px';
+      scaleLabel.style.fontsize=tickFontSize+'px';
+      document.body.appendChild(scaleLabel);
 
-      scaleSlider.addEventListener('input', function(){
-        Scale = +this.value;
-        if (Scale <= 0) Scale = 0.1;
+      function updatescaleLabel(){
+        var pct=(scaleSlider.value-scaleSlider.min)/(scaleSlider.max-scaleSlider.min);
+        scaleLabel.style.left=(window_x_cdf[0]+pct*(width*0.35))+'px';
+        scaleLabel.textContent=(+scaleSlider.value).toFixed(2);
+      }
+      updatescaleLabel();
+
+      scaleSlider.addEventListener('input',function(){
+        Scale=+this.value;
         updatePlots(0);
+        updatescaleLabel();
       });
 
       updatePlots();
