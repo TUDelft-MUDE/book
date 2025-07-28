@@ -271,8 +271,8 @@ parts:
       - file: programming/week_1_2/markdown
     - file: programming/week_1_4
       sections:
-      - external: https://github.com/TeachBooks/learn-programming/blob/mude-2025/book/version_control/version_control.md
-      - external: https://github.com/TeachBooks/learn-programming/blob/mude-2025/book/version_control/notebooks.ipynb
+      - external: https://github.com/TeachBooks/learn-programming/blob/mude-2025/book/version_control/version_control.md #BUMP
+      - external: https://github.com/TeachBooks/learn-programming/blob/mude-2025/book/version_control/notebooks.ipynb #BUMP
     - file: programming/week_1_5
       sections:
       - file: external/learn-programming/book/workflows/git/branch_merge
