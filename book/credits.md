@@ -3,7 +3,26 @@
 
 You can refer to this book in its entirety as:
 
-> Lanzafame, R., van Woudenberg, T., Verhagen, S. (2024), Modelling, Uncertainty and Data for Engineers (MUDE) Textbook, Delft University of Technology. https://mude.citg.tudelft.nl/book. Retreived [Month, Year]. CC BY 4.0.
+> Lanzafame, R., van Woudenberg, T., Verhagen, S. (2024), Modelling, Uncertainty and Data for Engineers (MUDE) Textbook, Delft University of Technology. https://mude.citg.tudelft.nl/book/2024, CC BY 4.0. [doi:10.5281/zenodo.16236358](https://doi.org/10.5281/zenodo.16236358).
+
+````{admonition} BibTeX Citation
+:class: tip, dropdown
+
+If you would like to refer to the MUDE Textbook with BibTeX (e.g., in a TeachBook or Jupyter Book), the following entry can be used in a  `bib` file to get close to the reference shown above. Use the GitHub repository for this book as a reference for setting up APA citations (if desired).
+
+```bibtex
+@misc{mude2024,
+  title={Modelling, {U}ncertainty and {D}ata for {E}ngineers ({MUDE}) {T}extbook},
+  author={Lanzafame, Robert and van Woudenberg, Tom and Verhagen, Sandra},
+  year={2024},
+  note={Delft University of Technology. {https://mude.citg.tudelft.nl/book/2024} CC BY 4.0},
+  doi={10.5281/zenodo.16236358},
+}
+```
+
+The text citation is {cite:t}`mude2024`and the parenthetical citation is {cite:p}`mude2024`.
+
+````
 
 The introduction, structure of the book and formatting of contents is done under direction of the Editors (Robert Lanzafame, Tom van Woudenberg and Sandra Verhagen), in collaboration with a large team of co-authors and student assistants. Some chapters and pages have additional primary authors who are identified within the book either at the bottom of the first page in a chapter, or at the bottom of an individual page, as necessary. If an author is not listed on a particular chapter or page, the editors may be attributed as the authors.
 
@@ -19,7 +38,7 @@ Better yet, include a link to the specific commit! _If you know what this means,
 
 ## How the book is made
 
-This book is created using open source tools: it is a Jupyter Book that uses a number of features from [TeachBooks](https://teachbooks.io/) and is written using Markdown, Jupyter notebooks and Python files to generate some figures. The source files are stored on a public GitHub repository [github.com/TUDelft-MUDE/book](https://github.com/tudelft-mude/book/). View the repository README file or contact the editors for additional information.
+This book is created using open source tools: it is a Jupyter Book that uses a number of features from [TeachBooks](https://teachbooks.io/) and is written using Markdown, Jupyter notebooks and Python files to generate some figures. The source files are stored on a public GitHub repository [github.com/TUDelft-MUDE/book](https://github.com/tudelft-mude/book/). Zenodo is used to archive all open versions of the book (beginning with the 2024-25 academic year) and to provide a DOI ([10.5281/zenodo.16236358](https://doi.org/10.5281/zenodo.16236358)).  View the repository README file or contact the editors for additional and up-to-date information.
 
 ## Acknowledgements
 
@@ -42,12 +61,12 @@ Auxiliary files such as figures, code, videos, etc, are included under the licen
 (external_resources)=
 ### External Resources
 
-Parts of this book are taken from other external resources and reused in various ways. Entire chapters or pages are listed individually in the {ref}`external_resources` section below. Resources that are used _within_ a page and/or are modified by MUDE authors are listed individually in the {ref}`internal_resources` section below.
+Parts of this book are taken from other external resources and reused in various ways (some of which are _not_ shared with a permissive license). Entire chapters or pages are listed individually in the {ref}`external_resources` section below. Resources that are used _within_ a page and/or are modified by MUDE authors are listed individually in the {ref}`internal_resources` section below.
 
 (credits_not_cc_by)=
 ### Resources _not_ under CC BY
 
-CC BY conditions are _not_ applicable to some resources included in this book which resources cannot be reused without explicit permission from the original copyright holder. These resources are listed individually within the summary of each chapter or page.
+CC BY conditions are _not_ applicable to some resources included in this book which resources cannot be reused without explicit permission from the original copyright holder. In some cases, external resources are provided under their own permissive license (e.g., CC BY), in which case permission and instructions for use are already explicitly provided by the copyright holder; however this is not always the case. All resources that are _not_ included in the CC BY license of this book are listed individually in the sections below, either: within the summary of each chapter or page, or as entire chapters or pages in {ref}`external_resources_credits`.
 
 (internal_resources)=
 ## Individual Chapters and Pages
@@ -80,7 +99,7 @@ Credits are provided here for chapters and pages that are released under the lic
 >
 > Special thanks goes to:
 > - Peter Teunissen and Christiaan Tiberius who co-shaped the material, indirectly, through collaboration with the author as TU Delft colleagues.
-> - The book _Adjustment theory: an introduction_ {cite:p}`adjustment_theory` and _Testing theory: an introduction_ {cite:p}`testing_theory` which provided the framework for this chapter.
+> - The books _Adjustment theory: an introduction_ {cite:p}`adjustment_theory` and _Testing theory: an introduction_ {cite:p}`testing_theory` which provided the framework for this chapter.
 > - Sophie Keemink, Caspar Jungbacker and Thirza Feenstra, who provided feedback and helped develop exercises.
 
 (numerical_modelling_credit)=
@@ -92,7 +111,9 @@ Credits are provided here for chapters and pages that are released under the lic
 > - Isabel Slingerland and Mona Devos for critical feedback and development of exercises, figures and related content.
 > - Dhruv Mehta and Ajay Jagadeesh for feedback on structure, content.
 >
-> {numref}`NumericalMethodsRiver` is included on page {ref}`numerical_modelling` but is _not_ included under the CC BY license of this book and cannot be reused without explicit permission from the original copyright holder (Deltares). Original content is used here with explicit permission of Amgad Omer on behalf of Deltares.
+> {numref}`NumericalMethodsRiver` is included on page {ref}`numerical_modelling` but is _not_ included under the CC BY license of this book. Original content is used here with explicit permission of Amgad Omer on behalf of Deltares.
+>
+> {numref}`openstax_fig_01` is reproduced from {cite:t}`openstax_calculus` without modification and is _not_ included under the CC BY license of this book. The source content is provided with a CC BY NC SA license and can be accessed for free at [https://openstax.org/books/calculus-volume-2/pages/1-introduction](https://openstax.org/books/calculus-volume-2/pages/1-introduction).
 
 (distributions_credit)=
 ### Chapters: Univariate and Multivariate Continuous Distributions
@@ -137,7 +158,7 @@ Credits are provided here for chapters and pages that are released under the lic
 > - João Moura Pereira de Lucas Teixeira, created first draft of pages from powerpoint slides.
 > - Antonio Magherini, who reviewed, commented and/or modified content.
 >
-> {numref}`unitycircle` is included on page {ref}`fourier_real` but is _not_ included under the CC BY license of this book and cannot be reused without explicit permission from the original copyright holder. Original content licensed under CC BY-SA 4.0 by {cite:t}`BFG` and can be found [here](https://commons.wikimedia.org/wiki/File:Unitycircle-complex.gif); used here without modification.
+> {numref}`unitycircle` is included on page {ref}`fourier_real` but is _not_ included under the CC BY license of this book. Original content licensed under CC BY-SA 4.0 by {cite:t}`BFG` and can be found [here](https://commons.wikimedia.org/wiki/File:Unitycircle-complex.gif); used here without modification.
 
 (time_series_analysis_credit)=
 ### Chapter: Time Series Analysis
@@ -151,9 +172,9 @@ Credits are provided here for chapters and pages that are released under the lic
 > - Serge Kaplev, who provided critical feedback and suggestions for the theoretical content.
 > - Antonio Magherini, who created the first draft material from powerpoint slides and prepared notebooks as exercises.
 > 
-> The following resources are used in this chapter but are _not_ included under the CC BY license of this book and cannot be reused without explicit permission from the original copyright holder:
+> The following resources are used in this chapter but are _not_ included under the CC BY license of this book:
 > - {numref}`cover` is used on page {ref}`tsa` (not modified) and is from {cite:t}`ipcc2018`.
-> - {numref}`trend` is used on page {ref}`components` (not modified) and is from {cite:t}`csiro`
+> - {numref}`trend` is used on page {ref}`components` (not modified) and is from {cite:t}`csiro`.
 
 (optimization_credit)=
 ### Chapter: Optimization
@@ -168,6 +189,11 @@ Credits are provided here for chapters and pages that are released under the lic
 > - João Moura Pereira de Lucas Teixeira, who created first draft of pages from powerpoint slides.
 >
 > The {ref}`optimization_project` pages are included in this chapter but are _not_ included under the CC BY license of this book; they are in-class exercises that will be shared by the authors of this book as part of a future publication (also under a CC BY license; citation will be provided here after publication).
+>
+> Several figures are included in this chapter but are _not_ included under the CC BY license of this book:
+> - {numref}`convex_non_convex` is used on page {ref}`optimization_taxonomy`; the convex 3D figure is from {cite:t}`Agrawal2021` and the non-convex 3D figures is from {cite:t}`Nogal2021`. Both are included as part of the figure shown in this book modification.
+> - {numref}`recap_simple_branch_bound` is used on page {ref}`optimization_genetic_algorithm` and is from {cite:t}`Danshian2025` (left) and the figure on the right is from an unknown source. Both are included as part of the figure shown in this book without modification.
+> - Figures {numref}`computation_complexity`, {numref}`metaheuristic_approach`, {numref}`metaheuristic_approach2`, {numref}`evolutionary_algorithm`, {numref}`termination`, {numref}`genetic_algorithm_diagram`, {numref}`single_point_crossover_diagram`, {numref}`single_point_crossover_diagram2` and {numref}`genetic_new_population` on page {ref}`optimization_genetic_algorithm`  are included under the CC BY license of this book, as they are from unknown sources and will be replaced.
 
 (machine_learning_credit)=
 ### Chapter: Introduction to Machine Learning
@@ -189,14 +215,14 @@ Credits are provided here for chapters and pages that are released under the lic
 Part of the chapters in the Programming part of this book are reused from two sources: _Learn Programming for Engineers_ {cite:p}`learn-programming` and _Python for Engineers_ {cite:p}`learn-python`. Both books are published with a CC BY license and are available online at [teachbooks.io/learn-programming](https://teachbooks.io/learn-programming) and [teachbooks.io/learn-python](https://teachbooks.io/learn-python).
 
 (external_resources_credits)=
-## External resources
+## External Resources
 
-The following chapters and pages are included directly from an external resource, are not included under the CC BY license of this book and cannot be reused without explicit permission from the original copyright holder. Unless otherwise noted below, the contents have not been edited by the authors of this book.
+The following chapters and pages are included directly from an external resource, are not included under the CC BY license of this book. Unless otherwise noted below, the contents have not been edited by the authors of this book.
 
 (risk_analysis_credit)=
 ### Chapter: Risk Analysis
 
-> {ref}`risk` resuses the Chapters _Risk Analysis_ {cite:p}`lanzafame2024-risk` and _Risk Evaluation_ {cite:p}`lanzafame2024-risk-eval` and associated exercises from the book _Risk and Reliability for Engineers_ {cite:p}`lanzafame2024`, published with a CC BY license. Files were modified to provide short introduction and explanation for readers (i.e., MUDE students).
+> {ref}`risk` reuses the Chapters _Risk Analysis_ {cite:p}`lanzafame2024-risk` and _Risk Evaluation_ {cite:p}`lanzafame2024-risk-eval` and associated exercises from the book _Risk and Reliability for Engineers_ {cite:p}`lanzafame2024`, published with a CC BY license. Files were modified to provide short introduction and explanation for readers (i.e., MUDE students).
 
 ## Contact
 
