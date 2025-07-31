@@ -1,3 +1,4 @@
+(spectral_estim)=
 # Spectral Estimation
 
 ## Energy and power signals

@@ -1,7 +1,7 @@
 (components)=
 # Components of time series
 
-A time series is a discrete time sequence of data points indexed in time which can be used to study a phenomenon. It is a record of the data collected at different points in time, it consists of discrete time samples of typically a continuous-time phenomenon in reality.  The data are usually collected at fixed time intervals rather than just recording them intermittently or randomly. The fixed interval $\Delta t$, in the time domain, is defined as 'sampling interval' and, in the frequency domain, is defined as 'sampling rate' or 'sampling frequency' $f_s$, expressed for example in Hz.
+A time series is a discrete time sequence of data points indexed in time which can be used to study a phenomenon. It is a record of the data collected at different points in time, it consists of discrete time samples of typically a continuous-time phenomenon in reality.  The data are usually collected at fixed time intervals rather than just recording them intermittently or randomly. The fixed interval $\Delta t$, in the time domain, is defined as 'sampling interval' and, in the frequency domain, is defined as 'sampling rate' or 'sampling frequency' $f_s$, expressed for example in Hz:
 
 $$ \Delta t = \frac{1}{f_s} $$
 
@@ -67,7 +67,7 @@ Y(t) &= \sum_{i=1} ^p A_i  \cos(2\pi f_i t + \theta_i)  + \epsilon(t)\\
 \end{align*}
 $$
 
-With the coefficients $a_i = A_i\cos\theta_i$ and $b_i=-A_i\sin\theta_i$, and where $f_i$ is the $i$-th frequency of the seasonal variation and is fixed or determined by Spectral Analysis. To be more specific, we can use the {ref}`psd` to determine the unknown frequencies. 
+With the coefficients $a_i = A_i\cos\theta_i$ and $b_i=-A_i\sin\theta_i$, and where $f_i$ is the $i$-th frequency of the seasonal variation and is fixed or determined by Spectral Analysis. To be more specific, we can use the [PSD](spectral_estim) to determine the unknown frequencies. 
 
 Once $\omega_ 0$ is set, the coefficients $a_i $ and $b_i$ can be determined using the least-squares method, since the equation is linear in $a_i$ and $b_i$. From this the original sinusoids can be obtained using:
 
