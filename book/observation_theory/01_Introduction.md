@@ -1,3 +1,4 @@
+(ObsTheory)=
 ## Introduction
 
 From experience we know that various uncertain phenomena can be modeled as a random variable (or a random vector), say $Y$. In this part the random variables are measurements (e.g., sensor readings), which are uncertain due to random errors. We will refer to these random variables (our input data) $Y$ as the *observables*.

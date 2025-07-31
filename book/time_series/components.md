@@ -124,7 +124,7 @@ For $\theta$ we rewrite the second function
 
 $ a = A \cos(\theta) \hspace{1cm} -b = A \sin(\theta)$
 
-$ \frac{-b}{a} = \frac{\sin(\theta)}{\cos(\theta)} = \operatorname{tan}\left(\theta\right)$
+$ \frac{-b}{a} = \frac{\sin(\theta)}{\cos(\theta)} = \tan\left(\theta\right)$
 
 $ \theta = \arctan(\frac{-b}{a}) $
 
