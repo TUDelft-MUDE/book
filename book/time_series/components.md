@@ -125,9 +125,9 @@ For $\theta$ we rewrite the second function
 
 $ a = A \cos(\theta) \hspace{1cm} -b = A \sin(\theta) $,
 
-$ \frac{-b}{a} = \frac{\sin(\theta)}{\cos(\theta)} = \tan(\theta) $,
+$ \frac{-b}{a} = \frac{\sin \left(\theta \right)}{\cos \left( \theta \right)} = \tan \left(\theta\right) $,
 
-$ \theta = \arctan(\frac{-b}{a}) $
+$ \theta = \arctan \left( \frac{-b}{a} \right) $
 
 
 [This video](https://youtu.be/8kqQiI4ni68) includes the solution to this exercise. 
