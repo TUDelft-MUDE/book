@@ -69,7 +69,8 @@ $$
 
 With the coefficients $a_i = A_i\cos\theta_i$ and $b_i=-A_i\sin\theta_i$, and where $f_i$ is the $i$-th frequency of the seasonal variation and is fixed or determined by Spectral Analysis. To be more specific, we can use the [PSD](spectral_estim) to determine the unknown frequencies. 
 
-Once $\omega_ 0$ is set, the coefficients $a_i $ and $b_i$ can be determined using the least-squares method, since the equation is linear in $a_i$ and $b_i$. From this the original sinusoids can be obtained using:
+
+Once $f_i$ is set, the coefficients $a_i $ and $b_i$ can be determined using the least-squares method, since the equation is linear in $a_i$ and $b_i$. From this the original sinusoids can be obtained using:
 
 $$ A_i = \sqrt{a_i^2 + b_i^2}, \hspace{1cm} \theta_i = \arctan\left(-\frac{b_i}{a_i}\right), \hspace{1cm} i = 1, \ldots{}, p $$
 
@@ -122,9 +123,9 @@ $ \sqrt{a^2 + b^2} = A $
 
 For $\theta$ we rewrite the second function
 
-$ a = A \cos(\theta) \hspace{1cm} -b = A \sin(\theta)$
+$ a = A \cos(\theta) \hspace{1cm} -b = A \sin(\theta) $,
 
-$ \frac{-b}{a} = \frac{\sin(\theta)}{\cos(\theta)} = \tan\left(\theta\right)$
+$$ \frac{-b}{a} = \frac{\sin(\theta)}{\cos(\theta)} = \tan(\theta) $$
 
 $ \theta = \arctan(\frac{-b}{a}) $
 
@@ -171,6 +172,7 @@ Noise refers to random fluctuations in the time series about its typical pattern
 It can be written as 
 
 $$Y(t) = y_0 + rt + a \cos(2\pi f_1 t) + b \sin(2\pi f_1 t) + o u_k(t) + \epsilon(t)$$
+
 
 where 
 - $y_0$ is the intercept (e.g. in mm).
