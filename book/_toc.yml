@@ -186,6 +186,8 @@ parts:
         title: "Time Series forecasting"
         sections:
         - file: time_series/forecasting_example.ipynb
+        sections:
+        -file: time_series/movingAverage.ipynb
   
     - file: optimization/overview
       title: Optimization

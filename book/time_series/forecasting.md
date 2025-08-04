@@ -23,7 +23,7 @@ In summary, given a time series $Y=\mathrm{Ax}+\epsilon$, the workflow is as fol
 
 3. Predict the signal-of-interest: $\hat{Y}_{signal}=\mathrm{A}_p\hat{X}$, where $\mathrm{A}_p$ is the design matrix describing the functional relationship between the future values $Y_p$ and $\mathrm{x}$.
 
-4. Predict the noise $\hat{\epsilon}_p$ based on the AR model. $\hat{\epsilon}_p = \Sigma_{Y_pY}\Sigma_Y^{-1}\hat{\epsilon}$, where $\Sigma_{Y_pY}$ is the covariance matrix between the future values $Y_p$ and the observed values $Y$. A mathematical proof can be found in Chapter 11 of [Surveying and Mapping (2022)](https://doi.org/10.5074/T.2021.007) by Christian C. J. M. Tiberius, et al. (2022).
+4. Predict the noise $\hat{\epsilon}_p$ based on the AR model. $\hat{\epsilon}_p = \Sigma_{Y_pY}\Sigma_Y^{-1}\hat{\epsilon}$, where $\Sigma_{Y_pY}$ is the covariance matrix between the future values $Y_p$ and the observed values $Y$. A mathematical proof can be found in Chapter 11 of [Surveying and Mapping](https://doi.org/10.5074/T.2021.007) by Christian C. J. M. Tiberius, et al. (2022).
 
 5. Predict future values of the time series: $\hat{Y}_p=\mathrm{A}_p\hat{X}+\hat{\epsilon}_p$.
 

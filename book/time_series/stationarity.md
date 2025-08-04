@@ -1,5 +1,16 @@
 (stationary)=
 # Time Series Stationarity
+In Section [Components of time series](forecast) it was pointed out that a time series $Y(t) = [Y(t_1), Y(t_2), \ldots, Y(t_m)]^T$ is a sequence of random variables. Each element $Y(t_i)$ is a random variable, with a probability density function denoted by $f_{Y(t_i)}(y)$.
+
+A time series results from observing a stochastic process. A stochastic process is a phenomenon, taking place as time goes by, which is subject to uncontrolled variability and associated uncertainty, and additional variability is typically involved in the observation of the process.
+
+Would we observe it as a continuous function of time, then $Y(t)$ is a random variable which depends on time, and hence the probability density function of $Y(t)$ would carry also time $t$ as an argument, $f_{Y(t)}(y,t)$, modelling the variability in the outcomes of $Y(t)$.
+
+A time series results from observing the stochastic process at discrete instants in time, resulting in a sequence of random variables $Y(t_i)$ with associated the aforementioned PDF evaluated at times $t_i$: $f_{Y(t_i)}(y,t_i)$, with $i=1,\ldots,m$.
+
+The PDF carries time as an argument, meaning first that it depends on time and that the variability described by it may change as a $\emph{function of time}$ (though soon we will assume that the process is stationary, and hence that it does not), and second that there may exist $\emph{dependence in time}$, such that neighbouring elements of the time series, e.g. $Y(t_2)$ and $Y(t_5)$, are correlated, in which case we could say that the process has a kind of memory. This `time correlation', very common in practice, must be properly taking into account when we estimate (predict) future values of the time series, and this is the goal of the remaining sections of this chapter on Time Series Analysis.
+
+In the sequel we focus on the noise-component of the time series. We assume that the signal-part has been appropriately taken care of through estimation of the components in the functional model (such as trend and seasonality). We work with time series $S = \hat{\epsilon} = Y - A \hat{X}$, hence the residuals which remain after estimation of the components of the functional model, and ideally have zero mean.
 
 
 ```{admonition} Definition
