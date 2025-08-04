@@ -181,7 +181,7 @@ parts:
         sections:
         - file: time_series/ar_exercise.ipynb
       - file: time_series/examples_PSD.ipynb
-        tile: "PSD exmaples"
+        title: "PSD examples"
       - file: time_series/forecasting
         title: "Time Series forecasting"
         sections:
