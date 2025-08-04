@@ -180,7 +180,8 @@ parts:
         title: "AutoRegressive (AR) process"
         sections:
         - file: time_series/ar_exercise.ipynb
-        - file: time_series/examples_PSD.ipynb
+      - file: time_series/examples_PSD.ipynb
+        tile: "PSD exmaples"
       - file: time_series/forecasting
         title: "Time Series forecasting"
         sections:
