@@ -4,14 +4,14 @@
 The goal is now to:
 
 * estimate parameters of interest (i.e., components of time series) using **Best Linear Unbiased Estimation (BLUE)**;
-* evaluate the confidence intervals of the estimators for the parameters of interest;
+* evaluate confidence intervals of the estimators for the parameters of interest;
 
 ## Components of time series
 
 As already discussed, we will distinguish the following components in a time series:
 
-* **Trend:** General behavior and variation of the process. This often is a linear trend with an unknown intercept $y_0$ and a rate $r$.
-* **Seasonality:** Regular seasonal variations, which can be expressed as sine functions with (un)known frequency $f_1$, and unknown amplitude $A$ and phase $\theta$.
+* **Trend:** General behavior and variation of the process. This often is a linear trend with an unknown intercept $y_0$ and rate $r$.
+* **Seasonality:** Regular cyclic variations, which can be expressed as cosine functions with (un)known frequency $f_1$, and unknown amplitude $A$ and phase $\theta$.
 * **Offset:** A jump of size $o$ in a time series starting at epoch $t_k$.
 * **Noise:** White or colored noise (e.g., AR process).
 
@@ -107,7 +107,7 @@ $$
 
 
 ## How to find the frequency?
-We have seen that to obtain a linear model of observation equations in the presence of a periodic pattern (such as seasonality), we need to firstly determine the frequency of the periodic component $f_1$. Once the frequency is determined, we can construct the design matrix $\mathrm{A}$. In some applications, the frequency $f_1$ is provided, while in others, it is not explicitly known and must be estimated from the data.
+We have seen that to obtain a linear model of observation equations in the presence of a periodic or cyclic pattern (such as seasonality), we need to firstly determine the frequency of the periodic component $f_1$. Once the frequency is determined, we can construct the design matrix $\mathrm{A}$. In some applications, the frequency $f_1$ is provided, while in others, it is not explicitly known and must be estimated from the data.
 
 ***How to determine $f_1$ if it is unknown a priori?***
 
@@ -115,7 +115,7 @@ We can determine the dominant frequency $f_1$ by analysing the power spectral de
 
 #### Example power spectral density
 
-{numref}`ls-psd` shows on the left the original time series as well as the estimated linear trend and seasonal signal. The sine wave has a period ($T=1/f$) of 100. Indeed the PSD as function of period on the right shows a peak at a period of 100.
+{numref}`ls-psd` shows on the left the original time series as well as the estimated linear trend and seasonal signal. The sine wave has a period ($T=1/f$) of 100. Indeed the PSD as function of period on the right shows a peak at a period of 100. Mind that the PSD is shown here as a function of period $T$ in seconds, rather than frequency $f$ in Hertz.
 
 ```{figure} https://files.mude.citg.tudelft.nl/ls-psd.png
 :name: ls-psd
@@ -130,7 +130,7 @@ It is also possible to infer the frequency of the periodic pattern by reasoning.
 
 ## Best Linear Unbiased Estimation (BLUE)
 
-If the components of time series are known, we may use the linear model of observation equations to estimate those components. We will use the theory from the chapter on [observation theory](BLUE) to estimate the parameters of interest.
+Once the components of time series are known, we may use the linear model of observation equations to estimate those components. We will use the theory from the chapter on [observation theory](BLUE) to estimate the parameters of interest.
 
 Consider the linear model of observation equations as
 
@@ -148,19 +148,19 @@ and $\epsilon$ is:
 
 $$\hat{\epsilon}=Y-\hat{Y},\hspace{10px}\Sigma_{\hat{\epsilon}}=\Sigma_{Y}-\Sigma_{\hat{Y}}$$
 
-Note that the BLUE can only be used for prediction when the noise is white and uncorrelated in time ([Chapter 4.7](forecasting)).
+Note that the BLUE itlself can only be used for prediction when the noise is white and uncorrelated in time ([Chapter 4.7](forecasting)).
 
 
 ### Estimation of parameters
 %MMMMM same as before?
-If we assume the covariance matrix, $\Sigma_{Y}$, is known, we can estimate $\mathrm{x}$ using BLUE:
+If we assume the covariance matrix, $\Sigma_{Y}$, is known, we can estimate $\mathrm{x}$ using BLUE for the previous example:
 
 $$\hat{X}=\begin{bmatrix}\hat{y_0}\\ \hat{r}\\ \hat{a}\\ \hat{b}\\ \hat{o}\end{bmatrix},\hspace{10px}\Sigma_{\hat{X}}=\begin{bmatrix}\sigma_{\hat{y}_0}^2& \sigma_{\hat{y}_0\hat{r}}& \sigma_{\hat{y}_0\hat{a}}& \sigma_{\hat{y}_0\hat{b}}& \sigma_{\hat{y_0}\hat{o}}\\ \sigma_{\hat{r}\hat{y}_0}& \sigma_{\hat{r}}^2& \sigma_{\hat{r}\hat{a}}& \sigma_{\hat{r}\hat{b}}& \sigma_{\hat{r}\hat{o}}\\ \sigma_{\hat{a}\hat{y_0}}& \sigma_{\hat{a}\hat{r}}& \sigma_{\hat{a}}^2& \sigma_{\hat{a}\hat{b}}& \sigma_{\hat{a}\hat{o}}\\ \sigma_{\hat{b}\hat{y_0}}& \sigma_{\hat{b}\hat{r}}& \sigma_{\hat{b}\hat{a}}& \sigma_{\hat{b}}^2& \sigma_{\hat{b}\hat{o}}\\ \sigma_{\hat{o}\hat{y_0}}& \sigma_{\hat{o}\hat{r}}& \sigma_{\hat{o}\hat{a}}& \sigma_{\hat{o}\hat{b}}& \sigma_{\hat{o}}^2\end{bmatrix}$$
 
-Given $\hat{X}$ and $\Sigma_{\hat{X}}$, we can obtain the [confidence region](confreg) for the parameters. For example, assuming the observations are normally distributed, a 99% **confidence interval** for the rate $r$ is ($\alpha=0.01$):
+Given $\hat{X}$ and $\Sigma_{\hat{X}}$, we can obtain the [confidence region](confreg) for the parameters. For example, assuming the observables are normally distributed, a 99% **confidence interval** for the rate $r$ is ($\alpha=0.01$):
 
 $$\hat{r}\pm k\sigma_{\hat{r}}$$
 
 where $\sigma_{\hat{r}} = \sqrt{(\Sigma_{\hat{X}})_{22}}$ is the standard deviation of $\hat{r}$ and $k=2.58$ is the critical value obtained from the [standard normal distribution](table_standardnormal) (using $0.5\alpha$).
 
-In many practical applications, the covariance matrix $\Sigma_{Y}$ is not known. In such cases we can estimate $\mathrm{x}$ using the [unweighted least squares](LeastSquares), as the covariance is not needed. Alternatively, it is possible to estimate the variance matrix, or components/parameters of it, based on the observed data through variance component estimation techniques, which are beyond the scope of the MUDE.
+In many practical applications, the covariance matrix $\Sigma_{Y}$ is not known. In such cases we can estimate $\mathrm{x}$ using the [unweighted least squares](LeastSquares), as then knowledge of the covariance is not needed. Alternatively, it is possible to estimate the variance matrix, or components/parameters of it, based on the observed data through variance component estimation techniques, which are beyond the scope of the MUDE.

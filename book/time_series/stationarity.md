@@ -14,7 +14,7 @@ In the sequel we focus on the noise-component of the time series. We assume that
 
 
 ```{admonition} Definition
-A stationary time series $S(t)$ is a stochastic process whose statistical properties do not depend on the time at which it is observed.
+A stationary time series $S(t)$ is based on an underlying stochastic process of which the statistical properties do not depend on the time at which it is observed.
 ```
 
 This means that parameters such as *mean* and *(co)variance* should remain constant over time and not follow any trend, seasonality or irregularity:
@@ -35,7 +35,10 @@ $$
 Var(S_t)=\mathbb{E}((S_t-\mu)^2)=c_0=\sigma^2
 $$
 
-Notice that we have introduced the new notation $S_t$ to denote a stationary time series. The time series $Y_t$ is then a non-stationary time series.
+Notice that we have introduced the new notation $S_t$ to denote a stationary time series. The time series $Y_t$ is then potentially a non-stationary time series.
+
+The white noise stochastic model introduced here is stationary ([Section 4.2](noiseandstoch)).
+
 ## Why stationary time series?
 
 Stationarity is important if we want to use a time series for forecasting (predicting future behaviour), which is not possible if the statistical properties change over time.
@@ -61,7 +64,7 @@ $$
 \hat{\epsilon} = Y - \mathrm{A}\hat{X}
 $$ 
 
-The **detrended $\hat{\epsilon}$ is assumed to be stationary** for further **stochastic processing**. This is also an admissible transformation because $Y$ can uniquely be reconstructed as $Y=\mathrm{A}\hat{X}+\hat{\epsilon}$. 
+The **detrended $\hat{\epsilon}$ is assumed to be stationary** for further **stochastic analysis**. This is also an admissible transformation because $Y$ can uniquely be reconstructed as $Y=\mathrm{A}\hat{X}+\hat{\epsilon}$. 
 
 Let us take a look into an example:
 
@@ -91,7 +94,7 @@ y_0 \\ r \\ a \\ b \end{bmatrix} +
 \end{bmatrix}
 $$
 
-The time series of the residuals (left graph) is indeed a stationary time series.
+The time series of the residuals $\hat{\epsilon} = Y-A\hat{X}$ (left graph) is indeed a stationary time series.
 
 :::{card} Question Stationary Time Series
 
@@ -115,7 +118,7 @@ The time series in the second panel is stationary. The mean and variance are con
 
 
 ### Other ways to make a time series stationary
-When model specification is not straightforward, other methods can be used to make a time series stationary. Two common methods are single differencing and moving average. Single differencing of $Y=[Y_1,...,Y_m]^T$ makes a time series $\Delta Y_t=Y_t - Y_{t-1}$. Another way to create an (almost) stationary time series is by taking the moving average of the time series. Where we apply a moving average of $k$ observations to the time series $Y$ to create a new time series $\bar{Y}_t = \frac{1}{k}\sum_{i=1}^{k}Y_{t-i}$, and then take the difference between the original time series and the moving average to obtain a (nearly) stationary time series $\Delta Y_t = Y_t - \bar{Y}_t$.
+When model specification is not straightforward, other methods can be used to make a time series stationary. Two common methods are single differencing and moving average. Single differencing of $Y=[Y_1,...,Y_m]^T$ creates a time series $\Delta Y_t=Y_t - Y_{t-1}$ (long term trends are removed in this way). Another way to create an (almost) stationary time series is by taking the moving average of the time series, where we apply a moving average of $k$ observations to the time series $Y$ to create a new time series $\bar{Y}_t = \frac{1}{k}\sum_{i=1}^{k}Y_{t-i}$ (short term variations are removed in this way), and then take the difference between the original time series and the moving average to obtain a (nearly) stationary time series $\Delta Y_t = Y_t - \bar{Y}_t$.
 
 Both these methods do not require a model specification. So in cases where the model is not known, these methods can be used to make the time series stationary.
 
@@ -126,10 +129,12 @@ We have seen different ways of obtaining a stationary time series from the origi
 
 1. Estimate the signal-of-interest $\hat{X}=(\mathrm{A}^T\Sigma_{Y}^{-1}\mathrm{A})^{-1}\mathrm{A}^T\Sigma_{Y}^{-1}Y$ (Section [Modelling and estimation](modelling_tsa)).
 
-2. Model the noise using the Autoregressive (AR) model, using the stationary time series $S:=\hat{\epsilon}=Y-\mathrm{A}\hat{X}$ (Section [AR](AR)).
+2. Model the noise using for instance an Autoregressive (AR) model, using the stationary time series $S:=\hat{\epsilon}=Y-\mathrm{A}\hat{X}$ (Section [AR](AR)).
 
-3. Predict the signal-of-interest: $\hat{Y}_{signal}=\mathrm{A}_p\hat{X}$, where $\mathrm{A}_p$ is the design matrix describing the functional relationship between the future values $Y_p$ and $\mathrm{x}$ (Section [Forecasting](forecast)).
+3. Predict the signal-of-interest: $\hat{Y}_{signal}=\mathrm{A}_p\hat{X}$, where $\mathrm{A}_p$ is the design matrix describing the **functional** relationship between the future values $Y_p$ and $\mathrm{x}$ (Section [Forecasting](forecast)).
 
-4. Predict the noise $\hat{\epsilon}_p$ based on the AR model.
+4. Predict the **stochastic** noise $\hat{\epsilon}_p$ based on the AR model.
 
 5. Predict future values of the time series: $\hat{Y}_p=\mathrm{A}_p\hat{X}+\hat{\epsilon}_p$ (Section [Forecasting](forecast)).
+
+Resulting in estimates $\hat{Y}_p$ of the time series at future times $t_p$, beyond he time of the last observation $t_m$ in the time series.
