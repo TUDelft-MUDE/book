@@ -1,17 +1,17 @@
 (components)=
 # Components of time series
 
-A time series is a discrete time sequence of data points indexed in time which can be used to study a phenomenon. It is a record of the data collected at different points in time, it consists of discrete time samples of typically a continuous-time phenomenon in reality.  The data are usually collected at fixed time intervals rather than just recording them intermittently or randomly. The fixed interval $\Delta t$, in the time domain, is defined as 'sampling interval' and, in the frequency domain, is defined as 'sampling rate' or 'sampling frequency' $f_s$, expressed for example in Hz:
+A time series is a discrete time sequence of data points indexed in time which can be used to study a phenomenon. It is a record of the data collected at different points in time, it consists of discrete time samples of typically a continuous-time phenomenon in reality.  The data are usually collected at fixed time intervals rather than just recording them intermittently or irregularly. The fixed interval $\Delta t$, in the time domain, is defined as 'sampling interval' and, in the frequency domain, it is defined as 'sampling rate' or 'sampling frequency' $f_s$, expressed for example in Hz:
 
 $$ \Delta t = \frac{1}{f_s} $$
 
-A time series is denoted as 
+A real-valued time series is denoted as 
 
 $$Y(t) = [Y(t_1), Y(t_2), \ldots{}, Y(t_m)]^T$$
 
 The $Y(t_i)$ are random variables, since the data is affected by noise.
 
-The time instants, also defined as epochs, are $t_i = i \Delta t$, indicating that the samples are equally spaced in time intervals of $\Delta t$. Assuming a unit time interval (i.e., $\Delta t=1$), then $t_i = i$ and we can write the time series as 
+The time instants, also defined as epochs, are $t_i = i \Delta t$, with $i = 1,\ldots,m$, indicating that the samples are equally spaced in time intervals of $\Delta t$. Assuming a unit time interval (i.e., $\Delta t=1$), then $t_i = i$ and we can write the time series as 
 
 $$Y(t) = [Y(1), Y(2), \ldots{}, Y(m)]^T = [Y_1, Y_2, \ldots{}, Y_m]^T$$
 
@@ -23,7 +23,7 @@ $$Y(t) = [Y(1), Y(2), \ldots{}, Y(m)]^T = [Y_1, Y_2, \ldots{}, Y_m]^T$$
 Example of time series with equally spaced time interval $\Delta t$
 ```
 
-A time series can be decomposed as follows:
+A time series can commonly be decomposed as follows:
 
 $$Y(t) = tr(t) + s(t) + o(t) + b(t) + \epsilon(t)$$
 
@@ -35,9 +35,11 @@ where we distinguish the following components:
 4. $b(t)$ = irregularities and outliers (also referred to as biases), due to unexpected reasons. Irregularities will not be considered in this book.
 5. $\epsilon(t)$ = noise process, can be white or colored noise.
 
+Noting that not all components may be present in a time series at hand.
+
 ## Trend
 
-The trend is the general pattern of the time series and shows its long-term changes. The trend can be linear, however higher order polynomials are also possible.
+The trend is the general pattern of the time series and shows its long-term changes. The trend can be linear, however higher order polynomials (and other functions) are also possible.
 
 ```{figure} https://files.mude.citg.tudelft.nl/trend.png
 :name: trend
@@ -47,9 +49,9 @@ The trend is the general pattern of the time series and shows its long-term chan
 Monthly time series of global mean sea level measurements using Satellite Altimetry technique. Source image: https://www.cmar.csiro.au/sealevel/sl_hist_last_decades.html
 ```
 
-{numref}`trend` shows a positive trend (red line) of around $3.5$ mm/year, which in this case indicates sea level rise. This however needs to be further investigated and tested statistically (see [testing](08_testing) and also {ref}`modelling_tsa`).
+{numref}`trend` shows a positive trend (red line) of about $3.5$ mm/year, which in this case indicates global sea level rise. This however needs to be further investigated and tested statistically (see [testing](08_testing) and also {ref}`modelling_tsa`).
 
-Trend analysis expresses the changes of the variable of interest with respect to time $t$. Different types of trend are possible and for now we will mainly focus on linear trend, i.e. the time-dependent variable $Y(t)$ changes at a (constant) linear rate over time: $Y_t = y_0 + r t + \epsilon(t)$. Other trends are however also possible, for example, quadratic, which includes $c t^2$, or log linear $\log(Y_t) = y_0 + r t + \epsilon(t)$.
+Trend analysis expresses the changes of the variable of interest with respect to independent variable time $t$. Different types of trend are possible and for now we will mainly focus on a linear trend, i.e. the time-dependent variable $Y(t)$ changes at a (constant) linear rate over time: $Y_t = y_0 + r t + \epsilon(t)$. Other trends are however also possible, for example, quadratic, which includes $c t^2$, or log linear $\log(Y_t) = y_0 + r t + \epsilon(t)$.
 
 
 ## Seasonality
@@ -137,7 +139,7 @@ $ \theta = \arctan(\frac{-b}{a}) $
 
 ## Offset (jump)
 
-Offsets are sudden changes or shifts in time series. There are different underlying reasons why we encounter offsets in time series. 
+Offsets are sudden changes or shifts in time series. There are different underlying causes why we encounter offsets in time series. 
 
 ```{figure} https://files.mude.citg.tudelft.nl/offset.png
 :name: offset
@@ -147,13 +149,13 @@ Offsets are sudden changes or shifts in time series. There are different underly
 Example of time series with two offsets. 
 ```
 
-As a deterministic sudden change, offsets can be handled by a step function such as a heaviside step function with an epoch (time instant) that can be known or unknown (to be detected) depending on the time series.
+As a deterministic sudden change, offsets can be handled by a step function such as a Heaviside step function with an epoch (time instant) that can be known or unknown (to be detected) depending on the time series.
 
 In this case the time series is written as: 
 
 $$ Y(t) = \sum_{k=1}^q o_k u_k(t)+\epsilon(t)$$
 
-where $q$ is the series of offsets (in {numref}`offset` there are two offsets, hence $q=2$) and each of them is expressed as a Heaviside step function 
+where $q$ is the number of offsets (in {numref}`offset` there are two offsets, hence $q=2$) and each of them is expressed as a Heaviside step function 
 
 $$u_k(t) = \left\{
 \begin{array}{ll}
@@ -165,9 +167,9 @@ $$u_k(t) = \left\{
 Once the time instant $t_k$ of the offset is known, the amplitude can be estimated using least-squares.
 ## Noise 
 
-Noise refers to random fluctuations in the time series about its typical pattern. In general we can talk about white and colored noise in time series analysis. Until now we only considered white noise , i.e., $\epsilon(t) \sim N(0, \sigma^2_{\epsilon})$, and we didn't have to deal with time correlation, but in this chapter we will also consider other types of noise (see {ref}`noise`) and time correlation.
+Noise refers to \textbf{random} fluctuations or variations in the time series about its typical pattern. In general we can talk about white and colored noise in time series analysis. Until now we only considered white noise , i.e., $\epsilon(t) \sim N(0, \sigma^2_{\epsilon})$, and we didn't have to deal with time correlation, but in this chapter we will also consider other types of noise (see {ref}`noise`) and time correlation.
 
-:::{card} Example - time series consisting of a trend, annual signal (seasonality), an offset and pure random noise (white noise)
+:::{card} Example - time series consisting of a trend, annual cycle (seasonality), an offset and pure random noise (white noise)
 
 It can be written as 
 
@@ -175,9 +177,9 @@ $$Y(t) = y_0 + rt + a \cos(2\pi f_1 t) + b \sin(2\pi f_1 t) + o u_k(t) + \epsilo
 
 
 where 
-- $y_0$ is the intercept (e.g. in mm).
-- $r$ is the rate (e.g. in mm/year).
-- $a$ and $b$ are the coefficients of the signal, (e.g. annual signal).
+- $y_0$ is the intercept at $t=0$ (e.g. in mm).
+- $r$ is the (constant) rate (e.g. in mm/year).
+- $a$ and $b$ are the coefficients of the cycle, (e.g. annual cycle).
 - $f_1$ is the frequency of the seasonal component (e.g. 1 cycle/year).
 - $o$ is the offset starting at time $t_k$.
 - $u_k(t)$ is the Heaviside step function.
