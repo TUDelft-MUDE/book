@@ -186,8 +186,7 @@ parts:
         title: "Time Series forecasting"
         sections:
         - file: time_series/forecasting_example.ipynb
-        sections:
-        - file: time_series/movingAverage.ipynb
+      - file: time_series/movingAverage.ipynb
         title: "Appendix on Moving Average (optional)"
 
   
