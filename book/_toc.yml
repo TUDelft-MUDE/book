@@ -78,7 +78,7 @@ parts:
         - file: probability/moments.md
         - file: probability/MLE_1.ipynb
         - file: probability/GOF
-      - file: probability/Loc-scale.ipynb
+      - file: univariate_distributions/Loc-scale.ipynb
 
     - file: multivariate/overview
       sections:
