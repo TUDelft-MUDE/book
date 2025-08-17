@@ -21,14 +21,7 @@ $$
 F(x; \alpha, \beta) = \int_0^x f(t) \, dt = \frac{1}{B(\alpha, \beta)} \int_0^x t^{\alpha - 1} (1 - t)^{\beta - 1} dt,
 $$
 
-where $f(t)$ is the probability density function given above. This integral does not, in general, have a closed-form solution, but it is commonly expressed in terms of the **regularized incomplete Beta function** $I_x(\alpha, \beta)$:
-
-$$
-F(x; \alpha, \beta) = I_x(\alpha, \beta) = \frac{1}{B(\alpha, \beta)} \int_0^x t^{\alpha - 1} (1 - t)^{\beta - 1} dt.
-$$
-
-The regularized incomplete Beta function maps $x \in [0, 1]$ to $F(x) \in [0, 1]$ and provides a numerically stable way to evaluate the CDF. It is available in most scientific computing libraries. We list this cdf here only for completeness' sake.
-
+where $f(t)$ is the probability density function given above.
 
 ## Interactive Element
 

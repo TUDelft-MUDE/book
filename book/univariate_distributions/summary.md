@@ -22,6 +22,9 @@ Here a summary of the main equations for each of the presented distirbution func
   - $f(x) = \lambda e^{\normalsize-\lambda x}$
   - $F(x) = 1 - e^{\normalsize-\lambda x}$
   - $\begin{array}{ll} E[X] = \cfrac{1}{\lambda} \\ Var[X] = \cfrac{1}{\lambda^2} \end{array}$
+* - Beta
+  - $f(x) = \frac{x^{\alpha - 1} (1 - x)^{\beta - 1}}{B(\alpha, \beta)}$
+  - $F(x; \alpha, \beta) = \frac{1}{B(\alpha, \beta)} \int_0^x t^{\alpha - 1} (1 - t)^{\beta - 1} dt$
 * - Gumbel
   - $f(x) = \cfrac{1}{\beta} e^{\normalsize-\left(z + e^{\normalsize-z}\right)}\text{, where }z=\cfrac{x-\alpha}{\beta}$
   - $F(x)=e^{\normalsize-e^{\normalsize-z}}$
