@@ -25,6 +25,7 @@ Here a summary of the main equations for each of the presented distirbution func
 * - Beta
   - $f(x) = \frac{x^{\alpha - 1} (1 - x)^{\beta - 1}}{B(\alpha, \beta)}$
   - $F(x; \alpha, \beta) = \frac{1}{B(\alpha, \beta)} \int_0^x t^{\alpha - 1} (1 - t)^{\beta - 1} dt$
+  - $\begin{array}{ll} E[X] = \frac{\alpha}{\alpha + \beta} \\ Var[X] = \frac{\alpha\beta}{(\alpha + \beta)^2(\alpha+\beta+1)}  \end{array}$
 * - Gumbel
   - $f(x) = \cfrac{1}{\beta} e^{\normalsize-\left(z + e^{\normalsize-z}\right)}\text{, where }z=\cfrac{x-\alpha}{\beta}$
   - $F(x)=e^{\normalsize-e^{\normalsize-z}}$
