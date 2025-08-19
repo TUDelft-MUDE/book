@@ -76,14 +76,14 @@ Credits are provided here for chapters and pages that are released under the lic
 (modelling_concepts_credit)=
 ### Chapter: Modelling Concepts
 
-> {ref}`modelling_concepts` is written by Alessandro Cabboi, Patricia Mares Nasarre and Robert Lanzafame.
+> {ref}`Modeling concepts <modelling_concepts>` is written by Alessandro Cabboi, Patricia Mares Nasarre and Robert Lanzafame.
 >
 > Special thanks goes to João Moura Pereira de Lucas Teixeira, who created first draft of pages from powerpoint slides.
 
 (uncertainty_propagation_credit)=
 ### Chapter: Uncertainty Propagation
 
-> {ref}`01_errorprop` is written by Sandra Verhagen.
+> {ref}`Propagation of Uncertainty <01_errorprop>` is written by Sandra Verhagen.
 >
 > Special thanks goes to:
 > - Robert Lanzafame, Patricia Mares Nasarre and Max Ramgraber, who reviewed, commented and/or modified content. Robert and Patricia wrote the page {ref}`uncertainty_classification`.
@@ -95,7 +95,7 @@ Credits are provided here for chapters and pages that are released under the lic
 (observation_theory_credit)=
 ### Chapter: Observation Theory
 
-> {ref}`OT` is written by Sandra Verhagen.
+> {ref}`Observation theory <OT>` is written by Sandra Verhagen.
 >
 > Special thanks goes to:
 > - Peter Teunissen and Christiaan Tiberius who co-shaped the material, indirectly, through collaboration with the author as TU Delft colleagues.
@@ -105,7 +105,7 @@ Credits are provided here for chapters and pages that are released under the lic
 (numerical_modelling_credit)=
 ### Chapter: Numerical Modelling
 
-> {ref}`numerical_modelling` is written by Jaime Arriaga Garcia, Justin Pittman and Robert Lanzafame.
+> {ref}`Numerical modelling <numerical_modelling>` is written by Jaime Arriaga Garcia, Justin Pittman and Robert Lanzafame.
 >
 > Special thanks goes to:
 > - Isabel Slingerland and Mona Devos for critical feedback and development of exercises, figures and related content.
@@ -118,7 +118,7 @@ Credits are provided here for chapters and pages that are released under the lic
 (distributions_credit)=
 ### Chapters: Univariate and Multivariate Continuous Distributions
 
-> {ref}`cont_dist` and {ref}`mult_dist` are written by Patricia Mares Nasarre and Robert Lanzafame.
+> {ref}`Univariate Continuous Distributions <cont_dist>` and {ref}`Multivariate Distributions <mult_dist>` are written by Patricia Mares Nasarre and Robert Lanzafame.
 >
 > Special thanks goes to Oswaldo Morales Napoles and Elisa Ragno for suggestions on the theoretical and didactic framework, as well as critical feedback and review.
 >
@@ -129,7 +129,7 @@ Credits are provided here for chapters and pages that are released under the lic
 (finite_volume_method_credit)=
 ### Chapter: PDEs and the Finite Volume Method
 
-> {ref}`fvm` is written by Robert Lanzafame and Jaime Arriaga Garcia.
+> {ref}`PDEs and the Finite Volume Method <fvm>` is written by Robert Lanzafame and Jaime Arriaga Garcia.
 >
 > Special thanks goes to:
 > - Isabel Slingerland and Mona Devos for critical feedback and development of exercises, figures and related content.
@@ -139,7 +139,7 @@ Credits are provided here for chapters and pages that are released under the lic
 (finite_element_method_credit)=
 ### Chapter: Finite Element Method
 
-> {ref}`finite_element_method` is written by Frans van der Meer. 
+> {ref}`Finite Element Method <finite_element_method>` is written by Frans van der Meer. 
 >
 > _The material in this chapter is also incorporated in an in-depth book "Finite Elements in Civil Engineering and Geosciences" by Oriol Colomés, Iuri Rocha, Frans van der Meer and Martin Lesueur which can be found [here](interactivetextbooks.citg.tudelft.nl/computational-modelling)._
 >
@@ -148,7 +148,7 @@ Credits are provided here for chapters and pages that are released under the lic
 (signal_processing_credit)=
 ### Chapter: Signal Processing
 
-> {ref}`signal_processing` is written by Christiaan Tiberius.
+> {ref}`Signal processing <signal_processing>` is written by Christiaan Tiberius.
 >
 > _The material in this chapter is related to an in-depth book "Engineering signal analysis - from Fourier to filtering" by Christiaan Tiberius and Max Mulder (TU Delft Open Publishing, 2025)._
 >
@@ -163,7 +163,7 @@ Credits are provided here for chapters and pages that are released under the lic
 (time_series_analysis_credit)=
 ### Chapter: Time Series Analysis
 
-> {ref}`tsa` is written by Alireza Amiri-Simkooei, Christiaan Tiberius and Sandra Verhagen.
+> {ref}`Time Series Analysis <tsa>` is written by Alireza Amiri-Simkooei, Christiaan Tiberius and Sandra Verhagen.
 >
 > _The initial framework and contents of this chapter were created by Alireza Amiri-Simkooei, which was then revised and updated by Sandra and Christian._
 >
@@ -179,7 +179,7 @@ Credits are provided here for chapters and pages that are released under the lic
 (optimization_credit)=
 ### Chapter: Optimization
 
-> {ref}`optimization` is written by Gonçalo Homem de Almeida Correia, Maria Nogal Macho, Jie Gao and Bahman Ahmadi.
+> {ref}`Optimization <optimization>` is written by Gonçalo Homem de Almeida Correia, Maria Nogal Macho, Jie Gao and Bahman Ahmadi.
 >
 > _Gonçalo Homem de Almeida Correia created most of the material. Maria Nogal Macho and Bahman Ahmadi made contributions to various parts. Bahman Ahmadi developed the exercises in Python and Jupyter notebooks. Jie Gao created the genetic algorithm material._
 >
@@ -198,12 +198,12 @@ Credits are provided here for chapters and pages that are released under the lic
 (machine_learning_credit)=
 ### Chapter: Introduction to Machine Learning
 
-> {ref}`machine_learning` is written by Iuri Rocha, Anne Poot, Joep Storm and Leon Riccius.
+> {ref}`Machine learning <machine_learning>` is written by Iuri Rocha, Anne Poot, Joep Storm and Leon Riccius.
 
 (extreme_value_analysis_credit)=
 ### Chapter: Extreme Value Analysis
 
-> {ref}`eva` is written by Patricia Mares Nasarre.
+> {ref}`Extreme Value Analysis <eva>` is written by Patricia Mares Nasarre.
 >
 > Special thanks goes to Oswaldo Morales Napoles, Elisa Ragno and Robert Lanzafame for suggestions on the theoretical and didactic framework, as well as critical feedback and review.
 
