@@ -112,7 +112,7 @@ It is important to keep a backup of your work, and to save these files in a cons
 
 Over the course of the semester we will gradually increase our reliance on `git` and GitHub, a widely used set of tools meant to store, track and archive files. As you become more comfortable with this tool, you will learn to `git push` more and rely on your cloud storage system less! In summary:
 * for now, we recommend you store everything in a location that is backed-up regularly, but keep code and data files in a separate folder. If your backup software causes issues with notebooks or other Python code, move the working directory temporarily to another location on your computer.
-* once you are comfortable with `git`, we recommend that you permanently move your code folder somewhere that is not backed up by cloud software and use your GitLab repository instead.
+* once you are comfortable with `git`, we recommend that you permanently move your code folder somewhere that is not backed up by cloud software and use your GitHub repository instead.
 
 In case the text above was not clear: to avoid syncing problems, use a system like `git` to backup code, _not_ a cloud service like OneDrive!
 

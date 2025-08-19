@@ -308,27 +308,6 @@ parts:
       - file: external/learn-python/book/08/sympy
     - file: optimization/gurobi.md
       title: "Week 2.4: Gurobi installation"
-
-  - caption: Fundamental Concepts
-    numbered: 2
-    chapters: 
-    - file: fundamentals/00_01a_PreMath
-    - file: fundamentals/00_01b_PreMath
-    - file: fundamentals/00_01c_PreMath
-    - file: fundamentals/00_02_PreMath
-    - file: fundamentals/00_03_PreMath
-    - file: fundamentals/prob-background.md   
-    - file: fundamentals/prob-rv.md
-    - file: fundamentals/00_04_MeanVar
-    - file: fundamentals/prob_tables/overview
-      title: Probability Tables
-      sections:
-      - file: fundamentals/prob_tables/normal
-        title: Normal
-      - file: fundamentals/prob_tables/chi2
-        title: Chi-Squared
-    - file: probability/python
-    - file: fundamentals/eemc-stuff
 # END REMOVE-FROM-PUBLISH
   - caption: Miscellaneous
     numbered: false
