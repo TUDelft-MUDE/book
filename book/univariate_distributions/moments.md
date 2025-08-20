@@ -85,8 +85,8 @@ $$
 \begin{aligned}
 E[X] &= \mu + \gamma \beta && (\text{Equation 1})\\
 3.02 &= \mu + 0.577 \beta && (\text{substitute }E[X])\\
-\mu &= 0.577 \beta - 3.02 && (\text{solve for }\mu) \\
-\mu &= 0.577 \cdot 0.77 - 3.02 && (\text{substitute }\mu) \\
+\mu &= 3.02 - 0.577 \beta && (\text{solve for }\mu) \\
+\mu &= 3.02 - 0.577 \cdot 0.77 && (\text{substitute }\mu) \\
 \mu &\approx 2.57 && \\
 \end{aligned}
 $$
