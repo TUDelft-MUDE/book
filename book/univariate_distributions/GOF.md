@@ -1,11 +1,11 @@
 
 # Goodness of Fit
 
-In the previous sections you have studied the different mathematical models (continuous distribution functions) that we can use to model the univariate uncertainty of a random variable and how to fit them based on observations. Also, you have been introduced to some methods to fit those models. **But how do I choose between different models?**
+In the previous sections, you have studied the different mathematical models (continuous distribution functions) that we can use to model the univariate uncertainty of a random variable and how to fit them based on observations. Also, you have been introduced to some methods to fit those distributions. **But how do we choose between different distributions?**
 
-The choice of the appropriate distribution function needs to be based first on the **physics of the random variable** we are studying. For instance, if I am studying the concentration of a gas in the atmosphere, negative values do not have a physical meaning, so the selected distribution function should not provide with those estimations.
+The choice of the appropriate distribution function needs to be based first on the **physics of the random variable** we are studying. For instance, if we are studying the concentration of a gas in the atmosphere, negative values do not have a physical meaning, so the selected distribution function should have zero probability density for negative values.
 
-Once we have accounted for the physical characteristics of the random variable, we can make use of **goodness of fit (GOF) techniques** to support our decision. This is, GOF techniques are not a ground truth, but an objective way of comparing models. Different techniques may lead to different judgments and it is you as expert who has to balance those outputs and select the best model to your judgment. Thus, it is recommended to use more than one GOF technique in the decision-making process. In the subsequent sections, some commonly used GOF techniques in the statistics field are presented.
+Once we have accounted for the physical characteristics of the random variable, we can make use of **goodness of fit (GOF) techniques** to validate our choice. That is to say, GOF techniques are not a ground truth, but an objective way of comparing different distribution choices. Different techniques may lead to different judgments and it is ultimately your task as an expert to balance those outputs and select the best model to your judgment. Thus, it is generally recommended to use more than one GOF technique in the decision-making process. In the subsequent sections, we present some commonly used GOF techniques in the statistics field.
 
 In order to illustrate these techniques, the following toy example will be used. The set of observations is represented in the plots below by its pdf and cdf. A Gaussian ($N(5.17, 5.76)$) and an Exponential distributions ($Expon(-5.25, 10.42)$) are fitted to the data. GOF techniques will be applied to determine which one of the two models fits the data best.
 
@@ -164,6 +164,6 @@ However, the plot in log-scale is also available. There, it is shown how the Gum
 % source: distributions
 ```{attributiongrey} Attribution
 :class: attribution
-This chapter was written by Patricia Mares Nasarre and Robert Lanzafame. {ref}`Find out more here <distributions_credit>`.
+This chapter was written by Maximilian Ramgraber, Patricia Mares Nasarre, and Robert Lanzafame. {ref}`Find out more here <distributions_credit>`.
 ```
 % END-CREDIT
