@@ -96,7 +96,7 @@ parts:
         title: Continuous Variables
       - file: multivariate/Correlation_and_Covariance
         title: Covariance and correlation coefficient
-      - file: multivariate/bivariate
+      - file: multivariate/Bivariate
         title: Multivariate Gaussian
       # - file: multivariate/nongaussian
       #   title: Non-Gaussian Distributions
