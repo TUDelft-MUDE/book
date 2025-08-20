@@ -90,7 +90,7 @@ Credits are provided here for chapters and pages that are released under the lic
 > - Sophie Keemink, Caspar Jungbacker and Thirza Feenstra, who provided feedback and helped develop exercises.
 > - Antonio Magherini, who created first draft of pages from powerpoint slides.
 >
-> {ref}`This figurs <density_scatter_3>` and {ref}`this interactive figure on the correlation coefficient <2D_Gaussian>` are created by Max Ramgraber ([maxramgraber.com/interactive](https://www.maxramgraber.com/interactive)), which are published with a CC BY license and included in this book without modification.
+> {ref}`This <density_scatter_3>` and {ref}`this interactive figure on the correlation coefficient <2D_Gaussian>` are created by Max Ramgraber ([maxramgraber.com/interactive](https://www.maxramgraber.com/interactive)), which are published with a CC BY license and included in this book without modification.
 
 (observation_theory_credit)=
 ### Chapter: Observation Theory
