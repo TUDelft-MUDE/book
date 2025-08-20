@@ -85,9 +85,9 @@ $$
 
 In this manner, there is a linear relationship between $ln[1-F(x)]$ and $x$. Note that in the case of the Exponential distribution, the probability plot is the same as the log-scale! Therefore, the Exponential distribution was shown as a straight line in the previous plot, while the Gaussian distribution was not.
 
-## Formal hypothesis test: Kolmogorov-Smirnov test
+## Formal hypothesis test: The Kolmogorov-Smirnov test
 
-Kolmogorov-Smirnov (KS) test is one of the most popular nonparametric formal hypothesis tests in statistics. It can be used with two purposes: (1) to compare a sample with a reference parametric distribution, and (2) to compare two samples. Here, the first option is considered since it is the one used for GOF purposes. Thus, this test aims to determine how likely is that a sample was drawn from the reference parametric distribution.
+The **Kolmogorov-Smirnov (KS) test** is one of the most popular nonparametric formal hypothesis tests in statistics. It can be used for two purposes: (1) to compare a sample with a reference parametric distribution, or (2) to compare two empirical distributions. Here, we consider first option, since it is the one used for GOF purposes. Thus, this test aims to determine how likely is that a sample was drawn from the reference parametric distribution.
 
 This test is based on the KS statistic, which is (roughly) the maximum distance between the empirical cumulative distribution and the parametric distribution fitted to those observations. This statistic is mathematically defined as
 
