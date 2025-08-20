@@ -76,8 +76,8 @@ parts:
       - file: univariate_distributions/fitting.md
         sections: 
         - file: univariate_distributions/moments.md
-        - file: probability/MLE_1.ipynb
-        - file: probability/GOF
+        - file: univariate_distributions/MLE.md
+        - file: univariate_distributions/GOF
       - file: univariate_distributions/Loc-scale.ipynb
 
     - file: multivariate/overview
