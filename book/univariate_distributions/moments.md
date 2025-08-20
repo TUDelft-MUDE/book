@@ -6,7 +6,7 @@ The method of moments is based around equating the **statistical moments**[^mome
 
 ## Let's look at an example
 
-### Step 1: The data
+### Step 0: The data
 
 An engineer is studying the intensity of earthquakes in Rome (Italy). To this end, the engineer is using *Catalogo dei terremoti italiani dall'anno 1000 al 1980* (the Catalog of Italian earthquakes from year 1000 to 1980) edited by D. Postpischl in 1985. This catalog reports the intensity of earthquakes in terms of the Mercalli-Canconi-Sieber (MCS) index. Due to the uncertainties associated with this natural phenomenom, the engineer considers it a random process and wants to fit a Gumbel distribution to the observations found in the catalog using the method of moments. The data found in the catalog is shown in the table below [^ref].
 
@@ -38,7 +38,7 @@ $$
 
 Therefore, the value of $\mu$ and $\beta$ needs to be determined based on the observations to fit the distribution.
 
-## Step 1: Computing the statistical moments
+### Step 1: Computing the statistical moments
 
 The first thing the engineer needs to do is to calculate the statistical moments of the observations in the Table. The empirical mean ($\overline{X}$) and empirical variance ($\sigma^2$) are calculated as:
 
@@ -54,30 +54,32 @@ where
 - $x$ is the earthquake intensity, and 
 - $f$ is the frequency of the value $x$.
 
-## Step 2: Solving for the parameters
+### Step 2: Solving for the parameters
 
-Based on the {doc}`properties of the Gumbel distribution<univariate_distributions/summary>`, we know 
+Based on the {doc}`properties of the Gumbel distribution <univariate_distributions/summary>`, we know 
 
 $$
 E[X]=\mu + \gamma \beta \tag{1}
 $$
 
 $$
-Var[X] = \cfrac{\pi^2}{6}\beta^2 \tag{1}
+Var[X] = \cfrac{\pi^2}{6}\beta^2 \tag{2}
 $$
 
 where $\gamma \approx 0.577$ is the Euler-Mascheroni constant.
 
-Therefore, we can equate the expectation and variance of the distribution ($E[X]$ and $Var[X]$) to the calculated moments and obtain the value of the parameters as
+Therefore, we can equate the expectation and variance of the distribution ($E[X]$ and $Var[X]$) to the calculated moments and obtain the value of the parameters. We can begin by reformulating Equation 2:
 
 $$
-\begin{aligned}
+\begin{alignedat}
 Var[X] &= \cfrac{\pi^2}{6}\beta^2 && (\text{Equation 2})\\
 0.99 &= \cfrac{\pi^2}{6}\beta^2 && (\text{substitute }Var[X])\\
-\beta &= \sqrt{\frac{0.99 * 6}{\pi^2}} && (\text{solve for }\beta)\\
+\beta &= \sqrt{\frac{0.99 \cdot 6}{\pi^2}} && (\text{solve for }\beta)\\
 \beta &\approx 0.77 && \\
-\end{aligned}
+\end{alignedat}
 $$
+
+Once we know $\beta$, we can use Equation 1 to derive $\mu$:
 
 $$
 \begin{aligned}
