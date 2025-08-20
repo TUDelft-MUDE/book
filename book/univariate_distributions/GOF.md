@@ -34,16 +34,14 @@ This technique is as simple as comparing the observations used to fit the model 
 
 Let's see it applied to the example data. Note that the term *"quantile"* is used in statistics to denote the values of the random variable.
 
-```{figure} https://files.mude.citg.tudelft.nl/QQplot.png
----
-scale: 75%
-name: rating_curve
+````{iframe-figure} ../_static/elements/element_QQ_plot.html
+:name: QQ_plot
+:aspectratio: 2 / 1
 
----
-QQ-plot.
-```
+Select a distribution and adjust the parameters using the sliders. Observe how the QQ plot changes in response. The data above is a synthetic example - which distribution do you believe generated the samples?
+````
 
-In the QQ-plot, it is shown how the predictions given by the Gaussian distribution (in blue) closely follow the $45 ^\circ$-line. Those provided by the Exponential distribution are way further, detaching significantly from the $45 ^\circ$-line in the upper tail. Based on this graphical technique, it is possible to conclude that Normal distribution seems to be a better model for the data.
+If you select a Gumbel distributions with the parameters $\mu=1$ and $\beta=1$, you can see that the samples closely follow the $45 ^\circ$-line. Those provided by the Exponential distributions (or the Gumbel dsitribution with other parameters) deviate further from the diagonal line. Based on this graphical technique, it is possible to conclude that Gumbel distribution seems to be a suitable model for the data.
 
 
 **Let's code it!**
