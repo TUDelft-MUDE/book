@@ -41,35 +41,26 @@ Let's see it applied to the example data. Note that the term *"quantile"* is use
 Select a distribution and adjust the parameters using the sliders. Observe how the QQ plot changes in response. The data above is a synthetic example - which distribution do you believe generated the samples?
 ````
 
-If you select a Gumbel distributions with the parameters $\mu=1$ and $\beta=1$, you can see that the samples closely follow the $45 ^\circ$-line. Those provided by the Exponential distributions (or the Gumbel dsitribution with other parameters) deviate further from the diagonal line. Based on this graphical technique, it is possible to conclude that Gumbel distribution seems to be a suitable model for the data.
+If we select a **Gumbel distributions** with the parameters $\mu=1$ and $\beta=1$, you can see that the samples closely follow the $45 ^\circ$-line[^Gumbeldata]. Those provided by the Exponential distributions (or the Gumbel dsitribution with other parameters) deviate further from the diagonal line. Based on this graphical technique, it is possible to conclude that Gumbel distribution seems to be a suitable model for the data.
 
 
 **Let's code it!**
 
-Pseudo code is presented to illustrate the procedure to build a QQ-plot.
+Pseudo code to build a QQ-plot is presented below to illustrate the procedure.
 
     read observations
 
-    #calculate the empirical cdf
+    # Calculate the empirical cdf
     p_emp, q_emp = empirical CDF of observations
 
-    #define the parameters of the Gaussian distribution
+    # Define the parameters of the chosen distribution, e.g., a Gaussian PDF
     mean_gaussian = 5.17
     sd_gaussian = 5.76
     
-    #compute the values of the random variable predicted by the Normal distribution
+    # Compute the values of the random variable predicted by the Normal distribution
     q_gaussian = CDF of Normal distribution evaluated in p_emp with parameters mean_gaussian and sd_gaussian
 
-    #define the parameters of the Exponential distribution
-    loc_expon = -5.25
-    scale_expon = 10.42
-    
-    #compute the values of the random variable predicted by the fitted distribution
-    q_exponential = CDF of Exponential distribution evaluated in p_emp with parameters loc_expon, scale_expon
-    
     scatterplot of q_emp versus q_gaussian
-    scatterplot of q_emp versys q_expon
-
 
 ### Log-scale
 
@@ -125,17 +116,12 @@ The distribution of $D_n$ has been already calculated and included in different 
 
 Let's see it in an example. In the figure below, both the empirical distribution (step function) and the fitted normal distribution are shown. The maximum distance between both distributions is also presented in red.
 
-```{figure} https://files.mude.citg.tudelft.nl/sketch_KS.png
----
-name: KS
----
-Maximum distance between the empirical and fitted normal distribution ($D_n$).
-```
+````{iframe-figure} ../_static/elements/element_KS_test.html
+:name: KS_test
+:aspectratio: 2 / 1
 
-If we compute the KS statistic using the distribution already implemented in software (Scipy package, in this case), $D_n = 0.12$ is obtained which (roughly) corresponds to what is shown in the previous plot.
-
-After that, the $p-value$ is also computed, obtaining $p-value = 0.93$. This means that the probability of the null hypothesis ($H_0: \hat{F} \sim F$, the sample comes from the parametric distribution) being true is 0.93. Thus, considering a significance level $\alpha = 0.05$, $pvalue=0.93>\alpha=0.05$, so I cannot reject the null hypothesis.
-
+Select a distribution and adjust the parameters using the sliders. Observe how the KS statistic $D_{n}$ changes in response. The red vertical line demarkates the largest deviation between the empirical and theoretical PDF.
+````
 
 # Let's practice
 
@@ -164,6 +150,8 @@ According to the Kolmogorov-Smirnov test, it is not possible to reject that the 
 However, the plot in log-scale is also available. There, it is shown how the Gumbel distribution fits way better the tail of the empirical distribution. Since the goal of the engineer is to infer events that have not been observed yet (extrapolate), the tail is extremely important. Consequently, Gumbel distribution would be preferred in this context to model the axel loads observations.
 
 ```
+
+[^Gumbeldata]: In fact, the data has been synthetically generated from a Gumbel distribution with the parameters $\mu = 1$ and $\beta = 1$.
 
 % START-CREDIT
 % source: distributions
