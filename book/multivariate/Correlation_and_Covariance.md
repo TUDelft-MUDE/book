@@ -93,3 +93,11 @@ Scatter plots for different values or Pearson's correlation coefficient.
 You can also play with the samples option in the interactive element below.
 
 <iframe src="../_static/elements/element_correlation.html" width="600" height="400" frameborder="0"></iframe>
+
+% START-CREDIT
+% source: distributions
+```{attributiongrey} Attribution
+:class: attribution
+This chapter was written by Patricia Mares Nasarre. {ref}`Find out more here <distributions_credit>`.
+```
+% END-CREDIT

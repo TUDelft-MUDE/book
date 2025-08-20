@@ -237,3 +237,11 @@ $$
 Use the multivariate Gaussian distribution implemented in Scipy.stats to plot the density contours of the conditional and unconditional bivariate distributions. How has the distribution changed?
 ```
 :::
+
+% START-CREDIT
+% source: distributions
+```{attributiongrey} Attribution
+:class: attribution
+This chapter was written by Patricia Mares Nasarre. {ref}`Find out more here <distributions_credit>`.
+```
+% END-CREDIT
