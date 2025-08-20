@@ -7,15 +7,7 @@ The choice of the appropriate distribution function needs to be based first on t
 
 Once we have accounted for the physical characteristics of the random variable, we can make use of **goodness of fit (GOF) techniques** to validate our choice. That is to say, GOF techniques are not a ground truth, but an objective way of comparing different distribution choices. Different techniques may lead to different judgments and it is ultimately your task as an expert to balance those outputs and select the best model to your judgment. Thus, it is generally recommended to use more than one GOF technique in the decision-making process. In the subsequent sections, we present some commonly used GOF techniques in the statistics field.
 
-**Let's take a look at an example:** In order to illustrate these techniques, we will use a toy example. The set of observations is represented in the plots below by its pdf and cdf. A Gaussian ($N(5.17, 5.76)$) and an Exponential distributions ($Expon(-5.25, 10.42)$) are fitted to the data. GOF techniques will be applied to determine which one of the two models fits the data best.
-
-```{figure} https://files.mude.citg.tudelft.nl/GOF_data.png
-
----
-
----
-Data overview.
-```
+**Let's take a look at an example:** In order to illustrate these techniques, we will use a toy example. The set of observations is represented in the plots below by its pdf and cdf. In the following, we will investigate a number of GOF techniques to determine which distribution best fits the data.
 
 ````{iframe-figure} ../_static/elements/element_empirical_pdf_and_cdf.html
 :name: empirical_pdf_and_cdf
@@ -64,17 +56,16 @@ Pseudo code to build a QQ-plot is presented below to illustrate the procedure.
 
 ### Log-scale
 
-As previously introduced, the tails of the distributions are key to allow the inference of values which have not been observed yet. Therefore, it is important to check whether the distribution used to model the observations is performing properly in that region. A simple trick to do so is to use a logarithmic scale (log-scale) to represent the exceedance probability plot. That way, we "zoom in" on those points in the tail instead of focusing on the bulk of the data. In the figure below, the representation of the cdf in regular and log-scale is shown.
+As previously introduced, the tails of the distributions are key to allow the inference of extreme values which have not been observed yet. Therefore, it is important to check whether the distribution used to model the observations is performing properly in that region. A simple trick to do so is to use a logarithmic scale (log-scale) to represent the exceedance probability plot. That way, we "zoom in" on those points in the tail instead of focusing on the bulk of the data:
 
-```{figure} https://files.mude.citg.tudelft.nl/log-scale.png
----
-name: log-scale
----
-Exceedance probability plot represented both in regular and logarithmic scale.
-```
+````{iframe-figure} ../_static/elements/element_log_scale_plot.html
+:name: log_scale_plot
+:aspectratio: 2 / 1
 
-Analyzing the figure on the left side, it can be seen that the observations follow better the Normal distribution. However, it is not clear which one of the two distributions is performing better in the tail. By analyzing the plot on the right side, it is possible to answer that question. Again, it is observed that the data points follow better the Gaussian distribution. However, observations in the tail are not that well represented by the Gaussian distribution, being even closer to the Exponential distribution. Thus, since none of the considered distributions performs properly in the tail, it may be needed to consider another distribution to model the asymmetry of the data, such as the Gumbel or Lognormal distributions. 
+Select a distribution and adjust the parameters using the sliders. Observe how the logarithmic exceedance probability plot plot changes in response.
+````
 
+If we are interested in extreme events, it is important to find a distribution that fits the tail samples well. Experiment with different distributions and observe how they behave in the tails.
 
 ### Probability plot or probability paper
 
