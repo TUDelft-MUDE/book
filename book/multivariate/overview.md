@@ -24,4 +24,3 @@ $$
 
 This chapter begins with a refresher on some fundamental aspects of probability theory that are typically covered in BSc courses on the subject, for example, dependence/independence, probability of binary events and conditional probability. Using the _bivariate_ case, we will build a foundation on which to apply the multivariate Gaussian distribution. The last section revisits functions of random variables and takes an applied perspective by putting the univariate and multivariate probability concepts in a simple case study (design of a flood protection system).
 
-[^note]: That is an intuitive definition of independence. For a more formal definition of independence, visit the next page of the chapter.

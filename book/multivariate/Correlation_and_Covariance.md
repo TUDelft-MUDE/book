@@ -31,10 +31,9 @@ $$
 
 In this section, we will see how to interpret the covariance as an average of geometric areas. Let's see it with an example. Imagine that you are studying the relationship between the height and the Body Mass Index ($BMI$) of people. You have a short dataset with 20 observations that it is shown as a scatter plot in panel (a) of the image below.
 
-```{figure} ../figures/obs_geom.png
-
+```{figure} https://files.mude.citg.tudelft.nl/obs_geom.png
 ---
-
+width: 100%
 ---
 Geometric interpretation of the covariance: (a) paired observations of height and BMI, and (b) rectangular areas defined by the observations and the mean values of the two random variables, which represent $[X_{1,i}-\mathbb{E}(X_1)][X_{2,i}-\mathbb{E}(X_2)]$.
 ```
@@ -47,7 +46,7 @@ $$
 
 In that expression, we can see that the covariance is the expectation of a product of two terms. Each of these terms represents the difference or distance between an observation and the expected value of the random variable (i.e., its mean). Thus, each term can be graphically represented as a line that goes from the value of the observation to the mean. The product of the two defined distances can then be interpreted as the product of the sides of a rectangle which are defined by the distances of the observation to the mean values of the two random variables. This is, the areas of the rectangles defined in the panel (b) of the Figure above. The covariance is the expectation (or mean) of these areas, i.e. the covariance represents the average area of the defined rectangles, as shown in the figure below.
 
-```{figure} ../figures/areas.png
+```{figure} https://files.mude.citg.tudelft.nl/areas.png
 
 ---
 
@@ -83,7 +82,7 @@ where $X_{1i}$ and  $X_{2i}$ are the individual data points for the random varia
 
 The correlation coefficient takes values between -1 and 1, regardless the units of the random variables. If the random variables are uncorrelated or _independent_, $\rho=0$. A positive correlation coefficient means that if one variable increases, the other one tends to increase. Conversely, a negative correlation means that an increase of one variable is accompanied by a tendency of the other variable to decrease. If the random variables are fully correlated ($\rho=1$ or $\rho=-1$), it means that knowing the value of one variable implies that I know the value of the other variable being the relationship between them linear. In the figure below, you can see examples of how the samples for different correlation look.
 
-```{figure} ../figures/correl_coef.png
+```{figure} https://files.mude.citg.tudelft.nl/correl_coef.png
 
 ---
 
