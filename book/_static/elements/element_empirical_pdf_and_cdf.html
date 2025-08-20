@@ -132,8 +132,8 @@ const bins = rawBins.map(b => ({ x0: b.x0, x1: b.x1, cnt: b.length, prob: b.leng
 const maxProb = d3.max(bins, b => b.prob) || 1e-12;
 yPDF.domain([0, maxProb * 1.1]);
 
-gXpdf.call(d3.axisBottom(xPDF));
-gYpdf.call(d3.axisLeft(yPDF));
+gXpdf.call(d3.axisBottom(xPDF).ticks(5));
+gYpdf.call(d3.axisLeft(yPDF).ticks(5));
 
 const barG = svg.append('g');
 
@@ -177,7 +177,7 @@ const cdfBg = svg.append('rect')
 const cdfHi = svg.append('rect')
   .attr('x', rightX0).attr('y', margin.top)
   .attr('width', 0).attr('height', innerH)
-  .attr('fill', 'red').attr('opacity', 0.10).style('pointer-events','none');
+  .attr('fill', 'red').attr('opacity', 0.5).style('pointer-events','none');
 
 svg.append('path')
   .attr('d', step(cdfPts))
@@ -185,7 +185,7 @@ svg.append('path')
   .attr('stroke','#666')
   .attr('stroke-width', 3 * height / 600);
 
-gXcdf.call(d3.axisBottom(xCDF));
+gXcdf.call(d3.axisBottom(xCDF).ticks(5));
 gYcdf.call(d3.axisLeft(yCDF).ticks(5));
 
 /* Transparent hover zones on the CDF matching histogram bins */
