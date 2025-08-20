@@ -56,7 +56,7 @@ where
 
 ### Step 2: Solving for the parameters
 
-Based on the {doc}`properties of the Gumbel distribution <univariate_distributions/summary>`, we know 
+Based on the properties of the Gumbel distribution, we know 
 
 $$
 E[X]=\mu + \gamma \beta \tag{1}
@@ -71,12 +71,12 @@ where $\gamma \approx 0.577$ is the Euler-Mascheroni constant.
 Therefore, we can equate the expectation and variance of the distribution ($E[X]$ and $Var[X]$) to the calculated moments and obtain the value of the parameters. We can begin by reformulating Equation 2:
 
 $$
-\begin{alignedat}
+\begin{aligned}
 Var[X] &= \cfrac{\pi^2}{6}\beta^2 && (\text{Equation 2})\\
 0.99 &= \cfrac{\pi^2}{6}\beta^2 && (\text{substitute }Var[X])\\
 \beta &= \sqrt{\frac{0.99 \cdot 6}{\pi^2}} && (\text{solve for }\beta)\\
 \beta &\approx 0.77 && \\
-\end{alignedat}
+\end{aligned}
 $$
 
 Once we know $\beta$, we can use Equation 1 to derive $\mu$:
@@ -122,6 +122,6 @@ $$
 % source: distributions
 ```{attributiongrey} Attribution
 :class: attribution
-This chapter was written by Patricia Mares Nasarre and Robert Lanzafame. {ref}`Find out more here <distributions_credit>`.
+This chapter was written by Maximilian Ramgraber, Patricia Mares Nasarre, and Robert Lanzafame. {ref}`Find out more here <distributions_credit>`.
 ```
 % END-CREDIT
