@@ -42,14 +42,14 @@ $$
 Assume that the observations can be described by the exponential distribution, for which the PDF is given by
 
 $$
-f(x, \lambda) = \lambda e^{\normalsize-\lambda x}$ for $x>0
+f(x, \lambda) = \lambda e^{\normalsize-\lambda x} \text{ for } x>0
 $$
 
 with $\lambda$ being the parameter that has to be estimated. There dataset consists of $n$ observations. Find the maximum likelihood estimate $\hat{\lambda}$ following the four steps defined above:
 
 1. Define the likelihood function $L(\lambda \mid \mathbf{x})$.
 2. Take natural logarithm of the likelihood function to get the log-likelihood function $\ln (L(\lambda \mid \mathbf{x}))$.
-3. Differentiate the log-likelihood function and set it to zero: $\cfrac{\partial L(\lambda \mid \mathbf{x})}{\partial \lambda} = 0$.
+3. Differentiate the log-likelihood function and set it to zero: $\cfrac{\partial \ln L(\lambda \mid \mathbf{x})}{\partial \lambda} = 0$.
 4. Solve the equation for $\hat{\lambda}$.
 
 **1. Define the likelihood function $L(\lambda \mid \mathbf{x})$.**
@@ -76,7 +76,7 @@ $$
 \ln (L(\theta \mid \mathbf{x})) = \ln (\lambda^{\normalsize n} e^{\normalsize -\lambda \sum_{i=1}^{n} x_i} ) = n \ln (\lambda) -\lambda \sum_{i=1}^{n} x_i
 $$
 
-**3. Differentiate the log-likelihood function and set it to zero: $\cfrac{\partial L(\lambda \mid \mathbf{x})}{\partial \lambda} = 0$**
+**3. Differentiate the log-likelihood function and set it to zero: $\cfrac{\partial \ln L(\lambda \mid \mathbf{x})}{\partial \lambda} = 0$**
 
 Taking the derivative of the log-likelihood function with respect to $\lambda$ and setting it to zero:
 
@@ -105,3 +105,11 @@ $$
 $$
 
 The best fitting parameter of the Exponential distribution for the given data according to MLE is $\lambda = 0.513$.
+
+% START-CREDIT
+% source: distributions
+```{attributiongrey} Attribution
+:class: attribution
+This chapter was written by Maximilian Ramgraber, Patricia Mares Nasarre, and Robert Lanzafame. {ref}`Find out more here <distributions_credit>`.
+```
+% END-CREDIT
