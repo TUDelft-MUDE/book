@@ -106,3 +106,11 @@ Exceedance probability (FN curve), $1-F_N(n)$.
 :class: tip
 You can practice constructing a simple FN curve in {ref}`ex_fn_curve`, although some of the questions require knowledge of limit lines, introduced in the {ref}`safety_standards` Section.
 ```
+
+% START-CREDIT
+% source: risk
+```{attributiongrey} Attribution
+:class: attribution
+This chapter reuses content written by Bas Jonkman and Robert Lanzafame. {ref}`Find out more here <risk_analysis_credit>`.
+```
+% END-CREDIT

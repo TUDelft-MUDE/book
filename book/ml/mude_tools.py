@@ -1,3 +1,15 @@
+# START-CREDIT
+# source: machine_learning
+#
+# This file is from the 2024 edition of the MUDE Textbook, released
+# with a CC BY License. See the Credits section for more information:
+# https://mude.citg.tudelft.nl/2024/book/credits
+#
+# Authors: Iuri Rocha, Anne Poot, Joep Storm and Leon Riccius.
+# Copyright: Delft University of Technology.
+#
+# END-CREDIT
+
 # Import necessary packages
 import numpy as np
 import matplotlib.pyplot as plt

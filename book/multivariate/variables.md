@@ -1,5 +1,5 @@
 (multivariate_variables)=
-# Multivariate Continuous Random Variables
+# Continuous Random Variables
 
 This page covers fundamental concepts for _continuous random variables._ As we are interested in considering more than one variable simultaneously, the term _multivariate_ is used. We will start by translating the concepts covered on the previous page from _discrete events_, allowing us to arrive at a clear understanding of the concept of probabilistic _dependence_ for multivariate continuous random variables.
 
@@ -648,3 +648,11 @@ The large difference between both probabilities, illustrates the role of depende
 As we have seen in the preceding examples, dependence can have a significant role in the computation of probabilities. In particular, the examples illustrate very clearly that we should no longer be satisfied with the simplifying assumption of independence, and that for many problems $P(A\;\cap\;B)\neq P(A)P(B)$. But how can we compute it?
 
 The following pages will explore methods to describe dependence quantitatively for continuous random variables.
+
+% START-CREDIT
+% source: distributions
+```{attributiongrey} Attribution
+:class: attribution
+This chapter was written by Patricia Mares Nasarre and Robert Lanzafame. {ref}`Find out more here <distributions_credit>`.
+```
+% END-CREDIT

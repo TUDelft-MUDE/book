@@ -4,6 +4,7 @@ on:
   push:
     branches:
     - '**'
+    - '!2025' # Exclude the 2025 branch to avoid triggering the deploy workflow on its own changes
     # If your git repository has the Jupyter Book within some-subfolder next to
     # unrelated files, you can make this run only if a file within that specific
     # folder (or the workflow file itself) has been modified.
@@ -14,7 +15,32 @@ on:
   workflow_dispatch:
 
 jobs: 
+  merge-to-2025:
+    if: ${{ github.ref == 'refs/heads/2025-draft' }}
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.FINE_GRAINED_SYNC_TOKEN }}
+      
+      - name: Configure Git
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+      
+      - name: Merge 2025-draft into 2025
+        run: |
+          git checkout 2025
+          git merge 2025-draft --no-ff -m "Auto-merge 2025-draft into 2025"
+          git push origin 2025
+
   call-workflow:
+    needs: merge-to-2025
+    if: always() && (needs.merge-to-2025.result == 'success' || needs.merge-to-2025.result == 'skipped')
     uses: TeachBooks/deploy-book-workflow/.github/workflows/deploy-book.yml@main
     secrets: inherit
     permissions:
