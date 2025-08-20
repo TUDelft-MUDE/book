@@ -7,7 +7,7 @@ The choice of the appropriate distribution function needs to be based first on t
 
 Once we have accounted for the physical characteristics of the random variable, we can make use of **goodness of fit (GOF) techniques** to validate our choice. That is to say, GOF techniques are not a ground truth, but an objective way of comparing different distribution choices. Different techniques may lead to different judgments and it is ultimately your task as an expert to balance those outputs and select the best model to your judgment. Thus, it is generally recommended to use more than one GOF technique in the decision-making process. In the subsequent sections, we present some commonly used GOF techniques in the statistics field.
 
-In order to illustrate these techniques, the following toy example will be used. The set of observations is represented in the plots below by its pdf and cdf. A Gaussian ($N(5.17, 5.76)$) and an Exponential distributions ($Expon(-5.25, 10.42)$) are fitted to the data. GOF techniques will be applied to determine which one of the two models fits the data best.
+**Let's take a look at an example:** In order to illustrate these techniques, we will use a toy example. The set of observations is represented in the plots below by its pdf and cdf. A Gaussian ($N(5.17, 5.76)$) and an Exponential distributions ($Expon(-5.25, 10.42)$) are fitted to the data. GOF techniques will be applied to determine which one of the two models fits the data best.
 
 ```{figure} https://files.mude.citg.tudelft.nl/GOF_data.png
 
@@ -16,6 +16,7 @@ In order to illustrate these techniques, the following toy example will be used.
 ---
 Data overview.
 ```
+
 
 ## Graphical methods
 
