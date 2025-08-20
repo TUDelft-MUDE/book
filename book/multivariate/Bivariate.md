@@ -231,6 +231,6 @@ Use the multivariate Gaussian distribution implemented in Scipy.stats to plot th
 % source: distributions
 ```{attributiongrey} Attribution
 :class: attribution
-This chapter was written by Patricia Mares Nasarre. {ref}`Find out more here <distributions_credit>`.
+This chapter was written by Patricia Mares Nasarre and Robert Lanzafame. {ref}`Find out more here <distributions_credit>`.
 ```
 % END-CREDIT
