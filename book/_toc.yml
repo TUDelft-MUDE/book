@@ -313,4 +313,5 @@ parts:
     numbered: false
     chapters:
     - file: references
+    - file: changelog
     - file: credits
