@@ -17,6 +17,12 @@ Once we have accounted for the physical characteristics of the random variable, 
 Data overview.
 ```
 
+````{iframe-figure} ../_static/elements/element_empirical_pdf_and_cdf.html
+:name: empirical_pdf_and_cdf
+:aspectratio: 2 / 1
+
+The data we will use for the GOF demonstrations.
+````
 
 ## Graphical methods
 
