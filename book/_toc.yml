@@ -100,17 +100,17 @@ parts:
         title: Multivariate Gaussian
       # - file: multivariate/nongaussian
       #   title: Non-Gaussian Distributions
-      - file: multivariate/design
-        title: Practical Applications
-        sections:
-        - file: multivariate/design/one-random-variable
-        - file: multivariate/design/two-random-variables
       # START REMOVE-FROM-PUBLISH
-        - file: multivariate/design/exercise
-          sections:
-          - file: multivariate/design/exercise_solutions
-      - file: multivariate/test_pyvinecopulib
-      - file: multivariate/test_bivariate
+      # - file: multivariate/design
+      #   title: Practical Applications
+      #   sections:
+      #   - file: multivariate/design/one-random-variable
+      #   - file: multivariate/design/two-random-variables
+      #   - file: multivariate/design/exercise
+      #     sections:
+      #     - file: multivariate/design/exercise_solutions
+      # - file: multivariate/test_pyvinecopulib
+      # - file: multivariate/test_bivariate
       # END REMOVE-FROM-PUBLISH
 
   - caption: Q2 Topics
