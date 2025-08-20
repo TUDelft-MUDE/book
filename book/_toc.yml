@@ -73,9 +73,9 @@ parts:
         - file: univariate_distributions/beta.md
         - file: univariate_distributions/other_distr.md
         - file: univariate_distributions/summary.md
-      - file: probability/fitting.md
+      - file: univariate_distributions/fitting.md
         sections: 
-        - file: probability/moments.md
+        - file: univariate_distributions/moments.md
         - file: probability/MLE_1.ipynb
         - file: probability/GOF
       - file: univariate_distributions/Loc-scale.ipynb
