@@ -90,7 +90,7 @@ Credits are provided here for chapters and pages that are released under the lic
 > - Sophie Keemink, Caspar Jungbacker and Thirza Feenstra, who provided feedback and helped develop exercises.
 > - Antonio Magherini, who created first draft of pages from powerpoint slides.
 >
-> {ref}`This figures <density_scatter_3>` and {numref}`this interactive figures on the correlation coefficient <2D_Gaussian>` are created by Max Ramgraber ([maxramgraber.com/interactive](https://www.maxramgraber.com/interactive)), which are published with a CC BY license and included in this book without modification.
+> {ref}`This figurs <density_scatter_3>` and {ref}`this interactive figure on the correlation coefficient <2D_Gaussian>` are created by Max Ramgraber ([maxramgraber.com/interactive](https://www.maxramgraber.com/interactive)), which are published with a CC BY license and included in this book without modification.
 
 (observation_theory_credit)=
 ### Chapter: Observation Theory
@@ -111,9 +111,9 @@ Credits are provided here for chapters and pages that are released under the lic
 > - Isabel Slingerland and Mona Devos for critical feedback and development of exercises, figures and related content.
 > - Dhruv Mehta and Ajay Jagadeesh for feedback on structure, content.
 >
-> {numref}`The animated figure on the Jamuna river <NumericalMethodsRiver>` included on page {ref}`Numerical modelling <numerical_modelling>` but is _not_ included under the CC BY license of this book. Original content is used here with explicit permission of Amgad Omer on behalf of Deltares.
+> {ref}`The animated figure on the Jamuna river <NumericalMethodsRiver>` included on page {ref}`Numerical modelling <numerical_modelling>` but is _not_ included under the CC BY license of this book. Original content is used here with explicit permission of Amgad Omer on behalf of Deltares.
 >
-> {numref}`The figure on the left Riemann sum <openstax_fig_01>` is reproduced from {cite:t}`openstax_calculus` without modification and is _not_ included under the CC BY license of this book. The source content is provided with a CC BY NC SA license and can be accessed for free at [https://openstax.org/books/calculus-volume-2/pages/1-introduction](https://openstax.org/books/calculus-volume-2/pages/1-introduction).
+> {ref}`The figure on the left Riemann sum <openstax_fig_01>` is reproduced from {cite:t}`openstax_calculus` without modification and is _not_ included under the CC BY license of this book. The source content is provided with a CC BY NC SA license and can be accessed for free at [https://openstax.org/books/calculus-volume-2/pages/1-introduction](https://openstax.org/books/calculus-volume-2/pages/1-introduction).
 
 (distributions_credit)=
 ### Chapters: Univariate and Multivariate Continuous Distributions
@@ -124,7 +124,7 @@ Credits are provided here for chapters and pages that are released under the lic
 >
 > Pages {ref}`One random variable <prob_design_1_rv>` and {ref}`Two random variables <prob_design_2_rv>` are from the Chapter _Probabilistic Design_ {cite:p}`lanzafame2024-pd` from the book Risk and Reliability for Engineers {cite:p}`lanzafame2024`, published with a CC BY license. Files are included without modification.
 >
-> {numref}`This <density_scatter_3>`, {numref}`this <pdf_cdf>`, {numref}`this <pdf_cdf_2>`, {numref}`this <density_scatter>` and {numref}`this interactive figure <density_scatter_2>` are created by Max Ramgraber ([maxramgraber.com/interactive](https://www.maxramgraber.com/interactive)), which are published with a CC BY license and included in this book without modification.
+> {ref}`This <density_scatter_3>`, {ref}`this <pdf_cdf>`, {ref}`this <pdf_cdf_2>`, {ref}`this <density_scatter>` and {ref}`this interactive figure <density_scatter_2>` are created by Max Ramgraber ([maxramgraber.com/interactive](https://www.maxramgraber.com/interactive)), which are published with a CC BY license and included in this book without modification.
 
 (finite_volume_method_credit)=
 ### Chapter: PDEs and the Finite Volume Method
@@ -158,7 +158,7 @@ Credits are provided here for chapters and pages that are released under the lic
 > - João Moura Pereira de Lucas Teixeira, created first draft of pages from powerpoint slides.
 > - Antonio Magherini, who reviewed, commented and/or modified content.
 >
-> {numref}`The animated unity circle figure <unitycircle>` is included on page {ref}`Fourier series <fourier_real>` but is _not_ included under the CC BY license of this book. Original content licensed under CC BY-SA 4.0 by {cite:t}`BFG` and can be found [here](https://commons.wikimedia.org/wiki/File:Unitycircle-complex.gif); used here without modification.
+> {ref}`The animated unity circle figure <unitycircle>` is included on page {ref}`Fourier series <fourier_real>` but is _not_ included under the CC BY license of this book. Original content licensed under CC BY-SA 4.0 by {cite:t}`BFG` and can be found [here](https://commons.wikimedia.org/wiki/File:Unitycircle-complex.gif); used here without modification.
 
 (time_series_analysis_credit)=
 ### Chapter: Time Series Analysis
@@ -173,8 +173,8 @@ Credits are provided here for chapters and pages that are released under the lic
 > - Antonio Magherini, who created the first draft material from powerpoint slides and prepared notebooks as exercises.
 > 
 > The following resources are used in this chapter but are _not_ included under the CC BY license of this book:
-> - {numref}`The IPCC prediction figure <cover>` is used on page {ref}`Time Series Analysis <tsa>` (not modified) and is from {cite:t}`ipcc2018`.
-> - {numref}`The global mean sea level figure <trend>` is used on page {ref}`Components of time series <components>` (not modified) and is from {cite:t}`csiro`.
+> - {ref}`The IPCC prediction figure <cover>` is used on page {ref}`Time Series Analysis <tsa>` (not modified) and is from {cite:t}`ipcc2018`.
+> - {ref}`The global mean sea level figure <trend>` is used on page {ref}`Components of time series <components>` (not modified) and is from {cite:t}`csiro`.
 
 (optimization_credit)=
 ### Chapter: Optimization
@@ -191,9 +191,9 @@ Credits are provided here for chapters and pages that are released under the lic
 > The {ref}`Road Network Design Problem <optimization_project>` pages are included in this chapter but are _not_ included under the CC BY license of this book; they are in-class exercises that will be shared by the authors of this book as part of a future publication (also under a CC BY license; citation will be provided here after publication).
 >
 > Several figures are included in this chapter but are _not_ included under the CC BY license of this book:
-> - {numref}`The figure on convex / nonconvex figures <convex_non_convex>` is used on page {ref}`Taxonomy of optimization models <optimization_taxonomy>`; the convex 3D figure is from {cite:t}`Agrawal2021` and the non-convex 3D figures is from {cite:t}`Nogal2021`. Both are included as part of the figure shown in this book modification.
-> - {numref}`The figure on linear vs convex programming <recap_simple_branch_bound>` is used on page {ref}`Genetic algorithm <optimization_genetic_algorithm>` and is from {cite:t}`Danshian2025` (left) and the figure on the right is from an unknown source. Both are included as part of the figure shown in this book without modification.
-> - {numref}`This <computation_complexity>`, {numref}`this <metaheuristic_approach>`, {numref}`this <metaheuristic_approach2>`, {numref}`this <evolutionary_algorithm>`, {numref}`this <termination>`, {numref}`this <genetic_algorithm_diagram>`, {numref}`this <single_point_crossover_diagram>`, {numref}`this <single_point_crossover_diagram2>` and {numref}`this figure <genetic_new_population>` on page {ref}`Genetic algorithm <optimization_genetic_algorithm>`  are not included under the CC BY license of this book, as they are from unknown sources and will be replaced.
+> - {ref}`The figure on convex / nonconvex figures <convex_non_convex>` is used on page {ref}`Taxonomy of optimization models <optimization_taxonomy>`; the convex 3D figure is from {cite:t}`Agrawal2021` and the non-convex 3D figures is from {cite:t}`Nogal2021`. Both are included as part of the figure shown in this book modification.
+> - {ref}`The figure on linear vs convex programming <recap_simple_branch_bound>` is used on page {ref}`Genetic algorithm <optimization_genetic_algorithm>` and is from {cite:t}`Danshian2025` (left) and the figure on the right is from an unknown source. Both are included as part of the figure shown in this book without modification.
+> - {ref}`This <computation_complexity>`, {ref}`this <metaheuristic_approach>`, {ref}`this <metaheuristic_approach2>`, {ref}`this <evolutionary_algorithm>`, {ref}`this <termination>`, {ref}`this <genetic_algorithm_diagram>`, {ref}`this <single_point_crossover_diagram>`, {ref}`this <single_point_crossover_diagram2>` and {ref}`this figure <genetic_new_population>` on page {ref}`Genetic algorithm <optimization_genetic_algorithm>`  are not included under the CC BY license of this book, as they are from unknown sources and will be replaced.
 
 (machine_learning_credit)=
 ### Chapter: Introduction to Machine Learning
