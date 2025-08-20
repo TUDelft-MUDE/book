@@ -37,15 +37,12 @@ Note that when talking about the Gaussian distribution instead of using $F_{X_1,
 
 You can play with the interactive element below changing the correlation value yourself. Observe how the distribution's _density_ contours, or a scatter plot of _samples,_ change when you adjust the correlation.
 
-<br>
 
-<iframe src="../_static/elements/element_correlation.html" width="600" height="400" frameborder="0"></iframe>
-
-<br>
+```{iframe-figure} ../_static/elements/element_correlation.html
+:name: element_correlation_bivariate
+```
 
 In the figure below, you can observe the PDF and CDF of a bivariate Gaussian distribution for a correlation coefficient $\rho=0.77$ (remember the relation between correlation and covariance).
-
-<br><br>
 
 ```{figure} https://files.mude.citg.tudelft.nl/gaussian_rivers_pdf_cdf.png
 
@@ -54,7 +51,6 @@ In the figure below, you can observe the PDF and CDF of a bivariate Gaussian dis
 ---
 Bivariate Gaussian distribution: (left) probability density function, and (right) cumulative distribution function.
 ```
-<br>
 
 ## Conditionalizing a bivariate Gaussian distribution
 
@@ -147,8 +143,6 @@ We can see that the means of the random variables $Q_1$ and $Q_2$ have increased
 Unconditional and conditional Gaussian distributions given $P$: (left) $Q_1$, and (right) $Q_2$.
 ```
 
-<br>
-
 We can also compare the bivariate Gaussian distribution of $Q_1$ and $Q_2$ without and with the conditionalization, as shown in the Figure below. You can see how the mode of the distribution (point of maximum density) has moved towards the upper right side of the plot and become slightly narrower  when conditionalizing. This is because the three variables are positively correlated and we have conditionalized on a value of precipitation higher than the mean.
 
 ```{figure} https://files.mude.citg.tudelft.nl/joint_prob_conditional.png
@@ -163,19 +157,14 @@ Unconditional and conditional bivariate Gaussian distributions for $Q_1$ and $Q_
 
 If you need to refresh the concept of covariance and correlation and want to see a short video on the multivariate Gaussian distribution, you have one here!
 
-```{eval-rst}
-.. raw:: html
 
-   <iframe width="560" height="315" src="https://youtube.com/embed/zyXp_oysuW4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+```{video} https://youtube.com/embed/zyXp_oysuW4
 ```
-
- <br><br>
 
 [^note]: You can check the definition of covariance [here](Correlation_and_Covariance.md#Covariance-matrix).
 
- <br><br>
 
- ## Your turn now!
+## Your turn now!
 
 :::{card} Exercise: Keep your bike chain clean
 
