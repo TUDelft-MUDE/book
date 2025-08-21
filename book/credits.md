@@ -1,7 +1,11 @@
 (credits)=
 # Credits and License
 
-You can refer to this book in its entirety as:
+You can refer to the most recent version of this book as:
+
+> van Woudenberg, T., van der Meer, F., Ding, J. (2025), Modelling, Uncertainty and Data for Engineers (MUDE) Textbook, Delft University of Technology. https://mude.citg.tudelft.nl/book/2025, CC BY 4.0. [doi:10.5281/zenodo.16223061](https://doi.org/10.5281/zenodo.16223061).
+
+The book in its entirety is available in the 2024 edition (2025 edition will follow in spring 2026):
 
 > Lanzafame, R., van Woudenberg, T., Verhagen, S. (2024), Modelling, Uncertainty and Data for Engineers (MUDE) Textbook, Delft University of Technology. https://mude.citg.tudelft.nl/book/2024, CC BY 4.0. [doi:10.5281/zenodo.16236358](https://doi.org/10.5281/zenodo.16236358).
 
@@ -9,6 +13,20 @@ You can refer to this book in its entirety as:
 :class: tip, dropdown
 
 If you would like to refer to the MUDE Textbook with BibTeX (e.g., in a TeachBook or Jupyter Book), the following entry can be used in a  `bib` file to get close to the reference shown above. Use the GitHub repository for this book as a reference for setting up APA citations (if desired).
+
+```bibtex
+@misc{mude2025,
+  title={Modelling, {U}ncertainty and {D}ata for {E}ngineers ({MUDE}) {T}extbook},
+  author={van Woudenberg, Tom and van der Meer, Frans and Ding, Jialei},
+  year={2025},
+  note={Delft University of Technology. {https://mude.citg.tudelft.nl/book/2025} CC BY 4.0},
+  doi={doi:10.5281/zenodo.16223061},
+}
+```
+
+The text citation is {cite:t}`mude2025`and the parenthetical citation is {cite:p}`mude2025`.
+
+Or for the complete 2024 edition:
 
 ```bibtex
 @misc{mude2024,
@@ -24,21 +42,17 @@ The text citation is {cite:t}`mude2024`and the parenthetical citation is {cite:p
 
 ````
 
-The introduction, structure of the book and formatting of contents is done under direction of the Editors (Robert Lanzafame, Tom van Woudenberg and Sandra Verhagen), in collaboration with a large team of co-authors and student assistants. Some chapters and pages have additional primary authors who are identified within the book either at the bottom of the first page in a chapter, or at the bottom of an individual page, as necessary. If an author is not listed on a particular chapter or page, the editors may be attributed as the authors.
+The introduction, structure of the book and formatting of contents is done under direction of the Editors (Tom van Woudenberg, Frans van der Meer and Jialei Ding), in collaboration with a large team of co-authors and student assistants. Some chapters and pages have additional primary authors who are identified within the book either at the bottom of the first page in a chapter, or at the bottom of an individual page, as necessary. If an author is not listed on a particular chapter or page, the editors may be attributed as the authors.
 
-You can refer to individual chapters or pages within this book as:
+You can refer to individual chapters or pages within this book as, but as contents of this book may change each academic year, we cannot guarantee that chapter titles and URL's will remain static indefinitely. Therefore, if it is important for you to reference a specific location within the book, we recommend including the complete URL and date of access in your reference. You can refer to individual chapters or pages within this book as:
 
-> `<Primary Authors>` (2024) `<Title of Chapter or Page>`. In Lanzafame et al. (Eds.), _Modelling, Uncertainty and Data for Engineers (MUDE) Textbook._ Delft University of Technology. https://mude.citg.tudelft.nl/book.
-
-As contents of this book may change each academic year, we cannot guarantee that chapter titles and URL's will remain static indefinitely. Therefore, if it is important for you to reference a specific location within the book, we recommend including the complete URL and date of access in your reference. You can refer to individual chapters or pages within this book as:
-
-> `<Primary Authors>` (2024) `<Title of Chapter or Page>`. In Lanzafame et al. (Eds.), _Modelling, Uncertainty and Data for Engineers (MUDE) Textbook._ Delft University of Technology. https://mude.citg.tudelft.nl/book (chapter `./book/intro/`, retrieved [`<date>`]).
+> `<Primary Authors>` (2025) `<Title of Chapter or Page>`. In van Woudenberg et al. (Eds.), _Modelling, Uncertainty and Data for Engineers (MUDE) Textbook._ Delft University of Technology. https://mude.citg.tudelft.nl/book (chapter `./book/intro/`, retrieved [`<date>`]).
 
 Better yet, include a link to the specific commit! _If you know what this means, we assume you know how to do it._
 
 ## How the book is made
 
-This book is created using open source tools: it is a Jupyter Book that uses a number of features from [TeachBooks](https://teachbooks.io/) and is written using Markdown, Jupyter notebooks and Python files to generate some figures. The source files are stored on a public GitHub repository [github.com/TUDelft-MUDE/book](https://github.com/tudelft-mude/book/). Zenodo is used to archive all open versions of the book (beginning with the 2024-25 academic year) and to provide a DOI ([10.5281/zenodo.16236358](https://doi.org/10.5281/zenodo.16236358)).  View the repository README file or contact the editors for additional and up-to-date information.
+This book is created using open source tools: it is a Jupyter Book that uses a number of features from [TeachBooks](https://teachbooks.io/) and is written using Markdown, Jupyter notebooks and Python files to generate some figures. The source files are stored on a public GitHub repository [github.com/TUDelft-MUDE/book](https://github.com/tudelft-mude/book/). Zenodo is used to archive all open versions of the book (beginning with the 2024-25 academic year) and to provide a DOI ([10.5281/zenodo.16223061](https://doi.org/10.5281/zenodo.16223061)).  View the repository README file or contact the editors for additional and up-to-date information.
 
 ## Acknowledgements
 
