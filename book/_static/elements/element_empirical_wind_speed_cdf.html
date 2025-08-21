@@ -7,12 +7,13 @@
     body{ margin:0; overflow:hidden; font-family:Helvetica, sans-serif; }
     #chart-title{
       position:absolute; top:6px; margin:0; font-weight:normal;
-      transform:translateX(-50%);       /* keeps true centring */
+      transform:translateX(-50%);
     }
     .tooltip_cdf{
       position:absolute; background:#fff; border:1px solid #999;
       padding:3px 6px; font-size:12px; pointer-events:none;
     }
+    svg{ position:absolute; top:0; left:0; background-color: None; }
   </style>
 </head>
 <body>
@@ -21,159 +22,172 @@
   <svg id="click_cdf"></svg>
 
 <script>
-/* ============================================================
-   0.  SQUARE VIEWPORT & BASIC CONSTANTS
-============================================================ */
+// =============================================================================
+// 0. SQUARE VIEWPORT & BASIC CONSTANTS
+// =============================================================================
 const side = Math.min(
   Math.max(document.documentElement.clientWidth , window.innerWidth ) * 0.95,
   Math.max(document.documentElement.clientHeight, window.innerHeight) * 0.95
-);
+)
 
-const svg  = d3.select('#click_cdf').attr('width',side).attr('height',side);
-const fsz  = (12 * side / 600) + 'px';
-const titleSel = d3.select('#chart-title').style('font-size',fsz);
+var svg = d3.select("#click_cdf").attr("width", side).attr("height", side)
+const fsz = (12 * side / 600).toString() + "px"
+const title_sel = d3.select("#chart-title").style("font-size", fsz)
 
-/* Inner plot frame */
-const margin = {top: side*0.08, right: side*0.08, bottom: side*0.10, left: side*0.12};
-const plotW  = side - margin.left - margin.right,
-      plotH  = side - margin.top  - margin.bottom;
+// inner plot frame
+const margin = {top: side*0.08, right: side*0.08, bottom: side*0.10, left: side*0.12}
+const plot_w = side - margin.left - margin.right
+const plot_h = side - margin.top  - margin.bottom
 
-/* >>> title centred over X‑axis <<< */
-titleSel.style('left', (margin.left + plotW/2) + 'px');
+// title centred over x-axis
+title_sel.style("left", (margin.left + plot_w/2).toString() + "px")
 
-/* Scales */
-const x = d3.scaleLinear().range([margin.left, margin.left+plotW]);
-const y = d3.scaleLinear().range([margin.top+plotH, margin.top]);
+// scales
+const x = d3.scaleLinear().range([margin.left, margin.left + plot_w])
+const y = d3.scaleLinear().range([margin.top + plot_h, margin.top])
 
-/* Axes */
-const gX = svg.append('g')
-  .attr('transform',`translate(0,${margin.top+plotH})`)
-  .style('font-size',fsz);
-const gY = svg.append('g')
-  .attr('transform',`translate(${margin.left},0)`)
-  .style('font-size',fsz);
+// axes
+const g_x = svg.append("g")
+  .attr("transform","translate(0," + (margin.top + plot_h).toString() + ")")
+  .style("font-size", fsz)
 
-/* Axis labels */
-svg.append('text')
-  .attr('transform',`translate(${margin.left+plotW/2},${side-margin.bottom*0.4})`)
-  .style('text-anchor','middle').style('font-size',fsz)
-  .text('wind speed [m/s]');
+const g_y = svg.append("g")
+  .attr("transform","translate(" + (margin.left).toString() + ",0)")
+  .style("font-size", fsz)
 
-svg.append('text')
-  .attr('transform',`translate(${margin.left*0.4},${margin.top+plotH/2}) rotate(-90)`)
-  .style('text-anchor','middle').style('font-size',fsz)
-  .text('non‑exceedance probability');
+// axis labels
+svg.append("text")
+  .attr("transform","translate(" + ((margin.left + plot_w/2)).toString() + "," + (side - margin.bottom*0.4).toString() + ")")
+  .style("text-anchor","middle").style("font-size", fsz)
+  .text("wind speed\u00A0[m/s]")
 
-/* Tooltip & bisector */
-const tip = d3.select('#tooltip_cdf');
-const bisect = d3.bisector(d=>d.speed).left;
+svg.append("text")
+  .attr("transform","translate(" + (margin.left*0.4).toString() + "," + (margin.top + plot_h/2).toString() + ") rotate(-90)")
+  .style("text-anchor","middle").style("font-size", fsz)
+  .text("non\u2011exceedance probability")
 
-/* ============================================================
-   1.  DATA LOAD  (live -> fallback)
-============================================================ */
-const now = new Date();
-const endDate = now.toISOString().slice(0,10);
-const startDate = new Date(now); startDate.setDate(startDate.getDate()-364);
-const startStr = startDate.toISOString().slice(0,10);
+// tooltip & bisector
+const tip = d3.select("#tooltip_cdf")
+const bisect = d3.bisector(d=>d.speed).left
 
-const lat=52.00667, lon=4.35556;
-const liveURL = `https://archive-api.open-meteo.com/v1/archive?latitude=${lat}&longitude=${lon}&start_date=${startStr}&end_date=${endDate}&hourly=wind_speed_10m&timezone=Europe%2FAmsterdam`;
-const backupURL = 'wind_speed_Delft_2024.json';
+// =============================================================================
+/* 1. DATA LOAD (live -> fallback) */
+// =============================================================================
+const now = new Date()
+const end_date = now.toISOString().slice(0,10)
+const start_date = new Date(now); start_date.setDate(start_date.getDate()-364)
+const start_str = start_date.toISOString().slice(0,10)
 
-load(liveURL).catch(e=>load(backupURL,true)).catch(fatal);
+const lat = 52.00667, lon = 4.35556
+const live_url = "https://archive-api.open-meteo.com/v1/archive?latitude=" + lat
+  + "&longitude=" + lon + "&start_date=" + start_str + "&end_date=" + end_date
+  + "&hourly=wind_speed_10m&timezone=Europe%2FAmsterdam"
+const backup_url = "wind_speed_Delft_2024.json"
 
-let latest;
+var latest
 
-async function load(url,isBackup=false){
-  const r=await fetch(url);
-  if(!r.ok) throw new Error(r.statusText);
-  const j = await r.json();
-  const t = j.hourly?.time, s=j.hourly?.wind_speed_10m;
-  if(!t||!s) throw new Error('schema');
+load(live_url).catch(e => load(backup_url, true)).catch(fatal)
 
-  const rows=[];
-  for(let i=0;i<t.length;i++){
-    const d=new Date(t[i]), v=s[i];
-    if((isBackup||d<=now)&&v!=null&&isFinite(v)) rows.push({date:d,speed:+v});
+async function load(url, is_backup=false){
+  const r = await fetch(url)
+  if(!r.ok) throw new Error(r.statusText)
+  const j = await r.json()
+  const t = j.hourly ? j.hourly.time : null
+  const s = j.hourly ? j.hourly.wind_speed_10m : null
+  if(!t || !s) throw new Error("schema")
+
+  const rows = []
+  for (var i=0;i<t.length;i++){
+    const d = new Date(t[i]), v = s[i]
+    if ((is_backup || d <= now) && v != null && isFinite(v)) rows.push({ date:d, speed:+v })
   }
-  if(!rows.length) throw new Error('no data');
+  if (!rows.length) throw new Error("no data")
 
-  latest = rows[rows.length-1];
+  latest = rows[rows.length-1]
 
-  /* Sort ascending by speed & compute non‑exceedance probability */
+  // sort ascending by speed & compute non-exceedance probability
   const sorted = rows.slice().sort((a,b)=>a.speed-b.speed)
-                 .map((d,i)=>({...d, nep:(i+1)/(rows.length+1)}));
+    .map((d,i)=>({ ...d, nep:(i+1)/(rows.length+1) }))
 
-  draw(sorted,isBackup);
+  draw(sorted, is_backup)
 }
 
-function draw(data,isBackup){
-  x.domain([0, d3.max(data,d=>d.speed)*1.05]);
-  y.domain([0,1]);
+// =============================================================================
+// 2. RENDER (step CDF + markers + interaction)
+// =============================================================================
+function draw(data, is_backup){
+  x.domain([0, d3.max(data, d=>d.speed)*1.05])
+  y.domain([0,1])
 
-  gX.call(d3.axisBottom(x));
-  gY.call(d3.axisLeft(y).ticks(10));
+  g_x.call(d3.axisBottom(x))
+  g_y.call(d3.axisLeft(y).ticks(10))
 
   const step = d3.line()
     .x(d=>x(d.speed))
     .y(d=>y(d.nep))
-    .curve(d3.curveStepAfter);
+    .curve(d3.curveStepAfter)
 
-  svg.append('path')
-     .datum(data)
-     .attr('fill','none')
-     .attr('stroke','#666')
-     .attr('stroke-width',2)
-     .attr('d',step);
+  svg.append("path")
+    .datum(data)
+    .attr("fill","none")
+    .attr("stroke","#666")
+    .attr("stroke-width",2)
+    .attr("d", step)
 
-  const pts = svg.append('g').selectAll('circle')
-    .data(data).enter().append('circle')
-      .attr('cx',d=>x(d.speed))
-      .attr('cy',d=>y(d.nep))
-      .attr('r',2.5)
-      .attr('fill','#444')
-      .attr('opacity',0.6);
+  const pts = svg.append("g").selectAll("circle")
+    .data(data).enter().append("circle")
+      .attr("cx", d=>x(d.speed))
+      .attr("cy", d=>y(d.nep))
+      .attr("r", 2.5)
+      .attr("fill","#444")
+      .attr("opacity",0.6)
 
-  const latestEntry = data.find(d=>d.date.getTime()===latest.date.getTime());
-  svg.append('line')
-     .attr('x1',x(latestEntry.speed)).attr('x2',x(latestEntry.speed))
-     .attr('y1',margin.top).attr('y2',margin.top+plotH)
-     .attr('stroke','red');
-  svg.append('line')
-     .attr('x1',margin.left).attr('x2',margin.left+plotW)
-     .attr('y1',y(latestEntry.nep)).attr('y2',y(latestEntry.nep))
-     .attr('stroke','red');
-  svg.append('circle')
-     .attr('cx',x(latestEntry.speed)).attr('cy',y(latestEntry.nep))
-     .attr('r',4).attr('fill','red');
+  const latest_entry = data.find(d=>d.date.getTime()===latest.date.getTime())
 
-  titleSel.text(
-      `Wind speed in Delft on ${d3.timeFormat('%e. %b at %H:%M %p')(latest.date)}: `
-    + `${latest.speed.toFixed(1)} m/s  (P≤x ≈ ${(latestEntry.nep*100).toFixed(1)} %)`
-    + (isBackup?'  [backup]':''));
+  svg.append("line")
+    .attr("x1", x(latest_entry.speed)).attr("x2", x(latest_entry.speed))
+    .attr("y1", margin.top).attr("y2", margin.top + plot_h)
+    .attr("stroke","red")
 
-  svg.on('mousemove',ev=>{
-    const [mx]=d3.pointer(ev,svg.node());
-    const spd = x.invert(mx);
-    const idx = bisect(data,spd,1);
-    const d0=data[idx-1], d1=data[idx]||d0;
-    const d =(spd-d0.speed>d1.speed-spd)?d1:d0;
+  svg.append("line")
+    .attr("x1", margin.left).attr("x2", margin.left + plot_w)
+    .attr("y1", y(latest_entry.nep)).attr("y2", y(latest_entry.nep))
+    .attr("stroke","red")
+
+  svg.append("circle")
+    .attr("cx", x(latest_entry.speed)).attr("cy", y(latest_entry.nep))
+    .attr("r", 4).attr("fill","red")
+
+  title_sel.text(
+    "Wind speed in Delft on " + d3.timeFormat("%e. %b at %H:%M %p")(latest.date) + ": "
+    + latest.speed.toFixed(1) + "\u202Fm/s  (P\u2264x\u00A0\u2248\u00A0" + (latest_entry.nep*100).toFixed(1) + "\u202F%)"
+    + (is_backup ? "  [backup]" : "")
+  )
+
+  svg.on("mousemove", ev=>{
+    const mx = d3.pointer(ev, svg.node())[0]
+    const spd = x.invert(mx)
+    const idx = bisect(data, spd, 1)
+    const d0 = data[idx-1], d1 = data[idx] || d0
+    const d  = (spd - d0.speed > d1.speed - spd) ? d1 : d0
 
     tip.html(
-      `${d3.timeFormat('%d %b %Y %H:%M')(d.date)}<br>`
-      + `wind: ${d.speed.toFixed(1)} m/s<br>`
-      + `P≤x: ${(d.nep*100).toFixed(1)} %`
-    ).style('left',(ev.pageX+10)+'px')
-     .style('top',(ev.pageY-28)+'px')
-     .style('display','block');
-  }).on('mouseleave',()=> tip.style('display','none'));
+      d3.timeFormat("%d\u00A0%b\u00A0%Y\u00A0%H:%M")(d.date) + "<br>"
+      + "wind: " + d.speed.toFixed(1) + "\u202Fm/s<br>"
+      + "P\u2264x: " + (d.nep*100).toFixed(1) + "\u202F%"
+    )
+    .style("left", (ev.pageX + 10).toString() + "px")
+    .style("top",  (ev.pageY - 28).toString() + "px")
+    .style("display","block")
+  })
+  .on("mouseleave", ()=> tip.style("display","none"))
 }
 
 function fatal(e){
-  console.error(e);
-  svg.append('text').attr('x',side/2).attr('y',side/2)
-     .style('text-anchor','middle').style('font-size',fsz)
-     .style('fill','red').text('Data load failed');
+  console.error(e)
+  svg.append("text").attr("x", (side/2).toString()).attr("y", (side/2).toString())
+    .style("text-anchor","middle").style("font-size", fsz)
+    .style("fill","red").text("Data load failed")
 }
 </script>
 </body>

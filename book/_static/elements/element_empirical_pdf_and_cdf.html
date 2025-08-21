@@ -6,32 +6,33 @@
   <script src="https://d3js.org/d3.v7.min.js"></script>
   <style>
     body{ margin:0; overflow:hidden; font-family:Helvetica, sans-serif; }
-    
     rect.bin{ $1 shape-rendering:crispEdges; }
     rect.bin.active{ fill:red; stroke:red; stroke-width:2; opacity:1; }
     rect.bin:hover{ cursor:pointer; }
     .axis text{ font-family:Helvetica, sans-serif; }
+    svg{ position:absolute; top:0; left:0; background-color: None; }
   </style>
 </head>
 <body>
-    <svg id="click"></svg>
+  <svg id="click"></svg>
 
 <script>
-/* ============================================================
-   0.  CANVAS WITH 2:1 ASPECT (like side-by-side.html)
-============================================================ */
-const vw = Math.max(document.documentElement.clientWidth  || 0, window.innerWidth  || 0) * 0.95;
-const vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0) * 0.95;
-const aspect = 2; // width : height
-let width, height;
-if (vw/aspect < vh){ width = vw; height = vw/aspect; } else { width = vh*aspect; height = vh; }
+// =============================================================================
+// 0. CANVAS WITH 2:1 ASPECT
+// =============================================================================
+const vw = Math.max(document.documentElement.clientWidth  || 0, window.innerWidth  || 0) * 0.95
+const vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0) * 0.95
+const aspect = 2
 
-const svg  = d3.select('#click').attr('width',width).attr('height',height);
-const fsz  = (12 * width / 600) + 'px';
+var width, height
+if (vw/aspect < vh){ width = vw; height = vw/aspect } else { width = vh*aspect; height = vh }
 
-/* ============================================================
-   1.  DATA (hard-coded, no network fetch)
-============================================================ */
+var svg  = d3.select("#click").attr("width", width).attr("height", height)
+const fsz  = (12 * width / 600).toString() + "px"
+
+// =============================================================================
+// 1. DATA (hard-coded, no network fetch)
+// =============================================================================
 const data = [
   0.98194733,  1.66749077, -0.13183068,  0.62309398,  1.26533973,
   5.61990436,  0.59890643,  0.26974686,  1.59431413,  0.40689944,
@@ -53,180 +54,170 @@ const data = [
   2.86152801,  0.13124214,  0.68736844,  4.23072539,  4.72905657,
   2.57271601,  1.29246143,  1.66392584,  1.96295435,  0.32413979,
   1.32740132,  1.38922566,  0.40388547, -0.09240789,  0.96563671
-];
-const N = data.length;
+]
+const N = data.length
 
-/* ============================================================
-   2.  LAYOUT: two panes (PDF left, CDF right)
-============================================================ */
-const margin = {top: height*0.10, right: width*0.06, bottom: height*0.12, left: width*0.10};
-const gap = width*0.06;                             // gap between panes
-const innerW = width - margin.left - margin.right;  // full inner width for both panes
-const innerH = height - margin.top - margin.bottom;
+// =============================================================================
+// 2. LAYOUT: two panes (PDF left, CDF right)
+// =============================================================================
+const margin = {top: height*0.10, right: width*0.06, bottom: height*0.12, left: width*0.10}
+const gap = width*0.06
+const inner_w = width - margin.left - margin.right
+const inner_h = height - margin.top - margin.bottom
 
-const paneW = (innerW - gap) / 2;
-const leftX0  = margin.left;
-const rightX0 = margin.left + paneW + gap;
+const pane_w = (inner_w - gap) / 2
+const left_x0  = margin.left
+const right_x0 = margin.left + pane_w + gap
 
-/* Shared x-domain */
-const xMin = d3.min(data), xMax = d3.max(data);
-const pad = (xMax - xMin) * 0.03;
-const xDomain = [xMin - pad, xMax + pad];
+const x_min = d3.min(data), x_max = d3.max(data)
+const pad = (x_max - x_min) * 0.03
+const x_domain = [x_min - pad, x_max + pad]
 
-/* Scales */
-const xPDF = d3.scaleLinear().domain(xDomain).range([leftX0,  leftX0  + paneW]);
-const yPDF = d3.scaleLinear().range([margin.top + innerH, margin.top]);
+// scales
+const x_pdf = d3.scaleLinear().domain(x_domain).range([left_x0,  left_x0  + pane_w])
+const y_pdf = d3.scaleLinear().range([margin.top + inner_h, margin.top])
+const x_cdf = d3.scaleLinear().domain(x_domain).range([right_x0, right_x0 + pane_w])
+const y_cdf = d3.scaleLinear().domain([0,1]).range([margin.top + inner_h, margin.top])
 
-const xCDF = d3.scaleLinear().domain(xDomain).range([rightX0, rightX0 + paneW]);
-const yCDF = d3.scaleLinear().domain([0,1]).range([margin.top + innerH, margin.top]);
+// axes
+const g_x_pdf = svg.append("g").attr("transform","translate(0," + (margin.top + inner_h).toString() + ")").style("font-size", fsz)
+const g_y_pdf = svg.append("g").attr("transform","translate(" + (left_x0).toString() + ",0)").style("font-size", fsz)
+const g_x_cdf = svg.append("g").attr("transform","translate(0," + (margin.top + inner_h).toString() + ")").style("font-size", fsz)
+const g_y_cdf = svg.append("g").attr("transform","translate(" + (right_x0).toString() + ",0)").style("font-size", fsz)
 
-/* Axes */
-const gXpdf = svg.append('g').attr('transform',`translate(0,${margin.top+innerH})`).style('font-size',fsz);
-const gYpdf = svg.append('g').attr('transform',`translate(${leftX0},0)`).style('font-size',fsz);
-const gXcdf = svg.append('g').attr('transform',`translate(0,${margin.top+innerH})`).style('font-size',fsz);
-const gYcdf = svg.append('g').attr('transform',`translate(${rightX0},0)`).style('font-size',fsz);
+// subplot titles
+svg.append("text")
+  .attr("x", (left_x0 + pane_w/2).toString())
+  .attr("y", (margin.top - 12).toString())
+  .style("text-anchor","middle")
+  .style("font-size", fsz)
+  .text("empirical PDF")
 
-/* Static subplot titles */
-svg.append('text')
-  .attr('x', leftX0 + paneW/2)
-  .attr('y', margin.top - 12)
-  .style('text-anchor','middle')
-  .style('font-size', fsz)
-  .text('empirical PDF');
+svg.append("text")
+  .attr("x", (right_x0 + pane_w/2).toString())
+  .attr("y", (margin.top - 12).toString())
+  .style("text-anchor","middle")
+  .style("font-size", fsz)
+  .text("empirical CDF")
 
-svg.append('text')
-  .attr('x', rightX0 + paneW/2)
-  .attr('y', margin.top - 12)
-  .style('text-anchor','middle')
-  .style('font-size', fsz)
-  .text('empirical CDF');
+// axis labels
+svg.append("text")
+  .attr("transform","translate(" + ((left_x0 + pane_w/2)).toString() + "," + (height - margin.bottom*0.4).toString() + ")")
+  .style("text-anchor","middle").style("font-size", fsz).text("x")
 
-/* Axis labels */
-svg.append('text')
-  .attr('transform',`translate(${leftX0 + paneW/2},${height - margin.bottom*0.4})`)
-  .style('text-anchor','middle').style('font-size',fsz).text('x');
-svg.append('text')
-  .attr('transform',`translate(${leftX0 - margin.left*0.55},${margin.top + innerH/2}) rotate(-90)`)
-  .style('text-anchor','middle').style('font-size',fsz).text('interval probability');
+svg.append("text")
+  .attr("transform","translate(" + (left_x0 - margin.left*0.55).toString() + "," + (margin.top + inner_h/2).toString() + ") rotate(-90)")
+  .style("text-anchor","middle").style("font-size", fsz).text("interval probability")
 
-svg.append('text')
-  .attr('transform',`translate(${rightX0 + paneW/2},${height - margin.bottom*0.4})`)
-  .style('text-anchor','middle').style('font-size',fsz).text('x');
-svg.append('text')
-  .attr('transform',`translate(${rightX0 + paneW + margin.right*0.45},${margin.top + innerH/2}) rotate(90)`)
-  .style('text-anchor','middle').style('font-size',fsz).text('cumulative probability');
+svg.append("text")
+  .attr("transform","translate(" + ((right_x0 + pane_w/2)).toString() + "," + (height - margin.bottom*0.4).toString() + ")")
+  .style("text-anchor","middle").style("font-size", fsz).text("x")
 
-/* ============================================================
-   3.  HISTOGRAM (empirical PDF)
-============================================================ */
-const thresholds = 12; // keep roughly similar bin count
-// Force equal-width bins by constructing explicit edges from min to max
-const K = thresholds;
-const varstep = (xMax - xMin) / K;
-const edges = d3.range(xMin, xMax, varstep);
-edges.push(xMax);
-const binGen = d3.bin().domain([xMin, xMax]).thresholds(edges);
-const rawBins = binGen(data);
-const bins = rawBins.map(b => ({ x0: b.x0, x1: b.x1, cnt: b.length, prob: b.length / N }));
+svg.append("text")
+  .attr("transform","translate(" + (right_x0 + pane_w + margin.right*0.45).toString() + "," + (margin.top + inner_h/2).toString() + ") rotate(90)")
+  .style("text-anchor","middle").style("font-size", fsz).text("cumulative probability")
 
-const maxProb = d3.max(bins, b => b.prob) || 1e-12;
-yPDF.domain([0, maxProb * 1.1]);
+// =============================================================================
+// 3. HISTOGRAM (empirical PDF)
+// =============================================================================
+const thresholds = 12
+const K = thresholds
+const varstep = (x_max - x_min) / K
+const edges = d3.range(x_min, x_max, varstep); edges.push(x_max)
 
-gXpdf.call(d3.axisBottom(xPDF).ticks(5));
-gYpdf.call(d3.axisLeft(yPDF).ticks(5));
+const bin_gen = d3.bin().domain([x_min, x_max]).thresholds(edges)
+const raw_bins = bin_gen(data)
+const bins = raw_bins.map(b => ({ x0:b.x0, x1:b.x1, cnt:b.length, prob:b.length / N }))
 
-const barG = svg.append('g');
+const max_prob = d3.max(bins, b => b.prob) || 1e-12
+y_pdf.domain([0, max_prob * 1.1])
 
-// (Re)define cumulative probabilities per bin to avoid any missing refs
-const cumProbs = [];
-{ let acc = 0; bins.forEach((b,i)=>{ cumProbs[i] = acc; acc += b.prob; }); }
+g_x_pdf.call(d3.axisBottom(x_pdf).ticks(5))
+g_y_pdf.call(d3.axisLeft(y_pdf).ticks(5))
 
-// Force visually equal-width bars in pixels (use first bin as template)
-const barRatio = 0.8;  // 80% of bin width
-const bars = barG.selectAll('rect')
+var bar_g = svg.append("g")
+
+const cum_probs = []
+{ let acc = 0; bins.forEach((b,i)=>{ cum_probs[i] = acc; acc += b.prob }) }
+
+const bar_ratio = 0.8
+const bars = bar_g.selectAll("rect")
   .data(bins)
-  .enter().append('rect')
-    .attr('class','bin')
-    .attr('x', b => { const bw = xPDF(b.x1)-xPDF(b.x0); return xPDF(b.x0) + (1-barRatio)*bw/2; })
-    .attr('width', b => (xPDF(b.x1)-xPDF(b.x0))*barRatio )
-    .attr('y', b => yPDF(b.prob))
-    .attr('height', b => yPDF(0)-yPDF(b.prob))
-    .attr('fill', '#ccc')
-    .attr('stroke', 'none')
-    .attr('y', b=> yPDF(b.prob))
-    .attr('height',b=> yPDF(0)-yPDF(b.prob));
+  .enter().append("rect")
+    .attr("class","bin")
+    .attr("x", b => { const bw = x_pdf(b.x1)-x_pdf(b.x0); return x_pdf(b.x0) + (1-bar_ratio)*bw/2 })
+    .attr("width", b => (x_pdf(b.x1)-x_pdf(b.x0))*bar_ratio )
+    .attr("y", b => y_pdf(b.prob))
+    .attr("height", b => y_pdf(0)-y_pdf(b.prob))
+    .attr("fill", "#ccc")
+    .attr("stroke", "none")
+    .attr("y", b=> y_pdf(b.prob))
+    .attr("height",b=> y_pdf(0)-y_pdf(b.prob))
 
-let acc = 0; bins.forEach((b,i)=>{ cumProbs[i]=acc; acc += b.prob; });
+let acc = 0; bins.forEach((b,i)=>{ cum_probs[i]=acc; acc += b.prob })
 
-/* ============================================================
-   4.  EMPIRICAL CDF (step function)
-============================================================ */
-const sorted = [...data].sort((a,b)=>a-b);
-const cdfPts = [{x:xDomain[0], y:0}];
-for(let i=0;i<sorted.length;i++) cdfPts.push({x:sorted[i], y:(i+1)/N});
+// =============================================================================
+// 4. EMPIRICAL CDF (step function)
+// =============================================================================
+const sorted = data.slice().sort((a,b)=>a-b)
+const cdf_pts = [{x:x_domain[0], y:0}]
+for (var i=0;i<sorted.length;i++) cdf_pts.push({ x:sorted[i], y:(i+1)/N })
 
-const step = d3.line().curve(d3.curveStepAfter)
-  .x(d=>xCDF(d.x)).y(d=>yCDF(d.y));
+const step = d3.line().curve(d3.curveStepAfter).x(d=>x_cdf(d.x)).y(d=>y_cdf(d.y))
 
-/* CDF background & highlight rectangle for hovered bin */
-const cdfBg = svg.append('rect')
-  .attr('x', rightX0).attr('y', margin.top)
-  .attr('width', paneW).attr('height', innerH)
-  .attr('fill', '#ffffff');
+const cdf_bg = svg.append("rect")
+  .attr("x", right_x0).attr("y", margin.top)
+  .attr("width", pane_w).attr("height", inner_h)
+  .attr("fill", "#ffffff")
 
-const cdfHi = svg.append('rect')
-  .attr('x', rightX0).attr('y', margin.top)
-  .attr('width', 0).attr('height', innerH)
-  .attr('fill', 'red').attr('opacity', 0.5).style('pointer-events','none');
+const cdf_hi = svg.append("rect")
+  .attr("x", right_x0).attr("y", margin.top)
+  .attr("width", 0).attr("height", inner_h)
+  .attr("fill", "red").attr("opacity", 0.5).style("pointer-events","none")
 
-svg.append('path')
-  .attr('d', step(cdfPts))
-  .attr('fill','none')
-  .attr('stroke','#666')
-  .attr('stroke-width', 3 * height / 600);
+svg.append("path")
+  .attr("d", step(cdf_pts))
+  .attr("fill","none")
+  .attr("stroke","#666")
+  .attr("stroke-width", 3 * height / 600)
 
-gXcdf.call(d3.axisBottom(xCDF).ticks(5));
-gYcdf.call(d3.axisLeft(yCDF).ticks(5));
+g_x_cdf.call(d3.axisBottom(x_cdf).ticks(5))
+g_y_cdf.call(d3.axisLeft(y_cdf).ticks(5))
 
-/* Transparent hover zones on the CDF matching histogram bins */
-const cdfZones = svg.append('g');
-cdfZones.selectAll('rect')
+const cdf_zones = svg.append("g")
+cdf_zones.selectAll("rect")
   .data(bins)
-  .enter().append('rect')
-    .attr('x', b => xCDF(b.x0))
-    .attr('y', margin.top)
-    .attr('width', b => Math.max(1, xCDF(b.x1 - ((xMax - xMin) * 1e-9)) - xCDF(b.x0)))
-    .attr('height', innerH)
-    .attr('fill', 'transparent')
-    .on('mouseover', (ev,b)=> highlightBin(b))
-    .on('mouseout',  (ev,b)=> clearHighlight());
+  .enter().append("rect")
+    .attr("x", b => x_cdf(b.x0))
+    .attr("y", margin.top)
+    .attr("width", b => Math.max(1, x_cdf(b.x1 - ((x_max - x_min) * 1e-9)) - x_cdf(b.x0)))
+    .attr("height", inner_h)
+    .attr("fill", "transparent")
+    .on("mouseover", (ev,b)=> highlight_bin(b))
+    .on("mouseout",  (ev,b)=> clear_highlight())
 
-/* ============================================================
-   5.  INTERACTION (sync highlight both ways)
-============================================================ */
-function highlightBin(b){
-  // histogram bars (match hist.html behaviour with an explicit color/state)
+// =============================================================================
+// 5. INTERACTION (sync highlight both ways)
+// =============================================================================
+function highlight_bin(b){
   bars
-    .attr('fill', d => d === b ? 'red' : '#ccc')
-    .attr('stroke', d => d === b ? 'red' : 'none')
-    .attr('stroke-width', d => d === b ? 2 : 0);
-  // cdf region overlay
-  const eps = (xMax - xMin) * 1e-9;
-  cdfHi.attr('x', xCDF(b.x0)).attr('width', xCDF(b.x1 - eps) - xCDF(b.x0));
+    .attr("fill", d => d === b ? "red" : "#ccc")
+    .attr("stroke", d => d === b ? "red" : "none")
+    .attr("stroke-width", d => d === b ? 2 : 0)
+
+  const eps = (x_max - x_min) * 1e-9
+  cdf_hi.attr("x", x_cdf(b.x0)).attr("width", x_cdf(b.x1 - eps) - x_cdf(b.x0))
 }
 
-function clearHighlight(){
-  bars.attr('fill', '#ccc').attr('stroke','none').attr('stroke-width',0);
-  cdfHi.attr('width',0);
+function clear_highlight(){
+  bars.attr("fill", "#ccc").attr("stroke","none").attr("stroke-width",0)
+  cdf_hi.attr("width",0)
 }
 
-// Bind histogram hover to CDF highlight
-bars.on('mouseover', (ev,b)=> highlightBin(b))
-    .on('mouseout',  (ev,b)=> clearHighlight());
+bars.on("mouseover", (ev,b)=> highlight_bin(b))
+    .on("mouseout",  (ev,b)=> clear_highlight())
 
-/* Init */
-clearHighlight();
-
+clear_highlight()
 </script>
 </body>
 </html>

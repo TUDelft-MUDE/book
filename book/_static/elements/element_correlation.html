@@ -4,340 +4,255 @@
     <meta name="Effect of correlation">
     <title>2D Gaussian inference</title>
     <script src="https://unpkg.com/mathjs/lib/browser/math.js"></script>
-    <script src="https://d3js.org/d3.v5.min.js"></script>
-    <script src="https://unpkg.com/d3-simple-slider"></script>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/pca-js@1.0.0/pca.min.js"></script>
+    <style>
+      body{
+        margin:0; overflow:hidden;
+        font-family: Helvetica, sans-serif;
+      }
+      .my_datavizdiv{ position:absolute; }
+      svg{ position:absolute; top:0; left:0; background-color: None; }
+      #myDropdown{
+        position:absolute; top:0; left:0;
+        font-family: Helvetica, sans-serif;
+      }
+      .slider{ position:absolute; }
+      #sliderValue{
+        display:block; text-align:center; margin-top:10px; font-weight:bold;
+      }
+      .slider::-webkit-slider-thumb{
+        appearance:none; width:20px; height:20px; border-radius:50%;
+        background-color:#007bff; border:2px solid #fff; cursor:pointer;
+      }
+    </style>
   </head>
-  <!-- Create a div where the graph will take place -->
+
   <div id="my_dataviz">
-  
-    <svg id="click" xmlns="http://www.w3.org/2000/svg">
-    </svg>
-    
-    <!-- The dropdown select element -->
-    <select id="myDropdown" >
-      <!-- Three options for the dropdown -->
+    <svg id="click" xmlns="http://www.w3.org/2000/svg"></svg>
+
+    <select id="myDropdown">
       <option value="density">Density</option>
       <option value="samples">Samples</option>
     </select>
-    
+
     <input type="range" min="-100" max="100" value="85" class="slider" id="mySlider">
-    
   </div>
-  
-    <style>
-      body{
-          margin: 0; overflow: hidden;
-          font-family: Helvetica, sans-serif;
-        }
-      .my_datavizdiv {
-          position: absolute;
-      }
-      svg {
-        position: absolute;
-        top: 0;
-        left: 0;
-        background-color: None
-      }
-      #myDropdown { 
-        position: absolute; 
-        top: 0; 
-        left: 0; 
-        font-family: Helvetica, sans-serif;
-      }
-      .slider {
-        position: absolute;
-      }
-      #sliderValue {
-        display: block;
-        text-align: center;
-        margin-top: 10px;
-        font-weight: bold;
-      }
-      /* Style for slider thumb (circle marker) */
-      .slider::-webkit-slider-thumb {
-        appearance: none;
-        width: 20px; /* Customize the width of the circle marker */
-        height: 20px; /* Customize the height of the circle marker */
-        border-radius: 50%; /* Make it a circle */
-        background-color: #007bff; /* Customize the background color */
-        border: 2px solid #fff; /* Customize the border */
-        cursor: pointer;
-      }
-    </style>
-  
-  <!-- Create a div where the graph will take place -->
+
   <body>
     <script>
-      // ===================================================
-      // Set up basic viewport options
-      // ===================================================
-      
-      // Get the viewport height and width
-      const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0)
-      const vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0)
+      // =============================================================================
+      // viewport & stage (aspect 1.5)
+      // =============================================================================
+      const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth  || 0)
+      const vh = Math.max(document.documentElement.clientHeight|| 0, window.innerHeight || 0)
+      const aspect = 1.5
+      var width, height
+      if (vw/aspect < vh){ width = vw; height = vw/aspect } else { width = vh*aspect; height = vh }
 
-			var height  	= vh;
-      var width 		= vw;
-      
-      const aspect 	= 1.5;
-      
-      if (vw/aspect < vh) {
-      	// Viewport width is limiting
-        var width 	= vw;
-        var height 	= vw/aspect;
-      } else {
-      	// Viewport height is limiting
-      	var width 	= vh*aspect;
-        var height 	= vh;
-      }
+      var svg = d3.select("#click").attr("width", width).attr("height", height)
 
-      // Create the canvas. We will use only part of it for the main plot
-      var svg = d3.select("#click") // This selects the div
-          .attr("width", width) // This defines the canvas' width
-          .attr("height", height) // This defines the canvas' height
-          
-      // Place the dropdown menu
+      // =============================================================================
+      // UI placement
+      // =============================================================================
       svg.append("text")
-        .attr("transform", "translate(" + (width * 0.8).toString() + "," + (height * 0.525).toString() + ")")
-        .style("text-anchor", "middle")
+        .attr("transform","translate(" + (width*0.8).toString() + "," + (height*0.525).toString() + ")")
+        .style("text-anchor","middle")
         .text("display as")
-        .style("font-size", (16 * width / 600).toString() + "px")
-		  document.getElementById('myDropdown').style.left = (width*0.675).toString()+"px";
-      document.getElementById('myDropdown').style.top = (height*0.55).toString()+"px";
-      document.getElementById('myDropdown').style.width = (height*0.4).toString()+"px";
-      document.getElementById('myDropdown').style.height = (height*0.075).toString()+"px";
-      document.getElementById('myDropdown').style.fontSize = (16*width/600).toString()+"px";
-          
-			// Place the slider
+        .style("font-size",(16*width/600).toString() + "px")
+
+      document.getElementById("myDropdown").style.left = (width*0.675).toString() + "px"
+      document.getElementById("myDropdown").style.top  = (height*0.55).toString() + "px"
+      document.getElementById("myDropdown").style.width  = (height*0.4).toString() + "px"
+      document.getElementById("myDropdown").style.height = (height*0.075).toString() + "px"
+      document.getElementById("myDropdown").style.fontSize = (16*width/600).toString() + "px"
+
       svg.append("text")
-        .attr("transform", "translate(" + (width * 0.8).toString() + "," + (height * 0.2).toString() + ")")
-        .style("text-anchor", "middle")
+        .attr("transform","translate(" + (width*0.8).toString() + "," + (height*0.2).toString() + ")")
+        .style("text-anchor","middle")
         .text("correlation")
-        .style("font-size", (16 * width / 600).toString() + "px")
-      document.getElementById('mySlider').style.left = (width*0.675).toString()+"px";
-      document.getElementById('mySlider').style.top = (height*0.225).toString()+"px";
-      document.getElementById('mySlider').style.width = (height*0.4).toString()+"px";
-      document.getElementById('mySlider').style.height = (height*0.075).toString()+"px";
-      document.getElementById('mySlider').style.fontSize = (16*width/600).toString()+"px";
-      const slider = document.getElementById("mySlider");
-      slider.addEventListener("input", function() {
-      	correlation = parseInt(this.value)/100;
-        update()
-      });
+        .style("font-size",(16*width/600).toString() + "px")
+
+      document.getElementById("mySlider").style.left = (width*0.675).toString() + "px"
+      document.getElementById("mySlider").style.top  = (height*0.225).toString() + "px"
+      document.getElementById("mySlider").style.width  = (height*0.4).toString() + "px"
+      document.getElementById("mySlider").style.height = (height*0.075).toString() + "px"
+      document.getElementById("mySlider").style.fontSize = (16*width/600).toString() + "px"
+
       svg.append("text")
-        .attr("transform", "translate(" + (width * 0.675).toString() + "," + (height * 0.35).toString() + ")")
-        .style("text-anchor", "left")
+        .attr("transform","translate(" + (width*0.675).toString() + "," + (height*0.35).toString() + ")")
+        .style("text-anchor","left")
         .text("-1")
-        .style("font-size", (16 * width / 600).toString() + "px")
+        .style("font-size",(16*width/600).toString() + "px")
+
       svg.append("text")
-        .attr("transform", "translate(" + (width * 0.915).toString() + "," + (height * 0.35).toString() + ")")
-        .style("text-anchor", "right")
+        .attr("transform","translate(" + (width*0.915).toString() + "," + (height*0.35).toString() + ")")
+        .style("text-anchor","right")
         .text("+1")
-        .style("font-size", (16 * width / 600).toString() + "px")
-          
-      // D3.js code to handle the dropdown change event
-      display = "density"
-      d3.select("#myDropdown").on("change", function() {
-        // Get the selected value
-        var selectedValue = d3.select(this).property("value");
-        // Set the copula to the selected value
-        display = selectedValue;
-        // Update the figure
-        update()
-      });
-      
-      var correlation = 0.85;
-      
-      var mu = [0, 0];
-      var cov = [
-        [1, correlation],
-        [correlation, 1]
-      ];
+        .style("font-size",(16*width/600).toString() + "px")
 
-      var newpts
-      var pdfpts = [];
-      var pdfvals = [];
-      dx = 6 / 1000;
-      for (j = 0; j < 1001; j++) {
-        pdfpts.push(j * dx - 3);
-        pdfvals.push(math.exp(-math.pow(j * dx - 3, 2) / 2));
-      }
-      const color_prior = "#fac205";
-      const color_likelihood = "#0485d1";
-      const color_observation = "#3f9b0b";
-      const color_posterior = "#f43605" //"#02c14d";
-      var xrange = [-3, 3];
-      var yrange = [-3, 3];
-      x_limits = xrange
-      y_limits = yrange
-      window_x = [width * 0.1, width * 0.1 + height*0.8 ];
-      window_y = [height * 0.025, height * 0.825];
-      
-      // Get scaling functions for the x scale and the y_scale
-      const xScale = d3.scaleLinear().domain([x_limits[0], x_limits[1]]).range(window_x)
-      const xScale_inverse = d3.scaleLinear().domain(window_x).range([x_limits[0], x_limits[1]])
-      const yScale = d3.scaleLinear().domain([y_limits[0], y_limits[1]]).range([window_y[1], window_y[0]])
-      
-      // Draw the x axis
+      // =============================================================================
+      // axes & scales
+      // =============================================================================
+      const xrange = [-3, 3], yrange = [-3, 3]
+      var x_limits = xrange, y_limits = yrange
+
+      var window_x = [width*0.1, width*0.1 + height*0.8]
+      var window_y = [height*0.025, height*0.825]
+
+      const x_scale = d3.scaleLinear().domain([x_limits[0], x_limits[1]]).range(window_x)
+      const x_scale_inverse = d3.scaleLinear().domain(window_x).range([x_limits[0], x_limits[1]])
+      const y_scale = d3.scaleLinear().domain([y_limits[0], y_limits[1]]).range([window_y[1], window_y[0]])
+
       svg.append("g")
-      	.attr("transform", "translate(0," + window_y[1].toString() + ")")
-        .call(d3.axisBottom(xScale).ticks(7))
-        .style("font-size", (16 * width / 600).toString() + "px")
+        .attr("transform","translate(0," + (window_y[1]).toString() + ")")
+        .call(d3.axisBottom(x_scale).ticks(7))
+        .style("font-size",(16*width/600).toString() + "px")
+
       svg.append("text")
-      	.attr("transform", "translate(" + (math.mean(window_x)).toString() + "," + (height * 0.95).toString() + ")")
-        .style("text-anchor", "middle")
+        .attr("transform","translate(" + (math.mean(window_x)).toString() + "," + (height*0.95).toString() + ")")
+        .style("text-anchor","middle")
         .text("x")
-        .style("font-size", (16 * width / 600).toString() + "px")
-      
-      // Draw the y axis
-      svg.append("g")
-      	.attr("transform", "translate(" + (window_x[0]).toString() + ",0)")
-        .attr("id", "mainxaxis")
-        .call(d3.axisLeft(yScale).ticks(7))
-        .style("font-size", (16 * width / 600).toString() + "px");
-      svg.append("text")
-      	.attr("transform", "translate(" + (width * 0.03).toString() + "," + (math.mean(window_y)).toString() + ") rotate(270)")
-        .style("text-anchor", "middle")
-        .text("y")
-        .style("font-size", (16 * width / 600).toString() + "px");
+        .style("font-size",(16*width/600).toString() + "px")
 
-      
-      // Draw 250 standard Gaussian samples
-      samples = [];
-      for (i = 0; i < 250; i++) {
-      	samples.push([gaussianRandom(),gaussianRandom()])
-        
+      svg.append("g")
+        .attr("transform","translate(" + (window_x[0]).toString() + ",0)")
+        .attr("id","mainxaxis")
+        .call(d3.axisLeft(y_scale).ticks(7))
+        .style("font-size",(16*width/600).toString() + "px")
+
+      svg.append("text")
+        .attr("transform","translate(" + (width*0.03).toString() + "," + (math.mean(window_y)).toString() + ") rotate(270)")
+        .style("text-anchor","middle")
+        .text("y")
+        .style("font-size",(16*width/600).toString() + "px")
+
+      // =============================================================================
+      // data & state
+      // =============================================================================
+      var display = "density"
+      var correlation = 0.85
+
+      var mu = [0,0]
+
+      const color_prior       = "#fac205"
+      const color_likelihood  = "#0485d1"
+      const color_observation = "#3f9b0b"
+      const color_posterior   = "#f43605"
+
+      var samples = []
+      for (var i=0; i<250; i++){
+        samples.push([ gaussian_random(), gaussian_random() ])
         svg.append("circle")
-          .attr("cx",xScale(samples[i][0]))
-          .attr("cy",yScale(samples[i][1]))
-          .attr("r",height*0.005)
+          .attr("cx", x_scale(samples[i][0]))
+          .attr("cy", y_scale(samples[i][1]))
+          .attr("r", height*0.005)
           .style("fill","#666")
           .style("opacity",0)
           .style("stroke","None")
-          .attr("id","scatter"+i.toString())
+          .attr("id","scatter" + i.toString())
           .attr("class","scatter")
           .lower()
-        
       }
 
-      // Draw the new contours
+      // =============================================================================
+      // ui events
+      // =============================================================================
+      d3.select("#myDropdown").on("change", function(){
+        display = d3.select(this).property("value")
+        update()
+      })
+
+      const slider = document.getElementById("mySlider")
+      slider.addEventListener("input", function(){
+        correlation = parseInt(this.value,10) / 100
+        update()
+      })
+
+      // =============================================================================
+      // helpers
+      // =============================================================================
+      function values_to_pixels(values, axis){
+        axis = (typeof axis === "undefined") ? "xy" : axis
+        var res
+        if (axis === "x"){
+          res = (values - xrange[0])/(xrange[1]-xrange[0]) * (window_x[1]-window_x[0]) + window_x[0]
+        } else if (axis === "y"){
+          res = (1 - (values - yrange[0])/(yrange[1]-yrange[0])) * (window_y[1]-window_y[0]) + window_y[0]
+        } else {
+          res = [
+            (values[0]-xrange[0])/(xrange[1]-xrange[0]) * (window_x[1]-window_x[0]) + window_x[0],
+            (1 - (values[1]-yrange[0])/(yrange[1]-yrange[0])) * (window_y[1]-window_y[0]) + window_y[0]
+          ]
+        }
+        return res
+      }
+
+      function scatter_samples(){
+        svg.selectAll(".contour_lines").remove()
+        var samples_transformed = transform_standard_gaussian_samples(samples, correlation)
+        for (var i=0;i<250;i++){
+          d3.select("#scatter" + i.toString())
+            .attr("cx", x_scale(samples_transformed[i][0]))
+            .attr("cy", y_scale(samples_transformed[i][1]))
+            .style("opacity",1)
+        }
+      }
+
+      function draw_contours(mu, cov){
+        svg.selectAll(".contour_lines").remove()
+        svg.selectAll(".scatter").style("opacity",0)
+
+        var vectors = PCA.computeSVD(cov)
+
+        var sds = [2.29742059, 1.75524714, 1.43500483, 1.17741105, 0.94003483, 0.69449473, 0.38498817]
+        var colors = ["#4146ac","#3aa3fc","#25eca7","#a4fc3c","#f4c73a","#f36315","#b21a01"]
+
+        for (var j=0;j<7;j++){
+          var sd = sds[j] * math.sqrt(vectors[0]["eigenvalue"])
+          svg.append("ellipse")
+            .attr("cx",0).attr("cy",0)
+            .attr("rx", 0.7 * height/6 * sd)
+            .attr("ry", 0.7 * height/6 * math.sqrt(vectors[1]["eigenvalue"]) / math.sqrt(vectors[0]["eigenvalue"]) * sd)
+            .attr("transform",
+              "translate(" + (values_to_pixels(mu[0],"x")).toString() + "," + (values_to_pixels(mu[1],"y")).toString() + ") " +
+              "rotate(" + (-math.atan2(vectors[0]["vector"][1], vectors[0]["vector"][0]) / math.pi * 180).toString() + ")"
+            )
+            .attr("fill","None")
+            .attr("stroke", colors[j])
+            .attr("stroke-linejoin","round")
+            .attr("stroke-width", 1*width/300)
+            .attr("class","contour_lines")
+            .lower()
+        }
+      }
+
+      function update(){
+        var cov
+        if (correlation === 1){
+          cov = [[1,0.9999999],[0.9999999,1]]
+        } else if (correlation === -1){
+          cov = [[1,-0.9999999],[-0.9999999,1]]
+        } else {
+          cov = [[1,correlation],[correlation,1]]
+        }
+        if (display === "density"){ draw_contours(mu, cov) } else { scatter_samples() }
+      }
+
+      function gaussian_random(mean=0, stdev=1){
+        const u = 1 - Math.random()
+        const v = Math.random()
+        const z = Math.sqrt(-2.0 * Math.log(u)) * Math.cos(2.0 * Math.PI * v)
+        return z * stdev + mean
+      }
+
+      function transform_standard_gaussian_samples(samples, corr){
+        var cholesky = [[1,0],[corr, math.sqrt(1 - math.pow(corr,2))]]
+        return math.transpose( math.multiply(cholesky, math.transpose(samples)) )
+      }
+
+      // initial render
       update()
-      
-      // ======================================================
-      // Define functions
-      // ======================================================
-
-        function pixels_to_values(coords, axis) {
-          axis = (typeof axis === 'undefined') ? 'xy' : axis;
-          if (axis == 'x') {
-            res = (coords - window_x[0]) / (window_x[1] - window_x[0]) * (xrange[1] - xrange[0]) + xrange[0]
-          } else if (axis == 'y') {
-            res = (1. - (coords - window_y[0]) / (window_y[1] - window_y[0])) * (yrange[1] - yrange[0]) + yrange[0]
-          } else {
-            res = [(coords[0] - window_x[0]) / (window_x[1] - window_x[0]) * (xrange[1] - xrange[0]) + xrange[0], (1. - (coords[1] - window_y[0]) / (window_y[1] - window_y[0])) * (yrange[1] - yrange[0]) + yrange[0]]
-          }
-          return res;
-        }
-
-        function values_to_pixels(values, axis) {
-          axis = (typeof axis === 'undefined') ? 'xy' : axis;
-          if (axis == 'x') {
-            res = (values - xrange[0]) / (xrange[1] - xrange[0]) * (window_x[1] - window_x[0]) + window_x[0];
-          } else if (axis == 'y') {
-            res = (1 - (values - yrange[0]) / (yrange[1] - yrange[0])) * (window_y[1] - window_y[0]) + window_y[0];
-          } else {
-            res = [(values[0] - xrange[0]) / (xrange[1] - xrange[0]) * (window_x[1] - window_x[0]) + window_x[0], (1 - (values[1] - yrange[0]) / (yrange[1] - yrange[0])) * (window_y[1] - window_y[0]) + window_y[0]];
-          }
-          return res;
-        }
-        
-        
-        function scatter_samples() {
-        
-          // Delete all previous contour lines
-          svg.selectAll(".contour_lines").remove();
-        
-        	// Transform the samples
-          var samples_transformed = transform_standard_Gaussian_samples(samples,correlation)
-        
-          for (i = 0; i < 250; i++) {
-          
-            d3.select("#scatter"+i.toString())
-              .attr("cx",xScale(samples_transformed[i][0]))
-              .attr("cy",yScale(samples_transformed[i][1]))
-              .style("opacity",1)
-
-          }
-        
-        }
-
-        function draw_contours(mu, cov) {
-        	
-          // Delete all previous contour lines
-          svg.selectAll(".contour_lines").remove();
-          svg.selectAll(".scatter").style("opacity",0);
-          
-          // Do a principal component analysis of the covariance matrix
-          vectors = PCA.computeSVD(cov);
-          
-          // Get quantiles
-          sds = [2.29742059, 1.75524714, 1.43500483, 1.17741105, 0.94003483,
-            0.69449473, 0.38498817
-          ];
-          
-          colors = ['#4146ac', '#3aa3fc', '#25eca7', '#a4fc3c', '#f4c73a', '#f36315', '#b21a01'];
-          for (j = 0; j < 7; j++) {
-            sd = sds[j] * math.sqrt(vectors[0]["eigenvalue"]);
-            svg.append("ellipse") // attach an ellipse
-              .attr("cx", 0)
-              .attr("cy", 0)
-              .attr("rx", 0.7 * height / 6 * sd)
-              .attr("ry", 0.7 * height / 6 * math.sqrt(vectors[1]["eigenvalue"]) / math.sqrt(vectors[0]["eigenvalue"]) * sd)
-              .attr("transform", "translate(" + (values_to_pixels(mu[0], "x")).toString() + "," + (values_to_pixels(mu[1], "y")).toString() + ") rotate(" + (-math.atan2(vectors[0]["vector"][1], vectors[0]["vector"][0]) / math.pi * 180).toString() + ")")
-              .attr("fill", "None")
-              .attr("stroke", colors[j])
-              .attr("stroke-linejoin", "round")
-              .attr('stroke-width', 1 * width / 300)
-              .attr("class", "contour_lines")
-              .lower();
-          }
-        }
-
-        function update() {
-        
-          // Update covariance
-          if (correlation == 1) {
-          	var cov = [[1,0.9999999],[0.9999999,1]];
-          } else if (correlation == -1) {
-          	var cov = [[1,-0.9999999],[-0.9999999,1]];
-          } else {
-          	var cov = [[1,correlation],[correlation,1]];
-          }
-          
-          if (display == "density") {
-          	draw_contours(mu, cov)
-          } else {
-          	scatter_samples()
-          }
-          
-        }
-
-        // Standard Normal variate using Box-Muller transform.
-        function gaussianRandom(mean=0, stdev=1) {
-            const u = 1 - Math.random(); // Converting [0,1) to (0,1]
-            const v = Math.random();
-            const z = Math.sqrt( -2.0 * Math.log( u ) ) * Math.cos( 2.0 * Math.PI * v );
-            // Transform to the desired mean and standard deviation:
-            return z * stdev + mean;
-        }
-        
-        
-        function transform_standard_Gaussian_samples(samples,correlation) {
-        	var cholesky = [[1,0],[correlation,math.sqrt(1-math.pow(correlation,2))]];
-        	return math.transpose(math.multiply(cholesky,math.transpose(samples)))
-        }
-
     </script>
   </body>
 </html>

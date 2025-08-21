@@ -1,25 +1,23 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <script src="https://unpkg.com/mathjs/lib/browser/math.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js"></script>
-    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
     <style>
-      body {
-        margin: 0;
-        overflow: hidden;
+      body{
+        margin:0; overflow:hidden;
         font-family: Helvetica, sans-serif;
       }
-      .tickLabel {
-        position: absolute;
-        transform: translateX(-50%);
-        pointer-events: none;
+      .tickLabel{
+        position:absolute;
+        transform:translateX(-50%);
+        pointer-events:none;
       }
       .sliderLabel{
         position:absolute;
         pointer-events:none;
         transform:translateX(-50%);
       }
+      svg{ position:absolute; top:0; left:0; background-color: None; }
     </style>
   </head>
   <body>
@@ -29,367 +27,372 @@
     </div>
 
     <script>
-      // Viewport & SVG sizing
-      const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0) * 0.95;
-      const vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0) * 0.95;
-      const aspect = 1.5;
-      let width, height;
-      if (vw / aspect < vh) { width = vw; height = vw / aspect; } else { width = vh * aspect; height = vh; }
+      // =============================================================================
+      // Viewport & SVG sizing (aspect 1.5)
+      // =============================================================================
+      const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0) * 0.95
+      const vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0) * 0.95
+      const aspect = 1.5
+      var width, height
+      if (vw / aspect < vh) { width = vw; height = vw / aspect } else { width = vh * aspect; height = vh }
 
-      var svg = d3.select('#click').attr('width', width).attr('height', height);
+      var svg = d3.select("#click").attr("width", width).attr("height", height)
 
+      // =============================================================================
       // Slider UI scaling
-      const uiScale = height / 600;
-      const trackH  = 15 * uiScale;
-      const thumbSz = 25 * uiScale;
+      // =============================================================================
+      const ui_scale = height / 600
+      const track_h  = 15 * ui_scale
+      const thumb_sz = 25 * ui_scale
 
-      let styleEl = document.getElementById('sliderDynCSS');
-      if (!styleEl) {
-        styleEl = document.createElement('style');
-        styleEl.id = 'sliderDynCSS';
-        document.head.appendChild(styleEl);
+      var style_el = document.getElementById("sliderDynCSS")
+      if (!style_el){
+        style_el = document.createElement("style")
+        style_el.id = "sliderDynCSS"
+        document.head.appendChild(style_el)
       }
 
-      styleEl.textContent = `
+      style_el.textContent = `
       input[type=range]{
         -webkit-appearance: none;
         appearance: none;
         width: auto;
-        height: ${trackH}px;
+        height: ${track_h}px;
         background: transparent;
         margin: 0;
         padding: 0;
       }
       input[type=range]::-webkit-slider-runnable-track{
-        height: ${trackH}px;
+        height: ${track_h}px;
         background: #ccc;
-        border-radius: ${trackH/2}px;
+        border-radius: ${track_h/2}px;
       }
       input[type=range]::-webkit-slider-thumb{
         -webkit-appearance: none;
         appearance: none;
-        width: ${thumbSz}px;
-        height: ${thumbSz}px;
+        width: ${thumb_sz}px;
+        height: ${thumb_sz}px;
         border-radius: 50%;
         background: #666;
-        margin-top: calc(${trackH}px / 2 - ${thumbSz}px / 2);
+        margin-top: calc(${track_h}px / 2 - ${thumb_sz}px / 2);
       }
       input[type=range]::-moz-range-track{
-        height: ${trackH}px;
+        height: ${track_h}px;
         background: #ccc;
-        border-radius: ${trackH/2}px;
+        border-radius: ${track_h/2}px;
       }
       input[type=range]::-moz-range-thumb{
-        width: ${thumbSz}px;
-        height: ${thumbSz}px;
+        width: ${thumb_sz}px;
+        height: ${thumb_sz}px;
         border-radius: 50%;
         background: #666;
         border: none;
       }
       input[type=range]::-ms-track{
-        height: ${trackH}px;
+        height: ${track_h}px;
         background: transparent;
         border-color: transparent;
         color: transparent;
       }
       input[type=range]::-ms-fill-lower{
         background: #ccc;
-        border-radius: ${trackH/2}px;
+        border-radius: ${track_h/2}px;
       }
       input[type=range]::-ms-fill-upper{
         background: #ccc;
-        border-radius: ${trackH/2}px;
+        border-radius: ${track_h/2}px;
       }
       input[type=range]::-ms-thumb{
-        width: ${thumbSz}px;
-        height: ${thumbSz}px;
+        width: ${thumb_sz}px;
+        height: ${thumb_sz}px;
         border-radius: 50%;
         background: #666;
         border: none;
-      }
-      `;
+      }`
 
-      // Parameters for exponential distribution with rate (lambda), location (Loc), and scale
-      var Lambda = 1;   // rate > 0
-      var Loc = 0;      // shift
-      var Scale = 1;    // stretch > 0
+      // =============================================================================
+      // Parameters (exponential with rate λ, location, scale)
+      // =============================================================================
+      var lambda_rate = 1    // > 0
+      var loc = 0            // shift
+      var scale_val = 1      // > 0
 
-      function linspace(start, end, resolution) {
-        var spacing = [];
-        for (var i = 0; i < resolution; i++) spacing.push(start + (end - start) * i / (resolution - 1));
-        return spacing;
-      }
-
-      function expPDF(x) {
-        if (x < Loc) return 0;
-        return (Lambda / Scale) * Math.exp(-Lambda * (x - Loc) / Scale);
+      function linspace(start, end, resolution){
+        var spacing = []
+        for (var i=0; i<resolution; i++) spacing.push(start + (end - start) * i / (resolution - 1))
+        return spacing
       }
 
-      function expCDF(x) {
-        if (x < Loc) return 0;
-        return 1 - Math.exp(-Lambda * (x - Loc) / Scale);
+      function exp_pdf(x){
+        if (x < loc) return 0
+        return (lambda_rate / scale_val) * Math.exp(-lambda_rate * (x - loc) / scale_val)
       }
 
-      function evaluate_pdf(arr) {
-        var out = [];
-        for (let i = 0; i < arr.length; i++) out.push(expPDF(arr[i]));
-        return out;
+      function exp_cdf(x){
+        if (x < loc) return 0
+        return 1 - Math.exp(-lambda_rate * (x - loc) / scale_val)
       }
 
-      function evaluate_cdf(arr) {
-        var out = [];
-        for (let i = 0; i < arr.length; i++) out.push(expCDF(arr[i]));
-        return out;
+      function evaluate_pdf(arr){
+        var out = []
+        for (var i=0;i<arr.length;i++) out.push(exp_pdf(arr[i]))
+        return out
       }
 
+      function evaluate_cdf(arr){
+        var out = []
+        for (var i=0;i<arr.length;i++) out.push(exp_cdf(arr[i]))
+        return out
+      }
+
+      // =============================================================================
       // Plot windows
-      const window_x_pdf = [width * 0.1,  width * 0.45];
-      const window_y_pdf = [height * 0.1, height * 0.6];
-      const window_x_cdf = [width * 0.6, width * 0.95];
-      const window_y_cdf = [height * 0.1, height * 0.6];
+      // =============================================================================
+      const window_x_pdf = [width * 0.1,  width * 0.45]
+      const window_y_pdf = [height * 0.1, height * 0.6]
+      const window_x_cdf = [width * 0.6,  width * 0.95]
+      const window_y_cdf = [height * 0.1, height * 0.6]
 
-      // Scales (domains update with Loc/Scale)
-      const xScale_pdf = d3.scaleLinear().domain([Loc, Loc + 5 * Scale]).range(window_x_pdf);
-      const yScale_pdf = d3.scaleLinear().domain([0, 1]).range([window_y_pdf[1], window_y_pdf[0]]);
+      // scales (domains update with loc/scale)
+      const x_scale_pdf = d3.scaleLinear().domain([loc, loc + 5 * scale_val]).range(window_x_pdf)
+      const y_scale_pdf = d3.scaleLinear().domain([0, 1]).range([window_y_pdf[1], window_y_pdf[0]])
 
-      const xScale_cdf = d3.scaleLinear().domain([Loc, Loc + 5 * Scale]).range(window_x_cdf);
-      const yScale_cdf = d3.scaleLinear().domain([0, 1]).range([window_y_cdf[1], window_y_cdf[0]]);
+      const x_scale_cdf = d3.scaleLinear().domain([loc, loc + 5 * scale_val]).range(window_x_cdf)
+      const y_scale_cdf = d3.scaleLinear().domain([0, 1]).range([window_y_cdf[1], window_y_cdf[0]])
 
-      var xAxis_pdf = d3.axisBottom(xScale_pdf).ticks(5);
-      var yAxis_pdf = d3.axisLeft(yScale_pdf);
-      var xAxis_cdf = d3.axisBottom(xScale_cdf).ticks(5);
-      var yAxis_cdf = d3.axisLeft(yScale_cdf);
+      var tick_font_size = (12 * width / 600).toString() + "px"
 
-      var tickFontSize = (12 * width / 600) + 'px';
+      // axes
+      var xaxis_pdf = svg.append("g")
+        .attr("transform", "translate(0," + (window_y_pdf[1]).toString() + ")")
+        .call(d3.axisBottom(x_scale_pdf).ticks(5))
+        .style("font-size", tick_font_size)
 
-      var xaxis_pdf = svg.append('g')
-        .attr('transform', 'translate(0,' + window_y_pdf[1] + ')')
-        .call(xAxis_pdf)
-        .style('font-size', tickFontSize);
+      svg.append("text")
+        .attr("transform", "translate(" + ((window_x_pdf[0] + window_x_pdf[1]) / 2).toString() + "," + (height * 0.675).toString() + ")")
+        .style("text-anchor","middle")
+        .text("x")
+        .style("font-size", tick_font_size)
 
-      svg.append('text')
-        .attr('transform', 'translate(' + ((window_x_pdf[0] + window_x_pdf[1]) / 2) + ',' + (height * 0.675) + ')')
-        .style('text-anchor', 'middle')
-        .text('x')
-        .style('font-size', tickFontSize);
+      var yaxis_pdf = svg.append("g")
+        .attr("transform", "translate(" + (window_x_pdf[0]).toString() + ",0)")
+        .call(d3.axisLeft(y_scale_pdf))
+        .style("font-size", tick_font_size)
 
-      var yaxis_pdf = svg.append('g')
-        .attr('transform', 'translate(' + window_x_pdf[0] + ',0)')
-        .call(yAxis_pdf)
-        .style('font-size', tickFontSize);
+      svg.append("text")
+        .attr("transform", "translate(" + (width * 0.05).toString() + "," + ((window_y_pdf[0] + window_y_pdf[1]) / 2).toString() + ") rotate(270)")
+        .style("text-anchor","middle")
+        .text("probability density")
+        .style("font-size", tick_font_size)
 
-      svg.append('text')
-        .attr('transform', 'translate(' + (width * 0.05) + ',' + ((window_y_pdf[0] + window_y_pdf[1]) / 2) + ') rotate(270)')
-        .style('text-anchor', 'middle')
-        .text('probability density')
-        .style('font-size', tickFontSize);
+      var xaxis_cdf = svg.append("g")
+        .attr("transform", "translate(0," + (window_y_cdf[1]).toString() + ")")
+        .call(d3.axisBottom(x_scale_cdf).ticks(5))
+        .style("font-size", tick_font_size)
 
-      var xaxis_cdf = svg.append('g')
-        .attr('transform', 'translate(0,' + window_y_cdf[1] + ')')
-        .call(xAxis_cdf)
-        .style('font-size', tickFontSize);
+      svg.append("text")
+        .attr("transform", "translate(" + ((window_x_cdf[0] + window_x_cdf[1]) / 2).toString() + "," + (height * 0.675).toString() + ")")
+        .style("text-anchor","middle")
+        .text("x")
+        .style("font-size", tick_font_size)
 
-      svg.append('text')
-        .attr('transform', 'translate(' + ((window_x_cdf[0] + window_x_cdf[1]) / 2) + ',' + (height * 0.675) + ')')
-        .style('text-anchor', 'middle')
-        .text('x')
-        .style('font-size', tickFontSize);
+      var yaxis_cdf = svg.append("g")
+        .attr("transform", "translate(" + (window_x_cdf[0]).toString() + ",0)")
+        .call(d3.axisLeft(y_scale_cdf))
+        .style("font-size", tick_font_size)
 
-      var yaxis_cdf = svg.append('g')
-        .attr('transform', 'translate(' + window_x_cdf[0] + ',0)')
-        .call(yAxis_cdf)
-        .style('font-size', tickFontSize);
+      svg.append("text")
+        .attr("transform", "translate(" + (width * 0.55).toString() + "," + ((window_y_cdf[0] + window_y_cdf[1]) / 2).toString() + ") rotate(270)")
+        .style("text-anchor","middle")
+        .text("cumulative probability")
+        .style("font-size", tick_font_size)
 
-      svg.append('text')
-        .attr('transform', 'translate(' + (width * 0.55) + ',' + ((window_y_cdf[0] + window_y_cdf[1]) / 2) + ') rotate(270)')
-        .style('text-anchor', 'middle')
-        .text('cumulative probability')
-        .style('font-size', tickFontSize);
-
+      // =============================================================================
       // Initial data
-      var N = 401;
-      var xVals = linspace(Loc, Loc + 5 * Scale, N);
-      var pdfVals = evaluate_pdf(xVals);
-      var cdfVals = evaluate_cdf(xVals);
+      // =============================================================================
+      var N = 401
+      var x_vals = linspace(loc, loc + 5 * scale_val, N)
+      var pdf_vals = evaluate_pdf(x_vals)
+      var cdf_vals = evaluate_cdf(x_vals)
 
-      var data_pdf = xVals.map((xi,i)=>({x:xi,y:pdfVals[i]}));
-      var data_cdf = xVals.map((xi,i)=>({x:xi,y:cdfVals[i]}));
+      var data_pdf = x_vals.map((xi,i)=>({ x:xi, y:pdf_vals[i] }))
+      var data_cdf = x_vals.map((xi,i)=>({ x:xi, y:cdf_vals[i] }))
 
-      var valueline_pdf = d3.svg.line().x(d=>xScale_pdf(d.x)).y(d=>yScale_pdf(d.y));
-      var valueline_cdf = d3.svg.line().x(d=>xScale_cdf(d.x)).y(d=>yScale_cdf(d.y));
+      var value_line_pdf = d3.line().x(d=>x_scale_pdf(d.x)).y(d=>y_scale_pdf(d.y))
+      var value_line_cdf = d3.line().x(d=>x_scale_cdf(d.x)).y(d=>y_scale_cdf(d.y))
 
-      svg.append('path')
-        .attr('class','line')
-        .attr('d', valueline_pdf(data_pdf))
-        .attr('fill','none')
-        .attr('stroke-width', 3 * height / 600)
-        .attr('stroke','#666666')
-        .attr('id','line_pdf');
+      svg.append("path")
+        .attr("class","line")
+        .attr("d", value_line_pdf(data_pdf))
+        .attr("fill","none")
+        .attr("stroke-width", 3 * height / 600)
+        .attr("stroke","#666666")
+        .attr("id","line_pdf")
 
-      svg.append('path')
-        .attr('class','line')
-        .attr('d', valueline_cdf(data_cdf))
-        .attr('fill','none')
-        .attr('stroke-width', 3 * height / 600)
-        .attr('stroke','#666666')
-        .attr('id','line_cdf');
+      svg.append("path")
+        .attr("class","line")
+        .attr("d", value_line_cdf(data_cdf))
+        .attr("fill","none")
+        .attr("stroke-width", 3 * height / 600)
+        .attr("stroke","#666666")
+        .attr("id","line_cdf")
 
-      function updatePlots(duration = 300){
-        var xVals = linspace(Loc, Loc + 5 * Scale, N);
-        var pdfVals = evaluate_pdf(xVals);
-        var cdfVals = evaluate_cdf(xVals);
+      // =============================================================================
+      // Update
+      // =============================================================================
+      function update_plots(duration = 300){
+        var x_vals = linspace(loc, loc + 5 * scale_val, N)
+        var pdf_vals = evaluate_pdf(x_vals)
+        var cdf_vals = evaluate_cdf(x_vals)
 
-        var data_pdf = xVals.map((xi,i)=>({x:xi,y:pdfVals[i]}));
-        var data_cdf = xVals.map((xi,i)=>({x:xi,y:cdfVals[i]}));
+        var data_pdf = x_vals.map((xi,i)=>({ x:xi, y:pdf_vals[i] }))
+        var data_cdf = x_vals.map((xi,i)=>({ x:xi, y:cdf_vals[i] }))
 
-        var maxval = d3.max(pdfVals); if (isNaN(maxval) || maxval < 1) maxval = 1;
-        yScale_pdf.domain([0, maxval * 1.2]);
+        var maxval = d3.max(pdf_vals); if (isNaN(maxval) || maxval < 1) maxval = 1
+        y_scale_pdf.domain([0, maxval * 1.2])
 
-        xScale_pdf.domain([Loc, Loc + 5 * Scale]);
-        xScale_cdf.domain([Loc, Loc + 5 * Scale]);
+        x_scale_pdf.domain([loc, loc + 5 * scale_val])
+        x_scale_cdf.domain([loc, loc + 5 * scale_val])
 
-        d3.select('#line_pdf')
+        d3.select("#line_pdf")
           .transition().duration(duration)
-          .attr('d', valueline_pdf(data_pdf));
-        d3.select('#line_cdf')
+          .attr("d", value_line_pdf(data_pdf))
+
+        d3.select("#line_cdf")
           .transition().duration(duration)
-          .attr('d', valueline_cdf(data_cdf));
+          .attr("d", value_line_cdf(data_cdf))
 
-        yaxis_pdf.transition().duration(300).call(d3.axisLeft(yScale_pdf));
-        xaxis_pdf.transition().duration(300).call(d3.axisBottom(xScale_pdf).ticks(5));
+        yaxis_pdf.transition().duration(300).call(d3.axisLeft(y_scale_pdf))
+        xaxis_pdf.transition().duration(300).call(d3.axisBottom(x_scale_pdf).ticks(5))
 
-        yaxis_cdf.transition().duration(300).call(d3.axisLeft(yScale_cdf));
-        xaxis_cdf.transition().duration(300).call(d3.axisBottom(xScale_cdf).ticks(5));
+        yaxis_cdf.transition().duration(300).call(d3.axisLeft(y_scale_cdf))
+        xaxis_cdf.transition().duration(300).call(d3.axisBottom(x_scale_cdf).ticks(5))
       }
 
-      // Lambda slider (left, replaces alpha)
-      svg.append('text')
-        .attr('transform', 'translate(' + ((window_x_pdf[0] + window_x_pdf[1]) / 2) + ',' + (height * 0.75) + ')')
-        .style('text-anchor', 'middle')
-        .text('λ')
-        .style('font-size', tickFontSize);
+      // =============================================================================
+      // Sliders
+      // =============================================================================
+      svg.append("text")
+        .attr("transform", "translate(" + ((window_x_pdf[0] + window_x_pdf[1]) / 2).toString() + "," + (height * 0.75).toString() + ")")
+        .style("text-anchor","middle")
+        .text("\u03BB")
+        .style("font-size", tick_font_size)
 
-      var lambdaSlider = document.createElement('input');
-      lambdaSlider.type = 'range';
-      lambdaSlider.id   = 'lambdaSlider';
-      lambdaSlider.min  = 0.1;
-      lambdaSlider.max  = 5;
-      lambdaSlider.step = 0.01;
-      lambdaSlider.value = Lambda;
-      lambdaSlider.style.position = 'absolute';
-      lambdaSlider.style.left = (width * 0.1) + 'px';
-      lambdaSlider.style.top  = (height * 0.775) + 'px';
-      lambdaSlider.style.width = (width * 0.35) + 'px';
-      lambdaSlider.style.margin = '0';
-      lambdaSlider.style.padding = '0';
-      document.body.appendChild(lambdaSlider);
+      var lambda_slider = document.createElement("input")
+      lambda_slider.type = "range"
+      lambda_slider.id   = "lambdaSlider"
+      lambda_slider.min  = 0.1
+      lambda_slider.max  = 5
+      lambda_slider.step = 0.01
+      lambda_slider.value = lambda_rate
+      lambda_slider.style.position = "absolute"
+      lambda_slider.style.left = (width * 0.1).toString() + "px"
+      lambda_slider.style.top  = (height * 0.775).toString() + "px"
+      lambda_slider.style.width = (width * 0.35).toString() + "px"
+      lambda_slider.style.margin = "0"
+      lambda_slider.style.padding = "0"
+      document.body.appendChild(lambda_slider)
 
-      // live value under thumb
-      var lambdaLabel=document.createElement('div');
-      lambdaLabel.className='sliderLabel';
-      lambdaLabel.style.top=(height*0.815)+'px';
-      lambdaLabel.style.fontsize=tickFontSize+'px';
-      document.body.appendChild(lambdaLabel);
+      var lambda_label = document.createElement("div")
+      lambda_label.className = "sliderLabel"
+      lambda_label.style.top = (height*0.815).toString() + "px"
+      lambda_label.style.fontsize = tick_font_size + "px"
+      document.body.appendChild(lambda_label)
 
-      function updateLambdaLabel(){
-        var pct=(lambdaSlider.value-lambdaSlider.min)/(lambdaSlider.max-lambdaSlider.min);
-        lambdaLabel.style.left=(width*0.1+pct*(width*0.35))+'px';
-        lambdaLabel.textContent=(+lambdaSlider.value).toFixed(2);
+      function update_lambda_label(){
+        var pct = (lambda_slider.value - lambda_slider.min) / (lambda_slider.max - lambda_slider.min)
+        lambda_label.style.left = (width*0.1 + pct*(width*0.35)).toString() + "px"
+        lambda_label.textContent = (+lambda_slider.value).toFixed(2)
       }
-      updateLambdaLabel();
+      update_lambda_label()
 
-      lambdaSlider.addEventListener('input',function(){
-        Lambda=+this.value;
-        updatePlots(0);
-        updateLambdaLabel();
-      });
+      lambda_slider.addEventListener("input", function(){
+        lambda_rate = +this.value
+        update_plots(0)
+        update_lambda_label()
+      })
 
-      // Location slider (right top)
-      svg.append('text')
-        .attr('transform', 'translate(' + ((window_x_cdf[0] + window_x_cdf[1]) / 2) + ',' + (height * 0.75) + ')')
-        .style('text-anchor', 'middle')
-        .text('location')
-        .style('font-size', tickFontSize);
+      svg.append("text")
+        .attr("transform", "translate(" + ((window_x_cdf[0] + window_x_cdf[1]) / 2).toString() + "," + (height * 0.75).toString() + ")")
+        .style("text-anchor","middle")
+        .text("location")
+        .style("font-size", tick_font_size)
 
-      var locSlider = document.createElement('input');
-      locSlider.type = 'range';
-      locSlider.id   = 'locSlider';
-      locSlider.min  = -10;
-      locSlider.max  = 10;
-      locSlider.step = 0.01;
-      locSlider.value = Loc;
-      locSlider.style.position = 'absolute';
-      locSlider.style.left = window_x_cdf[0] + 'px';
-      locSlider.style.top  = (height * 0.775) + 'px';
-      locSlider.style.width = (window_x_cdf[1] - window_x_cdf[0]) + 'px';
-      locSlider.style.margin = '0';
-      locSlider.style.padding = '0';
-      document.body.appendChild(locSlider);
+      var loc_slider = document.createElement("input")
+      loc_slider.type = "range"
+      loc_slider.id   = "locSlider"
+      loc_slider.min  = -10
+      loc_slider.max  = 10
+      loc_slider.step = 0.01
+      loc_slider.value = loc
+      loc_slider.style.position = "absolute"
+      loc_slider.style.left = (window_x_cdf[0]).toString() + "px"
+      loc_slider.style.top  = (height * 0.775).toString() + "px"
+      loc_slider.style.width = (window_x_cdf[1] - window_x_cdf[0]).toString() + "px"
+      loc_slider.style.margin = "0"
+      loc_slider.style.padding = "0"
+      document.body.appendChild(loc_slider)
 
-      // live value under thumb
-      var locLabel=document.createElement('div');
-      locLabel.className='sliderLabel';
-      locLabel.style.top=(height*0.815)+'px';
-      locLabel.style.fontsize=tickFontSize+'px';
-      document.body.appendChild(locLabel);
+      var loc_label = document.createElement("div")
+      loc_label.className = "sliderLabel"
+      loc_label.style.top = (height*0.815).toString() + "px"
+      loc_label.style.fontsize = tick_font_size + "px"
+      document.body.appendChild(loc_label)
 
-      function updatelocLabel(){
-        var pct=(locSlider.value-locSlider.min)/(locSlider.max-locSlider.min);
-        locLabel.style.left=(window_x_cdf[0]+pct*(width*0.35))+'px';
-        locLabel.textContent=(+locSlider.value).toFixed(2);
+      function update_loc_label(){
+        var pct = (loc_slider.value - loc_slider.min) / (loc_slider.max - loc_slider.min)
+        loc_label.style.left = (window_x_cdf[0] + pct*(width*0.35)).toString() + "px"
+        loc_label.textContent = (+loc_slider.value).toFixed(2)
       }
-      updatelocLabel();
+      update_loc_label()
 
-      locSlider.addEventListener('input',function(){
-        Loc=+this.value;
-        updatePlots(0);
-        updatelocLabel();
-      });
+      loc_slider.addEventListener("input", function(){
+        loc = +this.value
+        update_plots(0)
+        update_loc_label()
+      })
 
-      // Scale slider (right bottom)
-      svg.append('text')
-        .attr('transform', 'translate(' + ((window_x_cdf[0] + window_x_cdf[1]) / 2) + ',' + (height * 0.8975) + ')')
-        .style('text-anchor', 'middle')
-        .text('scale')
-        .style('font-size', tickFontSize);
+      svg.append("text")
+        .attr("transform", "translate(" + ((window_x_cdf[0] + window_x_cdf[1]) / 2).toString() + "," + (height * 0.8975).toString() + ")")
+        .style("text-anchor","middle")
+        .text("scale")
+        .style("font-size", tick_font_size)
 
-      var scaleSlider = document.createElement('input');
-      scaleSlider.type = 'range';
-      scaleSlider.id   = 'scaleSlider';
-      scaleSlider.min  = 0.1;
-      scaleSlider.max  = 5;
-      scaleSlider.step = 0.01;
-      scaleSlider.value = Scale;
-      scaleSlider.style.position = 'absolute';
-      scaleSlider.style.left = window_x_cdf[0] + 'px';
-      scaleSlider.style.top  = (height * 0.925) + 'px';
-      scaleSlider.style.width = (window_x_cdf[1] - window_x_cdf[0]) + 'px';
-      scaleSlider.style.margin = '0';
-      scaleSlider.style.padding = '0';
-      document.body.appendChild(scaleSlider);
+      var scale_slider = document.createElement("input")
+      scale_slider.type = "range"
+      scale_slider.id   = "scaleSlider"
+      scale_slider.min  = 0.1
+      scale_slider.max  = 5
+      scale_slider.step = 0.01
+      scale_slider.value = scale_val
+      scale_slider.style.position = "absolute"
+      scale_slider.style.left = (window_x_cdf[0]).toString() + "px"
+      scale_slider.style.top  = (height * 0.925).toString() + "px"
+      scale_slider.style.width = (window_x_cdf[1] - window_x_cdf[0]).toString() + "px"
+      scale_slider.style.margin = "0"
+      scale_slider.style.padding = "0"
+      document.body.appendChild(scale_slider)
 
-      // live value under thumb
-      var scaleLabel=document.createElement('div');
-      scaleLabel.className='sliderLabel';
-      scaleLabel.style.top=(height*0.965)+'px';
-      scaleLabel.style.fontsize=tickFontSize+'px';
-      document.body.appendChild(scaleLabel);
+      var scale_label = document.createElement("div")
+      scale_label.className = "sliderLabel"
+      scale_label.style.top = (height*0.965).toString() + "px"
+      scale_label.style.fontsize = tick_font_size + "px"
+      document.body.appendChild(scale_label)
 
-      function updatescaleLabel(){
-        var pct=(scaleSlider.value-scaleSlider.min)/(scaleSlider.max-scaleSlider.min);
-        scaleLabel.style.left=(window_x_cdf[0]+pct*(width*0.35))+'px';
-        scaleLabel.textContent=(+scaleSlider.value).toFixed(2);
+      function update_scale_label(){
+        var pct = (scale_slider.value - scale_slider.min) / (scale_slider.max - scale_slider.min)
+        scale_label.style.left = (window_x_cdf[0] + pct*(width*0.35)).toString() + "px"
+        scale_label.textContent = (+scale_slider.value).toFixed(2)
       }
-      updatescaleLabel();
+      update_scale_label()
 
-      scaleSlider.addEventListener('input',function(){
-        Scale=+this.value;
-        updatePlots(0);
-        updatescaleLabel();
-      });
+      scale_slider.addEventListener("input", function(){
+        scale_val = +this.value
+        update_plots(0)
+        update_scale_label()
+      })
 
-      updatePlots();
-
+      update_plots()
     </script>
   </body>
 </html>
