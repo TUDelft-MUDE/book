@@ -24,9 +24,9 @@ If you would like to refer to the MUDE Textbook with BibTeX (e.g., in a TeachBoo
 ```bibtex
 @misc{mude_most_recent,
   title={Modelling, {U}ncertainty and {D}ata for {E}ngineers ({MUDE}) {T}extbook},
+  author={{Delft University of Technology}}
   editor={van Woudenberg, Tom and van der Meer, Frans and Ding, Jialei},
-  note={Delft University of Technology. {https://mude.citg.tudelft.nl/book} CC BY 4.0},
-  doi={doi:10.5281/zenodo.16223061},
+  note={{https://mude.citg.tudelft.nl/book} CC BY 4.0},
 }
 ```
 
