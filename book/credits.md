@@ -26,7 +26,7 @@ If you would like to refer to the MUDE Textbook with BibTeX (e.g., in a TeachBoo
   title={Modelling, {U}ncertainty and {D}ata for {E}ngineers ({MUDE}) {T}extbook},
   year={2025},
   editor={van Woudenberg, Tom and van der Meer, Frans and Ding, Jialei},
-  note={Delft University of Technology. {https://mude.citg.tudelft.nl/book} CC BY 4.0},
+  note={Delft University of Technology. {https://mude.citg.tudelft.nl/book} CC BY 4.0}
 }
 ```
 
@@ -41,7 +41,7 @@ Or for the complete 2024 edition:
   year={2024},
   edition={v2024.1.0},
   note={Delft University of Technology. {https://mude.citg.tudelft.nl/book/2024} CC BY 4.0},
-  doi={10.5281/zenodo.16236358},
+  doi={10.5281/zenodo.16236358}
 }
 ```
 
