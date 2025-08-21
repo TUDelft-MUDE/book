@@ -24,7 +24,7 @@ If you would like to refer to the MUDE Textbook with BibTeX (e.g., in a TeachBoo
 }
 ```
 
-The text citation is {cite:t}`mude2025`and the parenthetical citation is {cite:p}`mude2025`.
+The text citation is {cite:t}`mude2025` and the parenthetical citation is {cite:p}`mude2025`.
 
 Or for the complete 2024 edition:
 
@@ -38,7 +38,7 @@ Or for the complete 2024 edition:
 }
 ```
 
-The text citation is {cite:t}`mude2024`and the parenthetical citation is {cite:p}`mude2024`.
+The text citation is {cite:t}`mude2024` and the parenthetical citation is {cite:p}`mude2024`.
 
 ````
 
