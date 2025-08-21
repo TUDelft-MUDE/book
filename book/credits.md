@@ -3,7 +3,7 @@
 
 You can refer to the most recent version of this book as:
 
-> Amiri-Simkooei, A. and Arriaga Garcia, J. and Cabboi, A. and Ding (Editor), J. and Homem de Almeida Correica, G. and Gao, J. and Lanzafame, R. and Madadi, B. and Mares Nasarre, P. and van der Meer (Editor), F. and Nogal Macho, M. and Poot, A and Pittman, J. and Pourmohammadzia, N. and Ramgraber, M. and Riccius, L. and Rocha, I. and Storm, J. and Tiberius, C. and Verhagen, S. and van Woudenberg (Editor), T. (n.d.), Modelling, Uncertainty and Data for Engineers (MUDE) Textbook, Delft University of Technology. https://mude.citg.tudelft.nl/book, CC BY 4.0.
+> Ding, J. and van der Meer, F. and van Woudenberg, T. (Eds.) (n.d.), Modelling, Uncertainty and Data for Engineers (MUDE) Textbook, Delft University of Technology. https://mude.citg.tudelft.nl/book, CC BY 4.0.
 
 The introduction, structure of the book and formatting of contents is done under direction of the Editors (currently: Tom van Woudenberg, Frans van der Meer and Jialei Ding), in collaboration with a large team of co-authors and student assistants. Some chapters and pages have additional primary authors who are identified within the book either at the bottom of the first page in a chapter, or at the bottom of an individual page, as necessary. If an author is not listed on a particular chapter or page, the editors may be attributed as the authors. Furthermore, as contents of this book may change each academic year, we cannot guarantee that chapter titles and URL's will remain static indefinitely. Therefore, if it is important for you to reference a specific location within the book, we recommend including the complete URL and version in your reference.
 
@@ -22,10 +22,10 @@ The book in its entirety is available in the 2024 edition (2025 edition will fol
 If you would like to refer to the MUDE Textbook with BibTeX (e.g., in a TeachBook or Jupyter Book), the following entry can be used in a  `bib` file to get close to the reference shown above. Use the GitHub repository for this book as a reference for setting up APA citations (if desired).
 
 ```bibtex
-@book{mude_most_recent,
+@misc{mude_most_recent,
   title={Modelling, {U}ncertainty and {D}ata for {E}ngineers ({MUDE}) {T}extbook},
   year={2025},
-  editor={van Woudenberg, Tom and van der Meer, Frans and Ding, Jialei},
+  editor={Ding, Jialei and van der Meer, Frans and van Woudenberg, Tom },
   note={Delft University of Technology. {https://mude.citg.tudelft.nl/book} CC BY 4.0}
 }
 ```
@@ -35,7 +35,7 @@ The text citation is {cite:t}`mude_most_recent` and the parenthetical citation i
 Or for the complete 2024 edition:
 
 ```bibtex
-@book{mude2024,
+@misc{mude2024,
   title={Modelling, {U}ncertainty and {D}ata for {E}ngineers ({MUDE}) {T}extbook},
   editor={Lanzafame, Robert and van Woudenberg, Tom and Verhagen, Sandra},
   year={2024},
