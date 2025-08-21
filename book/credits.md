@@ -3,7 +3,7 @@
 
 You can refer to the most recent version of this book as:
 
-> van Woudenberg, T., van der Meer, F., Ding, J., Modelling, Uncertainty and Data for Engineers (MUDE) Textbook, Delft University of Technology. https://mude.citg.tudelft.nl/book, CC BY 4.0. [doi:10.5281/zenodo.16223061](https://doi.org/10.5281/zenodo.16223061).
+> van Woudenberg, T., van der Meer, F., Ding, J., Modelling, Uncertainty and Data for Engineers (MUDE) Textbook, Delft University of Technology. https://mude.citg.tudelft.nl/book, CC BY 4.0.
 
 As contents of this book may change each academic year, we cannot guarantee that chapter titles and URL's will remain static indefinitely. Therefore, if it is important for you to reference a specific location within the book, we recommend including the complete URL and version in your reference. Furthermore, please note that only for complete versions of the book a DOI is created. You can refer to individual chapters or pages within this book as:
 
