@@ -34,7 +34,7 @@ Or for the complete 2024 edition:
 ```bibtex
 @misc{mude2024,
   title={Modelling, {U}ncertainty and {D}ata for {E}ngineers ({MUDE}) {T}extbook},
-  editor={Lanzafame, Robert and van Woudenberg, Tom and Verhagen, Sandra},
+  author={Lanzafame, Robert and van Woudenberg, Tom and Verhagen, Sandra},
   year={2024},
   edition={v2024.1.0},
   note={Delft University of Technology. {https://mude.citg.tudelft.nl/book/2024} CC BY 4.0},
