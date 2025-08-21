@@ -3,15 +3,15 @@
 
 You can refer to the most recent version of this book as:
 
-> van Woudenberg, T., van der Meer, F., Ding, J., Modelling, Uncertainty and Data for Engineers (MUDE) Textbook, Delft University of Technology. https://mude.citg.tudelft.nl/book, CC BY 4.0.
+> van Woudenberg, T., van der Meer, F., Ding, J. (Eds.), Modelling, Uncertainty and Data for Engineers (MUDE) Textbook, Delft University of Technology. https://mude.citg.tudelft.nl/book, CC BY 4.0.
 
 As contents of this book may change each academic year, we cannot guarantee that chapter titles and URL's will remain static indefinitely. Therefore, if it is important for you to reference a specific location within the book, we recommend including the complete URL and version in your reference. Furthermore, please note that only for complete versions of the book a DOI is created. You can refer to individual chapters or pages within this book as:
 
-> van Woudenberg, T., van der Meer, F., Ding, J. (`<year>`), Modelling, Uncertainty and Data for Engineers (MUDE) Textbook, Delft University of Technology. https://mude.citg.tudelft.nl/book/`<year>/<...>` (version `version_number`), CC BY 4.0.
+> van Woudenberg, T., van der Meer, F., Ding, J. (Eds.) (`<year>`), Modelling, Uncertainty and Data for Engineers (MUDE) Textbook, Delft University of Technology. https://mude.citg.tudelft.nl/book/`<year>/<...>` (version `version_number`), CC BY 4.0.
 
 The book in its entirety is available in the 2024 edition (2025 edition will follow in spring 2026):
 
-> Lanzafame, R., van Woudenberg, T., Verhagen, S. (2024), Modelling, Uncertainty and Data for Engineers (MUDE) Textbook, Delft University of Technology. https://mude.citg.tudelft.nl/book/2024, CC BY 4.0. [doi:10.5281/zenodo.16236358](https://doi.org/10.5281/zenodo.16236358).
+> Lanzafame, R., van Woudenberg, T., Verhagen, S. (Eds.) (2024), Modelling, Uncertainty and Data for Engineers (MUDE) Textbook, Delft University of Technology. https://mude.citg.tudelft.nl/book/2024, CC BY 4.0. [doi:10.5281/zenodo.16236358](https://doi.org/10.5281/zenodo.16236358).
 
 
 ````{admonition} BibTeX Citation
@@ -22,7 +22,7 @@ If you would like to refer to the MUDE Textbook with BibTeX (e.g., in a TeachBoo
 ```bibtex
 @misc{mude_most_recent,
   title={Modelling, {U}ncertainty and {D}ata for {E}ngineers ({MUDE}) {T}extbook},
-  author={van Woudenberg, Tom and van der Meer, Frans and Ding, Jialei},
+  editor={van Woudenberg, Tom and van der Meer, Frans and Ding, Jialei},
   note={Delft University of Technology. {https://mude.citg.tudelft.nl/book} CC BY 4.0},
   doi={doi:10.5281/zenodo.16223061},
 }
@@ -35,7 +35,7 @@ Or for the complete 2024 edition:
 ```bibtex
 @misc{mude2024,
   title={Modelling, {U}ncertainty and {D}ata for {E}ngineers ({MUDE}) {T}extbook},
-  author={Lanzafame, Robert and van Woudenberg, Tom and Verhagen, Sandra},
+  editor={Lanzafame, Robert and van Woudenberg, Tom and Verhagen, Sandra},
   year={2024},
   edition={v2024.1.0},
   note={Delft University of Technology. {https://mude.citg.tudelft.nl/book/2024} CC BY 4.0},
