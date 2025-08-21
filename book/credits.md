@@ -3,7 +3,7 @@
 
 You can refer to the most recent version of this book as:
 
-> van Woudenberg, T., van der Meer, F., Ding, J. (2025), Modelling, Uncertainty and Data for Engineers (MUDE) Textbook, Delft University of Technology. https://mude.citg.tudelft.nl/book/2025, CC BY 4.0. [doi:10.5281/zenodo.16223061](https://doi.org/10.5281/zenodo.16223061).
+> van Woudenberg, T., van der Meer, F., Ding, J., Modelling, Uncertainty and Data for Engineers (MUDE) Textbook, Delft University of Technology. https://mude.citg.tudelft.nl/book, CC BY 4.0. [doi:10.5281/zenodo.16223061](https://doi.org/10.5281/zenodo.16223061).
 
 The book in its entirety is available in the 2024 edition (2025 edition will follow in spring 2026):
 
@@ -15,16 +15,15 @@ The book in its entirety is available in the 2024 edition (2025 edition will fol
 If you would like to refer to the MUDE Textbook with BibTeX (e.g., in a TeachBook or Jupyter Book), the following entry can be used in a  `bib` file to get close to the reference shown above. Use the GitHub repository for this book as a reference for setting up APA citations (if desired).
 
 ```bibtex
-@misc{mude2025,
+@misc{mude_most_recent,
   title={Modelling, {U}ncertainty and {D}ata for {E}ngineers ({MUDE}) {T}extbook},
   author={van Woudenberg, Tom and van der Meer, Frans and Ding, Jialei},
-  year={2025},
   note={Delft University of Technology. {https://mude.citg.tudelft.nl/book/2025} CC BY 4.0},
   doi={doi:10.5281/zenodo.16223061},
 }
 ```
 
-The text citation is {cite:t}`mude2025` and the parenthetical citation is {cite:p}`mude2025`.
+The text citation is {cite:t}`mude_most_recent` and the parenthetical citation is {cite:p}`mude_most_recent`.
 
 Or for the complete 2024 edition:
 
