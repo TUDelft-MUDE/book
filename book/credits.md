@@ -5,9 +5,14 @@ You can refer to the most recent version of this book as:
 
 > van Woudenberg, T., van der Meer, F., Ding, J., Modelling, Uncertainty and Data for Engineers (MUDE) Textbook, Delft University of Technology. https://mude.citg.tudelft.nl/book, CC BY 4.0. [doi:10.5281/zenodo.16223061](https://doi.org/10.5281/zenodo.16223061).
 
+As contents of this book may change each academic year, we cannot guarantee that chapter titles and URL's will remain static indefinitely. Therefore, if it is important for you to reference a specific location within the book, we recommend including the complete URL and date of access in your reference. You can refer to individual chapters or pages within this book as:
+
+> van Woudenberg, T., van der Meer, F., Ding, J., Modelling, Uncertainty and Data for Engineers (MUDE) Textbook, Delft University of Technology. https://mude.citg.tudelft.nl/book/`<year>/<...>` (version `version_number`), CC BY 4.0. [doi:10.5281/zenodo.16223061](https://doi.org/10.5281/zenodo.16223061).
+
 The book in its entirety is available in the 2024 edition (2025 edition will follow in spring 2026):
 
 > Lanzafame, R., van Woudenberg, T., Verhagen, S. (2024), Modelling, Uncertainty and Data for Engineers (MUDE) Textbook, Delft University of Technology. https://mude.citg.tudelft.nl/book/2024, CC BY 4.0. [doi:10.5281/zenodo.16236358](https://doi.org/10.5281/zenodo.16236358).
+
 
 ````{admonition} BibTeX Citation
 :class: tip, dropdown
@@ -18,7 +23,7 @@ If you would like to refer to the MUDE Textbook with BibTeX (e.g., in a TeachBoo
 @misc{mude_most_recent,
   title={Modelling, {U}ncertainty and {D}ata for {E}ngineers ({MUDE}) {T}extbook},
   author={van Woudenberg, Tom and van der Meer, Frans and Ding, Jialei},
-  note={Delft University of Technology. {https://mude.citg.tudelft.nl/book/2025} CC BY 4.0},
+  note={Delft University of Technology. {https://mude.citg.tudelft.nl/book} CC BY 4.0},
   doi={doi:10.5281/zenodo.16223061},
 }
 ```
@@ -32,6 +37,7 @@ Or for the complete 2024 edition:
   title={Modelling, {U}ncertainty and {D}ata for {E}ngineers ({MUDE}) {T}extbook},
   author={Lanzafame, Robert and van Woudenberg, Tom and Verhagen, Sandra},
   year={2024},
+  edition={v2024.1.0},
   note={Delft University of Technology. {https://mude.citg.tudelft.nl/book/2024} CC BY 4.0},
   doi={10.5281/zenodo.16236358},
 }
@@ -43,11 +49,9 @@ The text citation is {cite:t}`mude2024` and the parenthetical citation is {cite:
 
 The introduction, structure of the book and formatting of contents is done under direction of the Editors (Tom van Woudenberg, Frans van der Meer and Jialei Ding), in collaboration with a large team of co-authors and student assistants. Some chapters and pages have additional primary authors who are identified within the book either at the bottom of the first page in a chapter, or at the bottom of an individual page, as necessary. If an author is not listed on a particular chapter or page, the editors may be attributed as the authors.
 
-You can refer to individual chapters or pages within this book as, but as contents of this book may change each academic year, we cannot guarantee that chapter titles and URL's will remain static indefinitely. Therefore, if it is important for you to reference a specific location within the book, we recommend including the complete URL and date of access in your reference. You can refer to individual chapters or pages within this book as:
+You can refer to individual chapters or pages within this book too:
 
-> `<Primary Authors>` (2025) `<Title of Chapter or Page>`. In van Woudenberg et al. (Eds.), _Modelling, Uncertainty and Data for Engineers (MUDE) Textbook._ Delft University of Technology. https://mude.citg.tudelft.nl/book/`<year>/<...> `(chapter `./book/intro/`, retrieved [`<date>`]).
-
-Better yet, include a link to the specific commit or version! _If you know what this means, we assume you know how to do it._
+> `<Primary Authors>` (`<year>`) `<Title of Chapter or Page>`. In van Woudenberg et al. (Eds.), _Modelling, Uncertainty and Data for Engineers (MUDE) Textbook._ Delft University of Technology. https://mude.citg.tudelft.nl/book/`<year>/<...>` (version `version_number`), CC BY 4.0. [doi:10.5281/zenodo.16223061](https://doi.org/10.5281/zenodo.16223061).
 
 ## How the book is made
 
