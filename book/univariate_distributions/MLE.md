@@ -110,6 +110,6 @@ The best fitting parameter of the Exponential distribution for the given data ac
 % source: distributions
 ```{attributiongrey} Attribution
 :class: attribution
-This chapter was written by Maximilian Ramgraber, Patricia Mares Nasarre, and Robert Lanzafame. {ref}`Find out more here <distributions_credit>`.
+This chapter was written by Patricia Mares Nasarre, Robert Lanzafame, and Maximilian Ramgraber. {ref}`Find out more here <distributions_credit>`.
 ```
 % END-CREDIT
