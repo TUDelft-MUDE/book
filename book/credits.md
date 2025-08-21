@@ -22,11 +22,11 @@ The book in its entirety is available in the 2024 edition (2025 edition will fol
 If you would like to refer to the MUDE Textbook with BibTeX (e.g., in a TeachBook or Jupyter Book), the following entry can be used in a  `bib` file to get close to the reference shown above. Use the GitHub repository for this book as a reference for setting up APA citations (if desired).
 
 ```bibtex
-@misc{mude_most_recent,
+@book{mude_most_recent,
   title={Modelling, {U}ncertainty and {D}ata for {E}ngineers ({MUDE}) {T}extbook},
-  author={Amiri-Simkooei, A., Arriaga Garcia, J., Cabboi, A., Ding (Editor), J. , Homem de Almeida Correica, Gao, J., G. Lanzafame, R., Madadi, B., Mares Nasarre, P. van der Meer (Editor), Nogal Macho, M., F., Poot, A. Pittman, J., Pourmohammadzia, N., Ramgraber, Riccius, L. M., Rocha, I., Storm, J., Tiberius, C., Verhagen, S., van Woudenberg (Editor), T.}
+  year={2025},
   editor={van Woudenberg, Tom and van der Meer, Frans and Ding, Jialei},
-  note={{https://mude.citg.tudelft.nl/book} CC BY 4.0},
+  note={Delft University of Technology. {https://mude.citg.tudelft.nl/book} CC BY 4.0},
 }
 ```
 
@@ -35,7 +35,7 @@ The text citation is {cite:t}`mude_most_recent` and the parenthetical citation i
 Or for the complete 2024 edition:
 
 ```bibtex
-@misc{mude2024,
+@book{mude2024,
   title={Modelling, {U}ncertainty and {D}ata for {E}ngineers ({MUDE}) {T}extbook},
   editor={Lanzafame, Robert and van Woudenberg, Tom and Verhagen, Sandra},
   year={2024},
