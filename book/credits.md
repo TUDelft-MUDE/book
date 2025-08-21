@@ -3,7 +3,7 @@
 
 You can refer to the most recent version of this book as:
 
-> van Woudenberg, T., van der Meer, F., Ding, J. (Eds.), Modelling, Uncertainty and Data for Engineers (MUDE) Textbook, Delft University of Technology. https://mude.citg.tudelft.nl/book, CC BY 4.0.
+> van Woudenberg, T., van der Meer, F., Ding, J. (Eds.) (n.d.), Modelling, Uncertainty and Data for Engineers (MUDE) Textbook, Delft University of Technology. https://mude.citg.tudelft.nl/book, CC BY 4.0.
 
 The introduction, structure of the book and formatting of contents is done under direction of the Editors (currently: Tom van Woudenberg, Frans van der Meer and Jialei Ding), in collaboration with a large team of co-authors and student assistants. Some chapters and pages have additional primary authors who are identified within the book either at the bottom of the first page in a chapter, or at the bottom of an individual page, as necessary. If an author is not listed on a particular chapter or page, the editors may be attributed as the authors. Furthermore, as contents of this book may change each academic year, we cannot guarantee that chapter titles and URL's will remain static indefinitely. Therefore, if it is important for you to reference a specific location within the book, we recommend including the complete URL and version in your reference.
 
