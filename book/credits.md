@@ -46,9 +46,9 @@ The introduction, structure of the book and formatting of contents is done under
 
 You can refer to individual chapters or pages within this book as, but as contents of this book may change each academic year, we cannot guarantee that chapter titles and URL's will remain static indefinitely. Therefore, if it is important for you to reference a specific location within the book, we recommend including the complete URL and date of access in your reference. You can refer to individual chapters or pages within this book as:
 
-> `<Primary Authors>` (2025) `<Title of Chapter or Page>`. In van Woudenberg et al. (Eds.), _Modelling, Uncertainty and Data for Engineers (MUDE) Textbook._ Delft University of Technology. https://mude.citg.tudelft.nl/book (chapter `./book/intro/`, retrieved [`<date>`]).
+> `<Primary Authors>` (2025) `<Title of Chapter or Page>`. In van Woudenberg et al. (Eds.), _Modelling, Uncertainty and Data for Engineers (MUDE) Textbook._ Delft University of Technology. https://mude.citg.tudelft.nl/book/`<year>/<...> `(chapter `./book/intro/`, retrieved [`<date>`]).
 
-Better yet, include a link to the specific commit! _If you know what this means, we assume you know how to do it._
+Better yet, include a link to the specific commit or version! _If you know what this means, we assume you know how to do it._
 
 ## How the book is made
 
