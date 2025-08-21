@@ -5,9 +5,9 @@ You can refer to the most recent version of this book as:
 
 > van Woudenberg, T., van der Meer, F., Ding, J., Modelling, Uncertainty and Data for Engineers (MUDE) Textbook, Delft University of Technology. https://mude.citg.tudelft.nl/book, CC BY 4.0. [doi:10.5281/zenodo.16223061](https://doi.org/10.5281/zenodo.16223061).
 
-As contents of this book may change each academic year, we cannot guarantee that chapter titles and URL's will remain static indefinitely. Therefore, if it is important for you to reference a specific location within the book, we recommend including the complete URL and date of access in your reference. You can refer to individual chapters or pages within this book as:
+As contents of this book may change each academic year, we cannot guarantee that chapter titles and URL's will remain static indefinitely. Therefore, if it is important for you to reference a specific location within the book, we recommend including the complete URL and version in your reference. Furthermore, please note that only for complete versions of the book a DOI is created. You can refer to individual chapters or pages within this book as:
 
-> van Woudenberg, T., van der Meer, F., Ding, J., Modelling, Uncertainty and Data for Engineers (MUDE) Textbook, Delft University of Technology. https://mude.citg.tudelft.nl/book/`<year>/<...>` (version `version_number`), CC BY 4.0. [doi:10.5281/zenodo.16223061](https://doi.org/10.5281/zenodo.16223061).
+> van Woudenberg, T., van der Meer, F., Ding, J. (`<year>`), Modelling, Uncertainty and Data for Engineers (MUDE) Textbook, Delft University of Technology. https://mude.citg.tudelft.nl/book/`<year>/<...>` (version `version_number`), CC BY 4.0.
 
 The book in its entirety is available in the 2024 edition (2025 edition will follow in spring 2026):
 
@@ -51,7 +51,9 @@ The introduction, structure of the book and formatting of contents is done under
 
 You can refer to individual chapters or pages within this book too:
 
-> `<Primary Authors>` (`<year>`) `<Title of Chapter or Page>`. In van Woudenberg et al. (Eds.), _Modelling, Uncertainty and Data for Engineers (MUDE) Textbook._ Delft University of Technology. https://mude.citg.tudelft.nl/book/`<year>/<...>` (version `version_number`), CC BY 4.0. [doi:10.5281/zenodo.16223061](https://doi.org/10.5281/zenodo.16223061).
+> `<Primary Authors>` (`<year>`) `<Title of Chapter or Page>`. In van Woudenberg et al. (Eds.), _Modelling, Uncertainty and Data for Engineers (MUDE) Textbook._ Delft University of Technology. https://mude.citg.tudelft.nl/book/`<year>/<...>` (version `version_number`), CC BY 4.0.
+
+Include the DOI if you refer to an individual chapter or page from a complete book.
 
 ## How the book is made
 
