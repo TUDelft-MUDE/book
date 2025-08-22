@@ -9,7 +9,7 @@ The introduction, structure of the book and formatting of contents is done under
 
 > `<Primary Authors>`, `<Title of Chapter or Page>`. In Lanzafame et al. (n.d.), _Modelling, Uncertainty and Data for Engineers (MUDE) Textbook._ Delft University of Technology. https://mude.citg.tudelft.nl/book/`<year>/<...>`, version `<version_number>`, CC BY 4.0.
 
-The book in its entirety is available in the 2024 edition (2025 edition will follow in spring 2026). Please note that only for complete versions of the book a DOI is created:
+The book in its entirety is available in the 2024 edition (2025 edition will follow in spring 2026), please note that only for complete versions of the book a DOI is created. Refer to this version as follows:
 
 > Lanzafame, R., van Woudenberg, T., Verhagen, S. (Eds.) (2024), Modelling, Uncertainty and Data for Engineers (MUDE) Textbook, Delft University of Technology. https://mude.citg.tudelft.nl/book/2024, version v2024.1.0, CC BY 4.0. [doi:10.5281/zenodo.16236358](https://doi.org/10.5281/zenodo.16236358).
 
