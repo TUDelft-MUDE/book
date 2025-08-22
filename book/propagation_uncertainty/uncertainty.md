@@ -25,7 +25,7 @@ In MUDE we will typically use probability distributions to model uncertainty bec
 
 Note that there is no universal uncertainty classification. You can read more about this topic in [^ref1] or [^ref2].
 
-[^ref1]: Der Kiureghian and Ditlevsen (2009). Aleatory or epistemic? Does it matter? *Structural safety* 31, 2, 105-112. https://doi.org/10.1016/j.strusafe.2008.06.020
+[^ref1]: Der Kiureghian and Ditlevsen (2009). Aleatory or epistemic? Does it matter? *Structural safety* 31, 2, 105-112. [doi.org:10.1016/j.strusafe.2008.06.020](https://doi.org/10.1016/j.strusafe.2008.06.020)
 
 [^ref2]: Van Gelder (2000). Statistical methods for the risk-based design of civil structures. PhD thesis. TUDelft. http://resolver.tudelft.nl/uuid:6a62d6fa-cbcc-4c38-af8a-027c3d191a9d
 

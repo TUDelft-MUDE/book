@@ -34,7 +34,7 @@ A PDF of the book will eventually be generated and uploaded to the TU Delft Repo
 
 In the future, additional records may be created to more easily enable citation of individual book chapters (e.g., Zenodo or PURE records for each chapter).
 
-Note that there are effectively two numeric ways of versioning the book: the version number (defined by GitHub Releases manually, according to the rules above) and the Zenodo-generated DOI. There should be a one-to-one correspondence between the two, but the Zenodo DOI will not necessarily be sequential. Because the Zenodo DOI is both a permanent identifier _and_ a hyperlink, it is used in the recommended citation format for the book and its chapters. If desired, the book version can also be used, but this should only be necessary if it is important to distinguish between two versions of the book that were published for the same academic year (e.g., if a major change was made after the first release of the book for that year).
+Note that there are effectively two numeric ways of versioning the book: the version number (defined by git tags and GitHub Releases manually, according to the rules above) and the Zenodo-generated DOI. There should be a one-to-one correspondence between the two, but the Zenodo DOI will not necessarily be sequential. Because the Zenodo DOI is both a permanent identifier _and_ a hyperlink, it is used in the recommended citation format for the book and its chapters. If desired, the book version can also be used, but this should only be necessary if it is important to distinguish between two versions of the book that were published for the same academic year (e.g., if a major change was made after the first release of the book for that year).
 
 ### Instructions for Creating a New Release
 
