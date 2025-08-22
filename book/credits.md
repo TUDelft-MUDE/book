@@ -21,7 +21,7 @@ If you would like to refer to the MUDE Textbook with BibTeX (e.g., in a TeachBoo
 ```bibtex
 @book{mude_most_recent,
   title={Modelling, {U}ncertainty and {D}ata for {E}ngineers ({MUDE}) {T}extbook},
-  editors={Lanzafame, Robert and van Woudenberg, Tom and Verhagen, Sandra},
+  editor={Lanzafame, Robert and van Woudenberg, Tom and Verhagen, Sandra},
   year={n.d.},
   publisher={Delft University of Technology},
   note={{https://mude.citg.tudelft.nl/book} CC BY 4.0}
@@ -33,7 +33,7 @@ or including a specific location and version (URL and version number to be adapt
 ```bibtex
 @book{mude_most_recent,
   title={Modelling, {U}ncertainty and {D}ata for {E}ngineers ({MUDE}) {T}extbook},
-  editors={Lanzafame, Robert and van Woudenberg, Tom and Verhagen, Sandra},
+  editor={Lanzafame, Robert and van Woudenberg, Tom and Verhagen, Sandra},
   year={n.d.},
   publisher={Delft University of Technology},
   note={{https://mude.citg.tudelft.nl/book/`<year>/<...>`},version `<version_number>`, CC BY 4.0}
@@ -47,7 +47,7 @@ Or for the complete 2024 edition:
 ```bibtex
 @book{mude2024,
   title={Modelling, {U}ncertainty and {D}ata for {E}ngineers ({MUDE}) {T}extbook},
-  editors={Lanzafame, Robert and van Woudenberg, Tom and Verhagen, Sandra},
+  editor={Lanzafame, Robert and van Woudenberg, Tom and Verhagen, Sandra},
   year={2024},
   publisher={Delft University of Technology},
   edition={v2024.1.0},
