@@ -193,7 +193,7 @@ Credits are provided here for chapters and pages that are released under the lic
 >
 > Special thanks goes to:
 > - Berend Bouvy, who created a number ofinteractive figures and exercises, as well as provided critical feedback.
-> - Serge Kaplev, who provided critical feedback and suggestions for the theoretical content.
+> - Serge Kaplev and Lucas Alvarez Navarro, who provided critical feedback and suggestions for the theoretical content.
 > - Antonio Magherini, who created the first draft material from powerpoint slides and prepared notebooks as exercises.
 > 
 > The following resources are used in this chapter but are _not_ included under the CC BY license of this book:
