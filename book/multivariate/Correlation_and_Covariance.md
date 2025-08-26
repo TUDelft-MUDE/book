@@ -1,5 +1,5 @@
 (cov)=
-# Covariance and Correlation
+# Covariance and correlation coefficient
 
 In many engineering and scientific applications, there are multiple variables involved. For instance, in structural engineering when assessing the health of a structure, we might have to take into account the different loads on the structure as well as the deterioration of the building materials. In climate science, when trying to study the effect of climate change in agricultural production, we might have to consider the impact of the changes in temperature, soil moisture and precipitation, amongst others, in vegetation. 
 
