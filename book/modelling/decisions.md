@@ -27,7 +27,7 @@ Let us consider the mass-spring system as a first example.
 :name: mass-spring system
 :align: center
 
-Mass/spring system. 
+Mass-spring system. 
 ```
 
 For this system, Newton's equations of motion sketch as:
