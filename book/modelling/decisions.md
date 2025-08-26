@@ -23,6 +23,7 @@ Let us consider the mass-spring system as a first example.
 
 
 ```{image} https://files.mude.citg.tudelft.nl/mass-spring-system.png 
+:height: 400px
 :alt: mass-spring system
 ```
 
