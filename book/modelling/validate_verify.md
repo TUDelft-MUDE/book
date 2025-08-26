@@ -15,7 +15,7 @@ Let us consider two different models, the mass-spring system and a building desc
 :name: two different models
 :align: center
 
-Two different models: a simple mass/spring/damper system (left) and a finite element model (right, from [Stavroulaki, *Front Build Environ*, **5**:138, 2019]).
+Two different models: a simple mass/spring system (left) and a finite element model (right, from [Stavroulaki, *Front Build Environ*, **5**:138, 2019]).
 ```
 
 Both models do **not exactly represent** the real structure, but they can be valid models in which we can trust to answer to certain research questions. For example:
