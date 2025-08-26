@@ -1,4 +1,13 @@
+(eva)=
 # Extreme Value Analysis
+
+% START-CREDIT
+% source: extreme_value_analysis
+```{attributiongrey} Attribution
+:class: attribution
+This chapter was written by Patricia Mares Nasarre. {ref}`Find out more here <extreme_value_analysis_credit>`.
+```
+% END-CREDIT
 
 The preceding chapters have focused on a variety of data-driven and physics-based modelling techniques which we primarily used to interpolate between known data (e.g., machine learning), or make predictions about phenomena where randomness did not play a significant role (e.g., finite volume or finite element methods applied to simple physics problems). Most of the methods and problems considered ignored (or greatly simplified) the stochastic nature of the underlying processes. When uncertainty was considered explicitly, it focused primarily on error and epistemic types, for example, the inclusion of various types of noise in Time Series Analysis, or measurement precision in Observation Theory. In these cases, the focus was on applications that were governed by variations around a central value (as opposed to the tails of the distribution), which are often modelled sufficiently using a Gaussian distribution.
 

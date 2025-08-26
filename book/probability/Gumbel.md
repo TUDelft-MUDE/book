@@ -86,3 +86,11 @@ Chlorides between 1mg/L an 100mg/L are normal in freshwater. Use the Gumbel dist
 
 <iframe src="https://tudelft.h5p.com/content/1292083690582888367/embed" aria-label="Gumbel" width="1088" height="637" frameborder="0" allowfullscreen="allowfullscreen" allow="autoplay *; geolocation *; microphone *; camera *; midi *; encrypted-media *"></iframe><script src="https://tudelft.h5p.com/js/h5p-resizer.js" charset="UTF-8"></script>
 ```
+
+% START-CREDIT
+% source: distributions
+```{attributiongrey} Attribution
+:class: attribution
+This chapter was written by Patricia Mares Nasarre and Robert Lanzafame. {ref}`Find out more here <distributions_credit>`.
+```
+% END-CREDIT

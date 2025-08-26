@@ -1,4 +1,4 @@
-# Introduction to modelling
+# Model classification
 
 ## What is a Model?
 
@@ -19,7 +19,7 @@ Once we are sure that the model can reproduce the behaviors we are interested in
 
 ***
 
-Using a short practical example to illustrate this: imagine you are throwing a projectile, let us say it is a basket ball, and you want to **model** its trajectory. To do so, you would write the following equations of motion:
+Using a short practical example to illustrate this: imagine you are throwing a projectile, let us say it is a basket ball, and you want to **model** its trajectory. To do so, you would write the following equations of motion of the ball in the $x$ and $y$ direction, and obtain the following the kinematic expressions that entirely define the trajectory of the ball::
 
 $$\begin{cases}x=v_0t\cos\theta \\ y=v_0t\sin\theta-\frac{1}{2}gt^2\end{cases}$$
 
@@ -88,9 +88,9 @@ In the case of both these examples, it is advisable to build the model in a diff
 
 Models can be classified in different ways. Here, we are going to introduce the classification according to their nature. There are four categories:
 
-* **Conceptual models**: representations of how reality looks at the highest level of abstraction. These are the least interesting ones in our course, so we will not go much more in-depth in them. 
-* **Mechanistic models**: these models make use of first principle laws from physics, chemistry or biology to describe the behavior of the constitutive elements of the system. They are then systems of systems and can be very complex.
-* **Phenomenological models**: these models rely on the mathematical consistency between quantities based on observations. This is, you take measurements during experiments, you have a look at them under the view of the existing first principles of physics and infer how they are related to each other. Therefore, they do not only rely on data but also they have to be mathematically sound.
+* **Conceptual models**: representations of how reality looks at the highest level of abstraction. This should be always the first step of any modelling approach, and abstracting a real-case scenario is not always straightforward. In our case, we will generally provide such abstractions directly, so we will not go much more in-depth into this topic here.
+* **Mechanistic models**: these models make use of first principle laws from physics, chemistry or biology to describe the behavior of the constitutive elements of the system. They are then systems of mechanistic models which can be very complex.
+* **Phenomenological models**: these models rely on the mathematical consistency between quantities based on observations. This is, you take measurements during experiments, you have a look at them under the view of the existing first principles of physics and infer how they are related to each other. Therefore, they do not only rely on data but also they have to be mathematically sound and should obey the basic laws of mechanics and thermodynamics to the extent possible. Phenomenological models are often only valid for a very specific scale (e.g. micro-scale or macro-scale), depending on the type of experimental data used to derive them, and usually cannot be upscaled or downscaled.
 * **Data-driven models**: these models, as the name indicated, make only use of data. Thus, you perform experiments, measure several variables and perform some sort of data analysis, such as regression, to figure out the relationship between input and outputs. 
 
 Let's see the last three with some examples.
@@ -129,3 +129,10 @@ Imagine we want to predict the force of waves acting on a wall. To do so, we sta
 
 This is purely empirical and, thus, a data-driven model! We have simply used data to fit a relationship **input -> output**. These models can be very useful when trying to model very complex systems when there is lots of data available.
 
+% START-CREDIT
+% source: modelling_concepts
+```{attributiongrey} Attribution
+:class: attribution
+This chapter was written by Alessandro Cabboi, Patricia Mares Nasarre and Robert Lanzafame. {ref}`Find out more here <modelling_concepts_credit>`.
+```
+% END-CREDIT

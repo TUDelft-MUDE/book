@@ -21,3 +21,11 @@ Yet to do:
 - Slides: https://mude.citg.tudelft.nl/archive-2022/_downloads/24f6b220ea452bc28ed0ebc514456f10/1-4-calibration-slides.pdf
 
 Quiz: https://mude.citg.tudelft.nl/archive-2022/week-1-4/1-3-brightspace-quiz.html
+
+% START-CREDIT
+% source: modelling_concepts
+```{attributiongrey} Attribution
+:class: attribution
+This chapter was written by Alessandro Cabboi, Patricia Mares Nasarre and Robert Lanzafame. {ref}`Find out more here <modelling_concepts_credit>`.
+```
+% END-CREDIT

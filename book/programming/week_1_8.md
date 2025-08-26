@@ -1,13 +1,12 @@
-````{margin}
+# Week 1.8: SymPy
+
+% START-CREDIT
+% source: programming
 ```{attributiongrey} Attribution
 :class: attribution
-Written by [Tom van Woudenberg](https://github.com/TeachBooks/learn-python/commits/MUDE_book/book/08/sympy.ipynb)
-
-This chapter reuses CC BY content from {cite:t}`sympy`. {fa}`quote-left`[Find out more here](external_resources)
+This chapter reuses material from _Python for Engineers_. {ref}`Find out more here <programming_credit>`.
 ```
-````
-
-# Week 1.8: SymPy
+% END-CREDIT
 
 This week you'll learn how to use SymPy, a python package which does symbolical math for you!
 

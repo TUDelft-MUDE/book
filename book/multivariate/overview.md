@@ -1,6 +1,14 @@
 
-(mulitivar)=
+(mult_dist)=
 # Multivariate Distributions
+
+% START-CREDIT
+% source: distributions
+```{attributiongrey} Attribution
+:class: attribution
+This chapter was written by Patricia Mares Nasarre and Robert Lanzafame. {ref}`Find out more here <distributions_credit>`.
+```
+% END-CREDIT
 
 Challenges in all branches of science and engineering involve working in situations where uncertainty plays a significant role: prior chapters of this book focused a lot on _error_, but often we must also deal with data scarce scenarios (often categorized as _epistemic_ uncertainty) and natural phenomena with a significant _stochastic_ nature (often categorized as _aleatoric_ uncertainty). As seen in the previous chapter, univariate continuous distributions can assist us in modelling uncertainty associated with a specific variable in order to quantitatively account for uncertainty in general; the distribution helps inform the decision-making process or risk analysis. However, our problems of interest are typically complex and usually involve more than one variable: a _multivariate_ situation.
 
@@ -18,7 +26,21 @@ $$
 
 where $X_1$ and $X_2$ are random variables, $Cov(X_1,X_2)$ is their covariance, and $\sigma_{X_1}$ and $\sigma_{X_2}$ are the standard deviations of $X_1$ and $X_2$. $-1 \leq \rho(X_1,X_2) \leq 1$, being $\rho(X_1,X_2)=-1$ a perfect negative linear correlation, and $\rho(X_1,X_2)=1$ a perfect positive linear correlation. If $X_1$ and $X_2$ are independent, then $\rho(X_1,X_2) \to 0$[^note]. This is, that having information about $X_1$ does not provide us with information about $X_2$. The interactive element below allows you to play around with the correlation value yourself. Observe how the distribution's _density_ contours, or a scatter plot of _samples,_ change when you adjust the correlation.
 
-<iframe src="../_static/elements/element_correlation.html" width="600" height="400" frameborder="0"></iframe>
+% START-CREDIT
+% source: maxramgraber
+````{margin}
+```{attributiongrey} Attribution
+:class: attribution
+This interactive figure is created by Max Ramgraber. {ref}`Find out more here <distributions_credit>`.
+```
+````
+% END-CREDIT
+
+````{iframe-figure} ../_static/elements/element_correlation.html
+:name: density_scatter
+
+Interactively change the correlation coefficient to visualize the effect on density contours or samples of the bivariate Gaussian distribution.
+````
 
 **Overview of this Chapter**
 

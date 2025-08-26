@@ -1,6 +1,14 @@
 (risk_eval)=
 # Risk Evaluation
 
+% START-CREDIT
+% source: risk
+```{attributiongrey} Attribution
+:class: attribution
+This chapter reuses content written by Bas Jonkman. {ref}`Find out more here <risk_analysis_credit>`.
+```
+% END-CREDIT
+
 This chapter focuses on the evaluation of risk (Step 4) by applying several different techniques. While the Sections may seem long, the methods are relatively simple and a lot of examples and explanations are provided to illustrate how they can be applied in practice. After this chapter, you will be ready to try all of the practice problems in the Exercise Chapter.
 
 ```{note}

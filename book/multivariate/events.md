@@ -1,5 +1,7 @@
 (multivariate_events)=
-# Events: Fundamentally Refreshing
+# Discrete events
+
+% Old title: Fundamentally Refreshing
 
 Before going further into _continuous multivariate distributions,_ we will start with a reminder of some basic concepts you have seen previously: independence and conditional probability, illustrated by considering the probability of _events._
 
@@ -146,5 +148,10 @@ where $B_i$ are a set of _mutually exclusive_ and _collectively exhaustive_ even
 
 If you need further refresher of these concepts, you can further read and practice [here](https://teachbooks.github.io/learn-probability/section_01/Total_Probability_Theorem.html).
 
-
-
+% START-CREDIT
+% source: distributions
+```{attributiongrey} Attribution
+:class: attribution
+This chapter was written by Patricia Mares Nasarre and Robert Lanzafame. {ref}`Find out more here <distributions_credit>`.
+```
+% END-CREDIT

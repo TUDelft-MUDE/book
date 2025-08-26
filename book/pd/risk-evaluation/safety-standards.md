@@ -370,3 +370,11 @@ One field of application where these concepts have been applied concerns the flo
 [^neutral]: It should be noted that the usage of the term “risk neutral” to describe the FN-curve limit line for $\alpha = 1$ is widespread but, strictly speaking, incorrect in the context of decision theory (see {ref}`decision` Section). This is because the cost of risk bearing to a risk neutral decision maker equals expected loss (i.e. the product of probabilities and damages). The FN-curve shows cumulative probabilities, however. Also, an individual crossing of the limit line would not necessarily disturb a risk neutral decision maker, provided the other accident scenarios have relatively small probabilities.  
 [^taw]: TAW is nowadays called ENW: Extertise Network on Flood Protection.
 [^men]: The group 'young men' is used as a baseline because this was the only information available at the time the study was completed.
+
+% START-CREDIT
+% source: risk
+```{attributiongrey} Attribution
+:class: attribution
+This chapter reuses content written by Bas Jonkman. {ref}`Find out more here <risk_analysis_credit>`.
+```
+% END-CREDIT

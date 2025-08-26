@@ -60,3 +60,11 @@ $$
 This approach can be applied to various decisions problems, such as the optimal dike height (see next section) but also the dimensioning of other interventions such as sprinklers or ventilation in tunnels to reduce fire risks. In cases where no continuous functions are available to create a curve as in {numref}`economic_optimum`, the analyst can consider a limited number of design options (e.g. no, small, medium or large sprinklers in a tunnel) and determine investments, risks and total costs for these options.
 
 In addition to the determination of the optimal failure probability, the cost benefit criterion should still be verified. (It is possible that we find an economic optimum with higher total costs than in the current situation without interventions). It is checked whether the benefits of risk reduction are larger than the costs of the dike heightening, i.e. $(P_{f,0} - P_{f,opt}) D > I$.
+
+% START-CREDIT
+% source: risk
+```{attributiongrey} Attribution
+:class: attribution
+This chapter reuses content written by Bas Jonkman. {ref}`Find out more here <risk_analysis_credit>`.
+```
+% END-CREDIT

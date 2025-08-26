@@ -85,7 +85,7 @@ and we find:
 * **Magnitude** $|X_k|=\frac{1}{2}\sqrt{a_k^2+b_k^2}$, k>0
 * **Argument** $\theta_k=\arctan\left(-\frac{b_k}{a_k}\right)$, k>0
 
-Note that for real signals $x(t)$, as we use in this practical course, $|X_k|=|X_{-k}|$ and $\theta_k=-\theta_{-k}$
+For real signals $x(t)$, as we use in this practical course, we have $|X_k|=|X_{-k}|$ and $\theta_k=-\theta_{-k}$
 
 ## Line Spectra
 
@@ -126,3 +126,11 @@ then, for real signals:
 * argument (or phase): $\theta_k=-\theta_{-k}$, **odd** function of $k$, forming **phase spectrum**
 
 $\implies$ periodic signal written in terms of sum of cosines and sines, together (pairwise) represented in complex exponentials
+
+% START-CREDIT
+% source: signal_processing
+```{attributiongrey} Attribution
+:class: attribution
+This chapter is written by Christiaan Tiberius. {ref}`Find out more here <signal_processing_credit>`.
+```
+% END-CREDIT

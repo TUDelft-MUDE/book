@@ -1,5 +1,5 @@
 
-# Extremes
+# Concept of Extremes
 
 If you hear the word "**extreme**", the first thing that may come to your mind are extreme sports or natural disasters, such as a hurricane or a typhon. That gives us an intuition of what is an extreme observation in probability theory. Let's see it in further detail with a dummy example.
 
