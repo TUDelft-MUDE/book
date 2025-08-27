@@ -56,6 +56,7 @@ sphinx:
     - teachbooks_sphinx_tippy
     - sphinx_dropdown_toggle
     - sphinx_iframes
+    - sphinx_accessibility
 
 bibtex_bibfiles:
   - _bibliography/references.bib
