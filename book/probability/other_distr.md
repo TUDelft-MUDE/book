@@ -53,3 +53,11 @@ In the following sections, we will introduce some common parametric distribution
 [^mode]: The mode is the most frequently observed value and, thus, the value of the distribution with the highest value of the density in its PDF.
 [^mean]: Visually from the PDF, we can define the mean as the value of the random variable which is the balance point of the distribution.
 [^median]: Visually from the PDF, we can define the median as the value of the random variable which divides the PDF in two areas of the same value.
+
+% START-CREDIT
+% source: distributions
+```{attributiongrey} Attribution
+:class: attribution
+This chapter was written by Patricia Mares Nasarre and Robert Lanzafame. {ref}`Find out more here <distributions_credit>`.
+```
+% END-CREDIT

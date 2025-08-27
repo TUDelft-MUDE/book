@@ -131,3 +131,11 @@ name: LSsol
 ---
 Least-squares fit to a set of 5 observations affected by random errors. Index $i$ refers to the $i$th observation.
 ```
+
+% START-CREDIT
+% source: observation_theory
+```{attributiongrey} Attribution
+:class: attribution
+This chapter was written by Sandra Verhagen. {ref}`Find out more here <observation_theory_credit>`.
+```
+% END-CREDIT

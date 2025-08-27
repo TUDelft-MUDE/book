@@ -1,5 +1,13 @@
 # Exercises
 
+% START-CREDIT
+% source: risk
+```{attributiongrey} Attribution
+:class: attribution
+This chapter reuses content written by Bas Jonkman and Robert Lanzafame. {ref}`Find out more here <risk_analysis_credit>`.
+```
+% END-CREDIT
+
 A number of exercises are included in this chapter that illustrate the previously discussed concepts of risk and reliability in a probabilistic design context. At the end a set of **sample exam** questions are included. 
 
 <!--

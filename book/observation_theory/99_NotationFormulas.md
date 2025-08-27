@@ -72,3 +72,11 @@ This overview with Notation and Formulas will be given on the MUDE exam.
 * - ... covariance matrix 
   - $\Sigma_{\hat{X}} =\mathrm{L^T}\Sigma_Y \mathrm{L} $ 
 ```
+
+% START-CREDIT
+% source: observation_theory
+```{attributiongrey} Attribution
+:class: attribution
+This chapter was written by Sandra Verhagen. {ref}`Find out more here <observation_theory_credit>`.
+```
+% END-CREDIT

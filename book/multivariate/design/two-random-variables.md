@@ -1,6 +1,14 @@
 (prob_design_2_rv)=
 # Two Random Variables
 
+% START-CREDIT
+% source: distributions
+```{attributiongrey} Attribution
+:class: attribution
+This page reuses material from another book. {ref}`Find out more here <distributions_credit>`.
+```
+% END-CREDIT
+
 % MMMMM: this page is from 2023 book and has been modified for the 2024 book. Sometime in between this page was also added to the risk and reliability book, which has _not_ been kept in sync.
 
 The previous section illustrated how a decision for dike height, $h_{dike}$, can take into account uncertainty in river discharge. We used a maximum allowable probability of flooding to derive the specific value of discharge, $q_{design}$, that should be used to choose $h_{dike}$. This was necessary because there was otherwise no way of establishing what the maximum discharge should be. The only variable considered to be random was the maximum river discharge that occurs each year. This section considers how the design process becomes more complicated when *two* random variables are considered (two load variables).

@@ -226,3 +226,11 @@ $$
 $$
 ```
 :::
+
+% START-CREDIT
+% source: finite_element_method
+```{attributiongrey} Attribution
+:class: attribution
+This chapter was written by Frans van der Meer. {ref}`Find out more here <finite_element_method_credit>`.
+```
+% END-CREDIT

@@ -1,4 +1,4 @@
-# Introduction to modelling
+# Model classification
 
 ## What is a Model?
 
@@ -6,7 +6,7 @@
 **In short:** A model is a purpose built abstraction of physical reality.
 ```
 
-In any engineering discipline, **we interact with a system** (Earth, ecosystem, water network, structure, …). Usually, we have questions about how the system behaves and how our intervention will affect it (e.g.: how a water body reacts when the cooling water from a nuclear power plant is discharged), or how the system will impact a proposed intervention (e.g.: a river which may flood close to our road). 
+In any engineering discipline, **we interact with a system** (Earth, ecosystem, water network, structure, dutch railways,…). Usually, we have questions about how the system behaves and how our intervention will affect it (e.g.: how a water body reacts when the cooling water from a nuclear power plant is discharged), or how the system will impact a proposed intervention (e.g.: a river which may flood close to our road). 
 
 To answer that, we build an abstraction of the system which can mimic those aspects we are interested in. For instance, if we focus on the example from the cooling water and the water body, we can model the heat distribution in the water body to know the final temperature. Here we are only modelling some aspects of the system we are studying. What about the response from the species living there? Well, **if we do not need to know about this, and this doesn't affect our results in a meaningful way, our model is good enough to answer our question!**
 
@@ -129,3 +129,10 @@ Imagine we want to predict the force of waves acting on a wall. To do so, we sta
 
 This is purely empirical and, thus, a data-driven model! We have simply used data to fit a relationship **input -> output**. These models can be very useful when trying to model very complex systems when there is lots of data available.
 
+% START-CREDIT
+% source: modelling_concepts
+```{attributiongrey} Attribution
+:class: attribution
+This chapter was written by Alessandro Cabboi, Patricia Mares Nasarre and Robert Lanzafame. {ref}`Find out more here <modelling_concepts_credit>`.
+```
+% END-CREDIT
