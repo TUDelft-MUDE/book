@@ -9,9 +9,24 @@ This chapter is written by Jaime Arriaga Garcia, Justin Pittman and Robert Lanza
 ```
 % END-CREDIT
 
-The Finite Difference Method (FDM) is a fundamental numerical approach used to solve differential equations that govern physical phenomena. These phenomena include heat flow through media, the distribution of stresses in solid structures, fluid flow through porous media, pollutant dispersion in the air and water, amongst others. Virtually, any physical phenomena can be tackled by solving numerically differential equations. The FDM provides engineers with the flexibility to model and analyze a complex geometries with varied past, present and future scenarios, optimize designs, ensure safety, reduce costs, and predict failures. Even more! 
+In the earth sciences, civil engineering and environmental engineering, processes and systems are often described by models based on differential equations.
+These equations involve derivatives of the states we are interested in, for example with respect to time and space.
+Some examples of phenomena in these fields modeled by differential equations are:
 
-In this Chapter, the fundamentals of numerical modelling and basic numerical methods are treated. More advanced techniques are also revised. The main focus is on Ordinary Differential Equations of varying orders. 
+- flow of water or heat through the subsurface,
+- the distribution of stresses in solid structures,
+- pollutant dispersion in the air and water,
+- traffic dynamics in an urban region,
+- chemical reactions and microbial processes, e.g. in waste water.
+
+While simple differential equations can be solved analytically, real-word situations often lead equations that cannot be solved exactly, for example because of complex geometries, spatially variable parameters or difficult non-linear terms.
+In these cases, we need to approximate the solution of the equation numerically.
+The animation in {numref}`NumericalMethodsRiver` illustrates how the output from such a complex numerical simulation can look like.
+
+This chapter is about the fundamentals of numerical modelling and basic numerical methods.
+For example, we will look into how we can approximate derivatives and integrals numerically.
+The main focus is on solution methods ordinary differential equations (ODE) of varying orders.
+Numerical approaches for solving partial differential equations (PDE) will be introduced in another chapter of this book.
 
 % MMMMM the following gif is large (30MB) and is manually added to server at the URL location below to prevent the book from becoming too large.
 
@@ -28,7 +43,7 @@ This figure was made by Amgad Omer of Deltares. {ref}`Find out more here <numeri
 ```{figure} https://files.mude.citg.tudelft.nl/NumericalMethodsRiver.gif
 :name: NumericalMethodsRiver
 
-Cool numerical model of the Jamuna river. Included here with permission of Amgad Omer of Deltares. {ref}`Find out more here <numerical_modelling_credit>`
+Numerical simulation of morphology in the Jamuna river. Included here with permission of Amgad Omer of Deltares. {ref}`Find out more here <numerical_modelling_credit>`
 
 ```
 
