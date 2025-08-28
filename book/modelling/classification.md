@@ -10,7 +10,7 @@ In any engineering discipline, **we interact with a system** (Earth, ecosystem, 
 
 To answer that, we build an abstraction of the system which can mimic those aspects we are interested in. For instance, if we focus on the example from the cooling water and the water body, we can model the heat distribution in the water body to know the final temperature. Here we are only modelling some aspects of the system we are studying. What about the response from the species living there? Well, **if we do not need to know about this, and this doesn't affect our results in a meaningful way, our model is good enough to answer our question!**
 
-```{figure} (https://files.mude.citg.tudelft.nl/modelSchematic.png)
+```{figure} https://files.mude.citg.tudelft.nl/modelSchematic.png
 :height: 600px
 :name: Modelling workflow
 :align: center
@@ -27,7 +27,7 @@ $$\begin{cases}x=v_0t\cos\theta \\ y=v_0t\sin\theta-\frac{1}{2}gt^2\end{cases}$$
 
 where $x$ and $y$ are the horizontal and vertical components of the position of the ball at time $t$, $v_0$ is the initial velocity, $\theta$ is the initial angle and $g$ is the gravity acceleration. The trajectory of the projectile depends on the velocity and angle we shoot the ball. In the figure below, different trajectories depending on $\theta$ and $v_0$ are shown. These are our predicted trajectories based on our very basic model.
 
-```{figure}(https://files.mude.citg.tudelft.nl/projectile.png)
+```{figure} https://files.mude.citg.tudelft.nl/projectile.png
 :name: Projectile
 :align: center
 :height: 400px
