@@ -1,14 +1,6 @@
 teachbooks
-jupyterbook_patches
-download_link_replacer
-sphinx-image-inverter
-sphinx-inline-tabs
 sphinx-tudelft-theme
-sphinx-named-colors
-docutils == 0.17.1
-teachbooks-sphinx-tippy #BUMP to v1.0.12
-sphinx-dropdown-toggle
-sphinx-iframes
-sphinx-accessibility
+
+git+https://github.com/TeachBooks/TeachBooks-Favourites
 
 git+https://github.com/TeachBooks/Sphinx-Thebe
