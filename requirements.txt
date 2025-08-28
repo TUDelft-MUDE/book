@@ -1,4 +1,7 @@
 teachbooks
 sphinx-tudelft-theme
+sphinx-inline-tabs
 
 git+https://github.com/TeachBooks/TeachBooks-Favourites
+
+docutils == 0.17.1
