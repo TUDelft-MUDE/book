@@ -1,5 +1,9 @@
 # The MUDE Book
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.16236358.svg)](https://doi.org/10.5281/zenodo.16236358)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.16909052.svg)](https://doi.org/10.5281/zenodo.16909052)
+[![call-deploy-book](https://github.com/TUDelft-MUDE/book/actions/workflows/call-deploy-book.yml/badge.svg)](https://github.com/TTUDelft-MUDE/book/actions/workflows/call-deploy-book.yml)
+
 This repository contains the source code for the MUDE Textbook. MUDE stands for Modelling, Uncertainty and Data for Engineers, a required module in the MSc programs from the faculty of Civil Engineering and Geosciences at Delft University of Technology in the Netherlands.
 
 This book is constantly in development, so feel free to contribute! You can do so directly by forking this repository and creating a pull request. If you have access to this repository, create a branch and pull request to contribute directly.
