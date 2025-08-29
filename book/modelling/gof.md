@@ -10,8 +10,14 @@ In order to illustrate these techniques, the following example will be used. Wav
 
 The first step when addressing a problem is to visualize it. Thus, the first GOF technique recommended here (note that it is not a metric) is visual inspection. It is common practice to plot the reference values against the predictions given by our model, as shown below. The perfect fit would correspond to all the points aligned with the 45-degrees line.
 
-{figure} https://files.mude.citg.tudelft.nl/waves_random.png
+```{figure} https://files.mude.citg.tudelft.nl/waves_random.png
+:height: 400px
+:name: gof
+:align: center
+
 Comparison between measured and predicted wave heights during a morning period. Please note that this data is randomised and is for educational purposes only.
+```
+
 
 Just using the above plot, we can see that the model tends to overpredict for taller waves. We can also see that there is a big variation between the actual data and our model.  But **how can we measure this?** 
 
