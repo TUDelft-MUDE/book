@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Hypothesis Test Power Demo (Right-sided)</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <style>
+      body {
+        margin: 0;
+        font-family: Helvetica, sans-serif;
+      }
+      .slider {
+        position: absolute;
+        width: 200px;
+      }
+      #slider_mu { top: 90%; left: 10%; }
+      #slider_sigma { top: 90%; left: 35%; }
+      #slider_alpha { top: 90%; left: 60%; }
+      label {
+        position: absolute;
+        font-size: 14px;
+      }
+      #label_mu { top: 85%; left: 10%; }
+      #label_sigma { top: 85%; left: 35%; }
+      #label_alpha { top: 85%; left: 60%; }
+    </style>
+  </head>
+  <body>
+    <svg id="plot" width="900" height="500"></svg>
+
+    <label id="label_mu"></label>
+    <input type="range" min="100" max="400" value="200" id="slider_mu" class="slider">
+
+    <label id="label_sigma"></label>
+    <input type="range" min="50" max="200" value="100" id="slider_sigma" class="slider">
+
+    <label id="label_alpha"></label>
+    <input type="range" min="1" max="20" value="5" id="slider_alpha" class="slider">
+
+    <script>
+      const svg = d3.select("#plot"),
+            width = +svg.attr("width"),
+            height = +svg.attr("height");
+
+      const margin = {top: 20, right: 20, bottom: 50, left: 60};
+      const innerW = width - margin.left - margin.right;
+      const innerH = height - margin.top - margin.bottom;
+
+      const g = svg.append("g").attr("transform", `translate(${margin.left},${margin.top})`);
+
+      const xScale = d3.scaleLinear().domain([-4,8]).range([0, innerW]);
+      const yScale = d3.scaleLinear().range([innerH, 0]);
+
+      const xAxis = g.append("g").attr("transform", `translate(0,${innerH})`);
+      const yAxis = g.append("g");
+
+      const line = d3.line()
+        .x(d => xScale(d.x))
+        .y(d => yScale(d.y));
+
+      const area = d3.area()
+        .x(d => xScale(d.x))
+        .y0(yScale(0))
+        .y1(d => yScale(d.y));
+
+      function pdf(x, mu, sigma) {
+        return (1/(sigma*Math.sqrt(2*Math.PI))) * Math.exp(-0.5 * Math.pow((x-mu)/sigma,2));
+      }
+
+      // rational approximation for inverse standard normal CDF (Acklam’s method)
+      function inversePhi(p) {
+        if (p <= 0 || p >= 1) return NaN;
+        const a1=-39.6968302866538, a2=220.946098424521, a3=-275.928510446969;
+        const a4=138.357751867269, a5=-30.6647980661472, a6=2.50662827745924;
+        const b1=-54.4760987982241, b2=161.585836858041, b3=-155.698979859887;
+        const b4=66.8013118877197, b5=-13.2806815528857;
+        const c1=-0.00778489400243029, c2=-0.322396458041136, c3=-2.40075827716184;
+        const c4=-2.54973253934373, c5=4.37466414146497, c6=2.93816398269878;
+        const d1=0.00778469570904146, d2=0.32246712907004, d3=2.445134137143;
+        const d4=3.75440866190742;
+        const p_low=0.02425, p_high=1-p_low;
+        let q,r;
+        if (p < p_low) {
+          q=Math.sqrt(-2*Math.log(p));
+          return (((((c1*q+c2)*q+c3)*q+c4)*q+c5)*q+c6)/
+                 ((((d1*q+d2)*q+d3)*q+d4)*q+1);
+        }
+        if (p <= p_high) {
+          q=p-0.5; r=q*q;
+          return (((((a1*r+a2)*r+a3)*r+a4)*r+a5)*r+a6)*q/
+                 (((((b1*r+b2)*r+b3)*r+b4)*r+b5)*r+1);
+        }
+        q=Math.sqrt(-2*Math.log(1-p));
+        return -(((((c1*q+c2)*q+c3)*q+c4)*q+c5)*q+c6)/
+                ((((d1*q+d2)*q+d3)*q+d4)*q+1);
+      }
+
+      function computeData(mu, sigma) {
+        const xs = d3.range(-4,8.01,0.05);
+        return xs.map(x => ({x: x, y: pdf(x,mu,sigma)}));
+      }
+
+      function update() {
+        let mu = +document.getElementById("slider_mu").value / 100;
+        let sigma = +document.getElementById("slider_sigma").value / 100;
+        let alpha = +document.getElementById("slider_alpha").value / 100;
+
+        // update labels with current values
+        document.getElementById("label_mu").textContent = `μₐ = ${mu.toFixed(2)}`;
+        document.getElementById("label_sigma").textContent = `σₐ = ${sigma.toFixed(2)}`;
+        document.getElementById("label_alpha").textContent = `α = ${(alpha*100).toFixed(1)}%`;
+
+        const dataH0 = computeData(0,1);
+        const dataHa = computeData(mu,sigma);
+
+        yScale.domain([0, d3.max([...dataH0, ...dataHa], d=>d.y)*1.1]);
+
+        xAxis.call(d3.axisBottom(xScale));
+        yAxis.call(d3.axisLeft(yScale));
+
+        // right-sided critical value
+        const c = inversePhi(1 - alpha);
+
+        // curves
+        g.selectAll("#h0").data([dataH0])
+          .join("path")
+          .attr("id","h0").attr("d",line)
+          .attr("stroke","black").attr("fill","none").attr("stroke-width",2);
+
+        g.selectAll("#ha").data([dataHa])
+          .join("path")
+          .attr("id","ha").attr("d",line)
+          .attr("stroke","orange").attr("fill","none").attr("stroke-width",2);
+
+        // remove old shading
+        g.selectAll(".shade").remove();
+
+        // Type I error (red) under H0
+        const typeI = dataH0.filter(d => d.x >= c);
+        if (typeI.length>1)
+          g.append("path").datum(typeI).attr("class","shade").attr("d",area).attr("fill","red").attr("opacity",0.3);
+
+        // Type II error (blue) under Ha
+        const typeII = dataHa.filter(d => d.x <= c);
+        if (typeII.length>1)
+          g.append("path").datum(typeII).attr("class","shade").attr("d",area).attr("fill","blue").attr("opacity",0.3);
+
+        // Power (green) under Ha
+        const power = dataHa.filter(d => d.x >= c);
+        if (power.length>1)
+          g.append("path").datum(power).attr("class","shade").attr("d",area).attr("fill","green").attr("opacity",0.3);
+      }
+
+      update();
+      d3.selectAll(".slider").on("input", update);
+    </script>
+  </body>
+</html>
