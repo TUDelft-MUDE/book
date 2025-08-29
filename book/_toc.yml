@@ -3,7 +3,6 @@ root: intro
 
 
 parts:
-# START REMOVE-FROM-PUBLISH
   - caption: Q1 Topics
     numbered: 2
     chapters: 
@@ -13,6 +12,7 @@ parts:
       - file: modelling/decisions
       - file: modelling/validate_verify
       - file: modelling/gof
+# START REMOVE-FROM-PUBLISH
     - file: numerical_methods/overview
       sections:
       - file: numerical_methods/1-revision-of-concepts.ipynb
