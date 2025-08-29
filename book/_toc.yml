@@ -12,39 +12,6 @@ parts:
       - file: modelling/decisions
       - file: modelling/validate_verify
       - file: modelling/gof
-    - file: propagation_uncertainty/overview
-      sections:
-      - file: propagation_uncertainty/00a_CovCorr.md
-      - file: propagation_uncertainty/00b_MultivariateNormal
-      - file: propagation_uncertainty/uncertainty
-      - file: propagation_uncertainty/01_ErrorPropagation.md
-      - file: propagation_uncertainty/02_LinearPropagation.md
-  
-
-    - file: observation_theory/overview.md
-      sections:
-      - file: observation_theory/01_Introduction.md
-      - file: observation_theory/02_LeastSquares.md  
-        sections:
-        - file: observation_theory/02_LeastSquares_NB.ipynb  
-      - file: observation_theory/03_WeightedLSQ.md
-        sections:
-        - file: observation_theory/03_Notebook_WLS.ipynb 
-      - file: observation_theory/04_BLUE.md
-      - file: observation_theory/05_Precision.md
-        sections:
-        - file: observation_theory/05_Notebook_ConfInt.ipynb 
-      - file: observation_theory/06_MLE.md
-      - file: observation_theory/07_NLSQ.md
-        sections:
-        - file: observation_theory/07_Notebook_NLSQ.ipynb
-      - file: observation_theory/08_Testing.md
-      - file: observation_theory/09_TestingSandM.md
-        sections:
-        - file: observation_theory/09_Notebook_Testing.ipynb
-        - file: observation_theory/09_Notebook_OMT.ipynb
-      - file: observation_theory/99_NotationFormulas
-    
     - file: numerical_methods/overview
       sections:
       - file: numerical_methods/1-revision-of-concepts.ipynb
@@ -94,6 +61,41 @@ parts:
         #  - file: multivariate/design/exercise_solutions
       #- file: multivariate/test_pyvinecopulib
       #- file: multivariate/test_bivariate
+    
+    - file: propagation_uncertainty/overview
+      sections:
+      - file: propagation_uncertainty/00a_CovCorr.md
+      - file: propagation_uncertainty/00b_MultivariateNormal
+      - file: propagation_uncertainty/uncertainty
+      - file: propagation_uncertainty/01_ErrorPropagation.md
+      - file: propagation_uncertainty/02_LinearPropagation.md
+  
+
+    - file: observation_theory/overview.md
+      sections:
+      - file: observation_theory/01_Introduction.md
+      - file: observation_theory/02_LeastSquares.md  
+        sections:
+        - file: observation_theory/02_LeastSquares_NB.ipynb  
+      - file: observation_theory/03_WeightedLSQ.md
+        sections:
+        - file: observation_theory/03_Notebook_WLS.ipynb 
+      - file: observation_theory/04_BLUE.md
+      - file: observation_theory/05_Precision.md
+        sections:
+        - file: observation_theory/05_Notebook_ConfInt.ipynb 
+      - file: observation_theory/06_MLE.md
+      - file: observation_theory/07_NLSQ.md
+        sections:
+        - file: observation_theory/07_Notebook_NLSQ.ipynb
+      - file: observation_theory/08_Testing.md
+      - file: observation_theory/09_TestingSandM.md
+        sections:
+        - file: observation_theory/09_Notebook_Testing.ipynb
+        - file: observation_theory/09_Notebook_OMT.ipynb
+      - file: observation_theory/99_NotationFormulas
+
+
 
   - caption: Q2 Topics
     numbered: 2
