@@ -258,7 +258,7 @@ parts:
       #   - file: pd/notebooks/contamination/Exercise_Contamination_Render.ipynb
       #   - file: pd/notebooks/traffic/Exercise_Traffic_Render.ipynb
 
-
+# END REMOVE-FROM-PUBLISH
   - caption: Programming
     numbered: false
     chapters:
@@ -268,6 +268,7 @@ parts:
       - external: https://github.com/TeachBooks/learn-programming/blob/mude-2025/book/environments.md
       - external: https://github.com/TeachBooks/learn-programming/blob/mude-2025/book/install/common/cli.md
       - file: programming/week_1_1/files.md
+# START REMOVE-FROM-PUBLISH
     - file: programming/week_1_2
     - file: programming/week_1_3
       sections:
