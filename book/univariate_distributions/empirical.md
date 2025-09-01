@@ -57,6 +57,15 @@ $F(x_2)-F(x_1)$. When working with a finite set of samples, we can compute the d
 
 The element below illustrates the resulting histogram: 
 
+% START-CREDIT
+% source: maxramgraber
+````{margin}
+```{attributiongrey} Attribution
+:class: attribution
+This interactive figure is created by Max Ramgraber. {ref}`Find out more here <distributions_credit>`.
+```
+````
+% END-CREDIT
 
 ````{iframe-figure} ../_static/elements/element_empirical_wind_speed_pdf.html
 :name: empirical_wind_speed_pdf
