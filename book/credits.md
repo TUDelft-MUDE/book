@@ -1,50 +1,74 @@
 (credits)=
 # Credits and License
 
-You can refer to this book in its entirety as:
+You can refer to the most recent version of this book as:
 
-> Lanzafame, R., van Woudenberg, T., Verhagen, S. (2024), Modelling, Uncertainty and Data for Engineers (MUDE) Textbook, Delft University of Technology. https://mude.citg.tudelft.nl/book/2024, CC BY 4.0. [doi:10.5281/zenodo.16236358](https://doi.org/10.5281/zenodo.16236358).
+> Lanzafame, R., van Woudenberg, T., Verhagen, S. (Eds.) (n.d.), Modelling, Uncertainty and Data for Engineers (MUDE) Textbook, Delft University of Technology. https://mude.citg.tudelft.nl/book, CC BY 4.0.
+
+The introduction, structure of the book and formatting of contents is done under direction of the Editors, in collaboration with a large team of co-authors and student assistants. Some chapters and pages have additional primary authors who are identified within the book either at the bottom of the first page in a chapter, or at the bottom of an individual page, as necessary. If an author is not listed on a particular chapter or page, the editors may be attributed as the authors. Furthermore, as contents of this book may change each academic year, we cannot guarantee that chapter titles and URL's will remain static indefinitely. Therefore, if it is important for you to reference a specific location within the book, we recommend including the complete URL and version in your reference:
+
+> `<Primary Authors>`, `<Title of Chapter or Page>`. In Lanzafame et al. (n.d.), _Modelling, Uncertainty and Data for Engineers (MUDE) Textbook._ Delft University of Technology. https://mude.citg.tudelft.nl/book/`<year>/<...>`, version `<version_number>`, CC BY 4.0.
+
+The book in its entirety is available in the 2024 edition (2025 edition will follow in spring 2026), please note that only for complete versions of the book a DOI is created. Refer to this version as follows:
+
+> Lanzafame, R., van Woudenberg, T., Verhagen, S. (Eds.) (2024), Modelling, Uncertainty and Data for Engineers (MUDE) Textbook, Delft University of Technology. https://mude.citg.tudelft.nl/book/2024, version v2024.1.0, CC BY 4.0. [doi:10.5281/zenodo.16236358](https://doi.org/10.5281/zenodo.16236358).
 
 ````{admonition} BibTeX Citation
 :class: tip, dropdown
 
-If you would like to refer to the MUDE Textbook with BibTeX (e.g., in a TeachBook or Jupyter Book), the following entry can be used in a  `bib` file to get close to the reference shown above. Use the GitHub repository for this book as a reference for setting up APA citations (if desired).
+If you would like to refer to the MUDE Textbook with BibTeX (e.g., in a TeachBook or Jupyter Book), the following entries can be used in a  `bib` file to get close to the references shown above. Use the GitHub repository for this book as a reference for setting up APA citations (if desired).
 
 ```bibtex
-@misc{mude2024,
+@book{mude_most_recent,
   title={Modelling, {U}ncertainty and {D}ata for {E}ngineers ({MUDE}) {T}extbook},
-  author={Lanzafame, Robert and van Woudenberg, Tom and Verhagen, Sandra},
-  year={2024},
-  note={Delft University of Technology. {https://mude.citg.tudelft.nl/book/2024} CC BY 4.0},
-  doi={10.5281/zenodo.16236358},
+  editor={Lanzafame, Robert and van Woudenberg, Tom and Verhagen, Sandra},
+  year={n.d.},
+  publisher={Delft University of Technology},
+  note={{https://mude.citg.tudelft.nl/book} CC BY 4.0}
 }
 ```
 
-The text citation is {cite:t}`mude2024`and the parenthetical citation is {cite:p}`mude2024`.
+or including a specific location and version (URL and version number to be adapted):
+
+```bibtex
+@book{mude_most_recent,
+  title={Modelling, {U}ncertainty and {D}ata for {E}ngineers ({MUDE}) {T}extbook},
+  editor={Lanzafame, Robert and van Woudenberg, Tom and Verhagen, Sandra},
+  year={n.d.},
+  publisher={Delft University of Technology},
+  note={{https://mude.citg.tudelft.nl/book/`<year>/<...>`},version `<version_number>`, CC BY 4.0}
+}
+```
+
+The text citation is {cite:t}`mude_most_recent` and the parenthetical citation is {cite:p}`mude_most_recent`.
+
+Or for the complete 2024 edition:
+
+```bibtex
+@book{mude2024,
+  title={Modelling, {U}ncertainty and {D}ata for {E}ngineers ({MUDE}) {T}extbook},
+  editor={Lanzafame, Robert and van Woudenberg, Tom and Verhagen, Sandra},
+  year={2024},
+  publisher={Delft University of Technology},
+  edition={v2024.1.0},
+  note={{https://mude.citg.tudelft.nl/book/2024} CC BY 4.0},
+  doi={10.5281/zenodo.16236358}
+}
+```
+
+The text citation is {cite:t}`mude2024` and the parenthetical citation is {cite:p}`mude2024`.
 
 ````
 
-The introduction, structure of the book and formatting of contents is done under direction of the Editors (Robert Lanzafame, Tom van Woudenberg and Sandra Verhagen), in collaboration with a large team of co-authors and student assistants. Some chapters and pages have additional primary authors who are identified within the book either at the bottom of the first page in a chapter, or at the bottom of an individual page, as necessary. If an author is not listed on a particular chapter or page, the editors may be attributed as the authors.
-
-You can refer to individual chapters or pages within this book as:
-
-> `<Primary Authors>` (2024) `<Title of Chapter or Page>`. In Lanzafame et al. (Eds.), _Modelling, Uncertainty and Data for Engineers (MUDE) Textbook._ Delft University of Technology. https://mude.citg.tudelft.nl/book.
-
-As contents of this book may change each academic year, we cannot guarantee that chapter titles and URL's will remain static indefinitely. Therefore, if it is important for you to reference a specific location within the book, we recommend including the complete URL and date of access in your reference. You can refer to individual chapters or pages within this book as:
-
-> `<Primary Authors>` (2024) `<Title of Chapter or Page>`. In Lanzafame et al. (Eds.), _Modelling, Uncertainty and Data for Engineers (MUDE) Textbook._ Delft University of Technology. https://mude.citg.tudelft.nl/book (chapter `./book/intro/`, retrieved [`<date>`]).
-
-Better yet, include a link to the specific commit! _If you know what this means, we assume you know how to do it._
-
 ## How the book is made
 
-This book is created using open source tools: it is a Jupyter Book that uses a number of features from [TeachBooks](https://teachbooks.io/) and is written using Markdown, Jupyter notebooks and Python files to generate some figures. The source files are stored on a public GitHub repository [github.com/TUDelft-MUDE/book](https://github.com/tudelft-mude/book/). Zenodo is used to archive all open versions of the book (beginning with the 2024-25 academic year) and to provide a DOI ([10.5281/zenodo.16236358](https://doi.org/10.5281/zenodo.16236358)).  View the repository README file or contact the editors for additional and up-to-date information.
+This book is created using open source tools: it is a Jupyter Book that uses a number of features from [TeachBooks](https://teachbooks.io/) and is written using Markdown, Jupyter notebooks and Python files to generate some figures. The source files are stored on a public GitHub repository [github.com/TUDelft-MUDE/book](https://github.com/tudelft-mude/book/). Zenodo is used to archive all open versions of the book (beginning with the 2024-25 academic year) and to provide a DOI ([10.5281/zenodo.16223061](https://doi.org/10.5281/zenodo.16223061)).  View the repository README file or contact the editors for additional and up-to-date information.
 
 ## Acknowledgements
 
-This book has many contributors, many of whom are also key members of the MUDE Team, as well as critical feedback from MUDE students. The sections below list the primary authors and contributors for each chapter, buit is unfortunately not possible to list all of the small contributions from various people from within and outside Delft University of Technology, not list all contributions in detail.
+This book has many contributors, many of whom are also key members of the MUDE Team, as well as critical feedback from MUDE students. The sections below list the primary authors and contributors for each chapter, buit is unfortunately not possible to list all of the small contributions from various people from within and outside Delft University of Technology, not list all contributions in detail. A special note should go to the MUDE management team, which take a lead in organizing the module and keeping this book up-to-date with the latest course developments.
 
-A  better way to see the contributions is to check the [Contributors Page](https://github.com/TUDelft-MUDE/book/graphs/contributors) of the GitHub repository.
+A better way to see the contributions is to check the [Contributors Page](https://github.com/TUDelft-MUDE/book/graphs/contributors) of the GitHub repository.
 
 A big "thank you" is also due to the Educational Management Team of the Civil Engineering and Geosciences Faculty at Delft University of Technology for giving the MUDE Team financial and organizational support during the early years of MUDE (especially 2022-2024), in particular Hans Welleman, Director of Education of the faculty. Without the freedom and support to experiment with new tools, this book (and [TeachBooks](https://teachbooks.io/) as well!) would not exist!
 
@@ -71,7 +95,7 @@ CC BY conditions are _not_ applicable to some resources included in this book wh
 (internal_resources)=
 ## Individual Chapters and Pages
 
-Credits are provided here for chapters and pages that are released under the license of this book (internal resources). Use the guidance provided above to properly share, reuse and cite relevant chapters, pages or any other resources from this book.
+Credits are provided here for chapters and pages that are released under the license of this book (internal resources). Please note that this is a living document and will be updated as new contributions are made. Whenever a complete version of the book is published, the state of contributions is finalized for that version. Use the guidance provided above to properly share, reuse and cite relevant chapters, pages or any other resources from this book.
 
 (modelling_concepts_credit)=
 ### Chapter: Modelling Concepts
@@ -169,7 +193,7 @@ Credits are provided here for chapters and pages that are released under the lic
 >
 > Special thanks goes to:
 > - Berend Bouvy, who created a number ofinteractive figures and exercises, as well as provided critical feedback.
-> - Serge Kaplev, who provided critical feedback and suggestions for the theoretical content.
+> - Serge Kaplev and Lucas Alvarez Navarro, who provided critical feedback and suggestions for the theoretical content.
 > - Antonio Magherini, who created the first draft material from powerpoint slides and prepared notebooks as exercises.
 > 
 > The following resources are used in this chapter but are _not_ included under the CC BY license of this book:
