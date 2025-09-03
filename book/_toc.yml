@@ -269,6 +269,9 @@ parts:
       - file: programming/week_1_1/files.md
 # START REMOVE-FROM-PUBLISH
     - file: programming/week_1_2
+      sections:
+      - file: programming/week_1_2/filepaths
+      - file: programming/week_1_2/markdown
     - file: programming/week_1_3
       sections:
       - file: external/learn-programming/book/install/ide/vsc/vs_live_share
