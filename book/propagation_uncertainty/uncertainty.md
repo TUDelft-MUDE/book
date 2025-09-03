@@ -33,6 +33,6 @@ Note that there is no universal uncertainty classification. You can read more ab
 % source: uncertainty_propagation
 ```{attributiongrey} Attribution
 :class: attribution
-This chapter was written by Sandra Verhagen. {ref}`Find out more here <uncertainty_propagation_credit>`.
+This page was written by Sandra Verhagen. 
 ```
 % END-CREDIT
