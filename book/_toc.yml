@@ -2,7 +2,6 @@ format: jb-book
 root: intro
 
 parts:
-# START REMOVE-FROM-PUBLISH
   - caption: Q1 Topics
     numbered: 2
     chapters: 
@@ -10,41 +9,10 @@ parts:
       sections:
       - file: modelling/classification
       - file: modelling/decisions
+      - file: propagation_uncertainty/uncertainty.md
       - file: modelling/validate_verify
       - file: modelling/gof
-    - file: propagation_uncertainty/overview
-      sections:
-      - file: propagation_uncertainty/00a_CovCorr.md
-      - file: propagation_uncertainty/00b_MultivariateNormal
-      - file: propagation_uncertainty/uncertainty
-      - file: propagation_uncertainty/01_ErrorPropagation.md
-      - file: propagation_uncertainty/02_LinearPropagation.md
-  
-
-    - file: observation_theory/overview.md
-      sections:
-      - file: observation_theory/01_Introduction.md
-      - file: observation_theory/02_LeastSquares.md  
-        sections:
-        - file: observation_theory/02_LeastSquares_NB.ipynb  
-      - file: observation_theory/03_WeightedLSQ.md
-        sections:
-        - file: observation_theory/03_Notebook_WLS.ipynb 
-      - file: observation_theory/04_BLUE.md
-      - file: observation_theory/05_Precision.md
-        sections:
-        - file: observation_theory/05_Notebook_ConfInt.ipynb 
-      - file: observation_theory/06_MLE.md
-      - file: observation_theory/07_NLSQ.md
-        sections:
-        - file: observation_theory/07_Notebook_NLSQ.ipynb
-      - file: observation_theory/08_Testing.md
-      - file: observation_theory/09_TestingSandM.md
-        sections:
-        - file: observation_theory/09_Notebook_Testing.ipynb
-        - file: observation_theory/09_Notebook_OMT.ipynb
-      - file: observation_theory/99_NotationFormulas
-    
+# START REMOVE-FROM-PUBLISH
     - file: numerical_methods/overview
       sections:
       - file: numerical_methods/1-revision-of-concepts.ipynb
@@ -95,6 +63,40 @@ parts:
         #  - file: multivariate/design/exercise_solutions
       #- file: multivariate/test_pyvinecopulib
       #- file: multivariate/test_bivariate
+    
+    - file: propagation_uncertainty/overview
+      sections:
+      - file: propagation_uncertainty/00a_CovCorr.md
+      - file: propagation_uncertainty/00b_MultivariateNormal
+      - file: propagation_uncertainty/01_ErrorPropagation.md
+      - file: propagation_uncertainty/02_LinearPropagation.md
+  
+
+    - file: observation_theory/overview.md
+      sections:
+      - file: observation_theory/01_Introduction.md
+      - file: observation_theory/02_LeastSquares.md  
+        sections:
+        - file: observation_theory/02_LeastSquares_NB.ipynb  
+      - file: observation_theory/03_WeightedLSQ.md
+        sections:
+        - file: observation_theory/03_Notebook_WLS.ipynb 
+      - file: observation_theory/04_BLUE.md
+      - file: observation_theory/05_Precision.md
+        sections:
+        - file: observation_theory/05_Notebook_ConfInt.ipynb 
+      - file: observation_theory/06_MLE.md
+      - file: observation_theory/07_NLSQ.md
+        sections:
+        - file: observation_theory/07_Notebook_NLSQ.ipynb
+      - file: observation_theory/08_Testing.md
+      - file: observation_theory/09_TestingSandM.md
+        sections:
+        - file: observation_theory/09_Notebook_Testing.ipynb
+        - file: observation_theory/09_Notebook_OMT.ipynb
+      - file: observation_theory/99_NotationFormulas
+
+
 
   - caption: Q2 Topics
     numbered: 2
@@ -256,41 +258,17 @@ parts:
       #   - file: pd/notebooks/contamination/Exercise_Contamination_Render.ipynb
       #   - file: pd/notebooks/traffic/Exercise_Traffic_Render.ipynb
 
-
+# END REMOVE-FROM-PUBLISH
   - caption: Programming
     numbered: false
     chapters:
     - file: programming/week_1_1
-      title: "Week 1.1: Getting Started!"
       sections:
-      - file: programming/week_1_1/environments
-        title: Computers and Environments
-        sections:
-        - file: external/learn-programming/book/computers
-          title: Computers
-        - file: external/learn-programming/book/environments
-          title: Computing Environments
-      - file: programming/week_1_1/install
-        title: Software Installation
-        sections:
-        - file: external/learn-programming/book/install/python/miniconda
-          title: Install Miniconda
-          sections:
-          - file: external/learn-programming/book/install/common/hidden
-            title: Hidden Files
-          - file: external/learn-programming/book/install/common/cli
-            title: Command Line Interface (CLI)
-          - file: external/learn-programming/book/install/common/env_vars_windows
-            title: Environment Variables (Windows)
-        - file: external/learn-programming/book/install/ide/vsc
-          title: Visual Studio 
-          sections:
-          - file: external/learn-programming/book/install/ide/vsc/extensions
-            title: Extensions
-      - file: programming/week_1_1/files
-        title: Files and Folders
-      - file: programming/week_1_1/warmup
-        title: Python Warmup
+      - external: https://github.com/TeachBooks/learn-programming/blob/mude-2025/book/computers.md
+      - external: https://github.com/TeachBooks/learn-programming/blob/mude-2025/book/environments.md
+      - external: https://github.com/TeachBooks/learn-programming/blob/mude-2025/book/install/common/cli.md
+      - file: programming/week_1_1/files.md
+# START REMOVE-FROM-PUBLISH
     - file: programming/week_1_2
     - file: programming/week_1_3
       sections:
@@ -339,4 +317,5 @@ parts:
     numbered: false
     chapters:
     - file: references
+    - file: changelog
     - file: credits
