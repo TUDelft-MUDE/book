@@ -34,6 +34,6 @@ Note that there is no universal uncertainty classification. You can read more ab
 % source: modelling_concepts
 ```{attributiongrey} Attribution
 :class: attribution
-This page was written by Sandra Verhagen. {ref}`Find out more here <modelling_concepts_credit>`. 
+This chapter was written by Alessandro Cabboi, Patricia Mares Nasarre and Robert Lanzafame. {ref}`Find out more here <modelling_concepts_credit>`.
 ```
 % END-CREDIT
