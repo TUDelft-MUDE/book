@@ -2,7 +2,6 @@ format: jb-book
 root: intro
 
 parts:
-# START REMOVE-FROM-PUBLISH
   - caption: Q1 Topics
     numbered: 2
     chapters: 
@@ -10,8 +9,10 @@ parts:
       sections:
       - file: modelling/classification
       - file: modelling/decisions
+      - file: propagation_uncertainty/uncertainty.md
       - file: modelling/validate_verify
       - file: modelling/gof
+# START REMOVE-FROM-PUBLISH
     - file: numerical_methods/overview
       sections:
       - file: numerical_methods/1-revision-of-concepts.ipynb
@@ -66,7 +67,6 @@ parts:
       sections:
       - file: propagation_uncertainty/00a_CovCorr.md
       - file: propagation_uncertainty/00b_MultivariateNormal
-      - file: propagation_uncertainty/uncertainty
       - file: propagation_uncertainty/01_ErrorPropagation.md
       - file: propagation_uncertainty/02_LinearPropagation.md
   
@@ -257,7 +257,7 @@ parts:
       #   - file: pd/notebooks/contamination/Exercise_Contamination_Render.ipynb
       #   - file: pd/notebooks/traffic/Exercise_Traffic_Render.ipynb
 
-
+# END REMOVE-FROM-PUBLISH
   - caption: Programming
     numbered: false
     chapters:
@@ -267,6 +267,7 @@ parts:
       - external: https://github.com/TeachBooks/learn-programming/blob/mude-2025/book/environments.md
       - external: https://github.com/TeachBooks/learn-programming/blob/mude-2025/book/install/common/cli.md
       - file: programming/week_1_1/files.md
+# START REMOVE-FROM-PUBLISH
     - file: programming/week_1_2
       sections:
       - file: programming/week_1_2/filepaths
