@@ -31,17 +31,17 @@ parts:
       sections:
       - file: univariate_distributions/PDF_CDF
       - file: univariate_distributions/empirical
-      - file: univariate_distributions/Param_distr.md
+      - file: univariate_distributions/nonGaussian.md
+      - file: univariate_distributions/parametric.md
         sections: 
-        - file: univariate_distributions/Uniform.md
-        - file: univariate_distributions/Gaussian.md
-        - file: univariate_distributions/Lognormal.md
-        - file: univariate_distributions/Gumbel.md
-        - file: univariate_distributions/Exponential.md
+        - file: univariate_distributions/uniform.md
+        - file: univariate_distributions/gaussian.md
+        - file: univariate_distributions/lognormal.md
+        - file: univariate_distributions/gumbel.md
+        - file: univariate_distributions/exponential.md
         - file: univariate_distributions/beta.md
-        - file: univariate_distributions/other_distr.md
-        - file: univariate_distributions/Loc-scale.ipynb
         - file: univariate_distributions/summary.md
+      - file: univariate_distributions/parameterization.ipynb
       - file: univariate_distributions/fitting.md
         sections: 
         - file: univariate_distributions/moments.md
