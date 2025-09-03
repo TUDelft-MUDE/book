@@ -102,6 +102,8 @@ Credits are provided here for chapters and pages that are released under the lic
 
 > {ref}`Modeling concepts <modelling_concepts>` is written by Alessandro Cabboi, Patricia Mares Nasarre and Robert Lanzafame.
 >
+> The page {ref}'Uncertainty classification <uncertainty_classification>' is written by Sandra Verhagen. 
+> 
 > Special thanks goes to João Moura Pereira de Lucas Teixeira, who created first draft of pages from powerpoint slides.
 
 (uncertainty_propagation_credit)=

@@ -29,10 +29,11 @@ Note that there is no universal uncertainty classification. You can read more ab
 
 [^ref2]: Van Gelder (2000). Statistical methods for the risk-based design of civil structures. PhD thesis. TUDelft. http://resolver.tudelft.nl/uuid:6a62d6fa-cbcc-4c38-af8a-027c3d191a9d
 
+
 % START-CREDIT
-% source: uncertainty_propagation
+% source: modelling_concepts
 ```{attributiongrey} Attribution
 :class: attribution
-This page was written by Sandra Verhagen. 
+This page was written by Sandra Verhagen. {ref}`Find out more here <modelling_concepts_credit>`. 
 ```
 % END-CREDIT
