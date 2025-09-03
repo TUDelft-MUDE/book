@@ -27,7 +27,7 @@ parts:
       - file: numerical_methods/8-boundary-value-problem.ipynb
       - file: numerical_methods/9-starting_with_PDEs.ipynb
 
-    - file: univariate_distributions/introduction
+    - file: univariate_distributions/overview
       sections:
       - file: univariate_distributions/PDF_CDF
       - file: univariate_distributions/empirical
