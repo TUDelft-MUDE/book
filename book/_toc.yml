@@ -9,6 +9,7 @@ parts:
       sections:
       - file: modelling/classification
       - file: modelling/decisions
+      - file: propagation_uncertainty/uncertainty.md
       - file: modelling/validate_verify
       - file: modelling/gof
 # START REMOVE-FROM-PUBLISH
@@ -66,7 +67,6 @@ parts:
       sections:
       - file: propagation_uncertainty/00a_CovCorr.md
       - file: propagation_uncertainty/00b_MultivariateNormal
-      - file: propagation_uncertainty/uncertainty
       - file: propagation_uncertainty/01_ErrorPropagation.md
       - file: propagation_uncertainty/02_LinearPropagation.md
   
