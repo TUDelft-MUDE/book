@@ -84,9 +84,9 @@ Once we know $\beta$, we can use Equation 1 to derive $\mu$:
 $$
 \begin{aligned}
 E[X] &= \mu + \gamma \beta && (\text{Equation 1})\\
-3.02 &= \mu + 0.577 \beta && (\text{substitute }E[X])\\
+3.02 &= \mu + 0.577 \beta && (\text{substitute }E[X]\text{ and }\gamma)\\
 \mu &= 3.02 - 0.577 \beta && (\text{solve for }\mu) \\
-\mu &= 3.02 - 0.577 \cdot 0.77 && (\text{substitute }\mu) \\
+\mu &= 3.02 - 0.577 \cdot 0.77 && (\text{substitute }\beta) \\
 \mu &\approx 2.57 && \\
 \end{aligned}
 $$
