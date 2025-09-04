@@ -58,6 +58,6 @@ More generally, beta pdfs can also be rescaled (by adjusting the location and sc
 % source: distributions
 ```{attributiongrey} Attribution
 :class: attribution
-This chapter was written by Maximilian Ramgraber. {ref}`Find out more here <distributions_credit>`.
+This chapter was written by Max Ramgraber. {ref}`Find out more here <distributions_credit>`.
 ```
 % END-CREDIT
