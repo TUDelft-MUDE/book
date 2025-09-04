@@ -1,11 +1,19 @@
-(week_1_1_programming)=
-# Getting Started!
+(gurobi)=
+# Gurobi Optimization Software
 
 % START-CREDIT
+% source: programming
 ```{attributiongrey} Attribution
 :class: attribution
-This chapter is written by Tom van Woudenberg and Robert Lanzafame. Furthermore, content from  _Learn Programming for Engineers_ {cite:p}`learn-programming` is used. {ref}`Find out more here <programming_credit>`.
+This chapter reuses material from _Python for Engineers_. {ref}`Find out more here <programming_credit>`.
 ```
 % END-CREDIT
 
-The purpose of this week is to get software installed and be prepared to work with Python code and Jupyter Notebooks. This includes some programming "theory" to help you understand what your computer is capable of and an (maybe old-fashioned, but) advanced way of interacting with it using the command line interface.
+Gurobi is an optimization software that consists of two parts:
+
+1. A closed-source optimizer software that can be installed on your computer and requires a license (an academic license is free).
+2. An open-source Python package that acts as an _interface_ to the optimizer, allowing analysis to be run and interpreted using Python.
+
+Once both tools are installed, it is then easy to use the Gurobi optimizer via an easy-to-use interface, for example: Jupyter notebooks.
+
+The following pages illustrate how to install and use Gurobi; the former is covered in Week 2.4, the latter in Week 2.5.
