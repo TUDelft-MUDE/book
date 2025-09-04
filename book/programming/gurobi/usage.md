@@ -31,44 +31,44 @@ help(gurobipy.model.addVars)
 
 You can always ask for help to understand a function of gurobi
 
-```
+```python
 help(gurobipy.model.addVars)
 ```
 
 Create a Gurobi model
 
-```
+```python
 model = gp.Model("Project_Selection")
 ```
 
 Define variables (binary, in this case):
 
-```
+```python
 x = model.addVars(num_projects, vtype=gp.GRB.BINARY, name="x")
 ```
 
 Objective function: Minimize environmental impact
 
-```
+```python
 model.setObjective(sum(I[i] * x[i] for i in range(num_projects)), gp.GRB.MINIMIZE)
 ```
 
 Constraint: Select exactly 3 projects
-```
+```python
 model.addConstr(x.sum() == 3, "Select_Projects")
 ```
 
 Constraint: Number of type 2 projects must be at least as many as type 1 projects selected
-```
+```python
 model.addConstr(sum(x[i] for i in range(num_type2_projects, num_projects)) - sum(x[i] for i in range(num_type1_projects)) >= 0, "Type_Constraint")
 ```
 
 Constraint: Minimum profit requirement
-```
+```python
 model.addConstr(sum(P[i] * x[i] for i in range(num_projects)) >= beta, "Minimum_Profit")
 ```
 
 Optimize the model
-```
+```python
 model.optimize()
 ```
