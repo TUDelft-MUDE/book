@@ -142,7 +142,7 @@ Credits are provided here for chapters and pages that are released under the lic
 (distributions_credit)=
 ### Chapters: Univariate and Multivariate Continuous Distributions
 
-> {ref}`Univariate Continuous Distributions <cont_dist>` and {ref}`Multivariate Distributions <mult_dist>` are written by Patricia Mares Nasarre and Robert Lanzafame.
+> {ref}`Univariate Continuous Distributions <cont_dist>` and {ref}`Multivariate Distributions <mult_dist>` are written by Patricia Mares Nasarre, Robert Lanzafame and Maximilian Ramgraber.
 >
 > Special thanks goes to Oswaldo Morales Napoles and Elisa Ragno for suggestions on the theoretical and didactic framework, as well as critical feedback and review.
 >

@@ -1,9 +1,9 @@
 
 # Parametric Distributions
 
-In the previous section, you were introduced to the concepts of random variable, probability density function (PDF) and cumulative distribution function (CDF) and how to compute them using empirical data. Here, the concept of parametric distribution as a model of the observed empirical distribution is introduced.
+In the previous sections, you were introduced to the concepts of random variable, probability density function (PDF) and cumulative distribution function (CDF) and how to compute them using empirical data. We also revisited the Gaussian distribution. Here, the concept of **parametric** distribution as a model of the observed empirical distribution is introduced, where we focus in particular on models that are both commonly used and have a relatively straightforward PDF and/or CDF to study analytically (i.e., with equations, not only pre-existing computer code!).
 
-Parametric distributions functions are mathematical models for the empirical distributions that we observe in our data. In the preceding section, we have seen how we can derive an empirical PDF and CDF from data. As we continue to collect data, we can reduce the width of our histogram bins even further until our bins become infinitesimally thin, and we switch from discrete interval probabilities to **probability densities**. 
+Parametric distribution functions are mathematical models for the empirical distributions that we observe in our data. In the preceding section, we have seen how we can derive an empirical PDF and CDF from data. As we continue to collect data, we can reduce the width of our histogram bins even further until our bins become infinitesimally thin, and we switch from discrete interval probabilities to **probability densities**. 
 
 You may have noticed already that the height of these histogram bins, and their corresponding interval probabilities, often tend to vary smoothly over $x$. A parametric pdf seeks to identify these variations and defines a function that describes them. Likewise, a parametric CDF is just an equation which relates the non-exceedance probability with the value of the studied random variable. This equation has some parameters or coefficients that need to be fitted using our observations. 
 
