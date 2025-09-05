@@ -13,7 +13,6 @@ parts:
       - file: propagation_uncertainty/uncertainty.md
       - file: modelling/validate_verify
       - file: modelling/gof
-# START REMOVE-FROM-PUBLISH
     - file: numerical_methods/overview
       sections:
       - file: numerical_methods/1-revision-of-concepts.ipynb
@@ -27,7 +26,7 @@ parts:
       - file: numerical_methods/7-implicit_methods_nonlinear_ode.ipynb
       - file: numerical_methods/8-multistep_and_multistage_methods.ipynb
       - file: numerical_methods/9-boundary-value-problem.ipynb
-
+# START REMOVE-FROM-PUBLISH
     - file: probability/Reminder_intro
       sections:
       - file: probability/PDF_CDF
@@ -268,11 +267,11 @@ parts:
       - external: https://github.com/TeachBooks/learn-programming/blob/mude-2025/book/environments.md
       - external: https://github.com/TeachBooks/learn-programming/blob/mude-2025/book/install/common/cli.md
       - file: programming/week_1_1/files.md
-# START REMOVE-FROM-PUBLISH
     - file: programming/week_1_2
       sections:
       - file: programming/week_1_2/filepaths
       - file: programming/week_1_2/markdown
+# START REMOVE-FROM-PUBLISH
     - file: programming/week_1_4
       sections:
       - file: external/learn-programming/book/version_control/version_control
