@@ -70,6 +70,7 @@ sources:
     name: PDEs and the Finite Volume Method
     author:
       - Jaime Arriaga Garcia
+      - Anna Störiko
       - Justin Pittman
       - Robert Lanzafame
     type: internal
@@ -79,6 +80,7 @@ sources:
           - Mona Devos
         contribution: critical feedback and development of exercises, figures and related content.
       - name:
+          - Ronald Brinkgreve
           - Dhruv Mehta
           - Ajay Jagadeesh
         contribution: feedback on structure, content.
