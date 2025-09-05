@@ -81,27 +81,66 @@ svg.append('text')
 const tip = d3.select('#tooltip')
 
 // =============================================================================
-// 1. DATA (live fetch with local fallback)
+/* 1. DATA LOAD (archive ≤ week_ago + recent past 7d + forecast 1d, trimmed to now) */
 // =============================================================================
 const now = new Date()
-const end_date = now.toISOString().slice(0,10)
 const start_date = new Date(now); start_date.setDate(start_date.getDate()-364)
 const start_str = start_date.toISOString().slice(0,10)
+const week_ago = new Date(now); week_ago.setDate(week_ago.getDate()-7)
+const week_ago_str = week_ago.toISOString().slice(0,10)
 
-const lat=52.00667, lon=4.35556
-const live_url =
-  'https://archive-api.open-meteo.com/v1/archive?latitude=' + lat
-  + '&longitude=' + lon
-  + '&start_date=' + start_str
-  + '&end_date=' + end_date
-  + '&hourly=wind_speed_10m&timezone=Europe%2FAmsterdam'
+const lat = 52.00667, lon = 4.35556
+const archive_url = "https://archive-api.open-meteo.com/v1/archive?latitude=" + lat
+  + "&longitude=" + lon + "&start_date=" + start_str + "&end_date=" + week_ago_str
+  + "&hourly=wind_speed_10m&timezone=Europe%2FAmsterdam"
 
-const backup_url = 'delft_2024_wind.json'
+const recent_url = "https://api.open-meteo.com/v1/forecast?latitude=" + lat
+  + "&longitude=" + lon + "&hourly=wind_speed_10m&past_days=7&forecast_days=1&timezone=Europe%2FAmsterdam"
+
+const backup_url = "wind_speed_Delft_2024.json"
+
+var latest
+
+combine(archive_url, recent_url).catch(e => load(backup_url, true)).catch(fatal)
+
+async function combine(u_archive, u_recent){
+  const [ra, rr] = await Promise.all([fetch(u_archive), fetch(u_recent)])
+  if(!ra.ok || !rr.ok) throw new Error("net")
+  const ja = await ra.json(), jr = await rr.json()
+
+  const ta = ja.hourly && ja.hourly.time, sa = ja.hourly && ja.hourly.wind_speed_10m
+  const tr = jr.hourly && jr.hourly.time, sr = jr.hourly && jr.hourly.wind_speed_10m
+  if(!ta || !sa || !tr || !sr) throw new Error("schema")
+
+  const rows = []
+
+  // archive: only < week_ago (avoid overlap)
+  for (var i=0;i<ta.length;i++){
+    const d = new Date(ta[i]), v = sa[i]
+    if (d < week_ago && v != null && isFinite(v)) rows.push({ date:d, speed:+v })
+  }
+
+  // recent: week_ago … now (forecast gives us the freshest hours)
+  for (var j=0;j<tr.length;j++){
+    const d = new Date(tr[j]), v = sr[j]
+    if (d >= week_ago && d <= now && v != null && isFinite(v)) rows.push({ date:d, speed:+v })
+  }
+
+  rows.sort((a,b)=>a.date-b.date)
+  if (!rows.length) throw new Error('no data')
+
+  // use the same "latest_obs" variable the histogram code expects
+  latest_obs = rows[rows.length-1]
+
+  // feed the histogram directly (no NEP calc needed here)
+  draw_histogram(rows, false)
+}
+
+// keep your existing load(url, is_backup) for the fallback JSON
+
 
 let latest_obs
 let bins
-
-load(live_url).catch(e=>load(backup_url, true)).catch(fatal)
 
 // =============================================================================
 // 2. HISTOGRAM

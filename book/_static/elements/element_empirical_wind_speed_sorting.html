@@ -94,28 +94,68 @@ Full text: https://creativecommons.org/licenses/by/4.0/
       .style("font-size", fsz)
 
     // =============================================================================
-    // data load with fallback
+    // data load with fallback (archive ≤ week_ago + recent past 7d + forecast 1d)
     // =============================================================================
     const now = new Date()
-    const end = now.toISOString().slice(0,10)
     const start_d = new Date(now); start_d.setDate(start_d.getDate()-364)
     const start = start_d.toISOString().slice(0,10)
+    const week_ago = new Date(now); week_ago.setDate(week_ago.getDate()-7)
+    const week_ago_str = week_ago.toISOString().slice(0,10)
 
     const lat = 52.00667, lon = 4.35556
-    const live = "https://archive-api.open-meteo.com/v1/archive?latitude=" + lat
+    const archive_url = "https://archive-api.open-meteo.com/v1/archive?latitude=" + lat
       + "&longitude=" + lon
       + "&start_date=" + start
-      + "&end_date=" + end
+      + "&end_date=" + week_ago_str
       + "&hourly=wind_speed_10m&timezone=Europe%2FAmsterdam"
+
+    const recent_url = "https://api.open-meteo.com/v1/forecast?latitude=" + lat
+      + "&longitude=" + lon
+      + "&hourly=wind_speed_10m&past_days=7&forecast_days=1&timezone=Europe%2FAmsterdam"
+
     const backup = "wind_speed_Delft_2024.json"
 
     var data_orig = null, data_sort = null, latest = null, sorted = false
 
-    fetch_data(live).catch(e => fetch_data(backup, true)).catch(fatal)
+    combine(archive_url, recent_url).catch(e => fetch_data(backup, true)).catch(fatal)
 
+    async function combine(u_archive, u_recent){
+      const [ra, rr] = await Promise.all([fetch(u_archive), fetch(u_recent)])
+      if(!ra.ok || !rr.ok) throw new Error("net")
+      const ja = await ra.json(), jr = await rr.json()
+
+      const ta = ja.hourly && ja.hourly.time, sa = ja.hourly && ja.hourly.wind_speed_10m
+      const tr = jr.hourly && jr.hourly.time, sr = jr.hourly && jr.hourly.wind_speed_10m
+      if(!ta || !sa || !tr || !sr) throw new Error("schema")
+
+      const rows = []
+
+      // archive: strictly before week_ago (avoid overlap)
+      for (var i=0;i<ta.length;i++){
+        const d = new Date(ta[i]), v = sa[i]
+        if (d < week_ago && v != null && isFinite(v)) rows.push({ date:d, speed:+v })
+      }
+
+      // recent: week_ago … now (includes freshest hours from forecast)
+      for (var j=0;j<tr.length;j++){
+        const d = new Date(tr[j]), v = sr[j]
+        if (d >= week_ago && d <= now && v != null && isFinite(v)) rows.push({ date:d, speed:+v })
+      }
+
+      rows.sort((a,b)=>a.date-b.date)
+      if (!rows.length) throw new Error("no data")
+
+      data_orig = rows
+      latest = rows[rows.length-1]
+      data_sort = rows.slice().sort((a,b)=>a.speed-b.speed).map((d,i)=>({ ...d, rank:i }))
+
+      draw_initial(false)
+    }
+
+    // backup loader (unchanged logic, used only if the combined fetch fails)
     async function fetch_data(url, is_backup=false){
       const r = await fetch(url); if(!r.ok) throw new Error(r.statusText)
-      const j = await r.json(), t = j.hourly.time, s = j.hourly.wind_speed_10m; if(!t||!s) throw new Error("schema")
+      const j = await r.json(), t = j.hourly?.time, s = j.hourly?.wind_speed_10m; if(!t||!s) throw new Error("schema")
       data_orig = []
       for (var i=0;i<t.length;i++){
         const d = new Date(t[i])
@@ -126,6 +166,7 @@ Full text: https://creativecommons.org/licenses/by/4.0/
       data_sort = data_orig.slice().sort((a,b)=>a.speed-b.speed).map((d,i)=>({ ...d, rank:i }))
       draw_initial(is_backup)
     }
+
 
     // =============================================================================
     // draw initial time-series
