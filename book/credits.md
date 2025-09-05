@@ -129,11 +129,11 @@ Credits are provided here for chapters and pages that are released under the lic
 (numerical_modelling_credit)=
 ### Chapter: Numerical Modelling
 
-> {ref}`Numerical modelling <numerical_modelling>` is written by Jaime Arriaga Garcia, Justin Pittman and Robert Lanzafame.
+> {ref}`Numerical modelling <numerical_modelling>` is written by Jaime Arriaga Garcia, Anna Störiko, Justin Pittman and Robert Lanzafame.
 >
 > Special thanks goes to:
 > - Isabel Slingerland and Mona Devos for critical feedback and development of exercises, figures and related content.
-> - Dhruv Mehta and Ajay Jagadeesh for feedback on structure, content.
+> - Ronald Brinkgreve, Dhruv Mehta and Ajay Jagadeesh for feedback on structure, content.
 >
 > {ref}`The animated figure on the Jamuna river <NumericalMethodsRiver>` included on page {ref}`Numerical modelling <numerical_modelling>` but is _not_ included under the CC BY license of this book. Original content is used here with explicit permission of Amgad Omer on behalf of Deltares.
 >
