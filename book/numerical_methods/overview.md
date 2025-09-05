@@ -5,7 +5,7 @@
 % source: numerical_modelling
 ```{attributiongrey} Attribution
 :class: attribution
-This chapter is written by Jaime Arriaga Garcia, Justin Pittman and Robert Lanzafame. {ref}`Find out more here <numerical_modelling_credit>`.
+This chapter is written by Jaime Arriaga Garcia, Anna Störiko, Justin Pittman and Robert Lanzafame. {ref}`Find out more here <numerical_modelling_credit>`.
 ```
 % END-CREDIT
 
@@ -25,7 +25,7 @@ The animation in {numref}`NumericalMethodsRiver` illustrates how the output from
 
 This chapter is about the fundamentals of numerical modelling and basic numerical methods.
 For example, we will look into how we can approximate derivatives and integrals numerically.
-The main focus is on solution methods ordinary differential equations (ODE) of varying orders.
+The main focus is on solution methods for ordinary differential equations (ODE) of varying orders.
 Numerical approaches for solving partial differential equations (PDE) will be introduced in another chapter of this book.
 
 % MMMMM the following gif is large (30MB) and is manually added to server at the URL location below to prevent the book from becoming too large.
