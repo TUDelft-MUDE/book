@@ -3,6 +3,66 @@
 
 Here a summary of the main equations for each of the presented distirbution functions is presented.
 
+## Choosing a distribution
+
+If you need help to choose a distribution type for your data, the table below may help you make a choice:
+
+<table>
+  <thead>
+    <tr><th>Task</th><th>Status</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Build</td>
+      <td style="background:#dfd;">✅ Green (OK)</td>
+    </tr>
+    <tr>
+      <td>Tests</td>
+      <td style="background:#ffe8a1;">⚠️ Orange (Warn)</td>
+    </tr>
+    <tr>
+      <td>Deploy</td>
+      <td style="background:#fdd;">⛔ Red (Fail)</td>
+    </tr>
+  </tbody>
+</table>
+
+
+```{list-table}
+:header-rows: 1
+
+* - Distribution
+  - Uniform
+  - CDF
+  - Mean and variance
+* - Bounded left
+  - left and right
+  - $F(x) = \cfrac{1}{2}\left(1+\text{erf}\left(\cfrac{x-\mu}{\sigma\sqrt{2}}\right)\right)$
+  - $\begin{array}{ll} E[X] = \mu \\ Var[X] = \sigma^2  \end{array}$
+* - Bounded right
+  - left and right
+  - $F(x) = \cfrac{1}{2}\left(1+\text{erf}\left(\cfrac{x-\mu}{\sigma\sqrt{2}}\right)\right)$
+  - $\begin{array}{ll} E[X] = \mu \\ Var[X] = \sigma^2  \end{array}$
+* - Left-tailed
+  - yes
+  - $F(x)=\begin{cases}0 & \text{for } x<a \\ \cfrac{x-a}{b-a} & \text{for } x\in[a,b] 1 & \text{for } x>b\end{cases}$
+  - $\begin{array}{ll} E[X]=\frac{1}{2}(a+b) \\ Var[X]=\frac{1}{12}(b-a)^2 \end{array}$ 
+* - Symmetric
+  - yes
+  - $F(x)=\begin{cases}0 & \text{for } x<a \\ \cfrac{x-a}{b-a} & \text{for } x\in[a,b] 1 & \text{for } x>b\end{cases}$
+  - $\begin{array}{ll} E[X]=\frac{1}{2}(a+b) \\ Var[X]=\frac{1}{12}(b-a)^2 \end{array}$ 
+* - Right-tailed
+  - yes
+  - $F(x)=\begin{cases}0 & \text{for } x<a \\ \cfrac{x-a}{b-a} & \text{for } x\in[a,b] 1 & \text{for } x>b\end{cases}$
+  - $\begin{array}{ll} E[X]=\frac{1}{2}(a+b) \\ Var[X]=\frac{1}{12}(b-a)^2 \end{array}$ 
+
+```
+
+
+
+
+## Statistical moments
+
 ```{list-table}
 :header-rows: 1
 
