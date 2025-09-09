@@ -89,17 +89,20 @@ Below, we will list the equations for the PDF, CDF, mean, and variance for the p
 
 ### Uniform
 
-#### PDF
-$\displaystyle f(x) = \begin{cases}\cfrac{1}{b-a} & \text{for }x \in [a,b] \\ 0 & \text{otherwise} \end{cases}$
+```{list-table}
+:header-rows: 1
 
-#### CDF
-$F(x)=\begin{cases}0 & \text{for } x<a \\ \cfrac{x-a}{b-a} & \text{for } x\in[a,b] 1 & \text{for } x>b\end{cases}$
+* - Object 
+  - Equation
+* - PDF
+  - $f(x) = \cfrac{1}{\sigma \sqrt{2\pi}}e^{\left(\normalsize-\cfrac{(x-\mu)^2}{2\sigma^2}\right)}$
+* - CDF
+  - $F(x) = \cfrac{1}{2}\left(1+\text{erf}\left(\cfrac{x-\mu}{\sigma\sqrt{2}}\right)\right)$
+* - Mean and variance
+  - $\begin{array}{ll} E[X] = \mu \\ Var[X] = \sigma^2  \end{array}$
+```
 
-#### Mean and variance
-$\begin{array}{ll} E[X]=\frac{1}{2}(a+b) \\ Var[X]=\frac{1}{12}(b-a)^2 \end{array}$
 
-### Gaussian
-blorb
 
 ```{list-table}
 :header-rows: 1
