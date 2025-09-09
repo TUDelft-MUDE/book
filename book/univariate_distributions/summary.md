@@ -14,7 +14,7 @@ If you need help to choose a distribution type for your data, the table below ma
 
 <table>
   <thead>
-    <tr><th>Distribution</th><th>left bound</th><th>right bound</th><th>left tailed</th><th>symmetric</th><th>right tailed</th><th>scipy name</th></tr>
+    <tr><th>Distribution</th><th>left bound</th><th>right bound</th><th>left-tailed</th><th>symmetric</th><th>right-tailed</th><th>scipy name</th></tr>
   </thead>
   <tbody>
     <tr>
@@ -95,6 +95,21 @@ Below, we will list the equations for the PDF, CDF, mean, and variance for the p
 * - Object 
   - Equation
 * - PDF
+  - $\displaystyle f(x) = \begin{cases}\cfrac{1}{b-a} & \text{for }x \in [a,b] \\ 0 & \text{otherwise} \end{cases}$
+* - CDF
+  - $F(x)=\begin{cases}0 & \text{for } x<a \\ \cfrac{x-a}{b-a} & \text{for } x\in[a,b] 1 & \text{for } x>b\end{cases}$
+* - Mean and variance
+  - $\begin{array}{ll} E[X]=\frac{1}{2}(a+b) \\ Var[X]=\frac{1}{12}(b-a)^2 \end{array}$ 
+```
+
+### Gaussian
+
+```{list-table}
+:header-rows: 1
+
+* - Object 
+  - Equation
+* - PDF
   - $f(x) = \cfrac{1}{\sigma \sqrt{2\pi}}e^{\left(\normalsize-\cfrac{(x-\mu)^2}{2\sigma^2}\right)}$
 * - CDF
   - $F(x) = \cfrac{1}{2}\left(1+\text{erf}\left(\cfrac{x-\mu}{\sigma\sqrt{2}}\right)\right)$
@@ -102,6 +117,65 @@ Below, we will list the equations for the PDF, CDF, mean, and variance for the p
   - $\begin{array}{ll} E[X] = \mu \\ Var[X] = \sigma^2  \end{array}$
 ```
 
+### Lognormal
+
+```{list-table}
+:header-rows: 1
+
+* - Object 
+  - Equation
+* - PDF
+  - $f(x) = \cfrac{1}{x \sigma \sqrt{2 \pi}}e^{\left( \normalsize-\cfrac{(ln(x)-\mu)^2}{2\sigma^2}\right)}$
+* - CDF
+  - $F(x) = \Phi\left( \cfrac{ln(x)-\mu}{\sigma} \right) = \frac{1}{2}\left[ 1+\text{erf}\left( \cfrac{ln(x)-\mu}{\sigma \sqrt{2}}\right)\right]$
+* - Mean and variance
+  - $\begin{array}{ll} E[X]=e^{\normalsize\mu + \frac{\sigma^2}{2}} \\ Var[X] = \left( e^{\normalsize\sigma^2}-1 \right)e^{2\mu + \sigma^2} \end{array}$
+```
+
+### Gumbel
+
+```{list-table}
+:header-rows: 1
+
+* - Object 
+  - Equation
+* - PDF
+  - $f(x) = \cfrac{1}{\beta} e^{\normalsize-\left(z + e^{\normalsize-z}\right)}\text{, where }z=\cfrac{x-\alpha}{\beta}$
+* - CDF
+  - $F(x)=e^{\normalsize-e^{\normalsize-z}}$
+* - Mean and variance
+  - $\begin{array}{ll} E[X] = \alpha + \beta\gamma,\; \gamma = 0.5772 \\ Var[X] = \cfrac{\pi^2}{6}\beta^2 \end{array}$
+```
+
+### Exponential
+
+```{list-table}
+:header-rows: 1
+
+* - Object 
+  - Equation
+* - PDF
+  - $f(x) = \lambda e^{\normalsize-\lambda x}$
+* - CDF
+  - $F(x) = 1 - e^{\normalsize-\lambda x}$
+* - Mean and variance
+  - $\begin{array}{ll} E[X] = \cfrac{1}{\lambda} \\ Var[X] = \cfrac{1}{\lambda^2} \end{array}$
+```
+
+### Beta
+
+```{list-table}
+:header-rows: 1
+
+* - Object 
+  - Equation
+* - PDF
+  - $f(x) = \frac{x^{\alpha - 1} (1 - x)^{\beta - 1}}{B(\alpha, \beta)}$
+* - CDF
+  - $F(x; \alpha, \beta) = \frac{1}{B(\alpha, \beta)} \int_0^x t^{\alpha - 1} (1 - t)^{\beta - 1} dt$
+* - Mean and variance
+  - $\begin{array}{ll} E[X] = \frac{\alpha}{\alpha + \beta} \\ Var[X] = \frac{\alpha\beta}{(\alpha + \beta)^2(\alpha+\beta+1)}  \end{array}$
+```
 
 
 ```{list-table}
