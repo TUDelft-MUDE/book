@@ -9,21 +9,64 @@ If you need help to choose a distribution type for your data, the table below ma
 
 <table>
   <thead>
-    <tr><th>Task</th><th>Status</th></tr>
+    <tr><th>Distribution</th><th>left bound</th><th>right bound</th><th>left tailed</th><th>symmetric</th><th>right tailed</th><th>scipy name</th></tr>
   </thead>
   <tbody>
     <tr>
-      <td>Build</td>
-      <td style="background:#dfd;">✅ Green (OK)</td>
+      <td>Uniform</td>
+      <td style="background:#dfd;">yes</td>
+      <td style="background:#dfd;">yes</td>
+      <td style="background:#fdd;">no</td>
+      <td style="background:#dfd;">yes</td>
+      <td style="background:#fdd;">no</td>
+      <td>`uniform`</td>
     </tr>
     <tr>
-      <td>Tests</td>
-      <td style="background:#ffe8a1;">⚠️ Orange (Warn)</td>
+      <td>Gaussian</td>
+      <td style="background:#fdd;">no</td>
+      <td style="background:#fdd;">no</td>
+      <td style="background:#fdd;">no</td>
+      <td style="background:#dfd;">yes</td>
+      <td style="background:#fdd;">no</td>
+      <td>`norm`</td>
     </tr>
     <tr>
-      <td>Deploy</td>
-      <td style="background:#fdd;">⛔ Red (Fail)</td>
+      <td>Lognormal</td>
+      <td style="background:#dfd;">yes</td>
+      <td style="background:#fdd;">no</td>
+      <td style="background:#fdd;">no</td>
+      <td style="background:#fdd;">no</td>
+      <td style="background:#dfd;">yes</td>
+      <td>`lognorm`</td>
     </tr>
+    <tr>
+      <td>Gumbel</td>
+      <td style="background:#fdd;">no</td>
+      <td style="background:#fdd;">no</td>
+      <td style="background:#ffe8a1;">possible</td>
+      <td style="background:#fdd;">no</td>
+      <td style="background:#ffe8a1;">possible</td>
+      <td>`gumbel_r` / `gumbel_l`</td>
+    </tr>
+    <tr>
+      <td>exponential</td>
+      <td style="background:#dfd;">yes</td>
+      <td style="background:#fdd;">no</td>
+      <td style="background:#fdd;">no</td>
+      <td style="background:#fdd;">no</td>
+      <td style="background:#dfd;">yes</td>
+      <td>`expon`</td>
+    </tr>
+    <tr>
+      <td>beta</td>
+      <td style="background:#dfd;">yes</td>
+      <td style="background:#dfd;">yes</td>
+      <td style="background:#ffe8a1;">possible</td>
+      <td style="background:#ffe8a1;">possible</td>
+      <td style="background:#ffe8a1;">possible</td>
+      <td>`beta`</td>
+    </tr>
+
   </tbody>
 </table>
 
