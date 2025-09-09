@@ -3,6 +3,11 @@
 
 Here a summary of the main equations for each of the presented distirbution functions is presented.
 
+```{admonition} MUDE exam information
+:class: tip, dropdown
+You do not need to know the equations of the distribution functions by heart. You just need to know how the distribution looks (PDF/CDF), how it responds to changes in the parameters, and some of its basic properties (particularly symmetry or bounds).
+```
+
 ## Choosing a distribution
 
 If you need help to choose a distribution type for your data, the table below may help you make a choice:
@@ -80,6 +85,22 @@ If you need help to choose a distribution type for your data, the table below ma
 
 ## Statistical moments
 
+Below, we will list the equations for the PDF, CDF, mean, and variance for the parametric distributions we have discussed.
+
+### Uniform
+
+#### PDF
+$\displaystyle f(x) = \begin{cases}\cfrac{1}{b-a} & \text{for }x \in [a,b] \\ 0 & \text{otherwise} \end{cases}$
+
+#### CDF
+$F(x)=\begin{cases}0 & \text{for } x<a \\ \cfrac{x-a}{b-a} & \text{for } x\in[a,b] 1 & \text{for } x>b\end{cases}$
+
+#### Mean and variance
+$\begin{array}{ll} E[X]=\frac{1}{2}(a+b) \\ Var[X]=\frac{1}{12}(b-a)^2 \end{array}$
+
+### Gaussian
+blorb
+
 ```{list-table}
 :header-rows: 1
 
@@ -114,11 +135,6 @@ F(x) = \Phi\left( \cfrac{ln(x)-\mu}{\sigma} \right) = \frac{1}{2}\left[ 1+\text{
 $
   - $\begin{array}{ll} E[X]=e^{\normalsize\mu + \frac{\sigma^2}{2}} \\ Var[X] = \left( e^{\normalsize\sigma^2}-1 \right)e^{2\mu + \sigma^2} \end{array}$
 
-```
-
-```{admonition} MUDE exam information
-:class: tip, dropdown
-You do not need to know the equations of the distribution functions by heart. You just need to know how the distribution looks (PDF/CDF), how it responds to changes in the parameters, and some of its basic properties (particularly symmetry or bounds).
 ```
 
 % START-CREDIT
