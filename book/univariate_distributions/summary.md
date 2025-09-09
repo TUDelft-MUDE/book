@@ -87,7 +87,7 @@ If you need help to choose a distribution type for your data, the table below ma
 
 Below, we will list the equations for the PDF, CDF, mean, and variance for the parametric distributions we have discussed.
 
-### Uniform
+#### Uniform
 
 ```{list-table}
 :header-rows: 1
@@ -102,7 +102,7 @@ Below, we will list the equations for the PDF, CDF, mean, and variance for the p
   - $\begin{array}{ll} E[X]=\frac{1}{2}(a+b) \\ Var[X]=\frac{1}{12}(b-a)^2 \end{array}$ 
 ```
 
-### Gaussian
+#### Gaussian
 
 ```{list-table}
 :header-rows: 1
@@ -117,7 +117,7 @@ Below, we will list the equations for the PDF, CDF, mean, and variance for the p
   - $\begin{array}{ll} E[X] = \mu \\ Var[X] = \sigma^2  \end{array}$
 ```
 
-### Lognormal
+#### Lognormal
 
 ```{list-table}
 :header-rows: 1
@@ -132,7 +132,7 @@ Below, we will list the equations for the PDF, CDF, mean, and variance for the p
   - $\begin{array}{ll} E[X]=e^{\normalsize\mu + \frac{\sigma^2}{2}} \\ Var[X] = \left( e^{\normalsize\sigma^2}-1 \right)e^{2\mu + \sigma^2} \end{array}$
 ```
 
-### Gumbel
+#### Gumbel
 
 ```{list-table}
 :header-rows: 1
@@ -147,7 +147,7 @@ Below, we will list the equations for the PDF, CDF, mean, and variance for the p
   - $\begin{array}{ll} E[X] = \alpha + \beta\gamma,\; \gamma = 0.5772 \\ Var[X] = \cfrac{\pi^2}{6}\beta^2 \end{array}$
 ```
 
-### Exponential
+#### Exponential
 
 ```{list-table}
 :header-rows: 1
@@ -162,7 +162,7 @@ Below, we will list the equations for the PDF, CDF, mean, and variance for the p
   - $\begin{array}{ll} E[X] = \cfrac{1}{\lambda} \\ Var[X] = \cfrac{1}{\lambda^2} \end{array}$
 ```
 
-### Beta
+#### Beta
 
 ```{list-table}
 :header-rows: 1
