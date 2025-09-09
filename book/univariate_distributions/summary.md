@@ -19,7 +19,7 @@ If you need help to choose a distribution type for your data, the table below ma
       <td style="background:#fdd;">no</td>
       <td style="background:#dfd;">yes</td>
       <td style="background:#fdd;">no</td>
-      <td>`uniform`</td>
+      <td>uniform</td>
     </tr>
     <tr>
       <td>Gaussian</td>
@@ -28,7 +28,7 @@ If you need help to choose a distribution type for your data, the table below ma
       <td style="background:#fdd;">no</td>
       <td style="background:#dfd;">yes</td>
       <td style="background:#fdd;">no</td>
-      <td>`norm`</td>
+      <td>norm</td>
     </tr>
     <tr>
       <td>Lognormal</td>
@@ -37,16 +37,25 @@ If you need help to choose a distribution type for your data, the table below ma
       <td style="background:#fdd;">no</td>
       <td style="background:#fdd;">no</td>
       <td style="background:#dfd;">yes</td>
-      <td>`lognorm`</td>
+      <td>lognorm</td>
     </tr>
     <tr>
-      <td>Gumbel</td>
+      <td>Gumbel (right-tailed)</td>
       <td style="background:#fdd;">no</td>
       <td style="background:#fdd;">no</td>
-      <td style="background:#ffe8a1;">possible</td>
       <td style="background:#fdd;">no</td>
-      <td style="background:#ffe8a1;">possible</td>
-      <td>`gumbel_r` / `gumbel_l`</td>
+      <td style="background:#fdd;">no</td>
+      <td style="background:#dfd;">yes</td>
+      <td>gumbel_r</td>
+    </tr>
+    <tr>
+      <td>Gumbel (left-tailed)</td>
+      <td style="background:#fdd;">no</td>
+      <td style="background:#fdd;">no</td>
+      <td style="background:#dfd;">yes</td>
+      <td style="background:#fdd;">no</td>
+      <td style="background:#fdd;">no</td>
+      <td>gumbel_l</td>
     </tr>
     <tr>
       <td>exponential</td>
@@ -55,7 +64,7 @@ If you need help to choose a distribution type for your data, the table below ma
       <td style="background:#fdd;">no</td>
       <td style="background:#fdd;">no</td>
       <td style="background:#dfd;">yes</td>
-      <td>`expon`</td>
+      <td>expon</td>
     </tr>
     <tr>
       <td>beta</td>
@@ -64,45 +73,10 @@ If you need help to choose a distribution type for your data, the table below ma
       <td style="background:#ffe8a1;">possible</td>
       <td style="background:#ffe8a1;">possible</td>
       <td style="background:#ffe8a1;">possible</td>
-      <td>`beta`</td>
+      <td>beta</td>
     </tr>
-
   </tbody>
 </table>
-
-
-```{list-table}
-:header-rows: 1
-
-* - Distribution
-  - Uniform
-  - CDF
-  - Mean and variance
-* - Bounded left
-  - left and right
-  - $F(x) = \cfrac{1}{2}\left(1+\text{erf}\left(\cfrac{x-\mu}{\sigma\sqrt{2}}\right)\right)$
-  - $\begin{array}{ll} E[X] = \mu \\ Var[X] = \sigma^2  \end{array}$
-* - Bounded right
-  - left and right
-  - $F(x) = \cfrac{1}{2}\left(1+\text{erf}\left(\cfrac{x-\mu}{\sigma\sqrt{2}}\right)\right)$
-  - $\begin{array}{ll} E[X] = \mu \\ Var[X] = \sigma^2  \end{array}$
-* - Left-tailed
-  - yes
-  - $F(x)=\begin{cases}0 & \text{for } x<a \\ \cfrac{x-a}{b-a} & \text{for } x\in[a,b] 1 & \text{for } x>b\end{cases}$
-  - $\begin{array}{ll} E[X]=\frac{1}{2}(a+b) \\ Var[X]=\frac{1}{12}(b-a)^2 \end{array}$ 
-* - Symmetric
-  - yes
-  - $F(x)=\begin{cases}0 & \text{for } x<a \\ \cfrac{x-a}{b-a} & \text{for } x\in[a,b] 1 & \text{for } x>b\end{cases}$
-  - $\begin{array}{ll} E[X]=\frac{1}{2}(a+b) \\ Var[X]=\frac{1}{12}(b-a)^2 \end{array}$ 
-* - Right-tailed
-  - yes
-  - $F(x)=\begin{cases}0 & \text{for } x<a \\ \cfrac{x-a}{b-a} & \text{for } x\in[a,b] 1 & \text{for } x>b\end{cases}$
-  - $\begin{array}{ll} E[X]=\frac{1}{2}(a+b) \\ Var[X]=\frac{1}{12}(b-a)^2 \end{array}$ 
-
-```
-
-
-
 
 ## Statistical moments
 
