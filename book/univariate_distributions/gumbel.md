@@ -35,16 +35,6 @@ The influence of the parameters can also be observed in the CDF. The continuous 
 
 Below, you find an interactive element that shows the PDF and CDF of a Gumbel distribution. Select whether you want to display the right-tailed or left-tailed version of the Gumbel distribution from the dropdown menu.
 
-% START-CREDIT
-% source: maxramgraber
-````{margin}
-```{attributiongrey} Attribution
-:class: attribution
-This interactive figure is created by Max Ramgraber. {ref}`Find out more here <distributions_credit>`.
-```
-````
-% END-CREDIT
-
 ````{iframe-figure} ../_static/elements/element_Gumbel_pdf.html
 :name: gumbel_pdf
 :aspectratio: 1.5 / 1

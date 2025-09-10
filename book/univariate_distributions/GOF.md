@@ -9,16 +9,6 @@ Once we have accounted for the physical characteristics of the random variable, 
 
 **Let's take a look at an example:** In order to illustrate these techniques, we will use a toy example. The set of observations is represented in the plots below by its pdf and cdf. In the following, we will investigate a number of GOF techniques to determine which distribution best fits the data.
 
-% START-CREDIT
-% source: maxramgraber
-````{margin}
-```{attributiongrey} Attribution
-:class: attribution
-This interactive figure is created by Max Ramgraber. {ref}`Find out more here <distributions_credit>`.
-```
-````
-% END-CREDIT
-
 ````{iframe-figure} ../_static/elements/element_empirical_pdf_and_cdf.html
 :name: empirical_pdf_and_cdf
 :aspectratio: 2 / 1
@@ -35,16 +25,6 @@ GOF graphical methods are useful tools to have a first intuition of how differen
 This technique is as simple as comparing the observations used to fit the model with the predictions of the model. Typically, the observations are represented in the x-axis and the predictions in the y-axis. Therefore, the perfect fit would be represented by the $45 ^\circ$-line.
 
 Let's see it applied to the example data. Note that the term *"quantile"* is used in statistics to denote the values of the random variable.
-
-% START-CREDIT
-% source: maxramgraber
-````{margin}
-```{attributiongrey} Attribution
-:class: attribution
-This interactive figure is created by Max Ramgraber. {ref}`Find out more here <distributions_credit>`.
-```
-````
-% END-CREDIT
 
 ````{iframe-figure} ../_static/elements/element_QQ_plot.html
 :name: QQ_plot
@@ -77,16 +57,6 @@ Pseudo code to build a QQ-plot is presented below to illustrate the procedure.
 ### Log-scale
 
 As previously introduced, the tails of the distributions are key to allow the inference of extreme values which have not been observed yet. Therefore, it is important to check whether the distribution used to model the observations is performing properly in that region. A simple trick to do so is to use a logarithmic scale (log-scale) to represent the exceedance probability plot. That way, we "zoom in" on those points in the tail instead of focusing on the bulk of the data:
-
-% START-CREDIT
-% source: maxramgraber
-````{margin}
-```{attributiongrey} Attribution
-:class: attribution
-This interactive figure is created by Max Ramgraber. {ref}`Find out more here <distributions_credit>`.
-```
-````
-% END-CREDIT
 
 ````{iframe-figure} ../_static/elements/element_log_scale_plot.html
 :name: log_scale_plot
@@ -136,16 +106,6 @@ $$
 The distribution of $D_n$ has been already calculated and included in different statistic packages, since it depends on the considered parametric distribution. These distributions can be used to calculate the probability of the null hypothesis being true (called $p-value$). A significance level needs to be selected (typically, $\alpha=0.05$) as a threshold to determine whether the null hypothesis is rejected or accepted. This is, if the probability of $H_0$ being true ($p-value$) is below $\alpha$, $H_0$ is rejected, so the empirical cumulative distribution is not coming from the fitted parametric cumulative distribution.
 
 Let's see it in an example. In the figure below, both the empirical distribution (step function) and the fitted normal distribution are shown. The maximum distance between both distributions is also presented in red.
-
-% START-CREDIT
-% source: maxramgraber
-````{margin}
-```{attributiongrey} Attribution
-:class: attribution
-This interactive figure is created by Max Ramgraber. {ref}`Find out more here <distributions_credit>`.
-```
-````
-% END-CREDIT
 
 ````{iframe-figure} ../_static/elements/element_KS_test.html
 :name: KS_test

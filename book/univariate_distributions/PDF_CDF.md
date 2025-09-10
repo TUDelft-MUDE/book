@@ -23,16 +23,6 @@ $X$ has a value less than $x$**. As such, the probability computed by a CDF is a
 
 Below, you find an interactive element that illustrates the relationship between the integral of the pdf and the cdf value. They grey-shaded area in the left subplot corresponds to the integral from $-\infty$ to $x$. Move your mouse over either the subplots and try to develop an intuition for how both distributions relate to each other. When is the cdf steep, when is it flat?
 
-% START-CREDIT
-% source: maxramgraber
-````{margin}
-```{attributiongrey} Attribution
-:class: attribution
-This interactive figure is created by Max Ramgraber. {ref}`Find out more here <distributions_credit>`.
-```
-````
-% END-CREDIT
-
 ````{iframe-figure} ../_static/elements/element_pdf_and_cdf.html
 :name: pdf_cdf
 
@@ -52,17 +42,6 @@ $$
 where $x$ is the value of the random variable and $\mu$ and $\sigma$ are the two parameters that define the shape of the distribution. In the case of the Normal distribution, the parameters $\mu$ and $\sigma$ correspond to the mean and standard deviation of the random variable, respectively. However, this is not the case for all the distributions and it is also dependent on how it is parameterized. We will see some examples of different parametrized distributions in the following.
 
 As outlined above, the PDF provides us with probability densities, so we need to integrate it to obtain actual probabilities through the CDF. In the case of the Normal distribution, there is no closed form of the CDF (the integral). Let's see how the distribution looks. In the interactive element below, the PDF and CDF of the Gaussian distribution are shown. You can adjust the parameters to see how the shape of the PDF and CDF change for different values of its parameters. In the PDF plot, you can see the bell shape that was already mentioned. You will learn more about how this distribution behaves later on.
-
-
-% START-CREDIT
-% source: maxramgraber
-````{margin}
-```{attributiongrey} Attribution
-:class: attribution
-This interactive figure is created by Max Ramgraber. {ref}`Find out more here <distributions_credit>`.
-```
-````
-% END-CREDIT
 
 ````{iframe-figure} ../_static/elements/element_Gaussian_pdf.html
 :name: Gaussian_pdf_intro
@@ -109,16 +88,6 @@ $$
 Often, in regulations and guidelines, it is required to design our structure or system for a value which is not exceeded more than $p$ percent of the time. Thus, we are facing the opposite problem: what is the value of the random variable, $x$, whose non-exceedance probability has a specified value, $p$? The solution is simple: the inverse of the CDF, $x = F^{-1}(p)$. As previously mentioned, the CDF is just an equation which in most occasions can be solved analytically, so we just need to work through the formula and calculate $x$ given $p$.
 
 The inverse CDF also plays an important part in **sampling**. Suppose that we want to generate samples from a given PDF with the help of a computer. Computers only know a single trick when it comes to randomness: the generation of pseudo-random, uniformly distributed valuse between zero and one. Fortunately, with the help of the inverse CDF $F^{-1}$, we can convert these uniform random values into samples from the corresponding pdf $f$. The interactive element below illustrates this process:
-
-% START-CREDIT
-% source: maxramgraber
-````{margin}
-```{attributiongrey} Attribution
-:class: attribution
-This interactive figure is created by Max Ramgraber. {ref}`Find out more here <distributions_credit>`.
-```
-````
-% END-CREDIT
 
 ````{iframe-figure} ../_static/elements/element_sampling_inverse_cdf.html
 :name: inverse_cdf_sampling

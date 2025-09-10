@@ -29,16 +29,6 @@ Let's see how these parameters influence the shape of the distribution. The lowe
 
 The effect of the standard deviation $\sigma$ may appear unintuitive at first. In most other distributions, as we increase $\sigma$, the peak value of the PDF decreases. However, when $\sigma$ grows ($\sigma>1$) in a lognormal PDF, the peak of the PDF moves towards 0 and increases in height. This is because the distibutions becomes flatter in log-space $y$, but the log-transformation concentrates the densities for $y < 1$ and stretches the densities for $y > 1$. The more probability mass is shifted into the region $y < 1$, the more the probability density concentrates in the region $0 < x < 1$. Similarly, when $\sigma$ is reduced below 1, the distribution becomes more peaked; however, it also moves towards positive values. Therefore, the influence of this parameter is different if $\sigma$ is above or below 1. Adjust the values in the interactive element below and observe this effect yourself.
 
-% START-CREDIT
-% source: maxramgraber
-````{margin}
-```{attributiongrey} Attribution
-:class: attribution
-This interactive figure is created by Max Ramgraber. {ref}`Find out more here <distributions_credit>`.
-```
-````
-% END-CREDIT
-
 ````{iframe-figure} ../_static/elements/element_lognormal_pdf.html
 :name: lognormal_pdf
 :aspectratio: 1.5 / 1

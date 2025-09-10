@@ -27,16 +27,6 @@ where $f(t)$ is the probability density function given above.
 
 Below, you find an interactive element that shows the pdf and cdf of a beta distribution. The element also includes sliders for the **location** and **scale** which allow us to scale this element to intervals other than $[0,1]$.
 
-% START-CREDIT
-% source: maxramgraber
-````{margin}
-```{attributiongrey} Attribution
-:class: attribution
-This interactive figure is created by Max Ramgraber. {ref}`Find out more here <distributions_credit>`.
-```
-````
-% END-CREDIT
-
 ````{iframe-figure} ../_static/elements/element_beta_pdf.html
 :name: beta_pdf
 :aspectratio: 1.5 / 1

@@ -32,16 +32,6 @@ which is visually represented in the interactive element below.
 
 Below, you find an interactive element that shows the pdf and cdf of an exponential distribution. The element also includes sliders for the **location** and **scale** which allow us to scale this element to intervals other than $\[0,+\infty\[$. The influence of the parameter $\lambda$ can also be observed in the CDF. The higher the parameter $\lambda$, the faster the CDF reaches values of the non-exceedance probability close to 1. Thus, lower variability of the random variable is obtained.
 
-% START-CREDIT
-% source: maxramgraber
-````{margin}
-```{attributiongrey} Attribution
-:class: attribution
-This interactive figure is created by Max Ramgraber. {ref}`Find out more here <distributions_credit>`.
-```
-````
-% END-CREDIT
-
 ````{iframe-figure} ../_static/elements/element_exponential_pdf.html
 :name: exponential_pdf
 :aspectratio: 1.5 / 1

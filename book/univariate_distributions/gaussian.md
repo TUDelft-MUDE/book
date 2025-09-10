@@ -24,16 +24,6 @@ Observe the influence of the parameters on the function value: within the expone
 
 Let's see how the resulting distribution looks. The element below shows a univariate Gaussian PDF and CDF for adjustable $\mu$ and $\sigma$.
 
-% START-CREDIT
-% source: maxramgraber
-````{margin}
-```{attributiongrey} Attribution
-:class: attribution
-This interactive figure is created by Max Ramgraber. {ref}`Find out more here <distributions_credit>`.
-```
-````
-% END-CREDIT
-
 ````{iframe-figure} ../_static/elements/element_Gaussian_pdf.html
 :name: Gaussian_pdf
 :aspectratio: 1.5 / 1
