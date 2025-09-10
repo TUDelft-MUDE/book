@@ -88,7 +88,7 @@ If you need help to choose a distribution type for your data, the table below ma
 
 One challenge when dealing with distributions is notation, for two main reasons: 1) the symbols used to represent random variables and parameters vary across different fields (and even _within_ a given field); and 2) the formulation of key equations (i.e., the PDF and CDF) can vary depending on the parameterization used.
 
-Why such variation? Let's just say tradition, history and stubbornness play a big role here. But more importantly, one should recognize that the equations or parameters often have physical meaning, which makes a certain formulation more logical. Symbols often must be choseon not to conflict with others used in a given field.
+Why such variation? Let's just say tradition, history, and stubbornness play a big role here. But more importantly, one should recognize that the equations or parameters often have physical meaning, which makes a certain formulation more logical. Symbols often must be chosen carefully to not conflict with others used in a given field.
 
 To illustrate the point, consider the following three formulations of the PDF of the exponential distribution (along with a link to the page ):
 
@@ -98,7 +98,7 @@ To illustrate the point, consider the following three formulations of the PDF of
 
 Note that the formulation is very different between each case, and either $\lambda$ or $\mu$ is used. If you are not careful when using distributions from different textbooks or software packages, it is very easy to make mistakes! The scipy stats formulation is especially striking; you will learn more about this later (location, shape and scale).
 
-Our advice: **always check the formulation of the PDF, CDF and parameters of a distribution and be sure to use them consistently.**
+Our advice: **always check the formulation of the PDF, CDF, and parameters of a distribution and be sure to use them consistently.**
 
 In this case, "consistency" can mean, for example, using the right equations to compute the distribution parameters from the moments (mean and standard deviation) of the distribution. In general, there is no "correct" formulation or set of parameters; in this book we present a set of parameters and formulations that are consistent with each other and commonly used in civil engineering and geosciences.
 ```
