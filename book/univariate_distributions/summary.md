@@ -172,7 +172,7 @@ Below, we will list the equations for the PDF, CDF, mean, and variance for the p
 * - PDF
   - $f(x) = \frac{x^{\alpha - 1} (1 - x)^{\beta - 1}}{B(\alpha, \beta)}$
 * - CDF
-  - $F(x; \alpha, \beta) = \frac{1}{B(\alpha, \beta)} \int_0^x t^{\alpha - 1} (1 - t)^{\beta - 1} dt$
+  - $F(x) = \frac{1}{B(\alpha, \beta)} \int_0^x t^{\alpha - 1} (1 - t)^{\beta - 1} dt$
 * - Mean and variance
   - $\begin{array}{ll} E[X] = \frac{\alpha}{\alpha + \beta} \\ Var[X] = \frac{\alpha\beta}{(\alpha + \beta)^2(\alpha+\beta+1)}  \end{array}$
 ```
