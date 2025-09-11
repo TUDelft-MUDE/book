@@ -92,9 +92,9 @@ Why such variation? Let's just say tradition, history, and stubbornness play a b
 
 To illustrate the point, consider the following three formulations of the PDF of the exponential distribution (along with a link to the page ):
 
-- [Wikipedia](https://en.wikipedia.org/wiki/Exponential_distribution), [Excel](https://support.microsoft.com/en-us/office/expon-dist-function-4c12ae24-e563-4155-bf3e-8b78b6ae140e): $f(x) = \lambda exp(-\lambda x)$
-- [Matlab](https://www.mathworks.com/help/stats/exponential-distribution.html):  $f(x) = \frac{1}{\mu} exp(\frac{-x}{\mu}$
-- [Scipy Stats Module](https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.expon.html#scipy.stats.expon):  $f(x) = exp(- x)$
+- [Wikipedia](https://en.wikipedia.org/wiki/Exponential_distribution), [Excel](https://support.microsoft.com/en-us/office/expon-dist-function-4c12ae24-e563-4155-bf3e-8b78b6ae140e): $f(x) = \lambda \operatorname{exp}(-\lambda x)$
+- [Matlab](https://www.mathworks.com/help/stats/exponential-distribution.html):  $f(x) = \frac{1}{\mu} \operatorname{exp}(\frac{-x}{\mu})$
+- [Scipy Stats Module](https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.expon.html#scipy.stats.expon):  $f(x) = \operatorname{exp}(- x)$
 
 Note that the formulation is very different between each case, and either $\lambda$ or $\mu$ is used. If you are not careful when using distributions from different textbooks or software packages, it is very easy to make mistakes! The scipy stats formulation is especially striking; you will learn more about this later (location, shape and scale).
 
