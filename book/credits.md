@@ -129,11 +129,11 @@ Credits are provided here for chapters and pages that are released under the lic
 (numerical_modelling_credit)=
 ### Chapter: Numerical Modelling
 
-> {ref}`Numerical modelling <numerical_modelling>` is written by Jaime Arriaga Garcia, Justin Pittman and Robert Lanzafame.
+> {ref}`Numerical modelling <numerical_modelling>` is written by Jaime Arriaga Garcia, Anna Störiko, Justin Pittman and Robert Lanzafame.
 >
 > Special thanks goes to:
 > - Isabel Slingerland and Mona Devos for critical feedback and development of exercises, figures and related content.
-> - Dhruv Mehta and Ajay Jagadeesh for feedback on structure, content.
+> - Ronald Brinkgreve, Dhruv Mehta and Ajay Jagadeesh for feedback on structure, content.
 >
 > {ref}`The animated figure on the Jamuna river <NumericalMethodsRiver>` included on page {ref}`Numerical modelling <numerical_modelling>` but is _not_ included under the CC BY license of this book. Original content is used here with explicit permission of Amgad Omer on behalf of Deltares.
 >
@@ -231,12 +231,13 @@ Credits are provided here for chapters and pages that are released under the lic
 >
 > Special thanks goes to Oswaldo Morales Napoles, Elisa Ragno and Robert Lanzafame for suggestions on the theoretical and didactic framework, as well as critical feedback and review.
 
-(programming_credit_2)=
+(programming_credit)=
 ### Programming chapters
 
 > [](./programming/week_1_1.md) is written by Robert Lanzafame and Tom van Woudenberg.
 
 Part of the chapters in the Programming part of this book are reused from two sources: _Learn Programming for Engineers_ {cite:p}`learn-programming` and _Python for Engineers_ {cite:p}`learn-python`. Both books are published with a CC BY license and are available online at [teachbooks.io/learn-programming](https://teachbooks.io/learn-programming) and [teachbooks.io/learn-python](https://teachbooks.io/learn-python).
+
 
 (external_resources_credits)=
 ## External Resources
