@@ -8,6 +8,6 @@ This chapter reuses material from _Python for Engineers_. {ref}`Find out more he
 ```
 % END-CREDIT
 
-This week you'll learn how to use SymPy, a python package which does symbolical math for you!
+This week you'll learn how to use SymPy, a Python package that does symbolic math for you!
 
-You can use this to solve the more elaborate mathematical procedures, or check you hand-written math!
+You can use this to solve more elaborate mathematical procedures, or check your handwritten math!
