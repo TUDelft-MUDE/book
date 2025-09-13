@@ -4,10 +4,7 @@ As you can imagine, it is also possible to define a PDF and a CDF based on obser
 
 ## Step 1: Analyzing the data
 
-As an example, let us consider a dataset of wind speeds in Delft. The figure below shows wind speed estimates in Delft at 10m height over the past year[^ref]. To the right of the time series is a **histogram** of the wind speeds. Observe how some wind speeds are more common than others.
-
-````
-% END-CREDIT
+As an example, let us consider a dataset of wind speeds in Delft. The figure below shows wind speed estimates in Delft at 10m height over the past year[^ref]. To the right of the time series is a **histogram** of the wind speeds. Observe how some wind speeds are more common than 
 
 ````{iframe-figure} ../_static/elements/element_empirical_wind_speed.html
 :name: empirical_wind_speed
