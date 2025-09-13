@@ -1,25 +1,19 @@
 
 # Lognormal distribution
 
-Lognormal distribution is the continuous distribution of a random variable whose natural logarithm is normally distributed. This is, if the random variable $X \sim Lognormal$, then the random variable $Y=ln(X) \sim Normal$.
+The **lognormal distribution** is the continuous distribution of a random variable whose natural logarithm is normally distributed. This is, if the random variable $X \sim Lognormal$, then the random variable $Y=ln(X) \sim Normal$.
 
 ```{figure} https://files.mude.citg.tudelft.nl/Lognormal_Distribution.svg
 Relationship between Lognormal and Normal distribution[^ref].
 ```
 
- It is widely used in engineering, since it models variables which only take positive real values.  The PDF of the Lognormal distribution is given by 
+This distribution is widely used in engineering, since it models variables that can only take positive real values. The PDF of the Lognormal distribution is given by 
 
 $$
 f(x) = \cfrac{1}{x \sigma \sqrt{2 \pi}}e^{\left( \normalsize-\cfrac{(ln(x)-\mu)^2}{2\sigma^2}\right)}
 $$
 
 where $\mu$ and $\sigma$ are the mean and standard deviation of the variable's natural logarithm. Note that they are not the mean and standard deviation of the variable $X$ itself.
-
-Let's see how these parameters influence the shape of the distribution. In the figure below, two sets of three PDFs are displayed. In the left pannel, the displayed distributions present the same $\sigma$ and different values of $\mu=$0.5, 1 and 2. The lower the value of $\mu$, the more peaked is the distribution and the mode of the distribution moves towards 0. In the right pannel, all the distributions present the same value of $\mu$ and different values of $\sigma=$0.5, 1 and 2. When $\sigma$ grows ($\sigma>1$), the peak of the distribution moves towards 0 and increases in height. Similarly, when $\sigma$ is reduced below 1, the distribution becomes more peaked; however, it also moves towards positive values. Therefore, the influence of this parameter is different if $\sigma$ is above or below 1. 
-
-```{figure} https://files.mude.citg.tudelft.nl/logn_density.png
-PDF of Lognormal distribution: (left) influence of parameter $\mu$, and (right) influence of parameter $\sigma$.
-```
 
 Integrating the PDF, the following expression of the CDF is derived
 
@@ -29,13 +23,20 @@ $$
 
 where $\Phi$ is the cumulative distribution function of of the standard Normal distribution function ($N(0,1)$). The CDF of the Lognormal distribution is displayed in the figure below.
 
-```{figure} https://files.mude.citg.tudelft.nl/logn_cdf.png
-CDF of Lognormal distribution: (left) influence of parameter $\mu$, and (right) influence of parameter $\sigma$.
-```
+## Interactive element
 
-In the left pannel, the influence of the parameter $\mu$ is shown. The lower the $\mu$, the steeper becomes the CDF, reaching higher non-exceedance probabilities for increasing values of the random variable. In the right pannel, the influence of the parameter $\sigma$ is presented. Again, it can be seen that the influence of $\sigma$ depends whether it is above or below 1.
+Let's see how these parameters influence the shape of the distribution. The lower the value of $\mu$, the more peaked  and the the PDF becomes and the mode of the distribution shifts towards 0. Note that the relationship between the mean and the peak of the distribution is nonlinear: the larger $\mu$, the further the peak shifts to the right for any given increment of $\mu$. The lower the mean $\mu$, the steeper the CDF becomes, reaching higher non-exceedance probabilities for increasing values of the random variable.
 
-## Some properties
+The effect of the standard deviation $\sigma$ may appear unintuitive at first. In most other distributions, as we increase $\sigma$, the peak value of the PDF decreases. However, when $\sigma$ grows ($\sigma>1$) in a lognormal PDF, the peak of the PDF moves towards 0 and increases in height. This is because the distibutions becomes flatter in log-space $y$, but the log-transformation concentrates the densities for $y < 1$ and stretches the densities for $y > 1$. The more probability mass is shifted into the region $y < 1$, the more the probability density concentrates in the region $0 < x < 1$. Similarly, when $\sigma$ is reduced below 1, the distribution becomes more peaked; however, it also moves towards positive values. Therefore, the influence of this parameter is different if $\sigma$ is above or below 1. Adjust the values in the interactive element below and observe this effect yourself.
+
+````{iframe-figure} ../_static/elements/element_lognormal_pdf.html
+:name: lognormal_pdf
+:aspectratio: 1.5 / 1
+
+Interactively visualize the relationship between the PDF and the CDF of a lognormal distribution.
+````
+
+## Interesting properties
 
 The mean of the Lognormal distribution can be computed as
 
@@ -51,7 +52,7 @@ $$
 
 Finally, note that Lognormal distribution is not symmetric and presents positive skewness. This is, it presents a tail towards positive values.
 
-Also, the **Lognormal distiribution is bounded in 0**. This is, the random variable modelled with the Lognormal distribution cannot take negative values.
+Also, the **Lognormal distiribution is bounded in 0**. This is, the random variable modelled with the Lognormal distribution cannot take negative values or a value of zero.
 
 # Let's practice
 
@@ -72,6 +73,7 @@ PDF and CDF of Lognormal distribution to describe overtopping volumes $V (l/m)$.
 % source: distributions
 ```{attributiongrey} Attribution
 :class: attribution
-This chapter was written by Patricia Mares Nasarre and Robert Lanzafame. {ref}`Find out more here <distributions_credit>`.
+This chapter was written by Patricia Mares Nasarre, Robert Lanzafame, and Max Ramgraber. {ref}`Find out more here <distributions_credit>`.
 ```
 % END-CREDIT
+
