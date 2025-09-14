@@ -2,6 +2,6 @@ teachbooks
 sphinx-tudelft-theme
 sphinx-inline-tabs
 
-git+https://github.com/TeachBooks/TeachBooks-Favourites
+git+https://github.com/TeachBooks/TeachBooks-Favourites #BUMP
 
 docutils == 0.17.1
