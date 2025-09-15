@@ -1,5 +1,5 @@
 (components)=
-# Components of time series
+# Time series components
 
 A time series is a discrete time sequence of data points indexed in time which can be used to study a phenomenon. It is a record of the data collected at different points in time, it consists of discrete time samples of typically a continuous-time phenomenon in reality.  The data are usually collected at fixed time intervals rather than just recording them intermittently or irregularly. The fixed interval $\Delta t$, in the time domain, is defined as 'sampling interval' and, in the frequency domain, it is defined as 'sampling rate' or 'sampling frequency' $f_s$, expressed for example in Hz:
 
