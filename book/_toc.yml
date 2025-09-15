@@ -145,7 +145,11 @@ parts:
       - file: time_series/ar.ipynb
         sections:
         - file: time_series/ar_exercise.ipynb
-      - file: time_series/forecasting
+      - file: time_series/examples_PSD.ipynb
+      - file: time_series/forecasting.md
+        sections:
+        - file: time_series/forecasting_example.ipynb
+      - file: time_series/movingAverage.ipynb
   
     - file: optimization/overview
       sections:
@@ -313,6 +317,7 @@ parts:
     - file: optimization/gurobi.md
       title: "Week 2.4: Gurobi installation"
 # END REMOVE-FROM-PUBLISH
+
   - caption: Miscellaneous
     numbered: false
     chapters:
