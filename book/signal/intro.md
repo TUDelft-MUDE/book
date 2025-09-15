@@ -1,5 +1,13 @@
-(SP)=
+(signal_processing)=
 # Signal Processing
+
+% START-CREDIT
+% source: signal_processing
+```{attributiongrey} Attribution
+:class: attribution
+This chapter is written by Christiaan Tiberius. {ref}`Find out more here <signal_processing_credit>`.
+```
+% END-CREDIT
 
 The goal of this week is to be able to identify and analyze frequency components in a signal; this is referred to as _spectral analysis._ The following chapters are told in a story-like sequence that will guide you through this process naturally.
 

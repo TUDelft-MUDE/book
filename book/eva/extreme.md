@@ -1,5 +1,5 @@
 
-# Extremes
+# Concept of Extremes
 
 If you hear the word "**extreme**", the first thing that may come to your mind are extreme sports or natural disasters, such as a hurricane or a typhon. That gives us an intuition of what is an extreme observation in probability theory. Let's see it in further detail with a dummy example.
 
@@ -10,7 +10,7 @@ We want to perform a market study of the prices of sold t-shirts to start a new 
 ---
 
 ---
-Pdf of t-shirts price.
+Pdf of t-shirts price. Maradona's t-shirt image belongs to Guiness World Records[^source]
 ```
 
 Based on the above example, we can define an extreme in probability theory as...
@@ -34,3 +34,5 @@ Extreme Value Analysis (EVA) allows us to quantify the needed extremes for desig
 For instance, going back to our toy example of the t-shirts, EVA allows us to get a better understanding of how the expensive t-shirts behave. We focus on modelling the expensive t-shirts and forget about the cheap options. The probabilistic model developed with EVA will allow us to gain information about prices higher than those already recorded in our dataset and gain insight on how the market might evolve.
 
 In the following sections, you will see how to select extreme observations within a database (timeseries of observations) and select, fit and use probability distribution functions to characterize their uncertainty and infer the needed extreme values for design.
+
+[^source]: https://www.guinnessworldrecords.com/news/2022/5/diego-maradonas-hand-of-god-shirt-breaks-records-at-auction-702926

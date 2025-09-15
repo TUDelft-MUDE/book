@@ -1,4 +1,4 @@
-# Introduction to modelling
+# Model classification
 
 ## What is a Model?
 
@@ -6,26 +6,33 @@
 **In short:** A model is a purpose built abstraction of physical reality.
 ```
 
-In any engineering discipline, **we interact with a system** (Earth, ecosystem, water network, structure, …). Usually, we have questions about how the system behaves and how our intervention will affect it (e.g.: how a water body reacts when the cooling water from a nuclear power plant is discharged), or how the system will impact a proposed intervention (e.g.: a river which may flood close to our road). 
+In any engineering discipline, **we interact with a system** (Earth, ecosystem, water network, structure, dutch railways,…). Usually, we have questions about how the system behaves and how our intervention will affect it (e.g.: how a water body reacts when the cooling water from a nuclear power plant is discharged), or how the system will impact a proposed intervention (e.g.: a river which may flood close to our road). 
 
 To answer that, we build an abstraction of the system which can mimic those aspects we are interested in. For instance, if we focus on the example from the cooling water and the water body, we can model the heat distribution in the water body to know the final temperature. Here we are only modelling some aspects of the system we are studying. What about the response from the species living there? Well, **if we do not need to know about this, and this doesn't affect our results in a meaningful way, our model is good enough to answer our question!**
 
-% ./figs/modelling/diagram.png "diagram" *Modelling procedure diagram [[1]](https://schoolbag.info/mathematics/numbers/103.html)*
-| ![diagram](https://files.mude.citg.tudelft.nl/replacement.svg) |
-| :--: |
-| ... |
+```{figure} https://files.mude.citg.tudelft.nl/modelSchematic.png
+:height: 600px
+:name: Modelling workflow
+:align: center
+Schematic illustration of the modelling workflow.
+```
 
 Once we are sure that the model can reproduce the behaviors we are interested in through **mathematization** ,i.e, the implementation of the abstraction, we can further use it to make **computations**. Those computations need to be **interpreted** to get the answer to our actual question. We can also check if our model realistically represents the system we are modelling through **verification** - more about that later.
 
 ***
 
-Using a short practical example to illustrate this: imagine you are throwing a projectile, let us say it is a basket ball, and you want to **model** its trajectory. To do so, you would write the following equations of motion:
+Using a short practical example to illustrate this: imagine you are throwing a projectile, let us say it is a basket ball, and you want to **model** its trajectory. To do so, you would write the following equations of motion of the ball in the $x$ and $y$ direction, and obtain the following the kinematic expressions that entirely define the trajectory of the ball::
 
 $$\begin{cases}x=v_0t\cos\theta \\ y=v_0t\sin\theta-\frac{1}{2}gt^2\end{cases}$$
 
 where $x$ and $y$ are the horizontal and vertical components of the position of the ball at time $t$, $v_0$ is the initial velocity, $\theta$ is the initial angle and $g$ is the gravity acceleration. The trajectory of the projectile depends on the velocity and angle we shoot the ball. In the figure below, different trajectories depending on $\theta$ and $v_0$ are shown. These are our predicted trajectories based on our very basic model.
 
-![projectile](https://files.mude.citg.tudelft.nl/projectile.png)
+```{figure} https://files.mude.citg.tudelft.nl/projectile.png
+:name: Projectile
+:align: center
+:height: 400px
+Trajectory of thrown projectile as described by simple dynamic model.
+```
 
 We will discuss other outside factors that may affect the validity of the model in the following sections. For now, can you think of how you may modify this model to reflect the real-life behaviour more accurately?
 
@@ -37,9 +44,14 @@ Our model will be based on a series of assumptions depending on the problem we a
 
 Imagine you want to predict what would be the choice made by a rational individual to travel from Delft to Paris (i.e. given origin and destination). Would he choose to go by car or by train?
 
-%![distances](https://files.mude.citg.tudelft.nl/distances.png "distances")
-![](https://files.mude.citg.tudelft.nl/replacement.svg)
-We can consider the simplest model: the traveller will choose the shortest travelling time. In this case, according to our model, the traveller will choose to go by car. However, does this model accurately asess the travellers preference? **No.** Modelling people choices is way more complicated, since they also depend on other factors such as travel cost, comfort, sustainability, etc.
+```{figure} https://files.mude.citg.tudelft.nl/train_vs_car.png
+:name: Modelling workflow
+:align: center
+
+Plannig a trip from Delft to Paris. 
+```
+
+We can consider the simplest model: the traveller will choose the shortest travelling time. In this case, according to our model, the traveller will choose to go by train. However, does this model accurately asess the travellers preference? **No.** Modelling people choices is way more complicated, since they also depend on other factors such as travel cost, comfort, sustainability, etc.
 
 ### Example 2: modelling car emissions
 
@@ -88,9 +100,9 @@ In the case of both these examples, it is advisable to build the model in a diff
 
 Models can be classified in different ways. Here, we are going to introduce the classification according to their nature. There are four categories:
 
-* **Conceptual models**: representations of how reality looks at the highest level of abstraction. These are the least interesting ones in our course, so we will not go much more in-depth in them. 
-* **Mechanistic models**: these models make use of first principle laws from physics, chemistry or biology to describe the behavior of the constitutive elements of the system. They are then systems of systems and can be very complex.
-* **Phenomenological models**: these models rely on the mathematical consistency between quantities based on observations. This is, you take measurements during experiments, you have a look at them under the view of the existing first principles of physics and infer how they are related to each other. Therefore, they do not only rely on data but also they have to be mathematically sound.
+* **Conceptual models**: representations of how reality looks at the highest level of abstraction. This should be always the first step of any modelling approach, and abstracting a real-case scenario is not always straightforward. In our case, we will generally provide such abstractions directly, so we will not go much more in-depth into this topic here.
+* **Mechanistic models**: these models make use of first principle laws from physics, chemistry or biology to describe the behavior of the constitutive elements of the system. They are then systems of mechanistic models which can be very complex.
+* **Phenomenological models**: these models rely on the mathematical consistency between quantities based on observations. This is, you take measurements during experiments, you have a look at them under the view of the existing first principles of physics and infer how they are related to each other. Therefore, they do not only rely on data but also they have to be mathematically sound and should obey the basic laws of mechanics and thermodynamics to the extent possible. Phenomenological models are often only valid for a very specific scale (e.g. micro-scale or macro-scale), depending on the type of experimental data used to derive them, and usually cannot be upscaled or downscaled.
 * **Data-driven models**: these models, as the name indicated, make only use of data. Thus, you perform experiments, measure several variables and perform some sort of data analysis, such as regression, to figure out the relationship between input and outputs. 
 
 Let's see the last three with some examples.
@@ -129,3 +141,10 @@ Imagine we want to predict the force of waves acting on a wall. To do so, we sta
 
 This is purely empirical and, thus, a data-driven model! We have simply used data to fit a relationship **input -> output**. These models can be very useful when trying to model very complex systems when there is lots of data available.
 
+% START-CREDIT
+% source: modelling_concepts
+```{attributiongrey} Attribution
+:class: attribution
+This chapter was written by Alessandro Cabboi, Patricia Mares Nasarre and Robert Lanzafame. {ref}`Find out more here <modelling_concepts_credit>`.
+```
+% END-CREDIT

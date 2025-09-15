@@ -1,5 +1,5 @@
 (ACF)=
-# Autocovariance function (ACF)
+# Autocovariance function
 
 Before we can look into the modelling of a stochastic process for instance using an Autoregressive (AR) model, we first need to introduce the autocovariance function (ACF) for a stationary time series, and describe the relationship between the ACF and the power spectral density (PSD).
 
@@ -274,3 +274,11 @@ $$
 
 ```
 :::
+
+% START-CREDIT
+% source: time_series_analysis
+```{attributiongrey} Attribution
+:class: attribution
+This chapter was written by Alireza Amiri-Simkooei, Christiaan Tiberius and Sandra Verhagen. {ref}`Find out more here <time_series_analysis_credit>`.
+```
+% END-CREDIT

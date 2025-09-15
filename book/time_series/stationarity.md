@@ -138,3 +138,11 @@ We have seen different ways of obtaining a stationary time series from the origi
 5. Predict future values of the time series: $\hat{Y}_p=\mathrm{A}_p\hat{X}+\hat{\epsilon}_p$ (Section [Forecasting](forecast)).
 
 Resulting in estimates $\hat{Y}_p$ of the time series at future times $t_p$, beyond he time of the last observation $t_m$ in the time series.
+
+% START-CREDIT
+% source: time_series_analysis
+```{attributiongrey} Attribution
+:class: attribution
+This chapter was written by Alireza Amiri-Simkooei, Christiaan Tiberius and Sandra Verhagen. {ref}`Find out more here <time_series_analysis_credit>`.
+```
+% END-CREDIT

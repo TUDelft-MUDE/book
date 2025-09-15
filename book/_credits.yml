@@ -1,0 +1,273 @@
+# Credits
+book:
+  credit:
+    author:
+      - Robert Lanzafame
+      - Tom van Woudenberg
+      - Sandra Verhagen
+    title: _config.yml
+    license: CC BY 4.0
+    copyright: Delft University of Technology
+    type: editor-author
+  version:
+    type: semantic-year
+    year: 2024
+  note: |
+      There are 4 interactive figures from Max Ramgraber (see resources per chapter). They are located in book/_static/elements/ and can be hard to track down as the figure tags (used for numref) are different than the file names _and_ each file can have more than one name (so that it is easy to list each time that file is used on the credits page). They are (file name/figure name): element_correlation.html/density_scatter, density_scatter_2 and density_scatter_3; element_2D_Gaussian/2D_Gaussian ; element_Gaussian_cdf_moments/pdf_cdf_2; and element_pdf_and_cdf/pdf_cdf.
+  
+
+
+
+sources:
+  modelling_concepts:
+    author:
+      - Alessandro Cabboi
+      - Patricia Mares Nasarre
+      - Robert Lanzafame
+    acknowledgement:
+      - name: João Moura Pereira de Lucas Teixeira
+        contribution: Created first draft of pages from powerpoint slides.
+    type: internal
+    note: |
+      Alessandro made most of the slides, which were transcribed by João in 2023. Robert and Patricia modified and re-wrote some material into book format for 2023. Patricia especially added to the GoF page.
+      
+      Status of figures is unclear.
+
+  uncertainty_propagation:
+    license: CC BY 4.0
+    copyright: Delft University of Technology
+    author:
+      - Sandra Verhagen
+    title: Propagation of Uncertainty
+    acknowledgement:
+      - name: Robert Lanzafame, Patricia Mares Nasarre, Max Ramgraber
+        contribution: reviewed, commented and/or modified content
+      - name: Sophie Keemink, Caspar Jungbacker and Thirza Feenstra
+        contribution: provided feedback and helped develop exercises.
+      - name: Antonio Magherini
+        contribution: converted the slides and exercises to book format
+    resource:
+      - name: Max Ramgraber
+        what: interactive figure
+        where: https://mude.citg.tudelft.nl/2024/book/_static/elements/element_correlation.html
+        license: CC BY 4.0
+        copyright: Delft University of Technology
+    type: internal
+
+  observation_theory:
+    author:
+      - Sandra Verhagen
+    type: internal
+    acknowledgement:
+      - name: Sophie Keemink, Caspar Jungbacker and Thirza Feenstra
+        contribution: provided feedback and helped develop exercises.
+      - name: Antonio Magherini
+        contribution: converted the slides and exercises to book format
+    note: |
+      
+
+  numerical_modelling:
+    name: PDEs and the Finite Volume Method
+    author:
+      - Jaime Arriaga Garcia
+      - Anna Störiko
+      - Justin Pittman
+      - Robert Lanzafame
+    type: internal
+    acknowledgements:
+      - name:
+          - Isabel Slingerland
+          - Mona Devos
+        contribution: critical feedback and development of exercises, figures and related content.
+      - name:
+          - Ronald Brinkgreve
+          - Dhruv Mehta
+          - Ajay Jagadeesh
+        contribution: feedback on structure, content.
+    resource:
+      - name: Deltares
+        name_ref: NumericalMethodsRiver
+        what: animated figure (gif)
+        where: book\numerical_methods\overview.md
+        source: https://files.mude.citg.tudelft.nl/NumericalMethodsRiver.gif
+        license: unclear
+        copyright: Deltares
+        note: Original caption from Jaime "Cool numerical model of the Jamuna river. Thanks to Amgad Omer (Deltares).""
+      - name: openstax_calculus
+        note: |
+          
+
+  distributions:
+    author:
+      - Patricia Mares Nasarre
+      - Robert Lanzafame
+    type: internal
+    note: |
+      2 pages are from R&R book. Tried to keep things simple and combined univariate and continuous distributions chapter. listed elisa and oswaldo as contributors for now, but expect them to become authors in the future.
+    resource:
+      - name: Max Ramgraber
+        what: interactive figures
+        where:
+          - https://mude.citg.tudelft.nl/2024/book/_static/elements/element_correlation.html
+          - https://mude.citg.tudelft.nl/2024/book/_static/elements/element_Gaussian_cdf_moments.html
+          - https://mude.citg.tudelft.nl/2024/book/_static/elements/element_pdf_and_cdf.html
+        license: CC BY 4.0
+        copyright: Delft University of Technology
+
+  finite_volume_method:
+    author:
+      - Robert Lanzafame
+      - Jaime Arriaga Garcia
+    type: internal
+    acknowledgements:
+      - name:
+          - Isabel Slingerland
+          - Mona Devos
+        contribution: critical feedback and development of exercises, figures and related content.
+      - name: Dhruv Mehta
+        contribution: providing a first draft of the chapter structure and contents.
+
+  finite_element_method:
+    title: Finite Element Method
+    author:
+      - Frans van der Meer
+    type: internal
+    note: 
+      - text: |
+          This chapter was originally written by Frans for the MUDE book. It is then included in the book Finite Elements in Civil Engineering and Geosciences by Oriol Colomés, Iuri Rocha, Frans van der Meer and Martin Lesueur. There, the chapter is called "Introduction to finite elements" and can be accessed at [interactivetextbooks.citg.tudelft.nl/computational-modelling](https://interactivetextbooks.citg.tudelft.nl/computational-modelling)
+
+          Frans confirmed that the he and the co-authors want to release the book under CC BY, but have not done so yet. There may be some copyright concerns in the book, but the MUDE chapter is fine.
+          
+          Development of this chapter took place in the repo of the other book, and in Fall 2024 the contents were copied back to the MUDE book. See file ./book/fem/readme.md for note about transfer from other repo (along with general transfer instructions for non-credit-specific stuff).
+
+
+  optimization:
+    title: Optimization
+    author:
+      - Gonçalo Homem de Almeida Correia
+      - Maria Nogal Macho
+      - Bahman Madadi
+      - Jie Gao
+    type: internal
+    note:
+      - id: authorship
+        public: true
+        text: |
+          Gonçalo Homem de Almeida Correia created most of the material, as well as the overall structure of this chapter. Maria Nogal Macho and Bahman Ahmadi made contributions to various parts of the material. Bahman Ahmadi developed the exercises in Python and Jupyter notebooks. Jie Gao created the genetic algorithm material.
+      - text: |
+          Gonçalo instructions via email to Robert, April 18: Most of that material was created by me in the University of Coimbra and here [TUD]. But there’s material of Bahman Ahmadi, Maria Nogal, Jie Gao, etc.
+      - text: |
+          There are two types of files to consider in this chapter: 1) external files related to the Project (see resource below), and 2) stripped notebooks (for download link replacer). Each type have had special notes added in the CREDIT comment (text search "source: optimization").
+    acknowledgement:
+      - name:
+          - Jialei Ding
+          - Nadia Pourmohammadzia
+        contribution: reviewed material and made improvements to the traffic exercise.
+      - name: Tom van Woudenberg
+        contribution: edited text and improved content and structure for online interactive textbook format.
+      - name: João Moura Pereira de Lucas Teixeira
+        contribution: created first draft of pages from powerpoint slides.
+    resource:
+      - name: Road Network Design Problem
+        what: Jupyter notebooks and associated files
+        where:
+          - book\optimization\project.md
+          - book\book\optimization\Project_MILP.ipynb
+          - book\optimization\Project_GA.ipynb
+        source: URL not yet available
+        license: CC BY 4.0
+        copyright: Delft University of Technology
+        note: |
+          Not yet published. Only the md and ipynb files are included here, not the py files. Once published, update URL and citation. Citation will be Ahmadi, et al. (2024) and the full bib entry will be similar to a MUDE chapter (e.g., Ahmadi...in Lanzafame et al., (2024) MUDE Files...)
+
+  machine_learning:
+    title: Introduction to Machine Learning
+    author:
+      - Iuri Rocha
+      - Anne Poot
+      - Joep Storm
+      - Leon Riccius
+    type: internal
+
+  signal_processing:
+    title: Signal Processing
+    author:
+      - Christiaan Tiberius
+    acknowledgement:
+      - name: Max Mulder
+        contribution: being a signal processing soul-mate, sparring-partner and TU Delft colleague of the author who co-shaped the material, indirectly, through collaboration since early 2000's.
+      - name: Jelle Knibbe
+        contribution: reviewed, commented and/or modified content of original powerpoint slides.
+      - name: João Moura Pereira de Lucas Teixeira
+        contribution: created first draft of pages from powerpoint slides.
+      - name: Antonio Magherini
+        contribution: reviewed, commented and/or modified content
+    type: internal
+    note:
+      - id: other_book
+        public: true
+        text: |
+          The material in this chapter is closely related to an in-depth book "Engineering signal analysis - from Fourier to filtering" by Christiaan Tiberius and Max Mulder (TU Delft Open Publishing, 2025).
+      - text: |
+          Note from Christian about the chapter and Max Mulder: I would consider one more person here, namely prof Max Mulder from Aerospace Engineering, as my signal processing soul-mate, sparring-partner and TU Delft colleague...Long time ago we developed and taught a course on this subject together, at Aerospace. We kept in touch (and as you know, we’re actually preparing, together, an Open Textbook on just this subject, hopefully appearing by the end of this year). So, directly his contribution is zero, but indirectly, he co-shaped this material. To say, my way of approaching and teaching signal processing has been determined in a large part by our joint teaching at that time (20 years ago).
+      - text: |
+          Robert went through the figures quickly but asked Christian to double-check via [Issue 45](https://github.com/TUDelft-MUDE/book/issues/45)
+    resources:
+      - name: unitycircle
+        what: animated figure
+        filename: unitycircle.gif
+        filepath: https://files.mude.citg.tudelft.nl/
+        where: book/2024/signal_processing/fourier_real.md
+        source_url: https://commons.wikimedia.org/wiki/File:Unitycircle-complex.gif
+        bibtex_key: BFD
+        license: CC BY SA 4.0
+
+  time_series:
+    title: Time Series Analysis
+    author:
+      - Alireza Amiri-Simkooei
+      - Christiaan Tiberius
+      - Sandra Verhagen
+    acknowledgement:
+      - name: Berend Bouvy
+        contribution: created a number ofinteractive figures and exercises, as well as provided critical feedback.
+      - name: Antonio Magherini
+        contribution: created the first draft material from powerpoint slides and prepared notebooks as exercises.
+      - name: Serge Kaplev
+        contribution: provided critical feedback and suggestions for the theoretical content
+      - name: Lucas Alvarez Navarro
+        contribution: provided critical feedback and suggestions for the theoretical content
+    note:
+      - text: |
+          Alireza Amiri-Simkooei created the main framework of this chapter, which was then revised by Sandra and Christian.
+    resource:
+      - name_ref: cover
+        what: figure
+        filename: tsa_cover.png
+        bibtex: ipcc2018
+        filepath: https://files.mude.citg.tudelft.nl/
+        where: book/2024/time_series/intro.md
+        source_url: https://www.researchgate.net/publication/330090901_Sustainable_development_poverty_eradication_and_reducing_inequalities_In_Global_warming_of_15C_An_IPCC_Special_Report
+        note: |
+          This figure is used as cover for the chapter. It is unmodified from PDFsource report.
+      - name_ref: trend
+        bibtex: csiro
+        what: figure
+        filename: trend.png
+        filepath: https://files.mude.citg.tudelft.nl/
+        where: book/2024/time_series/components.md
+        source_url: https://www.cmar.csiro.au/sealevel/sl_hist_last_decades.html
+
+  extreme_value_analysis:
+    title: Extreme Value Analysis
+    authro: Patricia Mares Nasarre
+    type: internal
+    acknowledgement:
+      - name:
+          - Robert Lanzafame
+          - Oswaldo Morales Napoles
+          - Elisa Ragno
+        contribution: suggestions on the theoretical and didactic framework, as well as critical feedback and review.
+
+  risk_analysis:
+    see credits page. complicated because of the need to cite specific chapters. note that the attributions are also unique in that the chapter attribution mentions that some pages/sections are by Robert and Bas (but leaves credits page to distinguish).

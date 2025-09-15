@@ -89,3 +89,10 @@ $$
 
 It follows that the Maximum Likelihood estimator of $\mathrm{x}$ is identical to the BLUE **if** $Y$ is normally distributed.
 
+% START-CREDIT
+% source: observation_theory
+```{attributiongrey} Attribution
+:class: attribution
+This chapter was written by Sandra Verhagen. {ref}`Find out more here <observation_theory_credit>`.
+```
+% END-CREDIT

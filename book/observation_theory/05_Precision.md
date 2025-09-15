@@ -140,3 +140,11 @@ Not immediately clear from the expression is that also the redundancy ($=m-n$) i
 <iframe src="https://tudelft.h5p.com/content/1292062157562749767/embed" aria-label="quiz_uniform_motion" width="1088" height="637" frameborder="0" allowfullscreen="allowfullscreen" allow="autoplay *; geolocation *; microphone *; camera *; midi *; encrypted-media *"></iframe><script src="https://tudelft.h5p.com/js/h5p-resizer.js" charset="UTF-8"></script>
 
 :::
+
+% START-CREDIT
+% source: observation_theory
+```{attributiongrey} Attribution
+:class: attribution
+This chapter was written by Sandra Verhagen. {ref}`Find out more here <observation_theory_credit>`.
+```
+% END-CREDIT

@@ -1,6 +1,14 @@
 (01_errorprop)=
 # Propagation of Uncertainty
 
+% START-CREDIT
+% source: uncertainty_propagation
+```{attributiongrey} Attribution
+:class: attribution
+This chapter was written by Sandra Verhagen. {ref}`Find out more here <uncertainty_propagation_credit>`.
+```
+% END-CREDIT
+
 In engineering and sciences we often work with functions of random variables, since when estimating or modelling something, the output is a function of the random input variables, see {numref}`functions_RV`
 
 ```{figure} https://files.mude.citg.tudelft.nl/01_Functions.png

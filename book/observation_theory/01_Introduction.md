@@ -188,3 +188,11 @@ Linear regression example for amount of rainfall (independent variable) and rive
 The estimation principles discussed in this part are needed for estimating these relationships.
 
 Supervised machine learning (MUDE topic in Q2) is all about finding relationships between target (dependent) variables and certain features (predictors), and therefore regression analysis.
+
+% START-CREDIT
+% source: observation_theory
+```{attributiongrey} Attribution
+:class: attribution
+This chapter was written by Sandra Verhagen. {ref}`Find out more here <observation_theory_credit>`.
+```
+% END-CREDIT

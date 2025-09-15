@@ -1,5 +1,12 @@
-(oop)=
 # Week 1.7: OOP
+
+% START-CREDIT
+% source: programming
+```{attributiongrey} Attribution
+:class: attribution
+This chapter reuses material from _Learn Programming for Engineers_. {ref}`Find out more here <programming_credit>`.
+```
+% END-CREDIT
 
 This chapter contains a lot of information that is useful for improving your programming skills, however you are not required to learn all of it, and not required to memorize everything for the exam.
 

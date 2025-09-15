@@ -46,7 +46,7 @@ The trend is the general pattern of the time series and shows its long-term chan
 :width: 600px
 :align: center
 
-Monthly time series of global mean sea level measurements using Satellite Altimetry technique. Source image: https://www.cmar.csiro.au/sealevel/sl_hist_last_decades.html
+Monthly time series of global mean sea level measurements using Satellite Altimetry technique. Source image: {cite:t}`csiro`.
 ```
 
 {numref}`trend` shows a positive trend (red line) of about $3.5$ mm/year, which in this case indicates global sea level rise. This however needs to be further investigated and tested statistically (see [testing](08_testing) and also {ref}`modelling_tsa`).
@@ -176,7 +176,8 @@ It can be written as
 $$Y(t) = y_0 + rt + a \cos(2\pi f_1 t) + b \sin(2\pi f_1 t) + o u_k(t) + \epsilon(t)$$
 
 
-where 
+where
+
 - $y_0$ is the intercept at $t=0$ (e.g. in mm).
 - $r$ is the (constant) rate (e.g. in mm/year).
 - $a$ and $b$ are the coefficients of the cycle, (e.g. annual cycle).
@@ -184,4 +185,11 @@ where
 - $o$ is the offset starting at time $t_k$.
 - $u_k(t)$ is the Heaviside step function.
 - $\epsilon(t)$ is the i.i.d. random Gaussian noise, i.e. $\epsilon(t) \sim N(0, \sigma_{\epsilon}^2)$.
-:::
+
+% START-CREDIT
+% source: time_series_analysis
+```{attributiongrey} Attribution
+:class: attribution
+This chapter was written by Alireza Amiri-Simkooei, Christiaan Tiberius and Sandra Verhagen. {ref}`Find out more here <time_series_analysis_credit>`.
+```
+% END-CREDIT
