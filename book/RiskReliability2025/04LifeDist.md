@@ -19,3 +19,20 @@ $f(t)=\lambda e^{-\lambda t}, r(t)=\frac{f(t)}{1-F(t)}=\frac{\lambda e^{-λt}}{1
 
  $f(t) = \lambda\alpha t^{\alpha-1}e^{-\lambda t^\alpha}$, $r(t) = \lambda \alpha t^{\alpha-1}$, $\lambda$, $\alpha$ $>0$, $t\geq 0$. Another common parametrization of the Weibull density is $f(t) = \frac{b}{a}\left(\frac{t}{z}\right)^{b-1} t^{\alpha-1}e^{-\lambda t^\alpha}$ 
 
+```{figure} https://files.mude.citg.tudelft.nl/failure_rate.png
+ 
+---
+ 
+---
+Failure rate curves of the gamma distribution $\lambda =1$.
+```
+
+```{figure} https://files.mude.citg.tudelft.nl/failure_rate2.png
+ 
+---
+ 
+---
+Failure rate curves of the Weibull distribution for $\lambda = 1$.
+```
+
+The exponential distribution has constant failure rate. The gamma and the Weibull distribution have increasing failure rate for $\alpha >1$.
