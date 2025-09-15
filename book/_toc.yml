@@ -22,9 +22,9 @@ parts:
         - file: numerical_methods/taylor-series-exercise.ipynb
       - file: numerical_methods/5-numerical-integration.ipynb
       - file: numerical_methods/6-initial-value-problem-singlestep.ipynb
-      - file: numerical_methods/7-multistep_and_multistage_methods.ipynb
-      - file: numerical_methods/8-boundary-value-problem.ipynb
-      - file: numerical_methods/9-starting_with_PDEs.ipynb
+      - file: numerical_methods/7-implicit_methods_nonlinear_ode.ipynb
+      - file: numerical_methods/8-multistep_and_multistage_methods.ipynb
+      - file: numerical_methods/9-boundary-value-problem.ipynb
 
 # START REMOVE-FROM-PUBLISH
     - file: univariate_distributions/overview
