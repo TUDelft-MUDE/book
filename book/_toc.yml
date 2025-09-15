@@ -146,13 +146,10 @@ parts:
         sections:
         - file: time_series/ar_exercise.ipynb
       - file: time_series/examples_PSD.ipynb
-        title: "PSD examples"
       - file: time_series/forecasting.md
-        title: "Time Series forecasting"
         sections:
         - file: time_series/forecasting_example.ipynb
       - file: time_series/movingAverage.ipynb
-        title: "Appendix on Moving Average (optional)"
   
     - file: optimization/overview
       sections:
