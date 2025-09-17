@@ -1,3 +1,4 @@
+(ObsTheory)=
 ## Introduction
 
 From experience we know that various uncertain phenomena can be modeled as a random variable (or a random vector), say $Y$. In this part the random variables are measurements (e.g., sensor readings), which are uncertain due to random errors. We will refer to these random variables (our input data) $Y$ as the *observables*.
@@ -126,15 +127,15 @@ $$
 :::
 
 (positioning)=
-#### Positioning model
-As a final example we will consider a non-linear functional model for estimating the unknown position $\mathrm{x}=\begin{bmatrix} x, y, z\end{bmatrix}^T$ of a satellite. The observables are distance measured with laser ranging from $m$ ground stations at known positions $\begin{bmatrix} x_i, y_i, z_i\end{bmatrix}^T$.
+#### GNSS Positioning 
+As a final example we will consider a non-linear functional model for estimating the unknown position $\mathrm{x}=\begin{bmatrix} x, y, z\end{bmatrix}^T$ of a Global Navigation Satellite System (GNSS) receiver on Earth. The observables are distance measured for $m \geq 4$ GNSS satellites with known positions $\begin{bmatrix} x_i, y_i, z_i\end{bmatrix}^T$.
 
-```{figure} https://files.mude.citg.tudelft.nl/01_laser.png
+```{figure} https://upload.wikimedia.org/wikipedia/commons/9/91/GDOP_good.svg
 ---
 height: 200px
-name: LSfit
+name: GNSS_GDOP
 ---
-Positioning of satellite in orbit using laser ranging from multiple ground stations on knonw locations.
+GNSS positioning: the position of the user is estimated from four GNSS satellites. Figure adapted from [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:GDOP_good.svg) {cite:t}`gdop2012`.
 ```
 
 The functional model comprises $m$ non-linear functions of the unknown parameter vector $\mathrm{x}$:

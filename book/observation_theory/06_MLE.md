@@ -63,7 +63,7 @@ since that is easier and results in the same maximum. Setting the gradient to ze
 $$
 \begin{align*}
 \frac{\partial \ln L(\mathrm{Ax},\Sigma_Y|\mathrm{y})}{\partial \mathrm{x}}&= \frac{\partial (-\frac{1}{2}\mathrm{(y-Ax)^T} \Sigma_Y^{-1}(\mathrm{y-Ax}))}{\partial \mathrm{x}}\\
-&= -\frac{1}{2}(-2\mathrm{A^T} \Sigma_Y^{-1} Y+2\mathrm{A^T} \Sigma_Y^{-1} \mathrm{A}\mathrm{x})=0\\
+&= -\frac{1}{2}(-2\mathrm{A^T} \Sigma_Y^{-1} y+2\mathrm{A^T} \Sigma_Y^{-1} \mathrm{A}\mathrm{x})=0\\
 \mathrm{A^T} \Sigma_Y^{-1} \mathrm{A}\mathrm{x} &= \mathrm{A^T} \Sigma_Y^{-1} \mathrm{y}
 \end{align*}
 $$

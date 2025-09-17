@@ -70,6 +70,7 @@ sources:
     name: PDEs and the Finite Volume Method
     author:
       - Jaime Arriaga Garcia
+      - Anna Störiko
       - Justin Pittman
       - Robert Lanzafame
     type: internal
@@ -79,6 +80,7 @@ sources:
           - Mona Devos
         contribution: critical feedback and development of exercises, figures and related content.
       - name:
+          - Ronald Brinkgreve
           - Dhruv Mehta
           - Ajay Jagadeesh
         contribution: feedback on structure, content.
@@ -90,7 +92,10 @@ sources:
         source: https://files.mude.citg.tudelft.nl/NumericalMethodsRiver.gif
         license: unclear
         copyright: Deltares
-        note: Original caption from Jaime "Cool numerical model of the Yamuna river. Thanks to Amgad Omer (Deltares).""
+        note: Original caption from Jaime "Cool numerical model of the Jamuna river. Thanks to Amgad Omer (Deltares).""
+      - name: openstax_calculus
+        note: |
+          
 
   distributions:
     author:
@@ -228,6 +233,10 @@ sources:
         contribution: created a number ofinteractive figures and exercises, as well as provided critical feedback.
       - name: Antonio Magherini
         contribution: created the first draft material from powerpoint slides and prepared notebooks as exercises.
+      - name: Serge Kaplev
+        contribution: provided critical feedback and suggestions for the theoretical content
+      - name: Lucas Alvarez Navarro
+        contribution: provided critical feedback and suggestions for the theoretical content
     note:
       - text: |
           Alireza Amiri-Simkooei created the main framework of this chapter, which was then revised by Sandra and Christian.

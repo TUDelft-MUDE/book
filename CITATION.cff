@@ -1,0 +1,45 @@
+# This CITATION.cff file was generated with cffinit.
+# Visit https://bit.ly/cffinit to generate yours today!
+
+cff-version: 1.2.0
+title: >-
+  Modelling, Uncertainty and Data for Engineers (MUDE)
+  Textbook
+message: >-
+  This record preserves the source code for the MUDE Textbook
+  and is updated automatically by Zenodo. See the README
+  and/or record https://doi.org/10.5281/zenodo.16236358.
+type: software
+authors:
+  - given-names: Robert
+    family-names: Lanzafame
+  - given-names: Tom
+    family-names: Woudenberg
+    name-particle: van
+  - given-names: Sandra
+    family-names: Verhagen
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.16236358
+    description: Zenodo DOI for the book (not the source code)
+  - type: doi
+    value: 10.5281/zenodo.16227601
+    description: Zenodo DOI for the source code
+repository-code: 'https://github.com/TUDelft-MUDE/book'
+abstract: >-
+  This repository contains the source code for the MUDE Textbook.
+  MUDE stands for Modelling, Uncertainty and Data for Engineers,
+  a required module in the MSc programs from the faculty of Civil
+  Engineering and Geosciences at Delft University of Technology
+  in the Netherlands.
+keywords:
+  - open interactive textbook
+  - education
+  - teachbooks
+  - engineering
+  - civil
+  - environmental
+  - geoscience
+  - python
+  - jupyter
+license: CC-BY-4.0

@@ -1,21 +1,20 @@
 
 # Goodness of Fit
 
-In the previous sections you have studied the different mathematical models (continuous distribution functions) that we can use to model the univariate uncertainty of a random variable and how to fit them based on observations. Also, you have been introduced to some methods to fit those models. **But how do I choose between different models?**
+In the previous sections, you have studied the different mathematical models (continuous distribution functions) that we can use to model the univariate uncertainty of a random variable and how to fit them based on observations. Also, you have been introduced to some methods to fit those distributions. **But how do we choose between different distributions?**
 
-The choice of the appropriate distribution function needs to be based first on the **physics of the random variable** we are studying. For instance, if I am studying the concentration of a gas in the atmosphere, negative values do not have a physical meaning, so the selected distribution function should not provide with those estimations.
+The choice of the appropriate distribution function needs to be based first on the **physics of the random variable** we are studying. For instance, if we are studying the concentration of a gas in the atmosphere, negative values do not have a physical meaning, so the selected distribution function should have zero probability density for negative values.
 
-Once we have accounted for the physical characteristics of the random variable, we can make use of **goodness of fit (GOF) techniques** to support our decision. This is, GOF techniques are not a ground truth, but an objective way of comparing models. Different techniques may lead to different judgments and it is you as expert who has to balance those outputs and select the best model to your judgment. Thus, it is recommended to use more than one GOF technique in the decision-making process. In the subsequent sections, some commonly used GOF techniques in the statistics field are presented.
+Once we have accounted for the physical characteristics of the random variable, we can make use of **goodness of fit (GOF) techniques** to validate our choice. That is to say, GOF techniques are not a ground truth, but an objective way of comparing different distribution choices. Different techniques may lead to different judgments and it is ultimately your task as an expert to balance those outputs and select the best model to your judgment. Thus, it is generally recommended to use more than one GOF technique in the decision-making process. In the subsequent sections, we present some commonly used GOF techniques in the statistics field.
 
-In order to illustrate these techniques, the following toy example will be used. The set of observations is represented in the plots below by its pdf and cdf. A Gaussian ($N(5.17, 5.76)$) and an Exponential distributions ($Expon(-5.25, 10.42)$) are fitted to the data. GOF techniques will be applied to determine which one of the two models fits the data best.
+**Let's take a look at an example:** In order to illustrate these techniques, we will use a toy example. The set of observations is represented in the plots below by its pdf and cdf. In the following, we will investigate a number of GOF techniques to determine which distribution best fits the data.
 
-```{figure} https://files.mude.citg.tudelft.nl/GOF_data.png
+````{iframe-figure} ../_static/elements/element_empirical_pdf_and_cdf.html
+:name: empirical_pdf_and_cdf
+:aspectratio: 2 / 1
 
----
-
----
-Data overview.
-```
+The data we will use for the GOF demonstrations. Hover over the figure to highlight the corresponding bins in the histogram and CDF.
+````
 
 ## Graphical methods
 
@@ -27,58 +26,46 @@ This technique is as simple as comparing the observations used to fit the model 
 
 Let's see it applied to the example data. Note that the term *"quantile"* is used in statistics to denote the values of the random variable.
 
-```{figure} https://files.mude.citg.tudelft.nl/QQplot.png
----
-scale: 75%
-name: rating_curve
+````{iframe-figure} ../_static/elements/element_QQ_plot.html
+:name: QQ_plot
+:aspectratio: 2 / 1
 
----
-QQ-plot.
-```
+Select a distribution and adjust the parameters using the sliders. Observe how the QQ plot changes in response. The data above is a synthetic example - which distribution do you believe generated the samples?
+````
 
-In the QQ-plot, it is shown how the predictions given by the Gaussian distribution (in blue) closely follow the $45 ^\circ$-line. Those provided by the Exponential distribution are way further, detaching significantly from the $45 ^\circ$-line in the upper tail. Based on this graphical technique, it is possible to conclude that Normal distribution seems to be a better model for the data.
+If we select a **Gumbel distributions** with the parameters $\mu=1$ and $\beta=1$, you can see that the samples closely follow the $45 ^\circ$-line[^Gumbeldata]. Those provided by the Exponential distributions (or the Gumbel dsitribution with other parameters) deviate further from the diagonal line. Based on this graphical technique, it is possible to conclude that Gumbel distribution seems to be a suitable model for the data.
 
 
 **Let's code it!**
 
-Pseudo code is presented to illustrate the procedure to build a QQ-plot.
+Pseudo code to build a QQ-plot is presented below to illustrate the procedure.
 
     read observations
 
-    #calculate the empirical cdf
+    # Calculate the empirical cdf
     p_emp, q_emp = empirical CDF of observations
 
-    #define the parameters of the Gaussian distribution
+    # Define the parameters of the chosen distribution, e.g., a Gaussian PDF
     mean_gaussian = 5.17
     sd_gaussian = 5.76
     
-    #compute the values of the random variable predicted by the Normal distribution
+    # Compute the values of the random variable predicted by the Normal distribution
     q_gaussian = CDF of Normal distribution evaluated in p_emp with parameters mean_gaussian and sd_gaussian
 
-    #define the parameters of the Exponential distribution
-    loc_expon = -5.25
-    scale_expon = 10.42
-    
-    #compute the values of the random variable predicted by the fitted distribution
-    q_exponential = CDF of Exponential distribution evaluated in p_emp with parameters loc_expon, scale_expon
-    
     scatterplot of q_emp versus q_gaussian
-    scatterplot of q_emp versys q_expon
-
 
 ### Log-scale
 
-As previously introduced, the tails of the distributions are key to allow the inference of values which have not been observed yet. Therefore, it is important to check whether the distribution used to model the observations is performing properly in that region. A simple trick to do so is to use a logarithmic scale (log-scale) to represent the exceedance probability plot. That way, we "zoom in" on those points in the tail instead of focusing on the bulk of the data. In the figure below, the representation of the cdf in regular and log-scale is shown.
+As previously introduced, the tails of the distributions are key to allow the inference of extreme values which have not been observed yet. Therefore, it is important to check whether the distribution used to model the observations is performing properly in that region. A simple trick to do so is to use a logarithmic scale (log-scale) to represent the exceedance probability plot. That way, we "zoom in" on those points in the tail instead of focusing on the bulk of the data:
 
-```{figure} https://files.mude.citg.tudelft.nl/log-scale.png
----
-name: log-scale
----
-Exceedance probability plot represented both in regular and logarithmic scale.
-```
+````{iframe-figure} ../_static/elements/element_log_scale_plot.html
+:name: log_scale_plot
+:aspectratio: 2 / 1
 
-Analyzing the figure on the left side, it can be seen that the observations follow better the Normal distribution. However, it is not clear which one of the two distributions is performing better in the tail. By analyzing the plot on the right side, it is possible to answer that question. Again, it is observed that the data points follow better the Gaussian distribution. However, observations in the tail are not that well represented by the Gaussian distribution, being even closer to the Exponential distribution. Thus, since none of the considered distributions performs properly in the tail, it may be needed to consider another distribution to model the asymmetry of the data, such as the Gumbel or Lognormal distributions. 
+Select a distribution and adjust the parameters using the sliders. Observe how the logarithmic exceedance probability plot plot changes in response.
+````
 
+If we are interested in extreme events, it is important to find a distribution that fits the tail samples well. Experiment with different distributions and observe how they behave in the tails.
 
 ### Probability plot or probability paper
 
@@ -98,9 +85,9 @@ $$
 
 In this manner, there is a linear relationship between $ln[1-F(x)]$ and $x$. Note that in the case of the Exponential distribution, the probability plot is the same as the log-scale! Therefore, the Exponential distribution was shown as a straight line in the previous plot, while the Gaussian distribution was not.
 
-## Formal hypothesis test: Kolmogorov-Smirnov test
+## Formal hypothesis test: The Kolmogorov-Smirnov test
 
-Kolmogorov-Smirnov (KS) test is one of the most popular nonparametric formal hypothesis tests in statistics. It can be used with two purposes: (1) to compare a sample with a reference parametric distribution, and (2) to compare two samples. Here, the first option is considered since it is the one used for GOF purposes. Thus, this test aims to determine how likely is that a sample was drawn from the reference parametric distribution.
+The **Kolmogorov-Smirnov (KS) test** is one of the most popular nonparametric formal hypothesis tests in statistics. It can be used for two purposes: (1) to compare a sample with a reference parametric distribution, or (2) to compare two empirical distributions. Here, we consider first option, since it is the one used for GOF purposes. Thus, this test aims to determine how likely is that a sample was drawn from the reference parametric distribution.
 
 This test is based on the KS statistic, which is (roughly) the maximum distance between the empirical cumulative distribution and the parametric distribution fitted to those observations. This statistic is mathematically defined as
 
@@ -120,17 +107,12 @@ The distribution of $D_n$ has been already calculated and included in different 
 
 Let's see it in an example. In the figure below, both the empirical distribution (step function) and the fitted normal distribution are shown. The maximum distance between both distributions is also presented in red.
 
-```{figure} https://files.mude.citg.tudelft.nl/sketch_KS.png
----
-name: KS
----
-Maximum distance between the empirical and fitted normal distribution ($D_n$).
-```
+````{iframe-figure} ../_static/elements/element_KS_test.html
+:name: KS_test
+:aspectratio: 2 / 1
 
-If we compute the KS statistic using the distribution already implemented in software (Scipy package, in this case), $D_n = 0.12$ is obtained which (roughly) corresponds to what is shown in the previous plot.
-
-After that, the $p-value$ is also computed, obtaining $p-value = 0.93$. This means that the probability of the null hypothesis ($H_0: \hat{F} \sim F$, the sample comes from the parametric distribution) being true is 0.93. Thus, considering a significance level $\alpha = 0.05$, $pvalue=0.93>\alpha=0.05$, so I cannot reject the null hypothesis.
-
+Select a distribution and adjust the parameters using the sliders. Observe how the KS statistic $D_{n}$ changes in response. The red vertical line demarkates the largest deviation between the empirical and theoretical PDF.
+````
 
 # Let's practice
 
@@ -160,10 +142,12 @@ However, the plot in log-scale is also available. There, it is shown how the Gum
 
 ```
 
+[^Gumbeldata]: In fact, the data has been synthetically generated from a Gumbel distribution with the parameters $\mu = 1$ and $\beta = 1$.
+
 % START-CREDIT
 % source: distributions
 ```{attributiongrey} Attribution
 :class: attribution
-This chapter was written by Patricia Mares Nasarre and Robert Lanzafame. {ref}`Find out more here <distributions_credit>`.
+This chapter was written by Patricia Mares Nasarre, Robert Lanzafame, and Max Ramgraber. {ref}`Find out more here <distributions_credit>`.
 ```
 % END-CREDIT
