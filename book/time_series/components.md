@@ -1,7 +1,7 @@
 (components)=
 # Time series components
 
-A time series is a discrete time sequence of data points indexed in time which can be used to study a phenomenon. It is a record of the data collected at different points in time, it consists of discrete time samples of typically a continuous-time phenomenon in reality.  The data are usually collected at fixed time intervals rather than just recording them intermittently or irregularly. The fixed interval $\Delta t$, in the time domain, is defined as 'sampling interval' and, in the frequency domain, it is defined as 'sampling rate' or 'sampling frequency' $f_s$, expressed for example in Hz:
+A time series is a discrete time sequence of data points indexed in time which can be used to study a phenomenon. It is a record of the data collected at different points in time, and it consists of discrete time samples of typically a continuous-time phenomenon in reality.  The data are usually collected at fixed time intervals rather than just recording them intermittently or irregularly. The fixed interval $\Delta t$, in the time domain, is defined as 'sampling interval' and, in the frequency domain, it is defined as 'sampling rate' or 'sampling frequency' $f_s$, expressed for example in Hz:
 
 $$ \Delta t = \frac{1}{f_s} $$
 
@@ -11,7 +11,7 @@ $$Y(t) = [Y(t_1), Y(t_2), \ldots{}, Y(t_m)]^T$$
 
 The $Y(t_i)$ are random variables, since the data is affected by noise.
 
-The time instants, also defined as epochs, are $t_i = i \Delta t$, with $i = 1,\ldots,m$, indicating that the samples are equally spaced in time intervals of $\Delta t$. Assuming a unit time interval (i.e., $\Delta t=1$), then $t_i = i$ and we can write the time series as 
+The time instants, also defined as epochs, are $t_i = i \Delta t$, with $i = 1,\ldots,m$, indicating that the samples are equally spaced in time intervals of $\Delta t$. Assuming a unit time interval for convenience of explanation in this chapter (i.e., $\Delta t=1$), then $t_i = i$ and we can write the time series as 
 
 $$Y(t) = [Y(1), Y(2), \ldots{}, Y(m)]^T = [Y_1, Y_2, \ldots{}, Y_m]^T$$
 
@@ -29,13 +29,13 @@ $$Y(t) = tr(t) + s(t) + o(t) + b(t) + \epsilon(t)$$
 
 where we distinguish the following components:
 
-1. $tr(t)$ = trend, provides the general behavior and variation of the process.
-2. $s(t)$ = seasonality, shows the regular seasonal variations.
+1. $tr(t)$ = trend, provides general behavior and change of the process.
+2. $s(t)$ = seasonality, shows regular seasonal (cyclic) variations.
 3. $o(t)$ = offset, is a discontinuity (or jump) in the data.
 4. $b(t)$ = irregularities and outliers (also referred to as biases), due to unexpected reasons. Irregularities will not be considered in this book.
 5. $\epsilon(t)$ = noise process, can be white or colored noise.
 
-Noting that not all components may be present in a time series at hand.
+Noting that not all components may be present in a time series at hand. Components 1-4 are part of the functional model of the time series, the last component is covered by the stochastic model.
 
 ## Trend
 
@@ -60,7 +60,7 @@ Seasonal variations explain regular fluctuations in a certain period of time (e.
 
 From {numref}`trend` it is also possible to see the seasonal variations: in fact sea levels are higher in summer and lower in winter. The annual warming/cooling cycle is the main contributor to these seasonal variations.
 
-Regular seasonal variations in a time series might be handled by using a sinusoidal model with one or more sinusoids with frequency that may be known or unknown depending on the context. In {numref}`trend`, cyclical behavior with a period of 1 year can be observed. A harmonic model for seasonal variation can be of the following two equivalent forms (using that $\cos(u+v)= \cos u \cos v - \sin u \sin v$):
+Regular seasonal variations in a time series might be handled by a sinusoidal model with one or more sinusoids with frequencies that may be known or unknown depending on the context. In {numref}`trend`, cyclical behavior with a period of 1 year can be observed. A harmonic model for seasonal variation can be of the following two equivalent forms (using that $\cos(u+v)= \cos u \cos v - \sin u \sin v$):
 
 $$ 
 \begin{align*}
@@ -69,15 +69,15 @@ Y(t) &= \sum_{i=1} ^p A_i  \cos(2\pi f_i t + \theta_i)  + \epsilon(t)\\
 \end{align*}
 $$
 
-With the coefficients $a_i = A_i\cos\theta_i$ and $b_i=-A_i\sin\theta_i$, and where $f_i$ is the $i$-th frequency of the seasonal variation and is fixed or determined by Spectral Analysis. To be more specific, we can use the [PSD](spectral_estim) to determine the unknown frequencies. 
+With the coefficients $a_i = A_i\cos\theta_i$ and $b_i=-A_i\sin\theta_i$, and where $f_i$ is the frequency of the $i$-th harmonic of seasonal variation and is fixed or determined by Spectral Analysis. To be more specific, we can use the [PSD](spectral_estim) to determine the unknown frequencies. 
 
 
-Once $f_i$ is set, the coefficients $a_i $ and $b_i$ can be determined using the least-squares method, since the equation is linear in $a_i$ and $b_i$. From this the original sinusoids can be obtained using:
+Once the $f_i$ are set, the coefficients $a_i $ and $b_i$ can be determined using the least-squares method, since the equation is linear in $a_i$ and $b_i$. From this the original sinusoids can be obtained using:
 
 $$ A_i = \sqrt{a_i^2 + b_i^2}, \hspace{1cm} \theta_i = \arctan\left(-\frac{b_i}{a_i}\right), \hspace{1cm} i = 1, \ldots{}, p $$
 
 ```{note}
-This transformation is necessary to make the seasonal component phase-independent. Using regular estimation methods, we cannot linearly estimate the phase of the sinusoidal function. However by transforming the sinusoidal function into a linear combination of sine and cosine functions, we can estimate the phase of the seasonal component.
+This transformation is necessary to formulate the seasonal component without an explicit phase. Using regular estimation methods, we cannot linearly estimate the phase of the sinusoidal function. However by transforming the sinusoidal function into a linear combination of a sine and cosine function, we can (indirectly) estimate the phase $\theta_i$ of the seasonal component.
 ```
 
 :::{card} Worked example - seasonality signal
