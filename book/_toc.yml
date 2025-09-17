@@ -280,13 +280,10 @@ parts:
 # START REMOVE-FROM-PUBLISH
     - file: programming/week_1_4
       sections:
-      - external: https://github.com/TeachBooks/learn-programming/blob/mude-2025/book/version_control/version_control.md #BUMP
-      - external: https://github.com/TeachBooks/learn-programming/blob/mude-2025/book/version_control/notebooks.ipynb #BUMP
-    - file: programming/week_1_5
-      sections:
-      - file: external/learn-programming/book/workflows/git/branch_merge
-      - file: external/learn-programming/book/workflows/git/forking
-      - file: external/learn-programming/book/workflows/git/merge_conflicts
+      - external: https://github.com/TeachBooks/learn-programming/blob/mude-2025/book/version_control/version_control.md
+      - external: https://github.com/TeachBooks/learn-programming/blob/mude-2025/book/version_control/notebooks.ipynb
+      - external: https://github.com/TeachBooks/learn-programming/blob/mude-2025/book/workflows/git/branch_merge.md
+      - external: https://github.com/TeachBooks/learn-programming/blob/mude-2025/book/workflows/git/merge_conflicts.md
     - file: programming/week_1_6
       sections:
       - file: external/learn-python/book/09/intro.md
