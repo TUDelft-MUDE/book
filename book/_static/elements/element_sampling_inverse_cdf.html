@@ -261,8 +261,8 @@ Full text: https://creativecommons.org/licenses/by/4.0/
           .attr("cx", start_x).attr("cy", start_y)
           .attr("r", (4*scale).toString()).attr("fill","#e15759")
 
-        circ.transition().duration(600).attr("cx", bounce_x).attr("cy", start_y)
-            .transition().duration(600).attr("cy", target_y)
+        circ.transition().duration(1200).attr("cx", bounce_x).attr("cy", start_y)
+            .transition().duration(1200).attr("cy", target_y)
             .on("end", ()=>{
               const bin = Math.floor(((sample_val - dist.domain[0]) / (dist.domain[1] - dist.domain[0])) * hist_bins)
               if (bin >= 0 && bin < hist_bins){ histogram_data[bin]++; update_histogram() }
