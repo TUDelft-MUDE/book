@@ -163,7 +163,7 @@ The estimated normalized autocovariance is the same as  the time dependent Pears
 In literature $\hat{\rho}_{\tau}$ is sometimes referred to as the *autocorrelation (coefficient) function*.
 ```
 
-The variance of the normalized ACF can be approximated as
+The variance of the normalized ACF can, for large $m$, be approximated as
 
 $$
 \sigma_{\hat{\rho}_{\tau}}^2 = \frac{1}{m} (1 + 2 \sum_{i=1}^{\infty} \rho^2_{i})
@@ -177,6 +177,8 @@ $$
 \hat{\rho}_{\tau} \sim N(\rho_{\tau},\sigma^2_{\hat{\rho}_{\tau}})
 $$
 
+Though it is possible to compute $\hat{\rho}_{\tau}$ for up to $\tau=m-1$, it is recommended in practice to limit $\tau$ for instance to at most 10 percent of $m$.
+
 ### Worked example
 
 Let us consider a time series of $m=100$ observations, such that
@@ -185,7 +187,7 @@ $$
 \hat{\rho}_1 = 0.4
 $$
 
-and $\hat{\rho}_i \approx 0$ for $i>i$.
+and $\hat{\rho}_i \approx 0$ for $i>1$.
 
 We know that 
 
@@ -196,7 +198,7 @@ $$
 with $\rho_1$ unknown and
 
 $$
-\sigma^2_{\hat{\rho}_1}=\frac{1}{m-1}+\frac{2\hat{\rho}^2_1}{m}=0.0133\implies\sigma_{\hat{\rho}_1}=0.1153
+\sigma^2_{\hat{\rho}_1}=\frac{1}{m}+\frac{2\hat{\rho}^2_1}{m}=0.0132\implies\sigma_{\hat{\rho}_1}=0.1149
 $$
 
 We will now apply a test whether the estimated autocorrelation is significant. The null hypothesis assumes there is **no** correlation:
@@ -215,7 +217,7 @@ where we would reject $\mathcal{H}_0$ if $|T|>k_{\alpha}$. With a false alarm ra
 In this example, we obtain:
 
 $$
-(T = 3.47 ) > (k_{\alpha}=2.58)
+(T = 3.48 ) > (k_{\alpha}=2.58)
 $$
 
 and hence the null hypothesis is rejected, implying that the autocorrelation at lag $\tau = 1$ is significant.
@@ -225,7 +227,7 @@ and hence the null hypothesis is rejected, implying that the autocorrelation at 
 A zero-mean stationary noise process consists of $m=5$ observations:
 
 $$
-S = \begin{bmatrix} 2 & 1 & 0 & -1 & -2 \end{bmatrix}^T
+s = \begin{bmatrix} 2 & 1 & 0 & -1 & -2 \end{bmatrix}^T
 $$
 
 What is the _least-squares estimate_ of the normalized ACF at $\tau=1$; so compute $\hat{\rho}_{1}$?
@@ -271,6 +273,8 @@ $$
 \hat{\rho}_1
 = \frac{1}{2}
 $$
+
+Keep in mind that Python by default uses the maximum likelihood estimator for $\hat{C}_{\tau}$, i.e. with $\frac{1}{m}$ instead of $\frac{1}{m-\tau}$.
 
 ```
 :::
