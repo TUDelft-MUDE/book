@@ -167,7 +167,7 @@ $$u_k(t) = \left\{
 Once the time instant $t_k$ of the offset is known, the amplitude can be estimated using least-squares.
 ## Noise 
 
-Noise refers to **random** fluctuations or variations in the time series about its typical pattern. In general we can talk about white and colored noise in time series analysis. Until now we only considered normally distributed white noise , i.e., $\epsilon(t) \sim N(0, \sigma^2_{\epsilon})$, and we didn't have to deal with time correlation, but in this chapter we will also consider other types of noise (see {ref}`noise`) and time correlation.
+Noise refers to **random** fluctuations or variations in the time series about its typical pattern. In general we can talk about white and colored noise in time series analysis. Until now we only considered normally distributed, zero mean white noise , i.e., $\epsilon(t) \sim N(0, \sigma^2_{\epsilon})$, and we didn't have to deal with time correlation, but in this chapter we will also consider other types of noise (see {ref}`noise`) and time correlation.
 
 :::{card} Example - time series consisting of a trend, annual cycle (seasonality), an offset and pure random noise (white noise)
 
@@ -184,7 +184,7 @@ where
 - $f_1$ is the frequency of the seasonal component (e.g. 1 cycle/year).
 - $o$ is the offset starting at time $t_k$.
 - $u_k(t)$ is the Heaviside step function.
-- $\epsilon(t)$ is the i.i.d. random Gaussian noise, i.e. $\epsilon(t) \sim N(0, \sigma_{\epsilon}^2)$.
+- $\epsilon(t)$ is the i.i.d. random zero mean Gaussian noise, i.e. $\epsilon(t) \sim N(0, \sigma_{\epsilon}^2)$.
 
 % START-CREDIT
 % source: time_series_analysis
