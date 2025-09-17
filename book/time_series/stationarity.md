@@ -1,5 +1,8 @@
 (stationary)=
 # Time Series Stationarity
+
+## Stochastic process
+
 In Section [Components of time series](forecast) it was pointed out that a time series $Y(t) = [Y(t_1), Y(t_2), \ldots, Y(t_m)]^T$ is a sequence of random variables. Each element $Y(t_i)$ is a random variable, with a probability density function denoted by $f_{Y(t_i)}(y)$.
 
 A time series results from observing a stochastic process. A stochastic process is a phenomenon, taking place as time goes by, which is subject to uncontrolled variability and associated uncertainty, and additional variability is typically involved in the observation of the process.
@@ -12,6 +15,7 @@ The PDF carries time as an argument, meaning first that it depends on time and t
 
 In the sequel we focus on the noise-component of the time series. We assume that the signal-part has been appropriately taken care of through estimation of the components in the functional model (such as trend and seasonality). We work with time series $S = \hat{\epsilon} = Y - A \hat{X}$, hence the residuals which remain after estimation of the components of the functional model, and ideally have zero mean.
 
+## Stationarity
 
 ```{admonition} Definition
 A stationary time series $S(t)$ is based on an underlying stochastic process of which the statistical properties do not depend on the time at which it is observed.
