@@ -36,6 +36,9 @@ sphinx:
 # END REMOVE-FROM-PUBLISH
       launch_buttons:
         thebe: true
+# START REMOVE-FROM-PUBLISH
+    keep_warnings: true
+# END REMOVE-FROM-PUBLISH
     bibtex_default_style: myapastyle
     bibtex_reference_style: author_year_round
     tud_change_logo: false
