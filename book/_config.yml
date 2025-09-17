@@ -33,7 +33,6 @@ sphinx:
       use_issues_button : true
 # START REMOVE-FROM-PUBLISH
       announcement: "<p>This book is under construction. The version currently shared with students: <a href='https://mude.citg.tudelft.nl/book' style='color: cyan;'>mude.citg.tudelft.nl/book</a></p>"
-      keep_warnings: true
 # END REMOVE-FROM-PUBLISH
       launch_buttons:
         thebe: true
