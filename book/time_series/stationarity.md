@@ -1,10 +1,13 @@
 (stationary)=
 # Time Series Stationarity
+
+## Stochastic process
+
 In Section [Components of time series](forecast) it was pointed out that a time series $Y(t) = [Y(t_1), Y(t_2), \ldots, Y(t_m)]^T$ is a sequence of random variables. Each element $Y(t_i)$ is a random variable, with a probability density function denoted by $f_{Y(t_i)}(y)$.
 
 A time series results from observing a stochastic process. A stochastic process is a phenomenon, taking place as time goes by, which is subject to uncontrolled variability and associated uncertainty, and additional variability is typically involved in the observation of the process.
 
-Would we observe it as a continuous function of time, then $Y(t)$ is a random variable which depends on time, and hence the probability density function of $Y(t)$ would carry also time $t$ as an argument, $f_{Y(t)}(y,t)$, modelling the variability in the outcomes of $Y(t)$.
+Would we observe it as a continuous function of time, then $Y(t)$ is a random variable which depends on time, and hence the probability density function (PDF) of $Y(t)$ would carry also time $t$ as an argument, $f_{Y(t)}(y,t)$, modelling the variability in the outcomes of $Y(t)$.
 
 A time series results from observing the stochastic process at discrete instants in time, resulting in a sequence of random variables $Y(t_i)$ with associated the aforementioned PDF evaluated at times $t_i$: $f_{Y(t_i)}(y,t_i)$, with $i=1,\ldots,m$.
 
@@ -12,6 +15,7 @@ The PDF carries time as an argument, meaning first that it depends on time and t
 
 In the sequel we focus on the noise-component of the time series. We assume that the signal-part has been appropriately taken care of through estimation of the components in the functional model (such as trend and seasonality). We work with time series $S = \hat{\epsilon} = Y - A \hat{X}$, hence the residuals which remain after estimation of the components of the functional model, and ideally have zero mean.
 
+## Stationarity
 
 ```{admonition} Definition
 A stationary time series $S(t)$ is based on an underlying stochastic process of which the statistical properties do not depend on the time at which it is observed.
@@ -19,23 +23,23 @@ A stationary time series $S(t)$ is based on an underlying stochastic process of 
 
 This means that parameters such as *mean* and *(co)variance* should remain constant over time and not follow any trend, seasonality or irregularity:
 
-* Mean of the process is time-independent
+* Mean of the process is time-independent (constant, and often zero)
 
 $$\mathbb{E}(S(t))=\mathbb{E}(S_t)=\mu$$
 
-* Covariance of the process is independent of $t$ for each time shift $\tau$ (so only a function of $\tau$ and not t):
+* Covariance of the process is independent of $t$ for each time shift $\tau$ (so only a function of the difference in time $\tau$ and not of absolute time t):
 
 $$
 Cov(S_t,S_{t-\tau})= Cov(S_t,S_{t+\tau}) =\mathbb{E}((S_t-\mu)(S_{t-\tau}-\mu))=c_\tau
 $$
 
-* The variance (i.e., $\tau=0$) is then also constant with respect to time :
+* The variance (i.e., covariance $\tau=0$) is then also constant with respect to time :
 
 $$
 Var(S_t)=\mathbb{E}((S_t-\mu)^2)=c_0=\sigma^2
 $$
 
-Notice that we have introduced the new notation $S_t$ to denote a stationary time series. The time series $Y_t$ is then potentially a non-stationary time series.
+Notice that we have introduced the new notation $S_t$ to denote a stationary time series. The time series $Y_t$ is then potentially a non-stationary time series (e.g. with a trend and/or seasonal effect).
 
 The white noise stochastic model introduced here is stationary ([Section 4.2](noiseandstoch)).
 
@@ -118,14 +122,14 @@ The time series in the second panel is stationary. The mean and variance are con
 
 
 ### Other ways to make a time series stationary
-When model specification is not straightforward, other methods can be used to make a time series stationary. Two common methods are single differencing and moving average. Single differencing of $Y=[Y_1,...,Y_m]^T$ creates a time series $\Delta Y_t=Y_t - Y_{t-1}$ (long term trends are removed in this way). Another way to create an (almost) stationary time series is by taking the moving average of the time series, where we apply a moving average of $k$ observations to the time series $Y$ to create a new time series $\bar{Y}_t = \frac{1}{k}\sum_{i=1}^{k}Y_{t-i}$ (short term variations are removed in this way), and then take the difference between the original time series and the moving average to obtain a (nearly) stationary time series $\Delta Y_t = Y_t - \bar{Y}_t$.
+When functional model specification is not straightforward, other methods can be used to make a time series stationary. Two common methods are single differencing and moving average. Single differencing of $Y=[Y_1,...,Y_m]^T$ creates a time series $\Delta Y_t=Y_t - Y_{t-1}$ (long term trends are removed in this way). Another way to create an (almost) stationary time series is by taking the moving average of the time series, where we apply a moving average of $k$ observations to the time series $Y$ to create a new time series $\bar{Y}_t = \frac{1}{k}\sum_{i=1}^{k}Y_{t-i}$ (short term variations are removed in this way), and then take the difference between the original time series and the moving average to obtain a (nearly) stationary time series $\Delta Y_t = Y_t - \bar{Y}_t$. The moving average is elaborated on in the Appendix.
 
-Both these methods do not require a model specification. So in cases where the model is not known, these methods can be used to make the time series stationary.
+Both these methods do not require a model specification. So in cases where the functional model is not known, these methods can be used to make the time series stationary.
 
 
 ## ... and then what?
 
-We have seen different ways of obtaining a stationary time series from the original time series. The reason is that in order to make predictions (forecasting future values, beyond the time of the last observation in the time series) we need to account for both the **signal-of-interest** and the **noise**. [Estimating the signal-of-interest](modelling_tsa) was covered in the previous section. In the next sections we will show how the noise can be modelled as a stochastic process. Given a time series $Y=\mathrm{Ax}+\epsilon$, the workflow for prediction is as follows:
+We have seen different ways of obtaining a stationary time series from the original time series. The reason is that in order to make predictions (forecasting future values, beyond the time of the last observation in the time series) we need to account for both the (functional) **signal-of-interest** and the (stochastic) **noise**. [Estimating the signal-of-interest](modelling_tsa) was covered in the previous section. In the next sections we will show how the noise can be modelled as a stochastic process. Given a time series $Y=\mathrm{Ax}+\epsilon$, the workflow for prediction is as follows:
 
 1. Estimate the signal-of-interest $\hat{X}=(\mathrm{A}^T\Sigma_{Y}^{-1}\mathrm{A})^{-1}\mathrm{A}^T\Sigma_{Y}^{-1}Y$ (Section [Modelling and estimation](modelling_tsa)).
 
@@ -137,7 +141,7 @@ We have seen different ways of obtaining a stationary time series from the origi
 
 5. Predict future values of the time series: $\hat{Y}_p=\mathrm{A}_p\hat{X}+\hat{\epsilon}_p$ (Section [Forecasting](forecast)).
 
-Resulting in estimates $\hat{Y}_p$ of the time series at future times $t_p$, beyond he time of the last observation $t_m$ in the time series.
+Resulting in estimates $\hat{Y}_p$ of the time series at future times $t_p$, beyond the time of the last observation $t_m$ in the time series.
 
 % START-CREDIT
 % source: time_series_analysis
