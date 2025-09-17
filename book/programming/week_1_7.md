@@ -1,4 +1,3 @@
-(oop)=
 # Week 1.7: OOP
 
 % START-CREDIT

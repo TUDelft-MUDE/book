@@ -2,7 +2,6 @@ format: jb-book
 root: intro
 
 parts:
-# START REMOVE-FROM-PUBLISH
   - caption: Q1 Topics
     numbered: 2
     chapters: 
@@ -10,13 +9,65 @@ parts:
       sections:
       - file: modelling/classification
       - file: modelling/decisions
+      - file: propagation_uncertainty/uncertainty.md
       - file: modelling/validate_verify
       - file: modelling/gof
+    - file: numerical_methods/overview
+      sections:
+      - file: numerical_methods/1-revision-of-concepts.ipynb
+      - file: numerical_methods/2-derivative.ipynb
+      - file: numerical_methods/3-fdm-introduction.ipynb
+      - file: numerical_methods/4-taylor-series-expansion.ipynb
+        sections:
+        - file: numerical_methods/taylor-series-exercise.ipynb
+      - file: numerical_methods/5-numerical-integration.ipynb
+      - file: numerical_methods/6-initial-value-problem-singlestep.ipynb
+      - file: numerical_methods/7-implicit_methods_nonlinear_ode.ipynb
+      - file: numerical_methods/8-multistep_and_multistage_methods.ipynb
+      - file: numerical_methods/9-boundary-value-problem.ipynb
+
+# START REMOVE-FROM-PUBLISH
+    - file: univariate_distributions/overview
+      sections:
+      - file: univariate_distributions/PDF_CDF
+      - file: univariate_distributions/empirical
+      - file: univariate_distributions/nonGaussian.md
+      - file: univariate_distributions/parametric.md
+        sections: 
+        - file: univariate_distributions/uniform.md
+        - file: univariate_distributions/gaussian.md
+        - file: univariate_distributions/lognormal.md
+        - file: univariate_distributions/gumbel.md
+        - file: univariate_distributions/exponential.md
+        - file: univariate_distributions/beta.md
+        - file: univariate_distributions/summary.md
+      - file: univariate_distributions/parameterization.ipynb
+      - file: univariate_distributions/fitting.md
+        sections: 
+        - file: univariate_distributions/moments.md
+        - file: univariate_distributions/MLE.md
+        - file: univariate_distributions/GOF.md
+
+    - file: multivariate/overview
+      sections:
+      - file: multivariate/events
+      - file: multivariate/variables
+      - file: multivariate/gaussian
+      - file: multivariate/nongaussian
+      - file: multivariate/design
+        sections:
+        - file: multivariate/design/one-random-variable
+        - file: multivariate/design/two-random-variables
+        #- file: multivariate/design/exercise
+        #  sections:
+        #  - file: multivariate/design/exercise_solutions
+      #- file: multivariate/test_pyvinecopulib
+      #- file: multivariate/test_bivariate
+    
     - file: propagation_uncertainty/overview
       sections:
       - file: propagation_uncertainty/00a_CovCorr.md
       - file: propagation_uncertainty/00b_MultivariateNormal
-      - file: propagation_uncertainty/uncertainty
       - file: propagation_uncertainty/01_ErrorPropagation.md
       - file: propagation_uncertainty/02_LinearPropagation.md
   
@@ -44,56 +95,8 @@ parts:
         - file: observation_theory/09_Notebook_Testing.ipynb
         - file: observation_theory/09_Notebook_OMT.ipynb
       - file: observation_theory/99_NotationFormulas
-    
-    - file: numerical_methods/overview
-      sections:
-      - file: numerical_methods/1-revision-of-concepts.ipynb
-      - file: numerical_methods/2-derivative.ipynb
-      - file: numerical_methods/3-fdm-introduction.ipynb
-      - file: numerical_methods/4-taylor-series-expansion.ipynb
-        sections:
-        - file: numerical_methods/taylor-series-exercise.ipynb
-      - file: numerical_methods/5-numerical-integration.ipynb
-      - file: numerical_methods/6-initial-value-problem-singlestep.ipynb
-      - file: numerical_methods/7-multistep_and_multistage_methods.ipynb
-      - file: numerical_methods/8-boundary-value-problem.ipynb
-      - file: numerical_methods/9-starting_with_PDEs.ipynb
 
-    - file: probability/Reminder_intro
-      sections:
-      - file: probability/PDF_CDF
-      - file: probability/empirical
-      - file: probability/Param_distr.md
-        sections: 
-        - file: probability/Gaussian.md
-        - file: probability/other_distr.md
-        - file: probability/Uniform.md
-        - file: probability/Exponential.md
-        - file: probability/Gumbel.md
-        - file: probability/Lognormal.md
-        - file: probability/summary.md
-      - file: probability/fitting.md
-        sections: 
-        - file: probability/moments.md
-        - file: probability/MLE_1.ipynb
-        - file: probability/GOF
-      - file: probability/Loc-scale.ipynb
 
-    - file: multivariate/overview
-      sections:
-      - file: multivariate/events
-      - file: multivariate/variables
-      - file: multivariate/gaussian
-      - file: multivariate/nongaussian
-      - file: multivariate/design
-        sections:
-        - file: multivariate/design/one-random-variable
-        - file: multivariate/design/two-random-variables
-        #- file: multivariate/design/exercise
-        #  sections:
-        #  - file: multivariate/design/exercise_solutions
-      #- file: multivariate/test_pyvinecopulib
-      #- file: multivariate/test_bivariate
 
   - caption: Q2 Topics
     numbered: 2
@@ -142,7 +145,11 @@ parts:
       - file: time_series/ar.ipynb
         sections:
         - file: time_series/ar_exercise.ipynb
-      - file: time_series/forecasting
+      - file: time_series/examples_PSD.ipynb
+      - file: time_series/forecasting.md
+        sections:
+        - file: time_series/forecasting_example.ipynb
+      - file: time_series/movingAverage.ipynb
   
     - file: optimization/overview
       sections:
@@ -255,7 +262,7 @@ parts:
       #   - file: pd/notebooks/contamination/Exercise_Contamination_Render.ipynb
       #   - file: pd/notebooks/traffic/Exercise_Traffic_Render.ipynb
 
-
+# END REMOVE-FROM-PUBLISH
   - caption: Programming
     numbered: false
     chapters:
@@ -269,6 +276,7 @@ parts:
       sections:
       - file: programming/week_1_2/filepaths
       - file: programming/week_1_2/markdown
+# START REMOVE-FROM-PUBLISH
     - file: programming/week_1_4
       sections:
       - external: https://github.com/TeachBooks/learn-programming/blob/mude-2025/book/version_control/version_control.md #BUMP
@@ -297,8 +305,10 @@ parts:
     - file: optimization/gurobi.md
       title: "Week 2.4: Gurobi installation"
 # END REMOVE-FROM-PUBLISH
+
   - caption: Miscellaneous
     numbered: false
     chapters:
     - file: references
+    - file: changelog
     - file: credits
