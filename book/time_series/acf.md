@@ -3,11 +3,11 @@
 
 Before we can look into the modelling of a stochastic process for instance using an Autoregressive (AR) model, we first need to introduce the autocovariance function (ACF) for a stationary time series, and describe the relationship between the ACF and the power spectral density (PSD).
 
-As in [Observation theory](../observation_theory/01_Introduction.md), the variance component is often determined based on the precision of an observable (at a given epoch), and the covariance components quantitatively indicate the statistical dependence (or independence) between observables. In this case, dependence is inherently introduced by the physical process that produces the time series, and in fact our time series methods seek to (mathematically) account for this.
+As in [Observation theory](../observation_theory/01_Introduction.md), the variance component is often determined based on the precision of an observable (at a given epoch), and the covariance components quantitatively indicate the statistical dependence between observables. In this case, dependence is inherently introduced by the physical process that produces the time series, and in fact our time series methods seek to (mathematically) account for this.
 
 ## Autocovariance and autocorrelation
 
-Let us assume an arbitrary (discrete) stationary time series, $S=[S_1,S_2,...,S_m]^T$, with mean $\mathbb{E}(S)=\mu$ and variance $Var(S_{i})=\sigma^2$. Remember that stationarity implies that the statistical properties of the time series do not depend on the time at which it is observed, i.e. expectation and variance are constant over time.
+Let us assume an arbitrary stationary (discrete) time series, $S=[S_1,S_2,...,S_m]^T$, with mean $\mathbb{E_{i}}(S)=\mu$ and variance $Var(S_{i})=\sigma^2$ for $i=1,\ldots,m$. Remember that stationarity implies that the statistical properties of the time series do not depend on the time at which it is observed, i.e. expectation and variance are constant over time.
 
 The *formal* (or: theoretical) autocovariance is defined as
 
@@ -18,7 +18,7 @@ $$
 
 We have that $Cov(S_{t+\tau}, S_t) =Cov(S_t, S_{t-\tau})$.
 
-The autocovariance depends on $\tau$, which is referred to as lag; it is the difference in time between $t+\tau$ and $t$. In the sequel we use $\tau$ both to indicate the time shift in unit of time (e.g. seconds) and the corresponding discrete time index, as at the start of this chapter it was assumed that $\Delta t = 1$, and hence $t_i = i$.
+The autocovariance depends on $\tau$, which is referred to as lag; it is the difference in time between $t+\tau$ and $t$, and equally the difference between $t$ and $t-\tau$. In the sequel we use $\tau$ both to indicate the time shift in unit of time (e.g. seconds) and the corresponding discrete time index, as at the start of this chapter it was for convenience assumed that $\Delta t = 1$, and hence $t_i = i$.
 
 :::{card} Exercise covariance
 
@@ -122,7 +122,7 @@ $$
 \hat{R}_{\tau}=\frac{1}{m}\sum_{i=1}^{m-\tau}S_{i+\tau} S_{i}, \hspace{25px} \tau=0,1,...,m-1
 $$
 
-Note practically, for practically for large $m$, and not too large $\tau$, there is little difference in using $\frac{1}{m-1}$ and the $\frac{1}{m}$.
+Note practically, for large $m$, and not too large $\tau$, there is little difference in using $\frac{1}{m-\tau}$ and $\frac{1}{m}$.
 
 ```{note}
 Here we use capitals for $\hat{C}_{\tau}$ and $\hat{R}_{\tau}$ since **estimators** are always a function of the random observables $S_t$.
@@ -143,19 +143,19 @@ c_1 & \sigma^2 & c_1 & \ddots  & \vdots \\
 c_2 & c_1 & \sigma^2 &  \ddots & c_2  \\ 
 \vdots & \ddots & \ddots & \ddots & c_1\\ c_{m-1} &  & c_2 & c_1 & \sigma^2\end{bmatrix}$$
 
-There are $m$ (co)variance components - **one** variance component, $\sigma^2 = c_0$, and $m-1$ covariance components, $c_i$.
+There are $m$ (co)variance components - **one** variance component, $\sigma^2 = c_0$, and $m-1$ covariance components, $c_i$ for $i=1,\ldots,m-1$.
 
 
 (NACF)=
 ## Normalized ACF
-
-The least-squares estimator of the autocovariance function (ACF) has some important properties (derivations are outside the scope of MUDE).
 
 The *normalized* autocovariance estimator can directly be obtained from the autocovariance estimator as
 
 $$
 \hat{\rho}_{\tau} = \frac{\hat{C}_{\tau}}{\hat{C_0}}, \hspace{20px}\tau = 0,...,m-1 \implies \hat{\rho}_0 = 1
 $$
+
+and $|\hat{\rho}_{\tau}| \leq 1$ for all $\tau$ (using the biased ACF $\hat{C}_{\tau}$, which is the default implemented in Python)
 
 ```{note}
 The estimated normalized autocovariance is the same as  the time dependent Pearson correlation coefficient.
