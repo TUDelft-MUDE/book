@@ -80,15 +80,15 @@ $$ A_i = \sqrt{a_i^2 + b_i^2}, \hspace{1cm} \theta_i = \arctan\left(-\frac{b_i}{
 This transformation is necessary to formulate the seasonal component without an explicit phase. Using regular estimation methods, we cannot linearly estimate the phase of the sinusoidal function. However by transforming the sinusoidal function into a linear combination of a sine and cosine function, we can (indirectly) estimate the phase $\theta_i$ of the seasonal component.
 ```
 
-:::{card} Worked example - seasonality signal
+:::{card} Worked example - seasonal signal
 
 Show that the time series 
 
-$$Y(t)=A \cos(2\pi f_1 t + \theta)$$ 
+$$\mathbb{E}(Y(t))=A \cos(2\pi f_1 t + \theta)$$ 
 
 with given $2\pi f_1$, can be rewritten as
 
-$$Y(t)=a \cos(2\pi f_1 t) + b \sin(2\pi f_1 t)$$
+$$\mathbb{E}(Y(t))=a \cos(2\pi f_1 t) + b \sin(2\pi f_1 t)$$
 
 and derive the formulation of $A$ and $\theta$.
 
@@ -167,7 +167,7 @@ $$u_k(t) = \left\{
 Once the time instant $t_k$ of the offset is known, the amplitude can be estimated using least-squares.
 ## Noise 
 
-Noise refers to **random** fluctuations or variations in the time series about its typical pattern. In general we can talk about white and colored noise in time series analysis. Until now we only considered white noise , i.e., $\epsilon(t) \sim N(0, \sigma^2_{\epsilon})$, and we didn't have to deal with time correlation, but in this chapter we will also consider other types of noise (see {ref}`noise`) and time correlation.
+Noise refers to **random** fluctuations or variations in the time series about its typical pattern. In general we can talk about white and colored noise in time series analysis. Until now we only considered normally distributed white noise , i.e., $\epsilon(t) \sim N(0, \sigma^2_{\epsilon})$, and we didn't have to deal with time correlation, but in this chapter we will also consider other types of noise (see {ref}`noise`) and time correlation.
 
 :::{card} Example - time series consisting of a trend, annual cycle (seasonality), an offset and pure random noise (white noise)
 
