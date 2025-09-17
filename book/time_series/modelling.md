@@ -3,7 +3,7 @@
 
 The goal is now to:
 
-* estimate parameters of interest (i.e., components of time series) using **Best Linear Unbiased Estimation (BLUE)**;
+* estimate parameters of interest (i.e., functional model components of time series) using **Best Linear Unbiased Estimation (BLUE)**;
 * evaluate confidence intervals of the estimators for the parameters of interest;
 
 ## Components of time series
@@ -12,7 +12,7 @@ As already discussed, we will distinguish the following components in a time ser
 
 * **Trend:** General behavior and variation of the process. This often is a linear trend with an unknown intercept $y_0$ and rate $r$.
 * **Seasonality:** Regular cyclic variations, which can be expressed as cosine functions with (un)known frequency $f_1$, and unknown amplitude $A$ and phase $\theta$.
-* **Offset:** A jump of size $o$ in a time series starting at epoch $t_k$.
+* **Offset:** A jump of unknown size $o$ in a time series starting at epoch $t_k$.
 * **Noise:** White or colored noise (e.g., AR process).
 
 ### Model of observation equations
@@ -111,7 +111,7 @@ We have seen that to obtain a linear model of observation equations in the prese
 
 ***How to determine $f_1$ if it is unknown a priori?***
 
-We can determine the dominant frequency $f_1$ by analysing the power spectral density (PSD) of the data. The dominant frequency corresponds to the frequency at which the PSD reaches its maximum value. If the time series contains $N$ periodic components, the PSD will exhibit $N$ prominent peaks, one corresponding to each component.
+We can determine the dominant frequency $f_1$ by analysing the power spectral density (PSD) of the data. The dominant frequency corresponds to the frequency at which the PSD reaches its maximum value. If the time series contains $p$ periodic components, the PSD will exhibit $p$ prominent peaks, one corresponding to each component.
 
 #### Example power spectral density
 
@@ -148,7 +148,7 @@ and $\epsilon$ is:
 
 $$\hat{\epsilon}=Y-\hat{Y},\hspace{10px}\Sigma_{\hat{\epsilon}}=\Sigma_{Y}-\Sigma_{\hat{Y}}$$
 
-Note that the BLUE itlself can only be used for prediction when the noise is white and uncorrelated in time ([Chapter 4.7](forecasting)).
+Note that the BLUE itlself can only be used for prediction when the noise is white and thereby uncorrelated in time ([Chapter 4.7](forecasting)).
 
 
 ### Estimation of parameters
