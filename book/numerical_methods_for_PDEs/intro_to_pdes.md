@@ -292,25 +292,25 @@ Show that the wave equation and the advection equation are mathematically equiva
 Consider the advection equation
 
 $$
-  \frac{\partial u{\partial t} + \frac{\partial u{\partial x} = 0
+  \frac{\partial u}{\partial t} + \frac{\partial u}{\partial x} = 0
 $$
 
 First, we take the time derivative of this equation, which yields
 
 $$
-  \frac{\partial^2 u{\partial t^2} + \frac{\partial^2 u{\partial t \partial x} = 0
+  \frac{\partial^2 u}{\partial t^2} + \frac{\partial^2 u}{\partial t \partial x} = 0
 $$
 
 Next, we also take the derivative to $x$ of the advection equation giving
 
 $$
-  \frac{\partial^2 u{\partial x \partial t} + \frac{\partial^2 u{\partial x^2} = 0
+  \frac{\partial^2 u}{\partial x \partial t} + \frac{\partial^2 u}{\partial x^2} = 0
 $$
 
 Finally, we substract the last equation from the second to last one in order to get the wave equation
 
 $$
-  \frac{\partial ^2u{\partial t^2} - \frac{\partial ^2u{\partial x^2} = 0
+  \frac{\partial ^2u}{\partial t^2} - \frac{\partial ^2u}{\partial x^2} = 0
 $$
 
 ```
