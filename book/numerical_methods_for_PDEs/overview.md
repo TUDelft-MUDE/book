@@ -9,5 +9,7 @@ This chapter is written by Marcel Zijlema. {ref}`Find out more here <numerical_m
 ```
 % END-CREDIT
 
-In this chapter, you will be introduced to the basic concepts related to the numerical solution to partial differential equations.
-This chapter is a continuation of Chapter {ref}`numerical_modelling` which deals with the numerical solution to ordinary differential equations.
+In Chapter {ref}`numerical_modelling` ordinary differential equations (ODEs) have been treated.
+Their solutions are simply functions of a single independent variable representing time.
+Frequently, physical systems often evolve not only in time but also in at least one spatial dimension (usually $x$).
+This chapter is devoted to partial differential equations.
