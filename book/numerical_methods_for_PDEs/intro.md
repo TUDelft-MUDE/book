@@ -1,15 +1,4 @@
-(NumMethPDE)=
-# Numerical methods for partial differential equations
-
-% START-CREDIT
-% source: numerical_methods_for_PDEs
-```{attributiongrey} Attribution
-:class: attribution
-This chapter is written by Marcel Zijlema. {ref}`Find out more here <numerical_modelling_credit>`.
-```
-% END-CREDIT
-
-## Introduction to PDEs
+# Introduction to PDEs
 
 In Chapter {ref}`numerical_modelling` ordinary differential equations have been treated.
 Their solutions are simply functions of a single independent variable representing time.
@@ -24,7 +13,7 @@ This section is not intended to be a complete treatment of partial differential 
 Instead, its aim is to serve as an introduction to a minimal amount of terminology from the field of PDEs.
 A good introductory textbook on PDEs is Andrews (1986).
 
-### Examples of PDEs
+## Examples of PDEs
 
 Partial differential equations arise in many areas of physics and engineering.
 On physical grounds, the form of these equations will involve the time rate-of-change of the solution
@@ -64,7 +53,7 @@ uniquely specify a solution. Solving the equations means finding the **dependent
 e.g. $T$, $u$, $\zeta$, $\phi$, $c$, as function of the **independent** variables, e.g. $t$, $x$, $y$, such that they fulfill the PDEs
 and the boundary conditions are satisfied. This is called the **boundary value problem**.
 
-##Relevant notions on PDEs
+## Relevant notions on PDEs
 
 Let $u$ be the dependent variable.
 A shorthand notation to represent a general PDE is
