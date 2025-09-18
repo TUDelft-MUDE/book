@@ -148,7 +148,7 @@ Credits are provided here for chapters and pages that are released under the lic
 >
 > Pages {ref}`One random variable <prob_design_1_rv>` and {ref}`Two random variables <prob_design_2_rv>` are from the Chapter _Probabilistic Design_ {cite:p}`lanzafame2024-pd` from the book Risk and Reliability for Engineers {cite:p}`lanzafame2024`, published with a CC BY license. Files are included without modification.
 >
-> {ref}`This <density_scatter_3>`, {ref}`this <pdf_cdf>`, {ref}`this <pdf_cdf_2>`, {ref}`this <density_scatter>` and {ref}`this interactive figure <density_scatter_2>` are created by Max Ramgraber ([maxramgraber.com/interactive](https://www.maxramgraber.com/interactive)), which are published with a CC BY license and included in this book without modification.
+> The interactive figures in on these pages are created by Max Ramgraber ([maxramgraber.com/interactive](https://www.maxramgraber.com/interactive)), which are published with a CC BY license and included in this book without modification.
 
 (finite_volume_method_credit)=
 ### Chapter: PDEs and the Finite Volume Method
