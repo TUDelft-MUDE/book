@@ -15,6 +15,8 @@ A good introductory textbook on PDEs is {cite}`And86`.
 - identify various types of PDEs
 - explain the notion of well posed problems
 - recognize the different types of boundary conditions
+- assess appropriate solution techniques by means of classification of PDEs
+- describe the physical phenomena the PDE represents
 
 ```
 
