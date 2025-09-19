@@ -10,7 +10,7 @@ Since the likelihood is computed from a product of the PDF evaluations for each 
 1) has high densites around regions where many samples $x_i$ cluster, but at the same time
 2) has low but *non-zero* densities where few samples cluster. ince we take a product, a single zero-likelihood sample ($f(x_i \mid \theta) = 0$) can zero out the entire likelihood ($L(\theta \mid \mathbf{x})$).
 
-The goal of MLE is consequently to find the values of the parameters for our chosen PDF $f$ that maximize ths likelihood function. The maximum likelihood estimate $\hat{\theta}$ is the set of parameters for which the observed data is the most probable with the assumed probability distribution:
+The goal of MLE is consequently to find the values of the parameters for our chosen PDF $f$ that maximize this likelihood function. The maximum likelihood estimate $\hat{\theta}$ is the set of parameters for which the observed data is the most probable with the assumed probability distribution:
 
 $$
 \hat{\theta} = \arg \max _{\theta} L(\theta \mid \mathbf{x})

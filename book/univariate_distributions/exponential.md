@@ -10,7 +10,7 @@ $$
 f(x) = 0 \hspace{1cm} otherwise
 $$
 
-where $\lambda$ is the parameter of the distribution, which is often called *rate*. In the right pannel of the figure below, an example of two Exponential distributions with $\lambda =1$ and $\lambda = 2$ is shown. As you can see, the maximum density in the PDF of en Exponential distribution is located at zero and it is followed by an Exponential decay. The higher the parameter $\lambda$, the higher the value of the density in $x=0$ and the faster the decay. In other words, the higher the parameter $\lambda$, the more concentrated the values of the random variable which are likely to occur and, thus, the lower the standard deviation. This can be seen on the left pannel of the figure, where random samples of the distribution are plotted. There you can see how higher values of the random variable $x$ appear when $\lambda = 1$, presenting then a higher dispersion.
+where $\lambda$ is the parameter of the distribution, which is often called *rate*. In the right panel of the figure below, an example of two Exponential distributions with $\lambda =1$ and $\lambda = 2$ is shown. As you can see, the maximum density in the PDF of en Exponential distribution is located at zero and it is followed by an Exponential decay. The higher the parameter $\lambda$, the higher the value of the density in $x=0$ and the faster the decay. In other words, the higher the parameter $\lambda$, the more concentrated the values of the random variable which are likely to occur and, thus, the lower the standard deviation. This can be seen on the left panel of the figure, where random samples of the distribution are plotted. There you can see how higher values of the random variable $x$ appear when $\lambda = 1$, presenting then a higher dispersion.
 
 ```{figure} https://files.mude.citg.tudelft.nl/exponential.png
 
@@ -57,13 +57,13 @@ $$
 
 It should be noted that the coefficient of variation $CV = \sqrt{Var[X]}/E[X] = 1$.
 
-If you remember the Poisson process is characterized by independent events. Thus, the time of the next occurrence modelled by the Exponential distribution is independent of the present and past occurrences. This is called the **memoryless property of the exponential distribution**. We can show it calculating the probability of the waiting time until the next ocurrence $X$ being higher than the sum of the two previous ones $X>x_1+x_2$, given that it is already bigger than one of them $X>x_1$ (conditional probability) as follows
+If you remember the Poisson process is characterized by independent events. Thus, the time of the next occurrence modelled by the Exponential distribution is independent of the present and past occurrences. This is called the **memoryless property of the exponential distribution**. We can show it calculating the probability of the waiting time until the next occurrence $X$ being higher than the sum of the two previous ones $X>x_1+x_2$, given that it is already bigger than one of them $X>x_1$ (conditional probability) as follows
 
 $$
 P[X>x_1+x_2|X>x_1]=\cfrac{P[X>x_1+x_2]}{P[X>x_1]}=\cfrac{e^{\normalsize{\lambda (x_1+x_2)}}}{e^{\normalsize{\lambda x_1}}}=e^{\normalsize{\lambda x_2}}=P[X>x_2]
 $$
 
-If the waiting time $X$ is exponential-distributed, you can see that the probability of the waiting time of one occurence ($x_2$) does not depend on the previous one ($x_1$).
+If the waiting time $X$ is exponential-distributed, you can see that the probability of the waiting time of one occurrence ($x_2$) does not depend on the previous one ($x_1$).
 
 Finally, note that this distribution is not bell-shaped and, thus, not symmetric. It presents a positive tail and its skewness is 2.
 
