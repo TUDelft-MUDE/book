@@ -199,7 +199,7 @@ PDE describes.
 
 
 A classification is possible for
-second order, linear PDEs in two independent variables $x$ and $y$ and the dependent variable $u(x,y)$. Any such 2D equation can be written as
+second order, linear PDEs in two independent variables $x$ and $y$ and the dependent variable $u(x,y)$. Any such 2D equation can be written in the following general form
 
 $$a\frac{\partial^2 u}{\partial x^2} + 2b \frac{\partial^2u}{\partial x \partial y} + c\frac{\partial^2 u}{\partial y^2} + d\frac{\partial u}{\partial x} +e\frac{\partial u}{\partial y} + fu + g = 0$$ (pde2)
 
@@ -329,7 +329,7 @@ Since both diffusion and advection equations are typically time dependent, the a
 at any time through a sequence of time steps (see Chapter {ref}`Numerical Modelling`).
 On the other hand, the solution method for the Laplace or Poisson equation is typically **iterative** of nature: the solution in each point in the domain is **updated** a number of times by taking
 into account the surrounding points until an acceptable error tolerance is reached. There are special cases that do not require iterative methods but can be solved directly
-(see Chapter {ref}`finite_element_method`.
+(see Chapter {ref}`finite_element_method`).
 
 
 It is not possible to give a meaningful classification for PDEs in more than two independent variables.
@@ -348,7 +348,7 @@ Diffusion and advection equations exist also in three space dimensions.
 
 In hydraulic engineering we commonly deal with free surface flows, such as occurring in seas, estuaries, lakes, rivers and canals. The underlying equations to describe such flows are
 the shallow water equations. These equations are a set of *hyperbolic* partial differential equations that describe the flow below a free surface.
-Besides this flow also *advective* transport of dissolve substances (e.g., salt, mud) and their *diffusive* processes in open water bodies are typically included.
+Besides this flow also *advective* transport of dissolve substances (e.g., salt, mud) and their *diffusive* processes in open water bodies are naturally included.
 For these reasons, we shall focus on the numerical solution of the diffusion equation (Section {ref}`diffusion`), the advection equation (Section {ref}`advection`) and
 the advection-diffusion equation (Section {ref}`cveq`).
 Though elliptic equations are very important in the field of computational fluid dynamics (CFD), they will not dealt with here. Detailed discussion on the numerical solution of elliptic equations
