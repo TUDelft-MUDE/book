@@ -166,7 +166,7 @@ Credits are provided here for chapters and pages that are released under the lic
 > {ref}`Numerical Methods for PDEs <NumMethPDE>` is written by Marcel Zijlema.
 >
 > _The material in this chapter is largely copied from Lecture Notes "Course CIE4340 - Computational Modelling of Flow and Transport" by Marcel Zijlema (TU Delft, 2023)._
-> This reader can be downloaded [here](https://www.webedu.nl/bestellen/tudelft/?action=order&og=1730).
+> This reader can be downloaded [here](https://www.webedu.nl/bestellen/tudelft/?action=order\&og=1730).
 
 
 (finite_element_method_credit)=
