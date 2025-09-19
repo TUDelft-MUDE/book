@@ -46,7 +46,7 @@ $c_f$ the dimensionless bottom friction coefficient, and $g$ the acceleration of
 In addition to the partial differential equations, some boundary conditions and initial data must be provided to
 uniquely specify a solution. Solving the equations means finding the **dependent** variable or variables,
 e.g. $T$, $u$, $\zeta$, $\phi$, $c$, as function of the **independent** variables, e.g. $t$, $x$, $y$, such that they fulfill the PDEs
-and the boundary conditions are satisfied. This is called the **boundary value problem**.
+and the boundary conditions are satisfied. This is called the **boundary value problem** (BVP).
 
 ## Relevant notions on PDEs
 
@@ -121,14 +121,14 @@ $$\frac{\partial u}{\partial t} + u\frac{\partial u}{\partial x} + g\frac{\parti
 The first equation is derived from the mass conservation and is known as the **continuity equation**. This equation contains first order derivatives only while the second term contains a product of $h$ and $u$,
 implying a nonlinear term. Also this equation does not contain a term independent of $\zeta$ and $u$, hence this equation is considered homogeneous.
 
-The second equation is derived from the conservation of momentum and is referred to as the **momentum** equation. Like the continuity equation, this momentum equation is first order, nonlinear and homogeneous as well.
+The second equation is derived from the conservation of momentum and is referred to as the **momentum** equation. Like the continuity equation, this momentum equation is first order, nonlinear and homogeneous.
 ```
 :::
 
 ## Well posed problems
 
 In the previous sections we saw some examples of PDEs.
-We now consider some important issues regarding the **solvability** of PDE problems.
+We now consider some important issues regarding the **solvability** of BVPs.
 In general, a PDE alone, without any boundary or initial conditions, will either have an infinity of solutions, or have no solution.
 Thus, in formulating a boundary value problem there are at least three ingredients:
 
@@ -138,7 +138,7 @@ Thus, in formulating a boundary value problem there are at least three ingredien
 4. In case of a time-dependent problem, initial condition(s) must be included as well.
 
 For a PDE based mathematical model of a physical system to give *useful* results, it is generally necessary to formulate that model as a **well posed** problem.
-A PDE problem is said to be well posed if
+A BVP is said to be well posed if
 
 * a solution to the problem **exists**,
 * the solution is **unique**, and
@@ -147,14 +147,13 @@ A PDE problem is said to be well posed if
 [^wp3]: The problem data consists of the coefficients in the PDE, the boundary and initial conditions and the domain on which the PDE is required to hold.
 
 
-If one of these conditions is not satisfied, the PDE problem is said to be **ill posed**.
+If one of these conditions is not satisfied, the BVP is said to be **ill posed**.
 In practice, the question of whether a PDE problem is well posed can be difficult to settle. Roughly speaking the following guidelines apply.
 
 * The boundary conditions imposed must not be too many or a solution will not exist.
 * The boundary conditions imposed must not be too few or the solution will not be unique.
 * The kind of boundary conditions must be correctly matched to the type of the PDE or the solution will not be stable.
 
-In this chapter, only well posed problems will be considered.
 
 ## Types of boundary conditions
 
@@ -165,7 +164,7 @@ in practice are **Dirichlet**, **Neumann** and **Robin** conditions.
 Physically speaking, a Dirichlet condition usually corresponds to setting the value,
 a Neumann condition usually specifies a flux condition on the boundary, and a Robin condition typically represents a radiation condition.
 
-Mathematically speaking, they are given as follows.
+Mathematically speaking, they are given as follows. Let us assume that $u(\vec{x},t)$ is the dependent variable of a PDE.
 Dirichlet condition provides a function of time, $g(t)$, as
 the constraint on the solution at a specific boundary point $\vec{x}_b$,
 
@@ -176,7 +175,7 @@ by a given function $g(t)$ at a boundary point $\vec{x}_b$,
 
 $$ \frac{\partial u}{\partial \vec{n}} (\vec{x}_b,t) = g(t)$$
 
-with $\vec{n}$ the normal to the boundary. If $g(t)$ = 0 then we say that the boundary is **insulated**: $u$ cannot flow across the
+with $\vec{n}$ the normal to the boundary of $\Omega$ (usually denoted $\partial \Omega$). If $g(t)$ = 0 then we say that the boundary is **insulated**: $u$ cannot flow across the
 boundary.
 
 The Robin condition is a combination of Dirichlet and Neumann conditions,
@@ -200,12 +199,12 @@ PDE describes.
 
 
 A classification is possible for
-second order, linear PDEs in two independent variables. Any such 2D equation can be written as
+second order, linear PDEs in two independent variables $x$ and $y$ and the dependent variable $u(x,y)$. Any such 2D equation can be written as
 
 $$a\frac{\partial^2 u}{\partial x^2} + 2b \frac{\partial^2u}{\partial x \partial y} + c\frac{\partial^2 u}{\partial y^2} + d\frac{\partial u}{\partial x} +e\frac{\partial u}{\partial y} + fu + g = 0$$ (pde2)
 
 where the coefficients $a$, $b$, $c$ etc. may depend on $(x,y)$.
-One of the independent variables may represent time~$t$, which we then have a 1D equation.
+One of the independent variables ($x$ or $y$) may represent time $t$, which we then have a 1D equation.
 The classification of Eq. {eq}`pde2` is based upon the first three terms. It
 can be classified into three types according to the sign of the discriminant $b^2 - 4ac$,
 
@@ -257,7 +256,7 @@ Here, the independent variable $y$ of the general PDE, Eq. {eq}`pde2`, is time.
 An initial condition is thus necessary.
 The problem is only well posed in the forward time direction (otherwise the solution becomes unstable in the backward time direction).
 $\Omega$ is bounded at two sides in the $x-$direction.
-Any boundary conditions, Dirichlet, Neumann and Robin, though in certain combinations, are appropriate at both sides of $\Omega$. (See also Exercise \ref{opg:illpos}.)
+Any boundary conditions, Dirichlet, Neumann and Robin, though in certain combinations, are appropriate at both sides of $\Omega$.
 
 
 **Hyperbolic**
@@ -275,7 +274,7 @@ $$
   \frac{\partial u}{\partial t} + \frac{\partial u}{\partial x} = 0
 $$
 
-Here, $y$ variable is again time. An initial condition is necessary.
+Here, $y$ variable is again time $t$. An initial condition is necessary.
 The problem is well posed in both direction of time.
 Boundary conditions of the Dirichlet type
 are imposed at boundaries with ingoing characteristics.
@@ -323,13 +322,14 @@ Important differences between the three prototypes are:
 * Information is propagated at *finite speed* without changing its shape in the advection equation.
   For the diffusion equation information is transmitted at *infinite speed* but it is also *dissipated* and thus the shape of the solution becomes more smooth as time proceeds.
 * The Laplace equation is fundamentally different from the diffusion and advection equation in that
-  the solution at each point depends on all other points. Solutions, e.g. potential fields, cannot be found by marching in from the boundary.
+  the solution at each point depends on *all* other points. Solutions, e.g. potential fields, cannot be found by marching in from the boundary.
   Instead, solutions must be found at all points *simultaneously*.
 
 Since both diffusion and advection equations are typically time dependent, the associated numerical approach is therefore time marching: the numerical solution is determined
-at any time through a sequence of time steps.
-On the other hand, the solution method for the Laplace equation is typically **iterative** of nature: the solution in each point in the domain is **updated** a number of times by taking
-into account the surrounding points until an acceptable error tolerance is reached.
+at any time through a sequence of time steps (see Chapter {ref}`Numerical Modelling`).
+On the other hand, the solution method for the Laplace or Poisson equation is typically **iterative** of nature: the solution in each point in the domain is **updated** a number of times by taking
+into account the surrounding points until an acceptable error tolerance is reached. There are special cases that do not require iterative methods but can be solved directly
+(see Chapter {ref}`finite_element_method`.
 
 
 It is not possible to give a meaningful classification for PDEs in more than two independent variables.
@@ -346,10 +346,10 @@ However, there are natural extensions for the three prototype equations such as
 Diffusion and advection equations exist also in three space dimensions.
 
 
-Later in this lecture notes, we shall deal with free surface flows, such as occurring in seas, estuaries, lakes, rivers and canals. The underlying equations to describe such flows are
+In hydraulic engineering we commonly deal with free surface flows, such as occurring in seas, estuaries, lakes, rivers and canals. The underlying equations to describe such flows are
 the shallow water equations. These equations are a set of *hyperbolic* partial differential equations that describe the flow below a free surface.
-Not only flow but also *advective* transport of dissolve substances and their *diffusive* processes in open water bodies will be discussed.
-For these reasons, we shall focus on the numerical solution of the diffusion equation (Section~\ref{sec:diffusion}), the advection equation (Section~\ref{sec:advection}) and
-the advection-diffusion equation (Section~\ref{sec:cveq}).
+Besides this flow also *advective* transport of dissolve substances (e.g., salt, mud) and their *diffusive* processes in open water bodies are typically included.
+For these reasons, we shall focus on the numerical solution of the diffusion equation (Section {ref}`diffusion`), the advection equation (Section {ref}`advection`) and
+the advection-diffusion equation (Section {ref}`cveq`).
 Though elliptic equations are very important in the field of computational fluid dynamics (CFD), they will not dealt with here. Detailed discussion on the numerical solution of elliptic equations
-may be found in Abbott and Basco (1989), Ferziger and Peri\'{c} (1996), Fletcher (1988) and Wesseling (2001).
+can be found in Chapter {ref}`finite_element_method`.
