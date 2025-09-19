@@ -7,6 +7,16 @@ dimensions only.
 
 This section is not intended to be a complete treatment of partial differential equations.
 Instead, its aim is to serve as an introduction to a minimal amount of terminology from the field of PDEs.
+A good introductory textbook on PDEs is {cite}`And86`.
+
+```{note} 
+
+**The learning objectives of this section are:**
+- identify various types of PDEs
+- explain the notion of well posed problems
+- recognize the different types of boundary conditions
+
+```
 
 ## Examples of PDEs
 
