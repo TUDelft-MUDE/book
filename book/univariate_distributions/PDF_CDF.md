@@ -73,11 +73,11 @@ name: survival gaussian
 Gaussian distribution function: CDF and survival function or complemetary CDF.
 ```
 
-Thus, the **exceedance probability** can be directly computed by substracting to 1 the **non-exceedance probability** obtained from the CDF. The result is called the **complementary CDF**. However, this function has many alternative names. The name **survival function** may sound odd due to its positive connotation, but this is appropriate when the random variable describes, for example, the lifetime of a structure.
+Thus, the **exceedance probability** can be directly computed by subtracting to 1 the **non-exceedance probability** obtained from the CDF. The result is called the **complementary CDF**. However, this function has many alternative names. The name **survival function** may sound odd due to its positive connotation, but this is appropriate when the random variable describes, for example, the lifetime of a structure.
 
 ### Interval probability
 
-Another interval of common interest is that between two finite values $x_1$ and $x_2$ (where $x_2>x_1$). Using the CDF, $F(x_2)$, gives the probability of values below $x_2$ but also those below $x_1$. Then, we need to substract $F(x_2)-F(x_1)$ to obtain the probability of being in the interval $[x_1, x_2]$. In mathematical terms:
+Another interval of common interest is that between two finite values $x_1$ and $x_2$ (where $x_2>x_1$). Using the CDF, $F(x_2)$, gives the probability of values below $x_2$ but also those below $x_1$. Then, we need to subtract $F(x_2)-F(x_1)$ to obtain the probability of being in the interval $[x_1, x_2]$. In mathematical terms:
 
 $$
 \int_{x_1}^{x_2}{f(x)}dx = \int_{-\infty}^{x_2}{f(x)}dx - \int_{-\infty}^{x_1}{f(x)}dx = F(x_2)-F(x_1)
@@ -87,7 +87,7 @@ $$
 
 Often, in regulations and guidelines, it is required to design our structure or system for a value which is not exceeded more than $p$ percent of the time. Thus, we are facing the opposite problem: what is the value of the random variable, $x$, whose non-exceedance probability has a specified value, $p$? The solution is simple: the inverse of the CDF, $x = F^{-1}(p)$. As previously mentioned, the CDF is just an equation which in most occasions can be solved analytically, so we just need to work through the formula and calculate $x$ given $p$.
 
-The inverse CDF also plays an important part in **sampling**. Suppose that we want to generate samples from a given PDF with the help of a computer. Computers only know a single trick when it comes to randomness: the generation of pseudo-random, uniformly distributed valuse between zero and one. Fortunately, with the help of the inverse CDF $F^{-1}$, we can convert these uniform random values into samples from the corresponding pdf $f$. The interactive element below illustrates this process:
+The inverse CDF also plays an important part in **sampling**. Suppose that we want to generate samples from a given PDF with the help of a computer. Computers only know a single trick when it comes to randomness: the generation of pseudo-random, uniformly distributed values between zero and one. Fortunately, with the help of the inverse CDF $F^{-1}$, we can convert these uniform random values into samples from the corresponding pdf $f$. The interactive element below illustrates this process:
 
 ````{iframe-figure} ../_static/elements/element_sampling_inverse_cdf.html
 :name: inverse_cdf_sampling
