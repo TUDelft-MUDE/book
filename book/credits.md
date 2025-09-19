@@ -160,6 +160,14 @@ Credits are provided here for chapters and pages that are released under the lic
 > - Dhruv Mehta for providing a first draft of the chapter structure and contents.
 
 
+(numerical_methods_for_pdes_credit)=
+### Chapter: Numerical Methods for PDEs
+
+> {ref}`Numerical Methods for PDEs <NumMethPDE>` is written by Marcel Zijlema.
+>
+> _The material in this chapter is largely copied from Lecture Notes "Course CIE4340 - Computational Modelling of Flow and Transport" by Marcel Zijlema (TU Delft, January 2015)._
+
+
 (finite_element_method_credit)=
 ### Chapter: Finite Element Method
 
