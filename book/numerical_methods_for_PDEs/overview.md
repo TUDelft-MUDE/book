@@ -13,7 +13,7 @@ In Chapter {ref}`numerical_modelling` ordinary differential equations (ODEs) hav
 Their solutions are simply functions of a single independent variable representing time.
 Frequently, physical systems often evolve not only in time but also in at least one spatial dimension (usually $x$).
 
-In this chapter, a brief review of **partial differential equations** (PDEs) is provided. Next, discretizations of the **diffusion
+In this chapter, first, a brief review of **partial differential equations** (PDEs) is provided. Next, discretizations of the **diffusion
 equation** by employing the **finite difference method** are considered. This is followed by the approximatons of the **advection
 equation** and the **advection-diffusion equation**.
 
