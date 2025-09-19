@@ -27,29 +27,57 @@ On physical grounds, the form of these equations will involve the time rate-of-c
 and/or the spatial rate-of-change (or gradient) of the solution.
 Some examples are:
 
-**Diffusion equation**: $\qquad \frac{\partial T}{\partial t} = \kappa \frac{\partial^2 T}{\partial x^2}$
+$$
+\begin{flalign}
+& \text{\bf Diffusion equation:} \qquad \frac{\partial T}{\partial t} = \kappa \frac{\partial^2 T}{\partial x^2} &
+\end{flalign}
+$$
 
 where $t$ is time, $x$ is the coordinate in space, $T(x,t)$ is the temperature, and $\kappa$ is a thermal diffusivity coefficient.
 
-**Advection equation**: $\qquad \frac{\partial c}{\partial t} + u \frac{\partial c}{\partial x} = 0$
+$$
+\begin{flalign}
+& \text{\bf Advection equation:} \qquad \frac{\partial c}{\partial t} + u \frac{\partial c}{\partial x} = 0$ &
+\end{flalign}
+$$
 
 where $c(x,t)$ is the concentration, and $u$ is a constant propagation velocity.
 
-**Wave equation**: $\qquad \frac{\partial^2 c}{\partial t^2} - u^2 \frac{\partial^2 c}{\partial x^2} = 0$
+$$
+\begin{flalign}
+& \text{\bf Wave equation:} \qquad \frac{\partial^2 c}{\partial t^2} - u^2 \frac{\partial^2 c}{\partial x^2} = 0$ &
+\end{flalign}
+$$
 
-**Laplace equation**: $\qquad \frac{\partial^2 \phi}{\partial x^2} + \frac{\partial^2 \phi}{\partial y^2} = 0$
+$$
+\begin{flalign}
+& \text{\bf Laplace equation:} \qquad \frac{\partial^2 \phi}{\partial x^2} + \frac{\partial^2 \phi}{\partial y^2} = 0$ &
+\end{flalign}
+$$
 
 where $\phi(x,y)$ is a potential or harmonic function.
 
-**Poisson equation**: $\qquad \frac{\partial^2 \phi}{\partial x^2} + \frac{\partial^2 \phi}{\partial y^2} = f$
+$$
+\begin{flalign}
+& \text{\bf Poisson equation:} \qquad \frac{\partial^2 \phi}{\partial x^2} + \frac{\partial^2 \phi}{\partial y^2} = f$ &
+\end{flalign}
+$$
 
 with $f(x,y,t)$ a source term.
 
-**Burgers equation**: $\qquad \frac{\partial u}{\partial t} + u\frac{\partial u}{\partial x} = \nu \frac{\partial^2 u}{\partial x^2}$
+$$
+\begin{flalign}
+& \text{\bf Burgers equation:} \qquad \frac{\partial u}{\partial t} + u\frac{\partial u}{\partial x} = \nu \frac{\partial^2 u}{\partial x^2}$ &
+\end{flalign}
+$$
 
 with $u(x,t)$ the flow velocity and $\nu$ the (molecular) viscosity.
 
-**Shallow water equations**: $\qquad \frac{\partial \zeta}{\partial t} + \frac{\partial hu}{\partial x} = 0, \quad \frac{\partial u}{\partial t} + u\frac{\partial u}{\partial x} + g\frac{\partial \zeta}{\partial x} + c_f \frac{u|u|}{h} = 0$
+$$
+\begin{flalign}
+& \text{\bf Shallow water equations:} \qquad \frac{\partial \zeta}{\partial t} + \frac{\partial hu}{\partial x} = 0, \quad \frac{\partial u}{\partial t} + u\frac{\partial u}{\partial x} + g\frac{\partial \zeta}{\partial x} + c_f \frac{u|u|}{h} = 0$ &
+\end{flalign}
+$$
 
 with $\zeta(x,t)$ the water level above the still water level, $h(x,t)=\zeta(x,t)+d(x)$
 the water depth, $d(x)$ the bottom level measured from the still water level positively downwards, $u(x,t)$ the flow velocity,
