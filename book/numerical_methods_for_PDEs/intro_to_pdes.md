@@ -366,7 +366,7 @@ Important differences between the three prototypes are:
   Instead, solutions must be found at all points *simultaneously*.
 
 Since both diffusion and advection equations are typically time dependent, the associated numerical approach is therefore time marching: the numerical solution is determined
-at any time through a sequence of time steps (see Chapter {ref}`Numerical Modelling`).
+at any time through a sequence of time steps (see Chapter {ref}`numerical_modelling`).
 On the other hand, the solution method for the Laplace or Poisson equation is typically **iterative** of nature: the solution in each point in the domain is **updated** a number of times by taking
 into account the surrounding points until an acceptable error tolerance is reached. There are special cases that do not require iterative methods but can be solved directly
 (see Chapter {ref}`finite_element_method`).
@@ -376,11 +376,23 @@ It is not possible to give a meaningful classification for PDEs in more than two
 However, there are natural extensions for the three prototype equations such as
 
 
-3D Laplace equation: $\qquad \frac{\partial ^2u}{\partial x^2} + \frac{\partial ^2u}{\partial y^2} + \frac{\partial ^2u}{\partial z^2} = 0$
+3D Laplace equation:
 
-2D diffusion equation: $\qquad \frac{\partial u}{\partial t} = \frac{\partial ^2u}{\partial x^2} + \frac{\partial ^2u}{\partial y^2}$
+$$
+  \frac{\partial ^2u}{\partial x^2} + \frac{\partial ^2u}{\partial y^2} + \frac{\partial ^2u}{\partial z^2} = 0
+$$
 
-2D advection equation: $\qquad \frac{\partial u}{\partial t} + \frac{\partial u}{\partial x} + \frac{\partial u}{\partial y} = 0$
+2D diffusion equation:
+
+$$
+  \frac{\partial u}{\partial t} = \frac{\partial ^2u}{\partial x^2} + \frac{\partial ^2u}{\partial y^2}
+$$
+
+2D advection equation:
+
+$$
+  \frac{\partial u}{\partial t} + \frac{\partial u}{\partial x} + \frac{\partial u}{\partial y} = 0
+$$
 
 
 Diffusion and advection equations exist also in three space dimensions.
