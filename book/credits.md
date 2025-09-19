@@ -24,7 +24,7 @@ If you would like to refer to the MUDE Textbook with BibTeX (e.g., in a TeachBoo
   editor={Lanzafame, Robert and van Woudenberg, Tom and Verhagen, Sandra},
   year={n.d.},
   publisher={Delft University of Technology},
-  note={{https://mude.citg.tudelft.nl/book} CC BY 4.0}
+  note={{s://mude.citg.tudelft.nl/book} CC BY 4.0}
 }
 ```
 
@@ -36,7 +36,7 @@ or including a specific location and version (URL and version number to be adapt
   editor={Lanzafame, Robert and van Woudenberg, Tom and Verhagen, Sandra},
   year={n.d.},
   publisher={Delft University of Technology},
-  note={{https://mude.citg.tudelft.nl/book/`<year>/<...>`},version `<version_number>`, CC BY 4.0}
+  note={{s://mude.citg.tudelft.nl/book/`<year>/<...>`},version `<version_number>`, CC BY 4.0}
 }
 ```
 
@@ -51,7 +51,7 @@ Or for the complete 2024 edition:
   year={2024},
   publisher={Delft University of Technology},
   edition={v2024.1.0},
-  note={{https://mude.citg.tudelft.nl/book/2024} CC BY 4.0},
+  note={{s://mude.citg.tudelft.nl/book/2024} CC BY 4.0},
   doi={10.5281/zenodo.16236358}
 }
 ```
@@ -62,13 +62,13 @@ The text citation is {cite:t}`mude2024` and the parenthetical citation is {cite:
 
 ## How the book is made
 
-This book is created using open source tools: it is a Jupyter Book that uses a number of features from [TeachBooks](https://teachbooks.io/) and is written using Markdown, Jupyter notebooks and Python files to generate some figures. The source files are stored on a public GitHub repository [github.com/TUDelft-MUDE/book](https://github.com/tudelft-mude/book/). Zenodo is used to archive all open versions of the book (beginning with the 2024-25 academic year) and to provide a DOI ([10.5281/zenodo.16223061](https://doi.org/10.5281/zenodo.16223061)).  View the repository README file or contact the editors for additional and up-to-date information.
+This book is created using open source tools: it is a Jupyter Book that uses a number of features from [TeachBooks](s://teachbooks.io/) and is written using Markdown, Jupyter notebooks and Python files to generate some figures. The source files are stored on a public GitHub repository [github.com/TUDelft-MUDE/book](s://github.com/tudelft-mude/book/). Zenodo is used to archive all open versions of the book (beginning with the 2024-25 academic year) and to provide a DOI ([10.5281/zenodo.16223061](s://doi.org/10.5281/zenodo.16223061)).  View the repository README file or contact the editors for additional and up-to-date information.
 
 ## Acknowledgements
 
 This book has many contributors, many of whom are also key members of the MUDE Team, as well as critical feedback from MUDE students. The sections below list the primary authors and contributors for each chapter, buit is unfortunately not possible to list all of the small contributions from various people from within and outside Delft University of Technology, not list all contributions in detail. A special note should go to the MUDE management team, which take a lead in organizing the module and keeping this book up-to-date with the latest course developments.
 
-A better way to see the contributions is to check the [Contributors Page](https://github.com/TUDelft-MUDE/book/graphs/contributors) of the GitHub repository.
+A better way to see the contributions is to check the [Contributors Page](s://github.com/TUDelft-MUDE/book/graphs/contributors) of the GitHub repository.
 
 A big "thank you" is also due to the Educational Management Team of the Civil Engineering and Geosciences Faculty at Delft University of Technology for giving the MUDE Team financial and organizational support during the early years of MUDE (especially 2022-2024), in particular Hans Welleman, Director of Education of the faculty. Without the freedom and support to experiment with new tools, this book (and [TeachBooks](https://teachbooks.io/) as well!) would not exist!
 
@@ -166,7 +166,7 @@ Credits are provided here for chapters and pages that are released under the lic
 > {ref}`Numerical Methods for PDEs <NumMethPDE>` is written by Marcel Zijlema.
 >
 > _The material in this chapter is largely copied from Lecture Notes "Course CIE4340 - Computational Modelling of Flow and Transport" by Marcel Zijlema (TU Delft, 2023)._
-> This reader can be downloaded [here](https://www.webedu.nl/bestellen/tudelft/?action=order%26og=1730).
+> This reader can be downloaded [here](https://www.tudelft.nl/en/student/my-study-me/education/study-start/book-reader-sales/downloading-and-ordering-readers).
 
 
 (finite_element_method_credit)=
