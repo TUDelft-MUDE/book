@@ -13,8 +13,8 @@ In Chapter {ref}`numerical_modelling` ordinary differential equations (ODEs) hav
 Their solutions are simply functions of a *single* independent variable representing time.
 Frequently, physical systems often evolve not only in time but also in spatial dimensions.
 Such systems are described by mathematical equations called the partial differential equations (PDEs). Examples are
-the Navier-Stokes equations that describe the motion of fluids, such as water and air, and the Maxwell's equations
-describing the behaviour of electric and magnetic fields.
+the Navier-Stokes equations that describe the motion of fluids, such as water in oceans, rivers and lakes and air around planes and cars,
+and the Maxwell's equations describing the propagation of electric and magnetic fields through a medium or vacuum.
 
 It is virtually impossible to solve the PDEs analytically, and one must therefore rely on numerical methods to find an
 approximate solution. These methods result in a discrete (algebraic) equations which can be solved in a finite sequence
