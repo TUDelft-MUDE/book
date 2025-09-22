@@ -142,9 +142,9 @@ $T(x+\Delta x,t)$, as follows
 
 $$
 \begin{align}
-  T(x+\Delta x,t) = &T(x,t) + \Delta x\, T_x(x,t) + \frac 12 \Delta x^2\, T_{xx}(x,t) + \\
-                  \\
-                    &\frac 16 \Delta x^3\, T_{xxx}(x,t) + \frac{1}{24} \Delta x^4\, T_{xxxx}(x,t) + \ldots
+  T(x+\Delta x,t) = & \quad T(x,t) + \Delta x\, T_x(x,t) + \frac 12 \Delta x^2\, T_{xx}(x,t) + \\
+                    \\
+                    &\quad \frac 16 \Delta x^3\, T_{xxx}(x,t) + \frac{1}{24} \Delta x^4\, T_{xxxx}(x,t) + \ldots
 \end{align}
 $$
 
@@ -182,6 +182,12 @@ it may be appropriate to use either the forward or backward approximation. This 
 
 Show that the backward and centred finite difference approximations are accurate to $\Delta x$ and $\Delta x^2$, respectively.
 
+```{admonition} Solution
+:class: tip, dropdown
+
+See Chapter {ref}`numerical_modelling`.
+
+```
 :::
 
 The above central differences is measured using *double* grid size, that is, $2\Delta x$. Alternatively, the partial derivative may
@@ -200,6 +206,12 @@ $$
 
 Show that Eq. {eq}`cdf2` is equivalent to Eq. {eq}`cdf1`.
 
+```{admonition} Solution
+:class: tip, dropdown
+
+By way of substitution of the above linear interpolations into Eq. {eq}`cdf2`, we obtain Eq. {eq}`cdf1`.
+
+```
 :::
 
 The approximation of the second derivative can be obtained by recalling that
