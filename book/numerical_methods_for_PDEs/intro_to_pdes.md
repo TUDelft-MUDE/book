@@ -361,7 +361,7 @@ Important differences between the three prototypes are:
   the solution at each point depends on *all* other points. Solutions, e.g. potential fields, cannot be found by marching in from the boundary.
   Instead, solutions must be found at all points *simultaneously*.
 
-Since both diffusion and advection equations are typically time dependent, the associated numerical approach is therefore time marching: the numerical solution is determined
+Since both diffusion and advection equations are typically time dependent, the associated numerical approach is therefore **time marching**: the numerical solution is determined
 at any time through a sequence of time steps (see Chapter {ref}`numerical_modelling` on time integration).
 On the other hand, the solution method for the Laplace or Poisson equation is typically **iterative** of nature: the solution in each point in the domain is **updated** a number of times by taking
 into account the surrounding points until an acceptable error tolerance is reached. There are special cases that do not require iterative methods but can be solved directly.
