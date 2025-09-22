@@ -1,1 +1,3 @@
-this section concerns the discretization of diffusion equation.
+# Diffusion equation
+
+This section concerns the discretization of diffusion equation.
