@@ -5,13 +5,13 @@ In this section we discuss the numerical solution of the 1D diffusion equation. 
 
 $$
   \begin{align}
-    &\pderiv{T}{t} = \kappa \pderiv{^2T}{x^2}\, , \quad x \in (0,L)\, ,\quad t > 0 \\
+    &\frac{\partial T}{\partial t} = \kappa \frac{\partial^2 T}{\partial x^2}\, , \quad x \in (0,L)\, ,\quad t > 0 \\
     \\
     &T(x,0) = T^0(x)\, ,\quad x \in [0,L] \\
     \\
     &T(0,t) = 1\, ,\quad t > 0 \\
     \\
-    &\pderiv{T}{x} (L,t) = 0\, ,\quad t > 0
+    &\frac{\partial T}{\partial x} (L,t) = 0\, ,\quad t > 0
   \end{align}
 $$
 
@@ -20,24 +20,54 @@ material, subject to some boundary conditions at each end.
 Specifically, this heat *spreads* out spatially as time increases. This phenomenon is called **diffusion**.
 The solution to the heat equation is the temperature distribution at any time $t$ and vary with $x$ along the rod.
 
-We assume that $T(x,t)$ is smooth enough, so that we can differentiate this function many times as we want and each derivative is a well-defined *bounded* function.
+We assume that $T(x,t)$ is smooth enough, so that we can differentiate this function many times as we want and each derivative is a well-defined *bounded* function (that has thus a fixed upperbound).
 Here $L$ is the given finite length of the domain and $T^0(x)$ is a given function defining the initial condition.
 The coefficient $\kappa > 0$ is the thermal diffusivity.
 
+```{tip}
+
+Always check the dimension of parameters that appear in the PDE. For instance, the unit of $\kappa$ is m$^2$/s.
+
+```
+
 In this specific case, we have imposed a Dirichlet condition at $x = 0$ and a Neumann condition at $x = L$.
-Since the boundary conditions are all time independent, we expect the solution to eventually reach a **steady state**
+Since both these boundary conditions are time independent, we expect the solution to eventually reach a **steady state**
 solution $T(x,t) \to {\tilde T}(x)$ which then remains essentially unchanged at later times.
 Hence, we shall marching forward in time until a steady state solution is found. During this marching a **transient** solution will be obtained that must fulfill the initial condition.
 
 :::{card} Exercise
 
-Show that the steady state solution is $\underset{t \to \infty}{\lim} T(x,t) = {\tilde T}(x) = 1, x \in [0,1]$.
+Show that the steady state solution is $\underset{t \to \infty}{\lim} T(x,t) = {\tilde T}(x) = 1, \quad x \in [0,1]$.
 
+```{admonition} Solution
+:class: tip, dropdown
+
+To find the stationary solution, the time derivative is set to zero. Hence, we consider the following equation
+
+$$
+  \kappa \frac{\partial^2 T}{\partial x^2} = 0
+$$
+
+Integrating twice, we obtain the following solution
+
+$$
+  T(x) = a\,x + b
+$$
+
+where $a$ and $b$ are the constants of integration. Their values can be found by means of the boundary conditions.
+
+First, $T(0) = 1$, so that $b = 1$. Second, $\partial T/\partial x = 0$ at $x = 1$, so that $a = 0$. Hence, the final solution is given by
+
+$$
+  T(x) = {\tilde T}(x) = 1, \quad x \in [0,1]
+$$
+
+```
 :::
 
-The first step is to **discretize** the domain into a finite number of **grid points** $M+1$ where we
-intend to compute the solution of the PDE. We shall use a uniform or **equidistant**
-grid, with a **grid spacing** $\Delta x = L/M$. We shall refer to one of the points in the grid as $x_m = m\Delta x\,, m=0,\ldots,M$.
+The first step is to **discretize** the domain $[0,L]$ into a finite number of **grid points** $M+1$ where we
+intend to compute the solution of the PDE. We shall use a uniform or **equidistant** grid, with a **grid spacing** $\Delta x = L/M$.
+We shall refer to one of the points in the grid as $x_m = m\Delta x\,, m=0,\ldots,M$.
 The first and last grid points of the domain, $x_0$ and $x_M$, are called the **boundary points**, while the other grid points are
 the **internal** ones.
 
