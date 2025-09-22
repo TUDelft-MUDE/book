@@ -68,7 +68,7 @@ $$
 
 ```{note}
 
-The above mathematical model is well posed since we found a unique solution that is stable. An example of an <u>ill posed</u> problem would be the one
+The above mathematical model {eq}`diffusion1` is well posed since we found a unique solution that is stable. An example of an <u>ill posed</u> problem would be the one
 in which the Dirichlet boundary condition at $x = 0$ is replaced by the following homogeneous Neumann condition:
 
 $$
@@ -102,22 +102,22 @@ precision of real values in a computer precludes exact computation of these deri
 Generally, a distinction is made between approximating the time derivative and approximating the spatial
 derivative. The whole approximation process is done in two steps:
 
-1. Approximate the spatial derivative first. This step is called the {\bf semi discretization} step and leads to a system of first order ODEs.
-2. The resulting system of ODEs is approximated by means of time integration. This step has been dealt with in Chapter~\ref{ch:ode}.
+1. Approximate the spatial derivative first. This step is called the **semi discretization** step and leads to a system of first order ODEs.
+2. The resulting system of ODEs is approximated by means of time integration. This step has been dealt with in Chapter {ref}`numerical_modelling`.
 
 This two-step process is called the **method of lines** (MOL)[^mol].
 
 [^mol]: The origin of the name <u>method of lines</u> is best illustrated at [page](https://en.wikipedia.org/wiki/Method_of_lines#mediaviewer/File:Method\_of\_lines.gif).
 
 
-A number of methods have been proposed to approximate spatial derivatives. Popular methods are the finite difference, finite volume and finite element methods. In this chapter,
+A number of methods have been proposed in the field of numerical mathematics to approximate spatial derivatives. Popular methods are the finite difference, finite volume and finite element methods. In this chapter,
 we restrict ourselves to one of the most natural approximations in hydraulic engineering, namely, the finite difference method. But see also Chapter {ref}`finite_element_method`.
 
 ## Finite difference method
 
 The basic methodology of the **finite difference method** (FDM) is to approximate the spatial derivatives
 with **differences** of the unknowns on the grid. A variety of different approximations are possible and the
-choice depends on the desired accuracy (see also Chapter {ref}`numerical_modelling`).
+choice depends on the desired accuracy (consult Chapter {ref}`numerical_modelling` for further clarification).
 
 
 Recall the definition of the partial derivative::
@@ -133,7 +133,7 @@ $$\frac{\partial T}{\partial x} (m\Delta x,t) \approx \frac{T_{m+1}(t) - T_m(t)}
 
 with $T_m(t) \approx T(m\Delta x,t)$.
 Note that the quantity $T_m(t)$ is *continuous* in time as there is no approximation in time yet!
-This approximation is known as the **forward finite difference** formula. This approximation is also called the **one-sided**
+Approximation {eq}`fdfs` is known as the **forward finite difference** formula. This approximation is also called the **one-sided**
 approximation since $T$ is evaluated only at $x_{m+1} > x_m$.
 
 We now quantify the accuracy of the forward difference approximation.
@@ -141,15 +141,15 @@ By means of the Taylor series expansion we can derive the associated truncation 
 $T(x+\Delta x,t)$, as follows
 
 $$
-  T(x+\Delta x,t) = T(x,t) + \Delta x T_x(x,t) + \frac 12 \Delta x^2 T_{xx}(x,t) + \frac 16 \Delta x^3 T_{xxx}(x,t) + \frac{1}{24} \Delta x^4 T_{xxxx}(x,t) + \ldots
+  T(x+\Delta x,t) = T(x,t) + \Delta x\, T_x(x,t) + \frac 12 \Delta x^2\, T_{xx}(x,t) + \frac 16 \Delta x^3\, T_{xxx}(x,t) + \frac{1}{24} \Delta x^4\, T_{xxxx}(x,t) + \ldots
 $$
 
-with $T_x = \partial T/\partial x$, $T_{xx} = \partial^2T/\partial x^2$ etc. Here we assume that $T(x,t)$ is sufficiently smooth.
+with $T_x = \partial T/\partial x$, $T_{xx} = \partial^2T/\partial x^2$, etc. Here we assume that $T(x,t)$ is sufficiently smooth. Hence, all its derivatives exist.
 Substitution gives
 
 $$
 \begin{align}
-  \frac{T(x+\Delta x,t) - T(x,t)}{\Delta x} &= \frac{1}{\Delta x} \left ( \Delta x \frac{\partial T}{\partial x}(x,t) + \frac 12 \Delta x^2 \\frac{\partial^2 T}{\partial x^2} (x,t) + \ldots \right ) \\
+  \frac{T(x+\Delta x,t) - T(x,t)}{\Delta x} &= \frac{1}{\Delta x} \left ( \Delta x \frac{\partial T}{\partial x}(x,t) + \frac 12 \Delta x^2 \frac{\partial^2 T}{\partial x^2} (x,t) + \ldots \right ) \\
                                             \\
                                             &= \frac{\partial T}{\partial x}(x,t) + \frac 12 \Delta x \frac{\partial^2 T}{\partial x^2} (x,t) + \ldots \\
                                             \\
@@ -194,14 +194,14 @@ $$
 
 :::{card} Exercise
 
-Show that Eq. {ref}`cdf2` is equivalent to Eq. {ref}`cdf1`.
+Show that Eq. {eq}`cdf2` is equivalent to Eq. {eq}`cdf1`.
 
 :::
 
 The approximation of the second derivative can be obtained by recalling that
 
 $$
-  \frac{\partial^2 T}{\partial x^2} = \frac{}{\partial x} \left ( \frac{\partial T}{\partial x} \right )
+  \frac{\partial^2 T}{\partial x^2} = \frac{\partial}{\partial x} \left ( \frac{\partial T}{\partial x} \right )
 $$
 
 Hence,
@@ -210,9 +210,9 @@ $$
   \frac{\partial^2 T}{\partial x^2} (m\Delta x,t) \approx \frac{\frac{\partial T}{\partial x}\_{m+1/2} - \frac{\partial T}{\partial x}|\_{m-1/2}}{\Delta x} \approx \frac{\frac{T_{m+1}-T_m}{\Delta x} - \frac{T_m - T_{m-1}}{\Delta x}}{\Delta x} = \frac{T_{m+1}-2T_m+T_{m-1}}{\Delta x^2}
 $$
 
-Substituting this expression into our original PDE, Eq. {ref}`diffusion1`, we obtain
+Substituting this expression into our original PDE, Eq. {eq}`diffusion1`, we obtain
 
 
 $$\frac{dT_m}{dt} = \kappa \, \frac{T_{m+1} - 2T_m + T_{m-1}}{\Delta x^2}\, , \quad m=1,\ldots,M-1$$ (semid)
 
-which is a semi discretization of Eq. {ref}`diffusion1` of the **interior** of the domain. Note that Eq. {ref}`semid` is an *ordinary* differential equation.
+which is a semi discretization of Eq. {eq}`diffusion1` of the **interior** of the domain. Note that Eq. {eq}`semid` is an *ordinary* differential equation.
