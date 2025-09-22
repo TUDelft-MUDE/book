@@ -22,7 +22,7 @@ of algebraic operations on a computer.
 
 Various numerical approaches are used to discretize differential equations: finite difference methods,
 finite volume methods, finite element methods, spectral methods, etc. The key notions related to these discretization methods are
-**consistency** and **stability**. They play an important role for the construction of a suitable (accurate and stable) numerical scheme.
+**consistency** and **stability**. They play an important role in the construction of a suitable (accurate and stable) numerical scheme.
 
 In this chapter, first, a brief review of **partial differential equations** is provided. Next, discretizations of the **diffusion
 equation** by employing the **finite difference method** are considered. This is followed by the approximatons of the **advection
