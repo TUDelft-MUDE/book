@@ -238,7 +238,7 @@ second order, linear PDEs in two independent variables $x$ and $y$ and the depen
 
 $$a\frac{\partial^2 u}{\partial x^2} + 2b \frac{\partial^2u}{\partial x \partial y} + c\frac{\partial^2 u}{\partial y^2} + d\frac{\partial u}{\partial x} +e\frac{\partial u}{\partial y} + fu + g = 0$$ (pde2)
 
-with constant coefficients $a \cdots g$.
+with constant coefficients $a, \cdots, g$.
 One of the independent variables ($x$ or $y$) may represent time $t$, which we then have a 1D equation.
 The classification of Eq. {eq}`pde2` is based upon the first three terms. It
 can be classified into three types according to the sign of the discriminant $b^2 - 4ac$,
@@ -247,12 +247,6 @@ can be classified into three types according to the sign of the discriminant $b^
 * $b^2 - 4ac = 0$: parabolic
 * $b^2 - 4ac > 0$: hyperbolic
 
-Generally, different numerical methods are required for the different classes of PDEs. The need for
-this specialization in numerical approach is rooted in the physics from which the different classes of PDEs arise.
-The physical problem has certain properties that we would like to preserve with our numerical approximation, and it is
-important to understand the underlying problem and be aware of its mathematical properties before blindly applying a numerical method.
-
-
 Elliptic equations generally arise from a physical problem that involves a diffusion process that has reached equilibrium,
 a steady state temperature distribution, for example.
 Hyperbolic PDEs usually arise in wave propagation and advection driven transport problems.
@@ -260,6 +254,10 @@ In addition, such equations are able to support solutions with discontinuities, 
 Mathematically, parabolic PDEs serve as a transition from the hyperbolic PDEs to the elliptic PDEs. Physically, parabolic PDEs tend to arise in
 time dependent diffusion problems, such as the transient flow of heat in accordance with Fick's law of heat conduction.
 
+Generally, different numerical methods are required for the different classes of PDEs. The need for
+this specialization in numerical approach is rooted in the physics from which the different classes of PDEs arise.
+The physical problem has certain properties that we would like to preserve with our numerical approximation, and it is
+important to understand the underlying problem and be aware of its mathematical properties before blindly applying a numerical method.
 
 It turns out that all elliptic equations are steady state, all parabolic equations are diffusion-like, and all hyperbolic equations are
 wave-like. Therefore, we outline the following **prototypes**.
@@ -291,7 +289,7 @@ Here, the independent variable $y$ of the general PDE, Eq. {eq}`pde2`, is time.
 An initial condition is thus necessary.
 The problem is only well posed in the forward time direction (otherwise the solution becomes unstable in the backward time direction).
 Such a problem is called a **marching** problem.
-$\Omega$ is bounded at two sides in the $x-$direction.
+The domain $\Omega$ is bounded at two sides in the $x-$direction.
 Any boundary conditions, Dirichlet, Neumann and Robin, though in certain combinations, are appropriate at both sides of $\Omega$.
 
 
@@ -401,5 +399,5 @@ the shallow water equations. These equations are a set of *hyperbolic* partial d
 Besides this flow also *advective* transport of dissolve substances (e.g., salt, mud) and their *diffusive* processes in open water bodies are naturally included.
 For these reasons, we shall focus on the numerical solution of the diffusion equation (Section {ref}`diffusion`), the advection equation (Section {ref}`advection`) and
 the advection-diffusion equation (Section {ref}`cveq`).
-Though elliptic equations are very important in the field of computational fluid dynamics (CFD), they will not dealt with here. Detailed discussion on the numerical solution of elliptic equations
-can be found in Chapter {ref}`finite_element_method`.
+Though elliptic equations are very important in the field of computational fluid dynamics (CFD) and in structural mechanics, they will not dealt with here.
+Discussion on the numerical solution of elliptic equations can be found in Chapter {ref}`finite_element_method`.
