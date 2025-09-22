@@ -24,7 +24,7 @@ A good introductory textbook on PDEs is {cite}`And86`.
 
 Partial differential equations arise in many areas of physics and engineering.
 On physical grounds, the form of these equations will involve the time rate-of-change of the solution
-and/or the spatial rate-of-change (or gradient) of the solution.
+and the spatial rate-of-change (or gradient) of the solution.
 Some examples are:
 
 **Diffusion equation**:
@@ -97,7 +97,7 @@ $$
   \mathcal{L}(u) = g
 $$
 
-and $\mathcal{L}$ is called the **differential operator**. The right-hand side $g$ is not a function of $u$.
+and $\mathcal{L}$ is called the **differential operator**. The right-hand side $g$ is not a function of $u$ and its derivatives.
 If $g \equiv 0$ then the PDE is called **homogeneous**, otherwise it is **nonhomogeneous**.
 Example: the Laplace equation is homogeneous and the Poisson equation is nonhomogeneous.
 
@@ -119,13 +119,13 @@ $$
   \frac{\partial u}{\partial t} = \frac{\partial ^2u}{\partial x^2} + \sin^2(x) \text{ } u
 $$
 
-is linear, but with non-constant coefficient, while
+is linear, but with non-constant coefficient, namely, $\sin^2(x)$, while
 
 $$
   \frac{\partial u}{\partial t} = \frac{\partial ^2u}{\partial x^2} + u\frac{\partial u}{\partial x}
 $$
 
-is nonlinear.
+is nonlinear, since the last term displays a product of $u$ and $\partial u/\partial x$.
 
 
 The distinguishing of PDEs into linear and nonlinear is an important issue. Solutions of linear
@@ -135,13 +135,8 @@ solutions of the PDE, where $\alpha$ and $\beta$ are constant coefficients. This
 advantage for solving linear PDEs. If we are able to find a set of particular solutions of
 the PDE, we can construct all other solutions as linear combinations of these.
 Nonlinear PDEs do not share this property of superposition and are usually much
-harder to solve and the solutions more difficult to analyze. It is common in mathematical
-modelling to attempt to approximate a nonlinear phenomenon in nature with a linear
-model. (An example can be found in *to be filled in*.)
-While this linear model provides insight into the nature of the phenomenon, often
-it is insufficient to describe some of the important aspects and one must introduce
-nonlinear terms to the model. Usually nonlinear PDEs cannot be solved by hand, so
-numerical methods must be devised. In this chapter, however, we shall largely ignore nonlinear equations.
+harder to solve and the solutions more difficult to analyze. Moreover, they cannot be solved by hand, so
+numerical methods must be devised.
 
 :::{card} Exercise
 
@@ -159,7 +154,7 @@ and
 $$\frac{\partial u}{\partial t} + u\frac{\partial u}{\partial x} + g\frac{\partial \zeta}{\partial x} + c_f \frac{u|u|}{h} = 0$$
 
 The first equation is derived from the mass conservation and is known as the **continuity equation**. This equation contains first order derivatives only while the second term contains a product of $h$ and $u$,
-implying a nonlinear term. Also this equation does not contain a term independent of $\zeta$ and $u$, hence this equation is considered homogeneous.
+implying a nonlinear term. Also, this equation does not contain a non-zero term that does involve $\zeta$ and/or $u$ and their derivatives, hence this equation is considered homogeneous.
 
 The second equation is derived from the conservation of momentum and is referred to as the **momentum** equation. Like the continuity equation, this momentum equation is first order, nonlinear and homogeneous.
 ```
@@ -177,8 +172,8 @@ Thus, in formulating a boundary value problem there are at least three ingredien
 3. The boundary conditions that the solution must to be met at the boundaries of $\Omega$.
 4. In case of a time-dependent problem, initial condition(s) must be included as well.
 
-For a PDE based mathematical model of a physical system to give *useful* results, it is generally necessary to formulate that model as a **well posed** problem.
-A BVP is said to be well posed if
+For a PDE based mathematical model of a physical system to give *useful* results, it is necessary to formulate that model as a well posed problem.
+A BVP is said to be **well posed** if
 
 * a solution to the problem **exists**,
 * the solution is **unique**, and
@@ -192,25 +187,25 @@ In practice, the question of whether a PDE problem is well posed can be difficul
 
 * The boundary conditions imposed must not be too many or a solution will not exist.
 * The boundary conditions imposed must not be too few or the solution will not be unique.
-* The kind of boundary conditions must be correctly matched to the type of the PDE or the solution will not be stable.
+* The type of boundary conditions must be correctly matched to the type of the PDE or the solution will not be stable.
 
 
 ## Types of boundary conditions
 
 Since the domain $\Omega$ is *finite*, boundary conditions are thus required and represent the influence of the outside world.
 Different types of boundary conditions can be applied on the boundary of $\Omega$. The most common occurring
-in practice are **Dirichlet**, **Neumann** and **Robin** conditions.
+in practice are Dirichlet, Neumann and Robin conditions.
 
 Physically speaking, a Dirichlet condition usually corresponds to setting the value,
 a Neumann condition usually specifies a flux condition on the boundary, and a Robin condition typically represents a radiation condition.
-
 Mathematically speaking, they are given as follows. Let us assume that $u(\vec{x},t)$ is the dependent variable of a PDE.
-Dirichlet condition provides a function of time, $g(t)$, as
+
+**Dirichlet** condition provides a function of time, $g(t)$, as
 the constraint on the solution at a specific boundary point $\vec{x}_b$,
 
 $$ u(\vec{x}_b,t) = g(t)$$
 
-In the case of Neumann condition the flux of $u$ normal to the boundary is specified
+In the case of **Neumann** condition the flux of $u$ normal to the boundary is specified
 by a given function $g(t)$ at a boundary point $\vec{x}_b$,
 
 $$ \frac{\partial u}{\partial \vec{n}} (\vec{x}_b,t) = g(t)$$
@@ -218,7 +213,7 @@ $$ \frac{\partial u}{\partial \vec{n}} (\vec{x}_b,t) = g(t)$$
 with $\vec{n}$ the normal to the boundary of $\Omega$ (usually denoted $\partial \Omega$). If $g(t)$ = 0 then we say that the boundary is **insulated**: $u$ cannot flow across the
 boundary.
 
-The Robin condition is a combination of Dirichlet and Neumann conditions,
+The **Robin** condition is a combination of Dirichlet and Neumann conditions,
 
 $$ \alpha u(\vec{x}_b,t) + \beta \frac{\partial u}{\partial \vec{n}}(\vec{x}_b,t) = g(t)$$
 
@@ -231,9 +226,9 @@ nonhomogeneous. The above are linear. They are homogeneous if $g(t) \equiv 0$ an
 ## Classification of PDEs
 
 We classify ODEs in terms of their order and whether they are linear or nonlinear. PDEs
-are more difficult to classify, because of the greater variety of basic forms
+are more difficult to classify than ODEs, because of the greater variety of basic forms
 the PDE may take. Not only are the order and linearity important, but also
-the PDE formulation. It is the PDE formulation that dictates what types of boundary
+the PDE *formulation*. It is the PDE formulation that dictates what types of boundary
 conditions can be imposed and ultimately what types of physical processes the
 PDE describes.
 
@@ -243,7 +238,7 @@ second order, linear PDEs in two independent variables $x$ and $y$ and the depen
 
 $$a\frac{\partial^2 u}{\partial x^2} + 2b \frac{\partial^2u}{\partial x \partial y} + c\frac{\partial^2 u}{\partial y^2} + d\frac{\partial u}{\partial x} +e\frac{\partial u}{\partial y} + fu + g = 0$$ (pde2)
 
-where the coefficients $a$, $b$, $c$ etc. may depend on $(x,y)$.
+with constant coefficients $a \cdots g$.
 One of the independent variables ($x$ or $y$) may represent time $t$, which we then have a 1D equation.
 The classification of Eq. {eq}`pde2` is based upon the first three terms. It
 can be classified into three types according to the sign of the discriminant $b^2 - 4ac$,
@@ -260,8 +255,8 @@ important to understand the underlying problem and be aware of its mathematical 
 
 Elliptic equations generally arise from a physical problem that involves a diffusion process that has reached equilibrium,
 a steady state temperature distribution, for example.
-Hyperbolic equations are able to support solutions with discontinuities, for example a shock wave.
 Hyperbolic PDEs usually arise in wave propagation and advection driven transport problems.
+In addition, such equations are able to support solutions with discontinuities, for example a shock wave.
 Mathematically, parabolic PDEs serve as a transition from the hyperbolic PDEs to the elliptic PDEs. Physically, parabolic PDEs tend to arise in
 time dependent diffusion problems, such as the transient flow of heat in accordance with Fick's law of heat conduction.
 
@@ -279,7 +274,7 @@ $$
   \frac{\partial ^2u}{\partial x^2} + \frac{\partial ^2u}{\partial y^2} = 0
 $$
 
-Elliptic equations do not depend upon time, but rather only spatial variables.
+Elliptic equations do not depend upon time, but rather only spatial variables. They are useful to describe **equilibrium** problems.
 The boundary conditions are usually of the type Dirichlet or Neumann.
 
 
@@ -295,6 +290,7 @@ $$
 Here, the independent variable $y$ of the general PDE, Eq. {eq}`pde2`, is time.
 An initial condition is thus necessary.
 The problem is only well posed in the forward time direction (otherwise the solution becomes unstable in the backward time direction).
+Such a problem is called a **marching** problem.
 $\Omega$ is bounded at two sides in the $x-$direction.
 Any boundary conditions, Dirichlet, Neumann and Robin, though in certain combinations, are appropriate at both sides of $\Omega$.
 
@@ -314,10 +310,12 @@ $$
   \frac{\partial u}{\partial t} + \frac{\partial u}{\partial x} = 0
 $$
 
-Here, $y$ variable is again time $t$. An initial condition is necessary.
-The problem is well posed in both direction of time.
+Here, $y$ variable is again time $t$. Hence, an initial condition is necessary.
+The problem is well posed in both direction of time (forward and backward traveling in time).
+This equation describes the change of disturbance (e.g. wave, pollutant) along a
+characteristic $dx/dt$.
 Boundary conditions of the Dirichlet type
-are imposed at boundaries with ingoing characteristics.
+are imposed at boundaries with *ingoing* characteristics.
 Note that the advection
 equation is a first order PDE and hence cannot be classified in the above sense.
 
@@ -366,14 +364,14 @@ Important differences between the three prototypes are:
   Instead, solutions must be found at all points *simultaneously*.
 
 Since both diffusion and advection equations are typically time dependent, the associated numerical approach is therefore time marching: the numerical solution is determined
-at any time through a sequence of time steps (see Chapter {ref}`numerical_modelling`).
+at any time through a sequence of time steps (see Chapter {ref}`numerical_modelling` on time integration).
 On the other hand, the solution method for the Laplace or Poisson equation is typically **iterative** of nature: the solution in each point in the domain is **updated** a number of times by taking
-into account the surrounding points until an acceptable error tolerance is reached. There are special cases that do not require iterative methods but can be solved directly
-(see Chapter {ref}`finite_element_method`).
+into account the surrounding points until an acceptable error tolerance is reached. There are special cases that do not require iterative methods but can be solved directly.
+(Examples can be found in Chapter {ref}`finite_element_method`.)
 
 
-It is not possible to give a meaningful classification for PDEs in more than two independent variables.
-However, there are natural extensions for the three prototype equations such as
+It is not always possible to give a meaningful classification for PDEs in more than two independent variables.
+Nevertheless, there are natural extensions for the three prototype equations such as
 
 
 3D Laplace equation:
