@@ -110,7 +110,110 @@ This two-step process is called the **method of lines** (MOL)[^mol].
 [^mol]: The origin of the name <u>method of lines</u> is best illustrated at [page](https://en.wikipedia.org/wiki/Method_of_lines#mediaviewer/File:Method\_of\_lines.gif).
 
 
-A number of methods have been proposed to approximate spatial derivatives. Popular methods are the **finite difference**, **finite volume** and **finite element** methods. In this chapter,
+A number of methods have been proposed to approximate spatial derivatives. Popular methods are the finite difference, finite volume and finite element methods. In this chapter,
 we restrict ourselves to one of the most natural approximations in hydraulic engineering, namely, the finite difference method. But see also Chapter {ref}`finite_element_method`.
 
 ## Finite difference method
+
+The basic methodology of the **finite difference method** (FDM) is to approximate the spatial derivatives
+with **differences** of the unknowns on the grid. A variety of different approximations are possible and the
+choice depends on the desired accuracy (see also Chapter {ref}`numerical_modelling`).
+
+
+Recall the definition of the partial derivative::
+
+$$
+  \frac{\partial T}{\partial x} (x,t) = \lim_{\Delta x \to 0} \frac{T(x+\Delta x,t) - T(x,t)}{\Delta x}
+$$
+
+We do not have the luxury of computing the limit numerically so we must select
+a small value for the **mesh width** $\Delta x$ and approximate the derivative as
+
+$$\frac{\partial T}{\partial x} (m\Delta x,t) \approx \frac{T_{m+1}(t) - T_m(t)}{\Delta x}$$ (fdfs)
+
+with $T_m(t) \approx T(m\Delta x,t)$.
+Note that the quantity $T_m(t)$ is *continuous* in time as there is no approximation in time yet!
+This approximation is known as the **forward finite difference** formula. This approximation is also called the **one-sided**
+approximation since $T$ is evaluated only at $x_{m+1} > x_m$.
+
+We now quantify the accuracy of the forward difference approximation.
+By means of the Taylor series expansion we can derive the associated truncation error of this approximation. We expand
+$T(x+\Delta x,t)$, as follows
+
+$$
+  T(x+\Delta x,t) = T(x,t) + \Delta x T_x(x,t) + \frac 12 \Delta x^2 T_{xx}(x,t) + \frac 16 \Delta x^3 T_{xxx}(x,t) + \frac{1}{24} \Delta x^4 T_{xxxx}(x,t) + \ldots
+$$
+
+with $T_x = \partial T/\partial x$, $T_{xx} = \partial^2T/\partial x^2$ etc. Here we assume that $T(x,t)$ is sufficiently smooth.
+Substitution gives
+
+$$
+\begin{align}
+  \frac{T(x+\Delta x,t) - T(x,t)}{\Delta x} &= \frac{1}{\Delta x} \left ( \Delta x \frac{\partial T}{\partial x}(x,t) + \frac 12 \Delta x^2 \\frac{\partial^2 T}{\partial x^2} (x,t) + \ldots \right ) \\
+                                            & \\
+                                            &= \frac{\partial T}{\partial x}(x,t) + \frac 12 \Delta x \frac{\partial^2 T}{\partial x^2} (x,t) + \ldots \\
+                                            & \\
+                                            &= \frac{\partial T}{\partial x}(x,t) + \mathcal{O}(\Delta x)
+\end{align}
+$$
+
+Hence, the forward difference formula is accurate only to order $\Delta x$ and is called the **first order** approximation.
+
+There are, however, two other possibilities.
+The first is the **backward finite difference** approximation
+
+$$\frac{\partial T}{\partial x} (m\Delta x,t) \approx \frac{T_m(t) - T_{m-1}(t)}{\Delta x}$$ (bdfs)
+
+and the second is the **centred finite difference** formula or **central differences**
+
+$$\frac{\partial T}{\partial x} (m\Delta x,t) \approx \frac{T_{m+1}(t) - T_{m-1}(t)}{2\Delta x}$$ (cdf1)
+
+since this approximation is centred around the point of consideration $x_m$.
+Central differences is an example of a **two-sided** approximation and we will see that, for a sufficiently small value of $\Delta x$, this
+approximation leads to a more accurate numerical solution of the diffusion equation than a one-sided approximation. This does
+not necessarily imply that one-sided approximations are not appropriate. For instance, for *advective* transport,
+it may be appropriate to use either the forward or backward approximation. This will be discussed later on.
+
+:::{card} Exercise
+
+Show that the backward and centred finite difference approximations are accurate to $\Delta x$ and $\Delta x^2$, respectively.
+
+:::
+
+The above central differences is measured using *double* grid size, that is, $2\Delta x$. Alternatively, the partial derivative may
+also be approximated as follows
+
+$$\frac{\partial T}{\partial x} (m\Delta x,t) \approx \frac{T_{m+1/2}(t) - T_{m-1/2}(t)}{\Delta x}$$ (cdf2)
+
+which is central differences using *single* grid size. However, the quantities $T_{m\pm1/2}$ are not defined on the grid. They must
+be computed by means of **linear interpolation**, as follows
+
+$$
+  T_{m-1/2} = \frac 12 \left ( T_{m-1} + T_m \right )\, , \quad T_{m+1/2} = \frac 12 \left ( T_m + T_{m+1} \right )
+$$
+
+:::{card} Exercise
+
+Show that Eq. {ref}`cdf2` is equivalent to Eq. {ref}`cdf1`.
+
+:::
+
+The approximation of the second derivative can be obtained by recalling that
+
+$$
+  \frac\partial^2 T}{\partial x^2} = \frac{}{\partial x} \left ( \frac{\partial T}{\partial x} \right )
+$$
+
+Hence,
+
+$$
+  \frac{\partial^2 T}{\partial x^2} (m\Delta x,t) \approx \frac{\frac{\partial T}{\partial x}|_{m+1/2} - \frac{\partial T}{\partial x}|_{m-1/2}}{\Delta x} \approx \frac{\frac{T_{m+1}-T_m}{\Delta x} - \frac{T_m - T_{m-1}}{\Delta x}}{\Delta x} =
+                                  \frac{T_{m+1}-2T_m+T_{m-1}}{\Delta x^2}
+$$
+
+Substituting this expression into our original PDE, Eq. (\ref{eq:diffusion1}), we obtain
+
+
+$$\frac{dT_m}{dt} = \kappa \, \frac{T_{m+1}-2T_m+T_{m-1}}{\Delta x^2}\, , \quad m=1,\ldots,M-1$$ (semid)
+
+which is a semi discretization of Eq. {ref}`diffusion1` of the **interior** of the domain. Note that Eq. {ref}`semid` is an *ordinary* differential equation.
