@@ -14,7 +14,7 @@ $$
     \\
     &\frac{\partial T}{\partial x} (L,t) = 0\, ,\quad t > 0
   \end{align}
-$$
+$$ (diffusion1)
 
 and is known as the **heat equation**. This equation describes the flow of heat in a rod with a finite length, made out of some heat-conducting
 material, subject to some boundary conditions at each end.
@@ -150,9 +150,9 @@ Substitution gives
 $$
 \begin{align}
   \frac{T(x+\Delta x,t) - T(x,t)}{\Delta x} &= \frac{1}{\Delta x} \left ( \Delta x \frac{\partial T}{\partial x}(x,t) + \frac 12 \Delta x^2 \\frac{\partial^2 T}{\partial x^2} (x,t) + \ldots \right ) \\
-                                            & \\
+                                            \\
                                             &= \frac{\partial T}{\partial x}(x,t) + \frac 12 \Delta x \frac{\partial^2 T}{\partial x^2} (x,t) + \ldots \\
-                                            & \\
+                                            \\
                                             &= \frac{\partial T}{\partial x}(x,t) + \mathcal{O}(\Delta x)
 \end{align}
 $$
@@ -201,19 +201,18 @@ Show that Eq. {ref}`cdf2` is equivalent to Eq. {ref}`cdf1`.
 The approximation of the second derivative can be obtained by recalling that
 
 $$
-  \frac\partial^2 T}{\partial x^2} = \frac{}{\partial x} \left ( \frac{\partial T}{\partial x} \right )
+  \frac{\partial^2 T}{\partial x^2} = \frac{}{\partial x} \left ( \frac{\partial T}{\partial x} \right )
 $$
 
 Hence,
 
 $$
-  \frac{\partial^2 T}{\partial x^2} (m\Delta x,t) \approx \frac{\frac{\partial T}{\partial x}|_{m+1/2} - \frac{\partial T}{\partial x}|_{m-1/2}}{\Delta x} \approx \frac{\frac{T_{m+1}-T_m}{\Delta x} - \frac{T_m - T_{m-1}}{\Delta x}}{\Delta x} =
-                                  \frac{T_{m+1}-2T_m+T_{m-1}}{\Delta x^2}
+  \frac{\partial^2 T}{\partial x^2} (m\Delta x,t) \approx \frac{\frac{\partial T}{\partial x}\_{m+1/2} - \frac{\partial T}{\partial x}|\_{m-1/2}}{\Delta x} \approx \frac{\frac{T_{m+1}-T_m}{\Delta x} - \frac{T_m - T_{m-1}}{\Delta x}}{\Delta x} = \frac{T_{m+1}-2T_m+T_{m-1}}{\Delta x^2}
 $$
 
-Substituting this expression into our original PDE, Eq. (\ref{eq:diffusion1}), we obtain
+Substituting this expression into our original PDE, Eq. {ref}`diffusion1`, we obtain
 
 
-$$\frac{dT_m}{dt} = \kappa \, \frac{T_{m+1}-2T_m+T_{m-1}}{\Delta x^2}\, , \quad m=1,\ldots,M-1$$ (semid)
+$$\frac{dT_m}{dt} = \kappa \, \frac{T_{m+1} - 2T_m + T_{m-1}}{\Delta x^2}\, , \quad m=1,\ldots,M-1$$ (semid)
 
 which is a semi discretization of Eq. {ref}`diffusion1` of the **interior** of the domain. Note that Eq. {ref}`semid` is an *ordinary* differential equation.
