@@ -211,7 +211,7 @@ $$
 Hence,
 
 $$
-  \frac{\partial^2 T}{\partial x^2} (m\Delta x,t) \approx \frac{{A}_{m+1/2} - {B}_{m-1/2}}{\Delta x} \approx \frac{\frac{T_{m+1} - T_m}{\Delta x} - \frac{T_m - T_{m-1}}{\Delta x}}{\Delta x} = \frac{T_{m+1}-2T_m+T_{m-1}}{\Delta x^2}
+  \frac{\partial^2 T}{\partial x^2} (m\Delta x,t) \approx \frac{{\frac{\partial T}{\partial x}}_{m+1/2} - {\frac{\partial T}{\partial x}}_{m-1/2}}{\Delta x} \approx \frac{\frac{T_{m+1} - T_m}{\Delta x} - \frac{T_m - T_{m-1}}{\Delta x}}{\Delta x} = \frac{T_{m+1}-2T_m+T_{m-1}}{\Delta x^2}
 $$
 
 Substituting this expression into our original PDE, Eq. {eq}`diffusion1`, we obtain
