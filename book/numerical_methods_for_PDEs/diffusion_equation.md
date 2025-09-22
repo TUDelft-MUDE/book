@@ -1,7 +1,8 @@
 (diffusion)=
 # Diffusion Equation
 
-In this section we discuss the numerical solution of the 1D diffusion equation. The specific (initial) boundary value problem (IBVP) we wish to solve is the following
+In this section we discuss the numerical solution of the 1D diffusion equation and builds on Chapter {ref}`numerical_modelling`.
+The specific (initial) boundary value problem (IBVP) we wish to solve is the following
 
 $$
   \begin{align}
@@ -67,8 +68,8 @@ $$
 
 ```{note}
 
-The above mathematical model is well posed since we found a unique solution that is stable. An example of an ill posed problem would be the one
-in which the Dirichlet boundary condition at $x = 0$ is replaced by the following homogeneous Neumann condition
+The above mathematical model is well posed since we found a unique solution that is stable. An example of an <u>ill posed</u> problem would be the one
+in which the Dirichlet boundary condition at $x = 0$ is replaced by the following homogeneous Neumann condition:
 
 $$
  \frac{\partial T}{\partial x} (0,t) = 0\, ,\quad t > 0
@@ -87,9 +88,29 @@ where $b$ remains undetermined. Hence, this solution is not unique!
 The first step is to **discretize** the domain $[0,L]$ into a finite number of **grid points** $M+1$ where we
 intend to compute the solution of the PDE. We shall use a uniform or **equidistant** grid, with a **grid spacing** $\Delta x = L/M$.
 We shall refer to one of the points in the grid as $x_m = m\Delta x\,, m=0,\ldots,M$.
-The first and last grid points of the domain, $x_0$ and $x_M$, are called the **boundary points**, while the other grid points are
-the **internal** ones. See also {numref}`grid`.
+The first and last grid points of the domain, $x_0$ and $x_M$, are called the **boundary points** (or in 1D, the **end points**),
+while the other grid points are the **internal** (or **inner**) points. See also {numref}`grid`.
 
 Likewise we discretize the time interval into a number of time steps, separated
 by a time increment $\Delta t$, and only compute the solution for times $t_n = n\Delta t\,, n=1,2,3,\ldots$ until a steady state is found.
 Our aim is to compute the solution of the PDE for all values $T^n_m \approx T(m\Delta x,n\Delta t)$.
+
+We now have a **spatial grid** or **computational domain** that approximates the physical domain $x \in [0,L]$ and a discrete time frame. The next step it to
+define approximations to the partial derivatives appearing in the heat equation, as the finite
+precision of real values in a computer precludes exact computation of these derivatives.
+
+Generally, a distinction is made between approximating the time derivative and approximating the spatial
+derivative. The whole approximation process is done in two steps:
+
+1. Approximate the spatial derivative first. This step is called the {\bf semi discretization} step and leads to a system of first order ODEs.
+2. The resulting system of ODEs is approximated by means of time integration. This step has been dealt with in Chapter~\ref{ch:ode}.
+
+This two-step process is called the **method of lines** (MOL)[^mol].
+
+[^mol]: The origin of the name <u>method of lines</u> is best illustrated at [page](https://en.wikipedia.org/wiki/Method_of_lines#mediaviewer/File:Method\_of\_lines.gif).
+
+
+A number of methods have been proposed to approximate spatial derivatives. Popular methods are the **finite difference**, **finite volume** and **finite element** methods. In this chapter,
+we restrict ourselves to one of the most natural approximations in hydraulic engineering, namely, the finite difference method. But see also Chapter {ref}`finite_element_method`.
+
+## Finite difference method
