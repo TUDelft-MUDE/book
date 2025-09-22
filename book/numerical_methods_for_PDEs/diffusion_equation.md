@@ -88,7 +88,7 @@ where $b$ remains undetermined. Hence, this solution is not unique!
 The first step is to **discretize** the domain $[0,L]$ into a finite number of **grid points** $M+1$ where we
 intend to compute the solution of the PDE. We shall use a uniform or **equidistant** grid, with a **grid spacing** $\Delta x = L/M$.
 We shall refer to one of the points in the grid as $x_m = m\Delta x\,, m=0,\ldots,M$.
-The first and last grid points of the domain, $x_0$ and $x_M$, are called the **boundary points** (or in 1D, the **end points**),
+The first and last grid points of the domain, $x_0$ and $x_M$, are called the **boundary points** (or in 1D the **end points**),
 while the other grid points are the **internal** (or **inner**) points. See also {numref}`grid`.
 
 Likewise we discretize the time interval into a number of time steps, separated
@@ -107,7 +107,7 @@ derivative. The whole approximation process is done in two steps:
 
 This two-step process is called the **method of lines** (MOL)[^mol].
 
-[^mol]: The origin of the name <u>method of lines</u> is best illustrated at [page](https://en.wikipedia.org/wiki/Method_of_lines#mediaviewer/File:Method\_of\_lines.gif).
+[^mol]: The origin of the name <u>method of lines</u> is best illustrated at [Wikipedia page](https://en.wikipedia.org/wiki/Method_of_lines#mediaviewer/File:Method\_of\_lines.gif).
 
 
 A number of methods have been proposed in the field of numerical mathematics to approximate spatial derivatives. Popular methods are the finite difference, finite volume and finite element methods. In this chapter,
@@ -141,7 +141,11 @@ By means of the Taylor series expansion we can derive the associated truncation 
 $T(x+\Delta x,t)$, as follows
 
 $$
-  T(x+\Delta x,t) = T(x,t) + \Delta x\, T_x(x,t) + \frac 12 \Delta x^2\, T_{xx}(x,t) + \frac 16 \Delta x^3\, T_{xxx}(x,t) + \frac{1}{24} \Delta x^4\, T_{xxxx}(x,t) + \ldots
+\begin{align}
+  T(x+\Delta x,t) = &T(x,t) + \Delta x\, T_x(x,t) + \frac 12 \Delta x^2\, T_{xx}(x,t) + \\
+                  \\
+                    &\frac 16 \Delta x^3\, T_{xxx}(x,t) + \frac{1}{24} \Delta x^4\, T_{xxxx}(x,t) + \ldots
+\end{align}
 $$
 
 with $T_x = \partial T/\partial x$, $T_{xx} = \partial^2T/\partial x^2$, etc. Here we assume that $T(x,t)$ is sufficiently smooth. Hence, all its derivatives exist.
@@ -207,7 +211,7 @@ $$
 Hence,
 
 $$
-  \frac{\partial^2 T}{\partial x^2} (m\Delta x,t) \approx \frac{\frac{\partial T}{\partial x}\_{m+1/2} - \frac{\partial T}{\partial x}|\_{m-1/2}}{\Delta x} \approx \frac{\frac{T_{m+1}-T_m}{\Delta x} - \frac{T_m - T_{m-1}}{\Delta x}}{\Delta x} = \frac{T_{m+1}-2T_m+T_{m-1}}{\Delta x^2}
+  \frac{\partial^2 T}{\partial x^2} (m\Delta x,t) \approx \frac{A_{m+1/2} - B_{m-1/2}}{\Delta x} \approx \frac{\frac{T_{m+1}-T_m}{\Delta x} - \frac{T_m - T_{m-1}}\Delta x}}{\Delta x} = \frac{T_{m+1}-2T_m+T_{m-1}}{\Delta x^2}
 $$
 
 Substituting this expression into our original PDE, Eq. {eq}`diffusion1`, we obtain
@@ -215,4 +219,4 @@ Substituting this expression into our original PDE, Eq. {eq}`diffusion1`, we obt
 
 $$\frac{dT_m}{dt} = \kappa \, \frac{T_{m+1} - 2T_m + T_{m-1}}{\Delta x^2}\, , \quad m=1,\ldots,M-1$$ (semid)
 
-which is a semi discretization of Eq. {eq}`diffusion1` of the **interior** of the domain. Note that Eq. {eq}`semid` is an *ordinary* differential equation.
+which is a semi discretization of Eq. {eq}`diffusion1` of the **interior** of the domain. Note that Eq. {eq}`semid` is an <u>ordinary differential equation</u>.
