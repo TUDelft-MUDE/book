@@ -291,7 +291,7 @@ at virtual points.
 For example, the centred approximation for the first derivative $\partial T/\partial x$ at boundary $x=L$ is (substitute $m=M$ in Eq. {eq}`cdf1`)
 
 $$
-  \frac{\partial T}{\parial x} (L,t) \approx \frac{T_{M+1}(t) - T_{M-1}(t)}{2\Delta x} = 0 \quad \Rightarrow \quad T_{M+1}(t) = T_{M-1}(t)
+  \frac{\partial T}{\partial x} (L,t) \approx \frac{T_{M+1}(t) - T_{M-1}(t)}{2\Delta x} = 0 \quad \Rightarrow \quad T_{M+1}(t) = T_{M-1}(t)
 $$
 
 involving the virtual point $x_{M+1} = L + \Delta x$. We also apply the semi discretization for the heat equation at the boundary point $x_M$ (see Eq. {eq}`semid`),
