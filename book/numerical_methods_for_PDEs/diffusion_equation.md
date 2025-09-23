@@ -94,8 +94,8 @@ $x_1, \cdots, x_5$ and 2 boundary points $x_0$ and $x_6$. Also, there are 6 grid
 
 Likewise we discretize the time interval into a number of time steps, separated
 by a time increment $\Delta t$, and compute the solution for times $t_n = n\Delta t\,, n=1,2,3,\ldots$ until a steady state is found.
-Our aim is to compute the solution of the PDE for all values $T^n_m \approx T(m\Delta x,n\Delta t)$. The function $T^n_m$ is called the grid function and consists only of discrete values.
-(Keep in mind that $T(x,t)$ is continuous and smooth.)
+Our aim is to compute the solution of the PDE for all values $T^n_m \approx T(m\Delta x,n\Delta t)$. The function $T^n_m$ is called the grid function and consists only of discrete values
+defined at grid points. (Keep in mind that $T(x,t)$ is continuous and smooth.)
 
 We now have a **spatial grid** or **computational domain** that approximates the physical domain $x \in [0,L]$ and a discrete time frame. The next step it to
 define approximations to the partial derivatives appearing in the heat equation, as the finite
@@ -239,7 +239,7 @@ Show that this approximation is second order accurate.
 :class: tip, dropdown
 
 Note that the grid function $T_m$ represents discrete values at grid points $x_m$, but is still continuous in time, that is, $T_m(t)$.
-Furthermore, $T_{m\pm1,t} \approx T(x\pm\Delta x,t)$ while $T(x,t)$ is sufficiently smooth in $x$. Hence,
+Furthermore, $T_{m\pm1}(t) \approx T(x\pm\Delta x,t)$ while $T(x,t)$ is sufficiently smooth in $x$. Hence,
 we apply the Taylor series expansion to find the expansion of both $T(x+\Delta x,t)$ and $T(x-\Delta x,t)$.
 Since we are dealing with the second derivative and we also expect second order accuracy, we will expand them till the fourth order. Hence, we have
 
@@ -255,9 +255,9 @@ Plugging these expansions into the approximation yields
 
 $$
 \begin{align}
-  \frac{T(x+\Delta x,t) - 2T(x,t) + T(x-\Delta x,t)}{\Delta x^2} &= \frac{1}{\Delta x^2} \left ( \Delta x^2 \frac{\partial^2 T}{\partial x^2}(x,t) + \frac 12 \Delta x^4 \frac{\partial^4 T}{\partial x^4} (x,t) \right ) \\
+  \frac{T(x+\Delta x,t) - 2T(x,t) + T(x-\Delta x,t)}{\Delta x^2} &= \frac{1}{\Delta x^2} \left ( \Delta x^2 \frac{\partial^2 T}{\partial x^2}(x,t) + \frac{1}{12}\Delta x^4 \frac{\partial^4 T}{\partial x^4} (x,t) \right ) \\
                                             \\
-                                            &= \frac{\partial^2 T}{\partial x^2}(x,t) + \frac 12 \Delta x^2 \frac{\partial^ T}{\partial x^4} (x,t) \\
+                                            &= \frac{\partial^2 T}{\partial x^2}(x,t) + \frac{1}{12} \Delta x^2 \frac{\partial^2 T}{\partial x^4} (x,t) \\
                                             \\
                                             &= \frac{\partial^2 T}{\partial x^2}(x,t) + \mathcal{O}(\Delta x^2)
 \end{align}
