@@ -25,7 +25,7 @@ VAR[X] &= \left( \exp(\sigma^2)-1 \right)\exp(2\mu + \sigma^2)= 400
 $$
 See the table in [Summary of parametric distribibutions](summary_dist)
 
-For the `lognorm` method in `scipy.stats` we need to provide the parameters shape `s` = $\sigma$, `loc` = 0 and `scale` = $\exp(\mu)$ (see explanation [here](https://mude.citg.tudelft.nl/book/probability/Loc-scale.html)), in this case:
+For the `lognorm` method in `scipy.stats` we need to provide the parameters shape `s` = $\sigma$, `loc` = 0 and `scale` = $\exp(\mu)$ (see explanation [here](univar_parameterization)), in this case:
 ```python
 import scipy.stats as stats
 s = 0.198
@@ -60,7 +60,7 @@ $$
 
 *Why is this approach incorrect?*
 
-It considers the simultaneous occurrence of *both* rivers exceeding a design discharge with probability 0.01. This is a joint probability of occurrence, $P[Q_1>q_{1,design},Q_2>q_{2,design}]$, which can be evaluated with a multivariate probability distribution (or the marginal distributions in the independent case). The scenario is equivalent to observing two sixes after tossing two dice simultaneously: if the dice are fair, the probability is $1/36$. Thus, for this incorrect case the probability $P[Q_1>q_{1,design},Q_2>q_{2,design}]$ is not 0.01, it's actualy 0.01$^2$=0.0001, illustrated in the figure below.
+It considers the simultaneous occurrence of *both* rivers exceeding a design discharge with probability 0.01. This is a joint probability of occurrence, $P[Q_1>q_{1,design},Q_2>q_{2,design}]$, which can be evaluated with a multivariate probability distribution (or the marginal distributions in the independent case). The scenario is equivalent to observing two sixes after tossing two dice simultaneously: if the dice are fair, the probability is $1/36$. Thus, for this incorrect case the probability $P[Q_1>q_{1,design},Q_2>q_{2,design}]$ is not 0.01, it's actually 0.01$^2$=0.0001, illustrated in the figure below.
 
 ```{figure} https://files.mude.citg.tudelft.nl/design_2_rv_error_1.svg
 ---
@@ -120,7 +120,7 @@ $$
 P[Q_1>q_1 \cup Q_2>q_2]=1-P[Q_1<q_1,Q_2<q_2]
 $$
 
-given the assumtion of independence, the union probability is:
+given the assumption of independence, the union probability is:
 
 $$
 P[Q_1>q_1 \cup Q_2>q_2]=1-P[Q_1<q_1]\cdot P[Q_2<q_2]
@@ -188,7 +188,7 @@ All four design values of $Q$ are collected in the table below, along with the r
 
 ## Reflections on the Simple Example
 
-% Dependence considered in componenet reliability part (and system!)
+% Dependence considered in component reliability part (and system!)
 % Design point consideration NOT included here, and probably not in this book!!!
 
 We need to be explicit in what we are trying to evaluate. In this case, it is the distribution of a function of random variables, $Q$.
