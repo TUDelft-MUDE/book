@@ -315,11 +315,11 @@ Samples of the discharges of two rivers ($Q_1$ and $Q_2$), highlighting the _joi
 (OR)=
 ## Union: OR
 
-As with _intersection, the _union_ of events can be adapted from the {ref}`discrete event case<OR_events>`. For continuous random variables the region of interest becomes the total area of the real number space covered by _any_ of the sub-regions of interest for each random variable.
+As with _intersection_, the _union_ of events can be adapted from the {ref}`discrete event case<OR_events>`. For continuous random variables the region of interest becomes the total area of the real number space covered by _any_ of the sub-regions of interest for each random variable.
 
 
 :::{card} Definition
-The **OR probability** is the _union_ of a set of $n$ events $\Omega_i$ is
+The **OR probability** is the _union_ of a set of $n$ events $\Omega_i$:
 
 $$
 \Omega_{OR}
@@ -330,8 +330,7 @@ For computing probability, it is easier to express the set as a combination of _
 
 $$
 \begin{align*}
-P\big[\Omega_{OR}] &= \\
-&= 1 - P\big[\;\overline{\Omega_1 \;\cup\;
+P\big[\Omega_{OR}] &= 1 - P\big[\;\overline{\Omega_1 \;\cup\;
                  \Omega_2 \;\cup\; ... \;\cup\; 
                  \Omega_n}\;\big] \\
 &= 1 - P\big[\;\overline{\Omega_1}\;] \;\cap\; 
@@ -376,7 +375,7 @@ P\big[\Omega_{OR}\big] = P\big[\Omega_{q_1,ne},\Omega_{q_2,ne}\big]
 = P(q_1 \leq 100 \;\textrm{m}^3\textrm{/s} \;\cup\; q_2 \leq 75 \;\textrm{m}^3\textrm{/s}]
 $$
 
-The region $\Omega_{OR}$ is illustrated in panel (c) of the figure below, the area where is highlighted. We could count the samples in that area and compute the probability as before:
+The region $\Omega_{OR}$ is illustrated as the highlighted area in panel (c) of the figure below. We could count the samples in that area and compute the probability as before:
 
 $$
 P[q_1 \leq 100  \;\textrm{m}^3\textrm{/s} \;\cup\; q_2 \leq 75  \;\textrm{m}^3\textrm{/s}]=24/34 = 0.71
@@ -511,7 +510,7 @@ $$
 
 The difference between 0.62 and 0.44 is significant! Why does this difference occur? Because there is _dependence_ between $Q_1$ and $Q_2$. Following the definition, we can see that the probability of observing a specific interval of $Q_1$ is influenced by the state of $Q_2$: for low values of $Q_2$, the observations of $Q_1$ are small; the converse is also true.
 
-Another way of thinking would be to consider the probability calculated using the assumption on independence, 0.11. If this assumption were true, for the 34 samples in the case study, we would expect around 15 of them to be in the region $\Omega_e=\{Q_1>q_1,Q_2>q_2\}$, as $0.44\cdot34\approx15$. However, there are 21 observations in that region, implying dependence between $Q_1$ and $Q_2$ (e.g., positive correlation).
+Another way of thinking would be to consider the probability calculated using the assumption on independence, 0.44. If this assumption were true, for the 34 samples in the case study, we would expect around 15 of them to be in the region $\Omega_e=\{Q_1>q_1,Q_2>q_2\}$, as $0.44\cdot34\approx15$. However, there are 21 observations in that region, implying dependence between $Q_1$ and $Q_2$ (e.g., positive correlation).
 
 ````{admonition} Exercise
 
