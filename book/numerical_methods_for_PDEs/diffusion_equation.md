@@ -232,9 +232,11 @@ $$
   \frac{\partial^2 T}{\partial x^2} (m\Delta x,t) \approx \frac{{(\frac{\partial T}{\partial x})}_{m+1/2} - {(\frac{\partial T}{\partial x})}_{m-1/2}}{\Delta x} \approx \frac{\frac{T_{m+1} - T_m}{\Delta x} - \frac{T_m - T_{m-1}}{\Delta x}}{\Delta x} = \frac{T_{m+1}-2T_m+T_{m-1}}{\Delta x^2}
 $$
 
+Since this approximation is symmetric and centred around point $x_m$ it is referred to as the **central difference scheme** for the second derivative. 
+
 :::{card} Exercise
 
-Show that this approximation is second order accurate.
+Show that this central differences is second order accurate.
 
 ```{admonition} Solution
 :class: tip, dropdown
@@ -309,7 +311,7 @@ $$
 $$
 
 
-Summarising, we have the following **linear system of first order ODEs** with the unknowns $T_m(t)\,, m=0,\ldots,M$,
+Summarising, we have the following **semi-discrete** linear system of first order ODEs with the unknowns $T_m(t)\,, m=0,\ldots,M$,
 
 $$
   \begin{align}
@@ -357,4 +359,4 @@ $$
   \vec{g} = \frac{\kappa}{\Delta x^2} \begin{pmatrix} 1 \\ 0 \\ \vdots \\ 0 \end{pmatrix}
 $$
 
-a vector with $M$ elements.
+a vector with $M$ elements. Note that vector $\vec{g}$ is due to the Dirichlet boundary condition.
