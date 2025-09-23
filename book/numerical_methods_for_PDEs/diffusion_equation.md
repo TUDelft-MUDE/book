@@ -94,15 +94,15 @@ $x_1, \cdots, x_5$ and 2 boundary points $x_0$ and $x_6$. Also, there are 6 grid
 
 Likewise we discretize the time interval into a number of time steps, separated
 by a time increment $\Delta t$, and compute the solution for times $t_n = n\Delta t\,, n=1,2,3,\ldots$ until a steady state is found.
-Our aim is to compute the solution of the PDE for all values $T^n_m \approx T(m\Delta x,n\Delta t)$. Keep in mind, that $T(x,t)$ is continuous and smooth whereas $T^n_m$ are the discrete values
-defined on the given grid.
+Our aim is to compute the solution of the PDE for all values $T^n_m \approx T(m\Delta x,n\Delta t)$. The function $T^n_m$ is called the grid function and consists only of discrete values.
+(Keep in mind that $T(x,t)$ is continuous and smooth.)
 
 We now have a **spatial grid** or **computational domain** that approximates the physical domain $x \in [0,L]$ and a discrete time frame. The next step it to
 define approximations to the partial derivatives appearing in the heat equation, as the finite
 precision of real values in a computer precludes exact computation of these derivatives.
 
-The approach to follow is to carry out the approximation of the time derivative and approximation of the spatial
-derivative separately. Hence, the whole approximation process is done in two steps:
+The approach to follow is to carry out the approximation of time derivatives and the approximation of spatial
+derivatives separately. Hence, the whole approximation process is done in two steps:
 
 1. Approximate the spatial derivative first. This step is called the **semi discretization** step and leads to a system of first order ODEs.
 2. The resulting system of ODEs is approximated by means of time integration. This step has been dealt with in Chapter {ref}`numerical_modelling`.
@@ -238,17 +238,29 @@ Show that this approximation is second order accurate.
 ```{admonition} Solution
 :class: tip, dropdown
 
-We apply the Taylor series expansion to find the expansion of both $T_{m+1}$ and $T_{m-1}$. Since we are dealing with the second derivative and furthermore we expect second order accuracy, we will expand
-them till the fourth order. Hence, we have
+Note that the grid function $T_m$ represents discrete values at grid points $x_m$, but is still continuous in time, that is, $T_m(t)$.
+Furthermore, $T_{m\pm1,t} \approx T(x\pm\Delta x,t)$ while $T(x,t)$ is sufficiently smooth in $x$. Hence,
+we apply the Taylor series expansion to find the expansion of both $T(x+\Delta x,t)$ and $T(x-\Delta x,t)$.
+Since we are dealing with the second derivative and we also expect second order accuracy, we will expand them till the fourth order. Hence, we have
 
 $$
-  T(x_{m\pm1}) = T(x_m) \pm \Delta x\, T'(x_m) + \frac{1}{2} \Delta x^2\, T''(x_m) \pm \frac{1}{6} \Delta x^3\, T'''(x_m) + \frac{1}{24} \Delta x^4\, T''''(x_m)
+\begin{align}
+  T(x\pm\Delta x,t) = & \quad T(x,t) \pm \Delta x\, T_x(x,t) + \frac 12 \Delta x^2\, T_{xx}(x,t) \pm \\
+                        \\
+                      &\quad \frac 16 \Delta x^3\, T_{xxx}(x,t) + \frac{1}{24} \Delta x^4\, T_{xxxx}(x,t)
+\end{align}
 $$
 
-Plug in the approximation yields
+Plugging these expansions into the approximation yields
 
 $$
-  \frac{T_{m+1}-2T_m+T_{m-1}}{\Delta x^2} = \frac{1}{\Delta x^2} \left ( T(x_{m+1} -2T(x_m) +T(x_{m-1})\right ) = T''(x_m) + \frac{1}{12} \Delta x^2\, T''''(x_m) = T''(x_m) + \mathcal{O} \left(\Delta x^2 \right)
+\begin{align}
+  \frac{T(x+\Delta x,t) - 2T(x,t) + T(x-\Delta x,t)}{\Delta x^2} &= \frac{1}{\Delta x^2} \left ( \Delta x^2 \frac{\partial^2 T}{\partial x^2}(x,t) + \frac 12 \Delta x^4 \frac{\partial^4 T}{\partial x^4} (x,t) \right ) \\
+                                            \\
+                                            &= \frac{\partial^2 T}{\partial x^2}(x,t) + \frac 12 \Delta x^2 \frac{\partial^ T}{\partial x^4} (x,t) \\
+                                            \\
+                                            &= \frac{\partial^2 T}{\partial x^2}(x,t) + \mathcal{O}(\Delta x^2)
+\end{align}
 $$
 
 which proves second order accuracy.
