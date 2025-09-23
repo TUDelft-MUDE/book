@@ -86,7 +86,8 @@ where $b$ remains undetermined. Hence, this solution is not unique!
 ```
 
 The first step is to **discretize** the domain $[0,L]$ into a finite number of **grid points** $M+1$ where we
-intend to compute the solution of the PDE {eq}`diffusion1`. $M$ represents the number of **grid cells**. We will use a uniform or **equidistant** grid, with a **grid spacing** $\Delta x = L/M$.
+intend to compute the solution of the PDE {eq}`diffusion1`. $M$ represents the number of **grid cells**. We will use a uniform or **equidistant** grid, with a **grid spacing** $\Delta x = L/M$,
+which is the size of each grid cell.
 We will refer to one of the points in the grid as $x_m = m\Delta x\,, m=0,\ldots,M$.
 The first and last grid points of the domain, $x_0$ and $x_M$, are called the **boundary points** (or in 1D the **end points**),
 while the other grid points are the **internal** (or **inner**) points. {numref}`grid` illustrates an example of 1D uniform grid in $x-$space with 5 inner grid points
@@ -321,3 +322,39 @@ $$
     &T_m(0) = T^0(x_m)\, , \quad m=0,\ldots,M
   \end{align}
 $$ (modedif1)
+
+It is standard practice to write this linear system in the matrix-vector notation
+
+$$
+  \frac{d\vec{T}}{dt} = A\vec{T} + \vec{g}\,,\quad \vec{T}(0) = \vec{T}^0
+$$
+
+with
+
+$$
+  \vec{T} = \begin{pmatrix} T_1 \\ T_2 \\ T_3 \\ \vdots \\ T_{M-2} \\ T_{M-1} \\ T_M \end{pmatrix}
+$$
+
+a vector containing $M$ unknowns,
+
+$$
+   A=   \frac{\kappa}{\Delta x^2} \left (
+   \begin{array}{rrrrrrrrr} -2       &  1 &  0  &          &        & \cdots &        &        & 0        \\
+                             1       & -2 &  1  &          &        &        &        &        &          \\
+                             0       &  1 & -2  &  1       &        &        &        &        &          \\
+                                     &    &  1  & -2       & 1      &        &        &        &          \\
+                             \vdots  &    &     & \ddots   & \ddots & \ddots &        &        & \vdots   \\
+                                     &    &     &          &  1     & -2     &  1     &        &          \\
+                                     &    &     &          &        &  1     & -2     &  1     &  0       \\
+                                     &    &     &          &        &        &  1     & -2     &  1       \\
+                             0       &    &     & \cdots   &        &        &  0     &  2     & -2
+   \end{array} \right )
+$$
+
+an $M \times M$ discretization matrix, and
+
+$$
+  \vec{g} = \frac{\kappa}{\Delta x^2} \begin{pmatrix} 1 \\ 0 \\ \vdots \\ 0 \end{pmatrix}
+$$
+
+a vector with $M$ elements.
