@@ -360,3 +360,33 @@ $$
 $$
 
 a vector with $M$ elements. Note that vector $\vec{g}$ is due to the Dirichlet boundary condition.
+
+:::{card} Exercise
+
+Recall the first exercise above. Now, we want to find the steady-state solution by means of the semi-discrete system of ODEs {eq}`modedif1`.
+The rod is 1 m long and is divided into five equilly spaced cells, so that $\Delta x = 0.2$ m. The grid consists of six points, denoted
+$x_0,\cdots,x_5$. The Dirichlet boundary condition is still ${\tilde T}(0) = 1$ and at $x=1$ the homogeneous Neumann boundary condition holds.
+
+Now, write down the system of ODEs as given above for $M=5$ and try to solve this system using the Numpy library, in particular the function `numpy.linalg.solve`.
+(See also section on *Boundary-value problems* of Chapter {ref]`numerical_modelling`.)
+
+Repeat the exercise with various values of $\Delta x$ and also $\kappa$. What are your conclusions?
+
+```{admonition} Solution
+:class: tip, dropdown
+
+Note that $d\vec{T}/dt = 0$. Now, for the case $M=5$ the system of equations are given by
+
+$$
+\begin{pmatrix} -2 1 0 0 0 \\ 1 -2 1 0 0 \\ 0 1 -2 1 0 \\ 0 0 1 -2 1 \\ 0 0 0 2 -2 \end{pmatrix} \, \begin{pmatrix} T_1 \\ T_2 \\ T_3 \\ T_4 \\ T_5 \end{pmaxtrix} =
+\begin{pmatrix} -1 \\ 0 \\ 0 \\ 0 \\ 0 \end{pmaxtrix}
+$$
+
+which can be solved using the Numpy function. The steady-state solution is given by
+
+$$
+\begin{pmatrix} T_1 \\ T_2 \\ T_3 \\ T_4 \\ T_5 \end{pmaxtrix} = \begin{pmatrix} 1 \\ 1 \\ 1 \\ 1 \\ 1 \end{pmaxtrix}
+$$
+
+```
+:::
