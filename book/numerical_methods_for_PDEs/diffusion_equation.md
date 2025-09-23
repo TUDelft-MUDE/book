@@ -95,7 +95,7 @@ $x_1, \cdots, x_5$ and 2 boundary points $x_0$ and $x_6$. Also, there are 6 grid
 Likewise we discretize the time interval into a number of time steps, separated
 by a time increment $\Delta t$, and compute the solution for times $t_n = n\Delta t\,, n=1,2,3,\ldots$ until a steady state is found.
 Our aim is to compute the solution of the PDE for all values $T^n_m \approx T(m\Delta x,n\Delta t)$. The function $T^n_m$ is called the grid function and consists only of discrete values
-defined at grid points. (Keep in mind that $T(x,t)$ is continuous and smooth.)
+defined at grid points $x_m$ and time steps $t_n$. (Keep in mind that $T(x,t)$ is continuous and smooth.)
 
 We now have a **spatial grid** or **computational domain** that approximates the physical domain $x \in [0,L]$ and a discrete time frame. The next step it to
 define approximations to the partial derivatives appearing in the heat equation, as the finite
@@ -274,3 +274,50 @@ Substituting this second order approximation into our original PDE, Eq. {eq}`dif
 $$\frac{dT_m}{dt} = \kappa \, \frac{T_{m+1} - 2T_m + T_{m-1}}{\Delta x^2}\, , \quad m=1,\ldots,M-1$$ (semid)
 
 which is a semi discretization of Eq. {eq}`diffusion1` of the **interior** of the domain. Note that Eq. {eq}`semid` is an <u>ordinary differential equation</u>.
+
+Finally, we need to discretize the boundary conditions. The Dirichlet condition at first boundary point $x_0$ is simply given by
+
+$$
+  T_0(t) = 1\, , \quad t > 0
+$$
+
+The implementation of the Neumann condition at last boundary point $x_M$ is less trivial. When using the central differences for spatial
+derivatives, we often need to consider values of the numerical solution that *lie* outside the computational domain in order to compute spatial derivatives on the boundaries.
+The usual approach is to
+introduce **virtual points** that lie outside the domain
+and to use
+the Neumann condition and the numerical scheme for the interior domain, to eliminate the values
+at virtual points.
+For example, the centred approximation for the first derivative $\partial T/\partial x$ at boundary $x=L$ is (substitute $m=M$ in Eq. {eq}`cdf1`)
+
+$$
+  \frac{\partial T}{\parial x} (L,t) \approx \frac{T_{M+1}(t) - T_{M-1}(t)}{2\Delta x} = 0 \quad \Rightarrow \quad T_{M+1}(t) = T_{M-1}(t)
+$$
+
+involving the virtual point $x_{M+1} = L + \Delta x$. We also apply the semi discretization for the heat equation at the boundary point $x_M$ (see Eq. {eq}`semid`),
+
+$$
+  \frac{dT_M}{dt} = \kappa \, \frac{T_{M+1}-2T_M+T_{M-1}}{\Delta x^2}
+$$
+
+and eliminate $T_{M+1}$ from this equation. We are left with the numerical treatment for the
+Neumann condition, involving only values of the numerical solution located within the domain
+
+$$
+  \frac{dT_M}{dt} = 2\kappa \, \frac{T_{M-1}-T_M}{\Delta x^2}
+$$
+
+
+Summarising, we now have the following linear system of first order ODEs with the unknowns $T_m(t)\,, m=0,\ldots,M$,
+
+$$
+  \begin{align}
+    &T_0 = 1\, , \quad t > 0 \\
+    \\
+    &\frac{dT_m}{dt} = \kappa \, \frac{T_{m+1}-2T_m+T_{m-1}}{\Delta x^2}\, , \quad m=1,\ldots,M-1\, , \quad t > 0 \\
+    \\
+    &\frac{dT_M}{dt} = 2\kappa \, \frac{T_{M-1}-T_M}{\Delta x^2}\, , \quad t > 0 \\
+    \\
+    &T_m(0) = T^0(x_m)\, , \quad m=0,\ldots,M
+  \end{align}
+$$
