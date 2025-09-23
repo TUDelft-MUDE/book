@@ -21,9 +21,9 @@ material, subject to some boundary conditions at each end.
 Specifically, this heat *spreads* out spatially as time increases. This phenomenon is called **diffusion**.
 The solution to the heat equation is the temperature distribution at any time $t$ and vary with $x$ along the rod.
 
-We assume that $T(x,t)$ is smooth enough, so that we can differentiate this function many times as we want and each derivative is a well-defined *bounded* function (that has thus a fixed upperbound).
+We assume that $T(x,t)$ is smooth enough, so that we can differentiate this function many times as we want and each derivative is a well-defined *bounded* function (that has thus a fixed upper bound).
 Here $L$ is the given finite length of the domain and $T^0(x)$ is a given function defining the initial condition.
-The coefficient $\kappa > 0$ is the thermal diffusivity.
+The coefficient $\kappa > 0$ is the thermal diffusivity. In general, the parameter $\kappa$ is called the diffusion coefficient or sometimes the **dispersion** coefficient.
 
 ```{tip}
 
@@ -86,32 +86,35 @@ where $b$ remains undetermined. Hence, this solution is not unique!
 ```
 
 The first step is to **discretize** the domain $[0,L]$ into a finite number of **grid points** $M+1$ where we
-intend to compute the solution of the PDE. We shall use a uniform or **equidistant** grid, with a **grid spacing** $\Delta x = L/M$.
-We shall refer to one of the points in the grid as $x_m = m\Delta x\,, m=0,\ldots,M$.
+intend to compute the solution of the PDE {eq}`diffusion1`. $M$ represents the number of **grid cells**. We will use a uniform or **equidistant** grid, with a **grid spacing** $\Delta x = L/M$.
+We will refer to one of the points in the grid as $x_m = m\Delta x\,, m=0,\ldots,M$.
 The first and last grid points of the domain, $x_0$ and $x_M$, are called the **boundary points** (or in 1D the **end points**),
-while the other grid points are the **internal** (or **inner**) points. See also {numref}`grid`.
+while the other grid points are the **internal** (or **inner**) points. {numref}`grid` illustrates an example of 1D uniform grid in $x-$space with 5 inner grid points
+$x_1, \cdots, x_5$ and 2 boundary points $x_0$ and $x_6$. Also, there are 6 grid cells.
 
 Likewise we discretize the time interval into a number of time steps, separated
-by a time increment $\Delta t$, and only compute the solution for times $t_n = n\Delta t\,, n=1,2,3,\ldots$ until a steady state is found.
-Our aim is to compute the solution of the PDE for all values $T^n_m \approx T(m\Delta x,n\Delta t)$.
+by a time increment $\Delta t$, and compute the solution for times $t_n = n\Delta t\,, n=1,2,3,\ldots$ until a steady state is found.
+Our aim is to compute the solution of the PDE for all values $T^n_m \approx T(m\Delta x,n\Delta t)$. Keep in mind, that $T(x,t)$ is continuous and smooth whereas $T^n_m$ are the discrete values
+defined on the given grid.
 
 We now have a **spatial grid** or **computational domain** that approximates the physical domain $x \in [0,L]$ and a discrete time frame. The next step it to
 define approximations to the partial derivatives appearing in the heat equation, as the finite
 precision of real values in a computer precludes exact computation of these derivatives.
 
-Generally, a distinction is made between approximating the time derivative and approximating the spatial
-derivative. The whole approximation process is done in two steps:
+The approach to follow is to carry out the approximation of the time derivative and approximation of the spatial
+derivative separately. Hence, the whole approximation process is done in two steps:
 
 1. Approximate the spatial derivative first. This step is called the **semi discretization** step and leads to a system of first order ODEs.
 2. The resulting system of ODEs is approximated by means of time integration. This step has been dealt with in Chapter {ref}`numerical_modelling`.
 
 This two-step process is called the **method of lines** (MOL)[^mol].
 
-[^mol]: The origin of the name <u>method of lines</u> is best illustrated at [Wikipedia page](https://en.wikipedia.org/wiki/Method_of_lines#mediaviewer/File:Method\_of\_lines.gif).
+[^mol]: The origin of the name <u>method of lines</u> is best illustrated at the following [Wikipedia page](https://en.wikipedia.org/wiki/Method_of_lines#mediaviewer/File:Method\_of\_lines.gif).
 
 
 A number of methods have been proposed in the field of numerical mathematics to approximate spatial derivatives. Popular methods are the finite difference, finite volume and finite element methods. In this chapter,
-we restrict ourselves to one of the most natural approximations in hydraulic engineering, namely, the finite difference method. But see also Chapter {ref}`finite_element_method`.
+we restrict ourselves to the traditional numerical method in hydraulic engineering, namely, the finite difference method.
+Another popular method is the finite element method which will be discussed in Chapter {ref}`finite_element_method`.
 
 ## Finite difference method
 
@@ -195,8 +198,9 @@ also be approximated as follows
 
 $$\frac{\partial T}{\partial x} (m\Delta x,t) \approx \frac{T_{m+1/2}(t) - T_{m-1/2}(t)}{\Delta x}$$ (cdf2)
 
-which is central differences using *single* grid size. However, the quantities $T_{m\pm1/2}$ are not defined on the grid. They must
-be computed by means of **linear interpolation**, as follows
+which is central differences using *single* grid size. However, the quantities $T_{m\pm1/2}$ are not defined on the grid.
+(In fact, there locations are in between the grid points.)
+They must be computed by means of **linear interpolation**, as follows
 
 $$
   T_{m-1/2} = \frac 12 \left ( T_{m-1} + T_m \right )\, , \quad T_{m+1/2} = \frac 12 \left ( T_m + T_{m+1} \right )
@@ -214,6 +218,7 @@ By way of substitution of the above linear interpolations into Eq. {eq}`cdf2`, w
 ```
 :::
 
+Chapter {ref}`numerical_modelling` discussed a method to find an approximation for the second derivative. Here, we will follow another approach.
 The approximation of the second derivative can be obtained by recalling that
 
 $$
@@ -226,7 +231,32 @@ $$
   \frac{\partial^2 T}{\partial x^2} (m\Delta x,t) \approx \frac{{(\frac{\partial T}{\partial x})}_{m+1/2} - {(\frac{\partial T}{\partial x})}_{m-1/2}}{\Delta x} \approx \frac{\frac{T_{m+1} - T_m}{\Delta x} - \frac{T_m - T_{m-1}}{\Delta x}}{\Delta x} = \frac{T_{m+1}-2T_m+T_{m-1}}{\Delta x^2}
 $$
 
-Substituting this expression into our original PDE, Eq. {eq}`diffusion1`, we obtain
+:::{card} Exercise
+
+Show that this approximation is second order accurate.
+
+```{admonition} Solution
+:class: tip, dropdown
+
+We apply the Taylor series expansion to find the expansion of both $T_{m+1}$ and $T_{m-1}$. Since we are dealing with the second derivative and furthermore we expect second order accuracy, we will expand
+them till the fourth order. Hence, we have
+
+$$
+  T(x_{m\pm1}) = T(x_m) \pm \Delta x\, T'(x_m) + \frac{1}{2} \Delta x^2\, T''(x_m) \pm \frac{1}{6} \Delta x^3\, T'''(x_m) + \frac{1}{24} \Delta x^4\, T''''(x_m)
+$$
+
+Plug in the approximation yields
+
+$$
+  \frac{T_{m+1}-2T_m+T_{m-1}}{\Delta x^2} = \frac{1}{\Delta x^2} \left ( T(x_{m+1} -2T(x_m) +T(x_{m-1})\right ) = T''(x_m) + \frac{1}{12} \Delta x^2\, T''''(x_m) = T''(x_m) + \mathcal{O} \left(\Delta x^2 \right)
+$$
+
+which proves second order accuracy.
+
+```
+:::
+
+Substituting this second order approximation into our original PDE, Eq. {eq}`diffusion1`, we obtain
 
 
 $$\frac{dT_m}{dt} = \kappa \, \frac{T_{m+1} - 2T_m + T_{m-1}}{\Delta x^2}\, , \quad m=1,\ldots,M-1$$ (semid)
