@@ -170,7 +170,7 @@ If you need to refresh the concept of covariance and correlation and want to see
 
 Considering that you are living in the Netherlands, most probably, you are riding a bike everyday. You can imagine that your bike parts will deteriorate over time and, at some point, they will break. Also, the failure of a part in the mechanism may cause a subsequent failure of a different part connected to it. For example, the failure of the chain might damage the rear cassette and vice versa. In this exercise, we are going to model the number of hours of riding until the failure of parts of the bike.
 
-Let's now say that the companies that design these parts inform us that the distribution of the number of hours of riding until failure for students from TU Delft is a Gaussian distribution  with $\mu_{T_{chain}} = 1700 hr$ and $\sigma_{T_{chain}} = 600 hr$ for the number of hours until the chain breaks ($T_{chain}$), and $\mu_{T_{cassette}} = 1300 hr$ with $\sigma_{T_{cassette}} = 850 hr$ for the number of hours until the cassette breaks ($T_{casette}$). Also, we find that $Cov(T_{chain},T_{cassette}) = 336000$ hours$^2$. 
+Let's now say that the companies that design these parts inform us that the distribution of the number of hours of riding until failure for students from TU Delft is a Gaussian distribution  with $\mu_{T_{chain}} = 1700 hr$ and $\sigma_{T_{chain}} = 600 hr$ for the number of hours until the chain breaks ($T_{chain}$), and $\mu_{T_{cassette}} = 1300 hr$ with $\sigma_{T_{cassette}} = 850 hr$ for the number of hours until the cassette breaks ($T_{cassette}$). Also, we find that $Cov(T_{chain},T_{cassette}) = 336000$ hours$^2$. 
 
 ```{admonition} Compute Pearson's correlation coefficient between $T_{chain}$ and $T_{cassette}$
 :class: tip, dropdown

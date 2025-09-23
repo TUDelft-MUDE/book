@@ -70,9 +70,9 @@ You will later use the covariance matrix when working with the [multivariate Gau
 
 ### Correlation
 
-A drawback of the covariance is that it has units. In some situations, it is desirable to compare the stregth of the joint association between different pairs of random variables that do not necessarily have the same units. In those ocasions, correlation coefficients can be applied.
+A drawback of the covariance is that it has units. In some situations, it is desirable to compare the strength of the joint association between different pairs of random variables that do not necessarily have the same units. In those occasions, correlation coefficients can be applied.
 
-Pearson's correlation coefficient is the most widely used correlation coefficient as it assesses the linear correlation between two random variables. Pearson's correlation coeficient is defined as
+Pearson's correlation coefficient is the most widely used correlation coefficient as it assesses the linear correlation between two random variables. Pearson's correlation coefficient is defined as
 
 $$
 \rho = \frac{Cov(X_1, X_2)}{\sigma_{X_1}\sigma_{X_2}}=\frac{\sum_{i=1}^{n} (X_{1i} - \bar{X_1})(X_{2i} - \bar{X_2})}{\sqrt{\sum_{i=1}^{n} (X_{1i} - \bar{X_1})^2 \sum_{i=1}^{n} (X_{2i} - \bar{X_2})^2}}
