@@ -15,7 +15,7 @@ where $x_1$ and $x_2$ are values of the random variables, $\sigma_1$ and $\sigma
 We can rewrite the above expression in matricial form as
 
 $$
-\phi_{\rho}(x_1, x_2) = \frac{1}{\sqrt{(2\pi)^2 \begin{vmatrix} \sigma_1^2 \ \ \ \ Cov(X_1, X_2) \\ Cov(X_1, X_2) \ \ \sigma_2^2 \\ \end{vmatrix}}} \exp \left( (x_1 - \mu_1 \ x_2-\mu_2) \begin{pmatrix} \sigma_1^2 \ \ \ Cov(X_1, X_2) \\ Cov(X_1, X_2) \ \ \ \sigma_2^2 \end{pmatrix}^{-1} \begin{pmatrix} x_1 - \mu_1 \\ x_2 - \mu_2 \end{pmatrix} \right)
+\phi_{\rho}(x_1, x_2) = \frac{1}{\sqrt{(2\pi)^2 \begin{vmatrix} \sigma_1^2 & Cov(X_1, X_2) \\ Cov(X_1, X_2) & \sigma_2^2 \\ \end{vmatrix}}} \exp \left( \begin{pmatrix} x_1 - \mu_1 & x_2-\mu_2 \end{pmatrix} \begin{pmatrix} \sigma_1^2 &  Cov(X_1, X_2) \\ Cov(X_1, X_2) & \sigma_2^2 \end{pmatrix}^{-1} \begin{pmatrix} x_1 - \mu_1 \\ x_2 - \mu_2 \end{pmatrix} \right)
 $$
 
 where $Cov(X_1, X_2)$ is the covariance of the random variables $X_1$ and $X_2$. We can also present the above form in a compressed fashion as
@@ -78,7 +78,7 @@ $$
 \hat{\Sigma}=\Sigma_{11}-\Sigma_{12}\Sigma_{22}^{-1}\Sigma_{21}
 $$
 
-where $a$ is the known value of $X_2$ (here, $Q_2$) and $\boldsymbol{\Sigma}=\begin{pmatrix} \Sigma_{11} \ \Sigma_{12} \\ \Sigma_{21} \ \Sigma_{22} \end{pmatrix}$.
+where $a$ is the known value of $X_2$ (here, $Q_2$) and $\boldsymbol{\Sigma}=\begin{pmatrix} \Sigma_{11} & \Sigma_{12} \\ \Sigma_{21} & \Sigma_{22} \end{pmatrix}$.
 
 Let's go now back to the example of the discharges of two neighboring rivers, $Q_1$ and $Q_2$. We have historical measurements for both discharges and we want to apply a bivariate Gaussian distribution to model their joint distribution. Using the historical dataset, we can compute their mean values, $\mu_1=94 m^3/s$ and $\mu_2=78 m^3/s$, their standard deviations, $\sigma_1= 41 m^3/s$ and $\sigma_2=35 m^3/s$, and the covariance between them, $Cov(Q_1, Q_2)=1000 (m^3/s)^2$. We know that $q_2=100 m^3/s$. What is then the expected distribution for $Q_1$? This is, we want to compute $(q_1|q_2=100m^3/s)\sim N(\hat{\mu}, \hat{\Sigma})$.
 
@@ -89,7 +89,7 @@ $$
 $$
 
 $$
-\boldsymbol{\Sigma} = \begin{pmatrix} 41^2 \ 1000 \\ 1000 \ 35^2\end{pmatrix}$$
+\boldsymbol{\Sigma} = \begin{pmatrix} 41^2 & 1000 \\ 1000 & 35^2\end{pmatrix}$$
 
 Using the above expressions to our examples, we obtain
 
@@ -121,7 +121,7 @@ $$
 $$
 
 $$
-\hat{\Sigma} = \begin{pmatrix} \Sigma_{11} \Sigma_{12} \\ \Sigma_{21} \Sigma_{22} \end{pmatrix} - \begin{pmatrix} \Sigma_{13} \\ \Sigma_{23} \end{pmatrix} \Sigma_{33}^{-1} \begin{pmatrix} \Sigma_{13} \ \Sigma_{23}\end{pmatrix}
+\hat{\Sigma} = \begin{pmatrix} \Sigma_{11} & \Sigma_{12} \\ \Sigma_{21} & \Sigma_{22} \end{pmatrix} - \begin{pmatrix} \Sigma_{13} \\ \Sigma_{23} \end{pmatrix} \Sigma_{33}^{-1} \begin{pmatrix} \Sigma_{13} & \Sigma_{23}\end{pmatrix}
 $$
 
 Let's see an example with three dimensions. Imagine that we want to model the dependence between the precipitation, $P$, and the discharges of the two rivers, $Q_1$ and $Q_2$. From a raingauge station, we could obtain the needed statistics of $P$ to model it using a Gaussian distribution, $\mu_P=12mm/h$ and $\sigma_P=27mm/h$, as well as the covariance with $Q_1$ and $Q_2$, $Cov(P, Q_1)=475$ and $Cov(P, Q_2)=520$. Assuming that we model the joint distribution of $P$, $Q_1$ and $Q_2$ using a multivariate Gaussian distribution, its parameters would be
@@ -131,7 +131,7 @@ $$
 $$
 
 $$
-\boldsymbol{\Sigma} = \begin{pmatrix} 41^2 \ 1000 \ 475 \\ 1000 \ 35^2 \ 520\\ 475 \ 520 \ 27^2\end{pmatrix}$$
+\boldsymbol{\Sigma} = \begin{pmatrix} 41^2 & 1000 & 475 \\ 1000 & 35^2 & 520\\ 475 & 520 & 27^2\end{pmatrix}$$
 
 Now we want to make use of the multivariate Gaussian distribution to see what is the distribution of the discharges in the river if today is raining $p = 22mm/h$. This is, we are going to conditionalize the 3D multivariate Gaussian on one variable, $P$, to obtain a conditional bivariate Gaussian distribution of $Q_1$ and $Q_2$. In mathematical terms, $(q_1, q_2|p=22mm/h)\sim N(\hat{\mu}, \hat{\Sigma})$. We would do it as
 
@@ -140,7 +140,7 @@ $$
 $$
 
 $$
-\hat{\Sigma} = \begin{pmatrix} 41^2 \ 1000 \\ 1000 \ 35^2 \end{pmatrix} - \begin{pmatrix} 475 \\ 520 \end{pmatrix} (27^2)^{-1} \begin{pmatrix} 475 \ 520\end{pmatrix} = \begin{pmatrix} 41^2 \ 1000 \\ 1000 \ 35^2 \end{pmatrix} - \begin{pmatrix} 309.5 \ 338.8 \\ 338.8 \ 370.9 \end{pmatrix} = \begin{pmatrix} 1372.5 \ 661.2 \\ 661.2 \  854.1 \end{pmatrix}
+\hat{\Sigma} = \begin{pmatrix} 41^2 & 1000 \\ 1000 & 35^2 \end{pmatrix} - \begin{pmatrix} 475 \\ 520 \end{pmatrix} (27^2)^{-1} \begin{pmatrix} 475 & 520\end{pmatrix} = \begin{pmatrix} 41^2 & 1000 \\ 1000 & 35^2 \end{pmatrix} - \begin{pmatrix} 309.5 & 338.8 \\ 338.8 & 370.9 \end{pmatrix} = \begin{pmatrix} 1372.5 & 661.2 \\ 661.2 &  854.1 \end{pmatrix}
 $$
 
 We can see that the means of the random variables $Q_1$ and $Q_2$ have increased while $Cov(Q_1, Q_2)$ has been reduced from 1000 to 661.2. The figure below displays the difference between the univariate distributions of $Q_1$ and $Q_2$ without and with conditionalizing.
