@@ -402,4 +402,25 @@ augmented with the Dirichlet boundary condition at $x=0$ and the homogeneous Neu
 
 ## Time integration
 
-This section concerns time integration of the system of ODEs.
+The semi discretization of the heat equation leads to a linear system of first order ODEs. The next step is to integrate this system over time.
+Our choice for time integration would be the explicit Euler scheme.
+Application of explicit Euler to Eq. {eq}`modedif1` yields
+
+$$
+  \frac{T^{n+1}_m-T^n_m}{\Delta t} = \kappa \, \frac{T^n_{m+1}-2T^n_m+T^n_{m-1}}{\Delta x^2}\, , \quad m=1,\ldots,M-1\, , \quad n =0,1,2,\ldots
+$$
+
+with $\Delta t$ the time step and $T^n_m \approx T(m\Delta x,n\Delta t)$ a discrete function, which
+represents the wanted numerical solution to the heat equation, Eq. {eq}`diffusion1`, at time step $n$ and grid point $m$.
+We can re-arrange this equation as follows
+
+$$
+  T^{n+1}_m = T^n_m + \frac{\kappa \Delta t}{\Delta x^2} \, \left (T^n_{m+1}-2T^n_m+T^n_{m-1} \right )
+$$ (ftcs)
+
+At each *new* time step, the dependent variable $T$ at each interior grid point is computed from values of $T$ at
+three grid points at the *preceding* time step.
+This expression defines an **explicit** scheme for solving the heat equation.
+Hence, the solution can be found at any time through a sequence of time steps.
+This scheme is known as the **FTCS** scheme, which stands for <u>F</u>orward in <u>T</u>ime, <u>C</u>entral in <u>S</u>pace, since we have used
+the forward approximation in time with explicit Euler and the central differences in space.
