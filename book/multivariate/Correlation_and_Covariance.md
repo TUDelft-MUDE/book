@@ -12,19 +12,19 @@ In order to assess the streght of the dependence in these complex relationships 
 Covariance is a measure of the joint variability of two variables. The definition of Covariance for two random variables $X_1$ and $X_2$ is given by
 
 $$
-\text{Cov}(X_1, X_2) = \mathbb{E}[(X_{1,i} - \mathbb{E}(X_1))(X_{2,i} - \mathbb{E}(X_2))] = \mathbb{E}(X_1 X_2)-\mathbb{E}(X_1)\mathbb{E}(X_2)
+\mathrm{Cov}(X_1, X_2) = \mathbb{E}[(X_{1,i} - \mathbb{E}(X_1))(X_{2,i} - \mathbb{E}(X_2))] = \mathbb{E}(X_1 X_2)-\mathbb{E}(X_1)\mathbb{E}(X_2)
 $$
 
 The covariance of two random variables can take both positive and negative values and has units equal to the product of the units of the analyzed variables. High absolute values of covariance imply a strong relationship between variables.
 
-If $Cov(X_1,X_2)>0$, high values of $X_1$ typically occur together with high values of $X_2$, while low values of $X_1$ typically occur with low values of $X_2$, therefore the covariance is defined as *POSITIVE*.
+If $\mathrm{Cov}(X_1,X_2)>0$, high values of $X_1$ typically occur together with high values of $X_2$, while low values of $X_1$ typically occur with low values of $X_2$, therefore the covariance is defined as *POSITIVE*.
 
-On the other hand, if $Cov(X_1,X_2)<0$, high values of $X_1$ typically occur together with low values of $X_2$, while low values of $X_1$ typically occur with high values of $X_2$. In this case the covariance is defined as *NEGATIVE*.
+On the other hand, if $\mathrm{Cov}(X_1,X_2)<0$, high values of $X_1$ typically occur together with low values of $X_2$, while low values of $X_1$ typically occur with high values of $X_2$. In this case the covariance is defined as *NEGATIVE*.
 
 Note that the covariance of one variable with itself is equal to the variance.
 
 $$
-Cov(X,X)=\mathbb{E}([X_i-\mathbb{E}(X)]^2) =Var(X)=\sigma^2_{X}
+\mathrm{Cov}(X,X)=\mathbb{E}([X_i-\mathbb{E}(X)]^2) =\mathrm{Var}(X)=\sigma^2_{X}
 $$
 
 ## Covariance: geometric interpretation
@@ -41,7 +41,7 @@ Geometric interpretation of the covariance: (a) paired observations of height an
 We already introduced the definition of covariance as
 
 $$
-\text{Cov}(X_1, X_2) = \mathbb{E}[(X_{1,i} - \mathbb{E}(X_1))(X_{2,i} - \mathbb{E}(X_2))]
+\mathrm{Cov}(X_1, X_2) = \mathbb{E}[(X_{1,i} - \mathbb{E}(X_1))(X_{2,i} - \mathbb{E}(X_2))]
 $$
 
 In that expression, we can see that the covariance is the expectation of a product of two terms. Each of these terms represents the difference or distance between an observation and the expected value of the random variable (i.e., its mean). Thus, each term can be graphically represented as a line that goes from the value of the observation to the mean. The product of the two defined distances can then be interpreted as the product of the sides of a rectangle which are defined by the distances of the observation to the mean values of the two random variables. This is, the areas of the rectangles defined in the panel (b) of the Figure above. The covariance is the expectation (or mean) of these areas, i.e. the covariance represents the average area of the defined rectangles, as shown in the figure below.
@@ -59,10 +59,10 @@ Geometric interpretation of the covariance: (a) some of the areas that represent
 When considering a set of random variables, $X_1, X_2, \ldots, X_m$, we can 'collect' all covariances in the so-called *covariance matrix*:
 
 $$
-\Sigma_X=  \left[\begin{array}{cccc} \sigma^2_1 & Cov(X_1,X_2) & \ldots & Cov(X_1,X_m) \\ Cov(X_1,X_2)& \sigma_{2}^2 & \ldots & Cov(X_2,X_m) \\\vdots & \vdots & \ddots & \vdots \\ Cov(X_1,X_m) & Cov(X_2,X_m) & \ldots & \sigma_{m}^2 \end{array}\right]
+\Sigma_X=  \left[\begin{array}{cccc} \sigma^2_1 & \mathrm{Cov}(X_1,X_2) & \ldots & \mathrm{Cov}(X_1,X_m) \\ \mathrm{Cov}(X_1,X_2)& \sigma_{2}^2 & \ldots & \mathrm{Cov}(X_2,X_m) \\\vdots & \vdots & \ddots & \vdots \\ \mathrm{Cov}(X_1,X_m) & \mathrm{Cov}(X_2,X_m) & \ldots & \sigma_{m}^2 \end{array}\right]
 $$
 
-Note that the covariance matrix is symmetric, since $Cov(X_i,X_j)= Cov(X_j,X_i)$. 
+Note that the covariance matrix is symmetric, since $\mathrm{Cov}(X_i,X_j)= \mathrm{Cov}(X_j,X_i)$. 
 
 If all measurements are independent, all covariances will be equal to zero, and the covariance matrix becomes a diagonal matrix with the variances on the diagonal. 
 
@@ -75,7 +75,7 @@ A drawback of the covariance is that it has units. In some situations, it is des
 Pearson's correlation coefficient is the most widely used correlation coefficient as it assesses the linear correlation between two random variables. Pearson's correlation coefficient is defined as
 
 $$
-\rho = \frac{Cov(X_1, X_2)}{\sigma_{X_1}\sigma_{X_2}}=\frac{\sum_{i=1}^{n} (X_{1i} - \bar{X_1})(X_{2i} - \bar{X_2})}{\sqrt{\sum_{i=1}^{n} (X_{1i} - \bar{X_1})^2 \sum_{i=1}^{n} (X_{2i} - \bar{X_2})^2}}
+\rho = \frac{\mathrm{Cov}(X_1, X_2)}{\sigma_{X_1}\sigma_{X_2}}=\frac{\sum_{i=1}^{n} (X_{1i} - \bar{X_1})(X_{2i} - \bar{X_2})}{\sqrt{\sum_{i=1}^{n} (X_{1i} - \bar{X_1})^2 \sum_{i=1}^{n} (X_{2i} - \bar{X_2})^2}}
 $$
 
 where $X_{1i}$ and  $X_{2i}$ are the individual data points for the random variables $X_1$ and $X_2$, respectively, $\bar{X_1}$ and $\bar{X_2}$ are the means of $X_1$ and $X_2$, and $n$ is the number of data points.
