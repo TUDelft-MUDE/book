@@ -12,19 +12,23 @@ $$
 
 where $x_1$ and $x_2$ are values of the random variables, $\sigma_1$ and $\sigma_2$ are the standard deviations of the random variables, $\rho$ is the correlation coefficient between $X_1$ and $X_2$, and $\mu_1$ and $\mu_2$ are the mean values of the random variables. Therefore, it has five parameters: $\mu_1$, $\mu_2$, $\sigma_1$, $\sigma_2$ and $\rho$.
 
-We can rewrite the above expression in matricial form as
+We can rewrite the above expression in matrix form as
 
 $$
-\phi_{\rho}(x_1, x_2) = \frac{1}{\sqrt{(2\pi)^2 \begin{vmatrix} \sigma_1^2 & Cov(X_1, X_2) \\ Cov(X_1, X_2) & \sigma_2^2 \\ \end{vmatrix}}} \exp \left( \begin{pmatrix} x_1 - \mu_1 & x_2-\mu_2 \end{pmatrix} \begin{pmatrix} \sigma_1^2 &  Cov(X_1, X_2) \\ Cov(X_1, X_2) & \sigma_2^2 \end{pmatrix}^{-1} \begin{pmatrix} x_1 - \mu_1 \\ x_2 - \mu_2 \end{pmatrix} \right)
+\phi_{\rho}(x_1, x_2) = \frac{1}{\sqrt{(2\pi)^2 \begin{vmatrix} \sigma_1^2 & \rho\sigma_1\sigma_2 \\ \rho\sigma_1\sigma_2 & \sigma_2^2 \\ \end{vmatrix}}} \exp \left( \begin{pmatrix} x_1 - \mu_1 & x_2-\mu_2 \end{pmatrix} \begin{pmatrix} \sigma_1^2 &  \rho\sigma_1\sigma_2 \\ \rho\sigma_1\sigma_2 & \sigma_2^2 \end{pmatrix}^{-1} \begin{pmatrix} x_1 - \mu_1 \\ x_2 - \mu_2 \end{pmatrix} \right)
 $$
 
-where $Cov(X_1, X_2)$ is the covariance of the random variables $X_1$ and $X_2$. We can also present the above form in a compressed fashion as
+We can also present the above form in a compressed fashion as
 
 $$
-\phi_{\rho}(x_1, x_2) = \frac{1}{\sqrt{(2\pi)^2 |\boldsymbol{\Sigma|}}} \exp{-\frac{1}{2}(\boldsymbol{x-\mu})^T \boldsymbol{\Sigma}^{-1} (\boldsymbol{x-\mu})}
+\phi_{\rho}(\boldsymbol{x}) = \frac{1}{\sqrt{(2\pi)^2 |\boldsymbol{\Sigma|}}} \exp{-\frac{1}{2}(\boldsymbol{x-\mu})^T \boldsymbol{\Sigma}^{-1} (\boldsymbol{x-\mu})}
 $$
 
-where $\boldsymbol{x}$ is the vector of values of the random variable, $\boldsymbol{\mu}$ is the vector of means, and $\boldsymbol{\Sigma}$ is the covariance matrix[^note].
+where $\boldsymbol{x}$ is the vector of values of the random variable, $\boldsymbol{\mu}$ is the vector of means, and $\boldsymbol{\Sigma}$ is the covariance matrix:
+
+$$ 
+\boldsymbol{\Sigma} = \begin{pmatrix} \sigma_1^2 & \rho\sigma_1\sigma_2 \\ \rho\sigma_1\sigma_2 & \sigma_2^2 \end{pmatrix}
+$$
 
 The cumulative distribution function of the bivariate Gaussian distribution would then be defined as
 
@@ -172,8 +176,6 @@ If you need to refresh the concept of covariance and correlation and want to see
 
    <iframe width="560" height="315" src="https://youtube.com/embed/zyXp_oysuW4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 ```
-
-[^note]: You already studied covariance matrices [here](correl).
 
 % START-CREDIT
 % source: distributions
