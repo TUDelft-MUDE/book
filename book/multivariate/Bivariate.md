@@ -13,13 +13,13 @@ $$
 
 where $x_1$ and $x_2$ are values of the random variables, $\sigma_1$ and $\sigma_2$ are the standard deviations of the random variables, $\rho$ is the correlation coefficient between $X_1$ and $X_2$, and $\mu_1$ and $\mu_2$ are the mean values of the random variables. Therefore, it has five parameters: $\mu_1$, $\mu_2$, $\sigma_1$, $\sigma_2$ and $\rho$.
 
-We can rewrite the above expression in matricial form as
+We can rewrite the above expression in matrix form as
 
 $$
-\phi_{\rho}(x_1, x_2) = \frac{1}{\sqrt{(2\pi)^2 \begin{vmatrix} \sigma_1^2 \ \ \ \ Cov(X_1, X_2) \\ Cov(X_1, X_2)  \ \ \sigma_2^2 \\ \end{vmatrix}}} \exp \left( -\frac{1}{2} (x_1 - \mu_1 \ x_2-\mu_2) \begin{pmatrix} \sigma_1^2 \ \ \ Cov(X_1, X_2) \\ Cov(X_1, X_2) \ \ \ \sigma_2^2 \end{pmatrix}^{-1} \begin{pmatrix} x_1 - \mu_1 \\ x_2 - \mu_2 \end{pmatrix} \right)
+\phi_{\rho}(x_1, x_2) = \frac{1}{\sqrt{(2\pi)^2 \begin{vmatrix} \sigma_1^2 & \mathrm{Cov}(X_1, X_2) \\ \mathrm{Cov}(X_1, X_2)  & \sigma_2^2 \\ \end{vmatrix}}} \exp \left( -\frac{1}{2} \begin{pmatrix}x_1 - \mu_1 & x_2-\mu_2\end{pmatrix} \begin{pmatrix} \sigma_1^2 & \mathrm{Cov}(X_1, X_2) \\ \mathrm{Cov}(X_1, X_2) & \sigma_2^2 \end{pmatrix}^{-1} \begin{pmatrix} x_1 - \mu_1 \\ x_2 - \mu_2 \end{pmatrix} \right)
 $$
 
-where $Cov(X_1, X_2)$ is the covariance of the random variables $X_1$ and $X_2$. We can also present the above form in a compressed fashion as
+where $\mathrm{Cov}(X_1, X_2)$ is the covariance of the random variables $X_1$ and $X_2$. We can also present the above form in a compressed fashion as
 
 $$
 \phi_{\rho}(x_1, x_2) = \frac{1}{\sqrt{(2\pi)^2 |\boldsymbol{\Sigma|}}} \exp{\left(-\frac{1}{2}(\boldsymbol{x-\mu})^T \boldsymbol{\Sigma}^{-1} (\boldsymbol{x-\mu})\right)}
@@ -68,9 +68,9 @@ $$
 \hat{\Sigma}=\Sigma_{11}-\Sigma_{12}\Sigma_{22}^{-1}\Sigma_{21}
 $$
 
-where $a$ is the known value of $X_2$ and $\boldsymbol{\Sigma}=\begin{pmatrix} \Sigma_{11} \ \Sigma_{12} \\ \Sigma_{21} \ \Sigma_{22} \end{pmatrix}$.
+where $a$ is the known value of $X_2$ and $\boldsymbol{\Sigma}=\begin{pmatrix} \Sigma_{11} & \Sigma_{12} \\ \Sigma_{21} & \Sigma_{22} \end{pmatrix}$.
 
-Let's now think of an example of application. Consider the discharge of two rivers,$Q_{1}$ and $Q_{2}$, that are located in the same watershed, which will serve as our two random variables. Since the rivers are located in the same watershed, it is relatively safe to assume that their discharges are correlated. We have historical measurements for both discharges and we want to apply a bivariate Gaussian distribution to model their joint distribution. Using the historical dataset, we can compute their mean values, $\mu_1=94 m^3/s$ and $\mu_2=78 m^3/s$, their standard deviations, $\sigma_1= 41 m^3/s$ and $\sigma_2=35 m^3/s$, and the covariance between them, $Cov(Q_1, Q_2)=1000 (m^3/s)^2$. We know that $q_2=100 m^3/s$. What is then the expected distribution for $Q_1$? This is, we want to compute $(q_1|q_2=100m^3/s)\sim N(\hat{\mu}, \hat{\Sigma})$.
+Let's now think of an example of application. Consider the discharge of two rivers,$Q_{1}$ and $Q_{2}$, that are located in the same watershed, which will serve as our two random variables. Since the rivers are located in the same watershed, it is relatively safe to assume that their discharges are correlated. We have historical measurements for both discharges and we want to apply a bivariate Gaussian distribution to model their joint distribution. Using the historical dataset, we can compute their mean values, $\mu_1=94 m^3/s$ and $\mu_2=78 m^3/s$, their standard deviations, $\sigma_1= 41 m^3/s$ and $\sigma_2=35 m^3/s$, and the covariance between them, $\mathrm{Cov}(Q_1, Q_2)=1000 (m^3/s)^2$. We know that $q_2=100 m^3/s$. What is then the expected distribution for $Q_1$? This is, we want to compute $(q_1|q_2=100m^3/s)\sim N(\hat{\mu}, \hat{\Sigma})$.
 
 We can summarize the above information as
 
@@ -79,7 +79,7 @@ $$
 $$
 
 $$
-\boldsymbol{\Sigma} = \begin{pmatrix} 41^2 \ 1000 \\ 1000 \ 35^2\end{pmatrix}$$
+\boldsymbol{\Sigma} = \begin{pmatrix} 41^2 & 1000 \\ 1000 & 35^2\end{pmatrix}$$
 
 Using the above expressions to our examples, we obtain
 
@@ -111,17 +111,17 @@ $$
 $$
 
 $$
-\hat{\Sigma} = \begin{pmatrix} \Sigma_{11} \Sigma_{12} \\ \Sigma_{21} \Sigma_{22} \end{pmatrix} - \begin{pmatrix} \Sigma_{13} \\ \Sigma_{23} \end{pmatrix} \Sigma_{33}^{-1} \begin{pmatrix} \Sigma_{13} \ \Sigma_{23}\end{pmatrix}
+\hat{\Sigma} = \begin{pmatrix} \Sigma_{11} & \Sigma_{12} \\ \Sigma_{21} & \Sigma_{22} \end{pmatrix} - \begin{pmatrix} \Sigma_{13} \\ \Sigma_{23} \end{pmatrix} \Sigma_{33}^{-1} \begin{pmatrix} \Sigma_{13} & \Sigma_{23}\end{pmatrix}
 $$
 
-Let's see an example with three dimensions. Imagine that we want to model the dependence between the precipitation, $P$, and the discharges of the two rivers, $Q_1$ and $Q_2$. From a raingauge station, we could obtain the needed statistics of $P$ to model it using a Gaussian distribution, $\mu_P=12mm/h$ and $\sigma_P=27mm/h$, as well as the covariance with $Q_1$ and $Q_2$, $Cov(P, Q_1)=475$ and $Cov(P, Q_2)=520$. Assuming that we model the joint distribution of $P$, $Q_1$ and $Q_2$ using a multivariate Gaussian distribution, its parameters would be
+Let's see an example with three dimensions. Imagine that we want to model the dependence between the precipitation, $P$, and the discharges of the two rivers, $Q_1$ and $Q_2$. From a raingauge station, we could obtain the needed statistics of $P$ to model it using a Gaussian distribution, $\mu_P=12mm/h$ and $\sigma_P=27mm/h$, as well as the covariance with $Q_1$ and $Q_2$, $\mathrm{Cov}(P, Q_1)=475$ and $\mathrm{Cov}(P, Q_2)=520$. Assuming that we model the joint distribution of $P$, $Q_1$ and $Q_2$ using a multivariate Gaussian distribution, its parameters would be
 
 $$
 \boldsymbol{\mu} = \begin{pmatrix}  94 \\ 78 \\ 12 \end{pmatrix}
 $$
 
 $$
-\boldsymbol{\Sigma} = \begin{pmatrix} 41^2 \ 1000 \ 475 \\ 1000 \ 35^2 \ 520\\ 475 \ 520 \ 27^2\end{pmatrix}$$
+\boldsymbol{\Sigma} = \begin{pmatrix} 41^2 & 1000 & 475 \\ 1000 & 35^2 & 520\\ 475 & 520 & 27^2\end{pmatrix}$$
 
 Now we want to make use of the multivariate Gaussian distribution to see what is the distribution of the discharges in the river if today is raining $p = 22mm/h$. This is, we are going to conditionalize the 3D multivariate Gaussian on one variable, $P$, to obtain a conditional bivariate Gaussian distribution of $Q_1$ and $Q_2$. In mathematical terms, $(q_1, q_2|p=22mm/h)\sim N(\hat{\mu}, \hat{\Sigma})$. We would do it as
 
@@ -130,10 +130,10 @@ $$
 $$
 
 $$
-\hat{\Sigma} = \begin{pmatrix} 41^2 \ 1000 \\ 1000 \ 35^2 \end{pmatrix} - \begin{pmatrix} 475 \\ 520 \end{pmatrix} (27^2)^{-1} \begin{pmatrix} 475 \ 520\end{pmatrix} = \begin{pmatrix} 41^2 \ 1000 \\ 1000 \ 35^2 \end{pmatrix} - \begin{pmatrix} 309.5 \ 338.8 \\ 338.8 \ 370.9 \end{pmatrix} = \begin{pmatrix} 1372.5 \ 661.2 \\ 661.2 \  854.1 \end{pmatrix}
+\hat{\Sigma} = \begin{pmatrix} 41^2 & 1000 \\ 1000 & 35^2 \end{pmatrix} - \begin{pmatrix} 475 \\ 520 \end{pmatrix} (27^2)^{-1} \begin{pmatrix} 475 & 520\end{pmatrix} = \begin{pmatrix} 41^2 & 1000 \\ 1000 & 35^2 \end{pmatrix} - \begin{pmatrix} 309.5 & 338.8 \\ 338.8 & 370.9 \end{pmatrix} = \begin{pmatrix} 1372.5 & 661.2 \\ 661.2 &  854.1 \end{pmatrix}
 $$
 
-We can see that the means of the random variables $Q_1$ and $Q_2$ have increased while $Cov(Q_1, Q_2)$ has been reduced from 1000 to 661.2. The figure below displays the difference between the univariate distributions of $Q_1$ and $Q_2$ without and with conditionalizing.
+We can see that the means of the random variables $Q_1$ and $Q_2$ have increased while $\mathrm{Cov}(Q_1, Q_2)$ has been reduced from 1000 to 661.2. The figure below displays the difference between the univariate distributions of $Q_1$ and $Q_2$ without and with conditionalizing.
 
 ```{figure} https://files.mude.citg.tudelft.nl/two_conditionals_gaussian.png
 
@@ -170,13 +170,13 @@ If you need to refresh the concept of covariance and correlation and want to see
 
 Considering that you are living in the Netherlands, most probably, you are riding a bike everyday. You can imagine that your bike parts will deteriorate over time and, at some point, they will break. Also, the failure of a part in the mechanism may cause a subsequent failure of a different part connected to it. For example, the failure of the chain might damage the rear cassette and vice versa. In this exercise, we are going to model the number of hours of riding until the failure of parts of the bike.
 
-Let's now say that the companies that design these parts inform us that the distribution of the number of hours of riding until failure for students from TU Delft is a Gaussian distribution  with $\mu_{T_{chain}} = 1700 hr$ and $\sigma_{T_{chain}} = 600 hr$ for the number of hours until the chain breaks ($T_{chain}$), and $\mu_{T_{cassette}} = 1300 hr$ with $\sigma_{T_{cassette}} = 850 hr$ for the number of hours until the cassette breaks ($T_{cassette}$). Also, we find that $Cov(T_{chain},T_{cassette}) = 336000$ hours$^2$. 
+Let's now say that the companies that design these parts inform us that the distribution of the number of hours of riding until failure for students from TU Delft is a Gaussian distribution  with $\mu_{T_{chain}} = 1700 hr$ and $\sigma_{T_{chain}} = 600 hr$ for the number of hours until the chain breaks ($T_{chain}$), and $\mu_{T_{cassette}} = 1300 hr$ with $\sigma_{T_{cassette}} = 850 hr$ for the number of hours until the cassette breaks ($T_{cassette}$). Also, we find that $\mathrm{Cov}(T_{chain},T_{cassette}) = 336000$ hours$^2$. 
 
 ```{admonition} Compute Pearson's correlation coefficient between $T_{chain}$ and $T_{cassette}$
 :class: tip, dropdown
 
 $$
-\rho_{T_{chain}, T_{cassette}} = \frac{Cov(T_{chain}, T_{cassette})}{\sigma_{T_{chain}} \sigma_{T_{cassette}}} = \frac{336000}{600 \times 850} \approx 0.66 
+\rho_{T_{chain}, T_{cassette}} = \frac{\mathrm{Cov}(T_{chain}, T_{cassette})}{\sigma_{T_{chain}} \sigma_{T_{cassette}}} = \frac{336000}{600 \times 850} \approx 0.66 
 $$
 ```
 
@@ -185,13 +185,13 @@ $$
 
 $$
 \Sigma = \begin{pmatrix}
-600 \ \ \ 336000 \\
-336000 \ \ \ 850
+600 & 336000 \\
+336000 & 850
 \end{pmatrix}
 $$
 ```
 
-The former information depends also on how regularly the students are cleaning the bike, which is not always that frequently. It is obvious that a rusting chain, due to its exposure in the typical Dutch weather, will not be as strong as its brand new version. Let's say that the mean number of bike cleaning days for a student of TU Delft in a year is $\mu_{T_{clean}} = 12 \ days$ (that much?) and $\sigma_{T_{clean}} = 6.3 \ days$. You also know the relationship between the $T_{clean}$, $T_{chain}$ and $T_{cassette}$ defined by $Cov(T_{clean},T_{chain}) =  2835 \ h \cdot days$ and $Cov(T_{clean},T_{cassette}) = 3748.5 \ h \cdot days$. 
+The former information depends also on how regularly the students are cleaning the bike, which is not always that frequently. It is obvious that a rusting chain, due to its exposure in the typical Dutch weather, will not be as strong as its brand new version. Let's say that the mean number of bike cleaning days for a student of TU Delft in a year is $\mu_{T_{clean}} = 12 \ days$ (that much?) and $\sigma_{T_{clean}} = 6.3 \ days$. You also know the relationship between the $T_{clean}$, $T_{chain}$ and $T_{cassette}$ defined by $\mathrm{Cov}(T_{clean},T_{chain}) =  2835 \ h \cdot days$ and $\mathrm{Cov}(T_{clean},T_{cassette}) = 3748.5 \ h \cdot days$. 
 
 Assuming that $F(T_{chain}, T_{cassette}, T_{clean})$ follows a multivariate Gaussian distributions, compute the parameters of the conditional bivariate distribution of $T_{chain}$ and $T_{cassette}$ for a student that cleans the bike only 7 days per year.
 
@@ -207,7 +207,7 @@ $$
 $$
 
 $$
-\boldsymbol{\Sigma} = \begin{pmatrix} 600^2 \ 336000 \  2835 \\ 336000 \ 850^2 \  3748.5\\  2835 \  3748.5 \ 6.3^2\end{pmatrix}$$
+\boldsymbol{\Sigma} = \begin{pmatrix} 600^2 & 336000 &  2835 \\ 336000 & 850^2 &  3748.5\\  2835 &  3748.5 & 6.3^2\end{pmatrix}$$
 
 If we know that $T_{clean}$ = 7 days, we can conditionalize the multivariate Gaussian distribution as:
 
@@ -216,7 +216,7 @@ $$
 $$
 
 $$
-\hat{\Sigma} = \begin{pmatrix} 600^2 \ 336000 \\ 336000 \ 850^2 \end{pmatrix} - \begin{pmatrix} 2835 \\  3748.5 \ \end{pmatrix} (6.3^2)^{-1} \begin{pmatrix} 2835 \ 3748.5\end{pmatrix} = \begin{pmatrix} 600^2 \ 336000 \\ 336000 \ 850^2 \end{pmatrix} - \begin{pmatrix} 202500 \ 267750 \\ 267750 \ 354025 \end{pmatrix} = \begin{pmatrix} 157500 \ 68250 \\ 68250 \  368475 \end{pmatrix}
+\hat{\Sigma} = \begin{pmatrix} 600^2 & 336000 \\ 336000 & 850^2 \end{pmatrix} - \begin{pmatrix} 2835 \\  3748.5 \end{pmatrix} (6.3^2)^{-1} \begin{pmatrix} 2835 & 3748.5\end{pmatrix} = \begin{pmatrix} 600^2 & 336000 \\ 336000 & 850^2 \end{pmatrix} - \begin{pmatrix} 202500 & 267750 \\ 267750 & 354025 \end{pmatrix} = \begin{pmatrix} 157500 & 68250 \\ 68250 &  368475 \end{pmatrix}
 $$
 ```
 
