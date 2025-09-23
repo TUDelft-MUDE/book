@@ -379,7 +379,7 @@ Note that $d\vec{T}/dt = 0$. Now, for the case $M=5$ the system of equations are
 
 $$
 \begin{pmatrix} -2 & 1 & 0 & 0 & 0 \\ 1 & -2 & 1 & 0 & 0 \\ 0 & 1 & -2 & 1 & 0 \\ 0 & 0 & 1 & -2 & 1 \\ 0 & 0 & 0 & 2 & -2 \end{pmatrix} \, \begin{pmatrix} T_1 \\ T_2 \\ T_3 \\ T_4 \\ T_5 \end{pmatrix} =
-\begin{pmatrix}[r] -1 \\ 0 \\ 0 \\ 0 \\ 0 \end{pmatrix}
+\begin{pmatrix} -1 \\\ 0 \\\ 0 \\\ 0 \\\ 0 \end{pmatrix}
 $$
 
 which can be solved using the Numpy function. The steady-state solution is given by
