@@ -294,21 +294,21 @@ $$
   \frac{\partial T}{\partial x} (L,t) \approx \frac{T_{M+1}(t) - T_{M-1}(t)}{2\Delta x} = 0 \quad \Rightarrow \quad T_{M+1}(t) = T_{M-1}(t)
 $$
 
-involving the virtual point $x_{M+1} = L + \Delta x$. We also apply the semi discretization for the heat equation at the boundary point $x_M$ (see Eq. {eq}`semid`),
+involving the virtual point $x_{M+1} = L + \Delta x$. We also apply the semi discretization of the heat equation at the boundary point $x_M$ (see Eq. {eq}`semid`),
 
 $$
   \frac{dT_M}{dt} = \kappa \, \frac{T_{M+1}-2T_M+T_{M-1}}{\Delta x^2}
 $$
 
-and eliminate $T_{M+1}$ from this equation. We are left with the numerical treatment for the
-Neumann condition, involving only values of the numerical solution located within the domain
+and eliminate $T_{M+1} = T_{M-1}$ from this equation. We are left with the numerical treatment for the
+Neumann condition, involving only values of the numerical solution located *within* the domain, namely,
 
 $$
   \frac{dT_M}{dt} = 2\kappa \, \frac{T_{M-1}-T_M}{\Delta x^2}
 $$
 
 
-Summarising, we now have the following linear system of first order ODEs with the unknowns $T_m(t)\,, m=0,\ldots,M$,
+Summarising, we have the following **linear system of first order ODEs** with the unknowns $T_m(t)\,, m=0,\ldots,M$,
 
 $$
   \begin{align}
@@ -320,4 +320,4 @@ $$
     \\
     &T_m(0) = T^0(x_m)\, , \quad m=0,\ldots,M
   \end{align}
-$$
+$$ (modedif1)
