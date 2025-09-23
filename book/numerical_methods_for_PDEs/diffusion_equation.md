@@ -368,7 +368,7 @@ The rod is 1 m long and is divided into five equilly spaced cells, so that $\Del
 $x_0,\cdots,x_5$. The Dirichlet boundary condition is still ${\tilde T}(0) = 1$ and at $x=1$ the homogeneous Neumann boundary condition holds.
 
 Now, write down the system of ODEs as given above for $M=5$ and try to solve this system using the Numpy library, in particular the function `numpy.linalg.solve`.
-(See also section on *Boundary-value problems* of Chapter {ref]`numerical_modelling`.)
+(See also section on *Boundary-value problems* of Chapter {ref}`numerical_modelling`.)
 
 Repeat the exercise with various values of $\Delta x$ and also $\kappa$. What are your conclusions?
 
@@ -378,15 +378,24 @@ Repeat the exercise with various values of $\Delta x$ and also $\kappa$. What ar
 Note that $d\vec{T}/dt = 0$. Now, for the case $M=5$ the system of equations are given by
 
 $$
-\begin{pmatrix} -2 1 0 0 0 \\ 1 -2 1 0 0 \\ 0 1 -2 1 0 \\ 0 0 1 -2 1 \\ 0 0 0 2 -2 \end{pmatrix} \, \begin{pmatrix} T_1 \\ T_2 \\ T_3 \\ T_4 \\ T_5 \end{pmaxtrix} =
-\begin{pmatrix} -1 \\ 0 \\ 0 \\ 0 \\ 0 \end{pmaxtrix}
+\begin{pmatrix} -2 1 0 0 0 \\ 1 -2 1 0 0 \\ 0 1 -2 1 0 \\ 0 0 1 -2 1 \\ 0 0 0 2 -2 \end{pmatrix} \, \begin{pmatrix} T_1 \\ T_2 \\ T_3 \\ T_4 \\ T_5 \end{pmatrix} =
+\begin{pmatrix} -1 \\ 0 \\ 0 \\ 0 \\ 0 \end{pmatrix}
 $$
 
 which can be solved using the Numpy function. The steady-state solution is given by
 
 $$
-\begin{pmatrix} T_1 \\ T_2 \\ T_3 \\ T_4 \\ T_5 \end{pmaxtrix} = \begin{pmatrix} 1 \\ 1 \\ 1 \\ 1 \\ 1 \end{pmaxtrix}
+\begin{pmatrix} T_1 \\ T_2 \\ T_3 \\ T_4 \\ T_5 \end{pmatrix} = \begin{pmatrix} 1 \\ 1 \\ 1 \\ 1 \\ 1 \end{pmatrix}
 $$
+
+Notice that the given system of ODEs is independent of both parameters $\Delta x$ and $\kappa$. Hence, the second order accurate approximation represented by the above system provides
+an exact solution for the following equation
+
+$$
+  \frac{d^2 {\tilde T}}{dx^2} = 0
+$$
+
+augmented with the Dirichlet boundary condition at $x=0$ and the homogeneous Neumann condition at $x=L$.
 
 ```
 :::
