@@ -38,9 +38,9 @@ $$
 
 **But what does that mean?**
 
-When using copulas, we are going to model the univariate distributions for each variable and the dependence between them with different models. To do so, we select and fit a univariate distributions for each variable as seen in the previous chapter. That characterizes the univariate distribution of each variable or what call *marginal distributions*. 
+When using copulas, we are going to model the univariate (or _marginal_) distributions for each variable and the dependence between them with different models. To do so, we select and fit a univariate distributions for each variable as seen in the previous chapter. 
 
-To deal with the dependence between the random variables using copulas, we transform the observations to what we call *unity space*, *uniform space* or *pseudo observations* by means of the cumulative distribution function. This is, we will model the dependence between the non-exceedance probabilities of the random variables and not between the values of the random variables. We can perform this transformation using either the empirical cumulative distribution function or the parametric distribution functions we have fitted. 
+To deal with the dependence between the random variables using copulas, we transform the observations to what we call *unity space*, *uniform space* or *pseudo observations* by means of the cumulative distribution function. That is, we will model the dependence between the non-exceedance probabilities of the random variables and not between the values of the random variables. We can perform this transformation using either the empirical cumulative distribution function or the parametric distribution functions we have fitted. 
 
 In the figure below, in panel (a), you have observations of discharges of two rivers, $Q_1$ and $Q_2$. In panel (b) you see how we have transformed the observations to uniform space. Note that the marginal distributions in panel (b) are uniform and defined in [0,1].
 
