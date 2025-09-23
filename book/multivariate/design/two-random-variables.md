@@ -20,7 +20,7 @@ On this page all calculations assume the same lognormal distribution for random 
 $$
 \begin{align*}
 E[X] &= \exp\left(\mu + \frac{\sigma^2}{2}\right) = 100\\
-VAR[X] &= \left( \exp(\sigma^2)-1 \right)\exp(2\mu + \sigma^2)= 400
+Var[X] &= \left( \exp(\sigma^2)-1 \right)\exp(2\mu + \sigma^2)= 400
 \end{align*}
 $$
 See the table in [Summary of parametric distribibutions](summary_dist)
