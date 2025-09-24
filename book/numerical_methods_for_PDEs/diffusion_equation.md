@@ -470,7 +470,7 @@ $$
 $$
 
 with $T(x,t)$ a sufficiently smooth, exact solution to the heat equation {eq}`diffusion1`. Because of this, we can use the Taylor series expansions of
-$T(x_m,t_{n+1}$ and $T(x_{m\pm1},t_n)$ to further evaluate the truncation erorr. So,
+$T(x_m,t_{n+1})$ and $T(x_{m\pm1},t_n)$ to further evaluate the truncation erorr. So,
 
 $$
 \begin{align*}
@@ -509,9 +509,36 @@ According to this definition, the FTCS scheme {eq}`ftcs` is consistent with the 
 
 The above error analysis shows how well the FTCS scheme approximates the original
 heat equation in the limit of $\Delta x, \Delta t \to 0$. However, it does *not* show how well the
-numerical solution approximates the exact solution of the heat equation. This is a matter of **convergence**.
+numerical solution approximates the exact solution of the heat equation. This is a matter of convergence.
 
-In the study of convergence of a finite difference method, there are two issues to be considered.
+```{admonition} Definition (convergence)
+:class: tip
+
+A numerical scheme as described above is said to be **convergent** if
+
+$$
+  \lim_{\Delta x, \Delta t \to 0} T^n_m = T(x_m,t_n)
+$$
+
+```
+
+In the study of convergence of a numerical scheme, there are two issues to be considered.
 
 - Firstly, whether the numerical approximation is *consistent* with the PDE we wish to solve.
 - Secondly, whether the considered numerical recipe is *stable*, that is, its numerical solution remains bounded in case of endless repeating of this recipe, with fixed $\Delta t$ and $\Delta x$. This topic of **stability** will be investigated in some detail in the next section.
+
+With these two notions, the following holds.
+
+```{admonition} Basic rule
+:class: note
+
+\begin{center}
+consistency + stability $\Rightarrow$ convergence
+\end{center}
+
+```
+
+Since convergence is the hard one, effort in the other two aspects is easily elaborated.
+Consistency defines a relation between the numerical scheme and the PDE we wish to solve, whereas stability establishes a relation
+between the computed solution and the exact solution of the numerical scheme. It should be emphasised that stability is a requirement
+*just* on the numerical scheme and does not involve condition on the PDE.
