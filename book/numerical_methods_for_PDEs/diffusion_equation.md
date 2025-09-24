@@ -526,19 +526,19 @@ $$
 
 In the study of convergence of a numerical scheme, there are two issues to be considered.
 
-- Firstly, whether the numerical approximation is *consistent* with the PDE we wish to solve.
-- Secondly, whether the considered numerical scheme is *stable*, that is, its numerical solution remains bounded in case of endless repeating of this recipe, with fixed $\Delta t$ and $\Delta x$. This topic of **stability** will be investigated in some detail in the next section.
+- Firstly, whether the numerical approximation is __*consistent*__ with the PDE we wish to solve.
+- Secondly, whether the considered numerical scheme is __*stable*__, that is, its numerical solution remains bounded in case of endless repeating of this scheme, with fixed $\Delta t$ and $\Delta x$. This topic of **stability** will be investigated in some detail in the next section.
 
 With these two notions, we can apply the following
 
 ```{admonition} Basic rule
 :class: tip
 
-<center>consistency + stability $\Rightarrow$ convergence</center>
+<center>consistency + stability &#8658; convergence</center>
 
 ```
 
-Since proof of convergence is the hard one, effort in the other two aspects is easily elaborated.
+Since a proof of convergence is the hard one, effort in the other two aspects is easily elaborated.
 Consistency defines a relation between the numerical scheme and the PDE we wish to solve, whereas stability establishes a relation
 between the computed solution and the exact solution of the numerical scheme. It should be emphasised that stability is a requirement
 *just* on the numerical scheme and does not involve any condition on the PDE.
