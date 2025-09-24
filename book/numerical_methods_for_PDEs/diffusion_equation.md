@@ -442,19 +442,19 @@ the forward approximation in time with explicit Euler and the central difference
 ## Truncation error and consistency
 
 A common method to check the order of accuray of a numerical scheme is to computer its truncation error. This error is defined as the difference between the scheme and the PDE that we want to solve.
-It is denoted as $\tau_{\text{\tiny $\Delta t,\Delta x$}}$.
+It is denoted as $\tau_{\text{$\Delta t,\Delta x$}}$.
 
 Let us consider the FTCS scheme. We can derive its truncation error, as follows
 
 $$
-  \tau_{\text{\tiny $\Delta t,\Delta x$}} = \frac{T(x_m,t_{n+1})-T(x_m,t_n)}{\Delta t} - \kappa \, \frac{T(x_{m+1},t_n)-2T(x_m,t_n)+T(x_{m-1},t_n)}{\Delta x^2}
+  \tau_{\text{$\Delta t,\Delta x$}} = \frac{T(x_m,t_{n+1})-T(x_m,t_n)}{\Delta t} - \kappa \, \frac{T(x_{m+1},t_n)-2T(x_m,t_n)+T(x_{m-1},t_n)}{\Delta x^2}
 $$
 
 with $T(x,t)$ a sufficiently smooth, exact solution to the heat equation. So,
 
 $$
 \begin{align*}
-\tau_{\text{\tiny $\Delta t,\Delta x$}} &= \frac{T(x,t+\Delta t)-T(x,t)}{\Delta t} - \kappa \, \frac{T(x+\Delta x,t)-2T(x,t)+T(x-\Delta x,t)}{\Delta x^2} \\
+\tau_{\text{$\Delta t,\Delta x$}} &= \frac{T(x,t+\Delta t)-T(x,t)}{\Delta t} - \kappa \, \frac{T(x+\Delta x,t)-2T(x,t)+T(x-\Delta x,t)}{\Delta x^2} \\
                                         &\\
                                         &=\frac{\partial T}{\partial t}(x,t)+\frac 12 \Delta t \frac{\partial^2 T}{\partial t^2}(x,t) - \kappa \frac{\partial^2 T}{\partial x^2}(x,t) -
                                           \frac{\kappa\Delta x^2}{12}\frac{\partial^4 T}{\partial x^4}(x,t) + \ldots\\
@@ -466,7 +466,7 @@ $$
 and, thus
 
 $$
-  \tau_{\text{\tiny $\Delta t,\Delta x$}} = \mathcal{O} \left(\Delta t, \Delta x^2 \right)
+  \tau_{\text{$\Delta t,\Delta x$}} = \mathcal{O} \left(\Delta t, \Delta x^2 \right)
 $$
 
 Hence, the FTCS scheme is first order in $\Delta t$ and second order in $\Delta x$.
@@ -474,12 +474,13 @@ In practice, this means we can discretize the spatial domain quite
 coarsely but we must discretize the time interval more finely in order to achieve a required
 accuracy.
 
-```{admonitions} Definition
+```{admonition} Definition
+:class: tip
 
 A numerical scheme is called **consistent** if and only if
 
 $$
-  \lim_{\Delta x, \Delta t \to 0} \tau_{\text{\tiny $\Delta t,\Delta x$}} = 0
+  \lim_{\Delta x, \Delta t \to 0} \tau_{\text{$\Delta t,\Delta x$}} = 0
 $$
 
 ```
