@@ -343,7 +343,7 @@ It is standard practice to write this linear system in the matrix-vector notatio
 
 $$
   \frac{d\vec{T}}{dt} = A\vec{T} + \vec{g}\,,\quad \vec{T}(0) = \vec{T}^0
-$$
+$$ (discmat1)
 
 with
 
@@ -365,7 +365,7 @@ $$
                                      &    &     &          &        &        &  1     & -2     &  1       \\
                              0       &    &     & \cdots   &        &        &  0     &  2     & -2
    \end{array} \right )
-$$
+$$ (matrdiff2)
 
 an $M \times M$ discretization matrix, and
 
@@ -494,6 +494,72 @@ In practice, this means we can discretize the spatial domain quite
 coarsely but we must discretize the time interval more finely in order to achieve a required
 accuracy.
 
+:::{card} Exercise
+
+We consider the ODE related to the Neumann boundary condition at $x=L$, which is given by (see {eq}`modedif1`)
+
+$$
+  \frac{dT_M}{dt} = 2\kappa \, \frac{T_{M-1}-T_M}{\Delta x^2}
+$$
+
+This ODE can be approximated using the forward Euler scheme which yields
+
+$$
+  \frac{T^{n+1}_M - T^n_M}{\Delta t} = \frac{2 \kappa}{\Delta x^2} \left ( T^n_{M-1} - T^n_M \right )
+$$
+
+Compute the associated truncation error.
+
+```{admonition} Solution
+:class: tip, dropdown
+
+First, we replace the numerical solution $T^n_m$ by the exact solution $T(x_m,t_n)$. Hence, we have
+
+$$
+  \frac{T(x_M,t_{n+1}) - T(x_M,t_n)}{\Delta t} = \frac{2 \kappa}{\Delta x^2} \left ( T(x_{M-1},t_n) - T(x_M,t_n) \right )
+$$
+
+The exact solution is supposed to be smooth so that we can use the Taylor series expansions for the functions $T(L,t+\Delta t)$ and $T(L-\Delta x,t)$.
+We expect a first order accuracy in time and hence the Taylor series of $T(L,t+\Delta t)$ is expanded till the second order term ("*first derivative + first order accuracy*").
+With respect to the Taylor series of $T(L-\Delta x,t)$, we will expand this till the third order (=1+2) because we expect at most second order accuracy (it can be less!).
+Hence,
+
+$$
+  T(L,t+\Delta t) = T(L,t) + \Delta t\, T_t(L,t) + \frac 12 \Delta t^2 \, T_{tt} (L,t)
+$$
+
+and
+
+$$
+  T(L-\Delta x,t) = T(L,t) - \Delta x\, T_x(L,t) + \frac 12 \Delta x^2 \, T_{xx} (L,t) - \frac 16 \Delta x^3 \, T_{xxx} (L,t)
+$$
+
+Substitution gives
+
+$$
+\begin{align*}
+\tau_{\Delta t,\Delta x} &= \frac{T(L,t+\Delta t) - T(L,t)}{\Delta t} - \frac{2 \kappa}{\Delta x^2} \left ( T(L-\Delta x,t) - T(L,t) \right ) \\
+                         &\\
+                         &= T_t(L,t) + \frac 12 \Delta t \, T_{tt} (L,t) + 2 \kappa \left ( \frac{T_x}{\Delta x}(L,t) - \frac 12 T_{xx} (L,t) + \frac 16 \Delta x \, T_{xxx} (L,t) \right ) \\
+                         &\\
+                         &= \frac 12 \Delta t \, T_{tt} (L,t) + \frac 13 \kappa\, \Delta x \, T_{xxx} (L,t) \\
+                         &\\
+                         &= \mathcal{O} \left(\Delta t, \Delta x \right)
+\end{align*}
+$$
+
+where we have used the homogeneous Neumann condition at $x=L$, namely, $T_x\,(L,t) = 0$.
+
+So, we conclude that the numerical scheme related to the Neumann condition at $x=L$ is first order accurate both in time (as expected!) and in space (not expected!).
+
+Our first thought might be to conclude that our *overall* approximation in the whole(!) domain, including the boundary points, might have lost second order accuracy.
+However, this is not the case. Generally, we achieve second order accuracy in the overall numerical method even if the truncation error
+is $\mathcal{O}(\Delta x)$ at a *single* boundary point as long as it is $\mathcal{O}(\Delta x^2)$ everywhere else.
+So, we can often get away with one order of accuracy lower in the local error for the boundary conditions than what we have elsewhere.
+
+```
+:::
+
 ## Consistency and convergence
 
 ```{admonition} Definition (consistency)
@@ -545,4 +611,14 @@ between the computed solution and the exact solution of the numerical scheme. It
 
 ## Stability
 
-Here we consider stability.
+We may write the FTCS scheme {eq}`ftcs2` in the matrix-vector notation, as follows (see also {eq}`discmat1`)
+
+$$
+  \vec{T}^{n+1} = \left ( I + \Delta t A \right ) \vec{T}^{n} + \Delta t \,\vec{g}
+$$
+
+with $\vec{T}^n = (T^n_1,\cdots,T^n_M)^{\mbox{\tiny T}}$ being the vector representing the numerical solution at time step $n$ and
+$A$ is the discretization matrix as given by Eq. {eq}`matrdiff2`. Matrix $I$ is the identity matrix.
+A way to check stability is to consider the eigenvalues $\lambda_m$ of the matrix $I + \Delta t A$ and subsequently require $|\lambda_m| \leq 1$.
+However, the matrices $A$ and $I$ are an $M \times M$ matrix with $M = L/\Delta x$ so that its dimension is growing as $\Delta x \to 0$. So, we might
+not be able to determine eigenvalues of such a large matrix, because of the cumbersome and laborious algebra.
