@@ -619,7 +619,7 @@ $$
 
 with $\vec{T}^n = (T^n_1,\cdots,T^n_M)^{\text{T}}$ being the vector representing the numerical solution at time step $n$ and
 $A$ is the discretization matrix as given by Eq. {eq}`matrdiff2`. Matrix $I$ is the identity matrix.
-A way to check stability is to consider the eigenvalues $\lambda_m$ of the matrix $I + \Delta t A$ and subsequently require $|\lambda_m| \leq 1\, \quad \forall m$.
+A way to check stability is to consider the eigenvalues $\lambda_m$ of the matrix $I + \Delta t A$ and subsequently require $|\lambda_m| \leq 1\,, \forall m$.
 However, the matrices $A$ and $I$ are an $M \times M$ matrix with $M = L/\Delta x$ so that its dimension is growing as $\Delta x \to 0$. Hence, we might
 not be able to determine eigenvalues of such a large matrix, because of the cumbersome and laborious algebra.
 
@@ -634,13 +634,16 @@ $$
   T^{n+1}_m = \left ( 1 - \frac{2\kappa \Delta t}{\Delta x^2} \right ) T^n_m + \frac{\kappa \Delta t}{\Delta x^2} \, \left ( T^n_{m+1}+T^n_{m-1} \right )
 $$
 
-Assume that $T^n_m \geq 0$ for all grid points $m = 1,\ldots,M-1$. If
+Assume that $T^n_m \geq 0$ for all grid points $m = 1,\ldots,M-1$, then the last two terms on the right-hand side are non-negative. Furthermore, if
 
 $$
   1 - \frac{2\kappa \Delta t}{\Delta x^2} \geq 0 \quad \Rightarrow \quad \frac{\kappa \Delta t}{\Delta x^2} \leq \frac 12
 $$
 
 then $T^{n+1}_m \geq 0$ for all grid points $m = 1,\ldots,M-1$. Hence, by <u>induction</u> it follows that the numerical solution is non-negative at all times.
+
+This resulted stability condition states that for a given $\Delta x$, the allowed value of $\Delta t$ must be small enough to keep the FTCS scheme {eq}`ftcs` stable.
+For this reason, the FTCS scheme is said to be **conditionally stable**
 
 :::{card} Exercise
 
@@ -662,7 +665,7 @@ $$
 $$
 
 We assume that the values $T^n_M$ and $T^n_{M-1}$ are non-negative.
-While the second term on the right-hand side is always non-negative, the first term is non-negative as long as the following condition holds
+While the second term on the right-hand side is non-negative, the first term is non-negative as long as the following condition holds
 
 $$
   \frac{\kappa \Delta t}{\Delta x^2} \leq \frac 12
@@ -672,7 +675,3 @@ which is the same condition for the inner points $m = 1,\ldots,M-1$.
 
 ```
 :::
-
-## Implicit schemes
-
-Here we consider implicit schemes.
