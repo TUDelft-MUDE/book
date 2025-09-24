@@ -439,7 +439,7 @@ Hence, the solution can be found at any time through a sequence of time steps.
 This scheme is known as the **FTCS** scheme, which stands for **F**orward in **T**ime, **C**entral in **S**pace, since we have used
 the forward approximation in time with explicit Euler and the central differences in space.
 
-## Truncation error and consistency
+## Truncation error
 
 A common method to check the order of accuray of a numerical scheme is to compute its (global) truncation error.
 
@@ -494,6 +494,8 @@ In practice, this means we can discretize the spatial domain quite
 coarsely but we must discretize the time interval more finely in order to achieve a required
 accuracy.
 
+## Consistency, stability and convergence
+
 ```{admonition} Definition (consistency)
 :class: tip
 
@@ -525,20 +527,18 @@ $$
 In the study of convergence of a numerical scheme, there are two issues to be considered.
 
 - Firstly, whether the numerical approximation is *consistent* with the PDE we wish to solve.
-- Secondly, whether the considered numerical recipe is *stable*, that is, its numerical solution remains bounded in case of endless repeating of this recipe, with fixed $\Delta t$ and $\Delta x$. This topic of **stability** will be investigated in some detail in the next section.
+- Secondly, whether the considered numerical scheme is *stable*, that is, its numerical solution remains bounded in case of endless repeating of this recipe, with fixed $\Delta t$ and $\Delta x$. This topic of **stability** will be investigated in some detail in the next section.
 
-With these two notions, the following holds.
+With these two notions, we can apply the following
 
 ```{admonition} Basic rule
 :class: note
 
-\begin{center}
-consistency + stability $\Rightarrow$ convergence
-\end{center}
+<center>consistency + stability $\Rightarrow$ convergence</center>
 
 ```
 
-Since convergence is the hard one, effort in the other two aspects is easily elaborated.
+Since proof of convergence is the hard one, effort in the other two aspects is easily elaborated.
 Consistency defines a relation between the numerical scheme and the PDE we wish to solve, whereas stability establishes a relation
 between the computed solution and the exact solution of the numerical scheme. It should be emphasised that stability is a requirement
-*just* on the numerical scheme and does not involve condition on the PDE.
+*just* on the numerical scheme and does not involve any condition on the PDE.
