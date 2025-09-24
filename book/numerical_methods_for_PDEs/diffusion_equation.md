@@ -1,8 +1,20 @@
 (diffusion)=
 # Diffusion Equation
 
-In this section we discuss the numerical solution of the 1D diffusion equation and builds on Chapter {ref}`numerical_modelling`.
-The specific (initial) boundary value problem (IBVP) we wish to solve is the following
+This section builds on Chapter {ref}`numerical_modelling` and discusses the numerical solution of the 1D diffusion equation.
+
+```{note} 
+
+**The learning objectives of this section are:**
+- describe the role of diffusion and identify the diffusion equation
+- formulate and discretize the diffusion equation using the finite difference method
+- assess various time integration schemes for the diffusion equation
+
+```
+
+## Mathematical Model
+
+The (initial) boundary value problem (IBVP) we wish to solve is the following
 
 $$
   \begin{align}
@@ -85,6 +97,8 @@ where $b$ remains undetermined. Hence, this solution is not unique!
 
 ```
 
+## Domain Discretization
+
 The first step is to **discretize** the domain $[0,L]$ into a finite number of **grid points** $M+1$ where we
 intend to compute the solution of the PDE {eq}`diffusion1`. $M$ represents the number of **grid cells**. We will use a uniform or **equidistant** grid, with a **grid spacing** $\Delta x = L/M$,
 which is the size of each grid cell.
@@ -97,6 +111,8 @@ Likewise we discretize the time interval into a number of time steps, separated
 by a time increment $\Delta t$, and compute the solution for times $t_n = n\Delta t\,, n=1,2,3,\ldots$ until a steady state is found.
 Our aim is to compute the solution of the PDE for all values $T^n_m \approx T(m\Delta x,n\Delta t)$. The function $T^n_m$ is called the grid function and consists only of discrete values
 defined at grid points $x_m$ and time steps $t_n$. (Keep in mind that $T(x,t)$ is continuous and smooth.)
+
+## Method of Lines
 
 We now have a **spatial grid** or **computational domain** that approximates the physical domain $x \in [0,L]$ and a discrete time frame. The next step it to
 define approximations to the partial derivatives appearing in the heat equation, as the finite
@@ -117,7 +133,7 @@ A number of methods have been proposed in the field of numerical mathematics to 
 we restrict ourselves to the traditional numerical method in hydraulic engineering, namely, the finite difference method.
 Another popular method is the finite element method which will be discussed in Chapter {ref}`finite_element_method`.
 
-## Finite difference method
+## Finite Difference Method
 
 The basic methodology of the **finite difference method** (FDM) is to approximate the spatial derivatives
 with **differences** of the unknowns on the grid. A variety of different approximations are possible and the
@@ -400,7 +416,7 @@ augmented with the Dirichlet boundary condition at $x=0$ and the homogeneous Neu
 ```
 :::
 
-## Time integration
+## Time Integration
 
 The semi discretization of the heat equation leads to a linear system of first order ODEs. The next step is to integrate this system over time.
 Our choice for time integration would be the explicit Euler scheme.
