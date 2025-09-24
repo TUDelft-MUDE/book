@@ -217,7 +217,7 @@ also be approximated as follows
 $$\frac{\partial T}{\partial x} (m\Delta x,t) \approx \frac{T_{m+1/2}(t) - T_{m-1/2}(t)}{\Delta x}$$ (cdf2)
 
 which is central differences using *single* grid size. However, the quantities $T_{m\pm1/2}$ are not defined on the grid.
-In fact, there locations are in between the grid points and are called midpoints.
+In fact, there locations are in between the grid points and are called **midpoints**.
 Hence, they must be computed by means of **linear interpolation**, as follows
 
 $$
@@ -436,5 +436,5 @@ At each *new* time step, the dependent variable $T$ at each interior grid point 
 three grid points, $x_{m-1}$, $x_m$ and $x_{m+1}$, at the *preceding* time step.
 This expression defines an **explicit** scheme for solving the heat equation.
 Hence, the solution can be found at any time through a sequence of time steps.
-This scheme is known as the **FTCS** scheme, which stands for <u>F</u>orward in <b>T</b>ime, <b>C</b>entral in <bS</b>pace, since we have used
+This scheme is known as the **FTCS** scheme, which stands for **F**orward in **T**ime, **C**entral in **S**pace, since we have used
 the forward approximation in time with explicit Euler and the central differences in space.
