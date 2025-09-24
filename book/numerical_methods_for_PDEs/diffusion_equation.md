@@ -441,32 +441,51 @@ the forward approximation in time with explicit Euler and the central difference
 
 ## Truncation error and consistency
 
-A common method to check the order of accuray of a numerical scheme is to computer its truncation error. This error is defined as the difference between the scheme and the PDE that we want to solve.
-It is denoted as $$\tau_{\text{$\Delta t,\Delta x$}}$$.
+A common method to check the order of accuray of a numerical scheme is to compute its (global) truncation error.
+
+```{admonition} Definition (truncation error)
+:class: tip
+
+Let be given a PDE with its solution $T(x,t)$ and let a numerical scheme for this PDE be given by
+
+$$
+  L_{\Delta t, \Delta x} \left ( T^n_m \right ) = 0
+$$
+
+where $L_{\Delta t, \Delta x}$ is a discrete linear operator depending on the numerical parameters $\Delta t$ and $\Delta x$, and $T^n_m$ is its numerical solution
+at time step $t_n = n\Delta t$ and grid point $x_m = m\Delta x$.
+
+The truncation error of the scheme is defined as
+
+$$
+  \tau_{\Delta t,\Delta x} = L_{\Delta t, \Delta x} \left ( T(x_m,t_n) \right )
+$$
+
+```
 
 Let us consider the FTCS scheme {eq}`ftcs`. We can derive its truncation error, as follows
 
 $$
-  \tau_{\text{$\Delta t,\Delta x$}} = \frac{T(x_m,t_{n+1})-T(x_m,t_n)}{\Delta t} - \kappa \, \frac{T(x_{m+1},t_n)-2T(x_m,t_n)+T(x_{m-1},t_n)}{\Delta x^2}
+  \tau_{\Delta t,\Delta x} = \frac{T(x_m,t_{n+1})-T(x_m,t_n)}{\Delta t} - \kappa \, \frac{T(x_{m+1},t_n)-2T(x_m,t_n)+T(x_{m-1},t_n)}{\Delta x^2}
 $$
 
-with $T(x,t)$ a sufficiently smooth, exact solution to the heat equation. So,
+with $T(x,t)$ a sufficiently smooth, exact solution to the heat equation {eq}`diffusion1`. So,
 
 $$
 \begin{align*}
-\tau_{\text{$\Delta t,\Delta x$}} &= \frac{T(x,t+\Delta t)-T(x,t)}{\Delta t} - \kappa \, \frac{T(x+\Delta x,t)-2T(x,t)+T(x-\Delta x,t)}{\Delta x^2} \\
-                                        &\\
-                                        &=\frac{\partial T}{\partial t}(x,t)+\frac 12 \Delta t \frac{\partial^2 T}{\partial t^2}(x,t) - \kappa \frac{\partial^2 T}{\partial x^2}(x,t) -
-                                          \frac{\kappa\Delta x^2}{12}\frac{\partial^4 T}{\partial x^4}(x,t) + \ldots\\
-                                        &\\
-                                        &=\frac 12 \Delta t \frac{\partial^2 T}{\partial t^2}(x,t) - \frac{\kappa\Delta x^2}{12}\frac{\partial^4 T}{\partial x^4}(x,t) + \ldots
+\tau_{\Delta t,\Delta x} &= \frac{T(x,t+\Delta t)-T(x,t)}{\Delta t} - \kappa \, \frac{T(x+\Delta x,t)-2T(x,t)+T(x-\Delta x,t)}{\Delta x^2} \\
+                         &\\
+                         &=\frac{\partial T}{\partial t}(x,t)+\frac 12 \Delta t \frac{\partial^2 T}{\partial t^2}(x,t) - \kappa \frac{\partial^2 T}{\partial x^2}(x,t) -
+                           \frac{\kappa\Delta x^2}{12}\frac{\partial^4 T}{\partial x^4}(x,t) + \ldots\\
+                         &\\
+                         &=\frac 12 \Delta t \frac{\partial^2 T}{\partial t^2}(x,t) - \frac{\kappa\Delta x^2}{12}\frac{\partial^4 T}{\partial x^4}(x,t) + \ldots
 \end{align*}
 $$
 
 and, thus
 
 $$
-  \tau_{\text{$\Delta t,\Delta x$}} = \mathcal{O} \left(\Delta t, \Delta x^2 \right)
+  \tau_{\Delta t,\Delta x} = \mathcal{O} \left(\Delta t, \Delta x^2 \right)
 $$
 
 Hence, the FTCS scheme is first order in $\Delta t$ and second order in $\Delta x$.
@@ -474,13 +493,13 @@ In practice, this means we can discretize the spatial domain quite
 coarsely but we must discretize the time interval more finely in order to achieve a required
 accuracy.
 
-```{admonition} Definition
+```{admonition} Definition (consistency)
 :class: tip
 
 A numerical scheme is called **consistent** if and only if
 
 $$
-  \lim_{\Delta x, \Delta t \to 0} \tau_{\text{$\Delta t,\Delta x$}} = 0
+  \lim_{\Delta x, \Delta t \to 0} \tau_{\Delta t,\Delta x} = 0
 $$
 
 ```
