@@ -12,7 +12,7 @@ This section builds on Chapter {ref}`numerical_modelling` and discusses the nume
 
 ```
 
-## Mathematical Model
+## Mathematical model
 
 The (initial) boundary value problem (IBVP) we wish to solve is the following
 
@@ -31,11 +31,11 @@ $$ (diffusion1)
 and is known as the **heat equation**. This equation describes the flow of heat in a rod with a finite length, made out of some heat-conducting
 material, subject to some boundary conditions at each end.
 Specifically, this heat *spreads* out spatially as time increases. This phenomenon is called **diffusion**.
-The solution to the heat equation is the temperature distribution at any time $t$ and vary with $x$ along the rod.
+The solution to the heat equation is the temperature distribution $T(x,t)$ at any time $t$ and vary with $x$ along the rod.
 
 We assume that $T(x,t)$ is smooth enough, so that we can differentiate this function many times as we want and each derivative is a well-defined *bounded* function (that has thus a fixed upper bound).
-Here $L$ is the given finite length of the domain and $T^0(x)$ is a given function defining the initial condition.
-The coefficient $\kappa > 0$ is the thermal diffusivity. In general, the parameter $\kappa$ is called the diffusion coefficient or sometimes the **dispersion** coefficient.
+Here $L$ is the given finite length of the domain and $T^0(x)$ is a given function defining the initial condition on the temperature.
+The coefficient $\kappa > 0$ is the thermal diffusivity. In general, the parameter $\kappa$ is called the **diffusion coefficient** or sometimes the **dispersion** coefficient.
 
 ```{tip}
 
@@ -43,10 +43,10 @@ Always check the dimension of parameters that appear in the PDE. For instance, i
 
 ```
 
-In the above case, we have imposed a Dirichlet condition at $x = 0$ and a Neumann condition at $x = L$.
+In the above case, we have imposed a Dirichlet boundary condition at $x = 0$ and a Neumann boundary condition at $x = L$.
 Since both these boundary conditions are time independent, we expect the solution to eventually reach a **steady state**
 solution $T(x,t) \to {\tilde T}(x)$ which then remains essentially unchanged at later times.
-Hence, we shall marching forward in time until a steady state solution is found. During this marching a **transient** solution will be obtained that must fulfill the initial condition.
+Hence, we will marching forward in time until a steady state solution is found. During this marching a **transient** solution will be obtained that must fulfill the initial condition.
 
 :::{card} Exercise
 
@@ -97,11 +97,13 @@ where $b$ remains undetermined. Hence, this solution is not unique!
 
 ```
 
-## Domain Discretization
+## Domain discretization
 
 The first step is to **discretize** the domain $[0,L]$ into a finite number of **grid points** $M+1$ where we
-intend to compute the solution of the PDE {eq}`diffusion1`. $M$ represents the number of **grid cells**. We will use a uniform or **equidistant** grid, with a **grid spacing** $\Delta x = L/M$,
+intend to compute the solution of the PDE {eq}`diffusion1`. $M$ represents the number of spatial intervals or **grid cells**.
+We will use a uniform or **equidistant** grid, with a **grid spacing** $\Delta x = L/M$,
 which is the size of each grid cell.
+
 We will refer to one of the points in the grid as $x_m = m\Delta x\,, m=0,\ldots,M$.
 The first and last grid points of the domain, $x_0$ and $x_M$, are called the **boundary points** (or in 1D the **end points**),
 while the other grid points are the **internal** (or **inner**) points. {numref}`grid` illustrates an example of 1D uniform grid in $x-$space with 5 inner grid points
@@ -109,14 +111,13 @@ $x_1, \cdots, x_5$ and 2 boundary points $x_0$ and $x_6$. Also, there are 6 grid
 
 Likewise we discretize the time interval into a number of time steps, separated
 by a time increment $\Delta t$, and compute the solution for times $t_n = n\Delta t\,, n=1,2,3,\ldots$ until a steady state is found.
-Our aim is to compute the solution of the PDE for all values $T^n_m \approx T(m\Delta x,n\Delta t)$. The function $T^n_m$ is called the grid function and consists only of discrete values
+Our aim is to compute the solution of the PDE for all values $T^n_m \approx T(m\Delta x,n\Delta t)$. The function $T^n_m$ is called the **grid function** and consists only of discrete values
 defined at grid points $x_m$ and time steps $t_n$. (Keep in mind that $T(x,t)$ is continuous and smooth.)
 
-## Method of Lines
+## Method of lines
 
 We now have a **spatial grid** or **computational domain** that approximates the physical domain $x \in [0,L]$ and a discrete time frame. The next step it to
-define approximations to the partial derivatives appearing in the heat equation, as the finite
-precision of real values in a computer precludes exact computation of these derivatives.
+define approximations to the partial derivatives appearing in the heat equation.
 
 The approach to follow is to carry out the approximation of time derivatives and the approximation of spatial
 derivatives separately. Hence, the whole approximation process is done in two steps:
@@ -133,31 +134,31 @@ A number of methods have been proposed in the field of numerical mathematics to 
 we restrict ourselves to the traditional numerical method in hydraulic engineering, namely, the finite difference method.
 Another popular method is the finite element method which will be discussed in Chapter {ref}`finite_element_method`.
 
-## Finite Difference Method
+## Finite difference method
 
 The basic methodology of the **finite difference method** (FDM) is to approximate the spatial derivatives
 with **differences** of the unknowns on the grid. A variety of different approximations are possible and the
 choice depends on the desired accuracy (consult Chapter {ref}`numerical_modelling` for further clarification).
 
 
-Recall the definition of the partial derivative::
+Recall the definition of the partial derivative:
 
 $$
   \frac{\partial T}{\partial x} (x,t) = \lim_{\Delta x \to 0} \frac{T(x+\Delta x,t) - T(x,t)}{\Delta x}
 $$
 
 We do not have the luxury of computing the limit numerically so we must select
-a small value for the **mesh width** $\Delta x$ and approximate the derivative as
+a small but finite value for the **mesh width** $\Delta x$ and approximate the derivative as
 
 $$\frac{\partial T}{\partial x} (m\Delta x,t) \approx \frac{T_{m+1}(t) - T_m(t)}{\Delta x}$$ (fdfs)
 
 with $T_m(t) \approx T(m\Delta x,t)$.
 Note that the quantity $T_m(t)$ is *continuous* in time as there is no approximation in time yet!
-Approximation {eq}`fdfs` is known as the **forward finite difference** formula. This approximation is also called the **one-sided**
+Approximation {eq}`fdfs` is known as the **forward finite difference** scheme. This scheme is also called the **one-sided**
 approximation since $T$ is evaluated only at $x_{m+1} > x_m$.
 
-We now quantify the accuracy of the forward difference approximation.
-By means of the Taylor series expansion we can derive the associated truncation error of this approximation. We expand
+We now quantify the accuracy of the forward difference scheme.
+By means of the Taylor series expansion we can derive the truncation error of this approximation. We expand
 $T(x+\Delta x,t)$, as follows
 
 $$
@@ -181,14 +182,14 @@ $$
 \end{align}
 $$
 
-Hence, the forward difference formula is accurate only to order $\Delta x$ and is called the **first order** approximation.
+Hence, the forward difference formula is accurate only to order $\Delta x$ and is called the **first order** scheme.
 
-There are, however, two other possibilities.
-The first is the **backward finite difference** approximation
+There are, however, two other common possibilities.
+The first is the **backward finite difference** scheme
 
 $$\frac{\partial T}{\partial x} (m\Delta x,t) \approx \frac{T_m(t) - T_{m-1}(t)}{\Delta x}$$ (bdfs)
 
-and the second is the **centred finite difference** formula or **central differences**
+and the second is the **centred finite difference** scheme or **central differences**
 
 $$\frac{\partial T}{\partial x} (m\Delta x,t) \approx \frac{T_{m+1}(t) - T_{m-1}(t)}{2\Delta x}$$ (cdf1)
 
@@ -196,11 +197,11 @@ since this approximation is centred around the point of consideration $x_m$.
 Central differences is an example of a **two-sided** approximation and we will see that, for a sufficiently small value of $\Delta x$, this
 approximation leads to a more accurate numerical solution of the diffusion equation than a one-sided approximation. This does
 not necessarily imply that one-sided approximations are not appropriate. For instance, for *advective* transport,
-it may be appropriate to use either the forward or backward approximation. This will be discussed later on.
+it may be appropriate to use either the forward or backward scheme. This will be discussed later on.
 
 :::{card} Exercise
 
-Show that the backward and centred finite difference approximations are accurate to $\Delta x$ and $\Delta x^2$, respectively.
+Show that the backward and centred finite difference schemes are accurate to $\Delta x$ and $\Delta x^2$, respectively.
 
 ```{admonition} Solution
 :class: tip, dropdown
@@ -216,16 +217,16 @@ also be approximated as follows
 $$\frac{\partial T}{\partial x} (m\Delta x,t) \approx \frac{T_{m+1/2}(t) - T_{m-1/2}(t)}{\Delta x}$$ (cdf2)
 
 which is central differences using *single* grid size. However, the quantities $T_{m\pm1/2}$ are not defined on the grid.
-(In fact, there locations are in between the grid points.)
-They must be computed by means of **linear interpolation**, as follows
+In fact, there locations are in between the grid points and are called midpoints.
+Hence, they must be computed by means of **linear interpolation**, as follows
 
 $$
-  T_{m-1/2} = \frac 12 \left ( T_{m-1} + T_m \right )\, , \quad T_{m+1/2} = \frac 12 \left ( T_m + T_{m+1} \right )
+  T_{m-1/2} \approx \frac 12 \left ( T_{m-1} + T_m \right )\, , \quad T_{m+1/2} \approx \frac 12 \left ( T_m + T_{m+1} \right )
 $$
 
 :::{card} Exercise
 
-Show that Eq. {eq}`cdf2` is equivalent to Eq. {eq}`cdf1`.
+By means of the above interpolations, show that Eq. {eq}`cdf2` is equivalent to Eq. {eq}`cdf1`.
 
 ```{admonition} Solution
 :class: tip, dropdown
@@ -235,7 +236,7 @@ By way of substitution of the above linear interpolations into Eq. {eq}`cdf2`, w
 ```
 :::
 
-Chapter {ref}`numerical_modelling` discussed a method to find an approximation for the second derivative. Here, we will follow another approach.
+Chapter {ref}`numerical_modelling` outlined a method to find an approximation for the second derivative. Here, we will follow another approach.
 The approximation of the second derivative can be obtained by recalling that
 
 $$
@@ -248,7 +249,7 @@ $$
   \frac{\partial^2 T}{\partial x^2} (m\Delta x,t) \approx \frac{{(\frac{\partial T}{\partial x})}_{m+1/2} - {(\frac{\partial T}{\partial x})}_{m-1/2}}{\Delta x} \approx \frac{\frac{T_{m+1} - T_m}{\Delta x} - \frac{T_m - T_{m-1}}{\Delta x}}{\Delta x} = \frac{T_{m+1}-2T_m+T_{m-1}}{\Delta x^2}
 $$
 
-Since this approximation is symmetric and centred around point $x_m$ it is referred to as the **central difference scheme** for the second derivative. 
+Note again the use of midpoints. Since this approximation is symmetric and centred around point $x_m$ it is referred to as the **central difference scheme** for the second derivative. 
 
 :::{card} Exercise
 
@@ -260,7 +261,7 @@ Show that this central differences is second order accurate.
 Note that the grid function $T_m$ represents discrete values at grid points $x_m$, but is still continuous in time, that is, $T_m(t)$.
 Furthermore, $T_{m\pm1}(t) \approx T(x\pm\Delta x,t)$ while $T(x,t)$ is sufficiently smooth in $x$. Hence,
 we apply the Taylor series expansion to find the expansion of both $T(x+\Delta x,t)$ and $T(x-\Delta x,t)$.
-Since we are dealing with the second derivative and we also expect second order accuracy, we will expand them till the fourth order. Hence, we have
+Since we are dealing with the second derivative and we also expect second order accuracy, we will expand them till the fourth order (2+2=4). Hence, we have
 
 $$
 \begin{align}
@@ -287,7 +288,7 @@ which proves second order accuracy.
 ```
 :::
 
-Substituting this second order approximation into our original PDE, Eq. {eq}`diffusion1`, we obtain
+Substituting this second order scheme into our original PDE, Eq. {eq}`diffusion1`, we obtain
 
 
 $$\frac{dT_m}{dt} = \kappa \, \frac{T_{m+1} - 2T_m + T_{m-1}}{\Delta x^2}\, , \quad m=1,\ldots,M-1$$ (semid)
@@ -302,11 +303,8 @@ $$
 
 The implementation of the Neumann condition at last boundary point $x_M$ is less trivial. When using the central differences for spatial
 derivatives, we often need to consider values of the numerical solution that *lie* outside the computational domain in order to compute spatial derivatives on the boundaries.
-The usual approach is to
-introduce **virtual points** that lie outside the domain
-and to use
-the Neumann condition and the numerical scheme for the interior domain, to eliminate the values
-at virtual points.
+The usual approach is to introduce **virtual points** that lie outside the domain and to use both
+the Neumann boundary condition and the numerical scheme for the interior domain, to eliminate the values at virtual points.
 For example, the centred approximation for the first derivative $\partial T/\partial x$ at boundary $x=L$ is (substitute $m=M$ in Eq. {eq}`cdf1`)
 
 $$
@@ -391,7 +389,7 @@ Repeat the exercise with various values of $\Delta x$ and also $\kappa$. What ar
 ```{admonition} Solution
 :class: tip, dropdown
 
-Note that $d\vec{T}/dt = 0$. Now, for the case $M=5$ the system of equations are given by
+Note that $d\vec{T}/dt = 0$. Now, for the case $M=5$ the system of equations is given by
 
 $$
 \begin{pmatrix} -2 & 1 & 0 & 0 & 0 \\ 1 & -2 & 1 & 0 & 0 \\ 0 & 1 & -2 & 1 & 0 \\ 0 & 0 & 1 & -2 & 1 \\ 0 & 0 & 0 & 2 & -2 \end{pmatrix} \, \begin{pmatrix} T_1 \\ T_2 \\ T_3 \\ T_4 \\ T_5 \end{pmatrix} =
@@ -405,7 +403,7 @@ $$
 $$
 
 Notice that the given system of ODEs is independent of both parameters $\Delta x$ and $\kappa$, because of the fact that $d\vec{T}/dt = 0$.
-Hence, the second order accurate approximation represented by the above system provides an exact (constant) solution ${\tilde T} = b$ for the following equation
+Hence, the second order accurate scheme represented by the above system {eq}`modedif1` for an arbitrary $M$ provides an exact (constant) solution ${\tilde T} = b$ for the following equation
 
 $$
   \frac{d^2 {\tilde T}}{dx^2} = 0
@@ -416,17 +414,17 @@ augmented with the Dirichlet boundary condition at $x=0$ and the homogeneous Neu
 ```
 :::
 
-## Time Integration
+## Time integration
 
-The semi discretization of the heat equation leads to a linear system of first order ODEs. The next step is to integrate this system over time.
-Our choice for time integration would be the explicit Euler scheme.
+The semi discretization of the heat equation leads to a linear system of first order ODEs, {eq}`modedif1`. The next step is to integrate this system over time.
+Our choice for time integration would be the explicit Euler scheme, since this is the most simple one.
 Application of explicit Euler to Eq. {eq}`modedif1` yields
 
 $$
   \frac{T^{n+1}_m-T^n_m}{\Delta t} = \kappa \, \frac{T^n_{m+1}-2T^n_m+T^n_{m-1}}{\Delta x^2}\, , \quad m=1,\ldots,M-1\, , \quad n =0,1,2,\ldots
 $$
 
-with $\Delta t$ the time step and $T^n_m \approx T(m\Delta x,n\Delta t)$ a discrete function, which
+with $\Delta t$ the time step and $T^n_m \approx T(m\Delta x,n\Delta t)$ a discrete grid function, which
 represents the wanted numerical solution to the heat equation, Eq. {eq}`diffusion1`, at time step $n$ and grid point $m$.
 We can re-arrange this equation as follows
 
@@ -434,9 +432,9 @@ $$
   T^{n+1}_m = T^n_m + \frac{\kappa \Delta t}{\Delta x^2} \, \left (T^n_{m+1}-2T^n_m+T^n_{m-1} \right )
 $$ (ftcs)
 
-At each *new* time step, the dependent variable $T$ at each interior grid point is computed from values of $T$ at
-three grid points at the *preceding* time step.
+At each *new* time step, the dependent variable $T$ at each interior grid point $x_m$ is computed from values of $T$ at
+three grid points, $x_{m-1}$, $x_m$ and $x_{m+1}$, at the *preceding* time step.
 This expression defines an **explicit** scheme for solving the heat equation.
 Hence, the solution can be found at any time through a sequence of time steps.
-This scheme is known as the **FTCS** scheme, which stands for <u>F</u>orward in <u>T</u>ime, <u>C</u>entral in <u>S</u>pace, since we have used
+This scheme is known as the **FTCS** scheme, which stands for <u>F</u>orward in <b>T</b>ime, <b>C</b>entral in <bS</b>pace, since we have used
 the forward approximation in time with explicit Euler and the central differences in space.
