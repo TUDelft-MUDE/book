@@ -456,9 +456,10 @@ $$
 \begin{align*}
 \tau_{\mbox{\tiny $\Delta t,\Delta x$}} &= \frac{T(x,t+\Delta t)-T(x,t)}{\Delta t} - \kappa \, \frac{T(x+\Delta x,t)-2T(x,t)+T(x-\Delta x,t)}{\Delta x^2} \\
                                         &\\
-                                        &=\pderiv{T}{t}(x,t)+\frac 12 \Delta t \pderiv{^2 T}{t^2}(x,t) - \kappa \pderiv{^2 T}{x^2}(x,t) - \frac{\kappa\Delta x^2}{12}\pderiv{^4 T}{x^4}(x,t) + \ldots\\
+                                        &=\frac{\partial T}{\partial t}(x,t)+\frac 12 \Delta t \frac{\partial^2 T}{\partial t^2}(x,t) - \kappa \frac{\partial^2 T}{\partial x^2}(x,t) -
+                                          \frac{\kappa\Delta x^2}{12}\frac{\partial^4 T}{\partial x^4}(x,t) + \ldots\\
                                         &\\
-                                        &=\frac 12 \Delta t \pderiv{^2 T}{t^2}(x,t) - \frac{\kappa\Delta x^2}{12}\pderiv{^4 T}{x^4}(x,t) + \ldots
+                                        &=\frac 12 \Delta t \frac{\partial^2 T}{\partial t^2}(x,t) - \frac{\kappa\Delta x^2}{12}\frac{\partial^4 T}{\partial x^4}(x,t) + \ldots
 \end{align*}
 $$
 
