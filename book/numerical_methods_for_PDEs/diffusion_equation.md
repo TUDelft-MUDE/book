@@ -422,7 +422,7 @@ Application of explicit Euler to Eq. {eq}`modedif1` yields
 
 $$
   \frac{T^{n+1}_m-T^n_m}{\Delta t} = \kappa \, \frac{T^n_{m+1}-2T^n_m+T^n_{m-1}}{\Delta x^2}\, , \quad m=1,\ldots,M-1\, , \quad n =0,1,2,\ldots
-$$
+$$ (ftcs)
 
 with $\Delta t$ the time step and $T^n_m \approx T(m\Delta x,n\Delta t)$ a discrete grid function, which
 represents the wanted numerical solution to the heat equation, Eq. {eq}`diffusion1`, at time step $n$ and grid point $m$.
@@ -430,7 +430,7 @@ We can re-arrange this equation as follows
 
 $$
   T^{n+1}_m = T^n_m + \frac{\kappa \Delta t}{\Delta x^2} \, \left (T^n_{m+1}-2T^n_m+T^n_{m-1} \right )
-$$ (ftcs)
+$$ (ftcs2)
 
 At each *new* time step, the dependent variable $T$ at each interior grid point $x_m$ is computed from values of $T$ at
 three grid points, $x_{m-1}$, $x_m$ and $x_{m+1}$, at the *preceding* time step.
@@ -469,7 +469,8 @@ $$
   \tau_{\Delta t,\Delta x} = \frac{T(x_m,t_{n+1})-T(x_m,t_n)}{\Delta t} - \kappa \, \frac{T(x_{m+1},t_n)-2T(x_m,t_n)+T(x_{m-1},t_n)}{\Delta x^2}
 $$
 
-with $T(x,t)$ a sufficiently smooth, exact solution to the heat equation {eq}`diffusion1`. So,
+with $T(x,t)$ a sufficiently smooth, exact solution to the heat equation {eq}`diffusion1`. Because of this, we can use the Taylor series expansions of
+$T(x_m,t_{n+1}$ and $T(x_{m\pm1},t_n)$ to further evaluate the truncation erorr. So,
 
 $$
 \begin{align*}
@@ -509,8 +510,8 @@ According to this definition, the FTCS scheme {eq}`ftcs` is consistent with the 
 The above error analysis shows how well the FTCS scheme approximates the original
 heat equation in the limit of $\Delta x, \Delta t \to 0$. However, it does *not* show how well the
 numerical solution approximates the exact solution of the heat equation. This is a matter of **convergence**.
+
 In the study of convergence of a finite difference method, there are two issues to be considered.
-Firstly, whether the numerical approximation is *consistent* with the
-PDE we wish to solve. Secondly, whether the considered numerical recipe is *stable*, that is, its numerical solution remains bounded
-in case of endless repeating of this recipe, with fixed $\Delta t$ and $\Delta x$.
-This topic of **stability** will be investigated in some detail in the next section.
+
+- Firstly, whether the numerical approximation is *consistent* with the PDE we wish to solve.
+- Secondly, whether the considered numerical recipe is *stable*, that is, its numerical solution remains bounded in case of endless repeating of this recipe, with fixed $\Delta t$ and $\Delta x$. This topic of **stability** will be investigated in some detail in the next section.
