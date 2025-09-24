@@ -506,7 +506,7 @@ This ODE can be approximated using the forward Euler scheme which yields
 
 $$
   \frac{T^{n+1}_M - T^n_M}{\Delta t} = \frac{2 \kappa}{\Delta x^2} \left ( T^n_{M-1} - T^n_M \right )
-$$
+$$ (ftcsn)
 
 Compute the associated truncation error.
 
@@ -595,7 +595,7 @@ In the study of convergence of a numerical scheme, there are two issues to be co
 - Firstly, whether the numerical approximation is __*consistent*__ with the PDE we wish to solve.
 - Secondly, whether the considered numerical scheme is __*stable*__, that is, its numerical solution remains bounded in case of endless repeating of this scheme, with fixed $\Delta t$ and $\Delta x$. This topic of **stability** will be investigated in some detail in the next section.
 
-With these two notions, we can apply the following
+With these two considerations, we can apply the following
 
 ```{admonition} Basic rule
 :class: tip
@@ -611,14 +611,68 @@ between the computed solution and the exact solution of the numerical scheme. It
 
 ## Stability
 
-We may write the FTCS scheme {eq}`ftcs2` in the matrix-vector notation, as follows (see also {eq}`discmat1`)
+We may write the FTCS scheme {eq}`ftcs`  and {eq}`ftcsn` in the matrix-vector notation, as follows (see also {eq}`discmat1`)
 
 $$
   \vec{T}^{n+1} = \left ( I + \Delta t A \right ) \vec{T}^{n} + \Delta t \,\vec{g}
 $$
 
-with $\vec{T}^n = (T^n_1,\cdots,T^n_M)^{\mbox{\tiny T}}$ being the vector representing the numerical solution at time step $n$ and
+with $\vec{T}^n = (T^n_1,\cdots,T^n_M)^{\text{T}}$ being the vector representing the numerical solution at time step $n$ and
 $A$ is the discretization matrix as given by Eq. {eq}`matrdiff2`. Matrix $I$ is the identity matrix.
-A way to check stability is to consider the eigenvalues $\lambda_m$ of the matrix $I + \Delta t A$ and subsequently require $|\lambda_m| \leq 1$.
-However, the matrices $A$ and $I$ are an $M \times M$ matrix with $M = L/\Delta x$ so that its dimension is growing as $\Delta x \to 0$. So, we might
+A way to check stability is to consider the eigenvalues $\lambda_m$ of the matrix $I + \Delta t A$ and subsequently require $|\lambda_m| \leq 1\, \quad \forall m$.
+However, the matrices $A$ and $I$ are an $M \times M$ matrix with $M = L/\Delta x$ so that its dimension is growing as $\Delta x \to 0$. Hence, we might
 not be able to determine eigenvalues of such a large matrix, because of the cumbersome and laborious algebra.
+
+From a physical point of view, the solution to the heat equation {eq}`diffusion1` cannot be negative, that is, we must have $T(x,t) \geq 0\, , \forall x \in [0,L]\,, \forall t \geq 0$.
+This implies that our finite difference scheme should share the same property, so that the numerical solution remains non-negative as time progresses.
+As a consequence, **spurious oscillations** (wiggles) will not occur. It is well known that in the case of <u>diffusion processes</u>, wiggles in the solution
+will blow up and thus will be unbounded in finite time. To prevent this instability, we have to require that our numerical scheme should not exhibit spurious oscillations.
+
+Recall {eq}`ftcs2`. We can rewrite this equation as follows
+
+$$
+  T^{n+1}_m = \left ( 1 - \frac{2\kappa \Delta t}{\Delta x^2} \right ) T^n_m + \frac{\kappa \Delta t}{\Delta x^2} \, \left ( T^n_{m+1}+T^n_{m-1} \right )
+$$
+
+Assume that $T^n_m \geq 0$ for all grid points $m = 1,\ldots,M-1$. If
+
+$$
+  1 - \frac{2\kappa \Delta t}{\Delta x^2} \geq 0 \quad \Rightarrow \quad \frac{\kappa \Delta t}{\Delta x^2} \leq \frac 12
+$$
+
+then $T^{n+1}_m \geq 0$ for all grid points $m = 1,\ldots,M-1$. Hence, by <u>induction</u> it follows that the numerical solution is non-negative at all times.
+
+:::{card} Exercise
+
+Verify this condition for grid point $m=M$.
+
+```{admonition} Solution
+:class: tip, dropdown
+
+We rewrite {eq}`ftcsn` as follows
+
+$$
+  T^{n+1}_M = T^n_M + \frac{2 \kappa \, \Delta t}{\Delta x^2} \left ( T^n_{M-1} - T^n_M \right )
+$$
+
+or
+
+$$
+  T^{n+1}_M = \left ( 1 -  \frac{2 \kappa \, \Delta t}{\Delta x^2} \right ) \, T^n_M + \frac{2 \kappa \, \Delta t}{\Delta x^2} T^n_{M-1}
+$$
+
+We assume that the values $T^n_M$ and $T^n_{M-1}$ are non-negative.
+While the second term on the right-hand side is always non-negative, the first term is non-negative as long as the following condition holds
+
+$$
+  \frac{\kappa \Delta t}{\Delta x^2} \leq \frac 12
+$$
+
+which is the same condition for the inner points $m = 1,\ldots,M-1$.
+
+```
+:::
+
+## Implicit schemes
+
+Here we consider implicit schemes.
