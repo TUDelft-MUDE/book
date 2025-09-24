@@ -8,7 +8,10 @@ This section builds on Chapter {ref}`numerical_modelling` and discusses the nume
 **The learning objectives of this section are:**
 - describe the role of diffusion and identify the diffusion equation
 - formulate and discretize the diffusion equation using the finite difference method
-- assess various time integration schemes for the diffusion equation
+- compute the truncation error for a given numerical scheme
+- explain the notions of consistency and convergence and also clarify the differences between these two notions
+- explain the notion of stability
+- derive the stability condition for a conditionally stable scheme
 
 ```
 
@@ -643,11 +646,11 @@ $$
 then $T^{n+1}_m \geq 0$ for all grid points $m = 1,\ldots,M-1$. Hence, by <u>induction</u> it follows that the numerical solution is non-negative at all times.
 
 This resulted stability condition states that for a given $\Delta x$, the allowed value of $\Delta t$ must be small enough to keep the FTCS scheme {eq}`ftcs` stable.
-For this reason, the FTCS scheme is said to be **conditionally stable**
+For this reason, the FTCS scheme is said to be **conditionally stable**.
 
 :::{card} Exercise
 
-Verify this condition for grid point $m=M$.
+Verify the above stability condition for grid point $m=M$.
 
 ```{admonition} Solution
 :class: tip, dropdown
