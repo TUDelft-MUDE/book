@@ -9,7 +9,7 @@ This section builds on Chapter {ref}`numerical_modelling` and discusses the nume
 - describe the role of diffusion and identify the diffusion equation
 - formulate and discretize the diffusion equation using the finite difference method
 - compute the truncation error for a given numerical scheme
-- explain the notions of consistency and convergence and also clarify the differences between these two notions
+- explain the notions of consistency and convergence
 - explain the notion of stability
 - derive the stability condition for a conditionally stable scheme
 
@@ -220,7 +220,7 @@ also be approximated as follows
 $$\frac{\partial T}{\partial x} (m\Delta x,t) \approx \frac{T_{m+1/2}(t) - T_{m-1/2}(t)}{\Delta x}$$ (cdf2)
 
 which is central differences using *single* grid size. However, the quantities $T_{m\pm1/2}$ are not defined on the grid.
-In fact, there locations are in between the grid points and are called **midpoints**.
+In fact, their locations are in between the grid points and are called **midpoints**.
 Hence, they must be computed by means of **linear interpolation**, as follows
 
 $$
