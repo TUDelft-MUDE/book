@@ -442,9 +442,9 @@ the forward approximation in time with explicit Euler and the central difference
 ## Truncation error and consistency
 
 A common method to check the order of accuray of a numerical scheme is to computer its truncation error. This error is defined as the difference between the scheme and the PDE that we want to solve.
-It is denoted as $\tau_{\text{$\Delta t,\Delta x$}}$.
+It is denoted as $$\tau_{\text{$\Delta t,\Delta x$}}$$.
 
-Let us consider the FTCS scheme. We can derive its truncation error, as follows
+Let us consider the FTCS scheme {eq}`ftcs`. We can derive its truncation error, as follows
 
 $$
   \tau_{\text{$\Delta t,\Delta x$}} = \frac{T(x_m,t_{n+1})-T(x_m,t_n)}{\Delta t} - \kappa \, \frac{T(x_{m+1},t_n)-2T(x_m,t_n)+T(x_{m-1},t_n)}{\Delta x^2}
@@ -485,7 +485,7 @@ $$
 
 ```
 
-According to this definition, the FTCS scheme is consistent with the heat equation {eq}`diffusion1`.
+According to this definition, the FTCS scheme {eq}`ftcs` is consistent with the heat equation {eq}`diffusion1`.
 
 The above error analysis shows how well the FTCS scheme approximates the original
 heat equation in the limit of $\Delta x, \Delta t \to 0$. However, it does *not* show how well the
