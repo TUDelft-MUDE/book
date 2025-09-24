@@ -417,7 +417,7 @@ augmented with the Dirichlet boundary condition at $x=0$ and the homogeneous Neu
 ## Time integration
 
 The semi discretization of the heat equation leads to a linear system of first order ODEs, {eq}`modedif1`. The next step is to integrate this system over time.
-Our choice for time integration would be the explicit Euler scheme, since this is the most simple one.
+Our choice for time integration would be the <u>forward Euler scheme</u>, since this is the most simple one.
 Application of explicit Euler to Eq. {eq}`modedif1` yields
 
 $$
@@ -438,3 +438,58 @@ This expression defines an **explicit** scheme for solving the heat equation.
 Hence, the solution can be found at any time through a sequence of time steps.
 This scheme is known as the **FTCS** scheme, which stands for **F**orward in **T**ime, **C**entral in **S**pace, since we have used
 the forward approximation in time with explicit Euler and the central differences in space.
+
+## Truncation error and consistency
+
+A common method to check the order of accuray of a numerical scheme is to computer its truncation error. This error is defined as the difference between the scheme and the PDE that we want to solve.
+It is denoted as $\tau_{\mbox{\tiny $\Delta t,\Delta x$}}$.
+
+Let us consider the FTCS scheme. We can derive its truncation error, as follows
+
+$$
+  \tau_{\mbox{\tiny $\Delta t,\Delta x$}} = \frac{T(x_m,t_{n+1})-T(x_m,t_n)}{\Delta t} - \kappa \, \frac{T(x_{m+1},t_n)-2T(x_m,t_n)+T(x_{m-1},t_n)}{\Delta x^2}
+$$
+
+with $T(x,t)$ a sufficiently smooth, exact solution to the heat equation. So,
+
+$$
+\begin{align*}
+\tau_{\mbox{\tiny $\Delta t,\Delta x$}} &= \frac{T(x,t+\Delta t)-T(x,t)}{\Delta t} - \kappa \, \frac{T(x+\Delta x,t)-2T(x,t)+T(x-\Delta x,t)}{\Delta x^2} \\
+                                        &\\
+                                        &=\pderiv{T}{t}(x,t)+\frac 12 \Delta t \pderiv{^2 T}{t^2}(x,t) - \kappa \pderiv{^2 T}{x^2}(x,t) - \frac{\kappa\Delta x^2}{12}\pderiv{^4 T}{x^4}(x,t) + \ldots\\
+                                        &\\
+                                        &=\frac 12 \Delta t \pderiv{^2 T}{t^2}(x,t) - \frac{\kappa\Delta x^2}{12}\pderiv{^4 T}{x^4}(x,t) + \ldots
+\end{align*}
+$$
+
+and, thus
+
+$$
+  \tau_{\mbox{\tiny $\Delta t,\Delta x$}} = \mathcal{O} \left(\Delta t, \Delta x^2 \right)
+$$
+
+Hence, the FTCS scheme is first order in $\Delta t$ and second order in $\Delta x$.
+In practice, this means we can discretize the spatial domain quite
+coarsely but we must discretize the time interval more finely in order to achieve a required
+accuracy.
+
+```{note} Definition
+
+A numerical scheme is called **consistent** if and only if
+
+$$
+  \lim_{\Delta x, \Delta t \to 0} \tau_{\mbox{\tiny $\Delta t,\Delta x$}} = 0
+$$
+
+```
+
+According to this definition, the FTCS scheme is consistent with the heat equation {eq}`diffusion1`.
+
+The above error analysis shows how well the FTCS scheme approximates the original
+heat equation in the limit of $\Delta x, \Delta t \to 0$. However, it does *not* show how well the
+numerical solution approximates the exact solution of the heat equation. This is a matter of **convergence**.
+In the study of convergence of a finite difference method, there are two issues to be considered.
+Firstly, whether the numerical approximation is *consistent* with the
+PDE we wish to solve. Secondly, whether the considered numerical recipe is *stable*, that is, its numerical solution remains bounded
+in case of endless repeating of this recipe, with fixed $\Delta t$ and $\Delta x$.
+This topic of **stability** will be investigated in some detail in the next section.
