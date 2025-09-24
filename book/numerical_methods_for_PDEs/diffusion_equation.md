@@ -494,7 +494,7 @@ In practice, this means we can discretize the spatial domain quite
 coarsely but we must discretize the time interval more finely in order to achieve a required
 accuracy.
 
-## Consistency, stability and convergence
+## Consistency and convergence
 
 ```{admonition} Definition (consistency)
 :class: tip
@@ -532,7 +532,7 @@ In the study of convergence of a numerical scheme, there are two issues to be co
 With these two notions, we can apply the following
 
 ```{admonition} Basic rule
-:class: note
+:class: tip
 
 <center>consistency + stability $\Rightarrow$ convergence</center>
 
@@ -542,3 +542,7 @@ Since proof of convergence is the hard one, effort in the other two aspects is e
 Consistency defines a relation between the numerical scheme and the PDE we wish to solve, whereas stability establishes a relation
 between the computed solution and the exact solution of the numerical scheme. It should be emphasised that stability is a requirement
 *just* on the numerical scheme and does not involve any condition on the PDE.
+
+## Stability
+
+Here we consider stability.
