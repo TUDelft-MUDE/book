@@ -1,0 +1,255 @@
+<!--
+SPDX-License-Identifier: CC-BY-4.0
+Copyright (c) 2025 Maximilian Ramgraber
+
+This work is licensed under the Creative Commons Attribution 4.0 International License (CC BY 4.0).
+You are free to share and adapt for any purpose, even commercially, with attribution.
+Full text: https://creativecommons.org/licenses/by/4.0/
+-->
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <title>QQ plot — empirical vs theoretical</title>
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <style>
+    body{ margin:0; overflow:hidden; font-family:Helvetica, sans-serif; }
+    .axis text{ font-family:Helvetica, sans-serif; }
+    .cdf-th{ stroke:#666; stroke-width:2; fill:none; }
+    .pt{ fill:#666; opacity:0.9; }
+    #ui label{ display:block; margin:8px 0 2px; }
+    #ui input[type=range]{ width:100%; }
+    #ui select{ width:100%; }
+  </style>
+</head>
+<body>
+  <svg id="click"></svg>
+  <div id="ui" style="position:absolute;"></div>
+<script>
+/* =============================
+   Layout (keep original style)
+============================= */
+const vw = Math.max(document.documentElement.clientWidth  || 0, window.innerWidth  || 0) * 0.95;
+const vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0) * 0.95;
+const aspect = 2;
+let width, height;
+if (vw/aspect < vh){ width = vw; height = vw/aspect; } else { width = vh*aspect; height = vh; }
+
+const svg  = d3.select('#click').attr('width',width).attr('height',height);
+const fsz  = (12 * width / 600) + 'px';
+
+const margin = {top: height*0.10, right: width*0.06, bottom: height*0.12, left: width*0.10};
+const gap = width*0.06;
+const innerW = width - margin.left - margin.right;
+const innerH = height - margin.top - margin.bottom;
+const paneW = (innerW - gap) / 2;
+const leftX0  = margin.left;
+const rightX0 = margin.left + paneW + gap;
+
+/* =============================
+   Data (hard-coded)
+============================= */
+const data = [
+  0.98194733,  1.66749077, -0.13183068,  0.62309398,  1.26533973,
+  5.61990436,  0.59890643,  0.26974686,  1.59431413,  0.40689944,
+  0.83167375, -0.39046155, -0.77899569,  3.43545665,  4.83212914,
+  2.37128186,  0.41411594,  0.22488237,  2.45569464, -0.07240572,
+  2.33921594,  0.46462342,  0.93328153,  3.31543159,  3.07112015,
+  0.25590279,  3.74990303,  2.43602711,  2.09708138,  2.19298702,
+  1.24771668,  3.13445551,  0.78637088,  4.08218   ,  2.55974094,
+  1.96489725,  1.84749238,  0.35578462,  1.20037955,  0.70761979,
+  0.9685647 ,  1.05452713,  0.91675663,  1.64658074,  0.38682376,
+ -0.18509724,  1.34094439,  3.83545275,  0.72670529,  1.74730972,
+  1.9450609 ,  1.41811587,  1.57856068,  0.88364105,  1.4318066 ,
+  0.55509721,  0.50513126,  0.91202747,  0.89708955,  2.01400649,
+  1.25480656,  1.55071057, -0.5598337 ,  0.07888272,  2.02184443,
+  1.88066812,  2.03572719,  1.23185395,  1.03162   ,  2.97535322,
+  3.63460355,  1.29027105,  2.80923168,  0.27333185,  0.83156707,
+  2.82236938,  0.84239514,  5.12162921,  2.65061315,  1.74307538,
+  0.09949422, -0.08532181,  2.70532095,  3.11604433,  3.56610081,
+  2.86152801,  0.13124214,  0.68736844,  4.23072539,  4.72905657,
+  2.57271601,  1.29246143,  1.66392584,  1.96295435,  0.32413979,
+  1.32740132,  1.38922566,  0.40388547, -0.09240789,  0.96563671
+];
+const N = data.length;
+const empirical = [...data].sort((a,b)=>a-b);
+
+/* =============================
+   Scales, axes, layers
+============================= */
+const x = d3.scaleLinear().range([leftX0, leftX0 + paneW]);
+const y = d3.scaleLog().range([margin.top + innerH, margin.top]);
+
+const gX = svg.append('g').attr('transform',`translate(0,${margin.top+innerH})`).style('font-size',fsz);
+const gY = svg.append('g').attr('transform',`translate(${leftX0},0)`).style('font-size',fsz);
+
+svg.append('text')
+  .attr('x', leftX0 + paneW/2)
+  .attr('y', margin.top - 12)
+  .style('text-anchor','middle')
+  .style('font-size', fsz)
+  .text('log scale plot');
+
+svg.append('text')
+  .attr('transform',`translate(${leftX0 + paneW/2},${height - margin.bottom*0.4})`)
+  .style('text-anchor','middle').style('font-size',fsz).text('x');
+
+svg.append('text')
+  .attr('transform',`translate(${leftX0 - margin.left*0.85},${margin.top + innerH/2}) rotate(-90)`)
+  .style('text-anchor','middle').style('font-size',fsz).text('P[X > x]');
+
+const thPath = svg.append('path').attr('class','cdf-th');
+const ptsG   = svg.append('g');
+const thLine = d3.line().x(d=>x(d.x)).y(d=>y(d.y));
+
+/* =============================
+   Distributions (CDFs)
+============================= */
+function erf(x){ const s = x<0 ? -1 : 1; x = Math.abs(x); const a1=0.254829592,a2=-0.284496736,a3=1.421413741,a4=-1.453152027,a5=1.061405429,p=0.3275911; const t=1/(1+p*x); const yv=1-((((a5*t+a4)*t+a3)*t+a2)*t+a1)*t*Math.exp(-x*x); return s*yv; }
+function normCdf(z){ return 0.5*(1+erf(z/Math.SQRT2)); }
+
+const distDefs = {
+  gaussian: {
+    name: 'Gaussian PDF',
+    params: [
+      {key:'mu',  label:'mean (μ)',   min: null, max: null, val: 0, step: 0.01},
+      {key:'sig', label:'stdev (σ)',  min: 0.05, max: null, val: 1, step: 0.01}
+    ],
+    cdf: (xv, {mu, sig}) => normCdf((xv - mu) / sig)
+  },
+  gumbel: {
+    name: 'Gumbel PDF',
+    params: [
+      {key:'mu',   label:'location (μ)', min: null, max: null, val: 0, step: 0.01},
+      {key:'beta', label:'scale (β)',    min: 0.05, max: null, val: 1, step: 0.01}
+    ],
+    cdf: (xv, {mu, beta}) => Math.exp(-Math.exp(-(xv - mu)/beta))
+  },
+  exponential: {
+    name: 'Exponential PDF',
+    params: [
+      {key:'lambda', label:'rate (λ)', min: 0.01, max: 5, val: 1, step: 0.01}
+    ],
+    cdf: (xv, {lambda}) => (xv < 0 ? 0 : 1 - Math.exp(-lambda * xv))
+  }
+};
+
+/* =============================
+   UI (right pane)
+============================= */
+const ui = d3.select('#ui')
+  .style('left', rightX0 + 'px')
+  .style('top',  margin.top + 'px')
+  .style('width', paneW + 'px')
+  .style('font-size', fsz);
+
+ui.append('div').style('margin-bottom','6px')
+  .append('label').text('Distribution');
+
+const selectEl = ui.append('select')
+  .on('change', function(){ renderParams(this.value); });
+
+selectEl.selectAll('option')
+  .data(Object.keys(distDefs))
+  .enter().append('option')
+    .attr('value', d => d)
+    .text(d => distDefs[d].name);
+
+const paramsDiv = ui.append('div').attr('id','params');
+
+// helpers for default ranges
+const dMin = d3.min(data), dMax = d3.max(data);
+const mean = d3.mean(data);
+const sd = Math.sqrt(d3.mean(data.map(v => (v-mean)*(v-mean))));
+
+function renderParams(kind){
+  paramsDiv.html('');
+  const def = distDefs[kind];
+  def.params.forEach(p => {
+    // set default ranges if needed
+    if (p.min == null) p.min = Math.min(dMin - sd*2, mean - sd*3);
+    if (p.max == null) p.max = Math.max(dMax + sd*2, mean + sd*3);
+    if (kind==='gaussian' && p.key==='sig'){ p.min = Math.max(0.05, sd*0.25); p.max = Math.max(1, sd*3); p.val = Math.max(0.1, sd); }
+    if (kind==='gumbel'   && p.key==='beta'){ p.min = Math.max(0.05, sd*0.25); p.max = Math.max(1, sd*3); p.val = Math.max(0.1, sd*Math.SQRT6/Math.PI); }
+    if (kind==='exponential' && p.key==='lambda'){ p.min = 0.01; p.max = Math.max(5, 1/Math.max(0.1, mean)); p.val = 1; }
+
+    const wrap = paramsDiv.append('div');
+    wrap.append('label').text(p.label);
+    const row = wrap.append('div');
+    const inp = row.append('input')
+      .attr('type','range')
+      .attr('min', p.min)
+      .attr('max', p.max)
+      .attr('step', p.step)
+      .attr('value', p.val)
+      .on('input', updatePlot);
+    row.append('span')
+      .style('float','right')
+      .style('margin-left','8px')
+      .attr('class','val')
+      .text(p.val.toFixed(3));
+    p._input = inp;
+    p._readout = row.select('span');
+  });
+  updatePlot();
+}
+
+selectEl.property('value','gaussian');
+renderParams('gaussian');
+
+/* =============================
+   Update & draw
+============================= */
+function currentParams(kind){
+  const out = {};
+  distDefs[kind].params.forEach(p => { out[p.key] = +p._input.node().value; });
+  return out;
+}
+
+function updatePlot(){
+  const kind = d3.select('#ui select').node().value;
+  // update readouts
+  distDefs[kind].params.forEach(p => p._readout.text((+p._input.node().value).toFixed(3)));
+  const params = currentParams(kind);
+  const cdf = (xv) => distDefs[kind].cdf(xv, params);
+  const sf  = (xv) => Math.max(1e-9, 1 - cdf(xv));
+
+  // domains
+  const xmin = d3.min(empirical), xmax = d3.max(empirical);
+  const pad = (xmax - xmin) * 0.03 || 1e-6;
+  x.domain([xmin - pad, xmax + pad]);
+
+  // empirical exceedance (Weibull plotting position to avoid 0)
+  const empPts = empirical.map((e,i)=>({ x: e, y: (N - i) / (N + 1) }));
+
+  // theoretical exceedance curve across the range
+  const xs = d3.range(0, 200).map(i => {
+    const xx = (xmin - pad) + (i / 199) * ((xmax + pad) - (xmin - pad));
+    return {x: xx, y: sf(xx)};
+  });
+
+  // set log domain safely
+  const minEmp = d3.min(empPts, d=>d.y);
+  const minTh  = d3.min(xs,    d=>d.y);
+  const ymin   = Math.max(1e-6, Math.min(minEmp, minTh));
+  y.domain([ymin, 1]);
+
+  gX.call(d3.axisBottom(x).ticks(5));
+  gY.call(d3.axisLeft(y).ticks(6, '~g'));
+
+  // draw fitted line
+  thPath.attr('d', thLine(xs));
+
+  // draw empirical points
+  const pts = ptsG.selectAll('circle').data(empPts);
+  pts.enter().append('circle').attr('class','pt').attr('r', 3 * height/600)
+    .merge(pts)
+    .attr('cx', d => x(d.x))
+    .attr('cy', d => y(Math.max(d.y, ymin)));
+  pts.exit().remove();
+}
+
+d3.select('#ui').style('font-size', fsz);
+</script>
+</body>
+</html>
