@@ -192,13 +192,13 @@ $$
 To check consistency we must require the solution $c(x,t)$ to be smooth, so that we can apply the following Taylor series expansions
 
 $$
-  c(x,t+\Delta t) = c(x,t) + \Delta t\, c_t(x,t) + \frac 12 \Delta t^2\, c_tt(x,t)
+  c(x,t+\Delta t) = c(x,t) + \Delta t\, c_t(x,t) + \frac 12 \Delta t^2\, c_{tt}(x,t)
 $$
 
 and
 
 $$
-  c(x-\Delta x,t) = c(x,t) - \Delta x\, c_x(x,t) + \frac 12 \Delta x^2\, c_xx(x,t)
+  c(x-\Delta x,t) = c(x,t) - \Delta x\, c_x(x,t) + \frac 12 \Delta x^2\, c_{xx}(x,t)
 $$
 
 Note that both series have been expanded till second order ("*first derivative + first order accuracy*").
@@ -209,7 +209,7 @@ $$
 \begin{align*}
 \tau_{\Delta t,\Delta x} &= \frac{c(x,t+\Delta t)-c(x,t)}{\Delta t} + u \, \frac{c(x,t)-c(x-\Delta x,t)}{\Delta x} \\
                          &\\
-                         &=\frac{\partial c}{\partial t}(x,t)+\frac 12 \Delta t \frac{\partial^2 c}{\partial t^2}(x,t) + \u \frac{\partial c}{\partial x}(x,t) -
+                         &=\frac{\partial c}{\partial t}(x,t)+\frac 12 \Delta t \frac{\partial^2 c}{\partial t^2}(x,t) + u \frac{\partial c}{\partial x}(x,t) -
                            \frac{u\Delta x}{2}\frac{\partial^2 c}{\partial x^2}(x,t) + \ldots\\
                          &\\
                          &=\frac 12 \Delta t \frac{\partial^2 c}{\partial t^2}(x,t) - \frac{u\Delta x}{2}\frac{\partial^2 c}{\partial x^2}(x,t) + \ldots
@@ -255,11 +255,11 @@ $$
   c^{n+1}_m = (1-\sigma)c^n_m + \sigma c^n_{m-1}
 $$
 
-We assume by induction that $c^n_m \geq 0$ and $c^n_{m-1} \geq 0$. Then $c^{n+1}_m \geq 0$ if $1-\sigma \geq 0$.
+We assume by induction that $c^n_m \geq 0$ and $c^n_{m-1} \geq 0$. Then $c^{n+1}_m \geq 0$ if $1-\sigma \geq 0$ and $\sigma \geq 0$.
 Hence, the stability condition of the FTBS scheme reads
 
 $$
-  \sigma = \frac{u\,\Delta t}{\Delta x} \leq 1
+  0 \leq \sigma \leq 1
 $$
 
 This condition is known as the *Courant-Friedrichs-Lewy* (**CFL**) condition. The CFL condition plays an important role
