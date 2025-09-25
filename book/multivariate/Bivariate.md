@@ -45,11 +45,11 @@ Note that when talking about the Gaussian distribution instead of using $F_{X_1,
 You can play with the interactive element below changing the correlation value yourself. Observe how the distribution's _density_ contours, or a scatter plot of _samples,_ change when you adjust the correlation.
 
 
-```{iframe-figure} ../_static/elements/element_correlation.html
+````{iframe-figure} ../_static/elements/element_correlation.html
 :name: element_correlation_bivariate
----
-Correlation in a bivariate Gaussian distribution (figure by Max Ramgraber, {ref}`Find out more here <multivariate_credit>`).
-```
+
+Correlation in a bivariate Gaussian distribution [^ref].
+````
 
 In the figure below, you can observe the PDF and CDF of a bivariate Gaussian distribution for a correlation coefficient $\rho=0.77$ (remember the relation between correlation and covariance).
 
@@ -235,6 +235,8 @@ $$
 Use the multivariate Gaussian distribution implemented in Scipy.stats to plot the density contours of the conditional and unconditional bivariate distributions. How has the distribution changed?
 ```
 :::
+
+[^ref]: Figure by Max Ramgraber, `find out more here <multivariate_credit>`.
 
 % START-CREDIT
 % source: distributions
