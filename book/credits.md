@@ -104,28 +104,6 @@ Credits are provided here for chapters and pages that are released under the lic
 >
 > Special thanks goes to João Moura Pereira de Lucas Teixeira, who created first draft of pages from powerpoint slides.
 
-(uncertainty_propagation_credit)=
-### Chapter: Uncertainty Propagation
-
-> {ref}`Propagation of Uncertainty <01_errorprop>` is written by Sandra Verhagen.
->
-> Special thanks goes to:
-> - Robert Lanzafame, Patricia Mares Nasarre and Max Ramgraber, who reviewed, commented and/or modified content. 
-> - Sophie Keemink, Caspar Jungbacker and Thirza Feenstra, who provided feedback and helped develop exercises.
-> - Antonio Magherini, who created first draft of pages from powerpoint slides.
->
-> {ref}`This <density_scatter_3>` and {ref}`this interactive figure on the correlation coefficient <2D_Gaussian>` are created by Max Ramgraber ([maxramgraber.com/interactive](https://www.maxramgraber.com/interactive)), which are published with a CC BY license and included in this book without modification.
-
-(observation_theory_credit)=
-### Chapter: Observation Theory
-
-> {ref}`Observation theory <OT>` is written by Sandra Verhagen.
->
-> Special thanks goes to:
-> - Peter Teunissen and Christiaan Tiberius who co-shaped the material, indirectly, through collaboration with the author as TU Delft colleagues.
-> - The books _Adjustment theory: an introduction_ {cite:p}`adjustment_theory` and _Testing theory: an introduction_ {cite:p}`testing_theory` which provided the framework for this chapter.
-> - Sophie Keemink, Caspar Jungbacker and Thirza Feenstra, who provided feedback and helped develop exercises.
-
 (numerical_modelling_credit)=
 ### Chapter: Numerical Modelling
 
@@ -152,10 +130,32 @@ Credits are provided here for chapters and pages that are released under the lic
 ### Chapter: Multivariate Distributions
 
 > {ref}`Multivariate Distributions <mult_dist>` is written by Patricia Mares Nasarre and Robert Lanzafame.
-
+>
 > Special thanks goes to Oswaldo Morales Napoles and Elisa Ragno for suggestions on the theoretical and didactic framework, as well as critical feedback and review.
-
+>
 > The interactive figure on correlation is created by Max Ramgraber ([maxramgraber.com/interactive](https://www.maxramgraber.com/interactive)), published with a CC BY license and included in this book without modification. 
+
+(uncertainty_propagation_credit)=
+### Chapter: Uncertainty Propagation
+
+> {ref}`Propagation of Uncertainty <01_errorprop>` is written by Sandra Verhagen.
+>
+> Special thanks goes to:
+> - Robert Lanzafame, Patricia Mares Nasarre and Max Ramgraber, who reviewed, commented and/or modified content. 
+> - Sophie Keemink, Caspar Jungbacker and Thirza Feenstra, who provided feedback and helped develop exercises.
+> - Antonio Magherini, who created first draft of pages from powerpoint slides.
+>
+> {ref}`This <density_scatter_3>` and {ref}`this interactive figure on the correlation coefficient <2D_Gaussian>` are created by Max Ramgraber ([maxramgraber.com/interactive](https://www.maxramgraber.com/interactive)), which are published with a CC BY license and included in this book without modification.
+
+(observation_theory_credit)=
+### Chapter: Observation Theory
+
+> {ref}`Observation theory <OT>` is written by Sandra Verhagen.
+>
+> Special thanks goes to:
+> - Peter Teunissen and Christiaan Tiberius who co-shaped the material, indirectly, through collaboration with the author as TU Delft colleagues.
+> - The books _Adjustment theory: an introduction_ {cite:p}`adjustment_theory` and _Testing theory: an introduction_ {cite:p}`testing_theory` which provided the framework for this chapter.
+> - Sophie Keemink, Caspar Jungbacker and Thirza Feenstra, who provided feedback and helped develop exercises.
 
 (finite_volume_method_credit)=
 ### Chapter: PDEs and the Finite Volume Method
