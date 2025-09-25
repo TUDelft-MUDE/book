@@ -16,10 +16,10 @@ into the equation above. The function $c^0(x-ut)$ is a solution for
 is simply the graph of $c^0(x)$ shifted to the right by $ut$ spatial units. As time
 increases, the profile $c^0(x)$ moves to the right at speed $u$.
 Thus solutions are simply propagated, or **advected**, with constant
-speed $u$ without *deforming*, that is, no change in shape. If $u > 0$, propagation is from left to right. If $u < 0$, propagation is from right to left.
+speed $u$ without *deforming*, that is, no change in shape. If $u > 0$, propagation is from left to right. If $u < 0$, propagation is from right to left, that is, **left-travelling waves**.
 
 Advection is thus an example of transport by fluid motion. Another example is **convection** which is the transport of a fluid (water or air) in response to heat, for instance, boiling water.
-Although, these two terms are interchangeably in mathematical sense, *advection* is the usual term (especially in hydraulic engineering).
+Although, these two terms are interchangeably in mathematical sense, <u>advection</u> is the usual term (especially in hydraulic engineering).
 
 The above described problem is an initial value problem (IVP). Now, let us consider a 1D domain with a finite length $L$, that is, $0 \leq x \leq L$.
 In this case we need to impose some boundary conditions. A boundary condition is needed at a certain boundary location where the information *enters* the domain.
@@ -38,12 +38,64 @@ $$
 $$ (advection2)
 
 where $f(t)$ described the incoming wave-like disturbance; this function is usually expressed as a Fourier timeseries.
-This IBVP is called the **wave equation** and is commonly applied in wave modelling.
+This IBVP is called the **wave equation** and is commonly applied in wave modelling but also in sediment transport.
 
 In contrast to the diffusion equation {eq}`diffusion1`, the solution to the advection equation is not necessarily smooth. In other words, $c(x,t)$ is allowed to be discontinuities or
-non-smooth. Examples are shock waves, hydraulic jumps and tidal bores. Although the wave equation appears seemingly simple, the numerical solution to this equation is quite a challenge, as we
+non-smooth. Examples are shock waves, hydraulic jumps and tidal bores. Although the wave equation {eq}`advection1` appears seemingly simple, the numerical solution to this equation is quite a challenge, as we
 will discover below.
 
-## Discretization of advection equation
+## Discretization
 
-Here we consider discretization.
+We reconsider the computional grid as discussed in Section {ref}`diffusion`.
+We apply the MOL approach, so that we first discretize in space and then integrate over time.
+
+A possible candidate for the spatial approximation would be central differences
+(cf. Eq. {eq}`cdf1`), as follows
+
+$$
+  \frac{dc_m(t)}{dt} + u \frac{c_{m+1}(t) - c_{m-1}(t)}{2\Delta x} = 0\, , \quad m=1,\ldots,M-1\, , \quad t > 0
+$$
+
+This is a semi discretization of Eq. {eq}`convection1` for the *inner* grid points of the computational domain.
+
+:::{card} Exercise
+
+Verify yourself that this spatial discretization is second order accurate.
+
+:::
+
+The resulted system of first order ODEs with the unknowns $c_m(t)$ can be written as
+
+$$
+  \frac{d\vec{c}}{dt} = A \vec{c}
+$$
+
+with $\vec{c} = (c_1,\cdots,c_{M-1})^{\text{T}}$ being the vector representing the unknowns and
+matrix $A$ is the $(M-1) \times (M-1)$ discretization matrix as given by
+
+$$
+   A=   \frac{u}{2\Delta x} \left (
+   \begin{array}{rrrrrrr}    0       & -1 &  0      &          & \cdots &        &   0       \\
+                             1       &  0 & -1      &          &        &        &           \\
+                             0       &  1 &  0      & -1       &        &        &           \\
+                             \vdots  &    & \ddots  & \ddots   & \ddots &        &  \vdots   \\
+                                     &    &         &  1       &  0     & -1     &   0       \\
+                                     &    &         &          &  1     &  0     &  -1       \\
+                             0       &    &         & \cdots   &        &  1     &   0
+   \end{array} \right )
+$$
+
+The next step is to integrate the above system of ODEs with respect to time. Although the MOL approach is very flexible in the sense that
+the choice of time integration is independent of the choice of space discretization, we must be careful since the resulted scheme
+may not be stable. For example, let us choose the explicit (or forward) Euler scheme, we get
+
+$$
+\frac{c^{n+1}_m - c^{n}_m}{\Delta t} + u \frac{c^n_{m+1} - c^n_{m-1}}{2\Delta x} = 0\, , \quad m=1,\ldots,M-1\, , \quad n = 0, 1, 2, \ldots
+$$ (ftcs3)
+ 
+This explicit scheme is again the FTCS scheme but applied to the wave equation. In contrast to the diffusion equation (cf. Eq. {eq}`ftcs`),
+the FTCS scheme {eq}`ftcs3` is **unconditionally unstable**, that is, it is unstable for any time step. Therefore, the FTCS scheme is useless
+for any advection-type equation.
+
+This instability is related to the fact that the influence of the disturbance $c_m$ comes only from upstream, that is, $c_{m-1}$ if $u>0$
+(or $c_{m+1}$ if $u<0$) and not from downstream ($c_{m+1}$ respectively $c_{m-1}$).
