@@ -40,6 +40,12 @@ $$ (advection2)
 where $f(t)$ described the incoming wave-like disturbance; this function is usually expressed as a Fourier timeseries.
 This IBVP is called the **wave equation** and is commonly applied in wave modelling but also in sediment transport.
 
+```{note}
+
+Note that the above IBVP {eq}`advection2` would become ill posed if $u<0$.
+
+```
+
 In contrast to the diffusion equation {eq}`diffusion1`, the solution to the advection equation is not necessarily smooth. In other words, $c(x,t)$ is allowed to be discontinuities or
 non-smooth. Examples are shock waves, hydraulic jumps and tidal bores. Although the wave equation {eq}`advection1` appears seemingly simple, the numerical solution to this equation is quite a challenge, as we
 will discover below.
@@ -47,6 +53,7 @@ will discover below.
 ## Discretization
 
 We reconsider the computional grid as discussed in Section {ref}`diffusion`.
+Thus, we have our uniform mesh consisting of nodes $x_0,\cdots,x_{M}$ and $\Delta x = x_m - x_{m-1}$.
 We apply the MOL approach, so that we first discretize in space and then integrate over time.
 
 A possible candidate for the spatial approximation would be central differences
@@ -94,7 +101,7 @@ $$
 $$ (ftcs3)
  
 This explicit scheme is again the FTCS scheme but applied to the wave equation. In contrast to the diffusion equation (cf. Eq. {eq}`ftcs`),
-the FTCS scheme applied to the wave equation, Eq. {eq}`ftcs3` is **unconditionally unstable**, that is, it is unstable for any time step. Therefore, the FTCS scheme is useless
+this FTCS scheme {eq}`ftcs3` is **unconditionally unstable**, that is, it is unstable for any time step. Therefore, the FTCS scheme is useless
 for any advection-type equation.
 
 This instability is related to the fact that the influence of the disturbance only comes from upstream and not from downstream.
@@ -111,18 +118,60 @@ $$
   \frac{c^{n+1}_m - c^{n}_m}{\Delta t} + u \frac{c^{n+1}_{m+1} - c^{n+1}_{m-1}}{2\Delta x} = 0
 $$
 
-However, this is very unusual since the numerical solution is less straightforward to obtain. This can be seen as follows. Let us consider the system of ODEs {eq}`vecadv`
-and subsequently apply backward Euler. This yields
+However, this is very unusual since the numerical solution is less straightforward to obtain. This can be seen as follows.
+
+Let us consider the system of ODEs {eq}`vecadv` and subsequently apply backward Euler. This yields
 
 $$
-  \frac{\vec{c}^{n+1}-\vec{c}^n}{\Delta t} = A \vec{c}^{n+1} \quad \Rightarrow \quad \left ( I - \Delta t A \right ) \vec{c}^{n+1} = \vec{c}^n
+  \frac{\vec{c}^{n+1}-\vec{c}^n}{\Delta t} = A \, \vec{c}^{n+1} \quad \Rightarrow \quad \left ( I - \Delta t A \right ) \, \vec{c}^{n+1} = \vec{c}^n
 $$
 
 with $\vec{c}^n = (c^n_1,\cdots,c^n_{M-1})^{\text{T}}$ being the vector representing the numerical solution at time step $n$ and
 $A$ is the discretization matrix as given above. Matrix $I$ is the identity matrix.
 We see that the solution $\vec{c}^{n+1}$ cannot be computed immediately. Instead, we need to solve a linear system of $M-1$ equations for the $M-1$ unknowns at the new time step.
-In addition, the rank of the matrix $A$ is expressed as $M = L/\Delta x$ which can be quite large, especially is the mesh size $\Delta x$ is chosen very small.
+In addition, the rank of the matrix $A$ is expressed in terms of $M = L/\Delta x$ which can be quite large, especially if the mesh size $\Delta x$ is chosen very small.
 
 This observation generally holds for any implicit scheme.
 
 ```
+
+## The upwind method
+
+Since we are dealing with information being propagated along a certain direction, it would be better to propose a scheme that gathers information to be propagated
+in the same direction. For instance, the backward finite difference approximation, Eq. {eq}`bdfs`, applied to $\partial c/\partial x$ will gather information from the
+left to propagate, while the forward finite difference operator, Eq. {eq}`fdfs`, gathers from the right. Hence,
+our knowledge of which direction the wave should propagate indicates the **upwind** direction.
+If $u > 0$, then propagation of the disturbance is from left to right. So, the upwind direction is *to the left*, that is, the information is obtained from the **backward**
+direction. For $u < 0$, the upwind direction is *to the right* and so, the information is from the **forward** direction.
+
+The **upwind difference scheme** is given by
+
+$$
+  \frac{\partial c}{\partial x} =
+  \begin{dcases} \frac{c_{m}-c_{m-1}}{\Delta x}\, , \quad \text{if} \, \, u > 0 \\
+                 \\
+                 \frac{c_{m+1}-c_{m}}{\Delta x}\, , \quad \text{if} \, \, u < 0
+  \end{dcases}
+$$
+
+and it correctly passes information in the direction of the characteristic of the advection equation.
+This approximation is called **first order upwinding**.
+
+:::{card} Exercise
+
+Verify the first order accuracy of this scheme to $\partial c/\partial x$.
+
+:::
+
+Application of explicit Euler yields
+
+$$
+  c^{n+1}_m = c^n_m - \sigma
+  \begin{dcases} c^n_m - c^n_{m-1} \, , \quad \mbox{if} \, \, u > 0 \\
+                 \\
+                 c^n_{m+1} - c^n_m \, , \quad \mbox{if} \, \, u < 0
+  \end{dcases}
+$$ (ftbs)
+
+This scheme is called the **FTBS** scheme, which stands for **F**orward in **T**ime, **B**ackward in **S**pace,
+and is first order accurate in both time and space.
