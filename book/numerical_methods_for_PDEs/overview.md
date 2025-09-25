@@ -17,7 +17,7 @@ the Navier-Stokes equations that describe the motion of fluids, such as water in
 and the Maxwell's equations describing the propagation of electric and magnetic fields through a medium or vacuum.
 
 It is virtually impossible to solve the PDEs analytically, and one must therefore rely on numerical methods to find an
-approximate solution. These methods result in a discrete (algebraic) equations which can be solved in a finite sequence
+approximate solution. These methods result in discrete (algebraic) equations which can be solved in a finite sequence
 of algebraic operations on a computer.
 
 Various numerical approaches are used to discretize differential equations: finite difference methods,
@@ -26,4 +26,4 @@ finite volume methods, finite element methods, spectral methods, etc. The key no
 
 In this chapter, first, a brief review of **partial differential equations** is provided. Next, discretizations of the **diffusion
 equation** by employing the **finite difference method** are considered. This is followed by the approximatons of the **advection
-equation** and the **advection-diffusion equation**.
+equation** and finally the **advection-diffusion equation**.
