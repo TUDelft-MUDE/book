@@ -148,10 +148,10 @@ The **upwind difference scheme** is given by
 
 $$
   \frac{\partial c}{\partial x} =
-  \begin{dcases} \frac{c_{m}-c_{m-1}}{\Delta x}\, , \quad \text{if} \, \, u > 0 \\
+  \begin{cases} \frac{c_{m}-c_{m-1}}{\Delta x}\, , \quad \text{if} \, \, u > 0 \\
                  \\
                  \frac{c_{m+1}-c_{m}}{\Delta x}\, , \quad \text{if} \, \, u < 0
-  \end{dcases}
+  \end{cases}
 $$
 
 and it correctly passes information in the direction of the characteristic of the advection equation.
@@ -167,10 +167,10 @@ Application of explicit Euler yields
 
 $$
   c^{n+1}_m = c^n_m - \sigma
-  \begin{dcases} c^n_m - c^n_{m-1} \, , \quad \mbox{if} \, \, u > 0 \\
+  \begin{cases} c^n_m - c^n_{m-1} \, , \quad \mbox{if} \, \, u > 0 \\
                  \\
                  c^n_{m+1} - c^n_m \, , \quad \mbox{if} \, \, u < 0
-  \end{dcases}
+  \end{cases}
 $$ (ftbs)
 
 This scheme is called the **FTBS** scheme, which stands for **F**orward in **T**ime, **B**ackward in **S**pace,
