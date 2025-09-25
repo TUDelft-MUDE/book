@@ -140,15 +140,22 @@ Credits are provided here for chapters and pages that are released under the lic
 > {ref}`The figure on the left Riemann sum <openstax_fig_01>` is reproduced from {cite:t}`openstax_calculus` without modification and is _not_ included under the CC BY license of this book. The source content is provided with a CC BY NC SA license and can be accessed for free at [https://openstax.org/books/calculus-volume-2/pages/1-introduction](https://openstax.org/books/calculus-volume-2/pages/1-introduction).
 
 (distributions_credit)=
-### Chapters: Univariate and Multivariate Continuous Distributions
+### Chapter: Univariate Continuous Distributions
 
-> {ref}`Univariate Continuous Distributions <cont_dist>` and {ref}`Multivariate Distributions <mult_dist>` are written by Patricia Mares Nasarre, Robert Lanzafame and Max Ramgraber.
+> {ref}`Univariate Continuous Distributions <cont_dist>` is written by Patricia Mares Nasarre, Robert Lanzafame and Max Ramgraber.
 >
 > Special thanks goes to Oswaldo Morales Napoles and Elisa Ragno for suggestions on the theoretical and didactic framework, as well as critical feedback and review.
 >
-> Pages {ref}`One random variable <prob_design_1_rv>` and {ref}`Two random variables <prob_design_2_rv>` are from the Chapter _Probabilistic Design_ {cite:p}`lanzafame2024-pd` from the book Risk and Reliability for Engineers {cite:p}`lanzafame2024`, published with a CC BY license. Files are included without modification.
->
-> The interactive figures in on these pages are created by Max Ramgraber ([maxramgraber.com/interactive](https://www.maxramgraber.com/interactive)), which are published with a CC BY license and included in this book without modification.
+> The interactive figures in these pages are created by Max Ramgraber ([maxramgraber.com/interactive](https://www.maxramgraber.com/interactive)), which are published with a CC BY license and included in this book without modification.
+
+(multivariate_credit)=
+### Chapter: Multivariate Distributions
+
+> {ref}`Multivariate Distributions <mult_dist>` is written by Patricia Mares Nasarre and Robert Lanzafame.
+
+> Special thanks goes to Oswaldo Morales Napoles and Elisa Ragno for suggestions on the theoretical and didactic framework, as well as critical feedback and review.
+
+> The interactive figure on correlation is created by Max Ramgraber ([maxramgraber.com/interactive](https://www.maxramgraber.com/interactive)), published with a CC BY license and included in this book without modification. 
 
 (finite_volume_method_credit)=
 ### Chapter: PDEs and the Finite Volume Method

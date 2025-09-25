@@ -64,6 +64,6 @@ The following pages work through an example related to flooding on a river to il
 % source: distributions
 ```{attributiongrey} Attribution
 :class: attribution
-This chapter was written by Patricia Mares Nasarre and Robert Lanzafame. {ref}`Find out more here <distributions_credit>`.
+This chapter was written by Patricia Mares Nasarre and Robert Lanzafame. {ref}`Find out more here <multivariate_credit>`.
 ```
 % END-CREDIT

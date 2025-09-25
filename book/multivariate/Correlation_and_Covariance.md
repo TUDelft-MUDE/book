@@ -100,6 +100,6 @@ You can also play with the samples option in the interactive element below.
 % source: distributions
 ```{attributiongrey} Attribution
 :class: attribution
-This chapter was written by Patricia Mares Nasarre. {ref}`Find out more here <distributions_credit>`.
+This chapter was written by Patricia Mares Nasarre and Robert Lanzafame. {ref}`Find out more here <multivariate_credit>`.
 ```
 % END-CREDIT
