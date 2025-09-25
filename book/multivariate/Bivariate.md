@@ -47,6 +47,8 @@ You can play with the interactive element below changing the correlation value y
 
 ```{iframe-figure} ../_static/elements/element_correlation.html
 :name: element_correlation_bivariate
+---
+Correlation in a bivariate Gaussian distribution (figure by Max Ramgraber, {ref}`Find out more here <multivariate_credit>`).
 ```
 
 In the figure below, you can observe the PDF and CDF of a bivariate Gaussian distribution for a correlation coefficient $\rho=0.77$ (remember the relation between correlation and covariance).
