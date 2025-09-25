@@ -98,7 +98,7 @@ You can also play with the samples option in the interactive element below.
 Correlation in a bivariate Gaussian distribution [^ref]
 ````
 
-[^ref]: Figure by Max Ramgraber, `find out more here <multivariate_credit>`.
+[^ref]: Figure by Max Ramgraber, {ref}`find out more here <multivariate_credit>`.
 
 % START-CREDIT
 % source: distributions
