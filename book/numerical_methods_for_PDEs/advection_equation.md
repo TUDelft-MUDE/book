@@ -56,7 +56,7 @@ $$
   \frac{dc_m(t)}{dt} + u \frac{c_{m+1}(t) - c_{m-1}(t)}{2\Delta x} = 0\, , \quad m=1,\ldots,M-1\, , \quad t > 0
 $$
 
-This is a semi discretization of Eq. {eq}`convection1` for the *inner* grid points of the computational domain.
+This is a semi discretization of Eq. {eq}`advection1` for the *inner* grid points of the computational domain.
 
 :::{card} Exercise
 
@@ -68,7 +68,7 @@ The resulted system of first order ODEs with the unknowns $c_m(t)$ can be writte
 
 $$
   \frac{d\vec{c}}{dt} = A \vec{c}
-$$
+$$ (vecadv)
 
 with $\vec{c} = (c_1,\cdots,c_{M-1})^{\text{T}}$ being the vector representing the unknowns and
 matrix $A$ is the $(M-1) \times (M-1)$ discretization matrix as given by
@@ -87,15 +87,42 @@ $$
 
 The next step is to integrate the above system of ODEs with respect to time. Although the MOL approach is very flexible in the sense that
 the choice of time integration is independent of the choice of space discretization, we must be careful since the resulted scheme
-may not be stable. For example, let us choose the explicit (or forward) Euler scheme, we get
+may not be stable. For example, let us choose the forward Euler scheme, we get
 
 $$
-\frac{c^{n+1}_m - c^{n}_m}{\Delta t} + u \frac{c^n_{m+1} - c^n_{m-1}}{2\Delta x} = 0\, , \quad m=1,\ldots,M-1\, , \quad n = 0, 1, 2, \ldots
+  \frac{c^{n+1}_m - c^{n}_m}{\Delta t} + u \frac{c^n_{m+1} - c^n_{m-1}}{2\Delta x} = 0\, , \quad m=1,\ldots,M-1\, , \quad n = 0, 1, 2, \ldots
 $$ (ftcs3)
  
 This explicit scheme is again the FTCS scheme but applied to the wave equation. In contrast to the diffusion equation (cf. Eq. {eq}`ftcs`),
-the FTCS scheme {eq}`ftcs3` is **unconditionally unstable**, that is, it is unstable for any time step. Therefore, the FTCS scheme is useless
+the FTCS scheme applied to the wave equation, Eq. {eq}`ftcs3` is **unconditionally unstable**, that is, it is unstable for any time step. Therefore, the FTCS scheme is useless
 for any advection-type equation.
 
-This instability is related to the fact that the influence of the disturbance $c_m$ comes only from upstream, that is, $c_{m-1}$ if $u>0$
-(or $c_{m+1}$ if $u<0$) and not from downstream ($c_{m+1}$ respectively $c_{m-1}$).
+This instability is related to the fact that the influence of the disturbance only comes from upstream and not from downstream.
+This is a specific feature for hyperbolic problems. More specifically, assuming that the propagation velocity
+is positive, $u>0$, the solution $c_m$ at $x_m$ should only be affected by $c_{m-1}$ at $x_{m-1}$ (upstream) and not by the solution downstream, that is, $c_{m+1}$.
+However, since this does occur with scheme {eq}`ftcs3`, it inevitably leads to unlimited growth.
+
+```{note}
+
+A possible solution to this instability problem is to apply the backward Euler scheme. This **implicit** scheme is always stable (see Chapter {ref}`numerical_modelling`). We then obtain
+the so-called BTCS (**B**ackward in **T**ime, **C**entral in **S**pace) scheme, as follows
+
+$$
+  \frac{c^{n+1}_m - c^{n}_m}{\Delta t} + u \frac{c^{n+1}_{m+1} - c^{n+1}_{m-1}}{2\Delta x} = 0
+$$
+
+However, this is very unusual since the numerical solution is less straightforward to obtain. This can be seen as follows. Let us consider the system of ODEs {eq}`vecadv`
+and subsequently apply backward Euler. This yields
+
+$$
+  \frac{\vec{c}^{n+1}-\vec{c}^n}{\Delta t} = A \vec{c}^{n+1} \quad \Rightarrow \quad \left ( I - \Delta t A \right ) \vec{c}^{n+1} = \vec{c}^n
+$$
+
+with $\vec{c}^n = (c^n_1,\cdots,c^n_{M-1})^{\text{T}}$ being the vector representing the numerical solution at time step $n$ and
+$A$ is the discretization matrix as given above. Matrix $I$ is the identity matrix.
+We see that the solution $\vec{c}^{n+1}$ cannot be computed immediately. Instead, we need to solve a linear system of $M-1$ equations for the $M-1$ unknowns at the new time step.
+In addition, the rank of the matrix $A$ is expressed as $M = L/\Delta x$ which can be quite large, especially is the mesh size $\Delta x$ is chosen very small.
+
+This observation generally holds for any implicit scheme.
+
+```
