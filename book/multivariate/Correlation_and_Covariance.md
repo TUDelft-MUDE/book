@@ -94,7 +94,7 @@ You can also play with the samples option in the interactive element below.
 
 ````{iframe-figure} ../_static/elements/element_correlation.html
 :name: element_correlation_correlation
----
+
 Correlation in a bivariate Gaussian distribution [^ref]
 ````
 
