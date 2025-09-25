@@ -175,3 +175,102 @@ $$ (ftbs)
 
 This scheme is called the **FTBS** scheme, which stands for **F**orward in **T**ime, **B**ackward in **S**pace,
 and is first order accurate in both time and space.
+
+:::{card} Exercise
+
+For the FTBS scheme with $u>0$, show that $\tau_{\Delta t,\Delta x} = \mathcal{O} (\Delta t,\Delta x)$.
+
+```{admonition} Solution
+:class: tip, dropdown
+
+With $u>0$, the FTBS scheme is given by
+
+$$
+  \frac{c^{n+1}_m - c^n_m}{\Delta t} + u \frac{c^n_m - c^n_{m-1}}{\Delta x} = 0
+$$
+
+To check consistency we must require the solution $c(x,t)$ to be smooth, so that we can apply the following Taylor series expansions
+
+$$
+  c(x,t+\Delta t) = c(x,t) + \Delta t\, c_t(x,t) + \frac 12 \Delta t^2\, c_tt(x,t)
+$$
+
+and
+
+$$
+  c(x-\Delta x,t) = c(x,t) - \Delta x\, c_x(x,t) + \frac 12 \Delta x^2\, c_xx(x,t)
+$$
+
+Note that both series have been expanded till second order ("*first derivative + first order accuracy*").
+
+Next, substituting both expansions into the FTBS scheme yields
+
+$$
+\begin{align*}
+\tau_{\Delta t,\Delta x} &= \frac{c(x,t+\Delta t)-c(x,t)}{\Delta t} + u \, \frac{c(x,t)-c(x-\Delta x,t)}{\Delta x} \\
+                         &\\
+                         &=\frac{\partial c}{\partial t}(x,t)+\frac 12 \Delta t \frac{\partial^2 c}{\partial t^2}(x,t) + \u \frac{\partial c}{\partial x}(x,t) -
+                           \frac{u\Delta x}{2}\frac{\partial^2 c}{\partial x^2}(x,t) + \ldots\\
+                         &\\
+                         &=\frac 12 \Delta t \frac{\partial^2 c}{\partial t^2}(x,t) - \frac{u\Delta x}{2}\frac{\partial^2 c}{\partial x^2}(x,t) + \ldots
+\end{align*}
+$$
+
+and, thus
+
+$$
+  \tau_{\Delta t,\Delta x} = \mathcal{O} \left(\Delta t, \Delta x \right)
+$$
+
+Hence, the FTBS scheme is first order in $\Delta t$ and first order in $\Delta x$.
+
+```
+:::
+
+The above exercise demonstrates that the FTBS scheme is consistent with the wave equation {eq}`advection1`.
+Next, we check the stability of the FTBS scheme. Since it is explicit, we expect that this scheme can either be
+*conditionally stable* or *unconditionally unstable* (like the FTCS scheme).
+
+Suppose that $u>0$. Then the FTBS scheme is given by
+
+$$
+  \frac{c^{n+1}_m - c^n_m}{\Delta t} + u \frac{c^n_m - c^n_{m-1}}{\Delta x} = 0
+$$
+
+To check stability, we rewrite the scheme as follows
+
+$$
+  c^{n+1}_m = c^n_m - \frac{u\,\Delta t}{\Delta x} \, \left ( c^n_m - c^n_{m-1} \right )
+$$
+
+or 
+
+$$
+  c^{n+1}_m = c^n_m - \sigma \, \left ( c^n_m - c^n_{m-1} \right )
+$$
+
+with $\sigma = u\,\Delta t/\Delta x$ defined as the **Courant number**. This equation is rewritten as
+
+$$
+  c^{n+1}_m = (1-\sigma)c^n_m + \sigma c^n_{m-1}
+$$
+
+We assume by induction that $c^n_m \geq 0$ and $c^n_{m-1} \geq 0$. Then $c^{n+1}_m \geq 0$ if $1-\sigma \geq 0$.
+Hence, the stability condition of the FTBS scheme reads
+
+$$
+  \sigma = \frac{u\,\Delta t}{\Delta x} \leq 1
+$$
+
+This condition is known as the *Courant-Friedrichs-Lewy* (**CFL**) condition. The CFL condition plays an important role
+in the numerical solution to wave-like (or advection-like) PDEs.
+
+:::{card} Exercise
+
+Suppose that $u<0$. Verify that in that case the FTBS scheme is stable if
+
+$$
+ -1 \leq \frac{u\,\Delta t}{\Delta x} \leq 0
+$$
+
+:::
