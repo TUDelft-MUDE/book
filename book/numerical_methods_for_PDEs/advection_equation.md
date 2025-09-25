@@ -154,7 +154,7 @@ $$
   \end{cases}
 $$
 
-and it correctly passes information in the direction of the characteristic of the advection equation.
+and it correctly passes information in the direction of the advective transport.
 This approximation is called **first order upwinding**.
 
 :::{card} Exercise
@@ -163,7 +163,7 @@ Verify the first order accuracy of this scheme to $\partial c/\partial x$.
 
 :::
 
-Application of explicit Euler yields
+Application of forward Euler yields
 
 $$
   c^{n+1}_m = c^n_m - \sigma
@@ -262,8 +262,11 @@ $$
   0 \leq \sigma \leq 1
 $$
 
-This condition is known as the *Courant-Friedrichs-Lewy* (**CFL**) condition. The CFL condition plays an important role
-in the numerical solution to wave-like (or advection-like) PDEs.
+This condition is known as the *Courant-Friedrichs-Lewy* (**CFL**) condition.
+
+The physical interpretation of this CFL condition is that the distance covered during $\Delta t$ with finite speed $u$ must be smaller than $\Delta x$, that is,
+$u\,\Delta t \leq \Delta x$. This implies that the parameters $\Delta t$ and $\Delta x$ are mutually coupled: a small $\Delta x$ implies a small $\Delta t$.
+The CFL condition plays an important role in the numerical solution to wave-like (or advection-like) PDEs.
 
 :::{card} Exercise
 
