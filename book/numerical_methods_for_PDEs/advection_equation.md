@@ -1,4 +1,5 @@
-# Advection equation
+(advection)=
+# Advection Equation
 
 In this section we discuss the numerical solution of the 1D advection equation as given by
 
