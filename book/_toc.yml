@@ -52,17 +52,20 @@ parts:
       sections:
       - file: multivariate/events
       - file: multivariate/variables
-      - file: multivariate/gaussian
-      - file: multivariate/nongaussian
-      - file: multivariate/design
-        sections:
-        - file: multivariate/design/one-random-variable
-        - file: multivariate/design/two-random-variables
-        #- file: multivariate/design/exercise
-        #  sections:
-        #  - file: multivariate/design/exercise_solutions
-      #- file: multivariate/test_pyvinecopulib
-      #- file: multivariate/test_bivariate
+      - file: multivariate/Correlation_and_Covariance
+      - file: multivariate/Bivariate
+      # - file: multivariate/nongaussian
+      #   title: Non-Gaussian Distributions
+      # - file: multivariate/design
+      #   title: Practical Applications
+      #   sections:
+      #   - file: multivariate/design/one-random-variable
+      #   - file: multivariate/design/two-random-variables
+      #   - file: multivariate/design/exercise
+      #     sections:
+      #     - file: multivariate/design/exercise_solutions
+      # - file: multivariate/test_pyvinecopulib
+      # - file: multivariate/test_bivariate
     
     - file: propagation_uncertainty/overview
       sections:
@@ -95,8 +98,6 @@ parts:
         - file: observation_theory/09_Notebook_Testing.ipynb
         - file: observation_theory/09_Notebook_OMT.ipynb
       - file: observation_theory/99_NotationFormulas
-
-
 
   - caption: Q2 Topics
     numbered: 2
