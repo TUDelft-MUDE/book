@@ -279,6 +279,7 @@ parts:
       - external: https://github.com/TeachBooks/learn-programming/blob/mude-2025/book/version_control/version_control.md
       - external: https://github.com/TeachBooks/learn-programming/blob/mude-2025/book/version_control/notebooks.ipynb
      - file: programming/week_1_5
+       sections:
       - external: https://github.com/TeachBooks/learn-programming/blob/mude-2025/book/workflows/git/branch_merge.md
       - external: https://github.com/TeachBooks/learn-programming/blob/mude-2025/book/workflows/git/merge_conflicts.md
       
