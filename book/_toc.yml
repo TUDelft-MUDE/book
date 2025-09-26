@@ -47,26 +47,25 @@ parts:
         - file: univariate_distributions/MLE.md
         - file: univariate_distributions/GOF.md
 
-    - file: multivariate/overview
+    - file: multivariate/overview.md
       sections:
-      - file: multivariate/events
-      - file: multivariate/variables
-      - file: multivariate/Correlation_and_Covariance
-      - file: multivariate/Bivariate
-        - file: multivariate/nongaussian
-          title: Non-Gaussian Distributions
-        - file: multivariate/design
+      - file: multivariate/events.md
+      - file: multivariate/variables.md
+      - file: multivariate/Correlation_and_Covariance.md
+      - file: multivariate/Bivariate.md
+        - file: multivariate/design/overview.md
           title: Practical Applications
           sections:
-          - file: multivariate/design/one-random-variable
-          - file: multivariate/design/two-random-variables
-          - file: multivariate/design/exercise
+          - file: multivariate/design/example-river-system.md
+          - file: multivariate/design/one-random-variable.md
+          - file: multivariate/design/two-random-variables.md
+          - file: multivariate/design/exercise.md
             sections:
-            - file: multivariate/design/exercise_solutions
-        - file: multivariate/test_pyvinecopulib
-        - file: multivariate/test_bivariate
+            - file: multivariate/design/exercise_solutions.ipynb
+        - file: multivariate/test_pyvinecopulib.ipynb
+        - file: multivariate/test_bivariate.ipynb
 
-    # START REMOVE-FROM-PUBLISH
+# START REMOVE-FROM-PUBLISH
     - file: propagation_uncertainty/overview
       sections:
       - file: propagation_uncertainty/00a_CovCorr.md
@@ -303,7 +302,7 @@ parts:
       - file: external/learn-python/book/08/sympy
     - file: optimization/gurobi.md
       title: "Week 2.4: Gurobi installation"
-# END REMOVE-FROM-PUBLISH
+  # END REMOVE-FROM-PUBLISH
 
   - caption: Miscellaneous
     numbered: false
