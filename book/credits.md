@@ -104,6 +104,37 @@ Credits are provided here for chapters and pages that are released under the lic
 >
 > Special thanks goes to João Moura Pereira de Lucas Teixeira, who created first draft of pages from powerpoint slides.
 
+(numerical_modelling_credit)=
+### Chapter: Numerical Modelling
+
+> {ref}`Numerical modelling <numerical_modelling>` is written by Jaime Arriaga Garcia, Anna Störiko, Justin Pittman and Robert Lanzafame.
+>
+> Special thanks goes to:
+> - Isabel Slingerland and Mona Devos for critical feedback and development of exercises, figures and related content.
+> - Ronald Brinkgreve, Dhruv Mehta and Ajay Jagadeesh for feedback on structure, content.
+>
+> {ref}`The animated figure on the Jamuna river <NumericalMethodsRiver>` included on page {ref}`Numerical modelling <numerical_modelling>` but is _not_ included under the CC BY license of this book. Original content is used here with explicit permission of Amgad Omer on behalf of Deltares.
+>
+> {ref}`The figure on the left Riemann sum <openstax_fig_01>` is reproduced from {cite:t}`openstax_calculus` without modification and is _not_ included under the CC BY license of this book. The source content is provided with a CC BY NC SA license and can be accessed for free at [https://openstax.org/books/calculus-volume-2/pages/1-introduction](https://openstax.org/books/calculus-volume-2/pages/1-introduction).
+
+(distributions_credit)=
+### Chapter: Univariate Continuous Distributions
+
+> {ref}`Univariate Continuous Distributions <cont_dist>` is written by Patricia Mares Nasarre, Robert Lanzafame and Max Ramgraber.
+>
+> Special thanks goes to Oswaldo Morales Napoles and Elisa Ragno for suggestions on the theoretical and didactic framework, as well as critical feedback and review.
+>
+> The interactive figures in these pages are created by Max Ramgraber ([maxramgraber.com/interactive](https://www.maxramgraber.com/interactive)), which are published with a CC BY license and included in this book without modification.
+
+(multivariate_credit)=
+### Chapter: Multivariate Distributions
+
+> {ref}`Multivariate Distributions <mult_dist>` is written by Patricia Mares Nasarre and Robert Lanzafame.
+>
+> Special thanks goes to Oswaldo Morales Napoles and Elisa Ragno for suggestions on the theoretical and didactic framework, as well as critical feedback and review.
+>
+> The interactive figure on correlation is created by Max Ramgraber ([maxramgraber.com/interactive](https://www.maxramgraber.com/interactive)), published with a CC BY license and included in this book without modification. 
+
 (uncertainty_propagation_credit)=
 ### Chapter: Uncertainty Propagation
 
@@ -125,30 +156,6 @@ Credits are provided here for chapters and pages that are released under the lic
 > - Peter Teunissen and Christiaan Tiberius who co-shaped the material, indirectly, through collaboration with the author as TU Delft colleagues.
 > - The books _Adjustment theory: an introduction_ {cite:p}`adjustment_theory` and _Testing theory: an introduction_ {cite:p}`testing_theory` which provided the framework for this chapter.
 > - Sophie Keemink, Caspar Jungbacker and Thirza Feenstra, who provided feedback and helped develop exercises.
-
-(numerical_modelling_credit)=
-### Chapter: Numerical Modelling
-
-> {ref}`Numerical modelling <numerical_modelling>` is written by Jaime Arriaga Garcia, Anna Störiko, Justin Pittman and Robert Lanzafame.
->
-> Special thanks goes to:
-> - Isabel Slingerland and Mona Devos for critical feedback and development of exercises, figures and related content.
-> - Ronald Brinkgreve, Dhruv Mehta and Ajay Jagadeesh for feedback on structure, content.
->
-> {ref}`The animated figure on the Jamuna river <NumericalMethodsRiver>` included on page {ref}`Numerical modelling <numerical_modelling>` but is _not_ included under the CC BY license of this book. Original content is used here with explicit permission of Amgad Omer on behalf of Deltares.
->
-> {ref}`The figure on the left Riemann sum <openstax_fig_01>` is reproduced from {cite:t}`openstax_calculus` without modification and is _not_ included under the CC BY license of this book. The source content is provided with a CC BY NC SA license and can be accessed for free at [https://openstax.org/books/calculus-volume-2/pages/1-introduction](https://openstax.org/books/calculus-volume-2/pages/1-introduction).
-
-(distributions_credit)=
-### Chapters: Univariate and Multivariate Continuous Distributions
-
-> {ref}`Univariate Continuous Distributions <cont_dist>` and {ref}`Multivariate Distributions <mult_dist>` are written by Patricia Mares Nasarre, Robert Lanzafame and Max Ramgraber.
->
-> Special thanks goes to Oswaldo Morales Napoles and Elisa Ragno for suggestions on the theoretical and didactic framework, as well as critical feedback and review.
->
-> Pages {ref}`One random variable <prob_design_1_rv>` and {ref}`Two random variables <prob_design_2_rv>` are from the Chapter _Probabilistic Design_ {cite:p}`lanzafame2024-pd` from the book Risk and Reliability for Engineers {cite:p}`lanzafame2024`, published with a CC BY license. Files are included without modification.
->
-> The interactive figures in on these pages are created by Max Ramgraber ([maxramgraber.com/interactive](https://www.maxramgraber.com/interactive)), which are published with a CC BY license and included in this book without modification.
 
 (finite_volume_method_credit)=
 ### Chapter: PDEs and the Finite Volume Method
