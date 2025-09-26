@@ -129,6 +129,8 @@ derivatives separately. Hence, the whole approximation process is done in two st
 2. The resulting system of ODEs is approximated by means of time integration. This step has been dealt with in Chapter {ref}`numerical_modelling`.
 
 This two-step process is called the **method of lines** (MOL)[^mol].
+The MOL approach has a great flexibility for constructing a numerical scheme in the sense that the choice of spatial discretization and the choice of time integration
+are independent from each other.
 
 [^mol]: The origin of the name <u>method of lines</u> is best illustrated at the following [Wikipedia page](https://en.wikipedia.org/wiki/Method_of_lines#mediaviewer/File:Method\_of\_lines.gif).
 
@@ -419,7 +421,7 @@ augmented with the Dirichlet boundary condition at $x=0$ and the homogeneous Neu
 
 ## Time integration
 
-The semi discretization of the heat equation leads to a linear system of first order ODEs, {eq}`modedif1`. The next step is to integrate this system over time.
+The semi discretization of the heat equation leads to a linear system of first order ODEs, {eq}`modedif1`. In accordance with the MOL approach, the next step is to integrate this system with respect to time.
 Our choice for time integration would be the <u>forward Euler scheme</u>, since this is the most simple one.
 Application of explicit Euler to Eq. {eq}`modedif1` yields
 
