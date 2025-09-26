@@ -9,7 +9,7 @@ $$
 $$ (advdifi)
 
 This **instationary** advection-diffusion equation describes the time evolution of a **constituent** $c(x,t)$ that is transported with
-flow velocity $u$ and at the same time diffuses with a diffusion coefficient $\kappa$. This equation is classified as a *parabolic* one.
+flow velocity $u$ and at the same time diffuses with a diffusion coefficient $\kappa$. This PDE is classified as a *parabolic* one.
 
 In some cases, however, we may be interested in the steady state only. In this respect, the following **stationary** equation will be considered
 
@@ -29,7 +29,7 @@ is an elliptic PDE. Here, $v$ is the flow velocity in $y-$direction.
 
 ```
 
-The numerical solution of both stationary advection-diffusion equation {eq}`advdifs` and instationary advection-diffusion equation {eq}`advdifi` will be dealt with separately below.
+We first deals with the numerical solution of stationary advection-diffusion equation {eq}`advdifs` and then that of instationary advection-diffusion equation {eq}`advdifi` in a separate section.
 
 ## Stationary advection-diffusion equation
 
