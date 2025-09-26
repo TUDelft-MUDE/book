@@ -51,7 +51,7 @@ Also, you can plan with the interactive element below changing the correlation v
 ````{margin}
 ```{attributiongrey} Attribution
 :class: attribution
-This interactive figure is created by Max Ramgraber. {ref}`Find out more here <distributions_credit>`.
+This interactive figure is created by Max Ramgraber. {ref}`Find out more here <multivariate_credit>`.
 ```
 ````
 % END-CREDIT
@@ -179,6 +179,6 @@ If you need to refresh the concept of covariance and correlation and want to see
 % source: distributions
 ```{attributiongrey} Attribution
 :class: attribution
-This chapter was written by Patricia Mares Nasarre and Robert Lanzafame. {ref}`Find out more here <distributions_credit>`.
+This chapter was written by Patricia Mares Nasarre and Robert Lanzafame. {ref}`Find out more here <multivariate_credit>`.
 ```
 % END-CREDIT

@@ -92,14 +92,18 @@ Scatter plots for different values or Pearson's correlation coefficient.
 
 You can also play with the samples option in the interactive element below.
 
-```{iframe-figure} ../_static/elements/element_correlation.html
+````{iframe-figure} ../_static/elements/element_correlation.html
 :name: element_correlation_correlation
-```
+
+Correlation in a bivariate Gaussian distribution [^ref]
+````
+
+[^ref]: Figure by Max Ramgraber, {ref}`find out more here <multivariate_credit>`.
 
 % START-CREDIT
 % source: distributions
 ```{attributiongrey} Attribution
 :class: attribution
-This chapter was written by Patricia Mares Nasarre. {ref}`Find out more here <distributions_credit>`.
+This chapter was written by Patricia Mares Nasarre and Robert Lanzafame. {ref}`Find out more here <multivariate_credit>`.
 ```
 % END-CREDIT
