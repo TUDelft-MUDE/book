@@ -53,14 +53,14 @@ parts:
       - file: multivariate/variables
       - file: multivariate/Correlation_and_Covariance.md
       - file: multivariate/Bivariate.md
-        sections:
-        - file: multivariate/design/overview.md
-          title: Example Application
-          sections:
-          - file: multivariate/design/one-random-variable.md
-          - file: multivariate/design/two-random-variables.md
-          - file: multivariate/design/exercise.md
-          - file: multivariate/design/exercise_solutions.ipynb
+        #sections:
+        #- file: multivariate/design/overview.md
+        #  title: Example Application
+        #  sections:
+        #  - file: multivariate/design/one-random-variable.md
+        #  - file: multivariate/design/two-random-variables.md
+        #  - file: multivariate/design/exercise.md
+        #  - file: multivariate/design/exercise_solutions.ipynb
         #- file: multivariate/test_pyvinecopulib.ipynb
         #- file: multivariate/test_bivariate.ipynb
 
