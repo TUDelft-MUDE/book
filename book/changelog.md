@@ -2,6 +2,9 @@
 
 [TeachBooks Versioning](https://teachbooks.io/manual/features/versioning.html) is used (a special type of semantic numbering for educational purposes) with generic format `v<academic_year>.<additions>.<errata>`, with an additional `.pre-release` added for incomplete books.
 
+## 2025-09-26: v2025.6.0
+Added [](./multivariate/overview.md)
+
 ## 2025-09-25: v2025.5.1pre-release
 - Repaired attribution on [](./univariate_distributions/beta.md)
 - Updated credits for distributions chapters
