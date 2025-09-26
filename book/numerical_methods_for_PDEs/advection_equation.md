@@ -286,7 +286,7 @@ $$
 
 In the previous section we have discussed a conditionally stable scheme to solve the wave equation, namely, the FTBS scheme. This scheme is constructed based on the explicit Euler
 scheme and the upwind difference scheme. A main disadvantage of this scheme is that is only first order accurate both in time and space.
-However, there exists a scheme that is second-order accurate but also stable, albeit conditionally, for oscillatory motion. This scheme is known as the **leapfrog** scheme.
+However, there exists a scheme that is second order accurate but also stable, albeit conditionally, for *oscillatory motion*. This scheme is known as the **leapfrog** scheme.
 It is devised based on central differences both in time and space and is given by
 
 $$
@@ -299,7 +299,10 @@ Verify yourself that the leapfrog scheme {eq}`leapfrog` is second order accurate
 
 :::
 
-The leapfrog scheme is an example of a <u>multi-step method</u>, namely, a two-step scheme. Furthermore, the leapfrog scheme is stable (here shown without proof) if
+The leapfrog scheme is an example of a <u>multi-step method</u>, namely, a two-step scheme. This has a disadvantage that it requires *two* starting values while the wave equation
+provides only *one* initial condition.
+
+Finally, the leapfrog scheme is stable (here shown without proof) if
 
 $$
   |\sigma| = \frac{|u|\,\Delta t}{\Delta x} \leq 1
