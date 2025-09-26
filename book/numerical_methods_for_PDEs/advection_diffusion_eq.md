@@ -93,11 +93,11 @@ $$
    P_{\Delta} \equiv \frac{u\Delta x}{\kappa}
 $$
 
-the so-called **mesh P\'eclet number**.
+the so-called **mesh P&eacute;clet number**.
 
 Note that because of consistency, the sum of the coefficients is zero.
 Hence, with
-$p=\nfrac 12 P_{\Delta}-1$ and $q=-\nfrac 12 P_{\Delta} - 1$, we have $p+q+2=0$.
+$p=$&frac12;$P_{\Delta}-1$ and $q=-$&frac12;$P_{\Delta} - 1$, we have $p+q+2=0$.
 This equation represents a recurrent relation and its general solution is of the form
 
 $$
@@ -156,7 +156,7 @@ $$
 ```
 :::
 
-To prevent wiggles, both roots must be non-negative. Here, we must require $r_2 \geq 0$. Hence, the restriction on the mesh P\'eclet number reads
+To prevent wiggles, both roots must be non-negative. Here, we must require $r_2 \geq 0$. Hence, the restriction on the mesh P&eacute;clet number reads
 
 $$
   P_{\Delta}|  = \frac{|u|\Delta x}{\kappa} \leq 2
@@ -171,7 +171,9 @@ Derive this restriction.
 
 The second root $r_2$ must be non-negative which implies
 
-\frac{2+P_{\Delta}}{2-P_{\Delta}} \geq 0
+$$
+  \frac{2+P_{\Delta}}{2-P_{\Delta}} \geq 0
+$$
 
 There are two possibilities:
 
@@ -203,7 +205,7 @@ The following figure depicts the obtained numerical solution that clearly shows 
 ---
 scale: 75%
 name: cvcentral
-align: central
+align: center
 ---
 Solution obtained with central differences and $\Delta x = 0.1$ m.
 ```
@@ -236,14 +238,14 @@ $$
 Hence, both roots are always non-negative and the numerical solution will not display any oscillations, irrespective of the value of $P_{\Delta}$. Apparently, the addition of the numerical
 diffusion due to first order upwinding appears to be sufficient.
 
-Another way to see this is by considering the modified equation. This equation is obtained by adding and substracting $\nfrac 12  u(c_{m-1} + c_{m+1} - 2c_m)/\Delta x$
+Another way to see this is by considering the modified equation. This equation is obtained by adding and substracting &frac12;$u(c_{m-1} + c_{m+1} - 2c_m)/\Delta x$
 to the left-hand side of Eq. {eq}`statcveq2` and subsequently re-ordering terms
 
 $$
   u\frac{c_{m+1}-c_{m-1}}{2\Delta x} - (\kappa+\kappa_a) \frac{c_{m+1}-2c_m+c_{m-1}}{\Delta x^2} = 0
 $$
 
-where $\kappa_a = \nfrac 12  u\Delta x > 0$ is the artificial or numerical diffusion coefficient due to first order upwinding. This scheme would result from the application of central differences
+where $\kappa_a =$&frac12;$u\Delta x > 0$ is the artificial or numerical diffusion coefficient due to first order upwinding. This scheme would result from the application of central differences
 to Eq. {eq}`statcv1` with a diffusion coefficient $\kappa+\kappa_a$. This scheme will generate non-negative solutions if
 
 $$
@@ -260,7 +262,7 @@ the numerical one, $\kappa < \kappa_a$.
 ---
 scale: 75%
 name: cvupwind
-align: central
+align: center
 ---
 Solution obtained with the first order upwind scheme and $\Delta x = 0.1$ m so that $\kappa_a = 0.05$ m$^2$/s.
 ```
