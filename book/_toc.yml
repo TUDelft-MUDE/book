@@ -278,16 +278,12 @@ parts:
       sections:
       - external: https://github.com/TeachBooks/learn-programming/blob/mude-2025/book/version_control/version_control.md
       - external: https://github.com/TeachBooks/learn-programming/blob/mude-2025/book/version_control/notebooks.ipynb
-# START REMOVE-FROM-PUBLISH
      - file: programming/week_1_5
       - external: https://github.com/TeachBooks/learn-programming/blob/mude-2025/book/workflows/git/branch_merge.md
       - external: https://github.com/TeachBooks/learn-programming/blob/mude-2025/book/workflows/git/merge_conflicts.md
-<<<<<<< HEAD
-      
 
-=======
-  # START REMOVE-FROM-PUBLISH
->>>>>>> parent of 128314e (Update _toc.yml)
+# START REMOVE-FROM-PUBLISH
+
     - file: programming/week_1_6
       sections:
       - file: external/learn-python/book/09/intro.md
