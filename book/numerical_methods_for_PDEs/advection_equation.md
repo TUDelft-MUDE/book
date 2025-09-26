@@ -47,8 +47,8 @@ Note that the above IBVP {eq}`advection2` would become ill posed if $u<0$.
 ```
 
 In contrast to the diffusion equation {eq}`diffusion1`, the solution to the advection equation is not necessarily smooth. In other words, $c(x,t)$ is allowed to be discontinuities or
-non-smooth. Examples are shock waves, hydraulic jumps and tidal bores. Although the wave equation {eq}`advection1` appears seemingly simple, the numerical solution to this equation is quite a challenge, as we
-will discover below.
+non-smooth. Examples are the propagation of shock waves, hydraulic jumps and tidal bores.
+Although the wave equation {eq}`advection1` appears deceptively simple, the numerical solution to this equation is quite a challenge, as we will discover below.
 
 ## Discretization
 
@@ -92,8 +92,8 @@ $$
    \end{array} \right )
 $$
 
-The next step is to integrate the above system of ODEs with respect to time. Although the MOL approach is very flexible in the sense that
-the choice of time integration is independent from the choice of space discretization, we must be careful since the resulted scheme
+The next step is to integrate the above system of ODEs with respect to time. Although the MOL approach is flexible in the sense that
+the choice of time integration is independent from the choice of space discretization, we must be careful since the resulting scheme
 may not be stable. For example, let us choose the forward Euler scheme, we get
 
 $$
@@ -105,7 +105,8 @@ this FTCS scheme {eq}`ftcs3` is **unconditionally unstable**, that is, it is uns
 for any advection-type equation.
 
 This instability is related to the fact that the influence of the disturbance only comes from upstream and not from downstream.
-This is a specific feature for hyperbolic problems. More specifically, assuming that the propagation velocity
+This is a specific feature for hyperbolic problems. (By contrast, parabolic and elliptic problems do not have a preference of direction.)
+More specifically, assuming that the propagation velocity
 is positive, $u>0$, the solution $c_m$ at $x_m$ should only be affected by $c_{m-1}$ at $x_{m-1}$ (upstream) and not by the solution downstream, that is, $c_{m+1}$.
 However, since this does occur with scheme {eq}`ftcs3`, it inevitably leads to unlimited growth.
 
@@ -173,7 +174,10 @@ $$
   \end{cases}
 $$ (ftbs)
 
-This scheme is called the **FTBS** scheme, which stands for **F**orward in **T**ime, **B**ackward in **S**pace,
+with $\sigma = u\,\Delta t/\Delta x$ defined as the **Courant number**.
+This number plays a very important role for hyperbolic problems.
+
+Scheme {eq}`ftbs` is called the **FTBS** scheme, which stands for **F**orward in **T**ime, **B**ackward in **S**pace,
 and is first order accurate in both time and space.
 
 :::{card} Exercise
@@ -249,7 +253,7 @@ $$
   c^{n+1}_m = c^n_m - \sigma \, \left ( c^n_m - c^n_{m-1} \right )
 $$
 
-with $\sigma = u\,\Delta t/\Delta x$ defined as the **Courant number**. This equation is rewritten as
+This equation is further rewritten as
 
 $$
   c^{n+1}_m = (1-\sigma)c^n_m + \sigma c^n_{m-1}
@@ -277,3 +281,26 @@ $$
 $$
 
 :::
+
+## The leapfrog scheme
+
+In the previous section we have discussed a conditionally stable scheme to solve the wave equation, namely, the FTBS scheme. This scheme is constructed based on the explicit Euler
+scheme and the upwind difference scheme. A main disadvantage of this scheme is that is only first order accurate both in time and space.
+However, there exists a scheme that is second-order accurate but also stable, albeit conditionally, for oscillatory motion. This scheme is known as the **leapfrog** scheme.
+It is devised based on central differences both in time and space and is given by
+
+$$
+  \frac{c^{n+1}_m - c^{n-1}_m}{2 \Delta t} + u \frac{c^n_{m+1} - c^n_{m-1}}{2\Delta x} = 0\, , \quad m=1,\ldots,M-1\, , \quad n = 0, 1, 2, \ldots
+$$ (leapfrog)
+
+:::{card} Exercise
+
+Verify yourself that the leapfrog scheme {eq}`leapfrog` is second order accurate both in time and space.
+
+:::
+
+The leapfrog scheme is an example of a <u>multi-step method</u>, namely, a two-step scheme. Furthermore, the leapfrog scheme is stable (here shown without proof) if
+
+$$
+  |\sigma| = \frac{|u|\,\Delta t}{\Delta x} \leq 1
+$$
