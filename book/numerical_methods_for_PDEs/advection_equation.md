@@ -93,7 +93,7 @@ $$
 $$
 
 The next step is to integrate the above system of ODEs with respect to time. Although the MOL approach is very flexible in the sense that
-the choice of time integration is independent of the choice of space discretization, we must be careful since the resulted scheme
+the choice of time integration is independent from the choice of space discretization, we must be careful since the resulted scheme
 may not be stable. For example, let us choose the forward Euler scheme, we get
 
 $$
