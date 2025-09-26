@@ -42,14 +42,6 @@ $$
 
 Note that when talking about the Gaussian distribution instead of using $F_{X_1,X_2}(x_1,x_2)$, we use $\Phi_{X_1,X_2}(x_1,x_2)$, but it means the same!
 
-You can play with the interactive element below changing the correlation value yourself. Observe how the distribution's _density_ contours, or a scatter plot of _samples,_ change when you adjust the correlation.
-
-
-````{iframe-figure} ../_static/elements/element_correlation.html
-:name: element_correlation_bivariate
-
-Correlation in a bivariate Gaussian distribution [^ref].
-````
 
 In the figure below, you can observe the PDF and CDF of a bivariate Gaussian distribution for a correlation coefficient $\rho=0.77$ (remember the relation between correlation and covariance).
 
@@ -60,6 +52,18 @@ In the figure below, you can observe the PDF and CDF of a bivariate Gaussian dis
 ---
 Bivariate Gaussian distribution: (left) probability density function, and (right) cumulative distribution function.
 ```
+
+## Play with bivariate normal PDF
+
+In this small demo you can create plots of the bivariate normal PDF, including a scatter plot of generated realizations, where you can play with the values of the mean, standard deviations and correlation coefficient. Adjust the values by dragging the handles for the mean (red), standard deviations (blue and yellow), and correlation (green) in the left subplot. Observe how the distribution changes, and how each parameter affects the covariance matrix.
+
+
+````{iframe-figure} ../_static/elements/element_2D_Gaussian.html
+:name: 2D_Gaussian
+:aspectratio: 3 / 1
+
+Interactively change the means, standard deviations and correlation coefficient for the bivariate Gaussian PDF and visualize how the density contours, samples and covariance matrix change. [^ref].
+````
 
 ## Conditionalizing a bivariate Gaussian distribution
 
