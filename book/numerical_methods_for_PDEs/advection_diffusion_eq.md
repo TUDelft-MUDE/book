@@ -99,7 +99,7 @@ the so-called **mesh P&eacute;clet number**.
 
 Note that because of consistency, the sum of the coefficients of Eq. {eq}`statcveq2` is zero.
 Hence, with $p=$&frac12;$P_{\Delta}-1$ and $q=-$&frac12;$P_{\Delta} - 1$, we have $p+q+2=0$.
-This equation represents a **recurrent relation** and its general solution is of the form
+Eq. {eq}`statcveq2` represents a **recurrent relation** and its general solution is of the form
 
 $$
   c_m = \alpha\, r_1^m + \beta\, r_2^m
