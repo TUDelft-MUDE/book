@@ -97,7 +97,7 @@ $$
 
 the so-called **mesh P&eacute;clet number**.
 
-Note that because of consistency, the sum of the coefficients of Eq. {eq} `statcveq2` is zero.
+Note that because of consistency, the sum of the coefficients of Eq. {eq}`statcveq2` is zero.
 Hence, with $p=$&frac12;$P_{\Delta}-1$ and $q=-$&frac12;$P_{\Delta} - 1$, we have $p+q+2=0$.
 This equation represents a **recurrent relation** and its general solution is of the form
 
@@ -170,7 +170,7 @@ $$
 This implies that
 
 $$
-  c_{m+1} = r^{m+1} = r \times r^m = r\,c_m \quad \Rightarrow \quad r = \frac{c_{m+1}{c_m}
+  c_{m+1} = r^{m+1} = r \times r^m = r\,c_m \quad \Rightarrow \quad r = \frac{c_{m+1}}{c_m}
 $$
 
 Hence, if both solutions $c_m$ and $c_{m+1}$ are positive (or negative) then $r > 0$. However, if $c_m>0$ but the next one $c_{m+1} <0$, thus the solution oscillates, then $r<0$.
