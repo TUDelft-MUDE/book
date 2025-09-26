@@ -79,7 +79,8 @@ $$
   c_0 = 0 \, , \quad c_M = 1
 $$
 
-A peculiar feature of central differences applied to advection term $\partial c/\partial x$ is that they are prone to generate **spurious oscillations** or **wiggles**, especially near steep gradients.
+A peculiar feature of central differences applied to the first derivative $\partial c/\partial x$ (or generally, the advection term) is that they are
+prone to generate **spurious oscillations** or **wiggles**, especially near steep gradients.
 This renders the numerical solution physically meaningless. The way to counteract these wiggles is to add some diffusion.
 The question arises whether the amount of physical diffusion, as indicated by $\kappa$, is considered to be enough to prevent oscillations. To answer this question,
 we rewrite Eq. {eq}`statcveq` as follows
@@ -96,15 +97,15 @@ $$
 
 the so-called **mesh P&eacute;clet number**.
 
-Note that because of consistency, the sum of the coefficients is zero.
+Note that because of consistency, the sum of the coefficients of Eq. {eq} `statcveq2` is zero.
 Hence, with $p=$&frac12;$P_{\Delta}-1$ and $q=-$&frac12;$P_{\Delta} - 1$, we have $p+q+2=0$.
-This equation represents a recurrent relation and its general solution is of the form
+This equation represents a **recurrent relation** and its general solution is of the form
 
 $$
   c_m = \alpha\, r_1^m + \beta\, r_2^m
 $$
 
-where $r_1$ and $r_2$ are the roots of the following **characteristic equation**
+where $\alpha$ and $\beta$ are some constants and $r_1$ and $r_2$ are the roots of the following **characteristic equation**
 
 $$
   r^2 - \left ( 1 + \frac{q}{p} \right ) r + \frac{q}{p} = 0
@@ -156,7 +157,28 @@ $$
 ```
 :::
 
-To prevent wiggles, both roots must be non-negative. Here, we must require $r_2 \geq 0$. Hence, the restriction on the mesh P&eacute;clet number reads
+To prevent wiggles, both roots must be non-negative.
+
+```{note}
+
+To see this, we consider the solution
+
+$$
+  c_m = r^m
+$$
+
+This implies that
+
+$$
+  c_{m+1} = r^{m+1} = r \times r^m = r\,c_m \quad \Rightarrow \quad r = \frac{c_{m+1}{c_m}
+$$
+
+Hence, if both solutions $c_m$ and $c_{m+1}$ are positive (or negative) then $r > 0$. However, if $c_m>0$ but the next one $c_{m+1} <0$, thus the solution oscillates, then $r<0$.
+Therefore, wiggles in the solution occur as soon as $r<0$.
+
+```
+
+Here, we must require $r_2 \geq 0$. Hence, the restriction on the mesh P&eacute;clet number reads
 
 $$
   |P_{\Delta}|  = \frac{|u|\Delta x}{\kappa} \leq 2
@@ -199,7 +221,7 @@ which is not possible.
 
 
 Let us consider our example with $\kappa=0.025$ m$^2$/s and $u=1$ m/s and we choose $\Delta x = 0.1$ m, so that $P_{\Delta} = 4$.
-The following figure depicts the obtained numerical solution that clearly shows wiggles.
+The following figure depicts the obtained numerical solution that clearly shows wiggles $-$ the solution oscillates around the boundary layer.
 
 ```{figure} https://files.mude.citg.tudelft.nl/cvcentral.png
 ---
