@@ -133,7 +133,7 @@ Credits are provided here for chapters and pages that are released under the lic
 >
 > Special thanks goes to Oswaldo Morales Napoles and Elisa Ragno for suggestions on the theoretical and didactic framework, as well as critical feedback and review.
 >
-> The interactive figure on correlation is created by Max Ramgraber ([maxramgraber.com/interactive](https://www.maxramgraber.com/interactive)), published with a CC BY license and included in this book without modification. 
+> {ref}`This <element_correlation_correlation>` and {ref}`this <2D_Gaussian>` interactive figures are created by Max Ramgraber ([maxramgraber.com/interactive](https://www.maxramgraber.com/interactive)), published with a CC BY license and included in this book without modification. 
 
 (uncertainty_propagation_credit)=
 ### Chapter: Uncertainty Propagation
