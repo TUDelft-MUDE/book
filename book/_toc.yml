@@ -49,8 +49,8 @@ parts:
         - file: univariate_distributions/GOF.md
     - file: multivariate/overview
       sections:
-      - file: multivariate/events
-      - file: multivariate/variables
+      - file: multivariate/events.md
+      - file: multivariate/variables.md
       - file: multivariate/Correlation_and_Covariance.md
       - file: multivariate/Bivariate.md
         sections:
@@ -282,6 +282,7 @@ parts:
      - file: programming/week_1_5
       - external: https://github.com/TeachBooks/learn-programming/blob/mude-2025/book/workflows/git/branch_merge.md
       - external: https://github.com/TeachBooks/learn-programming/blob/mude-2025/book/workflows/git/merge_conflicts.md
+      
   # START REMOVE-FROM-PUBLISH
     - file: programming/week_1_6
       sections:
