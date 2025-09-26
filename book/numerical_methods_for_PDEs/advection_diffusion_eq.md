@@ -85,7 +85,7 @@ We rewrite Eq. {eq}`statcveq` as follows
 
 $$
   \left ( \frac 12 P_{\Delta} - 1 \right ) c_{m+1} + 2c_m - \left ( \frac 12 P_{\Delta} + 1 \right ) c_{m-1} = 0
-$$
+$$ (statcveq2)
 
 with
 
@@ -96,12 +96,11 @@ $$
 the so-called **mesh P&eacute;clet number**.
 
 Note that because of consistency, the sum of the coefficients is zero.
-Hence, with
-$p=$&frac12;$P_{\Delta}-1$ and $q=-$&frac12;$P_{\Delta} - 1$, we have $p+q+2=0$.
+Hence, with $p=$&frac12;$P_{\Delta}-1$ and $q=-$&frac12;$P_{\Delta} - 1$, we have $p+q+2=0$.
 This equation represents a recurrent relation and its general solution is of the form
 
 $$
-  c_m = \alpha r_1^m + \beta r_2^m
+  c_m = \alpha\, r_1^m + \beta\, r_2^m
 $$
 
 where $r_1$ and $r_2$ are the roots of the following **characteristic equation**
@@ -123,16 +122,16 @@ Verify the above characteristic equation and its roots.
 ```{admonition} Solution
 :class: tip, dropdown
 
-From the above recurrent relation we have the followng
+From Eq. {eq}`statcveq2` we have the followng
 
 $$
-  p c_{m+1} - (p+q) c_m + q c_{m-1} = 0
+  p\, c_{m+1} - (p+q)\, c_m + q\, c_{m-1} = 0
 $$
 
 or
 
 $$
-  c_{m+1} - \left ( 1 + \frac{q}{p} \right ) c_m \frac{q}{p} c_{m-1} = 0
+  c_{m+1} - \left ( 1 + \frac{q}{p} \right ) c_m + \frac{q}{p} c_{m-1} = 0
 $$
 
 The associated characteristic equation is then given by
@@ -159,8 +158,8 @@ $$
 To prevent wiggles, both roots must be non-negative. Here, we must require $r_2 \geq 0$. Hence, the restriction on the mesh P&eacute;clet number reads
 
 $$
-  P_{\Delta}|  = \frac{|u|\Delta x}{\kappa} \leq 2
-$$
+  |P_{\Delta}|  = \frac{|u|\Delta x}{\kappa} \leq 2
+$$ (restpc)
 
 :::{card} Exercise
 
@@ -210,14 +209,15 @@ align: center
 Solution obtained with central differences and $\Delta x = 0.1$ m.
 ```
 
-Unless $\kappa$ is considerably large, the above restriction can be a severe one.
+Unless $\kappa$ is considerably large, restriction {eq}`restpc` can be a severe one.
 A simple remedy would be to decrease the mesh size $\Delta x$ such that the considered restriction is fulfilled.
+
 Another remedy would be to apply an upwind scheme.
-In this way, sufficient amount of *numerical* diffusion is added so that wiggles are prevented.
+In this way, sufficient amount of **numerical diffusion** is added so that wiggles are prevented.
 However, precautions should be taken so that the numerical diffusion will not dominate the physical one.
 This way of applying an upwind scheme is a very common practice.
 
-To demonstrate this, we apply a first order upwind scheme. Let us assume $u>0$. Hence, we have the following discretized equation for internal points
+To demonstrate this, we apply a first order upwind scheme. Let us assume $u>0$. Hence, we have the following discretized equation for internal points $m = 1,\cdots,M-1$
 
 $$
   u\frac{c_m-c_{m-1}}{\Delta x} - \kappa \frac{c_{m+1}-2c_m+c_{m-1}}{\Delta x^2} = 0
@@ -245,7 +245,7 @@ $$
   u\frac{c_{m+1}-c_{m-1}}{2\Delta x} - (\kappa+\kappa_a) \frac{c_{m+1}-2c_m+c_{m-1}}{\Delta x^2} = 0
 $$
 
-where $\kappa_a =$&frac12;$u\Delta x > 0$ is the artificial or numerical diffusion coefficient due to first order upwinding. This scheme would result from the application of central differences
+where $\kappa_a =$&frac12;$u\Delta x > 0$ is the **artificial** or numerical diffusion coefficient due to first order upwinding. This scheme would result from the application of central differences
 to Eq. {eq}`statcv1` with a diffusion coefficient $\kappa+\kappa_a$. This scheme will generate non-negative solutions if
 
 $$
@@ -255,7 +255,7 @@ $$
 This is true for any $\Delta x$ and thus, the application of first order upwinding will prevent wiggles.
 
 However, this first order upwind scheme is often considered to be too dissipative.
-See Figure below where the corresponding numerical solution is found to be rather inaccurate, in particular when the physical diffusion is smaller than
+See figure below where the corresponding numerical solution is found to be rather inaccurate, in particular when the physical diffusion is smaller than
 the numerical one, $\kappa < \kappa_a$.
 
 ```{figure} https://files.mude.citg.tudelft.nl/cvupwind.png
