@@ -79,9 +79,10 @@ $$
   c_0 = 0 \, , \quad c_M = 1
 $$
 
-Since advection is involved, the numerical solution may display wiggles or negative values (which is allowed by advection), especially near steep gradients, unless there is sufficient diffusion.
-The question arises whether the amount of physical diffusion, as indicated by $\kappa$, is considered to be enough to prevent oscillations.
-We rewrite Eq. {eq}`statcveq` as follows
+A peculiar feature of central differences applied to advection term $\partial c/\partial x$ is that they are prone to generate **spurious oscillations** or **wiggles**, especially near steep gradients.
+This renders the numerical solution physically meaningless. The way to counteract these wiggles is to add some diffusion.
+The question arises whether the amount of physical diffusion, as indicated by $\kappa$, is considered to be enough to prevent oscillations. To answer this question,
+we rewrite Eq. {eq}`statcveq` as follows
 
 $$
   \left ( \frac 12 P_{\Delta} - 1 \right ) c_{m+1} + 2c_m - \left ( \frac 12 P_{\Delta} + 1 \right ) c_{m-1} = 0
