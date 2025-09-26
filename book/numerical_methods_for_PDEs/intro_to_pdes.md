@@ -398,6 +398,6 @@ In hydraulic engineering we commonly deal with free surface flows, such as occur
 the shallow water equations. These equations are a set of *hyperbolic* partial differential equations that describe the flow below a free surface.
 Besides this flow also *advective* transport of dissolve substances (e.g., salt, mud) and their *diffusive* processes in open water bodies are naturally included.
 For these reasons, we shall focus on the numerical solution of the diffusion equation (Section {ref}`diffusion`), the advection equation (Section {ref}`advection`) and
-the advection-diffusion equation (Section {ref}`cveq`).
+the advection-diffusion equation (Section {ref}`advdif`).
 Though elliptic equations are very important in the field of computational fluid dynamics (CFD) and in structural mechanics, they will not dealt with here.
 Discussion on the numerical solution of elliptic equations can be found in Chapter {ref}`finite_element_method`.
