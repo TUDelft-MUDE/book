@@ -55,14 +55,14 @@ parts:
       - file: multivariate/Bivariate.md
         sections:
         - file: multivariate/design/overview.md
-          title: Practical Applications
+          title: Example Application
           sections:
           - file: multivariate/design/one-random-variable.md
           - file: multivariate/design/two-random-variables.md
           - file: multivariate/design/exercise.md
           - file: multivariate/design/exercise_solutions.ipynb
-        - file: multivariate/test_pyvinecopulib.ipynb
-        - file: multivariate/test_bivariate.ipynb
+        #- file: multivariate/test_pyvinecopulib.ipynb
+        #- file: multivariate/test_bivariate.ipynb
 
 # START REMOVE-FROM-PUBLISH
     - file: propagation_uncertainty/overview
