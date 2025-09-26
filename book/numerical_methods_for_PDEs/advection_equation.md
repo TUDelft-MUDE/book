@@ -300,7 +300,7 @@ Verify yourself that the leapfrog scheme {eq}`leapfrog` is second order accurate
 :::
 
 The leapfrog scheme is an example of a <u>multi-step method</u>, namely, a two-step scheme. This has a disadvantage that it requires *two* starting values while the wave equation
-provides only *one* initial condition.
+is provided with *one* initial condition.
 
 Finally, the leapfrog scheme is stable (here shown without proof) if
 
