@@ -47,13 +47,13 @@ parts:
         - file: univariate_distributions/moments.md
         - file: univariate_distributions/MLE.md
         - file: univariate_distributions/GOF.md
-
-    - file: multivariate/overview.md
+    - file: multivariate/overview
       sections:
-      - file: multivariate/events.md
-      - file: multivariate/variables.md
+      - file: multivariate/events
+      - file: multivariate/variables
       - file: multivariate/Correlation_and_Covariance.md
       - file: multivariate/Bivariate.md
+        sections:
         - file: multivariate/design/overview.md
           title: Practical Applications
           sections:
@@ -61,8 +61,7 @@ parts:
           - file: multivariate/design/one-random-variable.md
           - file: multivariate/design/two-random-variables.md
           - file: multivariate/design/exercise.md
-            sections:
-            - file: multivariate/design/exercise_solutions.ipynb
+          - file: multivariate/design/exercise_solutions.ipynb
         - file: multivariate/test_pyvinecopulib.ipynb
         - file: multivariate/test_bivariate.ipynb
 
@@ -73,7 +72,6 @@ parts:
       # - file: propagation_uncertainty/00b_MultivariateNormal
       - file: propagation_uncertainty/01_ErrorPropagation.md
       - file: propagation_uncertainty/02_LinearPropagation.md
-  
 
     - file: observation_theory/overview.md
       sections:
@@ -277,14 +275,14 @@ parts:
       sections:
       - file: programming/week_1_2/filepaths
       - file: programming/week_1_2/markdown
-
     - file: programming/week_1_4
       sections:
       - external: https://github.com/TeachBooks/learn-programming/blob/mude-2025/book/version_control/version_control.md
       - external: https://github.com/TeachBooks/learn-programming/blob/mude-2025/book/version_control/notebooks.ipynb
-# START REMOVE-FROM-PUBLISH
+     - file: programming/week_1_5
       - external: https://github.com/TeachBooks/learn-programming/blob/mude-2025/book/workflows/git/branch_merge.md
       - external: https://github.com/TeachBooks/learn-programming/blob/mude-2025/book/workflows/git/merge_conflicts.md
+  # START REMOVE-FROM-PUBLISH
     - file: programming/week_1_6
       sections:
       - file: external/learn-python/book/09/intro.md
