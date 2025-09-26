@@ -55,6 +55,7 @@ parts:
       - file: multivariate/Bivariate.md
         sections:
         - file: multivariate/design/overview.md
+          title: Practical Applications
           sections:
           - file: multivariate/design/example-river-system.md
           - file: multivariate/design/one-random-variable.md
