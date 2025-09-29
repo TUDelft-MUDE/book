@@ -338,3 +338,16 @@ align: center
 Solution obtained with the first order upwind scheme and $\Delta x = 0.1$ m so that $\kappa_a = 0.05$ m$^2$/s.
 ```
 
+Now, let us see what happen if we refine the grid four times, so that $\Delta x = 0.025$. Hence, $\kappa_a = 0.0125 < \kappa = 0.025$. The numerical solution is plotted below.
+
+```{figure} https://files.mude.citg.tudelft.nl/cvupwind2.png
+---
+scale: 75%
+name: cvupwind2
+align: center
+---
+Solution obtained with the first order upwind scheme and $\Delta x = 0.025$ m.
+```
+
+Although the solution is much more accurate, it is still less accurate compared to central differences. This is explained by the fact that scheme {eq}`statcveq2` is only
+first order accurate. We may perhaps conclude that it is wiser to prefer central differences over the first order upwind scheme provided the grid is sufficiently fine.
