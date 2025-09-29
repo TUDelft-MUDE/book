@@ -270,24 +270,24 @@ $$
   c(x_{m+1}) = c(x_m) + \Delta x\, \frac{\partial c}{\partial x}(x_m) + \frac 12 \Delta x^2\, \frac{\partial^2 c}{\partial x^2}(x_m) + \text{ HOT}
 $$
 
-where HOT stands for higher order terms. Now the first derivative in point $x_m$ can be written as
+where HOT stands for higher order terms. Now the first derivative at point $x_m$ can be written as
 
 $$
-  \frac{\partial c}{\partial x} = \frac{c_{m+1} - c_m}{\Delta x} - \frac 12 \Delta x\, \frac{\partial^2 c}{\partial x^2} + \text{ HOT}
+  \frac{\partial c}{\partial x} = \frac{c(x_{m+1}) - c(x_m)}{\Delta x} - \frac 12 \Delta x\, \frac{\partial^2 c}{\partial x^2} + \text{ HOT}
 $$
 
-Here, we have expressed the exact first derivative by the first order forward difference scheme plus higher order terms.
+Here, we have expressed the exact first derivative by the first order forward difference formula plus higher order terms.
 
-Now, let us consider the following advection equation:
-
-$$
-  \frac{\partial c}{\partial t} + u\,\frac{\partial c}{\partial x} = 0
-$$
-
-and then replace the first derivative by the first order scheme above while moving the higher order terms over to the right hand side, as follows
+Now, let us consider the following advection equation at point $x_m$:
 
 $$
-  \frac{\partial c}{\partial t} + u\,\frac{c_{m+1} - c_m}{\Delta x}  - \kappa_a \, \frac{\partial^2 c}{\partial x^2} = \text{HOT}
+  \frac{\partial c}{\partial t}(x_m) + u\frac{\partial c}{\partial x}(x_m) = 0
+$$
+
+and then replace the first derivative by the first order differences above while moving the higher order terms over to the right hand side, as follows
+
+$$
+  \frac{\partial c}{\partial t}(x_m) + u\frac{c(x_{m+1}) - c(x_m)}{\Delta x}  - \kappa_a \, \frac{\partial^2 c}{\partial x^2}(x_m) = \text{HOT}
 $$
 
 where
@@ -296,10 +296,10 @@ $$
   \kappa_a = \frac{u\,\Delta x}{2}
 $$
 
-is the **numerical diffusion** coefficient.
+is the diffusion coefficient due to **numerical diffusion**.
 We conclude that the original diffusion-free PDE has been transformed into an advection-diffusion PDE due to truncation error.
 Since the amount of numerical diffusion $\kappa_a$ is proportional to $\Delta x$, this amount cannot be neglected, that is,
-the term $\kappa_a\,c_xx$ cannot be considered as a negligible truncation error.
+the term $\kappa_a\,c_{xx}$ cannot be considered as a negligible truncation error.
 
 Below we will demonstrate that the first order upwind scheme generates sufficient amount of numerical diffusion so that wiggles are prevented.
 Let us assume $u>0$. Hence, we have the following discretized equation for internal points $m = 1,\cdots,M-1$
@@ -311,7 +311,7 @@ $$ (statcveq2)
 The corresponding characteristic equation is given by
 
 $$
-  r^2 - (P_{\Delta} +2) r + P_{\Delta}+1 = 0
+  r^2 - (P_{\Delta} +2) \, r + P_{\Delta}+1 = 0
 $$
 
 and its roots are
@@ -325,9 +325,9 @@ Hence, both roots are always non-negative and the numerical solution will not di
 Precautions should be taken so that the numerical diffusion will not dominate the physical one, that is, $\kappa_a < \kappa$.
 Otherwise, the first order upwind scheme is then considered to be too dissipative.
 
-Let us recall the above example with $u = 1$ m/s, $\kappa = 0.025$ m$^$/s and $\Delta x = 0.1$ m. Hence, the amount of numerical diffusion equals
-$0.5 \times 1 \times 0.1 = 0.05$ which is twice larger than the physical one. The rather inaccurate solution is depicted below.
-Note that the boundary layer thickness of the numerical solution is larger than that of the exact one due to artificial diffusion.
+Let us recall the above example with $u = 1$ m/s, $\kappa = 0.025$ m$^2$/s and $\Delta x = 0.1$ m. Hence, the amount of numerical diffusion equals
+$\kappa_a = 0.5 \times 1 \times 0.1 = 0.05$ m$^2$/s which is twice larger than the physical one. The numerical solution is depicted below which shows rather inaccurate.
+Note that the boundary layer thickness of the numerical solution is larger than that of the exact one due to numerical diffusion.
 
 ```{figure} https://files.mude.citg.tudelft.nl/cvupwind.png
 ---
