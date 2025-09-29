@@ -9,7 +9,7 @@ $$
 $$ (advdifi)
 
 This **instationary** advection-diffusion equation describes the time evolution of a **constituent** $c(x,t)$ that is transported with
-flow velocity $u$ and at the same time diffuses (or spread in space) with a diffusion coefficient $\kappa$. This PDE is classified as a *parabolic* one.
+flow velocity $u$ and at the same time diffuses (or spread in space) with a diffusion coefficient $\kappa$ during time evolution. This PDE is classified as a *parabolic* one.
 
 In some cases, however, we may be interested in the steady state only. In this respect, the following **stationary** equation will be considered
 
@@ -30,8 +30,19 @@ is an elliptic PDE. Here, $v$ is the flow velocity in $y-$direction.
 ```
 
 We first deals with the numerical solution of stationary advection-diffusion equation {eq}`advdifs` and then that of instationary advection-diffusion equation {eq}`advdifi` in a separate section.
-In particular we dive into the role and the meaning of central differences and the upwind scheme. In this context, we will explore the typical numerical phenomenon of **wiggles**.
-This is an artifact caused by central differences, and we will explore how to reduce it through diffusion.
+In particular we dive into the role and the meaning of central differences and the first order upwind scheme with respect to the numerical solution.
+In this context, we will explore the typical numerical phenomenon of **wiggles**.
+This is an artifact caused by central differences, and we will explore how to reduce it through diffusion, either physical and/or numerical.
+
+```{note} 
+
+**The learning objectives of this section are:**
+- formulate and discretize the advection-diffusion equation using central differences and the first order upwind scheme
+- describe the role of the mesh P&eacute;clet number
+- explain the notions of wiggles and numerical diffusion
+- discuss the possibilities to reduce wiggles
+
+```
 
 ## Stationary advection-diffusion equation
 
@@ -84,7 +95,7 @@ $$
 A peculiar feature of central differences applied to the first derivative $\partial c/\partial x$ (or generally, the advection term) is that they are
 prone to generate **spurious oscillations** or **wiggles**, especially near steep gradients.
 This renders the numerical solution physically meaningless. The way to counteract these wiggles is to add some diffusion.
-The effect of this diffusion process is to smear out the inregularities.
+The effect of this diffusion process is to smear out the irregularities.
 The question arises whether the amount of physical diffusion, as indicated by $\kappa$, is considered to be enough to prevent oscillations. To answer this question,
 we rewrite Eq. {eq}`statcveq` as follows
 
@@ -225,7 +236,7 @@ which is not possible.
 
 Let us consider our example with $\kappa=0.025$ m$^2$/s and $u=1$ m/s and we choose $\Delta x = 0.1$ m, so that $P_{\Delta} = 4$.
 The following figure depicts the obtained numerical solution that clearly shows wiggles $-$ the solution oscillates around the boundary layer.
-In this case, as we can see, $P_{\Delta} > 2$ which implies that the current amount of diffusion is not sufficient to prevent wiggles.
+In this case, as we can see, $P_{\Delta} > 2$ which implies that the current amount of physical diffusion is not sufficient to prevent wiggles.
 
 ```{figure} https://files.mude.citg.tudelft.nl/cvcentral.png
 ---
@@ -249,12 +260,49 @@ align: center
 Solution obtained with central differences and $\Delta x = 0.025$ m.
 ```
 
-Another remedy would be to apply an upwind scheme.
-In this way, sufficient amount of **numerical diffusion** is added so that wiggles are prevented.
-However, precautions should be taken so that the numerical diffusion will not dominate the physical one.
-This way of applying an upwind scheme is a very common practice.
+In practice, this increase of mesh resolution can be a severe one.
+Another remedy would be to apply the first order upwind scheme. This is explained in the following way.
 
-To demonstrate this, we apply a first order upwind scheme. Let us assume $u>0$. Hence, we have the following discretized equation for internal points $m = 1,\cdots,M-1$
+In general, **numerical diffusion** arises from a first order finite difference scheme to the spatial derivative $\partial c/\partial x$.
+To see this why this is so, recall the Taylor series expansion of $c(x_{m+1})$:
+
+$$
+  c(x_{m+1}) = c(x_m) + \Delta x\, \frac{\partial c}{\partial x}(x_m) + \frac 12 \Delta x^2\, \frac{\partial^2 c}{\partial x^2}(x_m) + \text{ HOT}
+$$
+
+where HOT stands for higher order terms. Now the first derivative in point $x_m$ can be written as
+
+$$
+  \frac{\partial c}{\partial x} = \frac{c_{m+1} - c_m}{\Delta x} - \frac 12 \Delta x\, \frac{\partial^2 c}{\partial x^2} + \text{ HOT}
+$$
+
+Here, we have expressed the exact first derivative by the first order forward difference scheme plus higher order terms.
+
+Now, let us consider the following advection equation:
+
+$$
+  \frac{\partial c}{\partial t} + u\,\frac{\partial c}{\partial x} = 0
+$$
+
+and then replace the first derivative by the first order scheme above while moving the higher order terms over to the right hand side, as follows
+
+$$
+  \frac{\partial c}{\partial t} + u\,\frac{c_{m+1} - c_m}{\Delta x}  - \kappa_a \, \frac{\partial^2 c}{\partial x^2} = \text{HOT}
+$$
+
+where
+
+$$
+  \kappa_a = \frac{u\,\Delta x}{2}
+$$
+
+is the **numerical diffusion** coefficient.
+We conclude that the original diffusion-free PDE has been transformed into an advection-diffusion PDE due to truncation error.
+Since the amount of numerical diffusion $\kappa_a$ is proportional to $\Delta x$, this amount cannot be neglected, that is,
+the term $\kappa_a\,c_xx$ cannot be considered as a negligible truncation error.
+
+Below we will demonstrate that the first order upwind scheme generates sufficient amount of numerical diffusion so that wiggles are prevented.
+Let us assume $u>0$. Hence, we have the following discretized equation for internal points $m = 1,\cdots,M-1$
 
 $$
   u\frac{c_m-c_{m-1}}{\Delta x} - \kappa \frac{c_{m+1}-2c_m+c_{m-1}}{\Delta x^2} = 0
@@ -272,28 +320,14 @@ $$
   r_1 = 1\, , \quad r_2 = 1+P_{\Delta}
 $$
 
-Hence, both roots are always non-negative and the numerical solution will not display any oscillations, irrespective of the value of $P_{\Delta}$. Apparently, the addition of the numerical
-diffusion due to first order upwinding appears to be sufficient.
+Hence, both roots are always non-negative and the numerical solution will not display any oscillations, irrespective of the value of $P_{\Delta}$.
 
-Another way to see this is by considering the modified equation. This equation is obtained by adding and substracting &frac12;$u(c_{m-1} + c_{m+1} - 2c_m)/\Delta x$
-to the left-hand side of Eq. {eq}`statcveq2` and subsequently re-ordering terms
+Precautions should be taken so that the numerical diffusion will not dominate the physical one, that is, $\kappa_a < \kappa$.
+Otherwise, the first order upwind scheme is then considered to be too dissipative.
 
-$$
-  u\frac{c_{m+1}-c_{m-1}}{2\Delta x} - (\kappa+\kappa_a) \frac{c_{m+1}-2c_m+c_{m-1}}{\Delta x^2} = 0
-$$
-
-where $\kappa_a =$&frac12;$u\Delta x > 0$ is the **artificial** or numerical diffusion coefficient due to first order upwinding. This scheme would result from the application of central differences
-to Eq. {eq}`statcv1` with a diffusion coefficient $\kappa+\kappa_a$. This scheme will generate non-negative solutions if
-
-$$
-  \frac{u\Delta x}{\kappa + \kappa_a} \leq 2 \quad \Rightarrow \quad u\Delta x \leq 2\kappa + u\Delta x
-$$
-
-This is true for any $\Delta x$ and thus, the application of first order upwinding will prevent wiggles.
-
-However, this first order upwind scheme is often considered to be too dissipative.
-See figure below where the corresponding numerical solution is found to be rather inaccurate, in particular when the physical diffusion is smaller than
-the numerical one, $\kappa < \kappa_a$.
+Let us recall the above example with $u = 1$ m/s, $\kappa = 0.025$ m$^$/s and $\Delta x = 0.1$ m. Hence, the amount of numerical diffusion equals
+$0.5 \times 1 \times 0.1 = 0.05$ which is twice larger than the physical one. The rather inaccurate solution is depicted below.
+Note that the boundary layer thickness of the numerical solution is larger than that of the exact one due to artificial diffusion.
 
 ```{figure} https://files.mude.citg.tudelft.nl/cvupwind.png
 ---
@@ -304,4 +338,3 @@ align: center
 Solution obtained with the first order upwind scheme and $\Delta x = 0.1$ m so that $\kappa_a = 0.05$ m$^2$/s.
 ```
 
-Note that the boundary layer thickness of the numerical solution is larger than that of the exact one due to artificial diffusion.
