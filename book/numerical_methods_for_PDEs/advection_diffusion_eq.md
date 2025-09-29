@@ -9,7 +9,7 @@ $$
 $$ (advdifi)
 
 This **instationary** advection-diffusion equation describes the time evolution of a **constituent** $c(x,t)$ that is transported with
-flow velocity $u$ and at the same time diffuses with a diffusion coefficient $\kappa$. This PDE is classified as a *parabolic* one.
+flow velocity $u$ and at the same time diffuses (or spread in space) with a diffusion coefficient $\kappa$. This PDE is classified as a *parabolic* one.
 
 In some cases, however, we may be interested in the steady state only. In this respect, the following **stationary** equation will be considered
 
@@ -30,6 +30,8 @@ is an elliptic PDE. Here, $v$ is the flow velocity in $y-$direction.
 ```
 
 We first deals with the numerical solution of stationary advection-diffusion equation {eq}`advdifs` and then that of instationary advection-diffusion equation {eq}`advdifi` in a separate section.
+In particular we dive into the role and the meaning of central differences and the upwind scheme. In this context, we will explore the typical numerical phenomenon of **wiggles**.
+This is an artifact caused by central differences, and we will explore how to reduce it through diffusion.
 
 ## Stationary advection-diffusion equation
 
@@ -82,12 +84,13 @@ $$
 A peculiar feature of central differences applied to the first derivative $\partial c/\partial x$ (or generally, the advection term) is that they are
 prone to generate **spurious oscillations** or **wiggles**, especially near steep gradients.
 This renders the numerical solution physically meaningless. The way to counteract these wiggles is to add some diffusion.
+The effect of this diffusion process is to smear out the inregularities.
 The question arises whether the amount of physical diffusion, as indicated by $\kappa$, is considered to be enough to prevent oscillations. To answer this question,
 we rewrite Eq. {eq}`statcveq` as follows
 
 $$
   \left ( \frac 12 P_{\Delta} - 1 \right ) c_{m+1} + 2c_m - \left ( \frac 12 P_{\Delta} + 1 \right ) c_{m-1} = 0
-$$ (statcveq2)
+$$ (recrel1)
 
 with
 
@@ -97,9 +100,9 @@ $$
 
 the so-called **mesh P&eacute;clet number**.
 
-Note that because of consistency, the sum of the coefficients of Eq. {eq}`statcveq2` is zero.
+Note that because of consistency, the sum of the coefficients of Eq. {eq}`recrel1` is zero.
 Hence, with $p=$&frac12;$P_{\Delta}-1$ and $q=-$&frac12;$P_{\Delta} - 1$, we have $p+q+2=0$.
-Eq. {eq}`statcveq2` represents a **recurrent relation** and its general solution is of the form
+Eq. {eq}`recrel1` represents a **recurrent relation** and its general solution is of the form
 
 $$
   c_m = \alpha\, r_1^m + \beta\, r_2^m
@@ -124,7 +127,7 @@ Verify the above characteristic equation and its roots.
 ```{admonition} Solution
 :class: tip, dropdown
 
-From Eq. {eq}`statcveq2` we have the followng
+From Eq. {eq}`recrel1` we have the followng
 
 $$
   p\, c_{m+1} - (p+q)\, c_m + q\, c_{m-1} = 0
@@ -161,7 +164,7 @@ To prevent wiggles, both roots must be non-negative.
 
 ```{note}
 
-To see this, we consider the solution
+To see why this is so, we consider the solution
 
 $$
   c_m = r^m
@@ -173,7 +176,7 @@ $$
   c_{m+1} = r^{m+1} = r \times r^m = r\,c_m \quad \Rightarrow \quad r = \frac{c_{m+1}}{c_m}
 $$
 
-Hence, if both solutions $c_m$ and $c_{m+1}$ are positive (or negative) then $r > 0$. However, if $c_m>0$ but the next one $c_{m+1} <0$, thus the solution oscillates, then $r<0$.
+Hence, if both solutions $c_m$ and $c_{m+1}$ are positive (or negative) then $r > 0$. However, if $c_m>0$ but the next one $c_{m+1} <0$ (or the other way around), thus the solution oscillates, then $r<0$.
 Therefore, wiggles in the solution occur as soon as $r<0$.
 
 ```
@@ -222,6 +225,7 @@ which is not possible.
 
 Let us consider our example with $\kappa=0.025$ m$^2$/s and $u=1$ m/s and we choose $\Delta x = 0.1$ m, so that $P_{\Delta} = 4$.
 The following figure depicts the obtained numerical solution that clearly shows wiggles $-$ the solution oscillates around the boundary layer.
+In this case, as we can see, $P_{\Delta} > 2$ which implies that the current amount of diffusion is not sufficient to prevent wiggles.
 
 ```{figure} https://files.mude.citg.tudelft.nl/cvcentral.png
 ---
@@ -232,8 +236,18 @@ align: center
 Solution obtained with central differences and $\Delta x = 0.1$ m.
 ```
 
-Unless $\kappa$ is considerably large, restriction {eq}`restpc` can be a severe one.
-A simple remedy would be to decrease the mesh size $\Delta x$ such that the considered restriction is fulfilled.
+A simple remedy would be to decrease the mesh size $\Delta x$ such that the considered restriction is fulfilled. This is
+demonstrated with the following example. We now choose $\Delta x = 0.025$ m, so that $P_{\Delta} = 1$. The result is depicted in
+the following figure.
+
+```{figure} https://files.mude.citg.tudelft.nl/cvcentral2.png
+---
+scale: 75%
+name: cvcentral2
+align: center
+---
+Solution obtained with central differences and $\Delta x = 0.025$ m.
+```
 
 Another remedy would be to apply an upwind scheme.
 In this way, sufficient amount of **numerical diffusion** is added so that wiggles are prevented.
