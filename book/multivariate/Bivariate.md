@@ -7,6 +7,12 @@ One of the simplest approaches to define a multivariate distribution, $F(x_{1}, 
 ## Definition of bivariate Gaussian distribution
 The bivariate Gaussian distribution for two random variables $X_1$ and $X_2$ is defined as
 
+:::::::{margin}
+::::::{versionchanged} v2025.6.2 2025-09-30:
+Fixed typo in first definition of bivariate Gaussian: Added squares in the denominators of the first and last terms of the exponent.
+::::::
+:::::::
+
 $$
 \phi_{\rho}(x_1, x_2) = \frac{1}{2\pi \sigma_1 \sigma_2 \sqrt{1-\rho^2}} \exp \left( - \frac{\left( \frac{x_1-\mu_1}{\sigma_1}\right)^2 -\left( \frac{2\rho (x_1-\mu_1)(x_2-\mu_2)}{\sigma_1 \sigma_2}\right) +\left(\frac{x_2-\mu_2}{\sigma_2} \right)^2}{2(1-\rho^2)}\right)
 $$
@@ -179,9 +185,11 @@ If you need to refresh the concept of covariance and correlation and want to see
 
 ## Your turn now!
 
+:::::::{margin}
 ::::::{versionchanged} v2025.6.1 2025-09-30:
 Fixed typo in the exercise of defining a covariance matrix in the Bivariate Gaussian page. The squared terms were missing in the covariance matrix.
 ::::::
+:::::::
 
 :::{card} Exercise: Keep your bike chain clean
 
