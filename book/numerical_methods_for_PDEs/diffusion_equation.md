@@ -694,7 +694,7 @@ not be able to determine eigenvalues of such a large matrix, because of the cumb
 
 ```{admonition} Derive stability condition using eigenvalues
 :class: dropdown
-For our discretization matrix $A$ it is still possible to derive the stability condition.
+For our discretization matrix $A$ it is still possible to derive a stability condition.
 Specifically, using the Gerschgorin's theorem, we found the range of eigenvalues of $A$ which is given by
 
 $$
@@ -733,7 +733,13 @@ $$
 
 then $T^{n+1}_m \geq 0$ for all grid points $m = 1,\ldots,M-1$. Hence, by <u>induction</u> it follows that the numerical solution is non-negative at all times.
 
-This resulted stability condition states that for a given $\Delta x$, the allowed value of $\Delta t$ must be small enough to keep the FTCS scheme {eq}`ftcs` stable.
+This resulted stability condition is
+
+$$
+  \boxed{\frac{\kappa \Delta t}{\Delta x^2} \leq \frac 12}
+$$
+
+and states that for a given $\Delta x$, the allowed value of $\Delta t$ must be small enough to keep the FTCS scheme {eq}`ftcs` stable.
 For this reason, the FTCS scheme is said to be **conditionally stable**.
 
 :::{card} Exercise
