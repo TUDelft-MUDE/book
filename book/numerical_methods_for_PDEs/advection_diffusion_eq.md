@@ -453,7 +453,7 @@ $$
 so that
 
 $$
-  q - \frac 12 \sigma \geq 0 \quad \Rightarrow \quad P_{\Delta) \leq 2
+  q - \frac 12 \sigma \geq 0 \quad \Rightarrow \quad P_{\Delta} \leq 2
 $$
 
 and
