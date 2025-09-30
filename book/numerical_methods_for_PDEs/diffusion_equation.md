@@ -380,13 +380,15 @@ a vector with $M$ elements. Note that vector $\vec{g}$ is due to the Dirichlet b
 
 ```{admonition} Symmetric matrix
 :class: dropdown
+You may have noticed that, apart from the last row, the discretization matrix is **symmetric** ($A = A^T$).
+It is possible to make this matrix completely symmetric.
 Recall the discretization of the homogeneous Neumann condition
 
 $$
   \frac{dT_M}{dt} = 2\kappa \, \frac{T_{M-1}-T_M}{\Delta x^2}
 $$
 
-This is slightly rewriten as follows
+This is rewriten as follows
 
 $$
   \frac{d{\tilde T}_M}{dt} = \kappa \, \frac{T_{M-1}-2{\tilde T}_M}{\Delta x^2}
@@ -418,10 +420,10 @@ $$
    \end{array} \right )
 $$
 
-This discretization matrix has the advantage of being **symmetric** ($A = A^T$).
-This means that all the eigenvalues are real. Hence, no harmonic motion shows up in the heat equation.
+which is symmetric.
+This means that all the eigenvalues are real. Hence, no harmonic motion shows up in the heat equation (as expected).
 
-Using the Gerschgorin's theorem we can estimate the eigenvalues of $A$. For a symmetric matrix $A$ with entries $a_{ij}$ its eigenvalues are lying in the union of intervals
+Using the theory of Gerschgorin we can estimate the eigenvalues of $A$. For a symmetric matrix $A$ with entries $a_{ij}$ its eigenvalues are lying in the union of intervals
 
 $$
   a_{ii} - \underset{j \neq i}{\sum_{j=1}^M}\,|a_{ij}| \leq \lambda \leq a_{ii} + \underset{j \neq i}{\sum_{j=1}^M}\,|a_{ij}|
@@ -450,7 +452,8 @@ $$
 $$
 
 Moreover, matrix $A$ is nonsingular, meaning that all the eigenvalues are nonzero and thus exclusively negative.
-As a consequence, the considered linear system of ODEs is regarded as being *damped*, a property also shared by the diffusion-like term.
+As a consequence, the considered linear system of ODEs {eq}`modedif1` is regarded as being *damped*.
+This property is also shaed by the diffusion process because diffusion acts as a form of damping $-$ variation in $c(x,t)$ reduces over time.
 ```
 
 :::{card} Exercise
