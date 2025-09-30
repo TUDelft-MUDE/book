@@ -179,6 +179,10 @@ If you need to refresh the concept of covariance and correlation and want to see
 
 ## Your turn now!
 
+::::::{versionchanged} v2025.6.1 2025-09-30:
+Fixed typo in the exercise of defining a covariance matrix in the Bivariate Gaussian page. The squared terms were missing in the covariance matrix.
+::::::
+
 :::{card} Exercise: Keep your bike chain clean
 
 Considering that you are living in the Netherlands, most probably, you are riding a bike everyday. You can imagine that your bike parts will deteriorate over time and, at some point, they will break. Also, the failure of a part in the mechanism may cause a subsequent failure of a different part connected to it. For example, the failure of the chain might damage the rear cassette and vice versa. In this exercise, we are going to model the number of hours of riding until the failure of parts of the bike.
@@ -198,8 +202,8 @@ $$
 
 $$
 \Sigma = \begin{pmatrix}
-600 & 336000 \\
-336000 & 850
+600^2 & 336000 \\
+336000 & 850^2
 \end{pmatrix}
 $$
 ```
