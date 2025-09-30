@@ -9,7 +9,7 @@ The bivariate Gaussian distribution for two random variables $X_1$ and $X_2$ is 
 
 :::::::{margin}
 ::::::{versionchanged} v2025.6.2 2025-09-30:
-Fixed typo in first definition of bivariate Gaussian: Added squares in the denominators of the first and last terms of the exponent.
+Fixed typo in first definition of bivariate Gaussian: Added squares in the first and last terms of the exponent.
 ::::::
 :::::::
 
