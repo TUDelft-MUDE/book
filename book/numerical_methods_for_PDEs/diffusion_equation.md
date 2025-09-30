@@ -447,8 +447,6 @@ the forward approximation in time with explicit Euler and the central difference
 A common method to check the order of accuray of a numerical scheme is to compute its (global) truncation error.
 
 ```{admonition} Definition (truncation error)
-:class: important
-
 Let be given a PDE with its solution $T(x,t)$ and let a numerical scheme for this PDE be given by
 
 $$
@@ -463,7 +461,6 @@ The truncation error of the scheme is defined as
 $$
   \tau_{\Delta t,\Delta x} = L_{\Delta t, \Delta x} \left ( T(x_m,t_n) \right )
 $$
-
 ```
 
 Let us consider the FTCS scheme {eq}`ftcs`. We can derive its truncation error, as follows
@@ -566,14 +563,11 @@ So, we can often get away with one order of accuracy lower in the local error fo
 ## Consistency and convergence
 
 ```{admonition} Definition (consistency)
-:class: important
-
 A numerical scheme is called **consistent** if and only if
 
 $$
   \lim_{\Delta x, \Delta t \to 0} \tau_{\Delta t,\Delta x} = 0
 $$
-
 ```
 
 According to this definition, the FTCS scheme {eq}`ftcs` is consistent with the heat equation {eq}`diffusion1`.
@@ -583,14 +577,11 @@ heat equation in the limit of $\Delta x, \Delta t \to 0$. However, it does *not*
 numerical solution approximates the exact solution of the heat equation. This is a matter of convergence.
 
 ```{admonition} Definition (convergence)
-:class: important
-
 A numerical scheme as described above is said to be **convergent** if
 
 $$
   \lim_{\Delta x, \Delta t \to 0} T^n_m = T(x_m,t_n)
 $$
-
 ```
 
 In the study of convergence of a numerical scheme, there are two issues to be considered.
@@ -601,10 +592,7 @@ In the study of convergence of a numerical scheme, there are two issues to be co
 With these two considerations, we can apply the following
 
 ```{admonition} Basic rule
-:class: important
-
 <center>consistency + stability &#8658; convergence</center>
-
 ```
 
 Since a proof of convergence is the hard one, effort in the other two aspects is easily elaborated.
