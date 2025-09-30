@@ -380,10 +380,10 @@ a vector with $M$ elements. Note that vector $\vec{g}$ is due to the Dirichlet b
 
 ```{admonition} Symmetric matrix
 :class: dropdown
-Recall the discretization of the homogeneous Neumann method
+Recall the discretization of the homogeneous Neumann condition
 
 $$
-  \frac{d{\tilde T}_M}{dt} = 2\kappa \, \frac{T_{M-1}-2T_M}{\Delta x^2}
+  \frac{dT_M}{dt} = 2\kappa \, \frac{T_{M-1}-T_M}{\Delta x^2}
 $$
 
 This is slightly rewriten as follows
