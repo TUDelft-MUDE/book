@@ -447,7 +447,7 @@ the forward approximation in time with explicit Euler and the central difference
 A common method to check the order of accuray of a numerical scheme is to compute its (global) truncation error.
 
 ```{admonition} Definition (truncation error)
-:class: tip
+:class: important
 
 Let be given a PDE with its solution $T(x,t)$ and let a numerical scheme for this PDE be given by
 
@@ -566,7 +566,7 @@ So, we can often get away with one order of accuracy lower in the local error fo
 ## Consistency and convergence
 
 ```{admonition} Definition (consistency)
-:class: tip
+:class: important
 
 A numerical scheme is called **consistent** if and only if
 
@@ -583,7 +583,7 @@ heat equation in the limit of $\Delta x, \Delta t \to 0$. However, it does *not*
 numerical solution approximates the exact solution of the heat equation. This is a matter of convergence.
 
 ```{admonition} Definition (convergence)
-:class: tip
+:class: important
 
 A numerical scheme as described above is said to be **convergent** if
 
@@ -601,7 +601,7 @@ In the study of convergence of a numerical scheme, there are two issues to be co
 With these two considerations, we can apply the following
 
 ```{admonition} Basic rule
-:class: tip
+:class: important
 
 <center>consistency + stability &#8658; convergence</center>
 
