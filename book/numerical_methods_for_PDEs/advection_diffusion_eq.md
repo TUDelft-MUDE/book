@@ -177,8 +177,7 @@ $$
 
 To prevent wiggles, both roots must be non-negative.
 
-```{note}
-
+```{admonition} Why?
 To see why this is so, we consider the solution
 
 $$
@@ -193,7 +192,6 @@ $$
 
 Hence, if both solutions $c_m$ and $c_{m+1}$ are positive (or negative) then $r > 0$. However, if $c_m>0$ but the next one $c_{m+1} <0$ (or the other way around), thus the solution oscillates, then $r<0$.
 Therefore, wiggles in the solution occur as soon as $r<0$.
-
 ```
 
 Here, we must require $r_2 \geq 0$. Hence, the restriction on the mesh P&eacute;clet number reads
