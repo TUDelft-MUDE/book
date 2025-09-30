@@ -1,6 +1,14 @@
 (advection)=
 # Advection Equation
 
+```{note} 
+
+**The learning objectives of this section are:**
+- describe the role of advection and identify the advection equation
+- explain the use of the upwind method
+
+```
+
 In this section we discuss the numerical solution of the 1D advection equation as given by
 
 $$
