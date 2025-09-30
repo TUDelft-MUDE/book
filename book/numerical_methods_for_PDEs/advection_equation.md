@@ -16,17 +16,19 @@ $$
 $$ (advection1)
 
 This first order hyperbolic PDE describes
-the propagation of a disturbance (e.g., waves, pollutants, particles) $c(x,t)$ with a constant flow speed $u$ in an infinite long 1D domain.
+the propagation of a disturbance or pulse $c(x,t)$ with a constant speed $u$ through a fluid in an infinite long 1D domain.
+Examples are a single wave ($c$ being the wave amplitude), or a pollutant ($c$ as concentration).
+
 Given any initial condition $c(x,0) = c^0(x)$ the solution at any *later* time is given
 by $c(x,t) = c^0(x-ut)$. This can be verified by computing the $t-$ and $x-$derivatives of the solution and substituting
 into the equation above. The function $c^0(x-ut)$ is a solution for
 **right-travelling waves**, since the graph of $c^0(x-ut)$
 is simply the graph of $c^0(x)$ shifted to the right by $ut$ spatial units. As time
 increases, the profile $c^0(x)$ moves to the right at speed $u$.
-Thus solutions are simply propagated, or **advected**, with constant
+Thus solutions are propagated, or **advected**, with constant
 speed $u$ without *deforming*, that is, no change in shape. If $u > 0$, propagation is from left to right. If $u < 0$, propagation is from right to left, that is, **left-travelling waves**.
 
-Advection is thus an example of transport by fluid motion. Another example is **convection** which is the transport of a fluid (water or air) in response to heat, for instance, boiling water.
+Advection is an example of transport by fluid motion. Another example is **convection** which is the transport of a fluid (water or air) in response to heat, for instance, boiling water.
 Although, these two terms are interchangeably in mathematical sense, <u>advection</u> is the usual term (especially in hydraulic engineering).
 
 The above described problem is an initial value problem (IVP). Now, let us consider a 1D domain with a finite length $L$, that is, $0 \leq x \leq L$.
