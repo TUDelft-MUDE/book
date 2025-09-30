@@ -33,7 +33,8 @@ is an elliptic PDE. Here, $v$ is the flow velocity in $y-$direction.
 
 We first deals with the numerical solution of stationary advection-diffusion equation {eq}`advdifs` and then that of instationary advection-diffusion equation {eq}`advdifi` in separate sections.
 In particular we dive into the role and the meaning of central differences and the first order upwind scheme with respect to the numerical solution of the particular PDE.
-In this context, we will explore the common phenomenon like **wiggles** and **numerical diffusion**.
+In this context, we will explore the common phenomena like **wiggles** and **numerical diffusion**.
+
 Wiggles are a numerical artifact caused by central differences and numerical diffusion is typically created by the first order upwind scheme.
 In this section, we will explore how to reduce wiggles through diffusion, either physical and/or numerical.
 
@@ -361,9 +362,65 @@ align: center
 Solution obtained with the first order upwind scheme and $\Delta x = 0.025$ m.
 ```
 
-Although the solution is much more accurate (cf. {numref}`cvpwind`), it is still less accurate compared to central differences (cf. {numref}`cvcentral2`).
+Although the solution is much more accurate (cf. {numref}`cvupwind`), it is still less accurate compared to central differences (cf. {numref}`cvcentral2`).
 This is explained by the fact that scheme {eq}`statcveq2` is only first order accurate, so that the numerical solution converges slower to the exact solution.
 
 We may perhaps conclude that it is wiser to prefer central differences over the first order upwind scheme provided the grid is sufficiently fine, at least for linear
 advection-diffusion equations. In practice, however, we see that upwind schemes are a much more robust alternative for nonlinear problems (such as the
 Navier-Stokes or shallow water equations) despite being generally less accurate.
+
+## Instationary advection-diffusion equation
+
+We consider the following 1D initial boundary value problem
+
+$$
+  \begin{align}
+    &\frac{\partial c}{\partial t} + u\frac{\partial c}{\partial x} - \kappa\frac{\partial^2 c}{\partial x^2} = 0\, , \quad 0 < x < 1 \, , \quad t > 0 \\
+    &\\
+    &c(x,0) = 0\, , \quad 0 \leq x \leq 1 \\
+    &\\
+    &c(0,t) = 0\, , \quad t > 0 \\
+    &\\
+    &c(1,t) = 1\, , \quad t > 0
+  \end{align}
+$$ (instatcv1)
+
+Again, we assume that the constituent $c(x,t)$ is sufficiently smooth. The solution to this problem is called **transient** and in the limit, $t \to \infty$,
+a steady state solution may be obtained. This is the case when the boundary conditions are time independent.
+This is also the solution to the stationary problem  {eq}`statcv1`.
+
+For the discretization of {eq}`instatcv1`, we employ the MOL approach. Again, we may choose central differences. The semi-discretized equation reads
+
+$$
+  \frac{dc_m}{dt} + u\frac{c_{m+1}-c_{m-1}}{2\Delta x} - \kappa \frac{c_{m+1}-2c_m+c_{m-1}}{\Delta x^2} = 0\, , \quad m = 1,\ldots,M-1\, , \quad t > 0
+$$
+
+A commonly time integration method would be the explicit Euler method. Thus, we obtain the following discretized equation
+for the instationary convection-diffusion equation {eq}`instatcv1`,
+
+$$
+  \frac{c^{n+1}_m-c^n_m}{\Delta t} + u\frac{c^n_{m+1}-c^n_{m-1}}{2\Delta x} - \kappa \frac{c^n_{m+1}-2c^n_m+c^n_{m-1}}{\Delta x^2} = 0\, , \quad m = 1,\ldots,M-1\, , \quad n=0,1,2,\ldots
+$$
+
+This scheme is first order accurate in time but second order in space. Furthermore, it is explicit and thus conditionally stable.
+By requiring non-negative solutions we may find some stability conditions. We rewrite the discretized equation as
+
+$$
+  c^{n+1}_m = (q - \frac 12 \sigma) c^n_{m+1} + (1-2q) c^n_m + (q + \frac 12 \sigma) c^n_{m-1}
+$$
+
+and by induction, we assume that $c^n_m \geq 0$ for $m=0,\ldots,M$. To have $c^{n+1}_m \geq 0$, the following conditions must be met
+
+$$
+   \boxed{
+          q \leq \frac 12 \, , \quad |P_{\mbox{\tiny $\Delta$}}| \leq 2
+         }
+$$
+
+:::{card} Exercise
+  Verify these conditions.
+:::
+
+The first condition is recognized as the stability condition for the heat equation while the second one is the condition that we have found for the stationary convection-diffusion equation.
+
+Instead of explicit Euler we may choose the implicit Euler scheme and regarding the advection term, we may choose a first order upwind scheme instead of central differences.
