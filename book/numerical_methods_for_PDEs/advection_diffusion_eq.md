@@ -400,7 +400,7 @@ for the instationary convection-diffusion equation {eq}`instatcv1`,
 
 $$
   \frac{c^{n+1}_m-c^n_m}{\Delta t} + u\frac{c^n_{m+1}-c^n_{m-1}}{2\Delta x} - \kappa \frac{c^n_{m+1}-2c^n_m+c^n_{m-1}}{\Delta x^2} = 0\, , \quad m = 1,\ldots,M-1\, , \quad n=0,1,2,\ldots
-$$
+$$ (ftcsadvdif)
 
 This scheme is first order accurate in time but second order in space. Furthermore, it is explicit and thus conditionally stable.
 By requiring non-negative solutions we may find some stability conditions. We rewrite the discretized equation as
@@ -409,18 +409,62 @@ $$
   c^{n+1}_m = (q - \frac 12 \sigma) c^n_{m+1} + (1-2q) c^n_m + (q + \frac 12 \sigma) c^n_{m-1}
 $$
 
+with $q = \kappa \,\Delta t/\Delta x^2$ and $\sigma = u\,\Delta t/\Delta x$.
+
 and by induction, we assume that $c^n_m \geq 0$ for $m=0,\ldots,M$. To have $c^{n+1}_m \geq 0$, the following conditions must be met
 
 $$
    \boxed{
-          q \leq \frac 12 \, , \quad |P_{\mbox{\tiny $\Delta$}}| \leq 2
+          q \leq \frac 12 \, , \quad |P_{\Delta}| \leq 2
          }
 $$
 
 :::{card} Exercise
-  Verify these conditions.
+Verify these conditions.
+
+```{admonition} Solution
+:class: tip, dropdown
+
+First, we rewrite {eq}`ftcsadvdif` to express the unknown at the new time step $n+1$ into the unknowns at the present time step $n$, using the numerical parameters $q$ and $\sigma$, as follows
+
+$$
+  c^{n+1}_m = c^n_m - \frac 12 \sigma \left (c^n_{m+1}-c^n_{m-1} \right) + q \left( c^n_{m+1}-2c^n_m+c^n_{m-1} \right )
+$$
+
+Further rewriting by grouping the terms with the same unknown,
+
+$$
+  c^{n+1}_m = left ( 1 -2q \right ) c^n_m + \left ( q - \frac 12 \sigma \right ) c^n_{m+1} + \left ( q + \frac 12 \sigma \right ) c^n_{m-1}
+$$
+
+Now, assume that $c^n_m \geq 0$, $c^n_{m+1} \geq 0$ and $c^n_{m-1} \geq 0$, then the coefficients $1 -2q$, $q - \frac 12 \sigma$ and $q + \frac 12 \sigma$ must be non-negative in order to get $c^{n+1}_m \geq 0$.
+Hence,
+
+$$
+  1-2q \geq 0 \quad \Rightarrow \quad q \leq \frac 12
+$$
+
+Note that
+
+$$
+  \frac{\sigma}{q} = P_{\Delta}
+$$
+
+so that
+
+$$
+  q - \frac 12 \sigma \geq 0 \quad \Rightarrow \quad P_{\Delta) \leq 2
+$$
+
+and
+
+$$
+  q + \frac 12 \sigma \geq 0 \quad \Rightarrow \quad -2 \leq P_{\Delta}
+$$
+
+```
 :::
 
-The first condition is recognized as the stability condition for the heat equation while the second one is the condition that we have found for the stationary convection-diffusion equation.
+The first condition is recognized as the stability condition for the heat equation while the second one is the condition that we have found for the stationary advection-diffusion equation.
 
 Instead of explicit Euler we may choose the implicit Euler scheme and regarding the advection term, we may choose a first order upwind scheme instead of central differences.
