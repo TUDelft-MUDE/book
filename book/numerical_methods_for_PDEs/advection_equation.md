@@ -105,7 +105,7 @@ $$
 ```{admonition} Skew symmetry
 :class: dropdown
 This matrix is a **skew symmetric** matrix ($A = -A^T$) implying that the nonzero eigenvalues are all purely imaginary.
-Mathematically, this system is regarded as *undamped*.
+Mathematically, this system is regarded as *undamped* while its solution consists of harmonic (oscillatory) components.
 ```
 
 The next step is to integrate the above system of ODEs with respect to time. Although the MOL approach is flexible in the sense that
