@@ -81,8 +81,7 @@ $$
 ```
 :::
 
-```{note}
-
+```{admonition} Well posedness
 The above mathematical model {eq}`diffusion1` is well posed since we found a unique solution that is stable. An example of an <u>ill posed</u> problem would be the one
 in which the Dirichlet boundary condition at $x = 0$ is replaced by the following homogeneous Neumann condition:
 
@@ -97,7 +96,6 @@ $$
 $$
 
 where $b$ remains undetermined. Hence, this solution is not unique!
-
 ```
 
 ## Domain discretization
