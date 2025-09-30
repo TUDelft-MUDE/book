@@ -434,7 +434,7 @@ $$
 Further rewriting by grouping the terms with the same unknown,
 
 $$
-  c^{n+1}_m = left ( 1 -2q \right ) c^n_m + \left ( q - \frac 12 \sigma \right ) c^n_{m+1} + \left ( q + \frac 12 \sigma \right ) c^n_{m-1}
+  c^{n+1}_m = \left ( 1 -2q \right ) c^n_m + \left ( q - \frac 12 \sigma \right ) c^n_{m+1} + \left ( q + \frac 12 \sigma \right ) c^n_{m-1}
 $$
 
 Now, assume that $c^n_m \geq 0$, $c^n_{m+1} \geq 0$ and $c^n_{m-1} \geq 0$, then the coefficients $1 -2q$, $q - \frac 12 \sigma$ and $q + \frac 12 \sigma$ must be non-negative in order to get $c^{n+1}_m \geq 0$.
