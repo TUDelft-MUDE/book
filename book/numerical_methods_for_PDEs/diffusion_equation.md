@@ -448,7 +448,7 @@ $$
 and we conclude that all the eigenvalues satisfy the inequality
 
 $$
-  \frac{-4\kappa}{\Delta x^2} \, \leq \, \lambda \, \leq \, 0
+  -\frac{4\kappa}{\Delta x^2} \, \leq \, \lambda \, \leq \, 0
 $$
 
 Moreover, matrix $A$ is nonsingular, meaning that all the eigenvalues are nonzero and thus exclusively negative.
@@ -694,16 +694,17 @@ not be able to determine eigenvalues of such a large matrix, because of the cumb
 
 ```{admonition} Derive stability condition using eigenvalues
 :class: dropdown
-Using the Gerschgorin's theorem we found the range of eigenvalues of the discretization matrix $A$ which is given by
+For our discretization matrix $A$ it is still possible to derive the stability condition.
+Specifically, using the Gerschgorin's theorem, we found the range of eigenvalues of $A$ which is given by
 
 $$
-  \frac{-4\kappa}{\Delta x^2} \, \leq \, \lambda \, < \, 0
+  -\frac{4\kappa}{\Delta x^2} \, \leq \, \lambda \, < \, 0
 $$
 
 The smallest eigenvalue equals $-4\kappa/\Delta x^2$. Hence, the system of equations is stable under the condition
 
 $$
-  | 1 - \frac{-4\kappa}{\Delta x^2}| \leq 1 \quad \Rightarrow \quad -2 \leq \frac{-4\kappa}{\Delta x^2} \leq 0
+  | 1 - \frac{4\kappa}{\Delta x^2}| \leq 1 \quad \Rightarrow \quad -2 \leq -\frac{4\kappa}{\Delta x^2} \leq 0
 $$
 
 The last inequality is always true while the first inequality is true if
