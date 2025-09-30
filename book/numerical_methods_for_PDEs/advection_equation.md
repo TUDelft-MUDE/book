@@ -102,6 +102,12 @@ $$
    \end{array} \right )
 $$
 
+```{admonition} Skew symmetry
+:class: dropdown
+This matrix is a **skew symmetric** matrix ($A = -A^T$) implying that the nonzero eigenvalues are all purely imaginary.
+Mathematically, this system is regarded as *undamped*.
+```
+
 The next step is to integrate the above system of ODEs with respect to time. Although the MOL approach is flexible in the sense that
 the choice of time integration is independent from the choice of space discretization, we must be careful since the resulting scheme
 may not be stable. For example, let us choose the forward Euler scheme, we get
