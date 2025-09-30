@@ -421,7 +421,7 @@ $$
 $$
 
 which is symmetric.
-This means that all the eigenvalues are real. Hence, no harmonic motion shows up in the heat equation (as expected).
+This means that all the eigenvalues of $A$ are real. Hence, no harmonic motion shows up in the heat equation (as expected).
 
 Using the theory of Gerschgorin we can estimate the eigenvalues of $A$. For a symmetric matrix $A$ with entries $a_{ij}$ its eigenvalues are lying in the union of intervals
 
@@ -453,7 +453,7 @@ $$
 
 Moreover, matrix $A$ is nonsingular, meaning that all the eigenvalues are nonzero and thus exclusively negative.
 As a consequence, the considered linear system of ODEs {eq}`modedif1` is regarded as being *damped*.
-This property is also shaed by the diffusion process because diffusion acts as a form of damping $-$ variation in $c(x,t)$ reduces over time.
+This property is also shared by the diffusion process because diffusion acts as a form of damping $-$ the variation in $c(x,t)$ reduces over time.
 ```
 
 :::{card} Exercise
@@ -691,6 +691,27 @@ $A$ is the discretization matrix as given by Eq. {eq}`matrdiff2`. Matrix $I$ is 
 A way to check stability is to consider the eigenvalues $\lambda_m$ of the matrix $I + \Delta t A$ and subsequently require $|\lambda_m| \leq 1\,, \forall m$.
 However, the matrices $A$ and $I$ are an $M \times M$ matrix with $M = L/\Delta x$ so that its dimension is growing as $\Delta x \to 0$. Hence, we might
 not be able to determine eigenvalues of such a large matrix, because of the cumbersome and laborious algebra.
+
+```{admonition} Derive stability condition using eigenvalues
+:class: dropdown
+Using the Gerschgorin's theorem we found the range of eigenvalues of the discretization matrix $A$ which is given by
+
+$$
+  \frac{-4\kappa}{\Delta x^2} \, \leq \, \lambda \, < \, 0
+$$
+
+The smallest eigenvalue equals $-4\kappa/\Delta x^2$. Hence, the system of equations is stable under the condition
+
+$$
+  | 1 - \frac{-4\kappa}{\Delta x^2}| \leq 1 \quad \Rightarrow \quad -2 \leq \frac{-4\kappa}{\Delta x^2} \leq 0
+$$
+
+The last inequality is always true while the first inequality is true if
+
+$$
+  \frac{\kappa \Delta t}{\Delta x^2} \leq \frac 12
+$$
+```
 
 From a physical point of view, the solution to the heat equation {eq}`diffusion1` cannot be negative, that is, we must have $T(x,t) \geq 0\, , \forall x \in [0,L]\,, \forall t \geq 0$.
 This implies that our finite difference scheme should share the same property, so that the numerical solution remains non-negative as time progresses.
