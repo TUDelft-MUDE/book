@@ -388,7 +388,7 @@ $$
   \frac{dT_M}{dt} = 2\kappa \, \frac{T_{M-1}-T_M}{\Delta x^2}
 $$
 
-This is rewriten as follows
+This is rewritten as follows
 
 $$
   \frac{d{\tilde T}_M}{dt} = \kappa \, \frac{T_{M-1}-2{\tilde T}_M}{\Delta x^2}
