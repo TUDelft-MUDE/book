@@ -378,6 +378,81 @@ $$
 
 a vector with $M$ elements. Note that vector $\vec{g}$ is due to the Dirichlet boundary condition.
 
+```{admonition} Symmetric matrix
+:class: dropdown
+Recall the discretization of the homogeneous Neumann method
+
+$$
+  \frac{d{\tilde T}_M}{dt} = 2\kappa \, \frac{T_{M-1}-2T_M}{\Delta x^2}
+$$
+
+This is slightly rewriten as follows
+
+$$
+  \frac{d{\tilde T}_M}{dt} = \kappa \, \frac{T_{M-1}-2{\tilde T}_M}{\Delta x^2}
+$$
+
+with
+
+$$
+  {\tilde T}_M = \frac 12 T_M
+$$
+
+If we redefine the vector with unknowns as
+
+$$
+  \vec{T} = \begin{pmatrix} T_1 \\ T_2 \\ T_3 \\ \vdots \\ T_{M-2} \\ T_{M-1} \\ {\tilde T}_M \end{pmatrix}
+$$
+
+then the matrix of the system becomes
+
+$$
+   A=   \frac{\kappa}{\Delta x^2} \left (
+   \begin{array}{rrrrrrr}   -2       &  1 &  0      &          & \cdots &        &   0       \\
+                             1       & -2 &  1      &          &        &        &           \\
+                             0       &  1 & -2      &  1       &        &        &           \\
+                             \vdots  &    & \ddots  & \ddots   & \ddots &        &  \vdots   \\
+                                     &    &         &  1       & -2     &  1     &   0       \\
+                                     &    &         &          &  1     & -2     &   1       \\
+                             0       &    &         & \cdots   &        &  1     &  -2
+   \end{array} \right )
+$$
+
+This discretization matrix has the advantage of being **symmetric** ($A = A^T$).
+This means that all the eigenvalues are real. Hence, no harmonic motion shows up in the heat equation.
+
+Using the Gerschgorin's theorem we can estimate the eigenvalues of $A$. For a symmetric matrix $A$ with entries $a_{ij}$ its eigenvalues are lying in the union of intervals
+
+$$
+  a_{ii} - \underset{j \neq i}{\sum_{j=1}^M}\,|a_{ij}| \leq \lambda \leq a_{ii} + \underset{j \neq i}{\sum_{j=1}^M}\,|a_{ij}|
+$$
+
+Thus, in our case we have
+
+$$
+  a_{ii} = \frac{-2\kappa}{\Delta x^2}\, , \quad \forall i \in [1,M]
+$$
+
+$$
+  \sum_{j=2}^M \,|a_{1j}| = \frac{\kappa}{\Delta x^2}\, , \quad \sum_{j=1}^{M-1} \,|a_{Mj}| = \frac{\kappa}{\Delta x^2}
+$$
+
+and
+
+$$
+  \underset{j \neq i}{\sum_{j=1}^M}\,|a_{ij}| = \frac{2\kappa}{\Delta x^2}\, , \quad \forall i \in [2,M-1]
+$$
+
+and we conclude that all the eigenvalues satisfy the inequality
+
+$$
+  \frac{-4\kappa}{\Delta x^2} \, \leq \, \lambda \, \leq \, 0
+$$
+
+Moreover, matrix $A$ is nonsingular, meaning that all the eigenvalues are nonzero and thus exclusively negative.
+As a consequence, the considered linear system of ODEs is regarded as being *damped*, a property also shared by the diffusion-like term.
+```
+
 :::{card} Exercise
 
 Recall the first exercise above. Now, we want to find the steady-state solution by means of the semi-discrete system of ODEs {eq}`modedif1`.
