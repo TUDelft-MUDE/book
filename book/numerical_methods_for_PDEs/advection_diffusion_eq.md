@@ -394,7 +394,7 @@ $$
 $$
 
 A commonly time integration method would be the explicit Euler method. Thus, we obtain the following discretized equation
-for the instationary convection-diffusion equation {eq}`instatcv1`,
+for the instationary advection-diffusion equation {eq}`instatcv1`,
 
 $$
   \frac{c^{n+1}_m-c^n_m}{\Delta t} + u\frac{c^n_{m+1}-c^n_{m-1}}{2\Delta x} - \kappa \frac{c^n_{m+1}-2c^n_m+c^n_{m-1}}{\Delta x^2} = 0\, , \quad m = 1,\ldots,M-1\, , \quad n=0,1,2,\ldots
