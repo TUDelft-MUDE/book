@@ -190,8 +190,13 @@ $$
   \end{cases}
 $$ (ftbs)
 
-with $\sigma = u\,\Delta t/\Delta x$ defined as the **Courant number**.
-This number plays a very important role for hyperbolic problems.
+with
+
+$$
+  \sigma = u\,\Delta t/\Delta x
+$$
+
+defined as the **Courant number**. This number plays a very important role for hyperbolic problems.
 
 Scheme {eq}`ftbs` is called the **FTBS** scheme, which stands for **F**orward in **T**ime, **B**ackward in **S**pace,
 and is first order accurate in both time and space.
