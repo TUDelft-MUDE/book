@@ -380,7 +380,7 @@ a vector with $M$ elements. Note that vector $\vec{g}$ is due to the Dirichlet b
 
 ```{admonition} Symmetric matrix
 :class: dropdown
-You may have noticed that, apart from the last row, the discretization matrix is **symmetric** ($A = A^T$).
+You may have noticed that, apart from the last row and the last column, the discretization matrix is **symmetric**, that is, $A = A^T$.
 It is possible to make this matrix completely symmetric.
 Recall the discretization of the homogeneous Neumann condition
 
