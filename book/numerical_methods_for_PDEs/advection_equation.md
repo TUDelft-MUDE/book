@@ -193,7 +193,7 @@ $$ (ftbs)
 with
 
 $$
-  \sigma = u\,\Delta t/\Delta x
+  \sigma = \frac{u\,\Delta t}{\Delta x}
 $$
 
 defined as the **Courant number**. This number plays a very important role for hyperbolic problems.
