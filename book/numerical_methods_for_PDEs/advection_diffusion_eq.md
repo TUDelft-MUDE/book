@@ -331,7 +331,7 @@ $$
   r_1 = 1\, , \quad r_2 = 1+P_{\Delta}
 $$
 
-Hence, both roots are always non-negative ($P_{\Delta}>0$ since $u>0$) and the numerical solution will not display any oscillations, irrespective of the value of $P_{\Delta}$.
+Hence, both roots are always non-negative ($P_{\Delta}>0$, since $u>0$) and the numerical solution will not display any oscillations, irrespective of the value of $P_{\Delta}$.
 
 Precautions should be taken so that the numerical diffusion will not dominate the physical one, that is, $\kappa_a < \kappa$.
 Otherwise, the first order upwind scheme is then considered to be too dissipative. In practice, this means mesh refinement if desired.
