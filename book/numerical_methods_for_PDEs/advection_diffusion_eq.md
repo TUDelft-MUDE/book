@@ -110,7 +110,7 @@ $$ (recrel1)
 with
 
 $$
-   P_{\Delta} \equiv \frac{u\Delta x}{\kappa}
+   P_{\Delta} = \frac{u\,\Delta x}{\kappa}
 $$
 
 the so-called **mesh P&eacute;clet number**.
