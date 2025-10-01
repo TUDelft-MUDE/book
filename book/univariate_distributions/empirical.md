@@ -51,7 +51,7 @@ The element below illustrates the resulting histogram:
 :name: empirical_wind_speed_pdf
 :aspectratio: 1 / 1
 
-Empirical PDF derived from wind speed estimates at 10m height in Delft over the past year. Hover over the bars to highlight the interval probabilities. [^ref]
+Histogram derived from wind speed estimates at 10m height in Delft over the past year. Hover over the bars to highlight the interval probabilities. The empirical PDF is obtained by dividing the interval probabilities by 5 [m/s]. [^ref]
 ````                                
 
 ## Step 3: Computing the empirical CDF

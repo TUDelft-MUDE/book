@@ -116,7 +116,7 @@ Select a distribution and adjust the parameters using the sliders. Observe how t
 
 # Let's practice
 
-An engineer is characterizing the axle loads transmited by the traffic on a bridge. Based on the observations, a Normal and a Gumbel distributions are fitted, as shown in the figure below. 
+An engineer is characterizing the axle loads transmitted by the traffic on a bridge. Based on the observations, a Normal and a Gumbel distributions are fitted, as shown in the figure below. 
 
 ```{figure} https://files.mude.citg.tudelft.nl/GOF_ex.png
 
