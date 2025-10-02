@@ -68,6 +68,7 @@ parts:
       sections:
       - file: propagation_uncertainty/0_Transforming_random_variables.md
       - file: propagation_uncertainty/1_Mean_and_Variance_propagation.md
+      - file: propagation_uncertainty/1b_Mean_and_Variance_propagation_linear_case.md
       - file: propagation_uncertainty/2_Monte_Carlo_simulations.md
       # - file: propagation_uncertainty/00a_CovCorr.md
       # - file: propagation_uncertainty/00b_MultivariateNormal
