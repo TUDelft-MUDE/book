@@ -1,5 +1,5 @@
 (01_errorprop)=
-## Mean and Variance propagation laws
+# Mean and Variance propagation laws
 
 Here, will only consider the propagation of the mean (= expectation) and (co-)variances, and not the transformation of the full PDF or CDF.
 
@@ -16,7 +16,7 @@ $$
 $$
 
 
-### Video
+## Video
 
 In this video the first part of this chapter is explained. You can also first read this section, and only watch the video if you like someone to explain it.
 
@@ -26,7 +26,7 @@ In this video the first part of this chapter is explained. You can also first re
     <iframe width="560" height="315" src="https://www.youtube.com/embed/EiuX9a7SIzc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 ```
 
-### What are the mean and variance of $X$?
+## What are the mean and variance of $X$?
 
 Let's start with the mean for the case that the function is linear: 
 
@@ -42,7 +42,7 @@ $$
 
 But what if the function is non-linear? Then we can use the [Taylor series](PM_taylor) approximation of $q(Y)$. 
 
-### Function of one random variable 
+## Function of one random variable 
 
 We will first look at the simplest case, where we have a function of a single random variable, $X=q(Y)$, with the Taylor approximation:
 
@@ -88,7 +88,7 @@ $$
 <iframe src="https://tudelft.h5p.com/content/1292060618387216967/embed" aria-label="Quiz_gravity" width="1088" height="637" frameborder="0" allowfullscreen="allowfullscreen" allow="autoplay *; geolocation *; microphone *; camera *; midi *; encrypted-media *"></iframe><script src="https://tudelft.h5p.com/js/h5p-resizer.js" charset="UTF-8"></script>
 :::
 
-### Function of two random variables 
+## Function of two random variables 
 Let's consider the case that we have one function of two random variables, $Y = [Y_1\; \;Y_2]^T$ with known mean and covariance matrix:
 
 $$
@@ -139,7 +139,7 @@ $$
 :::
 
 
-### Functions of $n$ random variables
+## Functions of $n$ random variables
 The propagation laws for functions of $n$ random variables are as follows:
 
 $$
@@ -215,7 +215,7 @@ $$
 ```
 :::
 
-### Video
+## Video
 
 In this video the functions of $n$ random variables is discussed, as well as the [linear propagation laws]((01_LinearProp)) is explained.
 
