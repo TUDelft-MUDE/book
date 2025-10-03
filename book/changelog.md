@@ -2,6 +2,10 @@
 
 [TeachBooks Versioning](https://teachbooks.io/manual/features/versioning.html) is used (a special type of semantic numbering for educational purposes) with generic format `v<academic_year>.<additions>.<errata>`, with an additional `.pre-release` added for incomplete books.
 
+## 2025-10-03: v2025.7.0.pre-release
+- Added [](./propagation_uncertainty/overview.md)
+- Added [](./programming/week_1_6.md)
+
 ## 2025-09-30: v2025.6.2.pre-release
 Fixed typo in first definition of [bivariate Gaussian: Added squares in the first and last terms of the exponent](./multivariate/Bivariate.md).
 
