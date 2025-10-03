@@ -68,28 +68,27 @@ $$
 f_{\underline{z}}(z) = \frac{d}{dz} \int_{I_z} f_{\underline{x}} (\beta) d\beta
 $$
 
-which shows in a general way how the PDF of $\underline{z}$ can be obtained from the PDF of $\underline{x}$. For specific functions monotonically increasing or decreasing in a given interval $A \subset \mathbb{R}$, it is possible to define transformation rule to express the PDF of $\underline{z} = g(\underline{x})$ in the PDF of $\underline{x}$. 
+which shows in a general way how the PDF of $\underline{z}$ can be obtained from the PDF of $\underline{x}$. For specific functions monotonically increasing or decreasing in a given interval $A \subset \mathbb{R}$, it is possible to define a transformation rule to express the PDF of $\underline{z} = g(\underline{x})$ in the PDF of $\underline{x}$. 
 
-:::{card} Remark on the multivariate case
+## Remark on the multivariate case
 
 In the multivariate case this is also possible, but this same analytic procedure becomes more complicated and involves continuous partial derivatives with non-vanishing Jacobian on $A$ and requires $f_{\underline{x}}(x)$ being continuous on $A$. This however goes beyond the scope of this course, therefore in the following sections we will focus on propagation of principal moments of the distribution, thus looking at propagation laws for Mean (first _raw_ moment) and Variance (second _central_ moment).
 
-:::
 
-**Theorem (Expectation law)**
+## Theorem (Expectation law)
 
-For $\underline{x} \text{in} \mathbb{R}^n$ be a $n$-dimensional random vector with continuous PDF $f_{\underline{x}}(x)$, we consider $\underline{z} = g(\underline{x})$, where $g: \mathbb{R}^n \rightarrow \mathbb{R}^m$ has continuous first partial derivatives. Then the expectation of $\underline{z}$ is
+For $\underline{x} \in \mathbb{R}^n$ be a $n$-dimensional random vector with continuous PDF $f_{\underline{x}}(x)$, we consider $\underline{z} = g(\underline{x})$, where $g: \mathbb{R}^n \rightarrow \mathbb{R}^m$ has continuous first partial derivatives. Then the expectation of $\underline{z}$ is
 
 $$
 E(\underline{z}) = E( g(\underline{x}) ) = \int_{\mathbb{R}^n} g(x) f_{\underline{x}}(x) dx
 $$
 
-**Corollary (Variance law)**
+## Corollary (Variance law)
 
-Under the same assumptions, then the dispersion of $\underline{z}$ is
+Under the same assumptions, the variance of $\underline{z}$ is
 
 $$
-D(\underline{z}) = D( g(\underline{x}) ) = \int_{\mathbb{R}^n} [g(x) - \bar{z}][g(x) - \bar{z}]^T f_{\underline{x}}(x) dx
+\mathrm{Var}(\underline{z}) = \mathrm{Var}( g(\underline{x}) ) = \int_{\mathbb{R}^n} [g(x) - \bar{z}][g(x) - \bar{z}]^T f_{\underline{x}}(x) dx
 $$
 
 where $\bar{z} = E( g(\underline{x}) )$, which is described in the previous Theorem.
