@@ -2,6 +2,7 @@
 ## Transforming random variables
 
 Let us take the simple example of converting temperature measurements taken in degrees Celsius to degrees Fahrenheit. This transformation is represented by a simple linear function 
+
 $$
 T_f = q(T_c) = \frac{9}{5} T_c + 32
 $$
@@ -16,7 +17,7 @@ name: frv_C_F
 Distribution of temperature in degrees Celsius and degrees Fahrenheit.
 ```
 
-The previous toy problem shows how even the simplest transformation (i.e., a linear function) can alter the distribution of output variables. However, in some cases we are not interested in evaluating the complete PDF of the output distribution, but we could limit ourselves to some principal _statistical moments_ of the distribution. But before discussing that, we provide a more general theory concerning the transformation of random variables.
+The previous toy problem shows how even the simplest transformation (i.e., a linear function) can alter the distribution of output variables. However, in some cases we are not interested in evaluating the complete PDF of the output distribution, but we could limit ourselves to some principal _statistical moments_ of the distribution. Before discussing that, we provide a more general theory concerning the transformation of random variables.
 
 ```{TIP}
 In the previous problem, try to think about the difference between the expected values $E{T_c}$ and $E{T_f}$. This difference is not "32" since the Celsius and Fahrenheit units have a different scale, therefore 1C° is not equivalent to 1F°!  
@@ -24,9 +25,11 @@ In the previous problem, try to think about the difference between the expected 
 
 ## Generic transformation of univariate functions
 Let us temporarily denote random variables/vectors with an underscore symbol. We try to determine the distribution of $\underline{z} = g(\underline{x})$ given the distribution of $\underline{x}$ and the function $g$. The CDF of $\underline{z}$ is defined as 
+
 $$
 F_{\underline{z}}(z) = P(\underline{z} \leq z) = P(g(\underline{x}) \leq z) = P( \underline{x} \in I_{z} )
 $$
+
 where $I_{z} = \{x\in \mathbb{R} \; | \; g(x) \leq z\}$ is a set of all $x$ that satisfy the inequality $g(x) \leq z$ for a given $z$.
 
 :::{card} Example $z = g(x) = ax + b$
@@ -60,9 +63,11 @@ where note that in the last case all $x$ values are mapped to the same value $b$
 :::
 
 Ultimately, if $F_{\underline{z}}(z)$ is differentiable, we can differentiate the aforementioned expression, leading to
+
 $$
 f_{\underline{z}}(z) = \frac{d}{dz} \int_{I_z} f_{\underline{x}} (\beta) d\beta
 $$
+
 which shows in a general way how the PDF of $\underline{z}$ can be obtained from the PDF of $\underline{x}$. For specific functions monotonically increasing or decreasing in a given interval $A \subset \mathbb{R}$, it is possible to define transformation rule to express the PDF of $\underline{z} = g(\underline{x})$ in the PDF of $\underline{x}$. 
 
 ### REMARK ON THE MULTIVARIATE CASE
@@ -72,6 +77,7 @@ In the multivariate case this is also possible, but this same analytic procedure
 **Theorem (Expectation law)**
 
 For $\underline{x} in \mathbb{R}^n$ be a $n$-dimensional random vector with continuous PDF $f_{\underline{x}}(x)$, we consider $\underline{z} = g(\underline{x})$, where $g: \mathbb{R}^n \rightarrow \mathbb{R}^m$ has continuous first partial derivatives. Then the expectation of $\underline{z}$ is
+
 $$
 E(\underline{z}) = E( g(\underline{x}) ) = \int_{\mathbb{R}^n} g(x) f_{\underline{x}}(x) dx
 $$
@@ -79,9 +85,11 @@ $$
 **Corollary (Variance law)**
 
 Under the same assumptions, then the dispersion of $\underline{z}$ is
+
 $$
 D(\underline{z}) = D( g(\underline{x}) ) = \int_{\mathbb{R}^n} [g(x) - \bar{z}][g(x) - \bar{z}]^T f_{\underline{x}}(x) dx
 $$
+
 where $\bar{z} = E( g(\underline{x}) )$, which is described in the previous Theorem.
 
 
