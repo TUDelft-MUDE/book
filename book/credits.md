@@ -138,14 +138,10 @@ Credits are provided here for chapters and pages that are released under the lic
 (uncertainty_propagation_credit)=
 ### Chapter: Uncertainty Propagation
 
-> {ref}`Propagation of Uncertainty <01_errorprop>` is written by Sandra Verhagen.
+> {ref}`Propagation of Uncertainty <01_errorprop>` is written by Sandra Verhagen and Lotfi Massarweh.
 >
-> Special thanks goes to:
-> - Robert Lanzafame, Patricia Mares Nasarre and Max Ramgraber, who reviewed, commented and/or modified content. 
-> - Sophie Keemink, Caspar Jungbacker and Thirza Feenstra, who provided feedback and helped develop exercises.
-> - Antonio Magherini, who created first draft of pages from powerpoint slides.
+> This chapter builds on the lecture notes _Probability and Observation Theory_ by P.J.G. Teunissen, D.G. Simons, C.C.J.M. Tiberius (2009).
 >
-> {ref}`This <density_scatter_3>` and {ref}`this interactive figure on the correlation coefficient <2D_Gaussian>` are created by Max Ramgraber ([maxramgraber.com/interactive](https://www.maxramgraber.com/interactive)), which are published with a CC BY license and included in this book without modification.
 
 (observation_theory_credit)=
 ### Chapter: Observation Theory
