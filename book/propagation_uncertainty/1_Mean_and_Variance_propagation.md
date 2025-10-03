@@ -6,13 +6,13 @@ Now, will only consider the propagation of the mean (= expectation) and variance
 The general form of our problem is given as follows. Consider the single function of $m$ random variables
 
 $$
-X = q(Y)=q(Y_1,\ldots,Y_m)
+X = q(\mathbf{Y})=q(Y_1,\ldots,Y_m)
 $$
 
-with the mean and covariance matrix of $Y$ known:
+with the mean and covariance matrix of $\mathbf{Y}$ known:
 
 $$
-\mathbb{E}(Y)=\mu_Y, \quad \mathbb{D}(Y)=\Sigma_Y
+\mathbb{E}(\mathbf{Y})=\boldsymbol\mu_Y, \quad \mathbb{D}(\mathbf{Y})=\boldsymbol\Sigma_Y
 $$
 
 
@@ -31,16 +31,16 @@ In this video the first part of this chapter is explained. You can also first re
 Let's start with the mean for the case that the function is linear: 
 
 $$
-q(Y)=a_1 Y_1+ a_2 Y_2 +\cdots+ a_m Y_m + c
+q(\mathbf{Y})=a_1 Y_1+ a_2 Y_2 +\cdots+ a_m Y_m + c
 $$
 
 with the $a_i$ and $c$ deterministic constants. Since the expectation operator is a linear operator, we have:
 
 $$
-\mathbb{E}(q(Y))=\mathbb{E}(a_1 Y_1+ a_2 Y_2 +\cdots a_m Y_m + c)= a_1 \mathbb{E}(Y_1)+\cdots+ a_m \mathbb{E}(Y_m)+c
+\mathbb{E}(q(\mathbf{Y}))=\mathbb{E}(a_1 Y_1+ a_2 Y_2 +\cdots a_m Y_m + c)= a_1 \mathbb{E}(Y_1)+\cdots+ a_m \mathbb{E}(Y_m)+c
 $$
 
-But what if the function is non-linear? Then we can use the [Taylor series](taylor-series) approximation of $q(Y)$. 
+But what if the function is non-linear? Then we can use the [Taylor series](taylor-series) approximation of $q(\mathbf{Y})$. 
 
 ## Function of one random variable 
 
@@ -89,17 +89,17 @@ $$
 :::
 
 ## Function of two random variables 
-Let's consider the case that we have one function of two random variables, $Y = [Y_1\; \;Y_2]^T$ with known mean and covariance matrix:
+Let's consider the case that we have one function of two random variables, $\mathbf{Y} = [Y_1\; \;Y_2]^T$ with known mean and covariance matrix:
 
 $$
-\mathbb{E}(Y)=\mu_Y =\begin{bmatrix}\mu_1\\ \mu_2 \end{bmatrix}, \quad \Sigma_Y= \begin{bmatrix}\sigma_1^2 & \mathrm{Cov}(Y_1,Y_2)\\ \mathrm{Cov}(Y_1,Y_2)&\sigma_2^2 \end{bmatrix}
+\mathbb{E}(\mathbf{Y})=\boldsymbol\mu_Y =\begin{bmatrix}\mu_1\\ \mu_2 \end{bmatrix}, \quad \boldsymbol\Sigma_Y= \begin{bmatrix}\sigma_1^2 & \mathrm{Cov}(Y_1,Y_2)\\ \mathrm{Cov}(Y_1,Y_2)&\sigma_2^2 \end{bmatrix}
 $$
 
 The Taylor series approximations of $X=q(Y_1,Y_2)$ follow as:
 
 $$
 \begin{align*}
-\mathbb{E}(X)&\approx q(\mu_Y)+\frac{1}{2} \left(\frac{\partial^2 q}{\partial Y_1^2}\right)_0\sigma_1^2 +\frac{1}{2} \left(\frac{\partial^2 q}{\partial Y_2^2}\right)_0\sigma_2^2 + \left(\frac{\partial^2 q}{\partial Y_1 \partial Y_2}\right)_0\mathrm{Cov}(Y_1,Y_2)\\
+\mathbb{E}(X)&\approx q(\boldsymbol\mu_Y)+\frac{1}{2} \left(\frac{\partial^2 q}{\partial Y_1^2}\right)_0\sigma_1^2 +\frac{1}{2} \left(\frac{\partial^2 q}{\partial Y_2^2}\right)_0\sigma_2^2 + \left(\frac{\partial^2 q}{\partial Y_1 \partial Y_2}\right)_0\mathrm{Cov}(Y_1,Y_2)\\
 \sigma_X^2 &\approx \left(\frac{\partial q}{\partial Y_1}\right)_0^2\sigma_1^2 + \left(\frac{\partial q}{\partial Y_2}\right)_0^2\sigma_2^2 + 2\left(\frac{\partial q}{\partial Y_1}\right)_0\left(\frac{\partial q}{\partial Y_2}\right)_0\mathrm{Cov}(Y_1,Y_2)
 \end{align*}
 $$
@@ -143,7 +143,7 @@ $$
 The propagation laws for functions of $n$ random variables are as follows:
 
 $$
-\mathbb{E}(X)\approx q(\mu_Y)+\frac{1}{2} \sum_{i=1}^{n}\left(\frac{\partial^2 q}{\partial Y_i^2}\right)_0\sigma_i^2 + \frac{1}{2} \sum_{i=1}^{n}\sum_{j=1,j\neq i}^{n} \left(\frac{\partial^2 q}{\partial Y_i \partial Y_j}\right)_0\mathrm{Cov}(Y_i,Y_j)
+\mathbb{E}(X)\approx q(\boldsymbol\mu_Y)+\frac{1}{2} \sum_{i=1}^{n}\left(\frac{\partial^2 q}{\partial Y_i^2}\right)_0\sigma_i^2 + \frac{1}{2} \sum_{i=1}^{n}\sum_{j=1,j\neq i}^{n} \left(\frac{\partial^2 q}{\partial Y_i \partial Y_j}\right)_0\mathrm{Cov}(Y_i,Y_j)
 $$
 
 $$
@@ -159,13 +159,13 @@ $$
 
 Assume $A$, $P$, and $C_d$ are independent random variables.
 
-What is the covariance matrix of the random vector $Y=[A, P, C_d]^T$? 
+What is the covariance matrix of the random vector $\mathbf{Y}=[A, P, C_d]^T$? 
 
 ```{admonition} Solution
 :class: tip, dropdown
 
 $$
-\Sigma_Y =\begin{bmatrix}\sigma^2_A & 0 & 0\\ 0& \sigma^2_P &0 \\ 0 & 0 & \sigma^2_{C_d}\end{bmatrix}
+\boldsymbol\Sigma_Y =\begin{bmatrix}\sigma^2_A & 0 & 0\\ 0& \sigma^2_P &0 \\ 0 & 0 & \sigma^2_{C_d}\end{bmatrix}
 $$
 
 ```
