@@ -138,7 +138,7 @@ Credits are provided here for chapters and pages that are released under the lic
 (uncertainty_propagation_credit)=
 ### Chapter: Uncertainty Propagation
 
-> {ref}`Propagation of Uncertainty <01_errorprop>` is written by Sandra Verhagen and Lotfi Massarweh.
+> {ref}`Uncertainty Propagation <01_errorprop>` is written by Sandra Verhagen and Lotfi Massarweh.
 >
 > This chapter builds on the lecture notes _Probability and Observation Theory_ by P.J.G. Teunissen, D.G. Simons, C.C.J.M. Tiberius (2009).
 >
