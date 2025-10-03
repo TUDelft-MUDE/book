@@ -22,7 +22,7 @@ $$
 $$
 
 $$
-D(X) = D( g(Y) ) \approx \frac{1}{N-1}\sum_{i=1}^{N} [ q(Y_i) - \hat{\mu}_X ] [ q(Y_i) - \hat{\mu}_X ]^T
+\mathrm{Var}(X) = \mathrm{Var}( g(Y) ) \approx \frac{1}{N-1}\sum_{i=1}^{N} [ q(Y_i) - \hat{\mu}_X ] [ q(Y_i) - \hat{\mu}_X ]^T
 $$
 
 which refer to the sample mean and the sample variance, respectively. The standard error on the mean will decrease with $1/\sqrt{N}$, while observe that in the second expression we have $N-1$ at the denominator since we do not know the true mean $\mathbb{E}( q(Y) )$ and therefore we first estimate it by the **sample mean** of the data $\{Y_1, ...Y_N\}$. This means that we use one degree of freedom and an unbiased estimator of the variance following by using $N-1$ instead of $N$.
