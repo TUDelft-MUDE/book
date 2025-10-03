@@ -100,6 +100,6 @@ At this point, we proceed in the following part by showing how such expressions 
 % source: uncertainty_propagation
 ```{attributiongrey} Attribution
 :class: attribution
-This chapter was written by Lotfi Massarweh. {ref}`Find out more here <uncertainty_propagation_credit>`.
+This chapter was written by Sandra Verhagen and Lotfi Massarweh. {ref}`Find out more here <uncertainty_propagation_credit>`.
 ```
 % END-CREDIT

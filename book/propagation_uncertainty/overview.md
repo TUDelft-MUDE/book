@@ -5,7 +5,7 @@
 % source: uncertainty_propagation
 ```{attributiongrey} Attribution
 :class: attribution
-This chapter was modified by Lotfi Massarweh, based on the original version by Sandra Verhagen. {ref}`Find out more here <uncertainty_propagation_credit>`.
+This chapter was written by Sandra Verhagen and Lotfi Massarweh. {ref}`Find out more here <uncertainty_propagation_credit>`.
 ```
 % END-CREDIT
 
