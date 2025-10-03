@@ -1,9 +1,9 @@
 (01_errorprop)=
 # Mean and Variance propagation laws
 
-Here, will only consider the propagation of the mean (= expectation) and (co-)variances, and not the transformation of the full PDF or CDF.
+Now, will only consider the propagation of the mean (= expectation) and variance, and not the transformation of the full PDF or CDF.
 
-The general form of our problem will be given as follows. Consider the single function of $m$ random variables
+The general form of our problem is given as follows. Consider the single function of $m$ random variables
 
 $$
 X = q(Y)=q(Y_1,\ldots,Y_m)
@@ -40,7 +40,7 @@ $$
 \mathbb{E}(q(Y))=\mathbb{E}(a_1 Y_1+ a_2 Y_2 +\cdots a_m Y_m + c)= a_1 \mathbb{E}(Y_1)+\cdots+ a_m \mathbb{E}(Y_m)+c
 $$
 
-But what if the function is non-linear? Then we can use the [Taylor series](PM_taylor) approximation of $q(Y)$. 
+But what if the function is non-linear? Then we can use the [Taylor series](taylor-series) approximation of $q(Y)$. 
 
 ## Function of one random variable 
 
@@ -217,7 +217,7 @@ $$
 
 ## Video
 
-In this video the functions of $n$ random variables is discussed, as well as the [linear propagation laws]((01_LinearProp)) is explained.
+In this video the functions of $n$ random variables is discussed, as well as the [linear propagation laws]((01_LinearProp)). 
 
 ```{eval-rst}
 .. raw:: html
