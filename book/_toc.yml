@@ -63,19 +63,19 @@ parts:
         #  - file: multivariate/design/exercise_solutions.ipynb
         #- file: multivariate/test_pyvinecopulib.ipynb
         #- file: multivariate/test_bivariate.ipynb
-
-# START REMOVE-FROM-PUBLISH
     - file: propagation_uncertainty/overview
       sections:
       - file: propagation_uncertainty/0_Transforming_random_variables.md
       - file: propagation_uncertainty/1_Mean_and_Variance_propagation.md
       - file: propagation_uncertainty/1b_Mean_and_Variance_propagation_linear_case.md
       - file: propagation_uncertainty/2_Monte_Carlo_simulations.md
+      
       # - file: propagation_uncertainty/00a_CovCorr.md
       # - file: propagation_uncertainty/00b_MultivariateNormal
       # - file: propagation_uncertainty/01_ErrorPropagation.md
       # - file: propagation_uncertainty/02_LinearPropagation.md
-
+      
+# START REMOVE-FROM-PUBLISH
     - file: observation_theory/overview.md
       sections:
       - file: observation_theory/01_Introduction.md
@@ -265,6 +265,7 @@ parts:
       #   - file: pd/notebooks/traffic/Exercise_Traffic_Render.ipynb
 
 # END REMOVE-FROM-PUBLISH
+
   - caption: Programming
     numbered: false
     chapters:
@@ -284,13 +285,14 @@ parts:
       - external: https://github.com/TeachBooks/learn-programming/blob/mude-2025/book/version_control/notebooks.ipynb
       - external: https://github.com/TeachBooks/learn-programming/blob/mude-2025/book/workflows/git/branch_merge.md
       - external: https://github.com/TeachBooks/learn-programming/blob/mude-2025/book/workflows/git/merge_conflicts.md
-# START REMOVE-FROM-PUBLISH
     - file: programming/week_1_6
       sections:
       - external: https://github.com/TeachBooks/learn-programming/blob/mude-2025/book/llms/effective-prompting.md
       - external: https://github.com/TeachBooks/learn-programming/blob/mude-2025/book/llms/generating-code.ipynb
       - external: https://github.com/TeachBooks/learn-programming/blob/mude-2025/book/llms/debugging-errors.ipynb
       - external: https://github.com/TeachBooks/learn-programming/blob/mude-2025/book/llms/human-in-the-loop.ipynb
+      
+# START REMOVE-FROM-PUBLISH
     - file: programming/week_1_6_old
       sections:
       - file: external/learn-python/book/09/intro.md
