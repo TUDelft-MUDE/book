@@ -42,13 +42,19 @@ Note that it does not depend on the deterministic constant $c$.
 :::
 
 ## Linear system of equations of random variables 
-Note that the linear function of two random variables can also be written as $q(\mathbf{Y}) = \begin{bmatrix} a_1 & a_2\end{bmatrix}\begin{bmatrix}Y_1 \\ Y_2\end{bmatrix}+c$. We will now generalize to the case where we have $m$ linear functions of $n$ variables, which can be written as a linear system of equations:
+Note that the linear function of two random variables can also be written as 
+
+$$
+X = q(\mathbf{Y}) = \begin{bmatrix} a_1 & a_2\end{bmatrix}\begin{bmatrix}Y_1 \\ Y_2\end{bmatrix}+c
+$$
+
+We will now generalize to the case where we compute a vector $\mathbf{X}\in\mathbb{R}^m$ with $m$ linear functions of $n$ variables, which can be written as a linear system of equations:
 
 $$ 
 \mathbf{X}= \begin{bmatrix} X_1\\ X_2 \\ \vdots \\ X_m \end{bmatrix}= \begin{bmatrix} a_{11}&a_{12}&\dots&a_{1n}\\a_{21}&a_{22}&\dots&a_{2n} \\ \vdots&\vdots&\vdots&\vdots \\ a_{m1}&a_{m2}&\dots&a_{mn} \end{bmatrix} \begin{bmatrix} Y_1\\ Y_2 \\ \vdots \\ Y_n \end{bmatrix} +\begin{bmatrix} c_1\\ c_2 \\ \vdots \\ c_m \end{bmatrix}=\mathbf{AY}+\mathbf{c}
 $$
 
-with known $\mathbb{E}(\mathbf{Y})$ and covariance matrix $\Sigma_Y$, and $\mathbf{c}$ a vector with deterministic variables.
+with known $\mathbb{E}(\mathbf{Y})$ and covariance matrix $\boldsymbol\Sigma_Y$, and $\mathbf{c}$ a vector with deterministic variables.
 
 The linear propagation laws of the mean and covariance matrix are given by
 
@@ -57,7 +63,7 @@ $$
 $$ 
 
 $$
-\Sigma_{X} =\mathbf{A}\Sigma_Y \mathbf{A}^T
+\boldsymbol\Sigma_{X} =\mathbf{A}\boldsymbol\Sigma_Y \mathbf{A}^T
 $$
 
 These are exact results, since for linear functions the higher-order terms of the Taylor approximation become zero and thus the approximation error is zero.
@@ -72,20 +78,20 @@ $$
 with 
 
 $$
-\mu_Y = \begin{bmatrix}0 \\ 0\end{bmatrix},\; \Sigma_Y= \begin{bmatrix}3&0 \\ 0&3\end{bmatrix}
+\boldsymbol\mu_Y = \begin{bmatrix}0 \\ 0\end{bmatrix},\; \boldsymbol\Sigma_Y= \begin{bmatrix}3&0 \\ 0&3\end{bmatrix}
 $$
 
-Apply the linear propagation laws to find $\mathbb{E}(X)=\mu_X$ and $\Sigma_X$.
+Apply the linear propagation laws to find $\mathbb{E}(X)=\boldsymbol\mu_X$ and $\boldsymbol\Sigma_X$.
 
  ```{admonition} Solution
 :class: tip, dropdown
 
 $$
-\mu_X=\begin{bmatrix}1&1 \\ 1&-2\end{bmatrix}\begin{bmatrix}0 \\ 0\end{bmatrix}=\begin{bmatrix}0 \\ 0\end{bmatrix}
+\boldsymbol\mu_X=\begin{bmatrix}1&1 \\ 1&-2\end{bmatrix}\begin{bmatrix}0 \\ 0\end{bmatrix}=\begin{bmatrix}0 \\ 0\end{bmatrix}
 $$
 
 $$
-\Sigma_X = \begin{bmatrix}1&1 \\ 1&-2\end{bmatrix}\begin{bmatrix}3&0 \\ 0&3\end{bmatrix}\begin{bmatrix}1&1 \\ 1&-2\end{bmatrix}=\begin{bmatrix}6&-3 \\ -3&15\end{bmatrix}
+\boldsymbol\Sigma_X = \begin{bmatrix}1&1 \\ 1&-2\end{bmatrix}\begin{bmatrix}3&0 \\ 0&3\end{bmatrix}\begin{bmatrix}1&1 \\ 1&-2\end{bmatrix}=\begin{bmatrix}6&-3 \\ -3&15\end{bmatrix}
 $$
 
 ```
@@ -103,12 +109,12 @@ Hint: first find the $\mathbf{A}$ matrix of the linear system $\mathbf{Y}=\mathb
 :class: tip, dropdown
 
 $$
-\mathbf{A} = \begin{bmatrix} 1& -1& -3 \\ 1 & 0& -1\\1&-2&0 \end{bmatrix},\; \Sigma_V = \begin{bmatrix} \frac{5}{100}& 0 & 0 \\ 0 & \frac{2}{100}& 0\\0&0& \frac{0.5}{100}\end{bmatrix}
+\mathbf{A} = \begin{bmatrix} 1& -1& -3 \\ 1 & 0& -1\\1&-2&0 \end{bmatrix},\; \boldsymbol\Sigma_V = \begin{bmatrix} \frac{5}{100}& 0 & 0 \\ 0 & \frac{2}{100}& 0\\0&0& \frac{0.5}{100}\end{bmatrix}
 $$
 
 $$
 \begin{align*}
-\Sigma_Y &= \mathbf{A}\Sigma_V\mathbf{A}^T \\
+\boldsymbol\Sigma_Y &= \mathbf{A}\boldsymbol\Sigma_V\mathbf{A}^T \\
 &= \begin{bmatrix} 1& -1& -3 \\ 1 & 0& -1\\1&-2&0 \end{bmatrix}\begin{bmatrix} \frac{5}{100}& 0 & 0 \\ 0 & \frac{2}{100}& 0\\0&0& \frac{0.5}{100}\end{bmatrix}\begin{bmatrix} 1& 1& 1 \\ -1 & 0& -2\\-3&-1&0 \end{bmatrix}=\frac{1}{100}\begin{bmatrix} 11.5& 6.5 & 9 \\ 6.5 & 5.5& 5\\9&5& 13\end{bmatrix}
 \end{align*}
 $$
