@@ -62,8 +62,6 @@ parts:
         #  - file: multivariate/design/exercise_solutions.ipynb
         #- file: multivariate/test_pyvinecopulib.ipynb
         #- file: multivariate/test_bivariate.ipynb
-
-# START REMOVE-FROM-PUBLISH
     - file: propagation_uncertainty/overview
       sections:
       - file: propagation_uncertainty/0_Transforming_random_variables.md
@@ -74,7 +72,8 @@ parts:
       # - file: propagation_uncertainty/00b_MultivariateNormal
       # - file: propagation_uncertainty/01_ErrorPropagation.md
       # - file: propagation_uncertainty/02_LinearPropagation.md
-
+      
+# START REMOVE-FROM-PUBLISH
     - file: observation_theory/overview.md
       sections:
       - file: observation_theory/01_Introduction.md
