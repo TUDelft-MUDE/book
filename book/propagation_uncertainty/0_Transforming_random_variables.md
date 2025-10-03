@@ -20,7 +20,7 @@ Distribution of temperature in degrees Celsius and degrees Fahrenheit.
 The previous toy problem shows how even the simplest transformation (i.e., a linear function) can alter the distribution of output variables. However, in some cases we are not interested in evaluating the complete PDF of the output distribution, but we could limit ourselves to some principal _statistical moments_ of the distribution. Before discussing that, we provide a more general theory concerning the transformation of random variables.
 
 ```{TIP}
-In the previous problem, try to think about the difference between the expected values $E{T_c}$ and $E{T_f}$. This difference is not "32" since the Celsius and Fahrenheit units have a different scale, therefore 1C° is not equivalent to 1F°!  
+In the previous problem, try to think about the difference between the expected values $\mathbb{E}{T_c}$ and $\mathbb{E}{T_f}$. This difference is not "32" since the Celsius and Fahrenheit units have a different scale, therefore 1C° is not equivalent to 1F°!  
 ```
 
 ## Generic transformation of univariate functions
@@ -80,7 +80,7 @@ In the multivariate case this is also possible, but this same analytic procedure
 For $\underline{x} \in \mathbb{R}^n$ be a $n$-dimensional random vector with continuous PDF $f_{\underline{x}}(x)$, we consider $\underline{z} = g(\underline{x})$, where $g: \mathbb{R}^n \rightarrow \mathbb{R}^m$ has continuous first partial derivatives. Then the expectation of $\underline{z}$ is
 
 $$
-E(\underline{z}) = E( g(\underline{x}) ) = \int_{\mathbb{R}^n} g(x) f_{\underline{x}}(x) dx
+\mathbb{E}(\underline{z}) = \mathbb{E}( g(\underline{x}) ) = \int_{\mathbb{R}^n} g(x) f_{\underline{x}}(x) dx
 $$
 
 ## Corollary (Variance law)
@@ -91,7 +91,7 @@ $$
 \mathrm{Var}(\underline{z}) = \mathrm{Var}( g(\underline{x}) ) = \int_{\mathbb{R}^n} [g(x) - \bar{z}][g(x) - \bar{z}]^T f_{\underline{x}}(x) dx
 $$
 
-where $\bar{z} = E( g(\underline{x}) )$, which is described in the previous Theorem.
+where $\bar{z} = \mathbb{E}( g(\underline{x}) )$, which is described in the previous Theorem.
 
 
 At this point, we proceed in the following part by showing how such expressions can be simplified, e.g., via a linearization of the non-linear transformation.  

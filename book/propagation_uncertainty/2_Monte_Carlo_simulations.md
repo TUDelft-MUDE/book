@@ -18,14 +18,14 @@ In the Group assignment 1.4, you already had a first look into simulations. In f
 From the general analytical expression provided for **Expectation law** and **Variance law**, we observe that we can replace the equalities by a numerical approximation such as
 
 $$
-E(X) = E( q(Y) ) \approx \frac{1}{N}\sum_{i=1}^{N} q(Y_i) = \hat{\mu}_X
+\mathbb{E}(X) = \mathbb{E}( q(Y) ) \approx \frac{1}{N}\sum_{i=1}^{N} q(Y_i) = \hat{\mu}_X
 $$
 
 $$
 D(X) = D( g(Y) ) \approx \frac{1}{N-1}\sum_{i=1}^{N} [ q(Y_i) - \hat{\mu}_X ] [ q(Y_i) - \hat{\mu}_X ]^T
 $$
 
-which refer to the sample mean and the sample variance, respectively. The standard error on the mean will decrease with $1/\sqrt{N}$, while observe that in the second expression we have $N-1$ at the denominator since we do not know the true mean $E( q(Y) )$ and therefore we first estimate it by the **sample mean** of the data $\{Y_1, ...Y_N\}$. This means that we use one degree of freedom and an unbiased estimator of the variance following by using $N-1$ instead of $N$.
+which refer to the sample mean and the sample variance, respectively. The standard error on the mean will decrease with $1/\sqrt{N}$, while observe that in the second expression we have $N-1$ at the denominator since we do not know the true mean $\mathbb{E}( q(Y) )$ and therefore we first estimate it by the **sample mean** of the data $\{Y_1, ...Y_N\}$. This means that we use one degree of freedom and an unbiased estimator of the variance following by using $N-1$ instead of $N$.
 
 **NOTE** The expression for multivariate functions and distributions follows trivially adopting the same definition in $\mathbb{R}^n$.
 
