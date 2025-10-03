@@ -1,7 +1,7 @@
 (01_LinearProp)=
-## Linear propagation laws of mean and covariance
+# Linear propagation laws of mean and covariance
 
-### Linear function of two random variables
+## Linear function of two random variables
 Consider a linear function of two random variables
 
 $$
@@ -38,7 +38,7 @@ Note that it does not depend on the deterministic constant $c$.
 ```
 :::
 
-### Linear functions of $n$ random variables 
+## Linear functions of $n$ random variables 
 Note that the linear function of two random variables can also be written as $q(Y) = \begin{bmatrix} a_1 & a_2\end{bmatrix}\begin{bmatrix}Y_1 \\ Y_2\end{bmatrix}+c$. We will now generalize to the case where we have $m$ linear functions of $n$ variables, which can be written as a linear system of equations:
 
 $$ 

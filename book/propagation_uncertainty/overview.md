@@ -44,7 +44,7 @@ Some simple examples of functions are that may have uncertain inputs are:
 You can think of scenarios where inputs of these functions follow a known distribution. In this chapter we explore what can then be said about the resulting uncertainty on the outputs. 
 
 
-## Objective of this Chapter
+:::{card} Objective of this Chapter
 
 The main question we are interested in is: 
 
@@ -53,3 +53,6 @@ The main question we are interested in is:
 In this chapter, we will try to answer this question and we will focus on propagating and combining the uncertainty through functions of random variables. This is fundamental since functions of random variables naturally occur when solving real-world problems.
 
 We will start by describing how to transform random variables, and make an illustrative example. Then, we will consider propagating the first two moments, namely the mean (or expectation) and the variance (or dispersion). This will be considered for transformations based on linear and linearized functions of the input. Lastly, when analytical solutions or approximations are no easy to be found, we will show how Monte Carlo simulation methods could be adopted for the uncertainty propagation.
+
+:::
+

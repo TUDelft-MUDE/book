@@ -1,5 +1,5 @@
 (01_errorprop)=
-## Transforming random variables
+# Transforming random variables
 
 Let us take the simple example of converting temperature measurements taken in degrees Celsius to degrees Fahrenheit. This transformation is represented by a simple linear function 
 
@@ -70,13 +70,15 @@ $$
 
 which shows in a general way how the PDF of $\underline{z}$ can be obtained from the PDF of $\underline{x}$. For specific functions monotonically increasing or decreasing in a given interval $A \subset \mathbb{R}$, it is possible to define transformation rule to express the PDF of $\underline{z} = g(\underline{x})$ in the PDF of $\underline{x}$. 
 
-### REMARK ON THE MULTIVARIATE CASE
+:::{card} Remark on the multivariate case
 
 In the multivariate case this is also possible, but this same analytic procedure becomes more complicated and involves continuous partial derivatives with non-vanishing Jacobian on $A$ and requires $f_{\underline{x}}(x)$ being continuous on $A$. This however goes beyond the scope of this course, therefore in the following sections we will focus on propagation of principal moments of the distribution, thus looking at propagation laws for Mean (first _raw_ moment) and Variance (second _central_ moment).
 
+:::
+
 **Theorem (Expectation law)**
 
-For $\underline{x} in \mathbb{R}^n$ be a $n$-dimensional random vector with continuous PDF $f_{\underline{x}}(x)$, we consider $\underline{z} = g(\underline{x})$, where $g: \mathbb{R}^n \rightarrow \mathbb{R}^m$ has continuous first partial derivatives. Then the expectation of $\underline{z}$ is
+For $\underline{x} \text{in} \mathbb{R}^n$ be a $n$-dimensional random vector with continuous PDF $f_{\underline{x}}(x)$, we consider $\underline{z} = g(\underline{x})$, where $g: \mathbb{R}^n \rightarrow \mathbb{R}^m$ has continuous first partial derivatives. Then the expectation of $\underline{z}$ is
 
 $$
 E(\underline{z}) = E( g(\underline{x}) ) = \int_{\mathbb{R}^n} g(x) f_{\underline{x}}(x) dx

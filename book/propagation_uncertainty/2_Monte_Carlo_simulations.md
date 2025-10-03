@@ -1,5 +1,5 @@
 (01_errorprop)=
-## Monte Carlo simulations for uncertainty propagation
+# Monte Carlo simulations for uncertainty propagation
 
 In the previous parts we learned how a transformation of random variables lead to random outputs with a different distribution. Moreover, we also saw how to propagate **means** and **(co)variances** via linearization, including the exact linear case. Alternatively, Monte Carlo (MC) simulations are very effective tools when models are highly non-linear, or when inputs are non-Gaussian, or when we need the **full distribution** rather than just principal moments. 
 
@@ -8,11 +8,11 @@ The **Monte Carlo** method traces its roots to early probability puzzles (e.g., 
 ```
 
 **NOTE:**
-In the Group assigment 1.4, you already had a first look into simulations. In fact, you numerically computed the PDF and empirical CDF by drawing random samples from fitted distribution of $x_1$ and $x_2$, while assuming these two input variables to be independent. The workflow is rather simple, but you should always be careful on the assumptions made for the underlying joint distribution.   
+In the Group assignment 1.4, you already had a first look into simulations. In fact, you numerically computed the PDF and empirical CDF by drawing random samples from fitted distribution of $x_1$ and $x_2$, while assuming these two input variables to be independent. The workflow is rather simple, but you should always be careful on the assumptions made for the underlying joint distribution.   
 
 ---
 
-### Simulating Mean and Variance of transformed variable
+## Simulating Mean and Variance of transformed variable
 **Goal.** Given a model $X = q(Y)$ and an input univariate distribution $p_Y$, estimate mean and variance by random sampling.
 
 From the general analytical expression provided for **Expectation law** and **Variance law**, we observe that we can replace the equalities by a numerical approximation such as
