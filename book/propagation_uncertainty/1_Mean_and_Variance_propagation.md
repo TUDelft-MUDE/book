@@ -92,21 +92,21 @@ $$
 Let's consider the case that we have one function of two random variables, $Y = [Y_1\; \;Y_2]^T$ with known mean and covariance matrix:
 
 $$
-\mathbb{E}(Y)=\mu_Y =\begin{bmatrix}\mu_1\\ \mu_2 \end{bmatrix}, \quad \Sigma_Y= \begin{bmatrix}\sigma_1^2 & Cov(Y_1,Y_2)\\ Cov(Y_1,Y_2)&\sigma_2^2 \end{bmatrix}
+\mathbb{E}(Y)=\mu_Y =\begin{bmatrix}\mu_1\\ \mu_2 \end{bmatrix}, \quad \Sigma_Y= \begin{bmatrix}\sigma_1^2 & \mathrm{Cov}(Y_1,Y_2)\\ \mathrm{Cov}(Y_1,Y_2)&\sigma_2^2 \end{bmatrix}
 $$
 
 The Taylor series approximations of $X=q(Y_1,Y_2)$ follow as:
 
 $$
 \begin{align*}
-\mathbb{E}(X)&\approx q(\mu_Y)+\frac{1}{2} \left(\frac{\partial^2 q}{\partial Y_1^2}\right)_0\sigma_1^2 +\frac{1}{2} \left(\frac{\partial^2 q}{\partial Y_2^2}\right)_0\sigma_2^2 + \left(\frac{\partial^2 q}{\partial Y_1 \partial Y_2}\right)_0Cov(Y_1,Y_2)\\
-\sigma_X^2 &\approx \left(\frac{\partial q}{\partial Y_1}\right)_0^2\sigma_1^2 + \left(\frac{\partial q}{\partial Y_2}\right)_0^2\sigma_2^2 + 2\left(\frac{\partial q}{\partial Y_1}\right)_0\left(\frac{\partial q}{\partial Y_2}\right)_0Cov(Y_1,Y_2)
+\mathbb{E}(X)&\approx q(\mu_Y)+\frac{1}{2} \left(\frac{\partial^2 q}{\partial Y_1^2}\right)_0\sigma_1^2 +\frac{1}{2} \left(\frac{\partial^2 q}{\partial Y_2^2}\right)_0\sigma_2^2 + \left(\frac{\partial^2 q}{\partial Y_1 \partial Y_2}\right)_0\mathrm{Cov}(Y_1,Y_2)\\
+\sigma_X^2 &\approx \left(\frac{\partial q}{\partial Y_1}\right)_0^2\sigma_1^2 + \left(\frac{\partial q}{\partial Y_2}\right)_0^2\sigma_2^2 + 2\left(\frac{\partial q}{\partial Y_1}\right)_0\left(\frac{\partial q}{\partial Y_2}\right)_0\mathrm{Cov}(Y_1,Y_2)
 \end{align*}
 $$
 
 These are thus the mean and variance propagation laws for a function of two random variables. Pay attention to the $\approx$-sign.
 
-If $Y_1$ and $Y_2$ are independent, we have that $Cov(Y_1,Y_2)=0$, such that the last term in both equations disappears.
+If $Y_1$ and $Y_2$ are independent, we have that $\mathrm{Cov}(Y_1,Y_2)=0$, such that the last term in both equations disappears.
 
 
 :::{card} Exercise mathematical pendulum
@@ -116,7 +116,7 @@ We will measure the period on one oscillation $T$ of a pendulum, and also the le
 $G=q(L,T)= 4\pi^2 \frac{L}{T^2}$ 
 
 Apply the mean and variance propagation laws to approximate the mean and variance of $G$ given that the expectations 
-$\mathbb{E}(L)= \mu_L$ and $\mathbb{E}(T)= \mu_T$, as well as the variances $\sigma^2_L$ and $\sigma^2_T$ are known, and the covariance $Cov(L,T)=0$.
+$\mathbb{E}(L)= \mu_L$ and $\mathbb{E}(T)= \mu_T$, as well as the variances $\sigma^2_L$ and $\sigma^2_T$ are known, and the covariance $\mathrm{Cov}(L,T)=0$.
 
 ```{admonition} Solution
 :class: tip, dropdown
@@ -143,11 +143,11 @@ $$
 The propagation laws for functions of $n$ random variables are as follows:
 
 $$
-\mathbb{E}(X)\approx q(\mu_Y)+\frac{1}{2} \sum_{i=1}^{n}\left(\frac{\partial^2 q}{\partial Y_i^2}\right)_0\sigma_i^2 + \frac{1}{2} \sum_{i=1}^{n}\sum_{j=1,j\neq i}^{n} \left(\frac{\partial^2 q}{\partial Y_i \partial Y_j}\right)_0Cov(Y_i,Y_j)
+\mathbb{E}(X)\approx q(\mu_Y)+\frac{1}{2} \sum_{i=1}^{n}\left(\frac{\partial^2 q}{\partial Y_i^2}\right)_0\sigma_i^2 + \frac{1}{2} \sum_{i=1}^{n}\sum_{j=1,j\neq i}^{n} \left(\frac{\partial^2 q}{\partial Y_i \partial Y_j}\right)_0\mathrm{Cov}(Y_i,Y_j)
 $$
 
 $$
-\sigma_X^2 \approx \sum_{i=1}^{n}\left(\frac{\partial q}{\partial Y_i}\right)_0^2\sigma_i^2  + \sum_{i=1}^{n}\sum_{j=1,j\neq i}^{n}\left(\frac{\partial q}{\partial Y_i}\right)_0\left(\frac{\partial q}{\partial Y_j}\right)_0Cov(Y_i,Y_j)
+\sigma_X^2 \approx \sum_{i=1}^{n}\left(\frac{\partial q}{\partial Y_i}\right)_0^2\sigma_i^2  + \sum_{i=1}^{n}\sum_{j=1,j\neq i}^{n}\left(\frac{\partial q}{\partial Y_i}\right)_0\left(\frac{\partial q}{\partial Y_j}\right)_0\mathrm{Cov}(Y_i,Y_j)
 $$
 
 :::{card} Exercises wind load
