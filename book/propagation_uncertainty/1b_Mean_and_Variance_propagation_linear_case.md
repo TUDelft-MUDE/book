@@ -45,7 +45,7 @@ Note that it does not depend on the deterministic constant $c$.
 Note that the linear function of two random variables can also be written as 
 
 $$
-X = q(\mathbf{Y}) = \begin{bmatrix} a_1 & a_2\end{bmatrix}\begin{bmatrix}Y_1 \\ Y_2\end{bmatrix}+c
+X = q(\mathbf{Y}) = \begin{bmatrix} a_1 & a_2\end{bmatrix}\begin{bmatrix}Y_1 \\ Y_2\end{bmatrix}+\mathbf{c}
 $$
 
 We will now generalize to the case where we compute a vector $\mathbf{X}\in\mathbb{R}^m$ with $m$ linear functions of $n$ variables, which can be written as a linear system of equations:
@@ -81,7 +81,7 @@ $$
 \boldsymbol\mu_Y = \begin{bmatrix}0 \\ 0\end{bmatrix},\; \boldsymbol\Sigma_Y= \begin{bmatrix}3&0 \\ 0&3\end{bmatrix}
 $$
 
-Apply the linear propagation laws to find $\mathbb{E}(X)=\boldsymbol\mu_X$ and $\boldsymbol\Sigma_X$.
+Apply the linear propagation laws to find $\mathbb{E}(\mathbf{X})=\boldsymbol\mu_X$ and $\boldsymbol\Sigma_X$.
 
  ```{admonition} Solution
 :class: tip, dropdown
