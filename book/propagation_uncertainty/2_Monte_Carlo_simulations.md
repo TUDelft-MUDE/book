@@ -35,9 +35,11 @@ At this point, we can look at a numerical example where we aim to compute the sa
 
 ### Barometric formula for an adiabatic atmosphere
 The problem considered concerns ideal gas with tropospheric constant lapse rate (change of temperature with altitude). A dependence of atmospheric pressure on altitude is given by the barometric law, i.e.
+
 $$
 p(h) = p_0 \left( 1 -\frac{L}{T_0} h \right)^\kappa, \qquad \kappa = \frac{g}{R_d L}
 $$
+
 where 
 * $p_0$ is the standard atmospheric pressure at sea level, e.g. $101,325 \; \rm{Pa}$;
 * $L$ is the temperature lapse rate, e.g. $0.0065 \; \rm{K°/m}$;
@@ -50,10 +52,13 @@ and in many cases we can generally approximate $\kappa \approx 5.256$ for the sa
 
 ### Example (univariate distribution)
 We assume to be at an altitude of 6 km ($\mu_h$), with an uncertainty given by a standard deviation of 100 m ($\sigma_h$). Then, we assume $h \sim \mathcal{N}(6 \; km, 100^2 \; m^2)$, so normally distributed, and we seek the mean and standard deviation of $p(h)$, where its derivative with respect to $h=\mu_h$ is given by
+
 $$
 \frac{dp(\mu_h)}{dh} = -\frac{\alpha \kappa}{1-\alpha \mu_h}p(\mu_h), \qquad \alpha = \frac{L}{T_0}
 $$
+
 therefore the Taylor (1st order) approximation leads to
+
 $$
 \mathbb{E}(p(h)) \approx p(\mu_h)
 $$
@@ -73,10 +78,13 @@ Mean and Standard Deviation computed via Taylor (1st order) approximation and Mo
 It is visible how results become stable using over $10^6$ samples, nonetheless the Taylor method provides only good results for the standard deviation. For the mean, an offset is visible and this is consequence of higher order terms (i.e. mean-bias correction) that has been neglected in the Taylor approximation.
 
 We attempt now to introduce the mean-bias correction from Taylor second order approximation, where second derivative in $h=\mu_h$ is given by
+
 $$
 \frac{d^2p(\mu_h)}{dh^2} = \frac{\alpha^2 \kappa(\kappa-1)}{(1-\alpha \mu_h)^2}p(\mu_h)
 $$
+
 therefore the Taylor (2nd order) approximation leads to
+
 $$
 \mathbb{E}(p(h)) \approx p(\mu_h) + \frac{\sigma^2_h}{2}\frac{d^2p(\mu_h)}{dh^2}
 $$
