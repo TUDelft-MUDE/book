@@ -28,9 +28,9 @@ which refer to the sample mean and the sample variance, respectively. The standa
 
 
 ## Comparing Taylor approximation and MC simulations
-At this point, we can look at a numerical example where we aim to compute the sample mean and variance for a given non-linear transformation $X = q(\bold{Y})$, where $q: \mathbb{R}^n \rightarrow \mathbb{R}$. Then, we will find the mean and variance of $X$ based on a Taylor expansion, as well as Monte Carlo simulations. In the latter case we will adopt the following procedure:
-1. Generate $N$ samples from $\bold{Y} \sim \mathcal{N}(\boldsymbol\mu_Y,\boldsymbol\Sigma_Y)$, e.g. assumed to be normally distributed;
-2. Propagate each sample $\bold{Y}_i$ via this non-linear transformation, i.e. $X_i = q(\bold{Y}_i)$;
+At this point, we can look at a numerical example where we aim to compute the sample mean and variance for a given non-linear transformation $X = q(\mathbf{Y})$, where $q: \mathbb{R}^n \rightarrow \mathbb{R}$. Then, we will find the mean and variance of $X$ based on a Taylor expansion, as well as Monte Carlo simulations. In the latter case we will adopt the following procedure:
+1. Generate $N$ samples from $\mathbf{Y} \sim \mathcal{N}(\boldsymbol\mu_Y,\boldsymbol\Sigma_Y)$, e.g. assumed to be normally distributed;
+2. Propagate each sample $\mathbf{Y}_i$ via this non-linear transformation, i.e. $X_i = q(\mathbf{Y}_i)$;
 3. Compute sample mean and variance from $X_i,\forall i=1...N,$ using the aforementioned expressions.
 
 ### Barometric formula for an adiabatic atmosphere
@@ -64,12 +64,15 @@ $$
 
 Let's now observe how this compares with MC simulations for different number of samples between $10^3$ and $10^7$. In the following plots we observe - for Mean (left) and Standard Deviation (right) - the results based on Taylor (1st order) approximation in red, along with MC results in blue color.  
 
-![PLOT_1stOrder](https://files.mude.citg.tudelft.nl/PLOT_BarometricLaw_uncertainty_propagation_1D.png)
-**CAPTION**: Mean and Standard Deviation computed via Taylor (1st order) approximation and Monte Carlo simulations.
+```{figure} https://files.mude.citg.tudelft.nl/PLOT_BarometricLaw_uncertainty_propagation_1D.png
+:align: center
+
+Mean and Standard Deviation computed via Taylor (1st order) approximation and Monte Carlo simulations.
+```
 
 It is visible how results become stable using over $10^6$ samples, nonetheless the Taylor method provides only good results for the standard deviation. For the mean, an offset is visible and this is consequence of higher order terms (i.e. mean-bias correction) that has been neglected in the Taylor approximation.
 
-We attemp now to introduce the mean-bias correction from Taylor second order approximation, where second derivative in $h=\mu_h$ is given by
+We attempt now to introduce the mean-bias correction from Taylor second order approximation, where second derivative in $h=\mu_h$ is given by
 $$
 \frac{d^2p(\mu_h)}{dh^2} = \frac{\alpha^2 \kappa(\kappa-1)}{(1-\alpha \mu_h)^2}p(\mu_h)
 $$
@@ -80,8 +83,11 @@ $$
 
 The results below demonstrates how thanks to Monte Carlo simulations it was possible to identify errors in the Taylor-based approximation, considering that an analytic expression for second derivate was relatively simple for this illustrative example. Moreover, we also saw how a large number of samples is necessary in order to correctly approximate the Mean and Variance of transformed variables, especially if subject to high non linearities. 
 
-![PLOT_2ndOrder](https://files.mude.citg.tudelft.nl/PLOT_BarometricLaw_uncertainty_propagation_1D_with_MeanCorr.png)
-**CAPTION**: Mean and Standard Deviation computed via Taylor (2nd order) approximation and Monte Carlo simulations.
+```{figure} https://files.mude.citg.tudelft.nl/PLOT_BarometricLaw_uncertainty_propagation_1D_with_MeanCorr.png)
+:align: center
+
+Mean and Standard Deviation computed via Taylor (2nd order) approximation and Monte Carlo simulations.
+```
 
 However, in real world problems these analytical approximations are generally not trivial, especially for multivariate cases, and MC methods offers a highly effective numerical approach for propagation of Mean and Variance quantities. Moreover, MC methods also provide an important tool to computing the full distribution of transformed variables, which can be really useful for hypothesis testing, computation of confidence levels, and many other statistical applications.
 
