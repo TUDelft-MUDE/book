@@ -20,7 +20,7 @@ Distribution of temperature in degrees Celsius and degrees Fahrenheit.
 The previous toy problem shows how even the simplest transformation (i.e., a linear function) can alter the distribution of output variables. However, in some cases we are not interested in evaluating the complete PDF of the output distribution, but we could limit ourselves to some principal _statistical moments_ of the distribution. Before discussing that, we provide a more general theory concerning the transformation of random variables.
 
 ```{TIP}
-In the previous problem, try to think about the difference between the expected values $\mathbb{E}{T_c}$ and $\mathbb{E}{T_f}$. This difference is not "32" since the Celsius and Fahrenheit units have a different scale, therefore 1C° is not equivalent to 1F°!  
+In the previous problem, try to think about the difference between the expected values $\mathbb{E}(T_c)$ and $\mathbb{E}(T_f)$. This difference is not "32" since the Celsius and Fahrenheit units have a different scale, therefore 1C° is not equivalent to 1F°!  
 ```
 
 ## Generic transformation of univariate functions
