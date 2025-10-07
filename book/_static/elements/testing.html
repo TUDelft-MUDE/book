@@ -63,6 +63,37 @@
         .y0(yScale(0))
         .y1(d => yScale(d.y));
 
+      const legendItems = [
+        {label: "Type I error (reject true H0)", fill: "red", opacity: 0.6},
+        {label: "Type II error (fail to reject false H0)", fill: "blue", opacity: 0.3},
+        {label: "Power (correctly reject false H0)", fill: "green", opacity: 0.3},
+        {label: "Correctly accept H0 (fail to reject true H0)", fill: "#999999", opacity: 0.25}
+      ];
+
+      const legend = svg.append("g")
+        .attr("id", "legend")
+        .attr("transform", `translate(${width - margin.right - 320}, ${margin.top})`);
+
+      const legendEntry = legend.selectAll("g")
+        .data(legendItems)
+        .join("g")
+        .attr("transform", (d, i) => `translate(0, ${i * 24})`);
+
+      legendEntry.append("rect")
+        .attr("width", 18)
+        .attr("height", 18)
+        .attr("fill", d => d.fill)
+        .attr("opacity", d => d.opacity)
+        .attr("stroke", "#333")
+        .attr("stroke-width", 1);
+
+      legendEntry.append("text")
+        .attr("x", 24)
+        .attr("y", 9)
+        .attr("dominant-baseline", "middle")
+        .attr("font-size", 14)
+        .text(d => d.label);
+
       function pdf(x, mu, sigma) {
         return (1/(sigma*Math.sqrt(2*Math.PI))) * Math.exp(-0.5 * Math.pow((x-mu)/sigma,2));
       }
@@ -135,10 +166,15 @@
         // remove old shading
         g.selectAll(".shade").remove();
 
+        // Correct acceptance of H0 (grey) under H0
+        const correctAccept = dataH0.filter(d => d.x <= c);
+        if (correctAccept.length>1)
+          g.append("path").datum(correctAccept).attr("class","shade").attr("d",area).attr("fill","#999999").attr("opacity",0.25);
+
         // Type I error (red) under H0
         const typeI = dataH0.filter(d => d.x >= c);
         if (typeI.length>1)
-          g.append("path").datum(typeI).attr("class","shade").attr("d",area).attr("fill","red").attr("opacity",0.3);
+          g.append("path").datum(typeI).attr("class","shade").attr("d",area).attr("fill","red").attr("opacity",0.6);
 
         // Type II error (blue) under Ha
         const typeII = dataHa.filter(d => d.x <= c);

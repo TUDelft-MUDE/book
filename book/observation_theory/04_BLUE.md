@@ -1,5 +1,5 @@
 (BLUE)=
-## Best linear unbiased estimation
+# Best linear unbiased estimation
 
 Best Linear Unbiased estimation (BLUE) is based on a fundamentally different  principle than (weighted) least-squares (WLS), but still it turns out to be a special case of WLS.
 

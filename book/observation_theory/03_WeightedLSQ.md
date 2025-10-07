@@ -1,5 +1,5 @@
 (03_wls)=
-## Weighted least-squares estimation
+# Weighted least-squares estimation
 
 In ordinary least-squares estimation, we assume that all observations are equally important. In many cases this is not realistic, as observations may be obtained by different measurement systems, or under different circumstances. We want our methodology for least-squares estimation to be able to take this into account.
 
@@ -50,7 +50,7 @@ $$
 
 :::
 
-### Video
+## Video
 ```{eval-rst}
 .. raw:: html
 
@@ -61,7 +61,7 @@ $$
 You will not be asked to derive the weighted least-squares solution as shown in the video.
 ```
 
-### Discussion on the weight matrix
+## Discussion on the weight matrix
 The weight matrix $\mathrm{W}$ expresses the (relative) weights between the observations. It is always a symmetric square matrix. The size of the weight matrix depends on the number of observations, $m$. The size of the weight matrix is $m\times m$.
 
 If it is a unit matrix ($\mathrm{W=I}$), this implies that all observations have equal weight. Note that in this case the equations are equal to the ordinary least-squares solution.
@@ -74,7 +74,7 @@ If it is a diagonal matrix, with different values on the diagonal, this implies 
 
 :::
 
-### Weighted least-squares estimator: properties
+## Weighted least-squares estimator: properties
 
 Until now, we have looked at the weighted least-squares solution of a single *realization* of the observations, where generally we assume that it is a realization of the *random* observable vector $Y$, since measurements are affected by random errors. As such it follows the the weighted least-squares *estimator* is given by:
 

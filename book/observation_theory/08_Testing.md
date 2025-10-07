@@ -1,5 +1,5 @@
 (08_testing)=
-## Model testing
+# Model testing
 In Chapter [Precision and confidence intervals](05_precision) one part of the quality assessment was presented. But evaluating the precision does not tell us how well the model fits the data we collected. It might be that we worked with a wrong functional model (e.g., too simplistic), or a wrong stochastic model. Or it may be that our observations are affected by blunders or systematic biases. 
 
 In some cases, a first indication that something may be wrong can be obtained by plotting the observations and the fitted model together with the confidence intervals. If the residuals are large compared to the confidence interval this is obviously an indication that something is wrong. Another indication is if you see a clear pattern in the residuals once you plot those as function of time or location. 
@@ -23,7 +23,7 @@ To answer these questions, we need to apply statistical hypothesis testing. In t
 * test for blunders or systematic biases in the observations;
 * test for misspecifications of the functional model and/or decide between two competing hypotheses regarding the functional model.
 
-### Statistical hypothesis testing: principle
+## Statistical hypothesis testing: principle
 Statistical hypothesis testing means that we apply a certain test to decide between two (or more) competing hypothesis regarding the underlying model (in our case the functional or stochastic model). Therefore we assume a nominal model, corresponding to the null hypothesis $\mathcal{H}_0$, and another model for the alternative hypothesis $\mathcal{H}_a$.
 
 An important note to be made here is that the null hypothesis is presumed to be true unless the data provides convincing evidence against it (i.e., there is significant misfit).

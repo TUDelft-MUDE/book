@@ -1,5 +1,5 @@
 (ObsTheory)=
-## Introduction
+# Introduction
 
 From experience we know that various uncertain phenomena can be modeled as a random variable (or a random vector), say $Y$. In this part the random variables are measurements (e.g., sensor readings), which are uncertain due to random errors. We will refer to these random variables (our input data) $Y$ as the *observables*.
 
@@ -55,9 +55,9 @@ This covariance matrix is assumed to be known here. In practice, it can be deter
 Parameter estimation requires specification of the underlying functional and stochastic models. It may happen, however, that some parts of the models are misspecified, thereby invalidating the results of estimation. Some measurements, for instance, may be corrupted by blunders (which are not random!), or the chosen model may fail to give an adequate description of physical reality. Testing for such misspecifications is the topic of the last sections of this chapter.
 
 (01_funcmodel)=
-### Functional model: examples
+## Functional model: examples
 
-#### Linear trend model 
+### Linear trend model 
 The unknown parameters are the intercept $x_1$ and rate of change (velocity) $x_2$. The observation equation of a single observable $Y_i$ is:
 
 $$
@@ -89,7 +89,7 @@ This is model is linear in $\mathrm{x}$, therefore we refer to it as a linear mo
 ```
 :::
 
-#### Step function
+### Step function
 Consider a process with unknown parameter $x_1$ assumed to be constant up till time $t_{i-1}$, and a sudden change (step) at time $t_i$, after which the parameter remains constant at $x_2$. See {numref}`stepfun`.
 
 ```{figure} https://files.mude.citg.tudelft.nl/00_step.png
@@ -145,7 +145,7 @@ $$
 =\begin{bmatrix} q_{1}(\mathrm{x}) \\ q_{2}(\mathrm{x}) \\ \vdots \\ q_{m}(\mathrm{x}) \end{bmatrix}
 $$
 
-### Redundancy
+## Redundancy
 Later we will see that the *redundancy* of our model plays an important role regarding the precision of our estimated parameters. For a model with $m$ observables and $n$ unknown parameters, the [redundancy](redundancy) is given by:
 
 $$
@@ -154,7 +154,7 @@ $$
 
 this is true since we assume to work with $\mathrm{A}$-matrices (size $m\times n$) that have full column rank: $rank(\mathrm{A})=n$.
 
-### Estimation and linear regression
+## Estimation and linear regression
 
 The goal of estimation is the estimate *model parameters* from a set of observations. In Civil Engineering, Applied Earth Sciences and Environmental Engineering this is needed in many monitoring and sensing applications, such as:
 * Sea level rise

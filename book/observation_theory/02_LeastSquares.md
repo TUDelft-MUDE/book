@@ -1,6 +1,6 @@
-## Least-squares estimation
+# Least-squares estimation
 
-### Functional model: dealing with inconsistency
+## Functional model: dealing with inconsistency
 
 Given a set of observations which contain noise, and a model that is assumed to explain these data, the goal is to estimate the unknown parameters of that model. The least-squares principle can be used to solve this task. 
 
@@ -18,7 +18,7 @@ Thus, in the case in which there are more observations than unknowns (and design
 
 The *redundancy* of the system is equal to $m-n$, i.e., the 'additional' number of observations compared to the minimum required to solve the system of equations.
 
-#### Example: linear trend model
+### Example: linear trend model
 
 Assume we have $m$ observations and we try to fit the linear trend model:
 
@@ -44,7 +44,7 @@ $$
 
 The length of the error vector (or vector of residuals) $\mathrm{\epsilon}$ is equal to the length of the vector of observations $\mathrm{y}$.
 
-### Least-squares principle
+## Least-squares principle
 
 We are looking for a solution for $\mathrm{x}$; this solution will be denoted by $\hat{\mathrm{x}}$. Based on this solution, the 'adjusted observations' would be $\hat{\mathrm{y}}= \mathrm{A}\hat{\mathrm{x}}$ (solution of the forward model).
 
@@ -78,7 +78,7 @@ $$
 
 In other words, $\mathrm{\hat{x}}$ is the solution for $\mathrm{x}$ which provides the minimum of $\mathrm{(y-Ax)^T (y-Ax)}=\sum_{i=1}^m \epsilon_i^2$, hence the smallest sum of squared residuals.
 
-### Least-squares solution
+## Least-squares solution
 
 We can find the minimum of a function by taking the first derivative with respect to the 'free variable'. Since the observation vector is not free, and also the design matrix $\mathrm{A}$ is fixed, the only variable which we can vary is $\mathrm{x}$. The first derivative of our objective function should be equal to zero to reach a minimum (see [Gradient](PM_gradient), and [Vectors and matrices](pm_matrix)):
 
@@ -106,7 +106,7 @@ $$
 \mathrm{\hat{x}= (A^T A)^{-1} A^T y}
 $$
 
-### Summary
+## Summary
 
 In summary, the least-squares estimates of $\mathrm{x}$, $\mathrm{y}$ and $\epsilon$ are given by:
 

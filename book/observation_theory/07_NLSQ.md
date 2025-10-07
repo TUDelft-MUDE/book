@@ -1,4 +1,4 @@
-## Non-linear least-squares estimation 
+# Non-linear least-squares estimation 
 
 Let the non-linear system of observation equations be given by:
 
@@ -33,14 +33,14 @@ Observed deformation rates above a magma chamber.
 
 :::
 
-### Video
+## Video
 ```{eval-rst}
 .. raw:: html
 
     <iframe width="560" height="315" src="https://www.youtube.com/embed/qkPzMlnkg6o" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 ```
 
-### Linearization
+## Linearization
 For the linearization we need the [first-order Taylor polynomial](PM_taylor), which gives the linear approximation of for instance the first observable $Y_1 = q_1(\mathrm{x})$ at $\mathrm{x}=\mathrm{x}_{[0]}$ as:
 
 $$
@@ -81,7 +81,7 @@ $$
 
 However, the quality of the linear approximation depends very much on the closeness of $\mathrm{x}_{[0]}$ to $\mathrm{x}$. Therefore, instead we apply an iterative procedure, which means that we repeat the process with $\mathrm{x}_{[1]}=\mathrm{x}_{[0]}+\Delta \hat{X}_{[0]}$ as our new guess. This procedure is continued until the $\Delta \hat{\mathrm{x}}_{[i]}$ becomes small enough. This is called the Gauss-Newton iteration procedure, and is shown in the scheme below.
 
-### Gauss-Newton iteration
+## Gauss-Newton iteration
 
 See {numref}`gn` for an illustration of the iterative procedure, referred to as the Gauss-Newton iteration.
 
@@ -120,7 +120,7 @@ Once the stop criterion is met, we say that the solution *converged*, and the la
 
 :::
 
-### Remarks and properties
+## Remarks and properties
 There is no default recipe for making the initial guess $\mathrm{x}_{[0]}$; it must be made based on insight into the problem at hand. A good initial guess is important for two reasons:
 
 * a bad initial guess may result in the solution NOT to converge;
