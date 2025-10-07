@@ -1,0 +1,232 @@
+<!--
+SPDX-License-Identifier: CC-BY-4.0
+Copyright (c) 2025 Maximilian Ramgraber
+
+This work is licensed under the Creative Commons Attribution 4.0 International License (CC BY 4.0).
+You are free to share and adapt for any purpose, even commercially, with attribution.
+Full text: https://creativecommons.org/licenses/by/4.0/
+-->
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <title>Empirical PDF and CDF</title>
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <style>
+    body{ margin:0; overflow:hidden; font-family:Helvetica, sans-serif; }
+    rect.bin{shape-rendering: crispEdges; }
+    rect.bin.active{ fill:red; stroke:red; stroke-width:2; opacity:1; }
+    rect.bin:hover{ cursor:pointer; }
+    .axis text{ font-family:Helvetica, sans-serif; }
+    svg{ position:absolute; top:0; left:0; background-color: None; }
+  </style>
+</head>
+<body>
+  <svg id="click"></svg>
+
+<script>
+
+// =============================================================================
+// 0. CANVAS WITH 2:1 ASPECT
+// =============================================================================
+const vw = Math.max(document.documentElement.clientWidth  || 0, window.innerWidth  || 0) * 0.95
+const vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0) * 0.95
+const aspect = 2
+
+var width, height
+if (vw/aspect < vh){ width = vw; height = vw/aspect } else { width = vh*aspect; height = vh }
+
+var svg  = d3.select("#click").attr("width", width).attr("height", height)
+const fsz  = (12 * width / 600).toString() + "px"
+
+// =============================================================================
+// 1. DATA (hard-coded, no network fetch)
+// =============================================================================
+const data = [
+  0.98194733,  1.66749077, -0.13183068,  0.62309398,  1.26533973,
+  5.61990436,  0.59890643,  0.26974686,  1.59431413,  0.40689944,
+  0.83167375, -0.39046155, -0.77899569,  3.43545665,  4.83212914,
+  2.37128186,  0.41411594,  0.22488237,  2.45569464, -0.07240572,
+  2.33921594,  0.46462342,  0.93328153,  3.31543159,  3.07112015,
+  0.25590279,  3.74990303,  2.43602711,  2.09708138,  2.19298702,
+  1.24771668,  3.13445551,  0.78637088,  4.08218   ,  2.55974094,
+  1.96489725,  1.84749238,  0.35578462,  1.20037955,  0.70761979,
+  0.9685647 ,  1.05452713,  0.91675663,  1.64658074,  0.38682376,
+ -0.18509724,  1.34094439,  3.83545275,  0.72670529,  1.74730972,
+  1.9450609 ,  1.41811587,  1.57856068,  0.88364105,  1.4318066 ,
+  0.55509721,  0.50513126,  0.91202747,  0.89708955,  2.01400649,
+  1.25480656,  1.55071057, -0.5598337 ,  0.07888272,  2.02184443,
+  1.88066812,  2.03572719,  1.23185395,  1.03162   ,  2.97535322,
+  3.63460355,  1.29027105,  2.80923168,  0.27333185,  0.83156707,
+  2.82236938,  0.84239514,  5.12162921,  2.65061315,  1.74307538,
+  0.09949422, -0.08532181,  2.70532095,  3.11604433,  3.56610081,
+  2.86152801,  0.13124214,  0.68736844,  4.23072539,  4.72905657,
+  2.57271601,  1.29246143,  1.66392584,  1.96295435,  0.32413979,
+  1.32740132,  1.38922566,  0.40388547, -0.09240789,  0.96563671
+]
+const N = data.length
+
+// =============================================================================
+// 2. LAYOUT: two panes (PDF left, CDF right)
+// =============================================================================
+const margin = {top: height*0.10, right: width*0.06, bottom: height*0.12, left: width*0.10}
+const gap = width*0.06
+const inner_w = width - margin.left - margin.right
+const inner_h = height - margin.top - margin.bottom
+
+const pane_w = (inner_w - gap) / 2
+const left_x0  = margin.left
+const right_x0 = margin.left + pane_w + gap
+
+const x_min = d3.min(data), x_max = d3.max(data)
+const pad = (x_max - x_min) * 0.03
+const x_domain = [x_min - pad, x_max + pad]
+
+// scales
+const x_pdf = d3.scaleLinear().domain(x_domain).range([left_x0,  left_x0  + pane_w])
+const y_pdf = d3.scaleLinear().range([margin.top + inner_h, margin.top])
+const x_cdf = d3.scaleLinear().domain(x_domain).range([right_x0, right_x0 + pane_w])
+const y_cdf = d3.scaleLinear().domain([0,1]).range([margin.top + inner_h, margin.top])
+
+// axes
+const g_x_pdf = svg.append("g").attr("transform","translate(0," + (margin.top + inner_h).toString() + ")").style("font-size", fsz)
+const g_y_pdf = svg.append("g").attr("transform","translate(" + (left_x0).toString() + ",0)").style("font-size", fsz)
+const g_x_cdf = svg.append("g").attr("transform","translate(0," + (margin.top + inner_h).toString() + ")").style("font-size", fsz)
+const g_y_cdf = svg.append("g").attr("transform","translate(" + (right_x0).toString() + ",0)").style("font-size", fsz)
+
+// subplot titles
+svg.append("text")
+  .attr("x", (left_x0 + pane_w/2).toString())
+  .attr("y", (margin.top - 12).toString())
+  .style("text-anchor","middle")
+  .style("font-size", fsz)
+  .text("empirical PDF")
+
+svg.append("text")
+  .attr("x", (right_x0 + pane_w/2).toString())
+  .attr("y", (margin.top - 12).toString())
+  .style("text-anchor","middle")
+  .style("font-size", fsz)
+  .text("empirical CDF")
+
+// axis labels
+svg.append("text")
+  .attr("transform","translate(" + ((left_x0 + pane_w/2)).toString() + "," + (height - margin.bottom*0.4).toString() + ")")
+  .style("text-anchor","middle").style("font-size", fsz).text("x")
+
+svg.append("text")
+  .attr("transform","translate(" + (left_x0 - margin.left*0.55).toString() + "," + (margin.top + inner_h/2).toString() + ") rotate(-90)")
+  .style("text-anchor","middle").style("font-size", fsz).text("interval probability")
+
+svg.append("text")
+  .attr("transform","translate(" + ((right_x0 + pane_w/2)).toString() + "," + (height - margin.bottom*0.4).toString() + ")")
+  .style("text-anchor","middle").style("font-size", fsz).text("x")
+
+svg.append("text")
+  .attr("transform","translate(" + (right_x0 + pane_w + margin.right*0.45).toString() + "," + (margin.top + inner_h/2).toString() + ") rotate(90)")
+  .style("text-anchor","middle").style("font-size", fsz).text("cumulative probability")
+
+// =============================================================================
+// 3. HISTOGRAM (empirical PDF)
+// =============================================================================
+const thresholds = 12
+const K = thresholds
+const varstep = (x_max - x_min) / K
+const edges = d3.range(x_min, x_max, varstep); edges.push(x_max)
+
+const bin_gen = d3.bin().domain([x_min, x_max]).thresholds(edges)
+const raw_bins = bin_gen(data)
+const bins = raw_bins.map(b => ({ x0:b.x0, x1:b.x1, cnt:b.length, prob:b.length / N }))
+
+const max_prob = d3.max(bins, b => b.prob) || 1e-12
+y_pdf.domain([0, max_prob * 1.1])
+
+g_x_pdf.call(d3.axisBottom(x_pdf).ticks(5))
+g_y_pdf.call(d3.axisLeft(y_pdf).ticks(5))
+
+var bar_g = svg.append("g")
+
+const cum_probs = []
+{ let acc = 0; bins.forEach((b,i)=>{ cum_probs[i] = acc; acc += b.prob }) }
+
+const bar_ratio = 0.8
+const bars = bar_g.selectAll("rect")
+  .data(bins)
+  .enter().append("rect")
+    .attr("class","bin")
+    .attr("x", b => { const bw = x_pdf(b.x1)-x_pdf(b.x0); return x_pdf(b.x0) + (1-bar_ratio)*bw/2 })
+    .attr("width", b => (x_pdf(b.x1)-x_pdf(b.x0))*bar_ratio )
+    .attr("y", b => y_pdf(b.prob))
+    .attr("height", b => y_pdf(0)-y_pdf(b.prob))
+    .attr("fill", "#ccc")
+    .attr("stroke", "none")
+    .attr("y", b=> y_pdf(b.prob))
+    .attr("height",b=> y_pdf(0)-y_pdf(b.prob))
+
+let acc = 0; bins.forEach((b,i)=>{ cum_probs[i]=acc; acc += b.prob })
+
+// =============================================================================
+// 4. EMPIRICAL CDF (step function)
+// =============================================================================
+const sorted = data.slice().sort((a,b)=>a-b)
+const cdf_pts = [{x:x_domain[0], y:0}]
+for (var i=0;i<sorted.length;i++) cdf_pts.push({ x:sorted[i], y:(i+1)/N })
+
+const step = d3.line().curve(d3.curveStepAfter).x(d=>x_cdf(d.x)).y(d=>y_cdf(d.y))
+
+const cdf_bg = svg.append("rect")
+  .attr("x", right_x0).attr("y", margin.top)
+  .attr("width", pane_w).attr("height", inner_h)
+  .attr("fill", "#ffffff")
+
+const cdf_hi = svg.append("rect")
+  .attr("x", right_x0).attr("y", margin.top)
+  .attr("width", 0).attr("height", inner_h)
+  .attr("fill", "red").attr("opacity", 0.5).style("pointer-events","none")
+
+svg.append("path")
+  .attr("d", step(cdf_pts))
+  .attr("fill","none")
+  .attr("stroke","#666")
+  .attr("stroke-width", 3 * height / 600)
+
+g_x_cdf.call(d3.axisBottom(x_cdf).ticks(5))
+g_y_cdf.call(d3.axisLeft(y_cdf).ticks(5))
+
+const cdf_zones = svg.append("g")
+cdf_zones.selectAll("rect")
+  .data(bins)
+  .enter().append("rect")
+    .attr("x", b => x_cdf(b.x0))
+    .attr("y", margin.top)
+    .attr("width", b => Math.max(1, x_cdf(b.x1 - ((x_max - x_min) * 1e-9)) - x_cdf(b.x0)))
+    .attr("height", inner_h)
+    .attr("fill", "transparent")
+    .on("mouseover", (ev,b)=> highlight_bin(b))
+    .on("mouseout",  (ev,b)=> clear_highlight())
+
+// =============================================================================
+// 5. INTERACTION (sync highlight both ways)
+// =============================================================================
+function highlight_bin(b){
+  bars
+    .attr("fill", d => d === b ? "red" : "#ccc")
+    .attr("stroke", d => d === b ? "red" : "none")
+    .attr("stroke-width", d => d === b ? 2 : 0)
+
+  const eps = (x_max - x_min) * 1e-9
+  cdf_hi.attr("x", x_cdf(b.x0)).attr("width", x_cdf(b.x1 - eps) - x_cdf(b.x0))
+}
+
+function clear_highlight(){
+  bars.attr("fill", "#ccc").attr("stroke","none").attr("stroke-width",0)
+  cdf_hi.attr("width",0)
+}
+
+bars.on("mouseover", (ev,b)=> highlight_bin(b))
+    .on("mouseout",  (ev,b)=> clear_highlight())
+
+clear_highlight()
+</script>
+</body>
+</html>

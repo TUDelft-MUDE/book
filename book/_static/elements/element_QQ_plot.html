@@ -1,0 +1,270 @@
+<!--
+SPDX-License-Identifier: CC-BY-4.0
+Copyright (c) 2025 Maximilian Ramgraber
+
+This work is licensed under the Creative Commons Attribution 4.0 International License (CC BY 4.0).
+You are free to share and adapt for any purpose, even commercially, with attribution.
+Full text: https://creativecommons.org/licenses/by/4.0/
+-->
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <title>QQ plot — empirical vs theoretical</title>
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <style>
+    body{ margin:0; overflow:hidden; font-family:Helvetica, sans-serif; }
+    .axis text{ font-family:Helvetica, sans-serif; }
+    .pt{ fill:#666; opacity:0.9; }
+    .diag{ stroke:#666; stroke-width:2; fill:none; }
+    #ui label{ display:block; margin:8px 0 2px; }
+    #ui input[type=range]{ width:100%; }
+    #ui select{ width:100%; }
+  </style>
+</head>
+<body>
+  <svg id="click"></svg>
+  <div id="ui" style="position:absolute;"></div>
+<script>
+/**********************
+ * 0) Stage & layout  *
+ **********************/
+const vw = Math.max(document.documentElement.clientWidth  || 0, window.innerWidth  || 0) * 0.95;
+const vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0) * 0.95;
+const aspect = 2; // width : height (keep original style)
+let width, height;
+if (vw/aspect < vh){ width = vw; height = vw/aspect; } else { width = vh*aspect; height = vh; }
+
+const svg  = d3.select('#click').attr('width',width).attr('height',height);
+const fsz  = (12 * width / 600) + 'px';
+
+// left and right panes (right becomes UI area)
+const margin = {top: height*0.10, right: width*0.06, bottom: height*0.12, left: width*0.10};
+const gap = width*0.06;
+const innerW = width - margin.left - margin.right;
+const innerH = height - margin.top - margin.bottom;
+const paneW = (innerW - gap) / 2;
+const leftX0  = margin.left;
+const rightX0 = margin.left + paneW + gap; // used to position the UI
+
+/**********************
+ * 1) Data (hard-coded)
+ **********************/
+const data = [
+  0.98194733,  1.66749077, -0.13183068,  0.62309398,  1.26533973,
+  5.61990436,  0.59890643,  0.26974686,  1.59431413,  0.40689944,
+  0.83167375, -0.39046155, -0.77899569,  3.43545665,  4.83212914,
+  2.37128186,  0.41411594,  0.22488237,  2.45569464, -0.07240572,
+  2.33921594,  0.46462342,  0.93328153,  3.31543159,  3.07112015,
+  0.25590279,  3.74990303,  2.43602711,  2.09708138,  2.19298702,
+  1.24771668,  3.13445551,  0.78637088,  4.08218   ,  2.55974094,
+  1.96489725,  1.84749238,  0.35578462,  1.20037955,  0.70761979,
+  0.9685647 ,  1.05452713,  0.91675663,  1.64658074,  0.38682376,
+ -0.18509724,  1.34094439,  3.83545275,  0.72670529,  1.74730972,
+  1.9450609 ,  1.41811587,  1.57856068,  0.88364105,  1.4318066 ,
+  0.55509721,  0.50513126,  0.91202747,  0.89708955,  2.01400649,
+  1.25480656,  1.55071057, -0.5598337 ,  0.07888272,  2.02184443,
+  1.88066812,  2.03572719,  1.23185395,  1.03162   ,  2.97535322,
+  3.63460355,  1.29027105,  2.80923168,  0.27333185,  0.83156707,
+  2.82236938,  0.84239514,  5.12162921,  2.65061315,  1.74307538,
+  0.09949422, -0.08532181,  2.70532095,  3.11604433,  3.56610081,
+  2.86152801,  0.13124214,  0.68736844,  4.23072539,  4.72905657,
+  2.57271601,  1.29246143,  1.66392584,  1.96295435,  0.32413979,
+  1.32740132,  1.38922566,  0.40388547, -0.09240789,  0.96563671
+];
+const N = data.length;
+const empirical = [...data].sort((a,b)=>a-b);
+const probs = empirical.map((_,i)=> (i+0.5)/N ); // plotting positions
+
+/**********************
+ * 2) Scales & axes   *
+ **********************/
+const x = d3.scaleLinear().range([leftX0, leftX0 + paneW]);
+const y = d3.scaleLinear().range([margin.top + innerH, margin.top]);
+
+const gX = svg.append('g').attr('transform',`translate(0,${margin.top+innerH})`).style('font-size',fsz);
+const gY = svg.append('g').attr('transform',`translate(${leftX0},0)`).style('font-size',fsz);
+
+// Labels & title (keep style minimal and consistent)
+svg.append('text')
+  .attr('x', leftX0 + paneW/2)
+  .attr('y', margin.top - 12)
+  .style('text-anchor','middle')
+  .style('font-size', fsz)
+  .text('QQ plot');
+
+svg.append('text')
+  .attr('transform',`translate(${leftX0 + paneW/2},${height - margin.bottom*0.1})`)
+  .style('text-anchor','middle').style('font-size',fsz).text('empirical quantiles');
+
+svg.append('text')
+  .attr('transform',`translate(${leftX0 - margin.left*0.55},${margin.top + innerH/2}) rotate(-90)`)
+  .style('text-anchor','middle').style('font-size',fsz).text('theoretical quantiles');
+
+// Reference 45° line (y=x through origin)
+const diag = svg.append('line').attr('class','diag');
+
+// Points layer
+const ptsG = svg.append('g');
+
+/**********************
+ * 3) Distributions   *
+ **********************/
+const distDefs = {
+  gaussian: {
+    name: 'Gaussian PDF',
+    params: [
+      {key:'mu',  label:'mean (μ)',   min: null, max: null, val: 0, step: 0.01},
+      {key:'sig', label:'stdev (σ)',  min: 0.05, max: null, val: 1, step: 0.01}
+    ],
+    q: (p, {mu, sig}) => mu + sig * normInv(p)
+  },
+  gumbel: {
+    name: 'Gumbel PDF',
+    params: [
+      {key:'mu',   label:'location (μ)', min: null, max: null, val: 0, step: 0.01},
+      {key:'beta', label:'scale (β)',    min: 0.05, max: null, val: 1, step: 0.01}
+    ],
+    q: (p, {mu, beta}) => mu - beta * Math.log(-Math.log(p))
+  },
+  exponential: {
+    name: 'Exponential PDF',
+    params: [
+      {key:'lambda', label:'rate (λ)', min: 0.01, max: 5, val: 1, step: 0.01}
+    ],
+    q: (p, {lambda}) => -Math.log(1-p) / lambda
+  }
+};
+
+// Simple normal quantile (Acklam approximation)
+function normInv(p){
+  if (p <= 0 || p >= 1) return NaN;
+  const a=[-3.969683028665376e+01, 2.209460984245205e+02, -2.759285104469687e+02, 1.383577518672690e+02, -3.066479806614716e+01, 2.506628277459239];
+  const b=[-5.447609879822406e+01, 1.615858368580409e+02, -1.556989798598866e+02, 6.680131188771972e+01, -1.328068155288572e+01];
+  const c=[-7.784894002430293e-03, -3.223964580411365e-01, -2.400758277161838, -2.549732539343734, 4.374664141464968, 2.938163982698783];
+  const d=[7.784695709041462e-03, 3.224671290700398e-01, 2.445134137142996, 3.754408661907416];
+  const plow=0.02425, phigh=1-plow;
+  let q, r;
+  if (p < plow){
+    q=Math.sqrt(-2*Math.log(p));
+    return (((((c[0]*q+c[1])*q+c[2])*q+c[3])*q+c[4])*q+c[5]) / ((((d[0]*q+d[1])*q+d[2])*q+d[3])*q+1);
+  }
+  if (phigh < p){
+    q=Math.sqrt(-2*Math.log(1-p));
+    return -(((((c[0]*q+c[1])*q+c[2])*q+c[3])*q+c[4])*q+c[5]) / ((((d[0]*q+d[1])*q+d[2])*q+d[3])*q+1);
+  }
+  q = p - 0.5; r = q*q;
+  return (((((a[0]*r+a[1])*r+a[2])*r+a[3])*r+a[4])*r+a[5])*q / (((((b[0]*r+b[1])*r+b[2])*r+b[3])*r+b[4])*r+1);
+}
+
+/**********************
+ * 4) UI (right pane) *
+ **********************/
+const ui = d3.select('#ui')
+  .style('left', rightX0 + 'px')
+  .style('top',  margin.top + 'px')
+  .style('width', paneW + 'px')
+  .style('font-size', fsz);
+
+ui.append('div').style('margin-bottom','6px')
+  .append('label').text('Distribution');
+
+const selectEl = ui.append('select')
+  .on('change', function(){ renderParams(this.value); });
+
+selectEl.selectAll('option')
+  .data(Object.keys(distDefs))
+  .enter().append('option')
+    .attr('value', d => d)
+    .text(d => distDefs[d].name);
+
+const paramsDiv = ui.append('div').attr('id','params');
+
+// helpers to compute sensible default ranges from data
+const dMin = d3.min(data), dMax = d3.max(data);
+const mean = d3.mean(data);
+const sd = Math.sqrt(d3.mean(data.map(v => (v-mean)*(v-mean))));
+
+function renderParams(kind){
+  paramsDiv.html('');
+  const def = distDefs[kind];
+  def.params.forEach(p => {
+    // set default ranges if needed
+    if (p.min == null) p.min = Math.min(dMin - sd*2, mean - sd*3);
+    if (p.max == null) p.max = Math.max(dMax + sd*2, mean + sd*3);
+    if (kind==='gaussian' && p.key==='sig'){ p.min = Math.max(0.05, sd*0.25); p.max = Math.max(1, sd*3); p.val = Math.max(0.1, sd); }
+    if (kind==='gumbel'   && p.key==='beta'){ p.min = Math.max(0.05, sd*0.25); p.max = Math.max(1, sd*3); p.val = Math.max(0.1, sd*Math.SQRT6/Math.PI); }
+    if (kind==='exponential' && p.key==='lambda'){ p.min = 0.01; p.max = Math.max(5, 1/Math.max(0.1, mean)); p.val = 1; }
+
+    const wrap = paramsDiv.append('div');
+    wrap.append('label').text(p.label);
+    const row = wrap.append('div');
+    const inp = row.append('input')
+      .attr('type','range')
+      .attr('min', p.min)
+      .attr('max', p.max)
+      .attr('step', p.step)
+      .attr('value', p.val)
+      .on('input', updateQQ);
+    row.append('span')
+      .style('float','right')
+      .style('margin-left','8px')
+      .attr('class','val')
+      .text(p.val.toFixed(3));
+    // keep handle to span for live update
+    p._input = inp;
+    p._readout = row.select('span');
+  });
+  updateQQ();
+}
+
+selectEl.property('value','gaussian');
+renderParams('gaussian');
+
+/**********************
+ * 5) Update & draw   *
+ **********************/
+function currentParams(kind){
+  const out = {};
+  distDefs[kind].params.forEach(p => { out[p.key] = +p._input.node().value; });
+  return out;
+}
+
+function updateQQ(){
+  const kind = d3.select('#ui select').node().value;
+  // update readouts
+  distDefs[kind].params.forEach(p => p._readout.text((+p._input.node().value).toFixed(3)));
+  const params = currentParams(kind);
+  const q = distDefs[kind].q;
+  const theo = probs.map(p => q(p, params));
+
+  // Use common domain that includes 0 so the diagonal goes through origin
+  const minAll = Math.min(0, d3.min(empirical), d3.min(theo));
+  const maxAll = Math.max(0, d3.max(empirical), d3.max(theo));
+  x.domain([minAll, maxAll]);
+  y.domain([minAll, maxAll]);
+
+  gX.call(d3.axisBottom(x).ticks(5));
+  gY.call(d3.axisLeft(y).ticks(5));
+
+  // diagonal y=x
+  diag
+    .attr('x1', x(minAll)).attr('y1', y(minAll))
+    .attr('x2', x(maxAll)).attr('y2', y(maxAll));
+
+  // points
+  const pairs = empirical.map((e,i)=>({ex:e, th:theo[i]}));
+  const pts = ptsG.selectAll('circle').data(pairs);
+  pts.enter().append('circle').attr('class','pt').attr('r', 3 * height/600)
+    .merge(pts)
+    .attr('cx', d => x(d.ex))
+    .attr('cy', d => y(d.th));
+  pts.exit().remove();
+}
+
+// Position the UI container (font size already tied above)
+d3.select('#ui').style('font-size', fsz);
+
+</script>
+</body>
+</html>

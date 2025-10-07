@@ -50,8 +50,8 @@ defines an interval of the random variable $X$ between $x=a$ and $x=b$. Such int
 
 $$
 \begin{cases} 
-   &x \leq a \\
-   &x > b 
+   &x \geq a \\
+   &x < b 
 \end{cases}
 $$
 
@@ -163,7 +163,7 @@ P[X\leq x,Y\leq y]
   f_{X,Y}(x, y)\,\textrm{d}x\,\textrm{d}y
 $$
 
-The equation above is the the multivariate CDF and also illustrates a specific combination of two intervals (a region in the $X,Y$ plane), described here with $x^*$ and $y^*$ as arbitrary values of interest:
+The equation above is the multivariate CDF and also illustrates a specific combination of two intervals (a region in the $X,Y$ plane), described here with $x^*$ and $y^*$ as arbitrary values of interest:
 
 $$
 \Omega = \big\{\Omega_{x,ne}, \Omega_{y,ne} \big\} = 
@@ -180,7 +180,7 @@ Let us now apply this equation to compute a probability: returning to our case s
 
 $$
 P[Q_1 \leq q_1, Q_2 \leq q_2]
-= F_{Q_1,Q_2}(\;\textrm{m}^3\textrm{/s}, \;\textrm{m}^3\textrm{/s})
+= F_{Q_1,Q_2}(100\;\textrm{m}^3\textrm{/s}, 75\;\textrm{m}^3\textrm{/s})
 = 21/34 = 0.62
 $$
 
@@ -264,7 +264,7 @@ The definitions above generalize probability computations and illustrates the co
 
 The integral of the joint PDF is directly analogous to integrating a univariate _density_ function (PDF) to obtain the cumulative distribution function (CDF), and thus a _probability._ However, whereas in 1D the integration region is simply an interval on the number line that can be explicitly defined with two values of $x$, in higher dimensions the region can be more difficult to define. 
 
-On this page, the region $\Omega$ over which the _joint probability_ is calculated is found by combining the regions $\Omega_x$ and $\Omega_y$ as a union or intersection. In other words, working with a combination of the four rectangular subregions portions of the 2D variable space. However, for many practical applications more complex regions must be considered; for example, a parametric equations that define a specific subregion (or multiple subregions) of the multivariate sample space. For example, evaluating the discharge of a river, $Q$, that is formed by the joining of the two rivers in our example: $Q = Q_1 + Q_2$. Later in this chapter we will consider this _function of random variables._ For now, we will continue with the rectangular subregions by revisiting the AND and OR probabilities from the discrete event case.
+On this page, the region $\Omega$ over which the _joint probability_ is calculated is found by combining the regions $\Omega_x$ and $\Omega_y$ as a union or intersection. In other words, working with a combination of the four rectangular subregions portions of the 2D variable space. However, for many practical applications more complex regions must be considered; for example, a parametric equation that defines a specific subregion (or multiple subregions) of the multivariate sample space. For example, evaluating the discharge of a river, $Q$, that is formed by the joining of the two rivers in our example: $Q = Q_1 + Q_2$. Later in this chapter we will consider this _function of random variables._ For now, we will continue with the rectangular subregions by revisiting the AND and OR probabilities from the discrete event case.
 
 (AND)=
 ## Intersection: AND
@@ -315,7 +315,7 @@ Samples of the discharges of two rivers ($Q_1$ and $Q_2$), highlighting the _joi
 (OR)=
 ## Union: OR
 
-As with _intersection, the _union_ of events can be adapted from the {ref}`discrete event case<OR_events>`. For continuous random variables the region of interest becomes the total area of the real number space covered by _any_ of the sub-regions of interest for each random variable.
+As with _intersection_, the _union_ of events can be adapted from the {ref}`discrete event case<OR_events>`. For continuous random variables the region of interest becomes the total area of the real number space covered by _any_ of the sub-regions of interest for each random variable.
 
 
 :::{card} Definition
@@ -653,6 +653,6 @@ The following pages will explore methods to describe dependence quantitatively f
 % source: distributions
 ```{attributiongrey} Attribution
 :class: attribution
-This chapter was written by Patricia Mares Nasarre and Robert Lanzafame. {ref}`Find out more here <distributions_credit>`.
+This chapter was written by Patricia Mares Nasarre and Robert Lanzafame. {ref}`Find out more here <multivariate_credit>`.
 ```
 % END-CREDIT

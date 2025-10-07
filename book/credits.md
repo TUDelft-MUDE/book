@@ -104,17 +104,44 @@ Credits are provided here for chapters and pages that are released under the lic
 >
 > Special thanks goes to João Moura Pereira de Lucas Teixeira, who created first draft of pages from powerpoint slides.
 
+(numerical_modelling_credit)=
+### Chapter: Numerical Modelling
+
+> {ref}`Numerical modelling <numerical_modelling>` is written by Jaime Arriaga Garcia, Anna Störiko, Justin Pittman and Robert Lanzafame.
+>
+> Special thanks goes to:
+> - Isabel Slingerland and Mona Devos for critical feedback and development of exercises, figures and related content.
+> - Ronald Brinkgreve, Dhruv Mehta and Ajay Jagadeesh for feedback on structure, content.
+>
+> {ref}`The animated figure on the Jamuna river <NumericalMethodsRiver>` included on page {ref}`Numerical modelling <numerical_modelling>` but is _not_ included under the CC BY license of this book. Original content is used here with explicit permission of Amgad Omer on behalf of Deltares.
+>
+> {ref}`The figure on the left Riemann sum <openstax_fig_01>` is reproduced from {cite:t}`openstax_calculus` without modification and is _not_ included under the CC BY license of this book. The source content is provided with a CC BY NC SA license and can be accessed for free at [https://openstax.org/books/calculus-volume-2/pages/1-introduction](https://openstax.org/books/calculus-volume-2/pages/1-introduction).
+
+(distributions_credit)=
+### Chapter: Univariate Continuous Distributions
+
+> {ref}`Univariate Continuous Distributions <cont_dist>` is written by Patricia Mares Nasarre, Robert Lanzafame and Max Ramgraber.
+>
+> Special thanks goes to Oswaldo Morales Napoles and Elisa Ragno for suggestions on the theoretical and didactic framework, as well as critical feedback and review.
+>
+> The interactive figures in these pages are created by Max Ramgraber ([maxramgraber.com/interactive](https://www.maxramgraber.com/interactive)), which are published with a CC BY license and included in this book without modification.
+
+(multivariate_credit)=
+### Chapter: Multivariate Distributions
+
+> {ref}`Multivariate Distributions <mult_dist>` is written by Patricia Mares Nasarre and Robert Lanzafame.
+>
+> Special thanks goes to Oswaldo Morales Napoles and Elisa Ragno for suggestions on the theoretical and didactic framework, as well as critical feedback and review.
+>
+> {ref}`This <element_correlation_correlation>` and {ref}`this <2D_Gaussian>` interactive figures are created by Max Ramgraber ([maxramgraber.com/interactive](https://www.maxramgraber.com/interactive)), published with a CC BY license and included in this book without modification. 
+
 (uncertainty_propagation_credit)=
 ### Chapter: Uncertainty Propagation
 
-> {ref}`Propagation of Uncertainty <01_errorprop>` is written by Sandra Verhagen.
+> {ref}`Uncertainty Propagation <01_errorprop>` is written by Sandra Verhagen and Lotfi Massarweh.
 >
-> Special thanks goes to:
-> - Robert Lanzafame, Patricia Mares Nasarre and Max Ramgraber, who reviewed, commented and/or modified content. Robert and Patricia wrote the page {ref}`uncertainty_classification`.
-> - Sophie Keemink, Caspar Jungbacker and Thirza Feenstra, who provided feedback and helped develop exercises.
-> - Antonio Magherini, who created first draft of pages from powerpoint slides.
+> This chapter builds on the lecture notes _Probability and Observation Theory_ by P.J.G. Teunissen, D.G. Simons, C.C.J.M. Tiberius (2009).
 >
-> {ref}`This <density_scatter_3>` and {ref}`this interactive figure on the correlation coefficient <2D_Gaussian>` are created by Max Ramgraber ([maxramgraber.com/interactive](https://www.maxramgraber.com/interactive)), which are published with a CC BY license and included in this book without modification.
 
 (observation_theory_credit)=
 ### Chapter: Observation Theory
@@ -125,30 +152,6 @@ Credits are provided here for chapters and pages that are released under the lic
 > - Peter Teunissen and Christiaan Tiberius who co-shaped the material, indirectly, through collaboration with the author as TU Delft colleagues.
 > - The books _Adjustment theory: an introduction_ {cite:p}`adjustment_theory` and _Testing theory: an introduction_ {cite:p}`testing_theory` which provided the framework for this chapter.
 > - Sophie Keemink, Caspar Jungbacker and Thirza Feenstra, who provided feedback and helped develop exercises.
-
-(numerical_modelling_credit)=
-### Chapter: Numerical Modelling
-
-> {ref}`Numerical modelling <numerical_modelling>` is written by Jaime Arriaga Garcia, Justin Pittman and Robert Lanzafame.
->
-> Special thanks goes to:
-> - Isabel Slingerland and Mona Devos for critical feedback and development of exercises, figures and related content.
-> - Dhruv Mehta and Ajay Jagadeesh for feedback on structure, content.
->
-> {ref}`The animated figure on the Jamuna river <NumericalMethodsRiver>` included on page {ref}`Numerical modelling <numerical_modelling>` but is _not_ included under the CC BY license of this book. Original content is used here with explicit permission of Amgad Omer on behalf of Deltares.
->
-> {ref}`The figure on the left Riemann sum <openstax_fig_01>` is reproduced from {cite:t}`openstax_calculus` without modification and is _not_ included under the CC BY license of this book. The source content is provided with a CC BY NC SA license and can be accessed for free at [https://openstax.org/books/calculus-volume-2/pages/1-introduction](https://openstax.org/books/calculus-volume-2/pages/1-introduction).
-
-(distributions_credit)=
-### Chapters: Univariate and Multivariate Continuous Distributions
-
-> {ref}`Univariate Continuous Distributions <cont_dist>` and {ref}`Multivariate Distributions <mult_dist>` are written by Patricia Mares Nasarre and Robert Lanzafame.
->
-> Special thanks goes to Oswaldo Morales Napoles and Elisa Ragno for suggestions on the theoretical and didactic framework, as well as critical feedback and review.
->
-> Pages {ref}`One random variable <prob_design_1_rv>` and {ref}`Two random variables <prob_design_2_rv>` are from the Chapter _Probabilistic Design_ {cite:p}`lanzafame2024-pd` from the book Risk and Reliability for Engineers {cite:p}`lanzafame2024`, published with a CC BY license. Files are included without modification.
->
-> {ref}`This <density_scatter_3>`, {ref}`this <pdf_cdf>`, {ref}`this <pdf_cdf_2>`, {ref}`this <density_scatter>` and {ref}`this interactive figure <density_scatter_2>` are created by Max Ramgraber ([maxramgraber.com/interactive](https://www.maxramgraber.com/interactive)), which are published with a CC BY license and included in this book without modification.
 
 (finite_volume_method_credit)=
 ### Chapter: PDEs and the Finite Volume Method
@@ -231,12 +234,15 @@ Credits are provided here for chapters and pages that are released under the lic
 >
 > Special thanks goes to Oswaldo Morales Napoles, Elisa Ragno and Robert Lanzafame for suggestions on the theoretical and didactic framework, as well as critical feedback and review.
 
-(programming_credit_2)=
+(programming_credit)=
 ### Programming chapters
 
-> [](./programming/week_1_1.md) is written by Robert Lanzafame and Tom van Woudenberg.
+> The programming chapters are written by Tom van Woudenberg  and Robert Lanzafame
+>
+> Special thanks goes to Stanislaw Ostyk-Narbutt for his contribution with the Large language models chapter
 
 Part of the chapters in the Programming part of this book are reused from two sources: _Learn Programming for Engineers_ {cite:p}`learn-programming` and _Python for Engineers_ {cite:p}`learn-python`. Both books are published with a CC BY license and are available online at [teachbooks.io/learn-programming](https://teachbooks.io/learn-programming) and [teachbooks.io/learn-python](https://teachbooks.io/learn-python).
+
 
 (external_resources_credits)=
 ## External Resources
