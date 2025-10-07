@@ -2,14 +2,14 @@
 # Advection-diffusion equation
 
 In Sections {ref}`diffusion` and {ref}`advection` we have treated the numerical solution of the diffusion equation and the advection equation, respectively.
-By combining these processses we obtain the following 1D **advection-diffusion** equation
+By combining these processes we obtain the following 1D **advection-diffusion** equation
 
 $$
   \frac{\partial c}{\partial t} + u\frac{\partial c}{\partial x} - \kappa\frac{\partial^2 c}{\partial x^2} = 0
 $$ (advdifi)
 
 This **instationary** advection-diffusion equation describes the time evolution of a **constituent** $c(x,t)$ that is transported with
-flow velocity $u$ and at the same time diffuses (or spread) with a diffusion coefficient $\kappa$. This PDE is classified as a *parabolic* one.
+flow velocity $u$ and at the same time diffuses (or spreads) with a diffusion coefficient $\kappa$. This PDE is classified as a *parabolic* one.
 
 In some cases, however, we may be interested in the steady state only. In this respect, the following **stationary** equation will be considered
 
@@ -31,7 +31,7 @@ is an elliptic PDE. Here, $v$ is the flow velocity in $y-$direction.
 
 ```
 
-We first deals with the numerical solution of stationary advection-diffusion equation {eq}`advdifs` and then that of instationary advection-diffusion equation {eq}`advdifi` in separate sections.
+We first deal with the numerical solution of the stationary advection-diffusion equation {eq}`advdifs` and then that of instationary advection-diffusion equation {eq}`advdifi` in separate sections.
 In particular we dive into the role and the meaning of central differences and the first order upwind scheme with respect to the numerical solution of the particular PDE.
 In this context, we will explore the common phenomena like **wiggles** and **numerical diffusion**.
 
@@ -142,7 +142,7 @@ Verify the above characteristic equation and its roots.
 ```{admonition} Solution
 :class: tip, dropdown
 
-From Eq. {eq}`recrel1` we have the followng
+From Eq. {eq}`recrel1` we have the following
 
 $$
   p\, c_{m+1} - (p+q)\, c_m + q\, c_{m-1} = 0
@@ -218,7 +218,7 @@ There are two possibilities:
 - both numerator $2+P_{\Delta}$ and denominator $2-P_{\Delta}$ are positive
 - both numerator $2+P_{\Delta}$ and denominator $2-P_{\Delta}$ are negative
 
-The first posssibility provides the appropriate restriction, namely,
+The first possibility provides the appropriate restriction, namely,
 
 $$
   -2 \leq P_{\Delta} \leq 2
@@ -334,7 +334,7 @@ $$
 Hence, both roots are always non-negative ($P_{\Delta}>0$, since $u>0$) and the numerical solution will not display any oscillations, irrespective of the value of $P_{\Delta}$.
 
 Precautions should be taken so that the numerical diffusion will not dominate the physical one, that is, $\kappa_a < \kappa$.
-Otherwise, the first order upwind scheme is then considered to be too dissipative. In practice, this means mesh refinement if desired.
+Otherwise, the first order upwind scheme is considered to be too dissipative. In practice, this means mesh refinement if desired.
 
 Let us recall the above example with $u = 1$ m/s, $\kappa = 0.025$ m$^2$/s and $\Delta x = 0.1$ m, implying $P_{\Delta} = 4$. Hence, the amount of numerical diffusion equals
 $\kappa_a = 0.5 \times 1 \times 0.1 = 0.05$ m$^2$/s which is twice larger than the physical one. The numerical solution is depicted below which shows that it is rather inaccurate.
@@ -361,7 +361,7 @@ Solution obtained with the first order upwind scheme and $\Delta x = 0.025$ m.
 ```
 
 Although the solution is much more accurate (cf. {numref}`cvupwind`), it is still less accurate compared to central differences (cf. {numref}`cvcentral2`).
-This is explained by the fact that scheme {eq}`statcveq2` is only first order accurate, so that the numerical solution converges slower to the exact solution.
+This is explained by the fact that scheme {eq}`statcveq2` is only first order accurate, so that the numerical solution converges more slowly to the exact solution.
 
 We may perhaps conclude that it is wiser to prefer central differences over the first order upwind scheme provided the grid is sufficiently fine, at least for linear
 advection-diffusion equations. In practice, however, we see that upwind schemes are a much more robust alternative for nonlinear problems (such as the

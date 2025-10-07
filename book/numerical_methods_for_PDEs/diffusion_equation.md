@@ -31,7 +31,7 @@ $$
   \end{align}
 $$ (diffusion1)
 
-and is known as the **heat equation**. This equation describes the flow of heat in a rod with a finite length, made out of some heat-conducting
+The diffusion equation is also known as the **heat equation**. This equation describes the flow of heat in a rod with a finite length, made out of some heat-conducting
 material, subject to some boundary conditions at each end.
 Specifically, this heat *spreads* out spatially as time increases. This phenomenon is called **diffusion**.
 The solution to the heat equation is the temperature distribution $T(x,t)$ at any time $t$ and vary with $x$ along the rod.
@@ -72,7 +72,7 @@ $$
 
 where $a$ and $b$ are the constants of integration. Their values can be found by means of the boundary conditions.
 
-First, ${\tilde T}(0) = 1$, so that $b = 1$. Second, $\partial {\tilde T}/\partial x = 0$ at $x = 1$, so that $a = 0$. Hence, the final solution is given by
+First, ${\tilde T}(0) = 1$, so that $b = 1$. Second, $\partial {\tilde T}/\partial x = 0$ at $x = 1$, so that $a = 0$. Hence, the steady state solution is given by
 
 $$
   {\tilde T}(x) = 1, \quad x \in [0,1]
@@ -133,9 +133,9 @@ are independent from each other.
 [^mol]: The origin of the name <u>method of lines</u> is best illustrated at the following [Wikipedia page](https://en.wikipedia.org/wiki/Method_of_lines#mediaviewer/File:Method\_of\_lines.gif).
 
 
-A number of methods have been proposed in the field of numerical mathematics to approximate spatial derivatives. Popular methods are the finite difference, finite volume and finite element methods. In this chapter,
+A number of methods have been proposed in the field of numerical mathematics for spatial discretization. Popular methods are the finite difference, finite volume and finite element methods. In this chapter,
 we restrict ourselves to the traditional numerical method in hydraulic engineering, namely, the finite difference method.
-Another popular method is the finite element method which will be discussed in Chapter {ref}`finite_element_method`.
+Another popular method is the finite element method which will be discussed in Chapter {ref}`Finite Element Method <finite_element_method>`.
 
 ## Finite difference method
 
@@ -256,7 +256,7 @@ Note again the use of midpoints. Since this approximation is symmetric and centr
 
 :::{card} Exercise
 
-Show that this central differences is second order accurate.
+Show that this central difference approximation is second order accurate.
 
 ```{admonition} Solution
 :class: tip, dropdown
@@ -499,7 +499,7 @@ augmented with the Dirichlet boundary condition at $x=0$ and the homogeneous Neu
 
 The semi discretization of the heat equation leads to a linear system of first order ODEs, {eq}`modedif1`. In accordance with the MOL approach, the next step is to integrate this system with respect to time.
 Our choice for time integration would be the <u>forward Euler scheme</u>, since this is the most simple one.
-Application of explicit Euler to Eq. {eq}`modedif1` yields
+Application of forward Euler to Eq. {eq}`modedif1` yields
 
 $$
   \frac{T^{n+1}_m-T^n_m}{\Delta t} = \kappa \, \frac{T^n_{m+1}-2T^n_m+T^n_{m-1}}{\Delta x^2}\, , \quad m=1,\ldots,M-1\, , \quad n =0,1,2,\ldots
@@ -522,7 +522,7 @@ the forward approximation in time with explicit Euler and the central difference
 
 ## Truncation error
 
-A common method to check the order of accuray of a numerical scheme is to compute its (global) truncation error.
+A common method to check the order of accuracy of a numerical scheme is to compute its (global) truncation error.
 
 ```{admonition} Definition (truncation error)
 Let be given a PDE with its solution $T(x,t)$ and let a numerical scheme for this PDE be given by
@@ -548,7 +548,7 @@ $$
 $$
 
 with $T(x,t)$ a sufficiently smooth, exact solution to the heat equation {eq}`diffusion1`. Because of this, we can use the Taylor series expansions of
-$T(x_m,t_{n+1})$ and $T(x_{m\pm1},t_n)$ to further evaluate the truncation erorr. So,
+$T(x_m,t_{n+1})$ and $T(x_{m\pm1},t_n)$ to further evaluate the truncation error. So,
 
 $$
 \begin{align*}

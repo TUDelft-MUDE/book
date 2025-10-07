@@ -29,7 +29,7 @@ Thus solutions are propagated, or **advected**, with constant
 speed $u$ without *deforming*, that is, no change in shape. If $u > 0$, propagation is from left to right. If $u < 0$, propagation is from right to left, that is, **left-travelling waves**.
 
 Advection is an example of transport by fluid motion. Another example is **convection** which is the transport of a fluid (water or air) in response to heat, for instance, boiling water.
-Although, these two terms are interchangeably in mathematical sense, <u>advection</u> is the usual term (especially in hydraulic engineering).
+Although, these two terms are interchangeable in mathematical sense, <u>advection</u> is the usual term (especially in hydraulic engineering).
 
 The above described problem is an initial value problem (IVP). Now, let us consider a 1D domain with a finite length $L$, that is, $0 \leq x \leq L$.
 In this case we need to impose some boundary conditions. A boundary condition is needed at a certain boundary location where the information *enters* the domain.
@@ -47,7 +47,7 @@ $$
   \end{align}
 $$ (advection2)
 
-where $f(t)$ described the incoming wave-like disturbance; this function is usually expressed as a Fourier timeseries.
+where $f(t)$ described the incoming wave-like disturbance; this function is usually expressed as a Fourier time series.
 This IBVP is called the **wave equation** and is commonly applied in wave modelling but also in sediment transport.
 
 ```{note}
@@ -62,7 +62,7 @@ Although the wave equation {eq}`advection1` appears deceptively simple, the nume
 
 ## Discretization
 
-We reconsider the computional grid as discussed in Section {ref}`diffusion`.
+We reconsider the computational grid as discussed in Section {ref}`diffusion`.
 Thus, we have our uniform mesh consisting of nodes $x_0,\cdots,x_{M}$ and $\Delta x = x_m - x_{m-1}$.
 We apply the MOL approach, so that we first discretize in space and then integrate over time.
 
@@ -117,7 +117,7 @@ $$
 $$ (ftcs3)
  
 This explicit scheme is again the FTCS scheme but applied to the wave equation. In contrast to the diffusion equation (cf. Eq. {eq}`ftcs`),
-this FTCS scheme {eq}`ftcs3` is **unconditionally unstable**, that is, it is unstable for any time step. Therefore, the FTCS scheme is useless
+this FTCS scheme {eq}`ftcs3` is **unconditionally unstable**, that is, it is unstable for any time step size. Therefore, the FTCS scheme is useless
 for any advection-type equation.
 
 This instability is related to the fact that the influence of the disturbance only comes from upstream and not from downstream.

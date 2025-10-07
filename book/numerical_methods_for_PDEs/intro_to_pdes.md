@@ -98,8 +98,8 @@ $$
 $$
 
 and $\mathcal{L}$ is called the **differential operator**. The right-hand side $g$ is not a function of $u$ and its derivatives.
-If $g \equiv 0$ then the PDE is called **homogeneous**, otherwise it is **nonhomogeneous**.
-Example: the Laplace equation is homogeneous and the Poisson equation is nonhomogeneous.
+If $g \equiv 0$ then the PDE is called **homogeneous**, otherwise it is **non-homogeneous**.
+Example: the Laplace equation is homogeneous and the Poisson equation is non-homogeneous.
 
 
 The **order** of a PDE is the order of highest derivative that appears in the equation. Example: the order of the advection equation is one, whereas that of the wave equation is two.
@@ -128,7 +128,7 @@ $$
 is nonlinear, since the last term displays a product of $u$ and $\partial u/\partial x$.
 
 
-The distinguishing of PDEs into linear and nonlinear is an important issue. Solutions of linear
+Distinguishing between linear and nonlinear PDEs is an important issue. Solutions of linear
 equations **superimpose**. Assume $u$ and $v$ are both solutions of a given linear
 PDE. Then all linear combinations of these two solutions, $\alpha u + \beta v$, are also
 solutions of the PDE, where $\alpha$ and $\beta$ are constant coefficients. This is a very important
@@ -192,7 +192,7 @@ In practice, the question of whether a PDE problem is well posed can be difficul
 
 ## Types of boundary conditions
 
-Since the domain $\Omega$ is *finite*, boundary conditions are thus required and represent the influence of the outside world.
+Since the domain $\Omega$ is *finite*, boundary conditions are required and represent the influence of the outside world.
 Different types of boundary conditions can be applied on the boundary of $\Omega$. The most common occurring
 in practice are Dirichlet, Neumann and Robin conditions.
 
@@ -210,7 +210,7 @@ by a given function $g(t)$ at a boundary point $\vec{x}_b$,
 
 $$ \frac{\partial u}{\partial \vec{n}} (\vec{x}_b,t) = g(t)$$
 
-with $\vec{n}$ the normal to the boundary of $\Omega$ (usually denoted $\partial \Omega$). If $g(t)$ = 0 then we say that the boundary is **insulated**: $u$ cannot flow across the
+with $\vec{n}$ the normal to the boundary of $\Omega$. If $g(t)$ = 0 then we say that the boundary is **insulated**: $u$ cannot flow across the
 boundary.
 
 The **Robin** condition is a combination of Dirichlet and Neumann conditions,
@@ -221,7 +221,7 @@ where $\alpha$ and $\beta$ may in general depend on position along the boundary.
 
 
 As with PDEs, boundary conditions can be classified into linear or nonlinear and homogeneous or
-nonhomogeneous. The above are linear. They are homogeneous if $g(t) \equiv 0$ and nonhomogeneous otherwise.
+non-homogeneous. The above are linear. They are homogeneous if $g(t) \equiv 0$ and non-homogeneous otherwise.
 
 ## Classification of PDEs
 
@@ -239,7 +239,7 @@ second order, linear PDEs in two independent variables $x$ and $y$ and the depen
 $$a\frac{\partial^2 u}{\partial x^2} + 2b \frac{\partial^2u}{\partial x \partial y} + c\frac{\partial^2 u}{\partial y^2} + d\frac{\partial u}{\partial x} +e\frac{\partial u}{\partial y} + fu + g = 0$$ (pde2)
 
 with constant coefficients $a, \cdots, g$.
-One of the independent variables ($x$ or $y$) may represent time $t$, which we then have a 1D equation.
+One of the independent variables ($x$ or $y$) may represent time $t$, in which case we have a 1D problem in space.
 The classification of Eq. {eq}`pde2` is based upon the first three terms. It
 can be classified into three types according to the sign of the discriminant $b^2 - 4ac$,
 
@@ -287,7 +287,7 @@ $$
 
 Here, the independent variable $y$ of the general PDE, Eq. {eq}`pde2`, is time.
 An initial condition is thus necessary.
-The problem is only well posed in the forward time direction (otherwise the solution becomes unstable in the backward time direction).
+The problem is only well posed in the forward time direction (the solution becomes unstable in the backward time direction).
 Such a problem is called a **marching** problem.
 The domain $\Omega$ is bounded at two sides in the $x-$direction.
 Any boundary conditions, Dirichlet, Neumann and Robin, though in certain combinations, are appropriate at both sides of $\Omega$.
@@ -342,7 +342,7 @@ $$
   \frac{\partial^2 u}{\partial x \partial t} + \frac{\partial^2 u}{\partial x^2} = 0
 $$
 
-Finally, we substract the last equation from the second to last one in order to get the wave equation
+Finally, we subtract the last equation from the second to last one in order to get the wave equation
 
 $$
   \frac{\partial ^2u}{\partial t^2} - \frac{\partial ^2u}{\partial x^2} = 0
@@ -365,7 +365,7 @@ Since both diffusion and advection equations are typically time dependent, the a
 at any time through a sequence of time steps (see Chapter {ref}`numerical_modelling` on time integration).
 On the other hand, the solution method for the Laplace or Poisson equation is typically **iterative** of nature: the solution in each point in the domain is **updated** a number of times by taking
 into account the surrounding points until an acceptable error tolerance is reached. There are special cases that do not require iterative methods but can be solved directly.
-(Examples can be found in Chapter {ref}`finite_element_method`.)
+(You have already seen examples on this in Section {ref}`numerical-modeling:bvps`) and more on this will follow in Chapter {ref}`Finite Element Method <finite_element_method>`.)
 
 
 It is not always possible to give a meaningful classification for PDEs in more than two independent variables.
@@ -400,4 +400,4 @@ Besides this flow also *advective* transport of dissolve substances (e.g., salt,
 For these reasons, we shall focus on the numerical solution of the diffusion equation (Section {ref}`diffusion`), the advection equation (Section {ref}`advection`) and
 the advection-diffusion equation (Section {ref}`advdif`).
 Though elliptic equations are very important in the field of computational fluid dynamics (CFD) and in structural mechanics, they will not dealt with here.
-Discussion on the numerical solution of elliptic equations can be found in Chapter {ref}`finite_element_method`.
+Discussion on the numerical solution of elliptic equations can be found in Chapter {ref}`Finite Element Method <finite_element_method>`.
