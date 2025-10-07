@@ -78,7 +78,14 @@ $$
 \alpha = P(T \in \mathcal{C}|\mathcal{H}_0)
 $$
 where $\mathcal{C}$ is the critical region.
-```
+
+````{iframe-figure} ../_static/elements/testing.html
+:name: testing
+
+Interactively visualize the effect of different $\mathcal{H}_a$ and $\alpha$ on the properties of the hypothesis test. By sliding the parameters, you can see how both hypotheses interact, and how the critical region $\mathcal{C}$ is determined based on the false alarm probability $\alpha$.
+````
+
+
 
 In the example, the bias was assumed to be positive, such that there is a right-side critical region $\mathcal{C}$, but in practice the bias may also be negative (left-side critical region), or we may have a two-sided critical region.
 

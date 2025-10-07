@@ -51,6 +51,20 @@
       const xScale = d3.scaleLinear().domain([-4,8]).range([0, innerW]);
       const yScale = d3.scaleLinear().range([innerH, 0]);
 
+      const h0Label = g.append("text")
+        .attr("id", "h0-label")
+        .attr("text-anchor", "middle")
+        .attr("font-size", 16)
+        .attr("font-weight", "bold")
+        .attr("fill", "black");
+
+      const haLabel = g.append("text")
+        .attr("id", "ha-label")
+        .attr("text-anchor", "middle")
+        .attr("font-size", 16)
+        .attr("font-weight", "bold")
+        .attr("fill", "orange");
+
       const xAxis = g.append("g").attr("transform", `translate(0,${innerH})`);
       const yAxis = g.append("g");
 
@@ -185,6 +199,16 @@
         const power = dataHa.filter(d => d.x >= c);
         if (power.length>1)
           g.append("path").datum(power).attr("class","shade").attr("d",area).attr("fill","green").attr("opacity",0.3);
+
+        h0Label
+          .attr("x", xScale(0))
+          .attr("y", yScale(pdf(0, 0, 1)) - 12)
+          .text("H0");
+
+        haLabel
+          .attr("x", xScale(mu))
+          .attr("y", yScale(pdf(mu, mu, sigma)) - 12)
+          .text("Ha");
       }
 
       update();
