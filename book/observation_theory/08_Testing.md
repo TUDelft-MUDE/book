@@ -82,6 +82,7 @@ where $\mathcal{C}$ is the critical region.
 
 ````{iframe-figure} ../_static/elements/testing.html
 :name: testing
+:height: 520px
 
 Interactively visualize the effect of different $\mathcal{H}_a$ and $\alpha$ on the properties of the hypothesis test. By sliding the parameters, you can see how both hypotheses interact, and how the critical region $\mathcal{C}$ is determined based on the false alarm probability $\alpha$.
 ````
