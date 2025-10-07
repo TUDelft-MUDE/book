@@ -25,6 +25,7 @@ sphinx:
     html_theme_options:
       logo:
         text: Textbook
+        link: "https://mude.citg.tudelft.nl/"
       repository_url: "https://github.com/TUDelft-MUDE/book"
       path_to_docs: "book"
       repository_branch: "2025-draft"
