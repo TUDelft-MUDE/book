@@ -59,7 +59,7 @@ What is the alternative hypothesis if we assume that the velocity $w$ after a ce
 :class: tip, dropdown
 
 $$
-\mathcal{H}_0: \mathbb{E}(\begin{bmatrix} Y_1 \\ \vdots \\ Y_i \\ Y_{i+1} \\ \vdots \\ Y_m \end{bmatrix} )=\mathrm{Ax}+\begin{bmatrix} 0 \\ \vdots \\ 0\\ t_{i+1}-t_i \\ \vdots \\ t_m-t_i \end{bmatrix}v_i
+\mathcal{H}_0: \mathbb{E}(\begin{bmatrix} Y_1 \\ \vdots \\ Y_i \\ Y_{i+1} \\ \vdots \\ Y_m \end{bmatrix} )=\mathrm{Ax}+\begin{bmatrix} 0 \\ \vdots \\ 0\\ t_{i+1}-t_i \\ \vdots \\ t_m-t_i \end{bmatrix}w
 $$
 Also in this case $q=1$.
 

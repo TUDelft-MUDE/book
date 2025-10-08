@@ -42,7 +42,7 @@ $$
 \mathrm{y=Ax + \epsilon}
 $$
 
-The length of the error vector (or vector of residuals) $\mathrm{\epsilon}$ is equal to the length of the vector of observations $\mathrm{y}$.
+The dimension of the error vector (or vector of residuals) $\mathrm{\epsilon}$ is equal to the dimension of the vector of observations $\mathrm{y}$.
 
 ## Least-squares principle
 

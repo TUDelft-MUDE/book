@@ -141,9 +141,11 @@ GNSS positioning: the position of the user is estimated from four GNSS satellite
 The functional model comprises $m$ non-linear functions of the unknown parameter vector $\mathrm{x}$:
 
 $$
-\mathbb{E}(\begin{bmatrix} Y_{1} \\ Y_{2} \\ \vdots \\ Y_{m} \end{bmatrix} )= \begin{bmatrix} \sqrt{(x_1-x)^2+(y_1-x)^2+(z_1-x)^2}\\ \sqrt{(x_2-x)^2+(y_2-x)^2+(z_2-x)^2} \\ \vdots \\ \sqrt{(x_m-x)^2+(y_m-x)^2+(z_m-x)^2}\end{bmatrix}
+\mathbb{E}(\begin{bmatrix} Y_{1} \\ Y_{2} \\ \vdots \\ Y_{m} \end{bmatrix} )= \begin{bmatrix} \sqrt{(x_1-x)^2+(y_1-y)^2+(z_1-z)^2}\\ \sqrt{(x_2-x)^2+(y_2-y)^2+(z_2-z)^2} \\ \vdots \\ \sqrt{(x_m-x)^2+(y_m-y)^2+(z_m-z)^2}\end{bmatrix}
 =\begin{bmatrix} q_{1}(\mathrm{x}) \\ q_{2}(\mathrm{x}) \\ \vdots \\ q_{m}(\mathrm{x}) \end{bmatrix}
 $$
+
+Where $Y_i$ is the distance measurement to satellite $i$. Note that the functional model is non-linear in $\mathrm{x}$, since the unknown parameters appear inside a square root.
 
 ## Redundancy
 Later we will see that the *redundancy* of our model plays an important role regarding the precision of our estimated parameters. For a model with $m$ observables and $n$ unknown parameters, the [redundancy](redundancy) is given by:
