@@ -29,7 +29,7 @@ Thus solutions are propagated, or **advected**, with constant
 speed $u$ without *deforming*, that is, no change in shape. If $u > 0$, propagation is from left to right. If $u < 0$, propagation is from right to left, that is, **left-travelling waves**.
 
 Advection is an example of transport by fluid motion. Another example is **convection** which is the transport of a fluid (water or air) in response to heat, for instance, boiling water.
-Although, these two terms are interchangeable in mathematical sense, <u>advection</u> is the usual term (especially in hydraulic engineering).
+Although, these two terms are interchangeable in mathematical sense, <u>advection</u> is the usual term.
 
 The above described problem is an initial value problem (IVP). Now, let us consider a 1D domain with a finite length $L$, that is, $0 \leq x \leq L$.
 In this case we need to impose some boundary conditions. A boundary condition is needed at a certain boundary location where the information *enters* the domain.
