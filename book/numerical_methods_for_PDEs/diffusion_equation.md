@@ -497,7 +497,7 @@ augmented with the Dirichlet boundary condition at $x=0$ and the homogeneous Neu
 
 ## Time integration
 
-The semi discretization of the heat equation leads to a linear system of first order ODEs, {eq}`modedif1`. In accordance with the MOL approach, the next step is to integrate this system with respect to time.
+The semi discretization of the heat equation leads to a linear system of first order ODEs, {eq}`modedif1`. In accordance with the method of lines, the next step is to integrate this system with respect to time.
 Our choice for time integration would be the <u>forward Euler scheme</u>, since this is the most simple one.
 Application of forward Euler to Eq. {eq}`modedif1` yields
 
