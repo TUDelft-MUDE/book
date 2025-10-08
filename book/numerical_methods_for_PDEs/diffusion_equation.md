@@ -23,7 +23,7 @@ $$
   \begin{align}
     &\frac{\partial T}{\partial t} = \kappa \frac{\partial^2 T}{\partial x^2}\, , \quad x \in (0,L)\, ,\quad t > 0 \\
     \\
-    &T(x,0) = T^0(x)\, ,\quad x \in [0,L] \\
+    &T(x,0) = T^0(x) > 0\, ,\quad x \in [0,L] \\
     \\
     &T(0,t) = 1\, ,\quad t > 0 \\
     \\
@@ -37,7 +37,7 @@ Specifically, this heat *spreads* out spatially as time increases. This phenomen
 The solution to the heat equation is the temperature distribution $T(x,t)$ at any time $t$ and vary with $x$ along the rod.
 
 We assume that $T(x,t)$ is smooth enough, so that we can differentiate this function many times as we want and each derivative is a well-defined *bounded* function (that has thus a fixed upper bound).
-Here $L$ is the given finite length of the domain and $T^0(x)$ is a given function defining the initial condition on the temperature.
+Here $L$ is the given finite length of the domain and $T^0(x) > 0$ is a given function defining the initial condition on the temperature.
 The coefficient $\kappa > 0$ is the thermal diffusivity. In general, the parameter $\kappa$ is called the **diffusion coefficient** or sometimes the **dispersion** coefficient.
 
 ```{tip}
