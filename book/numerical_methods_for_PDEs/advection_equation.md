@@ -64,7 +64,7 @@ Although the wave equation {eq}`advection1` appears deceptively simple, the nume
 
 We reconsider the computational grid as discussed in Section {ref}`diffusion`.
 Thus, we have our uniform mesh consisting of nodes $x_0,\cdots,x_{M}$ and $\Delta x = x_m - x_{m-1}$.
-We apply the MOL approach, so that we first discretize in space and then integrate over time.
+We apply the method of lines, so that we first discretize in space and then integrate over time.
 
 A possible candidate for the spatial approximation would be central differences
 (cf. Eq. {eq}`cdf1`), as follows
@@ -108,7 +108,7 @@ This matrix is a **skew symmetric** matrix ($A = -A^T$) implying that the nonzer
 Mathematically, this system is regarded as *undamped* while its solution consists of harmonic (oscillatory) components.
 ```
 
-The next step is to integrate the above system of ODEs with respect to time. Although the MOL approach is flexible in the sense that
+The next step is to integrate the above system of ODEs with respect to time. Although the method of lines is flexible in the sense that
 the choice of time integration is independent from the choice of space discretization, we must be careful since the resulting scheme
 may not be stable. For example, let us choose the forward Euler scheme, we get
 
