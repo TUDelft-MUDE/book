@@ -1,3 +1,4 @@
+(modelclass)=
 # Model classification
 
 ## What is a Model?

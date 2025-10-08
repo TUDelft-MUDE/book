@@ -50,7 +50,7 @@ L(\mathrm{Ax},\Sigma_Y|\mathrm{y})=\underset{c}{\underbrace{(\det{2\pi \Sigma_Y}
 $$
 
 Maximizing this likelihood function for $\mathrm{x}$ means that we have to find the $\mathrm{x}$ such that:
-* the first-order partial derivatives ([gradient](PM_gradient)) are zero: $\partial_{\mathrm{x} }L(\mathrm{Ax},\Sigma_Y|\mathrm{y})=0$
+* the first-order partial derivatives ([gradient](https://mude.citg.tudelft.nl/fundamental-concepts/2025/fundamentals/00_02_PreMath.html#multivariate-differentiation)) are zero: $\partial_{\mathrm{x} }L(\mathrm{Ax},\Sigma_Y|\mathrm{y})=0$
 * the second-order partial derivatives are negative.
 
 Instead of working with the likelihood function, we prefer to work with the *loglikelihood* function:

@@ -80,7 +80,7 @@ In other words, $\mathrm{\hat{x}}$ is the solution for $\mathrm{x}$ which provid
 
 ## Least-squares solution
 
-We can find the minimum of a function by taking the first derivative with respect to the 'free variable'. Since the observation vector is not free, and also the design matrix $\mathrm{A}$ is fixed, the only variable which we can vary is $\mathrm{x}$. The first derivative of our objective function should be equal to zero to reach a minimum (see [Gradient](PM_gradient), and [Vectors and matrices](pm_matrix)):
+We can find the minimum of a function by taking the first derivative with respect to the 'free variable'. Since the observation vector is not free, and also the design matrix $\mathrm{A}$ is fixed, the only variable which we can vary is $\mathrm{x}$. The first derivative of our objective function should be equal to zero to reach a minimum (see [Gradient](https://mude.citg.tudelft.nl/fundamental-concepts/2025/fundamentals/00_02_PreMath.html#multivariate-differentiation), and [Vectors and matrices](https://mude.citg.tudelft.nl/fundamental-concepts/2025/fundamentals/00_01a_PreMath.html#vectors-and-matrices)):
 
 $$
 \begin{align*} 

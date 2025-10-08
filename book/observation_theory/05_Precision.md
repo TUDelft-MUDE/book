@@ -37,7 +37,7 @@ $$
 P(Z<k) = 1-0.5\alpha
 $$ 
 
-If we choose a certain value for $\alpha$ we can thus find the value of $k$ using the inverse CDF, e.g., with $\alpha = 0.05$ we would obtain $k=1.96$, see [Table Standard Normal distribution](table_standardnormal) (note that you would have to look up the value for 0.025 in the table).
+If we choose a certain value for $\alpha$ we can thus find the value of $k$ using the inverse CDF, e.g., with $\alpha = 0.05$ we would obtain $k=1.96$, see [Table Standard Normal distribution](https://mude.citg.tudelft.nl/fundamental-concepts/2025/fundamentals/prob_tables/normal.html#table-standard-normal-distribution) (note that you would have to look up the value for 0.025 in the table).
 
 (confreg)=
 ## Confidence interval of observations

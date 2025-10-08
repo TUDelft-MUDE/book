@@ -87,7 +87,7 @@ $$
 
 This is thus the sum of the *squared residuals* (= estimated errors) divided by the variance of the random errors.
 
-It can be shown that the distribution of the weighted squared norm of residuals is given by the [central $\chi^2$-distribution](table_chi2):
+It can be shown that the distribution of the weighted squared norm of residuals is given by the [central $\chi^2$-distribution](https://mude.citg.tudelft.nl/fundamental-concepts/2025/fundamentals/prob_tables/chi2.html#table-central-chi-squared-distribution):
 
 $$
 \hat{\epsilon}^T\Sigma_Y^{-1}\hat{\epsilon} \sim \chi^2 (m-n,0)
