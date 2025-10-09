@@ -1,10 +1,6 @@
 (forecast)=
 # Forecasting
 
-```{admonition} MUDE Exam Information
-:class: tip, dropdown
-The material on this page is provided to give you extra insight into time series analysis and how it is used in practice. This material is not part of the exam.
-```
 Time series analysis focuses on examining data points collected over time to extract meaningful patterns, such as trends, seasonal cycles, and other temporal components. Very often we do so in order to be able to predict future values based on the previously observed ones, which is referred to as **forecasting**.
 
 In this part of the book, you first learned about the components that can be distinguished ([Chapter 4.1](components)) in a time series. Some of the components relate to the *signal-of-interest* and others with the *noise* ([Chapter 4.2](noise)). Modelling and estimating the signal-of-interest was explained in [Chapter 4.3](modelling_tsa), using the concepts of [Observation Theory](ObsTheory).
