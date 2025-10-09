@@ -85,6 +85,8 @@ parts:
         sections:
         - file: observation_theory/03_Notebook_WLS.ipynb 
       - file: observation_theory/04_BLUE.md
+        sections:
+        - file: observation_theory/04_Notebook_sampling.ipynb
       - file: observation_theory/05_Precision.md
         sections:
         - file: observation_theory/05_Notebook_ConfInt.ipynb 
