@@ -30,7 +30,7 @@ $$
 \end{align*}
 $$
 
-To see the derivation, watch [the video](video_WLS), though you will not be asked to do this on the exam.
+To see the derivation, watch [the video](03_wls_video), though you will not be asked to do this on the exam.
 
 We also find the derived estimate $ \mathrm{\hat{y}} $ and $ \mathrm{\hat{\epsilon}} $:
 
@@ -49,7 +49,7 @@ $$
 <iframe src="https://tudelft.h5p.com/content/1292046737060674407/embed" aria-label="WLS_1" width="1088" height="637" frameborder="0" allowfullscreen="allowfullscreen" allow="autoplay *; geolocation *; microphone *; camera *; midi *; encrypted-media *"></iframe><script src="https://tudelft.h5p.com/js/h5p-resizer.js" charset="UTF-8"></script>
 
 :::
-
+(03_wls_video)=
 ## Video
 ```{eval-rst}
 .. raw:: html

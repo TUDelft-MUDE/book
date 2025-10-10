@@ -63,7 +63,7 @@ $$
 \begin{align*} E\{\begin{bmatrix} \Delta Y_1 \\ \Delta Y_2 \\ \vdots \\ \Delta Y_m \end{bmatrix}_{[0]}\} &=\begin{bmatrix} \partial_{x_1} q_1(\mathrm{x}_{[0]}) &\partial_{x_2} q_1(\mathrm{x}_{[0]}) & \ldots & \partial_{x_n} q_1(\mathrm{x}_{[0]}) \\ \partial_{x_1} q_2(\mathrm{x}_{[0]}) &\partial_{x_2} q_2(\mathrm{x}_{[0]}) & \ldots & \partial_{x_n} q_2(\mathrm{x}_{[0]}) \\ \vdots & \vdots  & \ddots  & \vdots\\ \partial_{x_1} q_m(\mathrm{x}_{[0]}) &\partial_{x_2} q_m(\mathrm{x}_{[0]}) & \ldots& \partial_{x_n} q_m(\mathrm{x}_{[0]}) \end{bmatrix}\Delta \mathrm{x}_{[0]} \\ &= \mathrm{J}_{[0]}\Delta \mathrm{x}_{[0]}\end{align*}
 $$
 
-with [Jacobian matrix](PM_jacobian) $\mathrm{J}_{[0]}$.
+with [Jacobian matrix](https://mude.citg.tudelft.nl/fundamental-concepts/2025/fundamentals/00_02_PreMath.html#jacobian-matrix) $\mathrm{J}_{[0]}$.
 
 And this allows to apply best linear unbiased estimation (BLUE) to get an estimator for $\Delta \mathrm{x}_{[0]}$:
 
