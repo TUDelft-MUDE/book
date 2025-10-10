@@ -74,7 +74,7 @@ parts:
       # - file: propagation_uncertainty/01_ErrorPropagation.md
       # - file: propagation_uncertainty/02_LinearPropagation.md
       
-# START REMOVE-FROM-PUBLISH
+
     - file: observation_theory/overview.md
       sections:
       - file: observation_theory/01_Introduction.md
@@ -100,7 +100,8 @@ parts:
         - file: observation_theory/09_Notebook_Testing.ipynb
         - file: observation_theory/09_Notebook_OMT.ipynb
       - file: observation_theory/99_NotationFormulas
-
+      
+# START REMOVE-FROM-PUBLISH
   - caption: Q2 Topics
     numbered: 2
     chapters:
