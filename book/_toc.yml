@@ -82,6 +82,7 @@ parts:
         sections:
         - file: observation_theory/02_LeastSquares_NB.ipynb  
       - file: observation_theory/03_WeightedLSQ.md
+# START REMOVE-FROM-PUBLISH
         sections:
         - file: observation_theory/03_Notebook_WLS.ipynb 
       - file: observation_theory/04_BLUE.md
@@ -100,6 +101,7 @@ parts:
         - file: observation_theory/09_Notebook_Testing.ipynb
         - file: observation_theory/09_Notebook_OMT.ipynb
       - file: observation_theory/99_NotationFormulas
+# END REMOVE-FROM-PUBLISH
       
 # START REMOVE-FROM-PUBLISH
   - caption: Q2 Topics
