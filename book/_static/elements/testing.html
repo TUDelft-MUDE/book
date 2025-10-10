@@ -90,6 +90,23 @@
         .attr("font-weight", "bold")
         .attr("fill", "orange");
 
+      const criticalMarker = g.append("line")
+        .attr("id", "critical-marker")
+        .attr("stroke", "#333")
+        .attr("stroke-width", 1.5)
+        .attr("stroke-dasharray", "4,4");
+
+      const criticalLabel = g.append("text")
+        .attr("id", "critical-label")
+        .attr("text-anchor", "middle")
+        .attr("font-size", 14);
+
+      criticalLabel.append("tspan").text("k");
+      criticalLabel.append("tspan")
+        .attr("font-size", "75%")
+        .attr("baseline-shift", "sub")
+        .text("\u03B1");
+
       const xAxis = g.append("g");
       const yAxis = g.append("g");
 
@@ -103,10 +120,9 @@
         .y1(d => yScale(d.y));
 
       const legendItems = [
-        {label: "Type I error", fill: "red", opacity: 0.6},
-        {label: "Type II error", fill: "blue", opacity: 0.3},
-        {label: "Power", fill: "green", opacity: 0.3},
-        {label: "Correctly accept H0", fill: "#999999", opacity: 0.25}
+        {label: "Type I error (\u03B1)", fill: "red", opacity: 0.6},
+        {label: "Type II error (\u03B2)", fill: "blue", opacity: 0.3},
+        {label: "Power (\u03B3)", fill: "green", opacity: 0.3}
       ];
 
       const legend = g.append("g").attr("id", "legend");
@@ -199,9 +215,9 @@
         const sigma = +document.getElementById("slider_sigma").value / 100;
         const alpha = +document.getElementById("slider_alpha").value / 100;
 
-        document.getElementById("label_mu").textContent = `μₐ = ${mu.toFixed(2)}`;
-        document.getElementById("label_sigma").textContent = `σₐ = ${sigma.toFixed(2)}`;
-        document.getElementById("label_alpha").textContent = `α = ${(alpha*100).toFixed(1)}%`;
+        document.getElementById("label_mu").textContent = "\u03BC = " + mu.toFixed(2);
+        document.getElementById("label_sigma").textContent = "\u03C3 = " + sigma.toFixed(2);
+        document.getElementById("label_alpha").textContent = "\u03B1 = " + (alpha * 100).toFixed(1) + "%";
 
         const dataH0 = computeData(0, 1);
         const dataHa = computeData(mu, sigma);
@@ -230,16 +246,6 @@
           .attr("stroke-width", 2);
 
         g.selectAll(".shade").remove();
-
-        const correctAccept = dataH0.filter(d => d.x <= c);
-        if (correctAccept.length > 1) {
-          g.append("path")
-            .datum(correctAccept)
-            .attr("class", "shade")
-            .attr("d", area)
-            .attr("fill", "#999999")
-            .attr("opacity", 0.25);
-        }
 
         const typeI = dataH0.filter(d => d.x >= c);
         if (typeI.length > 1) {
@@ -270,6 +276,19 @@
             .attr("fill", "green")
             .attr("opacity", 0.3);
         }
+
+        const [rangeBottom, rangeTop] = yScale.range();
+        criticalMarker
+          .attr("x1", xScale(c))
+          .attr("x2", xScale(c))
+          .attr("y1", rangeTop)
+          .attr("y2", rangeBottom);
+        criticalMarker.raise();
+
+        criticalLabel
+          .attr("x", xScale(c))
+          .attr("y", rangeBottom + 26);
+        criticalLabel.raise();
 
         h0Label
           .attr("x", xScale(0))

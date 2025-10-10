@@ -43,6 +43,10 @@ Next, we will develop the principles and underlying theory of (1) Least-squares 
 Special attention is then given to how the uncertainty in the measurements propagates into parameter estimation results, such that we can assess the precision of the estimated parameters. For that purpose we need the stochastic model.
 
 ```{admonition} Definition
+*Precision* and *accuracy* are two terms that are often confused. Precision refers to the spread of a set of measurements (i.e., the standard deviation), whereas accuracy refers to the closeness of a measurement to the true value (i.e., absence of bias). ([Wiki](https://en.wikipedia.org/wiki/Accuracy_and_precision))
+```
+
+```{admonition} Definition
 The *stochastic model* describes the uncertainty of the observables in the form of the covariance matrix $\Sigma_Y=\Sigma_{\epsilon}$.
 ```
 

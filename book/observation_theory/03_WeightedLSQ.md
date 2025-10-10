@@ -76,7 +76,7 @@ If it is a diagonal matrix, with different values on the diagonal, this implies 
 
 ## Weighted least-squares estimator: properties
 
-Until now, we have looked at the weighted least-squares solution of a single *realization* of the observations, where generally we assume that it is a realization of the *random* observable vector $Y$, since measurements are affected by random errors. As such it follows the the weighted least-squares *estimator* is given by:
+Until now, we have looked at the weighted least-squares solution of a single *realization* of the observations, where generally we assume that it is a realization of the *random* observable vector $Y$, since measurements are affected by random errors. As such it follows the weighted least-squares *estimator* is given by:
 
 $$
 \hat{X}  = \mathrm{(A^T W A )^{-1} A^T W} Y
@@ -92,13 +92,13 @@ $$
 \mathbb{E}(\hat{X})  = \mathrm{(A^T W A )^{-1} A^T W} \mathbb{E}(Y) = \mathrm{(A^T W A )^{-1} A^T W Ax = x}
 $$
 
-This a very desirable property. It applies that if we would repeat the measurements many times to obtain a new estimate, the *average of the estimated* values would be equal to the true values.
+This a very desirable property. It implies that if we would repeat the measurements many times to obtain a new estimate, the *average of the estimated* values would be equal to the true values.
 
 :::{card} Exercise
 
 What is the covariance matrix of the weighted least-squares estimator? You can assume the covariance matrix $\Sigma_Y$ of the observables to be given. Hence, you need to apply the (co)variance propagation law:
 
-If $\hat{X}=\mathrm{L}^T Y$, then $\Sigma_{\hat{X}} = \mathrm{L}^T\Sigma_Y  \mathrm{L} $
+If $\hat{X}=\mathrm{L}^T Y$, then $\Sigma_{\hat{X}} = \mathrm{L}^T\Sigma_Y  \mathrm{L} $, with $\mathrm{L^T} = \mathrm{(A^T W A )^{-1} A^T W}$. So derive $\Sigma_{\hat{X}}$ as a function of $\Sigma_Y$, $\mathrm{A}$ and $\mathrm{W}$.
 
 
 ```{admonition} Solution
