@@ -215,7 +215,7 @@
         const sigma = +document.getElementById("slider_sigma").value / 100;
         const alpha = +document.getElementById("slider_alpha").value / 100;
 
-        document.getElementById("label_mu").textContent = "\u03BC = " + mu.toFixed(2);
+        document.getElementById("label_mu").textContent = "\u2207 = " + mu.toFixed(2);
         document.getElementById("label_sigma").textContent = "\u03C3 = " + sigma.toFixed(2);
         document.getElementById("label_alpha").textContent = "\u03B1 = " + (alpha * 100).toFixed(1) + "%";
 
@@ -293,12 +293,11 @@
         h0Label
           .attr("x", xScale(0))
           .attr("y", Math.max(12, yScale(pdf(0, 0, 1)) - 12))
-          .text("H0");
-
+          .text("\u210B\u2080");    // ℋ₀
         haLabel
           .attr("x", xScale(mu))
           .attr("y", Math.max(12, yScale(pdf(mu, mu, sigma)) - 12))
-          .text("Ha");
+          .text("\u210B\u2090");    // ℋ₁
       }
 
       setDimensions();

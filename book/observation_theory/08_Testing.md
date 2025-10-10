@@ -89,15 +89,8 @@ Interactively visualize the effect of different $\mathcal{H}_a$ and $\alpha$ on 
 
 In the example, the bias was assumed to be positive, such that there is a right-side critical region $\mathcal{C}$, but in practice the bias may also be negative (left-side critical region), or we may have a two-sided critical region.
 
-See {numref}`H0Ha_alpha`, where the principle has been applied for the same example as above. Given that under the null hypothesis $T\sim N(0,\sigma^2/m)$, we can easily determine the threshold value $k_{\alpha}$ for a given $\alpha$ using the inverse CDF. The critical region $\mathcal{C}$ is thus given by $T>k_{\alpha}$.
+See {numref}`testing`, where the principle has been applied for a interactive example as above. Given that under the null hypothesis $T\sim N(0,\sigma^2/m)$, we can easily determine the threshold value $k_{\alpha}$ for a given $\alpha$ using the inverse CDF. The critical region $\mathcal{C}$ is thus given by $T>k_{\alpha}$. Playing with the parameters in the figure, you can see that a larger bias $\nabla$ makes it easier to detect that the null hypothesis is false (i.e., the distributions are more separated). Also, a smaller value for $\alpha$ implies a larger threshold value $k_{\alpha}$, which makes it harder to reject the null hypothesis.
 
-```{figure} https://files.mude.citg.tudelft.nl/08_H0Ha_2.png
----
-height: 250px
-name: H0Ha_alpha
----
-PDFs of test statistic $T$ under null and alternative hypothesis, with false alarm probability $\alpha$ and threshold value $k_{\alpha}$.
-```
 
 Besides the probability of a false alarm, the figure also shows the probability of *false acceptance* of $\mathcal{H}_0$, referred to as the type II error probability, or missed detection probability. In this case, the alternative hypothesis is true, but still the null hypothesis is accepted.
 
