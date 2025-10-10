@@ -113,7 +113,7 @@ We have seen that to obtain a linear model of observation equations in the prese
 
 We can determine the dominant frequency $f_1$ by analysing the power spectral density (PSD) of the data. The dominant frequency corresponds to the frequency at which the PSD reaches its maximum value. If the time series contains $p$ periodic components, the PSD will exhibit $p$ prominent peaks, one corresponding to each component.
 
-#### Example power spectral density
+### Example power spectral density
 
 {numref}`ls-psd` shows on the left the original time series as well as the estimated linear trend and seasonal signal. The sine wave has a period ($T=1/f$) of 100. Indeed the PSD as function of period on the right shows a peak at a period of 100. Mind that the PSD is shown here as a function of period $T$ in seconds, rather than frequency $f$ in Hertz.
 

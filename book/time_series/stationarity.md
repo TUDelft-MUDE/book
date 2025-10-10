@@ -9,6 +9,13 @@ A time series results from observing a stochastic process. A stochastic process 
 
 Would we observe it as a continuous function of time, then $Y(t)$ is a random variable which depends on time, and hence the probability density function (PDF) of $Y(t)$ would carry also time $t$ as an argument, $f_{Y(t)}(y,t)$, modelling the variability in the outcomes of $Y(t)$.
 
+```{figure} https://files.mude.citg.tudelft.nl/randomprocess_threerealizations.svg
+---
+name: randomprocess_threerealizations
+---
+Random process $Y\left(t\right)$ of which three realizations $y\left(t\right)$ are shown, as a function of time $t$. The PDF  $f_{Y(t)}(y,t)$ is shown for time instants $t_1$ and $t_2$.
+```
+
 A time series results from observing the stochastic process at discrete instants in time, resulting in a sequence of random variables $Y(t_i)$ with associated the aforementioned PDF evaluated at times $t_i$: $f_{Y(t_i)}(y,t_i)$, with $i=1,\ldots,m$.
 
 The PDF carries time as an argument, meaning first that it depends on time and that the variability described by it may change as a $\textit{function of time}$ (though soon we will assume that the process is stationary, and hence that it does not), and second that there may exist $\textit{dependence in time}$, such that neighbouring elements of the time series, e.g. $Y(t_2)$ and $Y(t_5)$, are correlated, in which case we could say that the process has a kind of memory. This 'time correlation', very common in practice, must be properly taking into account when we estimate (predict) future values of the time series, and this is the goal of the remaining sections of this chapter on Time Series Analysis.

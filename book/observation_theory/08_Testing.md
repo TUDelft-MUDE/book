@@ -1,5 +1,5 @@
 (08_testing)=
-## Model testing
+# Model testing
 In Chapter [Precision and confidence intervals](05_precision) one part of the quality assessment was presented. But evaluating the precision does not tell us how well the model fits the data we collected. It might be that we worked with a wrong functional model (e.g., too simplistic), or a wrong stochastic model. Or it may be that our observations are affected by blunders or systematic biases. 
 
 In some cases, a first indication that something may be wrong can be obtained by plotting the observations and the fitted model together with the confidence intervals. If the residuals are large compared to the confidence interval this is obviously an indication that something is wrong. Another indication is if you see a clear pattern in the residuals once you plot those as function of time or location. 
@@ -23,7 +23,7 @@ To answer these questions, we need to apply statistical hypothesis testing. In t
 * test for blunders or systematic biases in the observations;
 * test for misspecifications of the functional model and/or decide between two competing hypotheses regarding the functional model.
 
-### Statistical hypothesis testing: principle
+## Statistical hypothesis testing: principle
 Statistical hypothesis testing means that we apply a certain test to decide between two (or more) competing hypothesis regarding the underlying model (in our case the functional or stochastic model). Therefore we assume a nominal model, corresponding to the null hypothesis $\mathcal{H}_0$, and another model for the alternative hypothesis $\mathcal{H}_a$.
 
 An important note to be made here is that the null hypothesis is presumed to be true unless the data provides convincing evidence against it (i.e., there is significant misfit).
@@ -80,23 +80,23 @@ $$
 where $\mathcal{C}$ is the critical region.
 ```
 
+````{iframe-figure} ../_static/elements/testing.html
+:name: testing
+:height: 520px
+
+Interactively visualize the effect of different $\mathcal{H}_a$ and $\alpha$ on the properties of the hypothesis test. By sliding the parameters, you can see how both hypotheses interact, and how the critical region $\mathcal{C}$ is determined based on the false alarm probability $\alpha$.
+````
+
 In the example, the bias was assumed to be positive, such that there is a right-side critical region $\mathcal{C}$, but in practice the bias may also be negative (left-side critical region), or we may have a two-sided critical region.
 
-See {numref}`H0Ha_alpha`, where the principle has been applied for the same example as above. Given that under the null hypothesis $T\sim N(0,\sigma^2/m)$, we can easily determine the threshold value $k_{\alpha}$ for a given $\alpha$ using the inverse CDF. The critical region $\mathcal{C}$ is thus given by $T>k_{\alpha}$.
+See {numref}`testing`, where the principle has been applied for a interactive example as above. Given that under the null hypothesis $T\sim N(0,\sigma^2/m)$, we can easily determine the threshold value $k_{\alpha}$ for a given $\alpha$ using the inverse CDF. The critical region $\mathcal{C}$ is thus given by $T>k_{\alpha}$. Playing with the parameters in the figure, you can see that a larger bias $\nabla$ makes it easier to detect that the null hypothesis is false (i.e., the distributions are more separated). Also, a smaller value for $\alpha$ implies a larger threshold value $k_{\alpha}$, which makes it harder to reject the null hypothesis.
 
-```{figure} https://files.mude.citg.tudelft.nl/08_H0Ha_2.png
----
-height: 250px
-name: H0Ha_alpha
----
-PDFs of test statistic $T$ under null and alternative hypothesis, with false alarm probability $\alpha$ and threshold value $k_{\alpha}$.
-```
 
 Besides the probability of a false alarm, the figure also shows the probability of *false acceptance* of $\mathcal{H}_0$, referred to as the type II error probability, or missed detection probability. In this case, the alternative hypothesis is true, but still the null hypothesis is accepted.
 
 (betagamma)=
 ```{admonition} Definitions
-The missed detecion or type II error probability $\beta$ is defined as:
+The missed detection or type II error probability $\beta$ is defined as:
 
 $$
 \beta= P(T\notin \mathcal{C}|\mathcal{H}_a)

@@ -1,11 +1,12 @@
 (BLUE)=
-## Best linear unbiased estimation
+
+# Best linear unbiased estimation
 
 Best Linear Unbiased estimation (BLUE) is based on a fundamentally different  principle than (weighted) least-squares (WLS), but still it turns out to be a special case of WLS.
 
 Comparing the weighted least-squares estimator:
 
-$$ 
+$$
 \hat{X}_{\text{WLS}}= \mathrm{(\mathrm{A^T} W \mathrm{A})^{-1} \mathrm{A^T} W} Y
 $$
 
@@ -15,7 +16,7 @@ $$
 \hat{X}_{\text{BLU}}= (\mathrm{A^T} \Sigma_Y^{-1} \mathrm{A})^{-1} \mathrm{A^T} \Sigma_Y^{-1} Y
 $$
 
-We see that the weight matrix $\mathrm{W}$ is now replaced by the inverse of the covariance matrix $\Sigma_Y$ (our stochastic model). 
+We see that the weight matrix $\mathrm{W}$ is now replaced by the inverse of the covariance matrix $\Sigma_Y$ (our stochastic model).
 
 This makes sense intuitively: suppose the observables are all independent and thus uncorrelated, such that the covariance matrix is a diagonal matrix with the variances as its diagonal element. The weights for the individual observables are then equal to the inverse of their variances, which implies that a more precise observable (smaller variance) receives a larger weight.
 
@@ -39,7 +40,7 @@ $$
 
 :::{card} Exercise least-squares versus BLUE
 
-Let's consider an estimation problem with $m$ observables and functional model $\mathbb{E}(Y)=\mathrm{Ax}$ and stochastic model $\Sigma_Y = \sigma^2 I_m$ (i.e., the covariance matrix is a scaled identity matrix). 
+Let's consider an estimation problem with $m$ observables and functional model $\mathbb{E}(Y)=\mathrm{Ax}$ and stochastic model $\Sigma_Y = \sigma^2 I_m$ (i.e., the covariance matrix is a scaled identity matrix).
 
 Find the expressions for the ordinary (unweighted) least-squares estimator and the best linear unbiased estimator.
 
@@ -55,9 +56,10 @@ $$
 $$
 
 ```
+
 :::
 
-### Video
+## Video
 
 ```{eval-rst}
 .. raw:: html
@@ -65,7 +67,7 @@ $$
     <iframe width="560" height="315" src="https://www.youtube.com/embed/EIZvJrlxZhs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 ```
 
-### BLUE decomposed
+## BLUE decomposed
 
 In BLUE, Best Linear Unbiased Estimation, the parts of the acronym ‘B’, ‘L’, and ‘U’ refer to specific properties.
 
@@ -73,11 +75,11 @@ In BLUE, Best Linear Unbiased Estimation, the parts of the acronym ‘B’, ‘L
 
 $$
 \hat{X}=\mathrm{L^T}Y\sim N(\mathrm{L^T Ax},\mathrm{L^T} \Sigma_Y \mathrm{L})
-$$ 
+$$
 
 where we use the linear propagation laws of the mean and covariance.
 
-*Unbiased* means that the expected value of an estimator of a parameter is equal to the value of that parameter. In other words: 
+*Unbiased* means that the expected value of an estimator of a parameter is equal to the value of that parameter. In other words:
 
 $$
 \mathbb{E}(\hat{X})= \mathrm{x}.
@@ -95,11 +97,10 @@ $$
 \text{trace}(\Sigma_{\hat{X}}) = \sum_{i=1}^m \sigma^2_{\hat{X}_i} = \text{minimum}
 $$
 
-
 (Note that this is equivalent to "minimum mean squared errors" $\mathbb{E}(\|\hat{X}-\mathrm{x}\|^2)$. )
 
 (04_cov)=
-### Covariance matrices of the BLU estimators
+## Covariance matrices of the BLU estimators
 
 The precision of the estimator is expressed by its covariance matrix. For the ‘best linear unbiased’ estimator of $\hat{X}$, $\hat{Y}$  and $\hat{\epsilon}$ we obtain (by applying the [linear covariance propagation laws](99_proplaw)):
 
@@ -111,9 +112,9 @@ $$
 
 In summary, by applying the BLUE method, we obtain the best estimator among all linear unbiased estimators, where ‘best’ is quantitatively expressed via the covariance matrix.
 
-### Additional note on the linearity condition of BLUE 
+## Additional note on the linearity condition of BLUE
 
-The BLUE estimator is the best (or minimum variance) among all linear unbiased estimators. However, if we drop the condition of linearity, then BLUE is not necessarily the best.  It means that there may be non-linear estimators that have even better precision than the BLUE. However, it can be proven that, in the case of normally distributed observations, the BLUE is also the best among all possible unbiased estimators. So we can say: for observations $Y$ that are normally distributed, the BLUE is BUE (best unbiased estimator). 
+The BLUE estimator is the best (or minimum variance) among all linear unbiased estimators. However, if we drop the condition of linearity, then BLUE is not necessarily the best.  It means that there may be non-linear estimators that have even better precision than the BLUE. However, it can be proven that, in the case of normally distributed observations, the BLUE is also the best among all possible unbiased estimators. So we can say: for observations $Y$ that are normally distributed, the BLUE is BUE (best unbiased estimator).
 
 :::{card} Exercises
 
@@ -123,8 +124,10 @@ The BLUE estimator is the best (or minimum variance) among all linear unbiased e
 
 % START-CREDIT
 % source: observation_theory
+
 ```{attributiongrey} Attribution
 :class: attribution
 This chapter was written by Sandra Verhagen. {ref}`Find out more here <observation_theory_credit>`.
 ```
+
 % END-CREDIT
