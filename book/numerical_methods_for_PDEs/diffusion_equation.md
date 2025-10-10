@@ -345,7 +345,7 @@ $$ (modedif1)
 It is standard practice to write this linear system in the matrix-vector notation
 
 $$
-  \frac{d\mathbf{T}}{dt} = A\mathbf{T} + \mathbf{g}\,,\quad \mathbf{T}(0) = \mathbf{T}^0
+  \frac{d\mathbf{T}}{dt} = \mathbf{A}\mathbf{T} + \mathbf{g}\,,\quad \mathbf{T}(0) = \mathbf{T}^0
 $$ (discmat1)
 
 with
@@ -357,7 +357,7 @@ $$
 a vector containing $M$ unknowns,
 
 $$
-   A=   \frac{\kappa}{\Delta x^2} \left (
+   \mathbf{A}=   \frac{\kappa}{\Delta x^2} \left (
    \begin{array}{rrrrrrrrr} -2       &  1 &  0  &          &        & \cdots &        &        & 0        \\
                              1       & -2 &  1  &          &        &        &        &        &          \\
                              0       &  1 & -2  &  1       &        &        &        &        &          \\
@@ -380,7 +380,7 @@ a vector with $M$ elements. Note that vector $\mathbf{g}$ is due to the Dirichle
 
 ```{admonition} Symmetric matrix
 :class: dropdown
-You may have noticed that, apart from the last row and the last column, the discretization matrix is **symmetric**, that is, $A = A^T$.
+You may have noticed that, apart from the last row and the last column, the discretization matrix is **symmetric**, that is, $\mathbf{A} = \mathbf{A}^T$.
 It is possible to make this matrix completely symmetric.
 Recall the discretization of the homogeneous Neumann condition
 
@@ -409,7 +409,7 @@ $$
 then the matrix of the system becomes
 
 $$
-   A=   \frac{\kappa}{\Delta x^2} \left (
+   \mathbf{A}=   \frac{\kappa}{\Delta x^2} \left (
    \begin{array}{rrrrrrr}   -2       &  1 &  0      &          & \cdots &        &   0       \\
                              1       & -2 &  1      &          &        &        &           \\
                              0       &  1 & -2      &  1       &        &        &           \\
@@ -421,9 +421,9 @@ $$
 $$
 
 which is symmetric.
-This means that all the eigenvalues of $A$ are real. Hence, no harmonic motion shows up in the heat equation (as expected).
+This means that all the eigenvalues of $\mathbf{A}$ are real. Hence, no harmonic motion shows up in the heat equation (as expected).
 
-Using the theory of Gerschgorin we can estimate the eigenvalues of $A$. For a symmetric matrix $A$ with entries $a_{ij}$ its eigenvalues are lying in the union of intervals
+Using the theory of Gerschgorin we can estimate the eigenvalues of $\mathbf{A}$. For a symmetric matrix $\mathbf{A}$ with entries $a_{ij}$ its eigenvalues are lying in the union of intervals
 
 $$
   a_{ii} - \underset{j \neq i}{\sum_{j=1}^M}\,|a_{ij}| \leq \lambda \leq a_{ii} + \underset{j \neq i}{\sum_{j=1}^M}\,|a_{ij}|
@@ -451,7 +451,7 @@ $$
   -\frac{4\kappa}{\Delta x^2} \, \leq \, \lambda \, \leq \, 0
 $$
 
-Moreover, matrix $A$ is nonsingular, meaning that all the eigenvalues are nonzero and thus exclusively negative.
+Moreover, matrix $\mathbf{A}$ is nonsingular, meaning that all the eigenvalues are nonzero and thus exclusively negative.
 As a consequence, the considered linear system of ODEs {eq}`modedif1` is regarded as being *damped*.
 This property is also shared by the diffusion process because diffusion acts as a form of damping $-$ the variation in $c(x,t)$ reduces over time.
 ```
@@ -687,7 +687,7 @@ $$
 $$
 
 with $\mathbf{T}^n = (T^n_1,\cdots,T^n_M)^{\text{T}}$ being the vector representing the numerical solution at time step $n$ and
-$\mathbf{A}$ is the discretization matrix as given by Eq. {eq}`matrdiff2`. Matrix $\mathbf{A}$ is the identity matrix.
+$\mathbf{A}$ is the discretization matrix as given by Eq. {eq}`matrdiff2`. Matrix $\mathbf{I}$ is the identity matrix.
 A way to check stability is to consider the eigenvalues $\lambda_m$ of the matrix $\mathbf{I} + \Delta t \mathbf{A}$ and subsequently require $|\lambda_m| \leq 1\,, \forall m$.
 However, the matrices $\mathbf{A}$ and $\mathbf{I}$ are an $M \times M$ matrix with $M = L/\Delta x$ so that its dimension is growing as $\Delta x \to 0$. Hence, we might
 not be able to determine eigenvalues of such a large matrix, because of the cumbersome and laborious algebra.
