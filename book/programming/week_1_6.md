@@ -4,7 +4,7 @@
 % source: programming
 ```{attributiongrey} Attribution
 :class: attribution
-This chapter reuses material from _Learn Programming for Engineers_. {ref}`Find out more here <programming_credit>` and is written by Robert Lanzafame and Tom van Woudenberg.
+This chapter reuses material from _Learn Programming for Engineers_. {ref}`Find out more here <programming_credit>` and is written by Stanislaw Ostyk-Narbutt.
 ```
 % END-CREDIT
 
