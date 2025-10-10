@@ -309,7 +309,7 @@ In the previous section we have discussed a conditionally stable scheme to solve
 scheme and the upwind difference scheme. A main disadvantage of this scheme is that is only first order accurate both in time and space, which is rather inaccurate.
 
 A widely used scheme that is second order accurate but also stable, albeit conditionally, designed for *oscillatory motions* is the **leapfrog** scheme.
-This scheme is devised based on central differences both in time and space and is given by
+This explicit scheme is devised based on central differences both in time and space and is given by
 
 $$
   \frac{c^{n+1}_m - c^{n-1}_m}{2 \Delta t} + u \frac{c^n_{m+1} - c^n_{m-1}}{2\Delta x} = 0\, , \quad m=1,\ldots,M-1\, , \quad n = 0, 1, 2, \ldots
@@ -317,8 +317,54 @@ $$ (leapfrog)
 
 :::{card} Exercise
 
-Verify yourself that the leapfrog scheme {eq}`leapfrog` is second order accurate both in time and space.
+Show that the leapfrog scheme {eq}`leapfrog` is second order accurate both in time and space.
 
+```{admonition} Solution
+:class: tip, dropdown
+
+First, we replace the numerical solution $c^n_m$ by the exact one, $c(x_m,t_n)$, thus
+
+$$
+  \frac{c(x_m,t_{n+1}) - c(x_m,t_{n-1})}{2 \Delta t} + u \frac{c(x_{m+1},t_n) - c(x_{m-1},t_n)}{2\Delta x} = 0
+$$ (leapfrog2)
+
+Furthermore, we require the solution $c(x,t)$ to be smooth. The Taylor series for $c(x,t\pm\Delta t)$ will be expanded till the third order
+since we expect second order accuracy for the approximation of the first order derivative in time (2+1=3). This also holds for the expansion
+of $c(x\pm\Delta x,t)$ in space. Hence, we have
+
+$$
+  c(x,t\pm\Delta t) = c(x,t) \pm \Delta t\, c_t(x,t) + \frac 12 \Delta t^2\, c_{tt}(x,t) \pm \frac 16 \Delta t^3\, c_{ttt}(x,t)
+$$
+
+and
+
+$$
+  c(x\pm\Delta x,t) = c(x,t) \pm \Delta x\, c_x(x,t) + \frac 12 \Delta x^2\, c_{xx}(x,t) \pm \frac 16 \Delta x^3\, c_{xxx}(x,t)
+$$
+
+Next, substituting both expansions into Eq. {eq}`leapfrog2` yields
+
+$$
+\begin{align*}
+\tau_{\Delta t,\Delta x} &= \frac{c(x,t+\Delta t)-c(x,t-\Delta t)}{2\Delta t} + u \, \frac{c(x+\Delta x,t)-c(x-\Delta x,t)}{\Delta x} \\
+                         &\\
+                         &=\frac{\partial c}{\partial t}(x,t)+\frac 13 \Delta t^2 \frac{\partial^3 c}{\partial t^3}(x,t) + u \frac{\partial c}{\partial x}(x,t) +
+                           \frac{u\Delta x^2}{3}\frac{\partial^3 c}{\partial x^3}(x,t) + \mathcal{O} \left(\Delta t^5, \Delta x^5 \right)\\
+                         &\\
+                         &=\frac 13 \Delta t^2 \frac{\partial^3 c}{\partial t^3}(x,t) + \frac{u\Delta x^2}{3}\frac{\partial^3 c}{\partial x^3}(x,t) +
+                          \mathcal{O} \left(\Delta t^5, \Delta x^5 \right)
+\end{align*}
+$$
+
+and, thus
+
+$$
+  \tau_{\Delta t,\Delta x} = \mathcal{O} \left(\Delta t^2, \Delta x^2 \right)
+$$
+
+Hence, the leapfrog scheme is second order in $\Delta t$ and second order in $\Delta x$.
+
+```
 :::
 
 The leapfrog scheme is an example of a <u>multi-step method</u>, namely, a two-step scheme. This has a disadvantage that it requires *two* starting values while the wave equation
