@@ -7,7 +7,7 @@ As in [Observation theory](../observation_theory/01_Introduction.md), the varian
 
 ## Autocovariance and autocorrelation
 
-Let us assume an arbitrary stationary (discrete) time series, $S=[S_1,S_2,...,S_m]^T$, with mean $\mathbb{E_{i}}(S)=\mu$ and variance $Var(S_{i})=\sigma^2$ for $i=1,\ldots,m$. Remember that stationarity implies that the statistical properties of the time series do not depend on the time at which it is observed, i.e. expectation and variance are constant over time.
+Let us assume an arbitrary stationary (discrete) time series, $S=[S_1,S_2,...,S_m]^T$, with mean $\mathbb{E}(S_{i})=\mu$ and variance $Var(S_{i})=\sigma^2$ for $i=1,\ldots,m$. Remember that stationarity implies that the statistical properties of the time series do not depend on the time at which it is observed, i.e. expectation and variance are constant over time.
 
 The *formal* (or: theoretical) autocovariance is defined as
 
@@ -169,9 +169,10 @@ $$
 \sigma_{\hat{\rho}_{\tau}}^2 = \frac{1}{m} (1 + 2 \sum_{i=1}^{\infty} \rho^2_{i})
 $$
 
-for processes with decaying autocorrelation functions, and in practice one can substitute $\hat{\rho}$ for $\rho$ {cite:p}`box2016`.
+for processes with decaying autocorrelation function {cite:p}`box2016` (Eq. (2.1.15)).
+The variance can be used, only for larger values of $\tau$, as a check whether $\rho_{\tau}$ is effectively zero beyond a certain lag. In practice one can substitute $\hat{\rho}$ for $\rho$.
 
-If $m$ is sufficiently large, $\hat{\rho}_{\tau}$ is normally distributed:
+If $m$ is sufficiently large, $\hat{\rho}_{\tau}$ is approximately normally distributed:
 
 $$
 \hat{\rho}_{\tau} \sim N(\rho_{\tau},\sigma^2_{\hat{\rho}_{\tau}})

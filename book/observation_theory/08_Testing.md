@@ -103,7 +103,7 @@ Besides the probability of a false alarm, the figure also shows the probability 
 
 (betagamma)=
 ```{admonition} Definitions
-The missed detecion or type II error probability $\beta$ is defined as:
+The missed detection or type II error probability $\beta$ is defined as:
 
 $$
 \beta= P(T\notin \mathcal{C}|\mathcal{H}_a)
