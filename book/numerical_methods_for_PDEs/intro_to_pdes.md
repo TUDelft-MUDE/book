@@ -396,8 +396,17 @@ Diffusion and advection equations exist also in three space dimensions.
 
 In engineering we commonly deal with free surface flows, such as occurring in seas, estuaries, lakes, rivers and canals. The underlying equations to describe such flows are
 the shallow water equations. These equations are a set of *hyperbolic* partial differential equations that describe the flow below a free surface.
-Besides this flow also *advective* transport of dissolve substances (e.g., salt, mud) and their *diffusive* processes in open water bodies are naturally included.
-For these reasons, we shall focus on the numerical solution of the diffusion equation (Section {ref}`diffusion`), the advection equation (Section {ref}`advection`) and
+Besides this flow also *advective* transport of dissolved substances (e.g., salt, mud) and their *diffusive* processes in open water bodies are naturally included.
+An example is the following 1D linear PDE that combines the advection and diffusion equations,
+
+$$
+  \frac{\partial c}{\partial t} + u\frac{\partial c}{\partial x} - \kappa\frac{\partial^2 c}{\partial x^2} = 0
+$$
+
+This advection-diffusion equation is a *parabolic* PDE and describes how a substance $c(x,t)$ transports through water by means of the bulk flow (advection) and spreading (diffusion).
+Depending on the boundary conditions, this PDE may exhibit a thin **boundary layer** near a wall (or bed) where the solution changes rapidly.
+
+In this chapter, we shall focus on the numerical solution of the diffusion equation (Section {ref}`diffusion`), the advection equation (Section {ref}`advection`) and
 the advection-diffusion equation (Section {ref}`advdif`).
 Though elliptic equations are very important in the field of computational fluid dynamics (CFD) and in structural mechanics, they will not dealt with here.
 Discussion on the numerical solution of elliptic equations can be found in Chapter {ref}`Finite Element Method <finite_element_method>`.
