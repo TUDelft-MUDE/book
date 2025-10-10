@@ -103,12 +103,12 @@ parts:
   - caption: Q2 Topics
     numbered: 2
     chapters:
-    - file: fvm/intro.md
+    - file: numerical_methods_for_PDEs/overview.md
       sections:
-      - file: fvm/getting_started_new.ipynb
-      - file: fvm/fvm.ipynb
-      - file: fvm/advection_1.ipynb
-      - file: fvm/unstructured_meshes.ipynb
+      - file: numerical_methods_for_PDEs/intro_to_pdes.md
+      - file: numerical_methods_for_PDEs/diffusion_equation.md
+      - file: numerical_methods_for_PDEs/advection_equation.md
+      - file: numerical_methods_for_PDEs/advection_diffusion_eq.md
 
     - file: fem/intro.md
       sections:

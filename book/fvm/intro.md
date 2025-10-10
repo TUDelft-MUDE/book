@@ -9,7 +9,7 @@ This chapter is written by Robert Lanzafame and Jaime Arriaga Garcia. {ref}`Find
 ```
 % END-CREDIT
 
-The Finite Volume Method (FVM) is a numerical approach for solving partial differential equations (PDEs); it builds on many of the concepts covered by the Finite Difference Method (FDM), covered earlier in this textbook. The method evaluates a quantity of interest in space and time, $\phi(\mathbf{x},t)$, over a domain of interest, $\Omega$.  One main advantage of the finite volume method is that it is well-suited to flow-based problems (e.g., computational fluid dynamics), but it is also a relatively simple method that can be applied to a wide variety of physics-based conservation laws (e.g., mass, momentum and energy). 
+The Finite Volume Method (FVM) is a numerical approach for solving partial differential equations (PDEs). It builds on many of the concepts covered by the Finite Difference Method (FDM) as discussed earlier in this textbook. The method evaluates a quantity of interest in space and time, $\phi(\mathbf{x},t)$, over a domain of interest, $\Omega$.  One main advantage of the finite volume method is that it is well-suited to flow-based problems (e.g., computational fluid dynamics), but it is also a relatively simple method that can be applied to a wide variety of physics-based conservation laws (e.g., mass, momentum and energy). 
 
 The general scheme for FV problems is as follows:
 
