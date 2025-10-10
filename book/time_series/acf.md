@@ -169,7 +169,7 @@ $$
 \sigma_{\hat{\rho}_{\tau}}^2 = \frac{1}{m} (1 + 2 \sum_{i=1}^{\infty} \rho^2_{i})
 $$
 
-for processes with decaying autocorrelation functions, and in practice one can substitute $\hat{\rho}$ for $\rho$.
+for processes with decaying autocorrelation functions, and in practice one can substitute $\hat{\rho}$ for $\rho$ {cite:p}`box2016`.
 
 If $m$ is sufficiently large, $\hat{\rho}_{\tau}$ is normally distributed:
 
