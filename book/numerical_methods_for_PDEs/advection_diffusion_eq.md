@@ -387,13 +387,13 @@ Again, we assume that the constituent $c(x,t)$ is sufficiently smooth. The solut
 a steady state solution may be obtained. This is the case when the boundary conditions are time independent.
 This is also the solution to the stationary problem  {eq}`statcv1`.
 
-For the discretization of {eq}`instatcv1`, we employ the MOL approach. Again, we may choose central differences. The semi-discretized equation reads
+For the discretization of {eq}`instatcv1`, we employ the method of lines. First, we apply second order central differences to spatial derivatives. The semi-discretized equation reads
 
 $$
   \frac{dc_m}{dt} + u\frac{c_{m+1}-c_{m-1}}{2\Delta x} - \kappa \frac{c_{m+1}-2c_m+c_{m-1}}{\Delta x^2} = 0\, , \quad m = 1,\ldots,M-1\, , \quad t > 0
 $$
 
-A commonly time integration method would be the explicit Euler method. Thus, we obtain the following discretized equation
+A commonly time integration method would be the forward Euler method. Thus, we obtain the following discretized equation
 for the instationary advection-diffusion equation {eq}`instatcv1`,
 
 $$
@@ -465,4 +465,7 @@ $$
 
 The first condition is recognized as the stability condition for the heat equation while the second one is the condition that we have found for the stationary advection-diffusion equation.
 
-Instead of explicit Euler we may choose the implicit Euler scheme and regarding the advection term, we may choose a first order upwind scheme instead of central differences.
+Instead of forward Euler we may choose the backward Euler scheme which is unconditionally stable but results into a system of equations.
+Also, regarding the advection term, we may choose a first order upwind scheme instead of central differences.
+
+We conclude this section by noting that, in addition to the schemes discussed, many other numerical schemes exist for the advection-diffusion equation, each with specific properties regarding accuracy and stability. Such schemes are usually discussed in scientific journals.
