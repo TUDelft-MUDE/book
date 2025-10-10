@@ -1,12 +1,12 @@
 (05_precision)=
-## Precision and confidence intervals
+# Precision and confidence intervals
 When evaluating and reporting estimation results, it is important to give a quality assessment. Thereby we should distinguish between:
 * the precision of the estimated parameters (topic of this part)
 * how well the model fits the data (topic of chapter [Model testing](08_testing))
 
 The precision of the estimated parameters is provided by the covariance matrix $\Sigma_{\hat{X}}$. But the question is: how to present and interpret the numbers in the matrix? For that purpose we will introduce the concept of confidence intervals, which basically means we will 'convert' the precision to probabilities.
 
-### Video
+## Video
 ```{eval-rst}
 .. raw:: html
 
@@ -14,7 +14,7 @@ The precision of the estimated parameters is provided by the covariance matrix $
 ```
 
 (05_normal)=
-### Review normal distribution and probabilities
+## Review normal distribution and probabilities
 Let's start with a standard normally distributed random variable $Z\sim N(0,1)$, which has an expectation equal to 0, and standard deviation (for us: precision) of 1. {numref}`standard` shows the corresponding PDF.
 
 ```{figure} https://files.mude.citg.tudelft.nl/05_standard.png
@@ -37,10 +37,10 @@ $$
 P(Z<k) = 1-0.5\alpha
 $$ 
 
-If we choose a certain value for $\alpha$ we can thus find the value of $k$ using the inverse CDF, e.g., with $\alpha = 0.05$ we would obtain $k=1.96$, see [Table Standard Normal distribution](table_standardnormal) (note that you would have to look up the value for 0.025 in the table).
+If we choose a certain value for $\alpha$ we can thus find the value of $k$ using the inverse CDF, e.g., with $\alpha = 0.05$ we would obtain $k=1.96$, see [Table Standard Normal distribution](https://mude.citg.tudelft.nl/fundamental-concepts/2025/fundamentals/prob_tables/normal.html#table-standard-normal-distribution) (note that you would have to look up the value for 0.025 in the table).
 
 (confreg)=
-### Confidence interval of observations
+## Confidence interval of observations
 
 ```{admonition} Definition
 A *confidence interval* of a random variable $\epsilon \sim N(0,\sigma_{\epsilon}^2)$ is defined as the range or interval $\epsilon \pm c$ such that:
@@ -91,7 +91,7 @@ Confidence intervals of two observations $y_1$ and $y_2$ visualized with error b
 ```{note}
 The error bars in {numref}`CI` should not be interpreted as the interval such that there is $1-\alpha$ probability that the true value of $Y_i$ is in that interval. We are namely only looking at a single realization of each $Y_i$, while the confidence interval is computed based on the probability that the *random* error deviates $\pm k\sigma_{\epsilon_i}$ from 0, and hence that $Y_i$ deviates by that amount from its expected value. If we would repeat the two measurements, the values of $y_1$ and $y_2$ will be different and hence the error bars would be shifted. 
 ```
-### Confidence intervals of estimated parameters
+## Confidence intervals of estimated parameters
 The covariance matrix $\Sigma_{\hat{X}}$ of a linear estimator can be evaluated by applying the linear propagation law of covariances. Moreover, we know that if our observables $Y$ are normally distributed, applying linear estimation implies that the estimated parameters $\hat{X}$ are also normally distributed. Recall that the weighted least-squares and Best Linear Unbiased estimators are indeed linear estimators.
 
 The [covariance matrices of the BLUE estimator](04_cov) were obtained as:
@@ -128,7 +128,7 @@ Confidence interval of fitted model, including error bars for the individual adj
 
 Note that covariance matrices can be computed without the need for actual observations. Hence, we can also set up a functional model including future epochs (add extra rows to the original design matrix $\mathrm{A}$). Let's call the corresponding design matrix $\mathrm{A_p}$, then $\Sigma_{\hat{Y}_p}= \mathrm{A_p}\Sigma_{\hat{X}} \mathrm{A_p^T}$. Note that the $\Sigma_{\hat{X}}$ is based on the original model, since the fitted model is only based on the actual observations. In this way, we can visualize the uncertainty of extrapolated values based on the fitted model.
 
-### Factors influencing the precision
+## Factors influencing the precision
 As can be seen from the expression $\Sigma_{\hat{X}}=(\mathrm{A^T} \Sigma_Y^{-1} \mathrm{A})^{-1}$, the precision of the estimates depends on the:
 * design matrix $\mathrm{A}$: proper design of the measurement set-up can improve the precision
 * covariance matrix $\Sigma_Y$: more precise observations will result in more precise estimates
