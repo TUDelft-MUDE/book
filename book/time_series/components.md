@@ -167,7 +167,7 @@ $$u_k(t) = \left\{
 Once the time instant $t_k$ of the offset is known, the amplitude can be estimated using least-squares.
 ## Noise 
 
-Noise refers to **random** fluctuations or variations in the time series about its typical pattern. In general we can talk about white and colored noise in time series analysis. Until now we only considered normally distributed, zero mean white noise , i.e., $\epsilon(t) \sim N(0, \sigma^2_{\epsilon})$, and we didn't have to deal with time correlation, but in this chapter we will also consider other types of noise (see {ref}`noise`) and time correlation.
+Noise refers to **random** fluctuations or variations in the time series about its typical pattern. In general we can talk about white and colored noise in time series analysis. Until now we only considered normally distributed, zero mean white noise , i.e., $\epsilon(t) \sim N(0, \sigma^2_{\epsilon})$, and we didn't have to deal with time correlation, but in this chapter we will also consider other types of noise and time correlation.
 
 :::{card} Example - time series consisting of a trend, annual cycle (seasonality), an offset and pure random noise (white noise)
 
