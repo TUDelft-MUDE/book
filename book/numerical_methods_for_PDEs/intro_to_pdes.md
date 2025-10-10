@@ -198,24 +198,24 @@ in practice are Dirichlet, Neumann and Robin conditions.
 
 Physically speaking, a Dirichlet condition usually corresponds to setting the value,
 a Neumann condition usually specifies a flux condition on the boundary, and a Robin condition typically represents a radiation condition.
-Mathematically speaking, they are given as follows. Let us assume that $u(\vec{x},t)$ is the dependent variable of a PDE.
+Mathematically speaking, they are given as follows. Let us assume that $u(\mathbf{x},t)$ is the dependent variable of a PDE.
 
 **Dirichlet** condition provides a function of time, $g(t)$, as
-the constraint on the solution at a specific boundary point $\vec{x}_b$,
+the constraint on the solution at a specific boundary point $\mathbf{x}_b$,
 
-$$ u(\vec{x}_b,t) = g(t)$$
+$$ u(\mathbf{x}_b,t) = g(t)$$
 
 In the case of **Neumann** condition the flux of $u$ normal to the boundary is specified
-by a given function $g(t)$ at a boundary point $\vec{x}_b$,
+by a given function $g(t)$ at a boundary point $\mathbf{x}_b$,
 
-$$ \frac{\partial u}{\partial \vec{n}} (\vec{x}_b,t) = g(t)$$
+$$ \frac{\partial u}{\partial \mathbf{n}} (\mathbf{x}_b,t) = g(t)$$
 
-with $\vec{n}$ the normal to the boundary of $\Omega$. If $g(t)$ = 0 then we say that the boundary is **insulated**: $u$ cannot flow across the
+with $\mathbf{n}$ the normal to the boundary of $\Omega$. If $g(t)$ = 0 then we say that the boundary is **insulated**: $u$ cannot flow across the
 boundary.
 
 The **Robin** condition is a combination of Dirichlet and Neumann conditions,
 
-$$ \alpha u(\vec{x}_b,t) + \beta \frac{\partial u}{\partial \vec{n}}(\vec{x}_b,t) = g(t)$$
+$$ \alpha u(\mathbf{x}_b,t) + \beta \frac{\partial u}{\partial \mathbf{n}}(\mathbf{x}_b,t) = g(t)$$
 
 where $\alpha$ and $\beta$ may in general depend on position along the boundary.
 

@@ -345,13 +345,13 @@ $$ (modedif1)
 It is standard practice to write this linear system in the matrix-vector notation
 
 $$
-  \frac{d\vec{T}}{dt} = A\vec{T} + \vec{g}\,,\quad \vec{T}(0) = \vec{T}^0
+  \frac{d\mathbf{T}}{dt} = A\mathbf{T} + \mathbf{g}\,,\quad \mathbf{T}(0) = \mathbf{T}^0
 $$ (discmat1)
 
 with
 
 $$
-  \vec{T} = \begin{pmatrix} T_1 \\ T_2 \\ T_3 \\ \vdots \\ T_{M-2} \\ T_{M-1} \\ T_M \end{pmatrix}
+  \mathbf{T} = \begin{pmatrix} T_1 \\ T_2 \\ T_3 \\ \vdots \\ T_{M-2} \\ T_{M-1} \\ T_M \end{pmatrix}
 $$
 
 a vector containing $M$ unknowns,
@@ -373,10 +373,10 @@ $$ (matrdiff2)
 an $M \times M$ discretization matrix, and
 
 $$
-  \vec{g} = \frac{\kappa}{\Delta x^2} \begin{pmatrix} 1 \\ 0 \\ \vdots \\ 0 \end{pmatrix}
+  \mathbf{g} = \frac{\kappa}{\Delta x^2} \begin{pmatrix} 1 \\ 0 \\ \vdots \\ 0 \end{pmatrix}
 $$
 
-a vector with $M$ elements. Note that vector $\vec{g}$ is due to the Dirichlet boundary condition.
+a vector with $M$ elements. Note that vector $\mathbf{g}$ is due to the Dirichlet boundary condition.
 
 ```{admonition} Symmetric matrix
 :class: dropdown
@@ -403,7 +403,7 @@ $$
 If we redefine the vector with unknowns as
 
 $$
-  \vec{T} = \begin{pmatrix} T_1 \\ T_2 \\ T_3 \\ \vdots \\ T_{M-2} \\ T_{M-1} \\ {\tilde T}_M \end{pmatrix}
+  \mathbf{T} = \begin{pmatrix} T_1 \\ T_2 \\ T_3 \\ \vdots \\ T_{M-2} \\ T_{M-1} \\ {\tilde T}_M \end{pmatrix}
 $$
 
 then the matrix of the system becomes
@@ -470,7 +470,7 @@ Repeat the exercise with various values of $\Delta x$ and also $\kappa$. What ar
 ```{admonition} Solution
 :class: tip, dropdown
 
-Note that $d\vec{T}/dt = 0$. Now, for the case $M=5$ the system of equations is given by
+Note that $d\mathbf{T}/dt = 0$. Now, for the case $M=5$ the system of equations is given by
 
 $$
 \begin{pmatrix} -2 & 1 & 0 & 0 & 0 \\ 1 & -2 & 1 & 0 & 0 \\ 0 & 1 & -2 & 1 & 0 \\ 0 & 0 & 1 & -2 & 1 \\ 0 & 0 & 0 & 2 & -2 \end{pmatrix} \, \begin{pmatrix} T_1 \\ T_2 \\ T_3 \\ T_4 \\ T_5 \end{pmatrix} =
@@ -483,7 +483,7 @@ $$
 \begin{pmatrix} T_1 \\ T_2 \\ T_3 \\ T_4 \\ T_5 \end{pmatrix} = \begin{pmatrix} 1 \\ 1 \\ 1 \\ 1 \\ 1 \end{pmatrix}
 $$
 
-Notice that the given system of ODEs is independent of both parameters $\Delta x$ and $\kappa$, because of the fact that $d\vec{T}/dt = 0$.
+Notice that the given system of ODEs is independent of both parameters $\Delta x$ and $\kappa$, because of the fact that $d\mathbf{T}/dt = 0$.
 Hence, the second order accurate scheme represented by the above system {eq}`modedif1` for an arbitrary $M$ provides an exact (constant) solution ${\tilde T} = b$ for the following equation
 
 $$
@@ -683,13 +683,13 @@ between the computed solution and the exact solution of the numerical scheme. It
 We may write the FTCS scheme {eq}`ftcs`  and {eq}`ftcsn` in the matrix-vector notation, as follows (see also {eq}`discmat1`)
 
 $$
-  \vec{T}^{n+1} = \left ( I + \Delta t A \right ) \vec{T}^{n} + \Delta t \,\vec{g}
+  \mathbf{T}^{n+1} = \left ( \mathbf{I} + \Delta t \mathbf{A} \right ) \mathbf{T}^{n} + \Delta t \,\mathbf{g}
 $$
 
-with $\vec{T}^n = (T^n_1,\cdots,T^n_M)^{\text{T}}$ being the vector representing the numerical solution at time step $n$ and
-$A$ is the discretization matrix as given by Eq. {eq}`matrdiff2`. Matrix $I$ is the identity matrix.
-A way to check stability is to consider the eigenvalues $\lambda_m$ of the matrix $I + \Delta t A$ and subsequently require $|\lambda_m| \leq 1\,, \forall m$.
-However, the matrices $A$ and $I$ are an $M \times M$ matrix with $M = L/\Delta x$ so that its dimension is growing as $\Delta x \to 0$. Hence, we might
+with $\mathbf{T}^n = (T^n_1,\cdots,T^n_M)^{\text{T}}$ being the vector representing the numerical solution at time step $n$ and
+$\mathbf{A}$ is the discretization matrix as given by Eq. {eq}`matrdiff2`. Matrix $\mathbf{A}$ is the identity matrix.
+A way to check stability is to consider the eigenvalues $\lambda_m$ of the matrix $\mathbf{I} + \Delta t \mathbf{A}$ and subsequently require $|\lambda_m| \leq 1\,, \forall m$.
+However, the matrices $\mathbf{A}$ and $\mathbf{I}$ are an $M \times M$ matrix with $M = L/\Delta x$ so that its dimension is growing as $\Delta x \to 0$. Hence, we might
 not be able to determine eigenvalues of such a large matrix, because of the cumbersome and laborious algebra.
 
 ```{admonition} Derive stability condition using eigenvalues

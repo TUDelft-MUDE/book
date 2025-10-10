@@ -84,14 +84,14 @@ Verify yourself that this spatial discretization is second order accurate.
 The resulted system of first order ODEs with the unknowns $c_m(t)$ can be written as
 
 $$
-  \frac{d\vec{c}}{dt} = A \vec{c}
+  \frac{d\mathbf{c}}{dt} = \mathbf{A} \mathbf{c}
 $$ (vecadv)
 
-with $\vec{c} = (c_1,\cdots,c_{M-1})^{\text{T}}$ being the vector representing the unknowns and
-matrix $A$ is the $(M-1) \times (M-1)$ discretization matrix as given by
+with $\mathbf{c} = (c_1,\cdots,c_{M-1})^{\text{T}}$ being the vector representing the unknowns and
+matrix $\mathbf{A}$ is the $(M-1) \times (M-1)$ discretization matrix as given by
 
 $$
-   A=   \frac{u}{2\Delta x} \left (
+   \mathbf{A}=   \frac{u}{2\Delta x} \left (
    \begin{array}{rrrrrrr}    0       & -1 &  0      &          & \cdots &        &   0       \\
                              1       &  0 & -1      &          &        &        &           \\
                              0       &  1 &  0      & -1       &        &        &           \\
@@ -104,7 +104,7 @@ $$
 
 ```{admonition} Skew symmetry
 :class: dropdown
-This matrix is a **skew symmetric** matrix ($A = -A^T$) implying that the nonzero eigenvalues are all purely imaginary.
+This matrix is a **skew symmetric** matrix ($\mathbf{A} = -\mathbf{A}^T$) implying that the nonzero eigenvalues are all purely imaginary.
 Mathematically, this system is regarded as *undamped* while its solution consists of harmonic (oscillatory) components.
 ```
 
@@ -140,13 +140,13 @@ However, this is very unusual since the numerical solution is less straightforwa
 Let us consider the system of ODEs {eq}`vecadv` and subsequently apply backward Euler. This yields
 
 $$
-  \frac{\vec{c}^{n+1}-\vec{c}^n}{\Delta t} = A \, \vec{c}^{n+1} \quad \Rightarrow \quad \left ( I - \Delta t A \right ) \, \vec{c}^{n+1} = \vec{c}^n
+  \frac{\mathbf{c}^{n+1}-\mathbf{c}^n}{\Delta t} = \mathbf{A} \, \mathbf{c}^{n+1} \quad \Rightarrow \quad \left ( \mathbf{I} - \Delta t \mathbf{A} \right ) \, \mathbf{c}^{n+1} = \mathbf{c}^n
 $$
 
-with $\vec{c}^n = (c^n_1,\cdots,c^n_{M-1})^{\text{T}}$ being the vector representing the numerical solution at time step $n$ and
-$A$ is the discretization matrix as given above. Matrix $I$ is the identity matrix.
-We see that the solution $\vec{c}^{n+1}$ cannot be computed immediately. Instead, we need to solve a linear system of $M-1$ equations for the $M-1$ unknowns at the new time step.
-In addition, the rank of the matrix $A$ is expressed in terms of $M = L/\Delta x$ which can be quite large, especially if the mesh size $\Delta x$ is chosen very small.
+with $\mathbf{c}^n = (c^n_1,\cdots,c^n_{M-1})^{\text{T}}$ being the vector representing the numerical solution at time step $n$ and
+$\mathbf{A}$ is the discretization matrix as given above. Matrix $\mathbf{I}$ is the identity matrix.
+We see that the solution $\mathbf{c}^{n+1}$ cannot be computed immediately. Instead, we need to solve a linear system of $M-1$ equations for the $M-1$ unknowns at the new time step.
+In addition, the rank of the matrix $\mathbf{A}$ is expressed in terms of $M = L/\Delta x$ which can be quite large, especially if the mesh size $\Delta x$ is chosen very small.
 
 This observation generally holds for any implicit scheme.
 
