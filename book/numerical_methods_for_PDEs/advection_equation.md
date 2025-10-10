@@ -322,10 +322,10 @@ Show that the leapfrog scheme {eq}`leapfrog` is second order accurate both in ti
 ```{admonition} Solution
 :class: tip, dropdown
 
-First, we replace the numerical solution $c^n_m$ by the exact one, $c(x_m,t_n)$, thus
+First, we replace the numerical solution $c^n_m$ by the exact one, $c(x,t)$ at point $x_m$ and time $t_n$, thus
 
 $$
-  \frac{c(x_m,t_{n+1}) - c(x_m,t_{n-1})}{2 \Delta t} + u \frac{c(x_{m+1},t_n) - c(x_{m-1},t_n)}{2\Delta x} = 0
+  \frac{c(x,t+\Delta t) - c(x,t-\Delta t)}{2 \Delta t} + u \frac{c(x+\Delta x,t) - c(x-\Delta x,t)}{2\Delta x} = 0
 $$ (leapfrog2)
 
 Furthermore, we require the solution $c(x,t)$ to be smooth. The Taylor series for $c(x,t\pm\Delta t)$ will be expanded till the third order
@@ -346,12 +346,12 @@ Next, substituting both expansions into Eq. {eq}`leapfrog2` yields
 
 $$
 \begin{align*}
-\tau_{\Delta t,\Delta x} &= \frac{c(x,t+\Delta t)-c(x,t-\Delta t)}{2\Delta t} + u \, \frac{c(x+\Delta x,t)-c(x-\Delta x,t)}{\Delta x} \\
+\tau_{\Delta t,\Delta x} &= \frac{c(x,t+\Delta t)-c(x,t-\Delta t)}{2\Delta t} + u \, \frac{c(x+\Delta x,t)-c(x-\Delta x,t)}{2\Delta x} \\
                          &\\
-                         &=\frac{\partial c}{\partial t}(x,t)+\frac 13 \Delta t^2 \frac{\partial^3 c}{\partial t^3}(x,t) + u \frac{\partial c}{\partial x}(x,t) +
-                           \frac{u\Delta x^2}{3}\frac{\partial^3 c}{\partial x^3}(x,t) + \mathcal{O} \left(\Delta t^5, \Delta x^5 \right)\\
+                         &=\frac{\partial c}{\partial t}(x,t)+\frac 16 \Delta t^2 \frac{\partial^3 c}{\partial t^3}(x,t) + u \frac{\partial c}{\partial x}(x,t) +
+                           \frac{u\Delta x^2}{6}\frac{\partial^3 c}{\partial x^3}(x,t) + \mathcal{O} \left(\Delta t^5, \Delta x^5 \right)\\
                          &\\
-                         &=\frac 13 \Delta t^2 \frac{\partial^3 c}{\partial t^3}(x,t) + \frac{u\Delta x^2}{3}\frac{\partial^3 c}{\partial x^3}(x,t) +
+                         &=\frac 16 \Delta t^2 \frac{\partial^3 c}{\partial t^3}(x,t) + \frac{u}{6}\Delta x^2\frac{\partial^3 c}{\partial x^3}(x,t) +
                           \mathcal{O} \left(\Delta t^5, \Delta x^5 \right)
 \end{align*}
 $$
