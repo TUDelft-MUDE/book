@@ -267,7 +267,7 @@ parts:
 # END REMOVE-FROM-PUBLISH
 
   - caption: Programming
-    numbered: false
+    numbered: 2
     chapters:
     - file: programming/week_1_1
       sections:
