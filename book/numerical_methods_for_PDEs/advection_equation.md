@@ -305,7 +305,7 @@ $$
 
 ## The leapfrog scheme
 
-In the previous section we have discussed a conditionally stable scheme to solve the wave equation, namely, the FTBS scheme. This scheme is constructed based on the explicit Euler
+In the previous section we have discussed a conditionally stable scheme to solve the wave equation, namely, the FTBS scheme. This explicit scheme is constructed based on the forward Euler
 scheme and the upwind difference scheme. A main disadvantage of this scheme is that is only first order accurate both in time and space, which is rather inaccurate.
 
 A widely used scheme that is second order accurate but also stable, albeit conditionally, designed for *oscillatory motions* is the **leapfrog** scheme.
