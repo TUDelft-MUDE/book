@@ -2,6 +2,9 @@
 
 [TeachBooks Versioning](https://teachbooks.io/manual/features/versioning.html) is used (a special type of semantic numbering for educational purposes) with generic format `v<academic_year>.<additions>.<errata>`, with an additional `.pre-release` added for incomplete books.
 
+## 2025-10-06: v2025.8.0.pre-release
+- Added [](./observation_theory/overview.md)
+
 ## 2025-10-06: v2025.7.1.pre-release
 - Missing parentheses in [](./propagation_uncertainty/0_Transforming_random_variables.md)
 - Expanded [](./propagation_uncertainty/2_Monte_Carlo_simulations.md)
