@@ -27,4 +27,4 @@ finite volume methods, finite element methods, spectral methods, etc. The key no
 In this chapter, first, a brief review of [**partial differential equations**](./intro_to_pdes.md) is provided.
 Next, discretizations of the [**diffusion equation**](./diffusion_equation.ipynb) by employing the **finite difference method** are considered.
 This is followed by the approximatons of the [**advection equation**](./advection_equation.md) and finally the
-[**advection-diffusion equation**](./advection_diffusion_eq.md).
+[**advection-diffusion equation**](./advection_diffusion_eq.ipynb).
