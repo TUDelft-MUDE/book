@@ -51,7 +51,6 @@ sphinx:
   extra_extensions:
     - teachbooks_favourites
     - sphinx_tudelft_theme
-    - sphinx.ext.imgconverter
     - sphinx.ext.extlinks
     - sphinx_inline_tabs
 

@@ -217,7 +217,7 @@ $$
 
 ## Video
 
-In this video the functions of $n$ random variables is discussed, as well as the [linear propagation laws]((01_LinearProp)). 
+In this video the functions of $n$ random variables is discussed, as well as the [linear propagation laws](01_LinearProp). 
 
 ```{eval-rst}
 .. raw:: html
