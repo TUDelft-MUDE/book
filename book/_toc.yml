@@ -293,8 +293,16 @@ parts:
       - external: https://github.com/TeachBooks/learn-programming/blob/mude-2025/book/llms/generating-code.ipynb
       - external: https://github.com/TeachBooks/learn-programming/blob/mude-2025/book/llms/debugging-errors.ipynb
       - external: https://github.com/TeachBooks/learn-programming/blob/mude-2025/book/llms/human-in-the-loop.ipynb
-      
 # START REMOVE-FROM-PUBLISH
+    - file: programming/week_2_1
+      sections:
+      - external: https://github.com/TeachBooks/learn-programming/blob/mude-2025/book/python/oop/intro.md
+      - external: https://github.com/TeachBooks/learn-programming/blob/mude-2025/book/python/oop/classes.ipynb
+      - external: https://github.com/TeachBooks/learn-programming/blob/mude-2025/book/python/oop/encapsulation.ipynb
+      - external: https://github.com/TeachBooks/learn-programming/blob/mude-2025/book/python/oop/Inheritance.ipynb
+      - external: https://github.com/TeachBooks/learn-programming/blob/mude-2025/book/python/oop/Polymorphism.ipynb
+      - external: https://github.com/TeachBooks/learn-programming/blob/mude-2025/book/python/oop/documentation.ipynb
+      - external: https://github.com/TeachBooks/learn-programming/blob/mude-2025/book/python/oop/exercise.ipynb
     - file: programming/week_1_6_old
       sections:
       - file: external/learn-python/book/09/intro.md
