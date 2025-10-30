@@ -313,9 +313,6 @@ parts:
       - file: external/learn-python/book/09/handling_errors.ipynb
         title: Handling Errors
       - file: external/learn-python/book/09/asserts.ipynb
-    - file: programming/week_1_7
-      sections:
-      - file: external/learn-programming/book/python/oop/classes
     - file: programming/week_1_8
       sections:
       - file: external/learn-python/book/08/sympy
