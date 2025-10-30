@@ -1,4 +1,4 @@
-# Week 1.7: OOP
+# Object-oriented programming
 
 % START-CREDIT
 % source: programming
