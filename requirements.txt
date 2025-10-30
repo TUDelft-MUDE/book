@@ -2,4 +2,4 @@ teachbooks
 sphinx-tudelft-theme
 sphinx-inline-tabs
 
-git+https://github.com/TeachBooks/TeachBooks-Favourites #BUMPBUMP
+git+https://github.com/TeachBooks/TeachBooks-Favourites #BUMPBUMPBUMP
