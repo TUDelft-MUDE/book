@@ -10,19 +10,15 @@ In order to illustrate these techniques, the following example will be used. Wav
 
 The first step when addressing a problem is to visualize it. Thus, the first GOF technique recommended here (note that it is not a metric) is visual inspection. It is common practice to plot the reference values against the predictions given by our model, as shown below. The perfect fit would correspond to all the points aligned with the 45-degrees line.
 
-%```{figure} https://files.mude.citg.tudelft.nl/Visual_inspection.png
-%
-%---
-%
-%---
-%Comparison between measured and predicted: (a) siginificant wave height, $H_{m0}$, and (b) mean wave period, $T_m$.
-%```
-%
-% source unknown
+```{figure} https://files.mude.citg.tudelft.nl/waves_random.png
+:name: gof
+:align: center
 
-![](https://files.mude.citg.tudelft.nl/replacement.svg)
+Comparison between measured and predicted wave heights during a morning period. Please note that this data is randomised and is for educational purposes only.
+```
 
-Just using the above plot, we can see that our model tends to underpredict $T_m$. Also, we can see that the performance to estimate $H_{m0}$ is better than for $T_m$, since the points are way closer to the 45-degrees line. But **how much better?** 
+
+Just using the above plot, we can see that the model tends to overpredict for taller waves. We can also see that there is a big variation between the actual data and our model.  But **how can we measure this?** 
 
 ## Square differences
 
@@ -91,4 +87,12 @@ $rbias$ quantifies the mean ratio between the error and the absolute value of th
 If we compute this metric for our example, we obtain $rbias(H_{m0})=0.05$ and $rbias(T_{m})=-0.09$. These results tell us that the model tends to slightly overpredict $H_{m0}$ and underpredict $T_{m}$.
 
 
-[^reference]: Data extracted from Mares-Nasarre et al. (2022). Hydraulic stability of cube-armored mound breakwaters in depth-limited breaking wave conditions, *Ocean Engineering* 259, 111845.  https://doi.org/10.1016/j.oceaneng.2022.111845
+[^reference]: Data extracted from Mares-Nasarre et al. (2022). Hydraulic stability of cube-armored mound breakwaters in depth-limited breaking wave conditions, *Ocean Engineering* 259, 111845. [doi:10.1016/j.oceaneng.2022.111845](https://doi.org/10.1016/j.oceaneng.2022.111845)
+
+% START-CREDIT
+% source: modelling_concepts
+```{attributiongrey} Attribution
+:class: attribution
+This chapter was written by Alessandro Cabboi, Patricia Mares Nasarre and Robert Lanzafame. {ref}`Find out more here <modelling_concepts_credit>`.
+```
+% END-CREDIT

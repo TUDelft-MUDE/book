@@ -1,0 +1,472 @@
+<!--
+SPDX-License-Identifier: CC-BY-4.0
+Copyright (c) 2025 Maximilian Ramgraber
+
+This work is licensed under the Creative Commons Attribution 4.0 International License (CC BY 4.0).
+You are free to share and adapt for any purpose, even commercially, with attribution.
+Full text: https://creativecommons.org/licenses/by/4.0/
+-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://unpkg.com/mathjs/lib/browser/math.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js"></script>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <style>
+      body {
+        margin: 0;
+        overflow: hidden;
+        font-family: Helvetica, sans-serif;
+      }
+      .tickLabel {
+        position: absolute;
+        transform: translateX(-50%);
+        pointer-events: none;
+      }
+      .sliderLabel{
+        position:absolute;
+        pointer-events:none;
+        transform:translateX(-50%);
+      }
+    </style>
+  </head>
+  <body>
+
+    <div id="my_datavisualization">
+      <svg id="click" xmlns="http://www.w3.org/2000/svg"></svg>
+    </div>
+
+    <script>
+      // Viewport & SVG sizing
+      const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0) * 0.95;
+      const vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0) * 0.95;
+      const aspect = 1.5;
+      let width, height;
+      if (vw / aspect < vh) { width = vw; height = vw / aspect; } else { width = vh * aspect; height = vh; }
+
+      var svg = d3.select('#click').attr('width', width).attr('height', height);
+
+      // Slider UI scaling
+      const uiScale = height / 600;
+      const trackH  = 15 * uiScale;
+      const thumbSz = 25 * uiScale;
+
+      let styleEl = document.getElementById('sliderDynCSS');
+      if (!styleEl) {
+        styleEl = document.createElement('style');
+        styleEl.id = 'sliderDynCSS';
+        document.head.appendChild(styleEl);
+      }
+
+      styleEl.textContent = `
+      input[type=range]{
+        -webkit-appearance: none;
+        appearance: none;
+        width: auto;
+        height: ${trackH}px;
+        background: transparent;
+        margin: 0;
+        padding: 0;
+      }
+      input[type=range]::-webkit-slider-runnable-track{
+        height: ${trackH}px;
+        background: #ccc;
+        border-radius: ${trackH/2}px;
+      }
+      input[type=range]::-webkit-slider-thumb{
+        -webkit-appearance: none;
+        appearance: none;
+        width: ${thumbSz}px;
+        height: ${thumbSz}px;
+        border-radius: 50%;
+        background: #666;
+        margin-top: calc(${trackH}px / 2 - ${thumbSz}px / 2);
+      }
+      input[type=range]::-moz-range-track{
+        height: ${trackH}px;
+        background: #ccc;
+        border-radius: ${trackH/2}px;
+      }
+      input[type=range]::-moz-range-thumb{
+        width: ${thumbSz}px;
+        height: ${thumbSz}px;
+        border-radius: 50%;
+        background: #666;
+        border: none;
+      }
+      input[type=range]::-ms-track{
+        height: ${trackH}px;
+        background: transparent;
+        border-color: transparent;
+        color: transparent;
+      }
+      input[type=range]::-ms-fill-lower{
+        background: #ccc;
+        border-radius: ${trackH/2}px;
+      }
+      input[type=range]::-ms-fill-upper{
+        background: #ccc;
+        border-radius: ${trackH/2}px;
+      }
+      input[type=range]::-ms-thumb{
+        width: ${thumbSz}px;
+        height: ${thumbSz}px;
+        border-radius: 50%;
+        background: #666;
+        border: none;
+      }
+      `;
+
+      // Parameters
+      var Beta_a = 4;
+      var Beta_b = 2;
+      var Loc = 0;    // location
+      var Scale = 1;  // scale > 0
+
+      // Helpers
+      function linspace(start, end, resolution) {
+        var spacing = [];
+        for (var i = 0; i < resolution; i++) spacing.push(start + (end - start) * i / (resolution - 1));
+        return spacing;
+      }
+
+      function logGamma(z) {
+        var g = 7;
+        var p = [0.99999999999980993,676.5203681218851,-1259.1392167224028,771.32342877765313,-176.61502916214059,12.507343278686905,-0.13857109526572012,9.9843695780195716e-6,1.5056327351493116e-7];
+        if (z < 0.5) {
+          return Math.log(Math.PI) - Math.log(Math.sin(Math.PI * z)) - logGamma(1 - z);
+        } else {
+          z = z - 1; var x = p[0];
+          for (var i = 1; i < p.length; i++) x += p[i] / (z + i);
+          var t = z + g + 0.5;
+          return 0.5 * Math.log(2 * Math.PI) + (z + 0.5) * Math.log(t) - t + Math.log(x);
+        }
+      }
+
+      function betaPDFStandard(y) {
+        const alpha = Beta_a, beta = Beta_b;
+        if (alpha <= 0 || beta <= 0) return 0;
+        const eps = 1e-15;
+        if (y <= 0) y = eps; else if (y >= 1) y = 1 - eps;
+        var logNumerator = (alpha - 1) * Math.log(y) + (beta - 1) * Math.log(1 - y);
+        var logDenom = logGamma(alpha) + logGamma(beta) - logGamma(alpha + beta);
+        return Math.exp(logNumerator - logDenom);
+      }
+
+      function evaluate_pdf_transformed(xArr) {
+        var out = [];
+        for (let i = 0; i < xArr.length; i++) {
+          var y = (xArr[i] - Loc) / Scale;
+          if (y < 0 || y > 1) { out.push(0); continue; }
+          out.push(betaPDFStandard(y) / Scale);
+        }
+        return out;
+      }
+
+      function evaluate_cdf_transformed(xArr, pdfArr) {
+        var cdf = [0];
+        for (let i = 1; i < xArr.length; i++) {
+          var dx = xArr[i] - xArr[i-1];
+          var area = 0.5 * (pdfArr[i] + pdfArr[i-1]) * dx;
+          cdf.push(cdf[i-1] + area);
+        }
+        var total = cdf[cdf.length-1];
+        for (let j = 0; j < cdf.length; j++) cdf[j] /= total;
+        return cdf;
+      }
+
+      // Plot windows
+      const window_x_pdf = [width * 0.1,  width * 0.45];
+      const window_y_pdf = [height * 0.1, height * 0.6];
+      const window_x_cdf = [width * 0.6, width * 0.95];
+      const window_y_cdf = [height * 0.1, height * 0.6];
+
+      // Scales (initial domains, updated later)
+      const xScale_pdf = d3.scaleLinear().domain([Loc, Loc + Scale]).range(window_x_pdf);
+      const yScale_pdf = d3.scaleLinear().domain([0,1]).range([window_y_pdf[1], window_y_pdf[0]]);
+
+      const xScale_cdf = d3.scaleLinear().domain([Loc, Loc + Scale]).range(window_x_cdf);
+      const yScale_cdf = d3.scaleLinear().domain([0,1]).range([window_y_cdf[1], window_y_cdf[0]]);
+
+      var xAxis_pdf = d3.axisBottom(xScale_pdf).ticks(5);
+      var yAxis_pdf = d3.axisLeft(yScale_pdf);
+      var xAxis_cdf = d3.axisBottom(xScale_cdf).ticks(5);
+      var yAxis_cdf = d3.axisLeft(yScale_cdf);
+
+      var tickFontSize = (12 * width / 600) + 'px';
+
+      var xaxis_pdf = svg.append('g')
+        .attr('transform', 'translate(0,' + window_y_pdf[1] + ')')
+        .call(xAxis_pdf)
+        .style('font-size', tickFontSize);
+
+      svg.append('text')
+        .attr('transform', 'translate(' + ((window_x_pdf[0] + window_x_pdf[1]) / 2) + ',' + (height * 0.675) + ')')
+        .style('text-anchor', 'middle')
+        .text('x')
+        .style('font-size', tickFontSize);
+
+      var yaxis_pdf = svg.append('g')
+        .attr('transform', 'translate(' + window_x_pdf[0] + ',0)')
+        .call(yAxis_pdf)
+        .style('font-size', tickFontSize);
+
+      svg.append('text')
+        .attr('transform', 'translate(' + (width * 0.05) + ',' + ((window_y_pdf[0] + window_y_pdf[1]) / 2) + ') rotate(270)')
+        .style('text-anchor', 'middle')
+        .text('probability density')
+        .style('font-size', tickFontSize);
+
+      var xaxis_cdf = svg.append('g')
+        .attr('transform', 'translate(0,' + window_y_cdf[1] + ')')
+        .call(xAxis_cdf)
+        .style('font-size', tickFontSize);
+
+      svg.append('text')
+        .attr('transform', 'translate(' + ((window_x_cdf[0] + window_x_cdf[1]) / 2) + ',' + (height * 0.675) + ')')
+        .style('text-anchor', 'middle')
+        .text('x')
+        .style('font-size', tickFontSize);
+
+      var yaxis_cdf = svg.append('g')
+        .attr('transform', 'translate(' + window_x_cdf[0] + ',0)')
+        .call(yAxis_cdf)
+        .style('font-size', tickFontSize);
+
+      svg.append('text')
+        .attr('transform', 'translate(' + (width * 0.55) + ',' + ((window_y_cdf[0] + window_y_cdf[1]) / 2) + ') rotate(270)')
+        .style('text-anchor', 'middle')
+        .text('cumulative probability')
+        .style('font-size', tickFontSize);
+
+      // Initial data using transformed domain
+      var N = Math.max(201, Math.ceil(Math.max(Beta_a, Beta_b) * 10));
+      var xVals = linspace(Loc, Loc + Scale, N);
+      var pdfVals = evaluate_pdf_transformed(xVals);
+      var cdfVals = evaluate_cdf_transformed(xVals, pdfVals);
+
+      var data_pdf = xVals.map((xi,i)=>({x:xi,y:pdfVals[i]}));
+      var data_cdf = xVals.map((xi,i)=>({x:xi,y:cdfVals[i]}));
+
+      var valueline_pdf = d3.svg.line().x(d=>xScale_pdf(d.x)).y(d=>yScale_pdf(d.y));
+      var valueline_cdf = d3.svg.line().x(d=>xScale_cdf(d.x)).y(d=>yScale_cdf(d.y));
+
+      svg.append('path')
+        .attr('class','line')
+        .attr('d', valueline_pdf(data_pdf))
+        .attr('fill','none')
+        .attr('stroke-width', 3 * height / 600)
+        .attr('stroke','#666666')
+        .attr('id','line_pdf');
+
+      svg.append('path')
+        .attr('class','line')
+        .attr('d', valueline_cdf(data_cdf))
+        .attr('fill','none')
+        .attr('stroke-width', 3 * height / 600)
+        .attr('stroke','#666666')
+        .attr('id','line_cdf');
+
+      function updatePlots(duration=300){
+        var N = Math.max(201, Math.ceil(Math.max(Beta_a, Beta_b) * 10));
+        var xVals = linspace(Loc, Loc + Scale, N);
+        var pdfVals = evaluate_pdf_transformed(xVals);
+        var cdfVals = evaluate_cdf_transformed(xVals, pdfVals);
+
+        var data_pdf = xVals.map((xi,i)=>({x:xi,y:pdfVals[i]}));
+        var data_cdf = xVals.map((xi,i)=>({x:xi,y:cdfVals[i]}));
+
+        var maxval = d3.max(pdfVals); if (isNaN(maxval) || maxval < 1) maxval = 1;
+        yScale_pdf.domain([0, maxval * 1.2]);
+
+        xScale_pdf.domain([Loc, Loc + Scale]);
+        xScale_cdf.domain([Loc, Loc + Scale]);
+
+        d3.select('#line_pdf')
+          .transition().duration(duration)
+          .attr('d', valueline_pdf(data_pdf));
+        d3.select('#line_cdf')
+          .transition().duration(duration)
+          .attr('d', valueline_cdf(data_cdf));
+
+        yaxis_pdf.transition().duration(300).call(d3.axisLeft(yScale_pdf));
+        xaxis_pdf.transition().duration(300).call(d3.axisBottom(xScale_pdf).ticks(5));
+
+        yaxis_cdf.transition().duration(300).call(d3.axisLeft(yScale_cdf));
+        xaxis_cdf.transition().duration(300).call(d3.axisBottom(xScale_cdf).ticks(5));
+      }
+
+      
+
+      // Alpha label and ticks
+      svg.append('text')
+        .attr('transform', 'translate(' + ((window_x_pdf[0] + window_x_pdf[1]) / 2) + ',' + (height * 0.75) + ')')
+        .style('text-anchor', 'middle')
+        .text('α')
+        .style('font-size', tickFontSize);
+
+      var alphaSlider = document.createElement('input');
+      alphaSlider.type = 'range';
+      alphaSlider.id   = 'alphaSlider';
+      alphaSlider.min  = 1;
+      alphaSlider.max  = 5;
+      alphaSlider.step = 0.01;
+      alphaSlider.value = Beta_a;
+      alphaSlider.style.position = 'absolute';
+      alphaSlider.style.left = (width * 0.1) + 'px';
+      alphaSlider.style.top  = (height * 0.775) + 'px';
+      alphaSlider.style.width = (width * 0.35) + 'px';
+      alphaSlider.style.margin = '0';
+      alphaSlider.style.padding = '0';
+      document.body.appendChild(alphaSlider);
+
+      // live value under thumb
+      var alphaLabel=document.createElement('div');
+      alphaLabel.className='sliderLabel';
+      alphaLabel.style.top=(height*0.815)+'px';
+      document.body.appendChild(alphaLabel);
+
+      function updatealphaLabel(){
+        var pct=(alphaSlider.value-alphaSlider.min)/(alphaSlider.max-alphaSlider.min);
+        alphaLabel.style.left=(window_x_pdf[0]+pct*(width*0.35))+'px';
+        alphaLabel.textContent=(+alphaSlider.value).toFixed(2);
+      }
+      updatealphaLabel();
+
+      alphaSlider.addEventListener('input',function(){
+        Beta_a=+this.value;
+        updatePlots(0);
+        updatealphaLabel();
+      });
+
+      // Beta label and ticks
+      svg.append('text')
+        .attr('transform', 'translate(' + ((window_x_pdf[0] + window_x_pdf[1]) / 2) + ',' + (height * 0.8975) + ')')
+        .style('text-anchor', 'middle')
+        .text('β')
+        .style('font-size', tickFontSize);
+
+      var betaSlider = document.createElement('input');
+      betaSlider.type = 'range';
+      betaSlider.id   = 'betaSlider';
+      betaSlider.min  = 1;
+      betaSlider.max  = 5;
+      betaSlider.step = 0.01;
+      betaSlider.value = Beta_b;
+      betaSlider.style.position = 'absolute';
+      betaSlider.style.left = (width * 0.1) + 'px';
+      betaSlider.style.top  = (height * 0.925) + 'px';
+      betaSlider.style.width = (width * 0.35) + 'px';
+      betaSlider.style.margin = '0';
+      betaSlider.style.padding = '0';
+      document.body.appendChild(betaSlider);
+
+      // live value under thumb
+      var betaLabel=document.createElement('div');
+      betaLabel.className='sliderLabel';
+      betaLabel.style.top=(height*0.965)+'px';
+      document.body.appendChild(betaLabel);
+
+      function updatebetaLabel(){
+        var pct=(betaSlider.value-betaSlider.min)/(betaSlider.max-betaSlider.min);
+        betaLabel.style.left=(window_x_pdf[0]+pct*(width*0.35))+'px';
+        betaLabel.textContent=(+betaSlider.value).toFixed(2);
+      }
+      updatebetaLabel();
+
+      betaSlider.addEventListener('input',function(){
+        Beta_b=+this.value;
+        updatePlots(0);
+        updatebetaLabel();
+      });
+
+
+      // Location label and ticks
+      svg.append('text')
+        .attr('transform', 'translate(' + ((window_x_cdf[0] + window_x_cdf[1]) / 2).toString() + ',' + (height * 0.75).toString() + ')')
+        .style('text-anchor', 'middle')
+        .text('location')
+        .style('font-size', tickFontSize);
+
+      var locSlider = document.createElement('input');
+      locSlider.type = 'range';
+      locSlider.id   = 'locSlider';
+      locSlider.min  = -2;
+      locSlider.max  = 2;
+      locSlider.step = 0.01;
+      locSlider.value = Loc;
+      locSlider.style.position = 'absolute';
+      locSlider.style.left = window_x_cdf[0].toString() + 'px';
+      locSlider.style.top  = (height * 0.775) + 'px';
+      locSlider.style.width = (window_x_cdf[1] - window_x_cdf[0]).toString() + 'px';
+      locSlider.style.margin = '0';
+      locSlider.style.padding = '0';
+      document.body.appendChild(locSlider);
+
+      // live value under thumb
+      var locLabel=document.createElement('div');
+      locLabel.className='sliderLabel';
+      locLabel.style.top=(height*0.815)+'px';
+      document.body.appendChild(locLabel);
+
+      function updatelocLabel(){
+        var pct=(locSlider.value-locSlider.min)/(locSlider.max-locSlider.min);
+        locLabel.style.left=(window_x_cdf[0]+pct*(width*0.35))+'px';
+        locLabel.textContent=(+locSlider.value).toFixed(2);
+      }
+      updatelocLabel();
+
+      locSlider.addEventListener('input',function(){
+        Loc=+this.value;
+        updatePlots(0);
+        updatelocLabel();
+      });
+
+
+
+      // Scale label and ticks
+      svg.append('text')
+        .attr('transform', 'translate(' + ((window_x_cdf[0] + window_x_cdf[1]) / 2) + ',' + (height * 0.8975) + ')')
+        .style('text-anchor', 'middle')
+        .text('scale')
+        .style('font-size', tickFontSize);
+
+      var scaleSlider = document.createElement('input');
+      scaleSlider.type = 'range';
+      scaleSlider.id   = 'scaleSlider';
+      scaleSlider.min  = 0.1;
+      scaleSlider.max  = 5;
+      scaleSlider.step = 0.01;
+      scaleSlider.value = Scale;
+      scaleSlider.style.position = 'absolute';
+      scaleSlider.style.left = window_x_cdf[0] + 'px';
+      scaleSlider.style.top  = (height * 0.925) + 'px';
+      scaleSlider.style.width = (window_x_cdf[1] - window_x_cdf[0]) + 'px';
+      scaleSlider.style.margin = '0';
+      scaleSlider.style.padding = '0';
+      document.body.appendChild(scaleSlider);
+
+      // live value under thumb
+      var scaleLabel=document.createElement('div');
+      scaleLabel.className='sliderLabel';
+      scaleLabel.style.top=(height*0.965)+'px';
+      document.body.appendChild(scaleLabel);
+
+      function updatescaleLabel(){
+        var pct=(scaleSlider.value-scaleSlider.min)/(scaleSlider.max-scaleSlider.min);
+        scaleLabel.style.left=(window_x_cdf[0]+pct*(width*0.35))+'px';
+        scaleLabel.textContent=(+scaleSlider.value).toFixed(2);
+      }
+      updatescaleLabel();
+
+      scaleSlider.addEventListener('input',function(){
+        Scale=+this.value;
+        updatePlots(0);
+        updatescaleLabel();
+      });
+
+      updatePlots();
+
+    </script>
+  </body>
+</html>

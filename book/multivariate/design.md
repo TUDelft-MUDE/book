@@ -3,7 +3,7 @@
 
 % MMMMM This material is not in R&R book
 
-This chapter is closed with an illustration of how our probability models can be used in practice, specifically in the **design** of some object or system. As engineers making decisions under uncertain conditions (i.e., the unknown values of our random variables) we face a serious conundrum[^conundrum]: our design must specify a deterministic value, which will eventually be used to build the object or system of interest. In the face of uncertainty, this means there will _always_ be a non-zero probability that the object or system can fail! Thus, the choice is not simply how robust to design somthing, but rather: how safe should it be designed. In other words, _what is an acceptable probability of failure for the design?_
+This chapter is closed with an illustration of how our probability models can be used in practice, specifically in the **design** of some object or system. As engineers making decisions under uncertain conditions (i.e., the unknown values of our random variables) we face a serious conundrum[^conundrum]: our design must specify a deterministic value, which will eventually be used to build the object or system of interest. In the face of uncertainty, this means there will _always_ be a non-zero probability that the object or system can fail! Thus, the choice is not simply how robust to design something, but rather: how safe should it be designed. In other words, _what is an acceptable probability of failure for the design?_
 
 This question can be answered by applying the concepts of risk and risk analysis, which will be covered in a later chapter. For now, we will assume that an _acceptable failure probability_ has been determined and use our probability models to evaluate what the _design value_ should be.
 
@@ -59,3 +59,11 @@ The following pages work through an example related to flooding on a river to il
 %3. Illustrate the effect of various marginal distributions and dependence models on the results through examples and exercises.
 
 [^conundrum]: a confusing and difficult problem or question (source: Oxford Languages, via Google).
+
+% START-CREDIT
+% source: distributions
+```{attributiongrey} Attribution
+:class: attribution
+This chapter was written by Patricia Mares Nasarre and Robert Lanzafame. {ref}`Find out more here <multivariate_credit>`.
+```
+% END-CREDIT

@@ -2,7 +2,7 @@
 
 In this section, we are going to focus on the decisions we make when setting up a model. We will start seeing models as part of the creative and decision making process!
 
-When building a model, we need to identify which simplifications we can make to keep our model as simple as possible, while modelling the system we are interested in with the appropriate accuracy. In real-life applications, simpler models also equates to lower costs, so it is often one of the main considerations in model design. In short, the simpler, the better, as long as it answers our questions. We are going to talk about the following chaaracteristics of a model:
+When building a model, we need to identify which simplifications we can make to keep our model as simple as possible, while modelling the system we are interested in with the appropriate accuracy. In real-life applications, simpler models also equates to lower costs, so it is often one of the main considerations in model design. In short, the simpler, the better, as long as it answers our questions. We are going to talk about the following characteristics of a model:
 
 - Dynamic vs. static models
 - Linear vs. non-linear models
@@ -21,7 +21,14 @@ $$\underbrace{\sum_i^n F_i}_{\text{sum of all external forces}} = \overbrace{m\t
 
 Let us consider the mass-spring system as a first example.
 
-![mass-spring](https://files.mude.citg.tudelft.nl/mass-spring-system.png "mass-spring")
+
+```{figure} https://files.mude.citg.tudelft.nl/mass-spring-system.png 
+:height: 400px
+:name: mass-spring system
+:align: center
+
+Mass-spring system. 
+```
 
 For this system, Newton's equations of motion sketch as:
 
@@ -44,23 +51,26 @@ In those circumstances, we can make the assumption that the model is static (sim
 
 ## Linear vs Nonlinear
 
-In linear models, the relationships between variables can be modelled using linear predictor functions. The advantage of these models is that the superposition principle applies and the long term behavior does not depend on initial conditions. On the contrary, in non-linear models, the superposition principle does not apply anymore and long and short term behavior is highly dependent on the initial conditions.
+In linear models, the relationships between variables can be modelled using linear predictor functions. One advantage of these models is that the superposition principle applies and the long term behavior does not depend on initial conditions. On the contrary, in non-linear models, the superposition principle does not apply anymore and long and short term behavior is highly dependent on the initial conditions.
 
 **Let's see an example.**
 
-Let us consider one of the most typical Physics examples: the simple pendulum. 
+```{figure} https://files.mude.citg.tudelft.nl/pendulum0.png 
+:height: 300px
+:alt: pendulum
 
-%![pendulum](https://files.mude.citg.tudelft.nl/pendulum.png "pendulum") https://edurev.in/chapter/questions/46463/63808/Simple-Harmonic-Motion--SHM-
+Classical pendulum as illustration for linearization
+```
 
-![](https://files.mude.citg.tudelft.nl/replacement.svg)
+Let us consider a classical physics example: the simple pendulum. The force acting on the mass depends nonlinearly on its position, making Newton's equations give rise to a nonlinear differential equation:
 
-The moment equation around the pivot point corresponds to a nonlinear dynamic model:
+$$ml\frac{d^2\theta}{dt^2} + mg\sin\theta=0$$
 
-$$\frac{d^2\theta}{dt^2} + \frac{g}{l}\sin\theta=0$$
+However... this equation can be linearized around $\theta=0$, using $\sin\theta \approx \theta$. This assumption is reasonable when the motion of the pendulum is small compared to the length of the pendulum. Then, the equation of motion becomes a linear differential equation:
 
-However... it can be linearized around a stable position, where we use $\sin\theta \approx \theta$. This assumption is reasonable when the motion of the pendulum is small compared to the length of the pendulum. Thus, the equation of motion will become:
+$$ml\frac{d^2\theta}{dt^2} + mg\theta = 0$$
 
-$$\frac{d^2\theta}{dt^2} + \frac{g}{l}\theta = 0$$
+Very often this linearized version of the equation is used for analyzing the pendulum problem and similar simplifications are routinely made for different physical systems. Linearization generally comes with loss of accuracy, but under given circumstances this loss may remain limited, and then the simplified analysis options that a linear model offers are very appealing. 
 
 ## Time-invariant vs Time-variant
 
@@ -89,6 +99,12 @@ Note that there are also uncertainties regarding the measurement of the observat
 
 **Cases of deterministic systems:**
 
-Known structures subject to known static or dynamic loads. For instance, when we decide to model the response of a building (deformations) under a certain wind load.
+Known structures subject to known static or dynamic loads. For instance, when we decide to model the response of a building (deformations) under a specific (known) load. Note, however, that in practice loads are almost always variable, or impossible to predict with certainty; thus we will often use deterministic models to understand the behavior of the structure of interest, while also using a stochastic models to check whether the structure will perform well under the range of loads that can be expected.
 
-
+% START-CREDIT
+% source: modelling_concepts
+```{attributiongrey} Attribution
+:class: attribution
+This chapter was written by Alessandro Cabboi, Patricia Mares Nasarre and Robert Lanzafame. {ref}`Find out more here <modelling_concepts_credit>`.
+```
+% END-CREDIT

@@ -8,7 +8,7 @@ execute:
 only_build_toc_files: true
 
 html:
-  baseurl :  "https://tudelft-mude.github.io/book/2025/"
+  baseurl :  "https://mude.citg.tudelft.nl/book/2025/"
   use_multitoc_numbering: false
 
 sphinx:
@@ -21,35 +21,41 @@ sphinx:
     - https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js
     thebe_config:
       use_thebe_lite: true
-      exclude_patterns: ["**/*.JPG", "**/*.PNG", "**/*.bib", "**/*.cpg", "**/*.csv", "**/*.dbf", "**/*.geojson", "**/*.gif", "**/*.html", "**/*.ico", "**/*.ipynb", "**/*.jl", "**/*.jpeg", "**/*.jpg", "**/*.json", "**/*.md", "**/*.npy", "**/*.pdf", "**/*.png", "**/*.prj", "**/*.sbn", "**/*.sbx", "**/*.shp", "**/*.shx", "**/*.svg", "**/*.tif", "**/*.tiff", "**/*.txt", "**/*.webp", "**/*.whl", "**/*.xlsx", "**/*.xml", "**/*.yml", "**/*.zip"]
+      exclude_patterns: ["**/*.JPG", "**/*.PNG", "**/*.bib", "**/*.cpg", "**/*.csv", "**/*.dbf", "**/*.geojson", "**/*.gif", "**/*.html", "**/*.ico", "**/*.ipynb", "**/*.jl", "**/*.jpeg", "**/*.jpg", "**/*.json", "**/*.md", "**/*.npy", "**/*.pdf", "**/*.pptx", "**/*.png", "**/*.prj", "**/*.sbn", "**/*.sbx", "**/*.shp", "**/*.shx", "**/*.svg", "**/*.tif", "**/*.tiff", "**/*.txt", "**/*.webp", "**/*.whl", "**/*.xlsx", "**/*.xml", "**/*.yml", "**/*.zip"]
     html_theme_options:
       logo:
-        text: CEGM1000 Modelling, Uncertainty, and Data for Engineers
+        text: Textbook
+        link: "https://mude.citg.tudelft.nl/"
       repository_url: "https://github.com/TUDelft-MUDE/book"
       path_to_docs: "book"
-      repository_branch: "2025"
+      repository_branch: "2025-draft"
       use_edit_page_button: true
       use_repository_button: true
       use_issues_button : true
-      announcement: "<p>This book is under construction and should not be regarded as published. The version currently used in education is at <a href='https://mude.citg.tudelft.nl/2024/book' style='color: cyan;'>mude.citg.tudelft.nl/2024/book</a></p>"
+# START REMOVE-FROM-PUBLISH
+      announcement: "<p>This book is under construction. The version currently shared with students: <a href='https://mude.citg.tudelft.nl/book' style='color: cyan;'>mude.citg.tudelft.nl/book</a></p>"
+# END REMOVE-FROM-PUBLISH
       launch_buttons:
         thebe: true
+# START REMOVE-FROM-PUBLISH
+    keep_warnings: true
+# END REMOVE-FROM-PUBLISH
     bibtex_default_style: myapastyle
     bibtex_reference_style: author_year_round
     tud_change_logo: false
+    tud_change_titlesize: false
     named_colors_custom_colors: {'attributiongrey':[150,150,150]}
   local_extensions:
     apastyle: _ext/
     bracket_citation_style: _ext/
   extra_extensions:
-    - sphinx_inline_tabs
-    - sphinx.ext.imgconverter
-    - download_link_replacer
-    - jupyterbook_patches
-    - sphinx.ext.extlinks
-    - sphinx_image_inverter
+    - teachbooks_favourites
     - sphinx_tudelft_theme
-    - sphinx_named_colors
+    - sphinx.ext.extlinks
+    - sphinx_inline_tabs
 
 bibtex_bibfiles:
   - _bibliography/references.bib
+
+teachbooks:
+  attribution_color: attributiongrey

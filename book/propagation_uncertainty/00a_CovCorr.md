@@ -1,7 +1,7 @@
 (correl)=
 ## Random vectors, covariance and correlation
 
-When dealing with multiple random variables we need to consider that these may not be independent. Instead of considering the individual random variables, we will then need to work with a random vector $X= [\begin{array}{llll} X_1 & X_2 & \ldots &X_m \end{array}]^T$, which has a *multivariate* (or: joint) distribution. We will first introduce the covariance and correlation coefficient of two random variables, and then introduce the multivariate normal distribution.
+When dealing with multiple [random variables](https://mude.citg.tudelft.nl/fundamental-concepts/2025/fundamentals/prob-rv.html)we need to consider that these may not be independent. Instead of considering the individual random variables, we will then need to work with a random vector $X= [\begin{array}{llll} X_1 & X_2 & \ldots &X_m \end{array}]^T$, which has a *multivariate* (or: [joint](https://mude.citg.tudelft.nl/fundamental-concepts/2025/fundamentals/joint_marginal_conditional.html)) distribution. We will first introduce the covariance and correlation coefficient of two random variables, and then introduce the multivariate normal distribution.
 
 ### Covariance and correlation
 
@@ -58,7 +58,23 @@ Scatterplots of outcomes of ($X_1,X_2$) with different correlation coefficients.
 
 The interactive element below allows you to play around with the correlation value yourself. Observe how the distribution's density contours, or the scattered data, changes when you adapt the correlation value.
 
-<iframe src="../_static/elements/element_correlation.html" width="600" height="400" frameborder="0"></iframe>
+% START-CREDIT
+% source: maxramgraber
+
+````{margin}
+```{attributiongrey} Attribution
+:class: attribution
+This interactive figure is created by Max Ramgraber. {ref}`Find out more here <uncertainty_propagation_credit>`.
+```
+````
+
+% END-CREDIT
+
+````{iframe-figure} ../_static/elements/element_correlation.html
+:name: density_scatter_3
+
+Interactively change the correlation coefficient to visualize the effect on density contours or samples of the bivariate Gaussian distribution.
+````
 
 ### Covariance matrix
 
@@ -71,3 +87,12 @@ $$
 Note that the covariance matrix is symmetric, since $Cov(X_i,X_j)= Cov(X_j,X_i)$. 
 
 If all measurements are independent, all covariances will be equal to zero, and the covariance matrix becomes a diagonal matrix with the variances on the diagonal. 
+
+% START-CREDIT
+% source: uncertainty_propagation
+```{attributiongrey} Attribution
+:class: attribution
+This chapter was written by Sandra Verhagen and Lotfi Massarweh. {ref}`Find out more here <uncertainty_propagation_credit>`.
+```
+
+% END-CREDIT

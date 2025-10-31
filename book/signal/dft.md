@@ -109,3 +109,10 @@ with both $k$ and $n\in\{0,1,...,N-1\}$
 
 Hence, *without* factors $\Delta t$ and $\frac{1}{\Delta t}$. This is also how DFT is implemented in programming languages like Matlab and Python; the user has to restore time and frequency dimension!
 
+% START-CREDIT
+% source: signal_processing
+```{attributiongrey} Attribution
+:class: attribution
+This chapter is written by Christian Tiberius. {ref}`Find out more here <signal_processing_credit>`.
+```
+% END-CREDIT

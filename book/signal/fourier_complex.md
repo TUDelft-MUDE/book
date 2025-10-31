@@ -126,3 +126,11 @@ then, for real signals:
 * argument (or phase): $\theta_k=-\theta_{-k}$, **odd** function of $k$, forming **phase spectrum**
 
 $\implies$ periodic signal written in terms of sum of cosines and sines, together (pairwise) represented in complex exponentials
+
+% START-CREDIT
+% source: signal_processing
+```{attributiongrey} Attribution
+:class: attribution
+This chapter is written by Christiaan Tiberius. {ref}`Find out more here <signal_processing_credit>`.
+```
+% END-CREDIT

@@ -1,6 +1,6 @@
-## Least-squares estimation
+# Least-squares estimation
 
-### Functional model: dealing with inconsistency
+## Functional model: dealing with inconsistency
 
 Given a set of observations which contain noise, and a model that is assumed to explain these data, the goal is to estimate the unknown parameters of that model. The least-squares principle can be used to solve this task. 
 
@@ -10,15 +10,15 @@ $$
 \mathrm{y = Ax}.
 $$
 
-If all the observations would fit perfectly to this model, this system is called [consistent](PM_consistent). This is only possible if the number of observations $m$ is equal to (or smaller than) the number of unknowns $n$, i.e. if the system is [determined](determined).
+If all the observations would fit perfectly to this model, this system is called [consistent](https://mude.citg.tudelft.nl/fundamental-concepts/2025/fundamentals/00_01c_PreMath.html#consistent-systems-at-least-one-solution-exists). This is only possible if the number of observations $m$ is equal to (or smaller than) the number of unknowns $n$, i.e. if the system is [determined](https://mude.citg.tudelft.nl/fundamental-concepts/2025/fundamentals/00_01c_PreMath.html#determined-overdetermined-and-underdetermined-systems).
 
 If the number of observations is greater than the number of unknowns (and the design matrix $\mathrm{A}$ is of full column rank), it is very unlikely that the system is consistent. Physical reality would need to be perfectly described by the conceptual mathematical model. It is evident that in real life this is never the case, since (i) our observations are always contaminated by some form of noise, and (ii) physical reality is often more complex than can be described with a simplified mathematical model.
 
-Thus, in the case in which there are more observations than unknowns (and design matrix $\mathrm{A}$ is of full column rank) the $\mathrm{y=Ax}$ system of equations has no solution, this is referred to as an [overdetermined system](determined). In other words; every 'solution' would be wrong, since the model would not perfectly 'fit' the data.
+Thus, in the case in which there are more observations than unknowns (and design matrix $\mathrm{A}$ is of full column rank) the $\mathrm{y=Ax}$ system of equations has no solution, this is referred to as an [overdetermined system](https://mude.citg.tudelft.nl/fundamental-concepts/2025/fundamentals/00_01c_PreMath.html#determined-overdetermined-and-underdetermined-systems). In other words; every 'solution' would be wrong, since the model would not perfectly 'fit' the data.
 
 The *redundancy* of the system is equal to $m-n$, i.e., the 'additional' number of observations compared to the minimum required to solve the system of equations.
 
-#### Example: linear trend model
+### Example: linear trend model
 
 Assume we have $m$ observations and we try to fit the linear trend model:
 
@@ -42,9 +42,9 @@ $$
 \mathrm{y=Ax + \epsilon}
 $$
 
-The length of the error vector (or vector of residuals) $\mathrm{\epsilon}$ is equal to the length of the vector of observations $\mathrm{y}$.
+The dimension of the error vector (or vector of residuals) $\mathrm{\epsilon}$ is equal to the dimension of the vector of observations $\mathrm{y}$.
 
-### Least-squares principle
+## Least-squares principle
 
 We are looking for a solution for $\mathrm{x}$; this solution will be denoted by $\hat{\mathrm{x}}$. Based on this solution, the 'adjusted observations' would be $\hat{\mathrm{y}}= \mathrm{A}\hat{\mathrm{x}}$ (solution of the forward model).
 
@@ -78,9 +78,9 @@ $$
 
 In other words, $\mathrm{\hat{x}}$ is the solution for $\mathrm{x}$ which provides the minimum of $\mathrm{(y-Ax)^T (y-Ax)}=\sum_{i=1}^m \epsilon_i^2$, hence the smallest sum of squared residuals.
 
-### Least-squares solution
+## Least-squares solution
 
-We can find the minimum of a function by taking the first derivative with respect to the 'free variable'. Since the observation vector is not free, and also the design matrix $\mathrm{A}$ is fixed, the only variable which we can vary is $\mathrm{x}$. The first derivative of our objective function should be equal to zero to reach a minimum (see [Gradient](PM_gradient), and [Vectors and matrices](pm_matrix)):
+We can find the minimum of a function by taking the first derivative with respect to the 'free variable'. Since the observation vector is not free, and also the design matrix $\mathrm{A}$ is fixed, the only variable which we can vary is $\mathrm{x}$. The first derivative of our objective function should be equal to zero to reach a minimum (see [Gradient](https://mude.citg.tudelft.nl/fundamental-concepts/2025/fundamentals/00_02_PreMath.html#multivariate-differentiation), and [Vectors and matrices](https://mude.citg.tudelft.nl/fundamental-concepts/2025/fundamentals/00_01a_PreMath.html#vectors-and-matrices)):
 
 $$
 \begin{align*} 
@@ -106,7 +106,7 @@ $$
 \mathrm{\hat{x}= (A^T A)^{-1} A^T y}
 $$
 
-### Summary
+## Summary
 
 In summary, the least-squares estimates of $\mathrm{x}$, $\mathrm{y}$ and $\epsilon$ are given by:
 
@@ -131,3 +131,11 @@ name: LSsol
 ---
 Least-squares fit to a set of 5 observations affected by random errors. Index $i$ refers to the $i$th observation.
 ```
+
+% START-CREDIT
+% source: observation_theory
+```{attributiongrey} Attribution
+:class: attribution
+This chapter was written by Sandra Verhagen. {ref}`Find out more here <observation_theory_credit>`.
+```
+% END-CREDIT

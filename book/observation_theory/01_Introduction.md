@@ -1,4 +1,5 @@
-## Introduction
+(ObsTheory)=
+# Introduction
 
 From experience we know that various uncertain phenomena can be modeled as a random variable (or a random vector), say $Y$. In this part the random variables are measurements (e.g., sensor readings), which are uncertain due to random errors. We will refer to these random variables (our input data) $Y$ as the *observables*.
 
@@ -42,6 +43,10 @@ Next, we will develop the principles and underlying theory of (1) Least-squares 
 Special attention is then given to how the uncertainty in the measurements propagates into parameter estimation results, such that we can assess the precision of the estimated parameters. For that purpose we need the stochastic model.
 
 ```{admonition} Definition
+*Precision* and *accuracy* are two terms that are often confused. Precision refers to the spread of a set of measurements (i.e., the standard deviation), whereas accuracy refers to the closeness of a measurement to the true value (i.e., absence of bias). ([Wiki](https://en.wikipedia.org/wiki/Accuracy_and_precision))
+```
+
+```{admonition} Definition
 The *stochastic model* describes the uncertainty of the observables in the form of the covariance matrix $\Sigma_Y=\Sigma_{\epsilon}$.
 ```
 
@@ -54,9 +59,9 @@ This covariance matrix is assumed to be known here. In practice, it can be deter
 Parameter estimation requires specification of the underlying functional and stochastic models. It may happen, however, that some parts of the models are misspecified, thereby invalidating the results of estimation. Some measurements, for instance, may be corrupted by blunders (which are not random!), or the chosen model may fail to give an adequate description of physical reality. Testing for such misspecifications is the topic of the last sections of this chapter.
 
 (01_funcmodel)=
-### Functional model: examples
+## Functional model: examples
 
-#### Linear trend model 
+### Linear trend model 
 The unknown parameters are the intercept $x_1$ and rate of change (velocity) $x_2$. The observation equation of a single observable $Y_i$ is:
 
 $$
@@ -88,7 +93,7 @@ This is model is linear in $\mathrm{x}$, therefore we refer to it as a linear mo
 ```
 :::
 
-#### Step function
+### Step function
 Consider a process with unknown parameter $x_1$ assumed to be constant up till time $t_{i-1}$, and a sudden change (step) at time $t_i$, after which the parameter remains constant at $x_2$. See {numref}`stepfun`.
 
 ```{figure} https://files.mude.citg.tudelft.nl/00_step.png
@@ -126,25 +131,27 @@ $$
 :::
 
 (positioning)=
-#### Positioning model
-As a final example we will consider a non-linear functional model for estimating the unknown position $\mathrm{x}=\begin{bmatrix} x, y, z\end{bmatrix}^T$ of a satellite. The observables are distance measured with laser ranging from $m$ ground stations at known positions $\begin{bmatrix} x_i, y_i, z_i\end{bmatrix}^T$.
+#### GNSS Positioning 
+As a final example we will consider a non-linear functional model for estimating the unknown position $\mathrm{x}=\begin{bmatrix} x, y, z\end{bmatrix}^T$ of a Global Navigation Satellite System (GNSS) receiver on Earth. The observables are distance measured for $m \geq 4$ GNSS satellites with known positions $\begin{bmatrix} x_i, y_i, z_i\end{bmatrix}^T$.
 
-```{figure} https://files.mude.citg.tudelft.nl/01_laser.png
+```{figure} https://upload.wikimedia.org/wikipedia/commons/9/91/GDOP_good.svg
 ---
 height: 200px
-name: LSfit
+name: GNSS_GDOP
 ---
-Positioning of satellite in orbit using laser ranging from multiple ground stations on knonw locations.
+GNSS positioning: the position of the user is estimated from four GNSS satellites. Figure adapted from [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:GDOP_good.svg) {cite:t}`gdop2012`.
 ```
 
 The functional model comprises $m$ non-linear functions of the unknown parameter vector $\mathrm{x}$:
 
 $$
-\mathbb{E}(\begin{bmatrix} Y_{1} \\ Y_{2} \\ \vdots \\ Y_{m} \end{bmatrix} )= \begin{bmatrix} \sqrt{(x_1-x)^2+(y_1-x)^2+(z_1-x)^2}\\ \sqrt{(x_2-x)^2+(y_2-x)^2+(z_2-x)^2} \\ \vdots \\ \sqrt{(x_m-x)^2+(y_m-x)^2+(z_m-x)^2}\end{bmatrix}
+\mathbb{E}(\begin{bmatrix} Y_{1} \\ Y_{2} \\ \vdots \\ Y_{m} \end{bmatrix} )= \begin{bmatrix} \sqrt{(x_1-x)^2+(y_1-y)^2+(z_1-z)^2}\\ \sqrt{(x_2-x)^2+(y_2-y)^2+(z_2-z)^2} \\ \vdots \\ \sqrt{(x_m-x)^2+(y_m-y)^2+(z_m-z)^2}\end{bmatrix}
 =\begin{bmatrix} q_{1}(\mathrm{x}) \\ q_{2}(\mathrm{x}) \\ \vdots \\ q_{m}(\mathrm{x}) \end{bmatrix}
 $$
 
-### Redundancy
+Where $Y_i$ is the distance measurement to satellite $i$. Note that the functional model is non-linear in $\mathrm{x}$, since the unknown parameters appear inside a square root.
+
+## Redundancy
 Later we will see that the *redundancy* of our model plays an important role regarding the precision of our estimated parameters. For a model with $m$ observables and $n$ unknown parameters, the [redundancy](redundancy) is given by:
 
 $$
@@ -153,7 +160,7 @@ $$
 
 this is true since we assume to work with $\mathrm{A}$-matrices (size $m\times n$) that have full column rank: $rank(\mathrm{A})=n$.
 
-### Estimation and linear regression
+## Estimation and linear regression
 
 The goal of estimation is the estimate *model parameters* from a set of observations. In Civil Engineering, Applied Earth Sciences and Environmental Engineering this is needed in many monitoring and sensing applications, such as:
 * Sea level rise
@@ -187,3 +194,11 @@ Linear regression example for amount of rainfall (independent variable) and rive
 The estimation principles discussed in this part are needed for estimating these relationships.
 
 Supervised machine learning (MUDE topic in Q2) is all about finding relationships between target (dependent) variables and certain features (predictors), and therefore regression analysis.
+
+% START-CREDIT
+% source: observation_theory
+```{attributiongrey} Attribution
+:class: attribution
+This chapter was written by Sandra Verhagen. {ref}`Find out more here <observation_theory_credit>`.
+```
+% END-CREDIT
