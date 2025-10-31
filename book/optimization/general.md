@@ -68,7 +68,7 @@ width: 90%
 
 In this section, you can find a few examples of optimization problems with their respective goals.
 
-```{admonition} Example 1 - Optimizing the layout of the offshore wind farms in Norway
+````{admonition} Example 1 - Optimizing the layout of the offshore wind farms in Norway
 :class: tip, dropdown
 
 **Goal**: determine the optimal layout of wind turbines to produce the *highest amount of energy at minimum costs*. Considering different types of turbines, their power curves, physical characteristics, wake effect, etc.
@@ -84,7 +84,7 @@ This example is taken from CME4500 Engineering Systems Optimization, final proje
 ​
 ````
 
-```{admonition} Example 2 - Optimizing the renewable energy configuration for a completely self-sustaining energy system in the Ijsselmeer area in 2050
+````{admonition} Example 2 - Optimizing the renewable energy configuration for a completely self-sustaining energy system in the Ijsselmeer area in 2050
 :class: tip, dropdown
 
 **Goal**: determine the most economic configuration of areas for wind turbines, solar panels, algae, and battery storage to meet the hourly energy demand in the future for a certain area. Considering the fluctuating demand, climatic conditions, etc.
