@@ -108,10 +108,9 @@ parts:
     - file: numerical_methods_for_PDEs/overview.md
       sections:
       - file: numerical_methods_for_PDEs/intro_to_pdes.md
-      - file: numerical_methods_for_PDEs/diffusion_equation.md
+      - file: numerical_methods_for_PDEs/diffusion_equation.ipynb
       - file: numerical_methods_for_PDEs/advection_equation.md
-      - file: numerical_methods_for_PDEs/advection_diffusion_eq.md
-
+      - file: numerical_methods_for_PDEs/advection_diffusion_eq.ipynb
     - file: fem/intro.md
       sections:
       - file: fem/strong.md
