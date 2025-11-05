@@ -17,7 +17,7 @@ $f(t)=\lambda e^{-\lambda t}, r(t)=\frac{f(t)}{1-F(t)}=\frac{\lambda e^{-λt}}{1
 
  * Weibull 
 
- $f(t) = \lambda\alpha t^{\alpha-1}e^{-\lambda t^\alpha}$, $r(t) = \lambda \alpha t^{\alpha-1}$, $\lambda$, $\alpha$ $>0$, $t\geq 0$. Another common parametrization of the Weibull density is $f(t) = \frac{b}{a}\left(\frac{t}{z}\right)^{b-1} t^{\alpha-1}e^{-\lambda t^\alpha}$ 
+ $f(t) = \lambda\alpha t^{\alpha-1}e^{-\lambda t^\alpha}$, $r(t) = \lambda \alpha t^{\alpha-1}$, $\lambda$, $\alpha$ $>0$, $t\geq 0$. Another common parametrization of the Weibull density is $f(t) = \frac{b}{a}\left(\frac{t}{a}\right)^{b-1} e^{-\left(\frac{t}{a}\right) t^b}$ 
 
 ```{figure} https://files.mude.citg.tudelft.nl/failure_rate.png
  
