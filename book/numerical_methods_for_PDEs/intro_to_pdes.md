@@ -154,7 +154,7 @@ and
 $$\frac{\partial u}{\partial t} + u\frac{\partial u}{\partial x} + g\frac{\partial \zeta}{\partial x} + c_f \frac{u|u|}{h} = 0$$
 
 The first equation is derived from the mass conservation and is known as the **continuity equation**. This equation contains first order derivatives only while the second term contains a product of $h$ and $u$,
-implying a nonlinear term. Also, this equation does not contain a non-zero term that does involve $\zeta$ and/or $u$ and their derivatives, hence this equation is considered homogeneous.
+implying a nonlinear term. Also, this equation does not contain a non-zero term that does not involve $\zeta$ and/or $u$ and their derivatives, hence this equation is considered homogeneous.
 
 The second equation is derived from the conservation of momentum and is referred to as the **momentum** equation. Like the continuity equation, this momentum equation is first order, nonlinear and homogeneous.
 ```
