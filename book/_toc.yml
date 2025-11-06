@@ -315,7 +315,7 @@ parts:
       sections:
       - file: programming/week_2_2/assembly
       - file: programming/week_2_2/sparse
-      - file: programming/week_2_2/demo
+      - file: programming/week_2_2/solver.ipynb
     - file: optimization/gurobi.md
       title: "Week 2.4: Gurobi installation"
 # END REMOVE-FROM-PUBLISH
