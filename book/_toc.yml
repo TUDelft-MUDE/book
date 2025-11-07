@@ -304,6 +304,13 @@ parts:
       - external: https://github.com/TeachBooks/learn-programming/blob/mude-2025/book/python/oop/Polymorphism.ipynb
       - external: https://github.com/TeachBooks/learn-programming/blob/mude-2025/book/python/oop/exercise.ipynb
 # START REMOVE-FROM-PUBLISH
+    - file: programming/week_2_2
+      sections:
+      - file: programming/week_2_2/assembly
+      - file: programming/week_2_2/sparse
+      - file: programming/week_2_2/solver.ipynb
+    - file: optimization/gurobi.md
+      title: "Week 2.4: Gurobi installation"
     - file: programming/week_1_6_old
       sections:
       - file: external/learn-python/book/09/intro.md
@@ -314,6 +321,12 @@ parts:
       - file: external/learn-python/book/09/handling_errors.ipynb
         title: Handling Errors
       - file: external/learn-python/book/09/asserts.ipynb
+    - file: programming/week_1_7
+      sections:
+      - file: external/learn-programming/book/python/oop/classes
+    - file: programming/week_1_8
+      sections:
+      - file: external/learn-python/book/08/sympy
 # END REMOVE-FROM-PUBLISH
   - caption: Miscellaneous
     numbered: false
