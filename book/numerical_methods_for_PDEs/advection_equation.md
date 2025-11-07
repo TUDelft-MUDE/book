@@ -325,7 +325,7 @@ Show that the leapfrog scheme {eq}`leapfrog` is second order accurate both in ti
 First, we replace the numerical solution $c^n_m$ by the exact one, $c(x,t)$ at point $x_m$ and time $t_n$, thus
 
 $$
-  \frac{c(x,t+\Delta t) - c(x,t-\Delta t)}{2 \Delta t} + u \frac{c(x+\Delta x,t) - c(x-\Delta x,t)}{2\Delta x} = 0
+  \tau_{\Delta t,\Delta x} = \frac{c(x,t+\Delta t) - c(x,t-\Delta t)}{2 \Delta t} + u \frac{c(x+\Delta x,t) - c(x-\Delta x,t)}{2\Delta x}
 $$ (leapfrog2)
 
 Furthermore, we require the solution $c(x,t)$ to be smooth. The Taylor series for $c(x,t\pm\Delta t)$ will be expanded till the third order
