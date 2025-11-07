@@ -102,7 +102,7 @@ parts:
         - file: observation_theory/09_Notebook_OMT.ipynb
       - file: observation_theory/99_NotationFormulas
       
-# START REMOVE-FROM-PUBLISH
+
   - caption: Q2 Topics
     numbered: 2
     chapters:
@@ -112,6 +112,9 @@ parts:
       - file: numerical_methods_for_PDEs/diffusion_equation.ipynb
       - file: numerical_methods_for_PDEs/advection_equation.md
       - file: numerical_methods_for_PDEs/advection_diffusion_eq.ipynb
+
+# START REMOVE-FROM-PUBLISH
+    
     - file: fem/intro.md
       sections:
       - file: fem/strong.md
