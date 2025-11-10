@@ -57,7 +57,7 @@ where $\bar{u}$ stands for prescribed values for the unknown field on the part o
 
 ## Weak form
 
-As usual, we start with multiplying the strong form equation with a (for now arbirtary) test function and integrating over the domain
+As usual, we start with multiplying the strong form equation with a (for now arbitrary) test function and integrating over the domain
 
 $$
 -\int_\Omega w\nu \Delta u\,d\Omega = \int_\Omega wq\,d\Omega

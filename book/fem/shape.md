@@ -113,7 +113,7 @@ where the coefficients $a_i$, $b_i$ and $c_i$ depend on the coordinates of the e
 ---
 name: triangleFuncs
 ---
-Shape functons for 3-node triangular element
+Shape functions for 3-node triangular element
 ```
 :::
 

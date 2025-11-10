@@ -56,7 +56,7 @@ $$
 \int_a^b f(x)\,dx = \int_{-1}^{-1} f(x(\xi)) \left|\pder{x}{\xi}\right|\,d\xi
 $$
 
-Addtionally, for evaluating the derivatives of shape functions, if the shape functions are defined in terms of $\xi$ but we need derivatives with respect to $x$, the operation we need is:
+Additionally, for evaluating the derivatives of shape functions, if the shape functions are defined in terms of $\xi$ but we need derivatives with respect to $x$, the operation we need is:
 
 $$
 \pder{N_i}{x} = \pder{N_i}{\xi}\pder{\xi}{x}
