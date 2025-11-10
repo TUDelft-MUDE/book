@@ -24,7 +24,7 @@ If you would like to refer to the MUDE Textbook with BibTeX (e.g., in a TeachBoo
   editor={Lanzafame, Robert and van Woudenberg, Tom and Verhagen, Sandra},
   year={n.d.},
   publisher={Delft University of Technology},
-  note={{https://mude.citg.tudelft.nl/book} CC BY 4.0}
+  note={{s://mude.citg.tudelft.nl/book} CC BY 4.0}
 }
 ```
 
@@ -36,7 +36,7 @@ or including a specific location and version (URL and version number to be adapt
   editor={Lanzafame, Robert and van Woudenberg, Tom and Verhagen, Sandra},
   year={n.d.},
   publisher={Delft University of Technology},
-  note={{https://mude.citg.tudelft.nl/book/`<year>/<...>`},version `<version_number>`, CC BY 4.0}
+  note={{s://mude.citg.tudelft.nl/book/`<year>/<...>`},version `<version_number>`, CC BY 4.0}
 }
 ```
 
@@ -51,7 +51,7 @@ Or for the complete 2024 edition:
   year={2024},
   publisher={Delft University of Technology},
   edition={v2024.1.0},
-  note={{https://mude.citg.tudelft.nl/book/2024} CC BY 4.0},
+  note={{s://mude.citg.tudelft.nl/book/2024} CC BY 4.0},
   doi={10.5281/zenodo.16236358}
 }
 ```
@@ -62,13 +62,13 @@ The text citation is {cite:t}`mude2024` and the parenthetical citation is {cite:
 
 ## How the book is made
 
-This book is created using open source tools: it is a Jupyter Book that uses a number of features from [TeachBooks](https://teachbooks.io/) and is written using Markdown, Jupyter notebooks and Python files to generate some figures. The source files are stored on a public GitHub repository [github.com/TUDelft-MUDE/book](https://github.com/tudelft-mude/book/). Zenodo is used to archive all open versions of the book (beginning with the 2024-25 academic year) and to provide a DOI ([10.5281/zenodo.16223061](https://doi.org/10.5281/zenodo.16223061)).  View the repository README file or contact the editors for additional and up-to-date information.
+This book is created using open source tools: it is a Jupyter Book that uses a number of features from [TeachBooks](s://teachbooks.io/) and is written using Markdown, Jupyter notebooks and Python files to generate some figures. The source files are stored on a public GitHub repository [github.com/TUDelft-MUDE/book](s://github.com/tudelft-mude/book/). Zenodo is used to archive all open versions of the book (beginning with the 2024-25 academic year) and to provide a DOI ([10.5281/zenodo.16223061](s://doi.org/10.5281/zenodo.16223061)).  View the repository README file or contact the editors for additional and up-to-date information.
 
 ## Acknowledgements
 
 This book has many contributors, many of whom are also key members of the MUDE Team, as well as critical feedback from MUDE students. The sections below list the primary authors and contributors for each chapter, buit is unfortunately not possible to list all of the small contributions from various people from within and outside Delft University of Technology, not list all contributions in detail. A special note should go to the MUDE management team, which take a lead in organizing the module and keeping this book up-to-date with the latest course developments.
 
-A better way to see the contributions is to check the [Contributors Page](https://github.com/TUDelft-MUDE/book/graphs/contributors) of the GitHub repository.
+A better way to see the contributions is to check the [Contributors Page](s://github.com/TUDelft-MUDE/book/graphs/contributors) of the GitHub repository.
 
 A big "thank you" is also due to the Educational Management Team of the Civil Engineering and Geosciences Faculty at Delft University of Technology for giving the MUDE Team financial and organizational support during the early years of MUDE (especially 2022-2024), in particular Hans Welleman, Director of Education of the faculty. Without the freedom and support to experiment with new tools, this book (and [TeachBooks](https://teachbooks.io/) as well!) would not exist!
 
@@ -104,28 +104,6 @@ Credits are provided here for chapters and pages that are released under the lic
 >
 > Special thanks goes to João Moura Pereira de Lucas Teixeira, who created first draft of pages from powerpoint slides.
 
-(uncertainty_propagation_credit)=
-### Chapter: Uncertainty Propagation
-
-> {ref}`Propagation of Uncertainty <01_errorprop>` is written by Sandra Verhagen.
->
-> Special thanks goes to:
-> - Robert Lanzafame, Patricia Mares Nasarre and Max Ramgraber, who reviewed, commented and/or modified content. 
-> - Sophie Keemink, Caspar Jungbacker and Thirza Feenstra, who provided feedback and helped develop exercises.
-> - Antonio Magherini, who created first draft of pages from powerpoint slides.
->
-> {ref}`This <density_scatter_3>` and {ref}`this interactive figure on the correlation coefficient <2D_Gaussian>` are created by Max Ramgraber ([maxramgraber.com/interactive](https://www.maxramgraber.com/interactive)), which are published with a CC BY license and included in this book without modification.
-
-(observation_theory_credit)=
-### Chapter: Observation Theory
-
-> {ref}`Observation theory <OT>` is written by Sandra Verhagen.
->
-> Special thanks goes to:
-> - Peter Teunissen and Christiaan Tiberius who co-shaped the material, indirectly, through collaboration with the author as TU Delft colleagues.
-> - The books _Adjustment theory: an introduction_ {cite:p}`adjustment_theory` and _Testing theory: an introduction_ {cite:p}`testing_theory` which provided the framework for this chapter.
-> - Sophie Keemink, Caspar Jungbacker and Thirza Feenstra, who provided feedback and helped develop exercises.
-
 (numerical_modelling_credit)=
 ### Chapter: Numerical Modelling
 
@@ -140,15 +118,40 @@ Credits are provided here for chapters and pages that are released under the lic
 > {ref}`The figure on the left Riemann sum <openstax_fig_01>` is reproduced from {cite:t}`openstax_calculus` without modification and is _not_ included under the CC BY license of this book. The source content is provided with a CC BY NC SA license and can be accessed for free at [https://openstax.org/books/calculus-volume-2/pages/1-introduction](https://openstax.org/books/calculus-volume-2/pages/1-introduction).
 
 (distributions_credit)=
-### Chapters: Univariate and Multivariate Continuous Distributions
+### Chapter: Univariate Continuous Distributions
 
-> {ref}`Univariate Continuous Distributions <cont_dist>` and {ref}`Multivariate Distributions <mult_dist>` are written by Patricia Mares Nasarre and Robert Lanzafame.
+> {ref}`Univariate Continuous Distributions <cont_dist>` is written by Patricia Mares Nasarre, Robert Lanzafame and Max Ramgraber.
 >
 > Special thanks goes to Oswaldo Morales Napoles and Elisa Ragno for suggestions on the theoretical and didactic framework, as well as critical feedback and review.
 >
-> Pages {ref}`One random variable <prob_design_1_rv>` and {ref}`Two random variables <prob_design_2_rv>` are from the Chapter _Probabilistic Design_ {cite:p}`lanzafame2024-pd` from the book Risk and Reliability for Engineers {cite:p}`lanzafame2024`, published with a CC BY license. Files are included without modification.
+> The interactive figures in these pages are created by Max Ramgraber ([maxramgraber.com/interactive](https://www.maxramgraber.com/interactive)), which are published with a CC BY license and included in this book without modification.
+
+(multivariate_credit)=
+### Chapter: Multivariate Distributions
+
+> {ref}`Multivariate Distributions <mult_dist>` is written by Patricia Mares Nasarre and Robert Lanzafame.
 >
-> {ref}`This <density_scatter_3>`, {ref}`this <pdf_cdf>`, {ref}`this <pdf_cdf_2>`, {ref}`this <density_scatter>` and {ref}`this interactive figure <density_scatter_2>` are created by Max Ramgraber ([maxramgraber.com/interactive](https://www.maxramgraber.com/interactive)), which are published with a CC BY license and included in this book without modification.
+> Special thanks goes to Oswaldo Morales Napoles and Elisa Ragno for suggestions on the theoretical and didactic framework, as well as critical feedback and review.
+>
+> {ref}`This <element_correlation_correlation>` and {ref}`this <2D_Gaussian>` interactive figures are created by Max Ramgraber ([maxramgraber.com/interactive](https://www.maxramgraber.com/interactive)), published with a CC BY license and included in this book without modification. 
+
+(uncertainty_propagation_credit)=
+### Chapter: Uncertainty Propagation
+
+> {ref}`Uncertainty Propagation <01_errorprop>` is written by Sandra Verhagen and Lotfi Massarweh.
+>
+> This chapter builds on the lecture notes _Probability and Observation Theory_ by P.J.G. Teunissen, D.G. Simons, C.C.J.M. Tiberius (2009).
+>
+
+(observation_theory_credit)=
+### Chapter: Observation Theory
+
+> {ref}`Observation theory <OT>` is written by Sandra Verhagen.
+>
+> Special thanks goes to:
+> - Peter Teunissen and Christiaan Tiberius who co-shaped the material, indirectly, through collaboration with the author as TU Delft colleagues.
+> - The books _Adjustment theory: an introduction_ {cite:p}`adjustment_theory` and _Testing theory: an introduction_ {cite:p}`testing_theory` which provided the framework for this chapter.
+> - Sophie Keemink, Caspar Jungbacker and Thirza Feenstra, who provided feedback and helped develop exercises.
 
 (finite_volume_method_credit)=
 ### Chapter: PDEs and the Finite Volume Method
@@ -158,6 +161,15 @@ Credits are provided here for chapters and pages that are released under the lic
 > Special thanks goes to:
 > - Isabel Slingerland and Mona Devos for critical feedback and development of exercises, figures and related content.
 > - Dhruv Mehta for providing a first draft of the chapter structure and contents.
+
+
+(numerical_methods_for_pdes_credit)=
+### Chapter: Numerical Methods for PDEs
+
+> {ref}`Numerical Methods for PDEs <NumMethPDE>` is written by Marcel Zijlema.
+>
+> _This chapter reuses material from Lecture Notes "Course CIE4340 - Computational Modelling of Flow and Transport" by Marcel Zijlema (TU Delft, 2023)._
+> This reader can be downloaded [here](https://www.tudelft.nl/en/student/my-study-me/education/study-start/book-reader-sales/downloading-and-ordering-readers).
 
 
 (finite_element_method_credit)=
@@ -234,7 +246,9 @@ Credits are provided here for chapters and pages that are released under the lic
 (programming_credit)=
 ### Programming chapters
 
-> [](./programming/week_1_1.md) is written by Robert Lanzafame and Tom van Woudenberg.
+> The programming chapters are written by Tom van Woudenberg  and Robert Lanzafame
+>
+> Special thanks goes to Stanislaw Ostyk-Narbutt for his contribution with the Large language models chapter
 
 Part of the chapters in the Programming part of this book are reused from two sources: _Learn Programming for Engineers_ {cite:p}`learn-programming` and _Python for Engineers_ {cite:p}`learn-python`. Both books are published with a CC BY license and are available online at [teachbooks.io/learn-programming](https://teachbooks.io/learn-programming) and [teachbooks.io/learn-python](https://teachbooks.io/learn-python).
 

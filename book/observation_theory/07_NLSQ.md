@@ -1,4 +1,4 @@
-## Non-linear least-squares estimation 
+# Non-linear least-squares estimation 
 
 Let the non-linear system of observation equations be given by:
 
@@ -33,15 +33,15 @@ Observed deformation rates above a magma chamber.
 
 :::
 
-### Video
+## Video
 ```{eval-rst}
 .. raw:: html
 
     <iframe width="560" height="315" src="https://www.youtube.com/embed/qkPzMlnkg6o" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 ```
 
-### Linearization
-For the linearization we need the [first-order Taylor polynomial](PM_taylor), which gives the linear approximation of for instance the first observable $Y_1 = q_1(\mathrm{x})$ at $\mathrm{x}=\mathrm{x}_{[0]}$ as:
+## Linearization
+For the linearization we need the [first-order Taylor polynomial](https://mude.citg.tudelft.nl/fundamental-concepts/2025/fundamentals/00_03_PreMath.html#first-order-taylor-polynomial-for-linearizing-a-function-of-n-variables), which gives the linear approximation of for instance the first observable $Y_1 = q_1(\mathrm{x})$ at $\mathrm{x}=\mathrm{x}_{[0]}$ as:
 
 $$
 Y_1\approx q_1( \mathrm{x}_{[0]})+ \partial_{x_1} q_1(\mathrm{x}_{[0]})\Delta \mathrm{x}_{[0]}+ \partial_{x_2} q_1(\mathrm{x}_{[0]})\Delta \mathrm{x}_{[0]}+ \ldots + \partial_{x_n} q_1(\mathrm{x}_{[0]})\Delta \mathrm{x}_{[0]}
@@ -63,7 +63,7 @@ $$
 \begin{align*} E\{\begin{bmatrix} \Delta Y_1 \\ \Delta Y_2 \\ \vdots \\ \Delta Y_m \end{bmatrix}_{[0]}\} &=\begin{bmatrix} \partial_{x_1} q_1(\mathrm{x}_{[0]}) &\partial_{x_2} q_1(\mathrm{x}_{[0]}) & \ldots & \partial_{x_n} q_1(\mathrm{x}_{[0]}) \\ \partial_{x_1} q_2(\mathrm{x}_{[0]}) &\partial_{x_2} q_2(\mathrm{x}_{[0]}) & \ldots & \partial_{x_n} q_2(\mathrm{x}_{[0]}) \\ \vdots & \vdots  & \ddots  & \vdots\\ \partial_{x_1} q_m(\mathrm{x}_{[0]}) &\partial_{x_2} q_m(\mathrm{x}_{[0]}) & \ldots& \partial_{x_n} q_m(\mathrm{x}_{[0]}) \end{bmatrix}\Delta \mathrm{x}_{[0]} \\ &= \mathrm{J}_{[0]}\Delta \mathrm{x}_{[0]}\end{align*}
 $$
 
-with [Jacobian matrix](PM_jacobian) $\mathrm{J}_{[0]}$.
+with [Jacobian matrix](https://mude.citg.tudelft.nl/fundamental-concepts/2025/fundamentals/00_02_PreMath.html#jacobian-matrix) $\mathrm{J}_{[0]}$.
 
 And this allows to apply best linear unbiased estimation (BLUE) to get an estimator for $\Delta \mathrm{x}_{[0]}$:
 
@@ -81,7 +81,7 @@ $$
 
 However, the quality of the linear approximation depends very much on the closeness of $\mathrm{x}_{[0]}$ to $\mathrm{x}$. Therefore, instead we apply an iterative procedure, which means that we repeat the process with $\mathrm{x}_{[1]}=\mathrm{x}_{[0]}+\Delta \hat{X}_{[0]}$ as our new guess. This procedure is continued until the $\Delta \hat{\mathrm{x}}_{[i]}$ becomes small enough. This is called the Gauss-Newton iteration procedure, and is shown in the scheme below.
 
-### Gauss-Newton iteration
+## Gauss-Newton iteration
 
 See {numref}`gn` for an illustration of the iterative procedure, referred to as the Gauss-Newton iteration.
 
@@ -120,7 +120,7 @@ Once the stop criterion is met, we say that the solution *converged*, and the la
 
 :::
 
-### Remarks and properties
+## Remarks and properties
 There is no default recipe for making the initial guess $\mathrm{x}_{[0]}$; it must be made based on insight into the problem at hand. A good initial guess is important for two reasons:
 
 * a bad initial guess may result in the solution NOT to converge;

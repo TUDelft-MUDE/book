@@ -1,5 +1,5 @@
 (03_wls)=
-## Weighted least-squares estimation
+# Weighted least-squares estimation
 
 In ordinary least-squares estimation, we assume that all observations are equally important. In many cases this is not realistic, as observations may be obtained by different measurement systems, or under different circumstances. We want our methodology for least-squares estimation to be able to take this into account.
 
@@ -30,7 +30,7 @@ $$
 \end{align*}
 $$
 
-To see the derivation, watch [the video](video_WLS), though you will not be asked to do this on the exam.
+To see the derivation, watch [the video](03_wls_video), though you will not be asked to do this on the exam.
 
 We also find the derived estimate $ \mathrm{\hat{y}} $ and $ \mathrm{\hat{\epsilon}} $:
 
@@ -49,8 +49,8 @@ $$
 <iframe src="https://tudelft.h5p.com/content/1292046737060674407/embed" aria-label="WLS_1" width="1088" height="637" frameborder="0" allowfullscreen="allowfullscreen" allow="autoplay *; geolocation *; microphone *; camera *; midi *; encrypted-media *"></iframe><script src="https://tudelft.h5p.com/js/h5p-resizer.js" charset="UTF-8"></script>
 
 :::
-
-### Video
+(03_wls_video)=
+## Video
 ```{eval-rst}
 .. raw:: html
 
@@ -61,7 +61,7 @@ $$
 You will not be asked to derive the weighted least-squares solution as shown in the video.
 ```
 
-### Discussion on the weight matrix
+## Discussion on the weight matrix
 The weight matrix $\mathrm{W}$ expresses the (relative) weights between the observations. It is always a symmetric square matrix. The size of the weight matrix depends on the number of observations, $m$. The size of the weight matrix is $m\times m$.
 
 If it is a unit matrix ($\mathrm{W=I}$), this implies that all observations have equal weight. Note that in this case the equations are equal to the ordinary least-squares solution.
@@ -74,9 +74,9 @@ If it is a diagonal matrix, with different values on the diagonal, this implies 
 
 :::
 
-### Weighted least-squares estimator: properties
+## Weighted least-squares estimator: properties
 
-Until now, we have looked at the weighted least-squares solution of a single *realization* of the observations, where generally we assume that it is a realization of the *random* observable vector $Y$, since measurements are affected by random errors. As such it follows the the weighted least-squares *estimator* is given by:
+Until now, we have looked at the weighted least-squares solution of a single *realization* of the observations, where generally we assume that it is a realization of the *random* observable vector $Y$, since measurements are affected by random errors. As such it follows the weighted least-squares *estimator* is given by:
 
 $$
 \hat{X}  = \mathrm{(A^T W A )^{-1} A^T W} Y
@@ -92,13 +92,13 @@ $$
 \mathbb{E}(\hat{X})  = \mathrm{(A^T W A )^{-1} A^T W} \mathbb{E}(Y) = \mathrm{(A^T W A )^{-1} A^T W Ax = x}
 $$
 
-This a very desirable property. It applies that if we would repeat the measurements many times to obtain a new estimate, the *average of the estimated* values would be equal to the true values.
+This a very desirable property. It implies that if we would repeat the measurements many times to obtain a new estimate, the *average of the estimated* values would be equal to the true values.
 
 :::{card} Exercise
 
 What is the covariance matrix of the weighted least-squares estimator? You can assume the covariance matrix $\Sigma_Y$ of the observables to be given. Hence, you need to apply the (co)variance propagation law:
 
-If $\hat{X}=\mathrm{L}^T Y$, then $\Sigma_{\hat{X}} = \mathrm{L}^T\Sigma_Y  \mathrm{L} $
+If $\hat{X}=\mathrm{L}^T Y$, then $\Sigma_{\hat{X}} = \mathrm{L}^T\Sigma_Y  \mathrm{L} $, with $\mathrm{L^T} = \mathrm{(A^T W A )^{-1} A^T W}$. So derive $\Sigma_{\hat{X}}$ as a function of $\Sigma_Y$, $\mathrm{A}$ and $\mathrm{W}$.
 
 
 ```{admonition} Solution

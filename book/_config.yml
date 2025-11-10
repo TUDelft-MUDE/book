@@ -21,10 +21,11 @@ sphinx:
     - https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js
     thebe_config:
       use_thebe_lite: true
-      exclude_patterns: ["**/*.JPG", "**/*.PNG", "**/*.bib", "**/*.cpg", "**/*.csv", "**/*.dbf", "**/*.geojson", "**/*.gif", "**/*.html", "**/*.ico", "**/*.ipynb", "**/*.jl", "**/*.jpeg", "**/*.jpg", "**/*.json", "**/*.md", "**/*.npy", "**/*.pdf", "**/*.png", "**/*.prj", "**/*.sbn", "**/*.sbx", "**/*.shp", "**/*.shx", "**/*.svg", "**/*.tif", "**/*.tiff", "**/*.txt", "**/*.webp", "**/*.whl", "**/*.xlsx", "**/*.xml", "**/*.yml", "**/*.zip"]
+      exclude_patterns: ["**/*.JPG", "**/*.PNG", "**/*.bib", "**/*.cpg", "**/*.csv", "**/*.dbf", "**/*.geojson", "**/*.gif", "**/*.html", "**/*.ico", "**/*.ipynb", "**/*.jl", "**/*.jpeg", "**/*.jpg", "**/*.json", "**/*.md", "**/*.npy", "**/*.pdf", "**/*.pptx", "**/*.png", "**/*.prj", "**/*.sbn", "**/*.sbx", "**/*.shp", "**/*.shx", "**/*.svg", "**/*.tif", "**/*.tiff", "**/*.txt", "**/*.webp", "**/*.whl", "**/*.xlsx", "**/*.xml", "**/*.yml", "**/*.zip"]
     html_theme_options:
       logo:
         text: Textbook
+        link: "https://mude.citg.tudelft.nl/"
       repository_url: "https://github.com/TUDelft-MUDE/book"
       path_to_docs: "book"
       repository_branch: "2025-draft"
@@ -36,6 +37,9 @@ sphinx:
 # END REMOVE-FROM-PUBLISH
       launch_buttons:
         thebe: true
+# START REMOVE-FROM-PUBLISH
+    keep_warnings: true
+# END REMOVE-FROM-PUBLISH
     bibtex_default_style: myapastyle
     bibtex_reference_style: author_year_round
     tud_change_logo: false
@@ -47,7 +51,6 @@ sphinx:
   extra_extensions:
     - teachbooks_favourites
     - sphinx_tudelft_theme
-    - sphinx.ext.imgconverter
     - sphinx.ext.extlinks
     - sphinx_inline_tabs
 

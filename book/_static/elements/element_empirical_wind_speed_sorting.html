@@ -1,0 +1,276 @@
+<!--
+SPDX-License-Identifier: CC-BY-4.0
+Copyright (c) 2025 Maximilian Ramgraber
+
+This work is licensed under the Creative Commons Attribution 4.0 International License (CC BY 4.0).
+You are free to share and adapt for any purpose, even commercially, with attribution.
+Full text: https://creativecommons.org/licenses/by/4.0/
+-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <style>
+      body{ margin:0; overflow:hidden; font-family:Helvetica, sans-serif; }
+      #chart-title{ position:absolute; top:6px; margin:0; font-weight:normal; transform:translateX(-50%); }
+      #sort-reset-btn{ position:absolute; top:40px; transform:translateY(-50%); cursor:pointer; }
+    </style>
+  </head>
+  <body>
+    <h2 id="chart-title">loading…</h2>
+    <button id="sort-reset-btn" style="display:none;">Sort</button>
+    <svg id="click_sorting" xmlns="http://www.w3.org/2000/svg"></svg>
+
+    <script>
+    // =============================================================================
+    // layout & scales
+    // =============================================================================
+    const vw = Math.max(document.documentElement.clientWidth||0, window.innerWidth||0)*0.95
+    const vh = Math.max(document.documentElement.clientHeight||0,window.innerHeight||0)*0.95
+    const aspect = 2.0
+
+    var width, height
+    if (vw/aspect < vh){ width = vw; height = vw/aspect } else { width = vh*aspect; height = vh }
+
+    var svg = d3.select("#click_sorting").attr("width", width).attr("height", height)
+
+    const fsz = (12*width/600).toString() + "px"
+    const stroke = 3*height/600
+    const r = 2.5*height/600
+    const r_act = 4*height/600
+
+    d3.select("#chart-title")
+      .style("font-size", fsz)
+      .style("left", (width/2).toString() + "px")
+
+    const right_mar = width*0.14, gap = width*0.02
+    const plot_x = [width*0.08, width - right_mar - gap]
+    const plot_y = [height*0.10, height*0.75]
+
+    d3.select("#sort-reset-btn")
+      .style("left", (width - right_mar/2).toString() + "px")
+      .style("top", ((plot_y[0] + plot_y[1])/2).toString() + "px")
+      .style("font-size", fsz)
+
+    const x_time = d3.scaleTime().range(plot_x)
+    const x_rank = d3.scaleLinear().range(plot_x)
+    const y = d3.scaleLinear().range([plot_y[1], plot_y[0]])
+
+    const x_axis_time = d3.axisBottom(x_time).ticks(d3.timeMonth.every(3)).tickFormat(d3.timeFormat("%m/%Y"))
+    const x_axis_rank = d3.axisBottom(x_rank).ticks(6)
+    const y_axis = d3.axisLeft(y)
+
+    const g_x_time = svg.append("g")
+      .attr("transform", "translate(0," + (plot_y[1]).toString() + ")")
+      .style("font-size", fsz)
+
+    const g_x_rank = svg.append("g")
+      .attr("transform", "translate(0," + (plot_y[1]).toString() + ")")
+      .style("font-size", fsz)
+      .style("opacity", 0)
+
+    const g_y = svg.append("g")
+      .attr("transform", "translate(" + (plot_x[0]).toString() + ",0)")
+      .style("font-size", fsz)
+
+    const x_lab_time = svg.append("text")
+      .attr("transform", "translate(" + ((plot_x[0]+plot_x[1])/2).toString() + "," + (height*0.875).toString() + ")")
+      .style("text-anchor","middle")
+      .text("time")
+      .style("font-size", fsz)
+
+    const x_lab_rank = svg.append("text")
+      .attr("transform", "translate(" + ((plot_x[0]+plot_x[1])/2).toString() + "," + (height*0.875).toString() + ")")
+      .style("text-anchor","middle")
+      .text("rank")
+      .style("font-size", fsz)
+      .style("opacity", 0)
+
+    svg.append("text")
+      .attr("transform", "translate(" + (width*0.03).toString() + "," + ((plot_y[0]+plot_y[1])/2).toString() + ") rotate(-90)")
+      .style("text-anchor","middle")
+      .text("wind speed [m/s]")
+      .style("font-size", fsz)
+
+    // =============================================================================
+    // data load with fallback (archive ≤ week_ago + recent past 7d + forecast 1d)
+    // =============================================================================
+    const now = new Date()
+    const start_d = new Date(now); start_d.setDate(start_d.getDate()-364)
+    const start = start_d.toISOString().slice(0,10)
+    const week_ago = new Date(now); week_ago.setDate(week_ago.getDate()-7)
+    const week_ago_str = week_ago.toISOString().slice(0,10)
+
+    const lat = 52.00667, lon = 4.35556
+    const archive_url = "https://archive-api.open-meteo.com/v1/archive?latitude=" + lat
+      + "&longitude=" + lon
+      + "&start_date=" + start
+      + "&end_date=" + week_ago_str
+      + "&hourly=wind_speed_10m&timezone=Europe%2FAmsterdam"
+
+    const recent_url = "https://api.open-meteo.com/v1/forecast?latitude=" + lat
+      + "&longitude=" + lon
+      + "&hourly=wind_speed_10m&past_days=7&forecast_days=1&timezone=Europe%2FAmsterdam"
+
+    const backup = "wind_speed_Delft_2024.json"
+
+    var data_orig = null, data_sort = null, latest = null, sorted = false
+
+    combine(archive_url, recent_url).catch(e => fetch_data(backup, true)).catch(fatal)
+
+    async function combine(u_archive, u_recent){
+      const [ra, rr] = await Promise.all([fetch(u_archive), fetch(u_recent)])
+      if(!ra.ok || !rr.ok) throw new Error("net")
+      const ja = await ra.json(), jr = await rr.json()
+
+      const ta = ja.hourly && ja.hourly.time, sa = ja.hourly && ja.hourly.wind_speed_10m
+      const tr = jr.hourly && jr.hourly.time, sr = jr.hourly && jr.hourly.wind_speed_10m
+      if(!ta || !sa || !tr || !sr) throw new Error("schema")
+
+      const rows = []
+
+      // archive: strictly before week_ago (avoid overlap)
+      for (var i=0;i<ta.length;i++){
+        const d = new Date(ta[i]), v = sa[i]
+        if (d < week_ago && v != null && isFinite(v)) rows.push({ date:d, speed:+v })
+      }
+
+      // recent: week_ago … now (includes freshest hours from forecast)
+      for (var j=0;j<tr.length;j++){
+        const d = new Date(tr[j]), v = sr[j]
+        if (d >= week_ago && d <= now && v != null && isFinite(v)) rows.push({ date:d, speed:+v })
+      }
+
+      rows.sort((a,b)=>a.date-b.date)
+      if (!rows.length) throw new Error("no data")
+
+      data_orig = rows
+      latest = rows[rows.length-1]
+      data_sort = rows.slice().sort((a,b)=>a.speed-b.speed).map((d,i)=>({ ...d, rank:i }))
+
+      draw_initial(false)
+    }
+
+    // backup loader (unchanged logic, used only if the combined fetch fails)
+    async function fetch_data(url, is_backup=false){
+      const r = await fetch(url); if(!r.ok) throw new Error(r.statusText)
+      const j = await r.json(), t = j.hourly?.time, s = j.hourly?.wind_speed_10m; if(!t||!s) throw new Error("schema")
+      data_orig = []
+      for (var i=0;i<t.length;i++){
+        const d = new Date(t[i])
+        if ((is_backup || d <= now) && s[i] != null) data_orig.push({ date:d, speed:+s[i] })
+      }
+      if (!data_orig.length) throw new Error("no data")
+      latest = data_orig[data_orig.length-1]
+      data_sort = data_orig.slice().sort((a,b)=>a.speed-b.speed).map((d,i)=>({ ...d, rank:i }))
+      draw_initial(is_backup)
+    }
+
+
+    // =============================================================================
+    // draw initial time-series
+    // =============================================================================
+    var line_t, points, line_r, vline, hline
+    const btn = d3.select("#sort-reset-btn").on("click", toggle)
+
+    function draw_initial(is_backup){
+      d3.select("#chart-title")
+        .text("Wind speed in Delft on " + d3.timeFormat("%e. %b at %H:%M %p")(latest.date)
+          + ": " + latest.speed.toFixed(1) + " m/s" + (is_backup ? " (backup data)" : ""))
+
+      x_time.domain(d3.extent(data_orig, d=>d.date))
+      x_rank.domain([0, data_orig.length-1])
+      y.domain([0, d3.max(data_orig, d=>d.speed)]).nice()
+
+      g_x_time.call(x_axis_time)
+      g_y.call(y_axis)
+
+      line_t = svg.append("path").datum(data_orig)
+        .attr("fill","none").attr("stroke","#666").attr("stroke-width", stroke)
+        .attr("d", d3.line().x(d=>x_time(d.date)).y(d=>y(d.speed)))
+
+      points = svg.append("g").selectAll("circle").data(data_orig).enter().append("circle")
+        .attr("cx", d=>x_time(d.date)).attr("cy", d=>y(d.speed))
+        .attr("r", d=> d===latest ? r_act : r)
+        .attr("fill", d=> d===latest ? "red" : "#444")
+        .style("opacity", 0)
+
+      vline = svg.append("line")
+        .attr("x1", x_time(latest.date)).attr("x2", x_time(latest.date))
+        .attr("y1", plot_y[0]).attr("y2", plot_y[1])
+        .attr("stroke", "red").attr("stroke-width", 1.5)
+
+      hline = svg.append("line")
+        .attr("x1", plot_x[0]).attr("x2", plot_x[1])
+        .attr("y1", y(latest.speed)).attr("y2", y(latest.speed))
+        .attr("stroke", "red").attr("stroke-width", 1.5)
+
+      btn.style("display","block")
+    }
+
+    // =============================================================================
+    // interaction
+    // =============================================================================
+    function toggle(){ sorted ? reset() : sort() }
+
+    function sort(){
+      sorted = true; btn.text("Reset")
+      const F = 1000, M = 2000, L = 1000
+
+      // phase 1
+      line_t.transition().duration(F).style("opacity",0)
+      g_x_time.transition().duration(F).style("opacity",0)
+      x_lab_time.transition().duration(F).style("opacity",0)
+      points.transition().duration(F).style("opacity",1)
+
+      // phase 2
+      const latest_rank = data_sort.find(d=>d.date.getTime()===latest.date.getTime()).rank
+      points.transition().delay(F).duration(M)
+        .attr("cx", d=> x_rank(data_sort.find(sd=>sd.date.getTime()===d.date.getTime()).rank))
+      g_x_rank.call(x_axis_rank).transition().delay(F).duration(M).style("opacity",1)
+      x_lab_rank.transition().delay(F).duration(M).style("opacity",1)
+
+      const x0 = x_time(latest.date), x1 = x_rank(latest_rank)
+      vline.transition().delay(F).duration(M)
+        .attrTween("x1", ()=> t=> x0 + (x1-x0)*t)
+        .attrTween("x2", ()=> t=> x0 + (x1-x0)*t)
+
+      // phase 3
+      line_r = svg.append("path").datum(data_sort)
+        .attr("fill","none").attr("stroke","#888").attr("stroke-width", stroke)
+        .attr("d", d3.line().x((d,i)=>x_rank(i)).y(d=>y(d.speed))).style("opacity",0)
+      line_r.transition().delay(F+M).duration(L).style("opacity",1)
+      points.transition().delay(F+M).duration(L).style("opacity",0)
+    }
+
+    function reset(){
+      sorted = false; btn.text("Sort")
+      const D = 3000
+
+      g_x_time.transition().duration(D).style("opacity",1)
+      g_x_rank.transition().duration(D).style("opacity",0)
+      x_lab_time.transition().duration(D).style("opacity",1)
+      x_lab_rank.transition().duration(D).style("opacity",0)
+
+      points.transition().duration(D)
+        .attr("cx", d=> x_time(d.date))
+        .style("opacity",0)
+
+      if (line_r) line_r.transition().duration(D).style("opacity",0).remove(), line_r = null
+
+      line_t.transition().duration(D).style("opacity",1)
+
+      const x_back = x_time(latest.date)
+      vline.transition().duration(D).attr("x1", x_back).attr("x2", x_back)
+    }
+
+    function fatal(e){
+      console.error(e)
+      svg.append("text").attr("x", width/2).attr("y", height/2)
+        .style("text-anchor","middle").style("font-size", fsz)
+        .style("fill","red").text("Data load failed")
+    }
+    </script>
+  </body>
+</html>
