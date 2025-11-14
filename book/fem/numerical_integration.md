@@ -2,11 +2,7 @@
 
 In the discrete equations of the finite element method, integrals appear. These need to be evualated 
 
-
-```{eval-rst}
-.. raw:: html
-
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/XQY8i0e-jUA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+```{video} https://www.youtube.com/embed/XQY8i0e-jUA
 ```
 
 For example in the 1D Poisson equation it is possible to perform this analytically, as follows.

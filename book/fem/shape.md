@@ -10,11 +10,7 @@ In summary, there are two directions in which we can generalize the finite eleme
 
 In this section, we will start with the second of these. 
 
-
-```{eval-rst}
-.. raw:: html
-
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/pywJkVwAZJA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+```{video} https://www.youtube.com/embed/pywJkVwAZJA
 ```
 
 ## Recap of linear shape function 
