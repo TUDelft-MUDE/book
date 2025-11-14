@@ -100,7 +100,6 @@ parts:
         - file: observation_theory/09_Notebook_Testing.ipynb
         - file: observation_theory/09_Notebook_OMT.ipynb
       - file: observation_theory/99_NotationFormulas
-      
 
   - caption: Q2 Topics
     numbered: 2
@@ -112,8 +111,6 @@ parts:
       - file: numerical_methods_for_PDEs/advection_equation.md
       - file: numerical_methods_for_PDEs/advection_diffusion_eq.ipynb
 
-# START REMOVE-FROM-PUBLISH
-    
     - file: fem/intro.md
       sections:
       - file: fem/strong.md
@@ -124,7 +121,8 @@ parts:
       - file: fem/numerical_integration.md
       - file: fem/poisson2d.md
       - file: fem/isoparametric_mapping.md
-
+      
+# START REMOVE-FROM-PUBLISH
     - file: signal/intro.md
       sections:
       - file: signal/fourier_real
@@ -303,12 +301,12 @@ parts:
       - external: https://github.com/TeachBooks/learn-programming/blob/mude-2025/book/python/oop/Inheritance.ipynb
       - external: https://github.com/TeachBooks/learn-programming/blob/mude-2025/book/python/oop/Polymorphism.ipynb
       - external: https://github.com/TeachBooks/learn-programming/blob/mude-2025/book/python/oop/exercise.ipynb
-# START REMOVE-FROM-PUBLISH
     - file: programming/week_2_2
       sections:
       - file: programming/week_2_2/assembly
       - file: programming/week_2_2/sparse
       - file: programming/week_2_2/solver.ipynb
+# START REMOVE-FROM-PUBLISH
     - file: optimization/gurobi.md
       title: "Week 2.4: Gurobi installation"
     - file: programming/week_1_6_old
