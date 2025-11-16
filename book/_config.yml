@@ -53,6 +53,7 @@ sphinx:
     - sphinx_tudelft_theme
     - sphinx.ext.extlinks
     - sphinx_inline_tabs
+    - sphinx_apa_references
 
 bibtex_bibfiles:
   - _bibliography/references.bib
