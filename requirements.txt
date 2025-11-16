@@ -3,3 +3,5 @@ sphinx-tudelft-theme
 sphinx-inline-tabs
 
 git+https://github.com/TeachBooks/TeachBooks-Favourites #BUMP
+
+git+https://github.com/TeachBooks/Sphinx-APA-References
