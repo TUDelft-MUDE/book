@@ -120,8 +120,7 @@ parts:
       - file: fem/shape.md
       - file: fem/numerical_integration.md
       - file: fem/poisson2d.md
-      - file: fem/isoparametric_mapping.md
-      
+      - file: fem/isoparametric_mapping.md     
 # START REMOVE-FROM-PUBLISH
     - file: signal/intro.md
       sections:
