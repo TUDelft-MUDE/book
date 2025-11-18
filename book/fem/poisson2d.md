@@ -74,7 +74,7 @@ $$
 \nabla\cdot(a\mathbf{b}) =  a\nabla\cdot\mathbf{b} + \nabla a\cdot\mathbf{b} 
 $$(product-rule-div)
 
-And secondly, divergence theorom, which reads (with vector $\mathbf{v}$)
+And secondly, divergence theorem, which reads (with vector $\mathbf{v}$)
 
 $$
 \int_\Omega \nabla\cdot\mathbf{v}\,d\Omega = \int_\Gamma \mathbf{v}\cdot\mathbf{n}\,d\Gamma
