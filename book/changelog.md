@@ -2,7 +2,10 @@
 
 [TeachBooks Versioning](https://teachbooks.io/manual/features/versioning.html) is used (a special type of semantic numbering for educational purposes) with generic format `v<academic_year>.<additions>.<errata>`, with an additional `.pre-release` added for incomplete books.
 
-## 2025-11-07: v2025.9.0.pre-release
+## 2025-11-18: v2025.10.1.pre-release
+- Cosmetic change on [](./fem/matrix.ipynb) `EA*np.dot(np.transpose(B), B)*w_i` $\leftarrow$ `EA * B.T @ B * w_i` 
+
+## 2025-11-14: v2025.10.0.pre-release
 - Added [](./fem/intro.md)
 - Added [](programming/week_2_2)
 
