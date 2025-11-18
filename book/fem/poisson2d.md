@@ -74,13 +74,13 @@ $$
 \nabla\cdot(a\mathbf{b}) =  a\nabla\cdot\mathbf{b} + \nabla a\cdot\mathbf{b} 
 $$(product-rule-div)
 
-And secondly, divergence theorom, which reads (with vector $\mathbf{v}$)
+And secondly, divergence theorem, which reads (with vector $\mathbf{v}$)
 
 $$
 \int_\Omega \nabla\cdot\mathbf{v}\,d\Omega = \int_\Gamma \mathbf{v}\cdot\mathbf{n}\,d\Gamma
 $$(divergence-theorem)
 
-With {eq}`product-rule-div`, we rewrite the left hand side of Equation {eq}`weighted-poisson-2d` (with $w$ for $a$ and $\nabla u$ for $\mathbf{v}$). Then with {eq}`divergence-theorem` (with $w\nabla u$ for $\mathbf{v}$), we rewrite the second integral into a surface integral
+With {eq}`product-rule-div`, we rewrite the left hand side of Equation {eq}`weighted-poisson-2d` (with $w$ for $a$ and $\nu\nabla u$ for $\mathbf{b}$). Then with {eq}`divergence-theorem` (with $w\nu\nabla u$ for $\mathbf{v}$), we rewrite the second integral into a surface integral
 
 ```
 
