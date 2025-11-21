@@ -30,7 +30,7 @@ $$\begin{gather*}e^{j\theta}+e^{-j\theta}=2\cos\theta\implies\cos\theta=\frac{1}
 
 $$x(t)=\sum_{k=-\infty}^{\infty}X_ke^{jk\omega_0 t}$$
 
-First equation is known as **synthesis** equation of Fourier Series, as in contructs the signal using complex exponential basis functions
+First equation is known as **synthesis** equation of Fourier Series, as it constructs the signal using complex exponential basis functions
 
 $$X_k=\frac{1}{T_0}\int_{T_0}x(t)e^{-jk\omega_0 t}dt, \hspace{10px}k\in\mathbb{Z}$$
 
