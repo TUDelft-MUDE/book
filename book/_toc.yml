@@ -121,7 +121,6 @@ parts:
       - file: fem/numerical_integration.md
       - file: fem/poisson2d.md
       - file: fem/isoparametric_mapping.md     
-# START REMOVE-FROM-PUBLISH
     - file: signal/intro.md
       sections:
       - file: signal/fourier_real
@@ -133,7 +132,7 @@ parts:
       - file: signal/dft
       - file: signal/spectral_est
       - file: signal/videos
-
+# START REMOVE-FROM-PUBLISH
     - file: time_series/intro.md
       sections:
       - file: time_series/components.md
