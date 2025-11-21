@@ -2,6 +2,10 @@
 
 [TeachBooks Versioning](https://teachbooks.io/manual/features/versioning.html) is used (a special type of semantic numbering for educational purposes) with generic format `v<academic_year>.<additions>.<errata>`, with an additional `.pre-release` added for incomplete books.
 
+## 2025-11-21: v2025.11.0.pre-release
+- Added [](./signal/intro.md)
+- Added [](programming/week_2_3)
+
 ## 2025-11-18: v2025.10.2.pre-release
 - Fix mistake in box on integration by parts / divergence theorem on [](./fem/poisson2d.md)
 
