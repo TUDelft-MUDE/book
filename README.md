@@ -34,7 +34,7 @@ The HTML files associated with each release are archived to Zenodo in a zip file
 
 Source code is versioned using Git and stored on GitHub in repository [TUDelft-MUDE/book](https://github.com/TUDelft-MUDE/book). Zenodo is used to automatically archive the source code for every release and associated with DOI [10.5281/zenodo.16227601](https://doi.org/10.5281/zenodo.16227601), which will automatically resolve to the newest DOI, as well as the most recent GitHub release (this may not be in sequential order in terms of academic years). The metadata for this Zenodo record comes from the file `CITATION.cff`; besides updating the list of editors and the appropaite DOI for the Zenodo book record, no metadata should be changed in this file (use the README, Credits page and/or Zenodo book record instead).
 
-A PDF of the book will eventually be generated and uploaded to the TU Delft Repository (PURE) _work in progress._ The PDF is intended only for archival purposes in PURE and is not intended to be read.
+A PDF of the book is generated and uploaded to the TU Delft Repository (PURE). This adds attribution to the TU Delft profile of involved authors. The PDF is intended only for archival purposes in PURE and is not intended to be read.
 
 In the future, additional records may be created to more easily enable citation of individual book chapters (e.g., Zenodo or PURE records for each chapter).
 

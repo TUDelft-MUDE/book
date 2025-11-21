@@ -66,9 +66,7 @@ The figure below shows both the CDF and the complementary CDF.
 
 ```{figure} https://files.mude.citg.tudelft.nl/survival.png
 ---
-scale: 75%
 name: survival gaussian
-
 ---
 Gaussian distribution function: CDF and survival function or complemetary CDF.
 ```

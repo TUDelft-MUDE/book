@@ -2,6 +2,20 @@
 
 [TeachBooks Versioning](https://teachbooks.io/manual/features/versioning.html) is used (a special type of semantic numbering for educational purposes) with generic format `v<academic_year>.<additions>.<errata>`, with an additional `.pre-release` added for incomplete books.
 
+## 2025-11-18: v2025.10.2.pre-release
+- Fix mistake in box on integration by parts / divergence theorem on [](./fem/poisson2d.md)
+
+## 2025-11-18: v2025.10.1.pre-release
+- Cosmetic change on [](./fem/matrix.ipynb) `EA*np.dot(np.transpose(B), B)*w_i` $\leftarrow$ `EA * B.T @ B * w_i` 
+
+## 2025-11-14: v2025.10.0.pre-release
+- Added [](./fem/intro.md)
+- Added [](programming/week_2_2)
+
+## 2025-11-07: v2025.9.0.pre-release
+- Added [](./numerical_methods_for_PDEs/overview.md)
+- Added [](programming/week_2_1)
+
 ## 2025-10-06: v2025.8.0.pre-release
 - Added [](./observation_theory/overview.md)
 
