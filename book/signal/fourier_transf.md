@@ -92,7 +92,7 @@ The figure above illustrates an example of $|X(f)|$ and $\theta(f)$ both as a fu
 
 ## Summary
 
-A-periodic functions can be written as integrals, **continuous** over **frequency**. This yields the so-called **Fourier tranform** (and its inverse):
+A-periodic functions can be written as integrals, **continuous** over **frequency**. This yields the so-called **Fourier transform** (and its inverse):
 
 $$\begin{gather*}X(f)=\int_{-\infty}^{\infty}x(t)e^{-j2\pi ft}dt\\ x(t)=\int_{-\infty}^{\infty}X(f)e^{j2\pi ft}df\end{gather*}$$
 
