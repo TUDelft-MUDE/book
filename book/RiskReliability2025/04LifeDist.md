@@ -19,6 +19,15 @@ $f(t)=\lambda e^{-\lambda t}, r(t)=\frac{f(t)}{1-F(t)}=\frac{\lambda e^{-λt}}{1
 
  $f(t) = \lambda\alpha t^{\alpha-1}e^{-\lambda t^\alpha}$, $r(t) = \lambda \alpha t^{\alpha-1}$, $\lambda$, $\alpha$ $>0$, $t\geq 0$. Another common parametrization of the Weibull density is $f(t) = \frac{b}{a}\left(\frac{t}{a}\right)^{b-1} e^{-\left(\frac{t}{a}\right) t^b}$ 
 
+
+````{iframe-figure} ../_static/elements/element_failure_rate.html
+:name: failure_rate
+:aspectratio: 2 / 1
+
+Interactively visualize the relationship between the PDF and the CDF of a Gaussian distribution.
+````
+
+
 ```{figure} https://files.mude.citg.tudelft.nl/failure_rate.png
  
 ---

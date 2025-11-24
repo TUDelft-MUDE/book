@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://unpkg.com/mathjs/lib/browser/math.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js"></script>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <style>
+      body {
+        margin: 0;
+        overflow: hidden;
+        font-family: Helvetica, sans-serif;
+      }
+      .tickLabel {
+        position: absolute;
+        transform: translateX(-50%);
+        pointer-events: none;
+      }
+      .sliderLabel{
+        position:absolute;
+        pointer-events:none;
+        transform:translateX(-50%);
+      }
+    </style>
+  </head>
+  <body>
+
+    <div id="my_datavisualization">
+      <svg id="click" xmlns="http://www.w3.org/2000/svg"></svg>
+    </div>
+
+    <script>
+      // Viewport & SVG sizing
+      const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0) * 0.95;
+      const vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0) * 0.95;
+      const aspect = 1.5;
+      let width, height;
+      if (vw / aspect < vh) { width = vw; height = vw / aspect; } else { width = vh * aspect; height = vh; }
+
+      var svg = d3.select('#click').attr('width', width).attr('height', height);
+
+      // Slider UI scaling
+      const uiScale = height / 600;
+      const trackH  = 15 * uiScale;
+      const thumbSz = 25 * uiScale;
+
+      let styleEl = document.getElementById('sliderDynCSS');
+      if (!styleEl) {
+        styleEl = document.createElement('style');
+        styleEl.id = 'sliderDynCSS';
+        document.head.appendChild(styleEl);
+      }
+
+      styleEl.textContent = `
+      input[type=range]{
+        -webkit-appearance: none;
+        appearance: none;
+        width: auto;
+        height: ${trackH}px;
+        background: transparent;
+        margin: 0;
+        padding: 0;
+      }
+      input[type=range]::-webkit-slider-runnable-track{
+        height: ${trackH}px;
+        background: #ccc;
+        border-radius: ${trackH/2}px;
+      }
+      input[type=range]::-webkit-slider-thumb{
+        -webkit-appearance: none;
+        appearance: none;
+        width: ${thumbSz}px;
+        height: ${thumbSz}px;
+        border-radius: 50%;
+        background: #666;
+        margin-top: calc(${trackH}px / 2 - ${thumbSz}px / 2);
+      }
+      input[type=range]::-moz-range-track{
+        height: ${trackH}px;
+        background: #ccc;
+        border-radius: ${trackH/2}px;
+      }
+      input[type=range]::-moz-range-thumb{
+        width: ${thumbSz}px;
+        height: ${thumbSz}px;
+        border-radius: 50%;
+        background: #666;
+        border: none;
+      }
+      input[type=range]::-ms-track{
+        height: ${trackH}px;
+        background: transparent;
+        border-color: transparent;
+        color: transparent;
+      }
+      input[type=range]::-ms-fill-lower{
+        background: #ccc;
+        border-radius: ${trackH/2}px;
+      }
+      input[type=range]::-ms-fill-upper{
+        background: #ccc;
+        border-radius: ${trackH/2}px;
+      }
+      input[type=range]::-ms-thumb{
+        width: ${thumbSz}px;
+        height: ${thumbSz}px;
+        border-radius: 50%;
+        background: #666;
+        border: none;
+      }
+      select{
+        position: absolute;
+        font-family: Helvetica, sans-serif;
+      }
+      `;
+
+      // Parameters for failure distributions
+      var Alpha  = 1.5;             // alpha > 0 (shape)
+      var Lambda = 1.0;             // lambda > 0 (rate/scale)
+      var Dist   = 'exponential';   // 'exponential', 'gamma', 'weibull'
+
+      function linspace(start, end, resolution) {
+        var spacing = [];
+        for (var i = 0; i < resolution; i++) spacing.push(start + (end - start) * i / (resolution - 1));
+        return spacing;
+      }
+
+      // Regularized incomplete gammas P(a,x) and Q(a,x)
+      function gammaPQ(a, x){
+        if (x < 0 || a <= 0) return [NaN, NaN];
+        var ITMAX = 100;
+        var EPS   = 1e-10;
+        var FPMIN = 1e-30;
+        var gln   = Math.log(math.gamma(a)); // log Γ(a)
+
+        var P, Q;
+
+        if (x === 0){
+          P = 0; Q = 1;
+        } else if (x < a + 1){
+          // series for P
+          var ap  = a;
+          var sum = 1 / a;
+          var del = sum;
+          for (var n = 1; n <= ITMAX; n++){
+            ap  += 1;
+            del *= x / ap;
+            sum += del;
+            if (Math.abs(del) < Math.abs(sum) * EPS) break;
+          }
+          P = sum * Math.exp(-x + a * Math.log(x) - gln);
+          if (P < 0) P = 0;
+          if (P > 1) P = 1;
+          Q = 1 - P;
+        } else {
+          // continued fraction for Q
+          var b = x + 1 - a;
+          var c = 1 / FPMIN;
+          var d = 1 / b;
+          var h = d;
+          for (var i = 1; i <= ITMAX; i++){
+            var an = -i * (i - a);
+            b += 2;
+            d = an * d + b;
+            if (Math.abs(d) < FPMIN) d = FPMIN;
+            c = b + an / c;
+            if (Math.abs(c) < FPMIN) c = FPMIN;
+            d = 1 / d;
+            var del_cf = d * c;
+            h *= del_cf;
+            if (Math.abs(del_cf - 1) < EPS) break;
+          }
+          Q = h * Math.exp(-x + a * Math.log(x) - gln);
+          if (Q < 0) Q = 0;
+          if (Q > 1) Q = 1;
+          P = 1 - Q;
+        }
+        return [P, Q];
+      }
+
+
+
+      // PDFs
+      function failurePDF(t){
+        if (t < 0) return 0;
+        var a = Alpha, l = Lambda;
+        if (Dist === 'exponential'){
+          // f(t) = λ e^{-λ t}
+          return l * Math.exp(-l * t);
+        } else if (Dist === 'gamma'){
+          // f(t) = λ (λ t)^{α-1} 1/Γ(α) e^{-λ t}
+          var g = math.gamma(a);
+          if (!isFinite(g) || g <= 0) return 0;
+          return l * Math.pow(l * t, a - 1) * Math.exp(-l * t) / g;
+        } else if (Dist === 'weibull'){
+          // f(t) = λ α t^{α-1} e^{-λ t^α}
+          if (t === 0 && a < 1) return 0;
+          return l * a * Math.pow(t, a - 1) * Math.exp(-l * Math.pow(t, a));
+        }
+        return 0;
+      }
+
+      function evaluate_pdf(arr) {
+        var out = [];
+        for (let i = 0; i < arr.length; i++) out.push(failurePDF(arr[i]));
+        return out;
+      }
+
+      // CDFs (Exponential & Weibull analytic, Gamma via incomplete gamma)
+      function evaluate_cdf(arr, pdfVals){
+        var out = [];
+        var a = Alpha, l = Lambda;
+
+        if (Dist === 'gamma'){
+          for (var j = 0; j < arr.length; j++){
+            var t = arr[j];
+            var Fg;
+            if (t < 0){
+              Fg = 0;
+            } else {
+              var xg = l * t;
+              var pq = gammaPQ(a, xg); // [P,Q]
+              Fg = pq[0];              // use P for the actual CDF
+              if (!isFinite(Fg)) Fg = 0;
+            }
+            if (Fg < 0) Fg = 0;
+            if (Fg > 1) Fg = 1;
+            out.push(Fg);
+          }
+        } else {
+          // analytic CDFs
+          for (var k = 0; k < arr.length; k++){
+            var t2 = arr[k];
+            var F;
+            if (t2 < 0){
+              F = 0;
+            } else if (Dist === 'exponential'){
+              // F(t) = 1 - e^{-λ t}
+              F = 1 - Math.exp(-l * t2);
+            } else if (Dist === 'weibull'){
+              // F(t) = 1 - e^{-λ t^α}
+              F = 1 - Math.exp(-l * Math.pow(t2, a));
+            } else {
+              F = 0;
+            }
+            if (F < 0) F = 0;
+            if (F > 1) F = 1;
+            out.push(F);
+          }
+        }
+        return out;
+      }
+
+
+
+
+
+      // Plot window (left half)
+      const window_x_pdf = [width * 0.1,  width * 0.5];
+      const window_y_pdf = [height * 0.1, height * 0.9];
+
+      // Time domain
+      const tMin = 0.001; // avoid singularities at 0
+      const tMax = 9;
+
+      // Scales
+      const xScale_pdf = d3.scaleLinear().domain([0, tMax]).range(window_x_pdf);
+      const yScale_pdf = d3.scaleLinear().domain([0, 1]).range([window_y_pdf[1], window_y_pdf[0]]);
+
+      var xAxis_pdf = d3.axisBottom(xScale_pdf).ticks(10);
+      var yAxis_pdf = d3.axisLeft(yScale_pdf);
+
+      var tickFontSize = (12 * width / 600) + 'px';
+
+      var xaxis_pdf = svg.append('g')
+        .attr('transform', 'translate(0,' + window_y_pdf[1] + ')')
+        .call(xAxis_pdf)
+        .style('font-size', tickFontSize);
+
+      svg.append('text')
+        .attr('transform', 'translate(' + ((window_x_pdf[0] + window_x_pdf[1]) / 2) + ',' + (height * 0.95) + ')')
+        .style('text-anchor', 'middle')
+        .text('time')
+        .style('font-size', tickFontSize);
+
+      var yaxis_pdf = svg.append('g')
+        .attr('transform', 'translate(' + window_x_pdf[0] + ',0)')
+        .call(yAxis_pdf)
+        .style('font-size', tickFontSize);
+
+      svg.append('text')
+        .attr('transform', 'translate(' + (width * 0.05) + ',' + ((window_y_pdf[0] + window_y_pdf[1]) / 2) + ') rotate(270)')
+        .style('text-anchor', 'middle')
+        .text('failure rate')
+        .style('font-size', tickFontSize);
+
+      // Initial data
+      var N = 401;
+      var tVals = linspace(tMin, tMax, N);
+      var tVals_fixed = tVals.slice();
+
+      var pdfVals0 = evaluate_pdf(tVals);
+      var cdfVals0 = evaluate_cdf(tVals, pdfVals0);
+
+      var frVals0 = [];
+      for (var i = 0; i < tVals.length; i++){
+        var t0 = tVals[i];
+        var r0;
+        if (Dist === 'exponential'){
+          r0 = Lambda;                             // r(t) = λ
+        } else if (Dist === 'weibull'){
+          r0 = Lambda * Alpha * Math.pow(t0, Alpha - 1); // r(t) = λ α t^{α-1}
+        } else { // gamma
+          var xg0 = Lambda * t0;
+          var pq0 = gammaPQ(Alpha, xg0);          // [P,Q]
+          var Q0  = pq0[1];                       // survival = Q
+          if (Q0 <= 0){
+            r0 = Lambda;                          // asymptotic limit
+          } else {
+            var f0 = failurePDF(t0);
+            r0 = f0 / Q0;
+          }
+        }
+        frVals0.push(r0);
+      }
+
+
+
+
+
+      var maxval0 = d3.max(frVals0); if (isNaN(maxval0) || maxval0 < 0.5) maxval0 = 0.5;
+      yScale_pdf.domain([0, maxval0 * 1.2]);
+      yaxis_pdf.call(d3.axisLeft(yScale_pdf));
+
+      var data_pdf0 = tVals.map(function(ti,i){ return {x:ti,y:frVals0[i]}; });
+
+      var valueline_pdf = d3.line()
+        .x(function(d){ return xScale_pdf(d.x); })
+        .y(function(d){ return yScale_pdf(d.y); });
+
+      svg.append('path')
+        .attr('class','line')
+        .attr('d', valueline_pdf(data_pdf0))
+        .attr('fill','none')
+        .attr('stroke-width', 3 * height / 600)
+        .attr('stroke','#666666')
+        .attr('id','line_pdf');
+
+      // Store fixed x domain
+      var xDomain_pdf_fixed = xScale_pdf.domain().slice();
+
+      function updatePlots(duration = 300){
+        var xVals = tVals_fixed;
+        var pdfVals = evaluate_pdf(xVals);
+        var cdfVals = evaluate_cdf(xVals, pdfVals);
+        
+        var frVals = [];
+        for (var i = 0; i < xVals.length; i++){
+          var t = xVals[i];
+          var r;
+          if (Dist === 'exponential'){
+            r = Lambda;
+          } else if (Dist === 'weibull'){
+            r = Lambda * Alpha * Math.pow(t, Alpha - 1);
+          } else { // gamma
+            var xg = Lambda * t;
+            var pq = gammaPQ(Alpha, xg);          // [P,Q]
+            var Q  = pq[1];                       // survival
+            if (Q <= 0){
+              r = Lambda;                         // limit as t → ∞
+            } else {
+              r = failurePDF(t) / Q;
+            }
+          }
+          frVals.push(r);
+        }
+
+
+
+
+
+        var data_pdf = xVals.map(function(ti,i){ return {x:ti,y:frVals[i]}; });
+
+        var maxval = d3.max(frVals); if (isNaN(maxval) || maxval < 0.5) maxval = 0.5;
+        yScale_pdf.domain([0, maxval * 1.2]);
+
+        xScale_pdf.domain(xDomain_pdf_fixed);
+
+        d3.select('#line_pdf')
+          .transition().duration(duration)
+          .attr('d', valueline_pdf(data_pdf));
+
+        yaxis_pdf.transition().duration(300).call(d3.axisLeft(yScale_pdf));
+      }
+
+      // Alpha slider (right half)
+      svg.append('text')
+        .attr('transform','translate(' + (width * 0.725) + ',' + (height * 0.22) + ')')
+        .style('text-anchor','middle')
+        .text('parameter \u03b1')
+        .style('font-size',tickFontSize);
+
+      var alphaSlider=document.createElement('input');
+      alphaSlider.type='range';
+      alphaSlider.id='alphaSlider';
+      alphaSlider.min=0.5;
+      alphaSlider.max=5;
+      alphaSlider.step=0.01;
+      alphaSlider.value=Alpha;
+      Object.assign(alphaSlider.style,{
+        position:'absolute',
+        left:(width*0.55)+'px',
+        top:(height*0.27)+'px',
+        width:(width*0.35)+'px',
+        margin:0,padding:0
+      });
+      document.body.appendChild(alphaSlider);
+
+      var alphaLabel=document.createElement('div');
+      alphaLabel.className='sliderLabel';
+      alphaLabel.style.top=(height*0.33)+'px';
+      document.body.appendChild(alphaLabel);
+
+      function updateAlphaLabel(){
+        var pct=(alphaSlider.value-alphaSlider.min)/(alphaSlider.max-alphaSlider.min);
+        alphaLabel.style.left=(width*0.55+pct*(width*0.35))+'px';
+        alphaLabel.textContent=(+alphaSlider.value).toFixed(2);
+      }
+      updateAlphaLabel();
+
+      alphaSlider.addEventListener('input',function(){
+        Alpha=Math.max(0.01,+this.value);
+        updatePlots(0);
+        updateAlphaLabel();
+      });
+
+      // Lambda slider (right half, below alpha)
+      svg.append('text')
+        .attr('transform','translate(' + (width * 0.725) + ',' + (height * 0.42) + ')')
+        .style('text-anchor','middle')
+        .text('parameter \u03bb')
+        .style('font-size',tickFontSize);
+
+      var lambdaSlider=document.createElement('input');
+      lambdaSlider.type='range';
+      lambdaSlider.id='lambdaSlider';
+      lambdaSlider.min=0.1;
+      lambdaSlider.max=5;
+      lambdaSlider.step=0.01;
+      lambdaSlider.value=Lambda;
+      Object.assign(lambdaSlider.style,{
+        position:'absolute',
+        left:(width*0.55)+'px',
+        top:(height*0.47)+'px',
+        width:(width*0.35)+'px',
+        margin:0,padding:0
+      });
+      document.body.appendChild(lambdaSlider);
+
+      var lambdaLabel=document.createElement('div');
+      lambdaLabel.className='sliderLabel';
+      lambdaLabel.style.top=(height*0.53)+'px';
+      document.body.appendChild(lambdaLabel);
+
+      function updateLambdaLabel(){
+        var pct=(lambdaSlider.value-lambdaSlider.min)/(lambdaSlider.max-lambdaSlider.min);
+        lambdaLabel.style.left=(width*0.55+pct*(width*0.35))+'px';
+        lambdaLabel.textContent=(+lambdaSlider.value).toFixed(2);
+      }
+      updateLambdaLabel();
+
+      lambdaSlider.addEventListener('input',function(){
+        Lambda=Math.max(0.01,+this.value);
+        updatePlots(0);
+        updateLambdaLabel();
+      });
+
+      // Distribution dropdown (right half, below sliders)
+      var distSelect = document.createElement('select');
+      distSelect.id = 'distSelect';
+      distSelect.style.left = (width * 0.725) + 'px';
+      distSelect.style.top  = (height * 0.64) + 'px';
+      distSelect.style.fontSize = tickFontSize;
+
+      var optExp = document.createElement('option'); optExp.value = 'exponential'; optExp.text = 'Exponential';
+      var optGam = document.createElement('option'); optGam.value = 'gamma';       optGam.text = 'Gamma';
+      var optWei = document.createElement('option'); optWei.value = 'weibull';     optWei.text = 'Weibull';
+
+      distSelect.appendChild(optExp);
+      distSelect.appendChild(optGam);
+      distSelect.appendChild(optWei);
+
+      distSelect.value = Dist;
+
+      distSelect.addEventListener('change', function(){
+        Dist = this.value;
+        updatePlots(0);
+      });
+
+      document.body.appendChild(distSelect);
+
+      updatePlots(0);
+
+    </script>
+  </body>
+</html>
