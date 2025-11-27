@@ -312,9 +312,10 @@ parts:
 # START REMOVE-FROM-PUBLISH
     - file: programming/week_2_4
       sections:
-      - file: programming/week_2_4/testing.ipynb
       - external: https://github.com/TUDelft-books/learn-python/blob/2025/book/errors/asserts.ipynb
       - external: https://github.com/TUDelft-books/learn-python/blob/2025/book/errors/raise_errors.ipynb
+      - external: https://github.com/TUDelft-books/learn-python/blob/2025/book/errors/handling_errors.ipynb
+      - file: programming/week_2_4/testing.ipynb
 
     - file: optimization/gurobi.md
       title: "Week 2.4: Gurobi installation"
