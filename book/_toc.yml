@@ -132,7 +132,7 @@ parts:
       - file: signal/dft
       - file: signal/spectral_est
       - file: signal/videos
-# START REMOVE-FROM-PUBLISH
+
     - file: time_series/intro.md
       sections:
       - file: time_series/components.md
@@ -152,7 +152,8 @@ parts:
         sections:
         - file: time_series/forecasting_example.ipynb
       - file: time_series/movingAverage.ipynb
-  
+      
+  # START REMOVE-FROM-PUBLISH
     - file: optimization/overview
       sections:
       - file: optimization/origins
