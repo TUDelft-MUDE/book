@@ -43,12 +43,29 @@ sphinx:
     tud_change_logo: false
     tud_change_titlesize: false
     named_colors_custom_colors: {'attributiongrey':[150,150,150]}
+    metadata_figure_settings:
+      style:
+        placement: hide
+        admonition_class: attributiongrey
+      license:
+        summaries: true
+        strict_check: true
+        substitute_missing: true
+      author:
+        substitute_missing: true
+        default_author: MUDE Teachers and the Student Army
+      copyright:
+        substitute_missing: true
+        default_copyright: Delft University of Technology
+      
+      
   extra_extensions:
     - teachbooks_favourites
     - sphinx_tudelft_theme
     - sphinx.ext.extlinks
     - sphinx_inline_tabs
     - sphinx_apa_references
+    - sphinx_metadata_figure
 
 bibtex_bibfiles:
   - _bibliography/references.bib
