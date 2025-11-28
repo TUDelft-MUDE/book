@@ -152,9 +152,8 @@ parts:
       - file: time_series/forecasting.md
         sections:
         - file: time_series/forecasting_example.ipynb
-      - file: time_series/movingAverage.ipynb
-      
-  # START REMOVE-FROM-PUBLISH
+      - file: time_series/movingAverage.ipynb  
+# START REMOVE-FROM-PUBLISH
     - file: optimization/overview
       sections:
       - file: optimization/origins
