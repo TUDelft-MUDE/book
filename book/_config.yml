@@ -46,7 +46,6 @@ sphinx:
     metadata_figure_settings:
       license:
         summaries: true
-        individual: false
         strict_check: true
         substitute_missing: true
       author:
