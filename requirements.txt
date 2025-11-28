@@ -4,6 +4,6 @@ sphinx-inline-tabs
 
 git+https://github.com/TeachBooks/TeachBooks-Favourites #BUMP
 
-sphinx-metadata-figure
+sphinx-metadata-figure #BUMP
 
 sphinx-apa-references
