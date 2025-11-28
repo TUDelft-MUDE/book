@@ -309,6 +309,13 @@ parts:
       - external: https://github.com/TUDelft-books/learn-python/blob/2025/book/errors/error_types.ipynb
       - external: https://github.com/TUDelft-books/learn-python/blob/2025/book/errors/traceback.ipynb
       
+    - file: programming/week_2_4
+      sections:
+      - external: https://github.com/TUDelft-books/learn-python/blob/2025/book/errors/asserts.ipynb
+      - external: https://github.com/TUDelft-books/learn-python/blob/2025/book/errors/raise_errors.ipynb
+      - external: https://github.com/TUDelft-books/learn-python/blob/2025/book/errors/handling_errors.ipynb
+      - file: programming/week_2_4/testing.ipynb
+      
 # START REMOVE-FROM-PUBLISH
     - file: optimization/gurobi.md
       title: "Week 2.4: Gurobi installation"
