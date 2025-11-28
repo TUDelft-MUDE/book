@@ -38,7 +38,6 @@ Below, you find an interactive element that shows the PDF and CDF of a Gumbel di
 ````{iframe-figure} ../_static/elements/element_Gumbel_pdf.html
 :name: gumbel_pdf
 :aspectratio: 1.5 / 1
-:license: CC-BY
 
 Interactively visualize the relationship between the PDF and the CDF of a Gumbel distribution.
 ````
