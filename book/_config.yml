@@ -47,10 +47,9 @@ sphinx:
       style: 
         placement: hide
       license:
-        summaries: true
+        summaries: false
         individual: false
-        strict_check: true
-        default_license: CC-BY
+        strict_check: false
       author:
         substitute_missing: true
       copyright:
