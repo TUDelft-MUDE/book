@@ -45,7 +45,6 @@ sphinx:
     named_colors_custom_colors: {'attributiongrey':[150,150,150]}
     metadata_figure_settings:
       style:
-        placement: hide
         admonition_class: attribution attributiongrey
       license:
         summaries: true
