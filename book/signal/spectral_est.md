@@ -112,7 +112,7 @@ P=\frac{1}{N}\sum_{n=0}^{N-1}|x_n|^2
 =\frac{1}{T^2}\sum_{k=0}^{N-1}|X_k|^2
 $$
 
-Note that $X_k$ denotes DFT-coefficients, with $\Delta t$ included ($X_k=\Delta t\sum_{n=0}^{N-1}x_ne^{-j\frac{2\pi}{N}kn}$). The full proof is ommitted (if you think this optional derivation box is long, you don't want to see that one!).
+Note that $X_k$ denotes DFT-coefficients, with $\Delta t$ included ($X_k=\Delta t\sum_{n=0}^{N-1}x_ne^{-j\frac{2\pi}{N}kn}$). The full proof is omitted (if you think this optional derivation box is long, you don't want to see that one!).
 
 :::
 
