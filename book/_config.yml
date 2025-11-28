@@ -46,7 +46,7 @@ sphinx:
     metadata_figure_settings:
       style:
         placement: hide
-        admonition_class: attributiongrey
+        admonition_class: attribution attributiongrey
       license:
         summaries: true
         strict_check: true
