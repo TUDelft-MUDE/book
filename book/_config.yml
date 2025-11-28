@@ -49,7 +49,7 @@ sphinx:
       license:
         summaries: true
         individual: false
-        strict_check: false
+        strict_check: true
         substitute_missing: true
         default_license: CC-BY
       author:
