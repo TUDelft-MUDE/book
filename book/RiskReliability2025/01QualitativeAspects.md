@@ -13,9 +13,11 @@ $$
 R_{A} = p_A \times C_A
 $$
 
-where $R_A$ is the risk of the event A, $p_A$ is the probability of the event A happening, and $C_A$ are the consequences derived from the event A happening.
+where $R_A$ is the risk of the event A, $p_A$ is the probability of the event A happening, and $C_A$ are the consequences derived from the event A happening. Event A could be, for instance, the ocurrence of an earthquake of a given intensity.
 
-_Reliability_ is the probability of a device or system performing its intended function under given conditions for a specified period of time. Notice some important distinctions: 
+_Reliability_ is the probability of a device or system performing its intended function under given conditions for a specified period of time. For instance, given a bridge that connects two sides of the river, its function is to serve as connection between the two margins of the river. The reliability of the bridge would be the probability of being fully operative, allowing traffic to cross from margin to margin.
+
+Notice some important distinctions between reliability and risk: 
 
 1.   when speaking about reliability **the focus is performance** and the consequence is lack of adequate performance or failure while risk focuses on the consequences of certain hazardous events.
 2.  reliability is often used in engineering, more recently in investigating the reliability of models (although all models are wrong). **Risk is a broader concept** often encountered in safety, economics, insurance and engineering.
