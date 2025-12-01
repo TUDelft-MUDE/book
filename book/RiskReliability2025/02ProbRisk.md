@@ -25,9 +25,9 @@ Once the scenarios are defined, we can define the triplets
 
 | Scenario | Probability  | Consequence |
 |-------|-------|-------|
-| 1 | $0.04$ | $2000k €$ |
-| 2 | $0.03$ | $300k€$ |
-| 3 | $0.12$ | $5000k€$ |
+| 1 | $0.04$ | $2 \cdot 10^6$ |
+| 2 | $0.03$ | $3\cdot 10^5$ |
+| 3 | $0.12$ | $5\cdot 10^6$ |
 
 </div> 
 
