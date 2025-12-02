@@ -1,9 +1,6 @@
-## Bivariate damage 
+# Bivariate damage 
 
 Consider two damages $(X,Y)$ instead of one. In this case the (smoothed) risk curve becomes a risk surface (Figure 3). 
-
-
-
 
 A common representation of a bivariate risk surface is presented in Table 3. The information in Table 3, which in turn is a summary of Figure 3, can be represented by triples $〈x_i,y_j,P_{i,j} 〉$ where $P_{i,j}=P(X≥x_i  ∩ Y≥y_j  )$. 
 
