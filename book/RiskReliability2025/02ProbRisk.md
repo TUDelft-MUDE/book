@@ -14,10 +14,12 @@ The triplets $〈s_i,p_i,x_i 〉$ are often presented in a tabular form  as
 
 </div> 
 
-Let's see an example. Imagine that you are analyzing the operational risk of a bridge connecting two sides of a river. We can define three events that can lead to malfunction of this particular bridge:
-1. Failure of the support beams;
-2. Scouring around the bridge foundation;
-3. Degradation of the expansion joints.
+For example, imagine that you are analyzing the risk of a bridge connecting two sides of a river. We can define five events:
+1. Failure of the bridge due to the support beams;
+2. Failure due to scouring around the bridge foundation;
+3. Stop of the traffic due to a car accident;
+4. Stop of the traffic due to damages in the pavement;
+5. Normal operation of the bridge. 
 
 Once the scenarios are defined, we can define the triplets
 
@@ -27,7 +29,9 @@ Once the scenarios are defined, we can define the triplets
 |-------|-------|-------|
 | 1 | $0.04$ | $2 \cdot 10^6$ |
 | 2 | $0.03$ | $3\cdot 10^5$ |
-| 3 | $0.12$ | $5\cdot 10^6$ |
+| 3 | $0.10$ | $5\cdot 10^4$ |
+| 4 | $0.08$ | $7\cdot 10^5$ |
+| 5 | $1-0.04-0.03-0.10-0.08 = 0.75$ | $0$ |
 
 </div> 
 
@@ -68,4 +72,40 @@ A common representation is in a log-log scale for both axis in which case the (s
 
 ---
 Example of risk curve in log-log scale.
+```
+
+Going back to the previous example of the bridge, we can order the triplets in decreasing order of severity as
+
+<div align="center">
+
+| Scenario | Probability  | Consequence |Cumulative <br>Probabililty|
+|-------|-------|-------|-------|
+| 1 | $0.04$ | $2 \cdot 10^6$ | $0.04$ |
+| 4 | $0.08$ | $7\cdot 10^5$ | $0.12$ |
+| 2 | $0.03$ | $3\cdot 10^5$ | $0.15$ |
+| 3 | $0.10$ | $5\cdot 10^4$ | $0.25$ |
+| 5 | $1-0.04-0.03-0.10-0.08 = 0.75$ | $0$ | $1.00$ |
+
+
+</div> 
+
+Finally, we can represent the risk curve as
+
+```{figure} https://files.mude.citg.tudelft.nl/example_risk_curve.png
+
+---
+
+---
+Risk curve for the bridge example.
+```
+
+And in log-log scale as
+
+
+```{figure} https://files.mude.citg.tudelft.nl/example_log_curve.png
+
+---
+
+---
+Risk curve in log-log scale for the bridge example.
 ```
