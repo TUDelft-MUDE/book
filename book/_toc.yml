@@ -160,7 +160,7 @@ parts:
       - file: optimization/taxonomy
       - file: optimization/sand_and_clay
         sections:
-        - file: optimization/claysand.ipynb
+        - file: optimization/claysand_stripped.ipynb
       - file: optimization/augmented_form
       - file: optimization/sand_and_clay_simplex
         sections:
@@ -171,7 +171,7 @@ parts:
       - file: optimization/integer_programming
       - file: optimization/some_constraints
       - file: optimization/genetic_algorithm
-      - file: optimization/airlines.ipynb
+      - file: optimization/airlines_stripped.ipynb
       #- file: optimization/performance
       #  sections:
       #  - file: optimization/airlines_performance.ipynb
@@ -181,7 +181,7 @@ parts:
         sections:
         - file: optimization/Project_MILP.ipynb
         - file: optimization/Project_GA.ipynb
-        - file: optimization/project_Amsterdam.md
+      - file: optimization/project_Amsterdam.md
 
     - file: ml/overview
       title: Machine Learning
