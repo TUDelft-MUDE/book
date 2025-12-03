@@ -237,7 +237,7 @@ parts:
         sections:
         - file: RiskReliability2025/02ProbRisk.md
         - file: RiskReliability2025/03BivariateDamages.md
-      - file: RiskReliability2025/Reliability.md
+      - file: RiskReliability2025/reliability.md
         title: Introduction to Reliability
         sections:
         - file: RiskReliability2025/04LifeDist.md
