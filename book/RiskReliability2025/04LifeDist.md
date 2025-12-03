@@ -55,7 +55,7 @@ $$
 
 for $\lambda$, $\alpha > 0$, $t\geq 0$ and $\Gamma$ being the gamma function. 
 
-Figure below depicts the influence of the parameters of the gamma distribution , $\lambda$ and $\alpha$ in their corresponding failure rate. When $\alpha=1$, the gamma distribution reduces to the exponential and, thus, the failure rate is constant; $\alpha$ controls the shape of the distribution and, thus, the shape of the failure rate. $\lambda$ controls the location of the distribution; as you can see in panel (a), higher values of $\lambda$ move the distribution toward lower values. to get an intuition of the influence of the parameters $\alpha$ and $\lambda$ in the failure rate, you can play with the interactive element below.
+Figure below depicts the influence of the parameters of the gamma distribution , $\lambda$ and $\alpha$ in their corresponding failure rate. When $\alpha=1$, the gamma distribution reduces to the exponential and, thus, the failure rate is constant; $\alpha$ controls the shape of the distribution and, thus, the shape of the failure rate. The gamma distribution has increasing failure rate for $\alpha >1$. To get an intuition of the influence of the parameters $\alpha$ and $\lambda$ in the failure rate, you can play with the interactive element below. 
 
 ```{figure} https://files.mude.citg.tudelft.nl/gamma.png
 
@@ -73,31 +73,44 @@ $$
 
 ## Weibull failure rate
 
- $f(t) = \lambda\alpha t^{\alpha-1}e^{-\lambda t^\alpha}$, $r(t) = \lambda \alpha t^{\alpha-1}$, $\lambda$, $\alpha$ $>0$, $t\geq 0$. Another common parametrization of the Weibull density is $f(t) = \frac{b}{a}\left(\frac{t}{a}\right)^{b-1} e^{-\left(\frac{t}{a}\right) t^b}$ 
+Given that the lifetime of a component follows an Weibull distribution, $X \sim Weibull(\lambda, \alpha)$, the failure rate of the variable $X$ is given by 
 
+$$
+r(t) = \lambda \alpha t^{\alpha-1}
+$$
+
+for $\lambda$, $\alpha > 0$, $t\geq 0$. 
+
+Figure below depicts the influence of the parameters of the Weibull distribution , $\lambda$ and $\alpha$ in their corresponding failure rate.
+
+```{figure} https://files.mude.citg.tudelft.nl/weibull_min.png
+
+---
+
+---
+Weibull distribution for $t$: (a) pdf, and (b) failure rate.
+```
+
+The Weibull distribution has increasing failure rate for $\alpha >1$. Similarly to the gamma distribution, $\alpha$ controls the shape of the distribution and, thus, the shape of the failure rate. To get an intuition of the influence of the parameters $\alpha$ and $\lambda$ in the failure rate, you can play with the interactive element below.
+
+Notice that some common parameterizations for the Weibull density are
+
+$$
+f(t) = \lambda\alpha  t^{\alpha-1}e^{-\lambda t^\alpha}
+$$
+
+$$
+f(t) = \frac{b}{a}\left(\frac{t}{a}\right)^{b-1} e^{-\left(\frac{t}{a}\right)^b}
+$$
+
+for $a$, $b > 0$, $t\geq 0$. $a$ is usually called the scale parameters and $b$, the shape parameter.
+
+## Play with the parameters!
 
 ````{iframe-figure} ../_static/elements/element_failure_rate.html
 :name: failure_rate
 :aspectratio: 2 / 1
 
-Interactively visualize the relationship between the PDF and the CDF of a Gaussian distribution.
+Interactively visualize the influence of the parameters in the failure rate for the Exponential, Gamma and Weibull distribution.
 ````
-
-
-```{figure} https://files.mude.citg.tudelft.nl/failure_rate.png
- 
----
- 
----
-Failure rate curves of the gamma distribution $\lambda =1$.
-```
-
-```{figure} https://files.mude.citg.tudelft.nl/failure_rate2.png
- 
----
- 
----
-Failure rate curves of the Weibull distribution for $\lambda = 1$.
-```
-
-The exponential distribution has constant failure rate. The gamma and the Weibull distribution have increasing failure rate for $\alpha >1$.
+.
