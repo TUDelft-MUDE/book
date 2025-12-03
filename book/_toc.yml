@@ -223,7 +223,7 @@ parts:
           title: EVA videos 
 
     - file: RiskReliability2025/00RiskRelIntro.md
-      title: Risk Analysis
+      title: Risk and Reliability
       # Already in Q1:
       # - file: pd/prob-design/overview.md
       #   sections:
@@ -232,9 +232,15 @@ parts:
       #   - file: pd/prob-design/example-river-system.md
       sections:
       - file: RiskReliability2025/01QualitativeAspects.md
-      - file: RiskReliability2025/02ProbRisk.md
-      - file: RiskReliability2025/03BivariateDamages.md
-      - file: RiskReliability2025/04LifeDist.md
+      - file: RiskReliability2025/Risk.md
+        title: Introduction to Risk
+        sections:
+        - file: RiskReliability2025/02ProbRisk.md
+        - file: RiskReliability2025/03BivariateDamages.md
+      - file: RiskReliability2025/Reliability.md
+        title: Introduction to Reliability
+        sections:
+        - file: RiskReliability2025/04LifeDist.md
       #   sections:
       #   - file: pd/risk-analysis/definition.md
       #   - file: pd/risk-analysis/steps.md
