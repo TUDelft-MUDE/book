@@ -139,7 +139,7 @@ You'll see that `pip` has created a `dist` folder in your project directory. Thi
 :width: 50%
 :author: Mahmoud Hashemi
 :date: 2017-08-12
-:license: GNU
+:license: GPL-3.0
 :source: [Speakerdeck](https://speakerdeck.com/pybay/2017-the-packaging-gradient)
 :copyright: © PyVideo.org
 :placement: margin
