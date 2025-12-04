@@ -160,7 +160,7 @@ parts:
       - file: optimization/taxonomy
       - file: optimization/sand_and_clay
         sections:
-        - file: optimization/claysand_stripped.ipynb
+        - file: optimization/claysand_stripped_new.ipynb
       - file: optimization/augmented_form
       - file: optimization/sand_and_clay_simplex
         sections:
