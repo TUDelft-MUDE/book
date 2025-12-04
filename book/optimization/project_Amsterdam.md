@@ -41,7 +41,7 @@ Opening additional TPs improves proximity and service quality for Horeca busines
 
 ```{figure} https://files.mude.citg.tudelft.nl/MoA_map.png
 ---
-height: 250px
+width: 100%
 ---
 Amsterdam Canal Network and Historic Center
 ```
@@ -265,7 +265,7 @@ The following figure illustrates the flowchart of steps requierd to be taken to 
 
 ```{figure} https://files.mude.citg.tudelft.nl/Flowchart.png
 ---
-height: 250px
+width: 100%
 ---
 Solution flowchart
 ```
