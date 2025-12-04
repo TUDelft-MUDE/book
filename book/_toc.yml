@@ -167,7 +167,7 @@ parts:
         - file: optimization/simplex_exercise
         - file: optimization/airplane_exercise
           sections:
-          - file: optimization/airplane_original.ipynb
+          - file: optimization/airplane_original_stripped.ipynb
       - file: optimization/integer_programming
       - file: optimization/some_constraints
       - file: optimization/genetic_algorithm
@@ -177,10 +177,10 @@ parts:
       #  - file: optimization/airlines_performance.ipynb
       #  - file: optimization/performance_generic_LP.ipynb
       #
-      - file: optimization/project
-        sections:
-        - file: optimization/Project_MILP.ipynb
-        - file: optimization/Project_GA.ipynb
+      # - file: optimization/project
+      #   sections:
+      #   - file: optimization/Project_MILP.ipynb
+      #   - file: optimization/Project_GA.ipynb
       - file: optimization/project_Amsterdam.md
 
     - file: ml/overview
