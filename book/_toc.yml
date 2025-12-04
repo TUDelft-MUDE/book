@@ -316,11 +316,11 @@ parts:
       - external: https://github.com/TUDelft-books/learn-python/blob/2025/book/errors/handling_errors.ipynb
       - file: programming/week_2_4/testing.ipynb
 
+# START REMOVE-FROM-PUBLISH
+
     - file: programming/week_2_5
       sections:
-      - external: https://github.com/Geet-George/test-doc-pack/blob/main/book/content/learning/packaging.md
-      
-# START REMOVE-FROM-PUBLISH
+      - file: programming/week_2_5/packaging.md
     - file: optimization/gurobi.md
       title: "Week 2.4: Gurobi installation"
     - file: programming/week_1_6_old
