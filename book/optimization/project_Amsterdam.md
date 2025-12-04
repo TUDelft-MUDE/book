@@ -41,7 +41,7 @@ Opening additional TPs improves proximity and service quality for Horeca busines
 
 ```{figure} https://files.mude.citg.tudelft.nl/MoA_map.png
 ---
-width: 100%
+width: 80%
 ---
 Amsterdam Canal Network and Historic Center
 ```
