@@ -136,7 +136,6 @@ When you run this command, the terminal will print out a bunch of messages as it
 You'll see that `pip` has created a `dist` folder in your project directory. This folder contains the distributable versions of your package, namely a `.tar.gz` file and a `.whl` file. These are the distributable versions of your package. So, what are these files? The `.tar.gz` file is a source distribution of your package, which contains all the necessary files to build and install your package. The `.whl` file is a built distribution of your package, which is a binary distribution that can be installed on other machines. 
 
 ```{figure} https://packaging.python.org/en/latest/_images/py_pkg_tools_and_libs.png
-:width: 75%
 :author: Mahmoud Hashemi
 :date: 2017-08-12
 :license: GPL-3.0
