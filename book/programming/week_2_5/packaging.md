@@ -174,3 +174,12 @@ And that’s it! You’ve successfully packaged your code and installed it on yo
 ```{note}
 [TestPyPI](https://packaging.python.org/en/latest/guides/using-testpypi/) is a good starting point to test your package before uploading it to PyPI. It is a separate instance of the Python Package Index that allows you to test your package before making it public. The link provides a detailed guide on how to get started with TestPyPI. Once you are ready, you can upload your package to PyPI using the `twine` package and then, anyone can install your package using `pip install my-package`.
 ```
+
+% source: programming
+```{attributiongrey} Attribution
+:class: attribution
+Written by Geet George
+
+This chapter reuses CC BY content from {cite:t}`test-doc-pack`. {fa}`quote-left`[Find out more here](external_resources)
+```
+% END-CREDIT
