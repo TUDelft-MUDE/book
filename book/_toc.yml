@@ -316,26 +316,11 @@ parts:
       - external: https://github.com/TUDelft-books/learn-python/blob/2025/book/errors/raise_errors.ipynb
       - external: https://github.com/TUDelft-books/learn-python/blob/2025/book/errors/handling_errors.ipynb
       - file: programming/week_2_4/testing.ipynb
-      
+
 # START REMOVE-FROM-PUBLISH
-    - file: optimization/gurobi.md
-      title: "Week 2.4: Gurobi installation"
-    - file: programming/week_1_6_old
+    - file: programming/week_2_5
       sections:
-      - file: external/learn-python/book/09/intro.md
-        title: Introduction
-      - file: external/learn-python/book/09/error_types.ipynb
-      - file: external/learn-python/book/09/traceback.ipynb
-      - file: external/learn-python/book/09/raise_errors.ipynb
-      - file: external/learn-python/book/09/handling_errors.ipynb
-        title: Handling Errors
-      - file: external/learn-python/book/09/asserts.ipynb
-    - file: programming/week_1_7
-      sections:
-      - file: external/learn-programming/book/python/oop/classes
-    - file: programming/week_1_8
-      sections:
-      - file: external/learn-python/book/08/sympy
+      - file: programming/week_2_5/packaging.md
 # END REMOVE-FROM-PUBLISH
   - caption: Miscellaneous
     numbered: false
