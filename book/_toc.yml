@@ -316,11 +316,10 @@ parts:
       - external: https://github.com/TUDelft-books/learn-python/blob/2025/book/errors/raise_errors.ipynb
       - external: https://github.com/TUDelft-books/learn-python/blob/2025/book/errors/handling_errors.ipynb
       - file: programming/week_2_4/testing.ipynb
-
-# START REMOVE-FROM-PUBLISH
     - file: programming/week_2_5
       sections:
       - file: programming/week_2_5/packaging.md
+# START REMOVE-FROM-PUBLISH
 # END REMOVE-FROM-PUBLISH
   - caption: Miscellaneous
     numbered: false
