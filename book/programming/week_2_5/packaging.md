@@ -104,6 +104,24 @@ dependencies = ["numpy>=1.0", "pandas>=1.0", "matplotlib==3.0.2"]
 
 In this example, we’ve specified that our package requires `numpy` version 1.0 or higher, `pandas` version 1.0 or higher, and `matplotlib` to be exactly version 3.0.2. This ensures that `pip` installs the correct versions of the dependencies when someone installs your package.
 
+## Import-safe code: The `if __name__ == "__main__":` pattern
+
+Now before we finally build our package, there's an important pattern we should understand. When Python runs a file, it automatically sets a special variable called `__name__`. If the file is being run directly (like when you execute `python my_script.py`), this variable `__name__` is set to the value `"__main__"`. However, if the file is being imported as a module into another script (such as when you have a line `import my_script` in a different Python script), this `__name__` variable is assigned the module's name instead. This distinction is crucial for packaging because it lets you write code that behaves differently depending on *how* it's being used. Without this pattern, your package's code could execute unintended actions whenever someone imports it, which would break things for users trying to use your package.
+
+The solution is actually quite simple: put any executable code (like function calls, data processing, or output statements) inside an `if __name__ == "__main__":` block. This ensures that the code will only run when the file is executed directly, not when it's imported. Here's an example. Say you have a file called `greet.py` with the following content:
+
+```python
+def greet(name):
+    return f"Hello, {name}!"
+
+# The code below will only run if this file is executed directly
+if __name__ == "__main__":
+    result = greet("World")
+    print(result)
+```
+
+Now, if someone imports your modeul `greet` to their script, the `print()` statement won't execute, but the function definition will be available for them to use. Running the `greet.py` diretly will print out the statement. This is the standard practice in Python packaging and will save you from many headaches when building and testing your package.
+
 ## Building your package
 
 What you have done so far is to create a `pyproject.toml` file that specifies the build system, metadata, and dependencies of your package. After this, you need to build your package so that it can be installed using `pip`. As explained earlier, building your package involves creating distributable versions of your code that can be easily installed on other machines. 
