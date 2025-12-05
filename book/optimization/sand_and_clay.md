@@ -18,7 +18,7 @@ The story is told in two videos. The videos have a one-to-one correspondence wit
     <iframe width="560" height="315" src="https://www.youtube.com/embed/OEApSyGRZPI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 ```
 
-## The problem
+### The problem
 
 A company extracts sand and clay from a site which when sold gives a profit of 57 and 60 monetary units per thousand units of product, respectively. For this extraction, sand needs a manpower of 50 workers x hours to extract 1000 units of product whilst clay needs 13 workers x hours for 1000 units.
 

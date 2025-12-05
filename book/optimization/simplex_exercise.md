@@ -2,7 +2,7 @@
 
 ```{admonition} MUDE Exam Information
 :class: tip, dropdown
-For the exam, you are expected to have a clear understanding behind the Simplex method and how to do it. you will not need to do the calculations by hand in the exam or on Friday’s assignment.
+For the exam, you are expected to have a clear understanding behind the Simplex method and how to do it. You will not need to do the calculations by hand in the exam.
 ```
 
 Consider the following problem:
