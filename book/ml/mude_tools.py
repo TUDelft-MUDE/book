@@ -1420,7 +1420,7 @@ class neuralnetplotter(magicplotter):
 
         super().adjust_plot(**settings)
 
-        # put network ax underneath ax_mse if both were initalized
+        # put network ax underneath ax_mse if both were initialized
         if self.ax_mse is not None and 'network_ax' in vars(self):
             ll, bb, ww, hh = self.ax_mse.get_position().bounds
             self.network_ax.set_position([ll - 0.025, 0.11, ww + 0.05, 0.27])
