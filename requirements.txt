@@ -2,8 +2,6 @@ teachbooks
 sphinx-tudelft-theme
 sphinx-inline-tabs
 
-git+https://github.com/TeachBooks/TeachBooks-Favourites #BUMP
-
-sphinx-metadata-figure #BUMPBUMPBUMPBUMP
+git+https://github.com/TeachBooks/TeachBooks-Favourites
 
 sphinx-apa-references
