@@ -1,0 +1,295 @@
+<!--
+SPDX-License-Identifier: CC-BY-4.0
+Copyright (c) 2025 Maximilian Ramgraber
+
+This work is licensed under the Creative Commons Attribution 4.0 International License (CC BY 4.0).
+You are free to share and adapt for any purpose, even commercially, with attribution.
+Full text: https://creativecommons.org/licenses/by/4.0/
+-->
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Inverse-CDF Sampler Demo</title>
+
+    <!-- D3 -->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <!-- jStat -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jstat/1.9.4/jstat.min.js"></script>
+
+    <style>
+      html,body{ margin:0; padding:0; font-family:Helvetica, Arial, sans-serif; }
+      #click{ display:flex; justify-content:center; align-items:center; height:100vh; width:100vw; }
+      .pdf-area{ fill:rgba(31,119,180,.15); }
+      .hist-bar{ fill:#4e79a7; }
+      .sample{ pointer-events:none; }
+      .uniform-label{ writing-mode:vertical-rl; text-orientation:mixed; direction:rtl; }
+    </style>
+  </head>
+
+  <body>
+    <div id="click"></div>
+
+    <script>
+      // =============================================================================
+      // responsive geometry & single scale factor
+      // =============================================================================
+      const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth  || 0)
+      const vh = Math.max(document.documentElement.clientHeight|| 0, window.innerHeight || 0)
+      const aspect = 2
+
+      var width, height
+      if (vw/aspect < vh){ width = vw; height = vw/aspect } else { width = vh*aspect; height = vh }
+
+      const BASE = 600
+      const scale = width / BASE
+      const PAD   = 20 * scale
+
+      const half_w = width/2, half_h = height/2
+
+      // =============================================================================
+      // svg & quadrant groups
+      // =============================================================================
+      var svg = d3.select("#click").append("svg")
+        .attr("width", width).attr("height", height)
+
+      var g_tl = svg.append("g")
+      var g_tr = svg.append("g").attr("transform","translate(" + (half_w).toString() + ",0)")
+      var g_bl = svg.append("g").attr("transform","translate(0," + (half_h).toString() + ")")
+      var g_br = svg.append("g").attr("transform","translate(" + (half_w).toString() + "," + (half_h).toString() + ")")
+
+      // =============================================================================
+      // distributions
+      // =============================================================================
+      const DISTS = {
+        normal: {
+          label:"Gaussian (0,1)", domain:[-4,4],
+          pdf:x=>jStat.normal.pdf(x,0,1),
+          cdf:x=>jStat.normal.cdf(x,0,1),
+          inv:u=>jStat.normal.inv(u,0,1)
+        },
+        exponential: {
+          label:"Exponential (\u03BB = 1)", domain:[0,8],
+          pdf:x=>jStat.exponential.pdf(x,1),
+          cdf:x=>jStat.exponential.cdf(x,1),
+          inv:u=>jStat.exponential.inv(u,1)
+        },
+        beta: {
+          label:"Beta (\u03B1 = 2, \u03B2 = 5)", domain:[0,1],
+          pdf:x=>jStat.beta.pdf(x,2,5),
+          cdf:x=>jStat.beta.cdf(x,2,5),
+          inv:u=>jStat.beta.inv(u,2,5)
+        }
+      }
+      var current_key = "normal", dist = DISTS[current_key]
+
+      // =============================================================================
+      // helpers to style axes & lines
+      // =============================================================================
+      function style_axis(sel){
+        sel.selectAll("path,line").style("stroke","#555")
+          .style("stroke-width", (1*scale).toString() + "px")
+        sel.selectAll("text").style("font-size", (10*scale).toString() + "px")
+      }
+
+      function style_cdf_line(path){
+        path.attr("stroke","#e15759")
+            .attr("stroke-width", (2*scale).toString() + "px")
+            .attr("fill","none")
+      }
+
+      // =============================================================================
+      // uniform axis (TL)
+      // =============================================================================
+      const uniform_x = half_w * 0.4
+      const uniform_scale_y = d3.scaleLinear().domain([1,0]).range([PAD, half_h - PAD])
+      const axis_uniform = d3.axisLeft(uniform_scale_y).ticks(5)
+
+      var g_uniform = g_tl.append("g")
+        .attr("class","axis")
+        .attr("transform","translate(" + (uniform_x).toString() + ",0)")
+        .call(axis_uniform)
+      style_axis(g_uniform)
+
+      svg.append("text")
+        .attr("transform","translate(" + (width*0.10).toString() + "," + (height*0.25).toString() + ") rotate(270)")
+        .style("text-anchor","middle")
+        .style("font-size", (12*scale).toString() + "px")
+        .text("uniform random values")
+
+      // CDF labels (TR edge)
+      svg.append("text")
+        .attr("transform","translate(" + (width*0.45).toString() + "," + (height*0.25).toString() + ") rotate(270)")
+        .style("text-anchor","middle")
+        .style("font-size", (12*scale).toString() + "px")
+        .text("cumulative probability")
+
+      svg.append("text")
+        .attr("transform","translate(" + (width*0.475).toString() + "," + (height*0.25).toString() + ") rotate(270)")
+        .style("text-anchor","middle")
+        .style("font-size", (12*scale).toString() + "px")
+        .text("F(x) = P(X \u2264 x)")
+
+      // PDF label (BR edge)
+      svg.append("text")
+        .attr("transform","translate(" + (width*0.475).toString() + "," + (height*0.75).toString() + ") rotate(270)")
+        .style("text-anchor","middle")
+        .style("font-size", (12*scale).toString() + "px")
+        .text("probability density")
+
+      // =============================================================================
+      // controls (foreignObject in BL)
+      // =============================================================================
+      var c_fo = g_bl.append("foreignObject")
+        .attr("x", height/10)
+        .attr("y", height/8)
+        .attr("width",  half_w - PAD)
+        .attr("height", half_h - PAD)
+
+      var controls = c_fo.append("xhtml:div")
+      controls.html(
+        '<button id="resetBtn">Reset</button>' +
+        '<select id="distSelect"></select>' +
+        '<span style="display:inline-flex;align-items:center;gap:' + (8*scale).toString() + 'px;">' +
+          '<label for="speedSlider" style="margin:0;">Speed</label>' +
+          '<input id="speedSlider" type="range" min="1" max="1000" step="1" value="500">' +
+        '</span>'
+      )
+
+      controls.selectAll("button,select,input,label")
+        .style("font-size", (12*scale).toString() + "px")
+
+      controls.select("#speedSlider").style("width", (155*scale).toString() + "px")
+
+      var select_el = controls.select("#distSelect").node()
+      Object.entries(DISTS).forEach(([k,v])=>{
+        const opt = document.createElement("option")
+        opt.value = k; opt.textContent = v.label
+        if (k === current_key) opt.selected = true
+        select_el.appendChild(opt)
+      })
+
+      // =============================================================================
+      // drawing helpers
+      // =============================================================================
+      var x_scale_cdf, y_scale_cdf, cdf_path, x_scale_pdf, y_scale_pdf
+      const hist_bins = 40, histogram_data = new Array(hist_bins).fill(0)
+      var hist_bars, max_count = 1
+
+      function draw_cdf(){
+        x_scale_cdf = d3.scaleLinear().domain(dist.domain).range([PAD, half_w - PAD])
+        y_scale_cdf = d3.scaleLinear().domain([0,1]).range([half_h - PAD, PAD])
+
+        g_tr.selectAll("*").remove()
+
+        var ax_b = g_tr.append("g").attr("class","axis")
+          .attr("transform","translate(0," + (half_h - PAD).toString() + ")")
+          .call(d3.axisBottom(x_scale_cdf))
+        var ax_l = g_tr.append("g").attr("class","axis")
+          .attr("transform","translate(" + (PAD).toString() + ",0)")
+          .call(d3.axisLeft(y_scale_cdf))
+        style_axis(ax_b); style_axis(ax_l)
+
+        const pts = d3.range(0,201).map(i=>{
+          const xx = dist.domain[0] + (i/200) * (dist.domain[1] - dist.domain[0])
+          return [ x_scale_cdf(xx), y_scale_cdf(dist.cdf(xx)) ]
+        })
+        cdf_path = g_tr.append("path").attr("d", d3.line()(pts))
+        style_cdf_line(cdf_path)
+      }
+
+      function draw_pdf(){
+        x_scale_pdf = x_scale_cdf.copy()
+        const xs = d3.range(0,201).map(i => dist.domain[0] + (i/200) * (dist.domain[1] - dist.domain[0]))
+        const pdf_vals = xs.map(dist.pdf), max_pdf = d3.max(pdf_vals)
+        y_scale_pdf = d3.scaleLinear().domain([0, max_pdf]).range([half_h - PAD, PAD])
+
+        g_br.selectAll("*").remove()
+
+        var ax_b = g_br.append("g").attr("class","axis")
+          .attr("transform","translate(0," + (half_h - PAD).toString() + ")")
+          .call(d3.axisBottom(x_scale_pdf))
+        var ax_l = g_br.append("g").attr("class","axis")
+          .attr("transform","translate(" + (PAD).toString() + ",0)")
+          .call(d3.axisLeft(y_scale_pdf))
+        style_axis(ax_b); style_axis(ax_l)
+
+        g_br.append("path").attr("class","pdf-area")
+          .attr("d",
+            d3.area()
+              .x((d,i)=>x_scale_pdf(xs[i]))
+              .y0(half_h - PAD)
+              .y1(d=>y_scale_pdf(d))(pdf_vals)
+          )
+
+        hist_bars = g_br.append("g")
+        histogram_data.fill(0)
+        update_histogram()
+      }
+
+      function update_histogram(){
+        const bin_w = (half_w - 2*PAD)/hist_bins
+        max_count = d3.max(histogram_data.concat([1]))
+        const y_hist = d3.scaleLinear().domain([0, max_count]).range([half_h - PAD, PAD])
+
+        const bars = hist_bars.selectAll("rect").data(histogram_data)
+        bars.enter().append("rect").attr("class","hist-bar")
+          .merge(bars)
+          .attr("x", (d,i)=> PAD + i*bin_w)
+          .attr("y", d=> y_hist(d))
+          .attr("width", bin_w - 1)
+          .attr("height", d=> (half_h - PAD) - y_hist(d))
+        bars.exit().remove()
+      }
+
+      // =============================================================================
+      // sampling / animation
+      // =============================================================================
+      var spawn_interval = 500, spawner
+      function start_spawner(){ if (spawner) spawner.stop(); spawner = d3.interval(create_sample, spawn_interval) }
+
+      function create_sample(){
+        const u = Math.random(), sample_val = dist.inv(u)
+        if (isNaN(sample_val) || sample_val < dist.domain[0] || sample_val > dist.domain[1]) return
+
+        const start_x = uniform_x
+        const start_y = uniform_scale_y(u)
+        const bounce_x = x_scale_cdf(sample_val) + half_w
+        const target_y = half_h + y_scale_pdf(0)
+
+        const circ = svg.append("circle").attr("class","sample")
+          .attr("cx", start_x).attr("cy", start_y)
+          .attr("r", (4*scale).toString()).attr("fill","#e15759")
+
+        circ.transition().duration(1200).attr("cx", bounce_x).attr("cy", start_y)
+            .transition().duration(1200).attr("cy", target_y)
+            .on("end", ()=>{
+              const bin = Math.floor(((sample_val - dist.domain[0]) / (dist.domain[1] - dist.domain[0])) * hist_bins)
+              if (bin >= 0 && bin < hist_bins){ histogram_data[bin]++; update_histogram() }
+              circ.remove()
+            })
+      }
+
+      // =============================================================================
+      // UI events
+      // =============================================================================
+      d3.select("#resetBtn").on("click", reset_all)
+      d3.select("#distSelect").on("change", function(){ current_key = this.value; dist = DISTS[current_key]; reset_all() })
+      d3.select("#speedSlider").on("input", function(){ spawn_interval = 1001 - this.value; start_spawner() })
+
+      function reset_all(){
+        svg.selectAll(".sample").interrupt().remove()
+        histogram_data.fill(0)
+        draw_cdf(); draw_pdf(); update_histogram()
+      }
+
+      // =============================================================================
+      // initial render
+      // =============================================================================
+      draw_cdf(); draw_pdf(); start_spawner()
+
+      // force full reload on resize (simplest responsive strategy)
+      window.addEventListener("resize", ()=> location.reload())
+    </script>
+  </body>
+</html>

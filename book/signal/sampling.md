@@ -71,7 +71,7 @@ The sampling function, $p(t)$, is assumed to be periodic pulse train with **samp
 
 In practice, time during which $p(t)$ is non-zero (pulse width) is very small relative to period $\Delta t$.
 
-In fact, in digital systems, where sample is the number corresponding to the value of the signal $x(t)$ at the sampling instant, $t$, the **pulse width** of the sampling function is **infinitelly small**. Hence, we can model the sampling funtion as an **impulse train**
+In fact, in digital systems, where sample is the number corresponding to the value of the signal $x(t)$ at the sampling instant, $t$, the **pulse width** of the sampling function is **infinitelly small**. Hence, we can model the sampling function as an **impulse train**
 
 ![impulse_train](https://files.mude.citg.tudelft.nl/impulse_train.png "impulse_train")
 
@@ -85,7 +85,7 @@ With fundamental frequency $f_0=\frac{1}{\Delta t}=f_s$ (the sampling frequency)
 
 $$P_k=\frac{1}{\Delta t}\int_{-\frac{\Delta t}{2}}^{\frac{\Delta t}{2}}p(t)e^{-j2\pi kf_0t}dt=\frac{1}{\Delta t}\int_{-\frac{\Delta t}{2}}^{\frac{\Delta t}{2}}\delta(t)e^{-j2\pi kf_0t}dt=\frac{1}{\Delta t}=f_s$$
 
-using the sifting property, and considering only one impulse occuring in the integration interval (at $t=0$). The Fourier series of $p(t)$ then becomes:
+using the sifting property, and considering only one impulse occurring in the integration interval (at $t=0$). The Fourier series of $p(t)$ then becomes:
 
 $$p(t)=f_s\sum_{k=-\infty}^{\infty}e^{j2\pi kf_st}$$
 

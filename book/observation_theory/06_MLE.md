@@ -1,4 +1,5 @@
-## Maximum Likelihood Estimation
+(06_MLE)=
+# Maximum Likelihood Estimation
 Maximum likelihood estimation is yet another estimation principle. In contrast to (weighted) least-squares and Best Linear Unbiased estimation, it relies on the probability distribution of the observables. Recall that for BLUE, we need to know the first two moments, given by the functional and stochastic model, respectively:
 
 $$
@@ -7,7 +8,7 @@ $$
 
 in order to estimate the unknown parameters $\mathrm{x}$. However, the solution $\hat{X}$ does not depend on the underlying distribution of $Y$.
 
-### Maximum likelihood principle
+## Maximum likelihood principle
 The principle of Maximum Likelihood estimation (MLE) is to find the *most likely* $\mathrm{x}$ given a realization $\mathrm{y}$ of $Y$.
 
 This boils down to estimating the unknown parameters $\theta$ of the underlying distribution, which means that the probability density function (PDF) is known apart from the $n$ parameters in $\theta$. We will now distinguish between a PDF and likelihood function.
@@ -18,7 +19,7 @@ The *likelihood function* $L(\theta|\mathrm{y})$ is given for a certain realizat
 
 With MLE, the goal is to find the $\theta$ which maximizes the likelihood function for the given realization $\mathrm{y}$.
 
-#### Example exponential distribution
+### Example exponential distribution
 
 If $Y\sim \text{Exp}(\lambda)$, the goal would be to estimate $\lambda$ based on a realization $\mathrm{y_{obs}}$ of $Y$. {numref}`MLEexp` shows the PDF of $Y$
 
@@ -36,7 +37,7 @@ name: MLEexp
 PDF and likelihood function for exponential distribution.
 ```
 
-### Maximum Likelihood estimator of $\mathrm{x}$
+## Maximum Likelihood estimator of $\mathrm{x}$
 We have that our observables are assumed to be normally distributed: $Y\sim N(\mathrm{Ax},\Sigma_Y)$, where $\mathrm{x}$ is unknown. The covariance matrix $\Sigma_Y$ is assumed to be known, for instance from a calibration campaign.
 
 ```{note}
@@ -49,7 +50,7 @@ L(\mathrm{Ax},\Sigma_Y|\mathrm{y})=\underset{c}{\underbrace{(\det{2\pi \Sigma_Y}
 $$
 
 Maximizing this likelihood function for $\mathrm{x}$ means that we have to find the $\mathrm{x}$ such that:
-* the first-order partial derivatives ([gradient](PM_gradient)) are zero: $\partial_{\mathrm{x} }L(\mathrm{Ax},\Sigma_Y|\mathrm{y})=0$
+* the first-order partial derivatives ([gradient](https://mude.citg.tudelft.nl/fundamental-concepts/2025/fundamentals/00_02_PreMath.html#multivariate-differentiation)) are zero: $\partial_{\mathrm{x} }L(\mathrm{Ax},\Sigma_Y|\mathrm{y})=0$
 * the second-order partial derivatives are negative.
 
 Instead of working with the likelihood function, we prefer to work with the *loglikelihood* function:
@@ -63,7 +64,7 @@ since that is easier and results in the same maximum. Setting the gradient to ze
 $$
 \begin{align*}
 \frac{\partial \ln L(\mathrm{Ax},\Sigma_Y|\mathrm{y})}{\partial \mathrm{x}}&= \frac{\partial (-\frac{1}{2}\mathrm{(y-Ax)^T} \Sigma_Y^{-1}(\mathrm{y-Ax}))}{\partial \mathrm{x}}\\
-&= -\frac{1}{2}(-2\mathrm{A^T} \Sigma_Y^{-1} Y+2\mathrm{A^T} \Sigma_Y^{-1} \mathrm{A}\mathrm{x})=0\\
+&= -\frac{1}{2}(-2\mathrm{A^T} \Sigma_Y^{-1} y+2\mathrm{A^T} \Sigma_Y^{-1} \mathrm{A}\mathrm{x})=0\\
 \mathrm{A^T} \Sigma_Y^{-1} \mathrm{A}\mathrm{x} &= \mathrm{A^T} \Sigma_Y^{-1} \mathrm{y}
 \end{align*}
 $$

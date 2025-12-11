@@ -11,7 +11,7 @@ The story is told in a video. The video below has a one-to-one correspondence wi
 
 ```{admonition} MUDE Exam Information
 :class: tip, dropdown
-For the exam, you are expected to have a clear understanding behind the Simplex method and how to do it. you will not need to do the calculations by hand in the exam or on Friday’s assignment.
+For the exam, you are expected to have a clear understanding behind the Simplex method and how to do it. You will not need to do the calculations by hand in the exam.
 ```
 
 The SIMPLEX method has been created to automate the solving of the augmented form of a linear programming problem with continuous variables. Consider the following optimization problem:

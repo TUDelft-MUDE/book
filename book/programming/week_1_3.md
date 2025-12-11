@@ -11,4 +11,4 @@ This chapter reuses material from _Learn Programming for Engineers_. {ref}`Find 
 
 This week you'll learn some first VS Code lifehacks! Let's dive into it!
 
-% This chapter relies heavily on material proved in the [Learn programming book](https://teachbooks.github.io/learn-programming)
+% This chapter relies heavily on material provided in the [Learn Programming book](https://teachbooks.github.io/learn-programming)

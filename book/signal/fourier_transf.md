@@ -92,7 +92,7 @@ The figure above illustrates an example of $|X(f)|$ and $\theta(f)$ both as a fu
 
 ## Summary
 
-A-periodic functions can be written as integrals, **continuous** over **frequency**. This yields the so-called **Fourier tranform** (and its inverse):
+A-periodic functions can be written as integrals, **continuous** over **frequency**. This yields the so-called **Fourier transform** (and its inverse):
 
 $$\begin{gather*}X(f)=\int_{-\infty}^{\infty}x(t)e^{-j2\pi ft}dt\\ x(t)=\int_{-\infty}^{\infty}X(f)e^{j2\pi ft}df\end{gather*}$$
 
@@ -145,7 +145,7 @@ tau, f = sym.symbols('tau, f', positive=True)
 x = sym.Piecewise((0, t < -tau/2), (1, t < tau/2), (0, True))
 display(x)
 ```
-$\begin{cases} 0 & \text{for}\: t < - \frac{\tau}{2} \\1 & \text{for}\: t < \frac{\tau}{2} \\0 & \text{otherwise} \end{cases}$
+$\begin{cases} 0 & \rm{for}\: t < - \frac{\tau}{2} \\1 & \rm{for}\: t < \frac{\tau}{2} \\0 & \rm{otherwise} \end{cases}$
 
 ```python
 solution = sym.integrate(x*sym.exp(-sym.I*2*sym.pi*f*t), (t,-sym.oo,sym.oo))
@@ -153,9 +153,9 @@ simplified_solution = sym.simplify(solution)
 display(solution)
 display(simplified_solution)
 ```
-$- \frac{i e^{i \pi f \tau}}{2 \pi f} + \frac{i e^{- i \pi f \tau}}{2 \pi f}$
+$- \cfrac{i e^{i \pi f \tau}}{2 \pi f} + \cfrac{i e^{- i \pi f \tau}}{2 \pi f}$
 
-$\frac{\sin{\left(\pi f \tau \right)}}{\pi f}$
+$\cfrac{\sin{\left(\pi f \tau \right)}}{\pi f}$
 ````
 
 :::

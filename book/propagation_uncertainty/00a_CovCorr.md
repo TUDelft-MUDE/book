@@ -1,7 +1,7 @@
 (correl)=
 ## Random vectors, covariance and correlation
 
-When dealing with multiple random variables we need to consider that these may not be independent. Instead of considering the individual random variables, we will then need to work with a random vector $X= [\begin{array}{llll} X_1 & X_2 & \ldots &X_m \end{array}]^T$, which has a *multivariate* (or: joint) distribution. We will first introduce the covariance and correlation coefficient of two random variables, and then introduce the multivariate normal distribution.
+When dealing with multiple [random variables](https://mude.citg.tudelft.nl/fundamental-concepts/2025/fundamentals/prob-rv.html)we need to consider that these may not be independent. Instead of considering the individual random variables, we will then need to work with a random vector $X= [\begin{array}{llll} X_1 & X_2 & \ldots &X_m \end{array}]^T$, which has a *multivariate* (or: [joint](https://mude.citg.tudelft.nl/fundamental-concepts/2025/fundamentals/joint_marginal_conditional.html)) distribution. We will first introduce the covariance and correlation coefficient of two random variables, and then introduce the multivariate normal distribution.
 
 ### Covariance and correlation
 
@@ -92,7 +92,7 @@ If all measurements are independent, all covariances will be equal to zero, and 
 % source: uncertainty_propagation
 ```{attributiongrey} Attribution
 :class: attribution
-This chapter was written by Sandra Verhagen. {ref}`Find out more here <uncertainty_propagation_credit>`.
+This chapter was written by Sandra Verhagen and Lotfi Massarweh. {ref}`Find out more here <uncertainty_propagation_credit>`.
 ```
 
 % END-CREDIT

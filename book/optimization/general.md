@@ -68,111 +68,147 @@ width: 90%
 
 In this section, you can find a few examples of optimization problems with their respective goals.
 
-```{admonition} Example 1 - Optimizing the layout of the offshore wind farms in Norway
+````{admonition} Example 1 - Optimizing the layout of the offshore wind farms in Norway
 :class: tip, dropdown
 
 **Goal**: determine the optimal layout of wind turbines to produce the *highest amount of energy at minimum costs*. Considering different types of turbines, their power curves, physical characteristics, wake effect, etc.
 
-<div style="display: block; justify-content: space-between;">
-  <img src="./figs/ex_norway.png" style="width: 95%;">
-</div>
+```{figure} https://files.mude.citg.tudelft.nl/ex_norway.png
+---
+width: 90%
+---
+
+```
 
 This example is taken from CME4500 Engineering Systems Optimization, final project by Justus Aulbers, Ola Åsbø & Illias Timori 
 ​
-```
+````
 
-```{admonition} Example 2 - Optimizing the renewable energy configuration for a completely self-sustaining energy system in the Ijsselmeer area in 2050
+````{admonition} Example 2 - Optimizing the renewable energy configuration for a completely self-sustaining energy system in the Ijsselmeer area in 2050
 :class: tip, dropdown
 
 **Goal**: determine the most economic configuration of areas for wind turbines, solar panels, algae, and battery storage to meet the hourly energy demand in the future for a certain area. Considering the fluctuating demand, climatic conditions, etc.
 
-<div style="display: block; justify-content: space-between;">
-  <img src="./figs/ex_2.png" style="width: 75%;">
-</div>
-
-This example is taken from CME4500 Engineering Systems Optimization, final project​ by Max Driessen & Himanshu Patel ​
+```{figure} https://files.mude.citg.tudelft.nl/ex_2.png
+---
+width: 75%
+---
 
 ```
 
-```{admonition} Example 3 - Optimization of electric vehicles charging station locations
+This example is taken from CME4500 Engineering Systems Optimization, final project​ by Max Driessen & Himanshu Patel ​
+
+````
+
+````{admonition} Example 3 - Optimization of electric vehicles charging station locations
 :class: tip, dropdown
 
 **Goal**: identify the optimal distribution of charging stations that maximizes the utility accounting for the population density, existence of other charging stations, and other urban elements (e.g. rivers, parks, etc.)
 
-<div style="display: block; justify-content: space-between;">
-  <img src="./figs/ex_3.png" style="width: 75%;">
-</div>
+```{figure} https://files.mude.citg.tudelft.nl/ex_3.png
+---
+width: 75%
+---
+
+```
 
 This example is taken from CME4500 Engineering Systems Optimization, final project by Tomas Raaphorst & Vitali van Elk 
 ​​
-```
+````
 
-```{admonition} Example 4 - Optimizing the location of new electric vehicle charging stations
+````{admonition} Example 4 - Optimizing the location of new electric vehicle charging stations
 :class: tip, dropdown
 
 **Goal**: identify the most economic location of EV charging stations to satisfy the users' requirements.
 
-<div style="display: flex; justify-content: space-between;">
-  <img src="./figs/ex_4_1.png" style="width: 55%;">
-  <img src="./figs/ex_4_2.png" style="width: 40%;">
-</div>
-
-This example is taken from the MSc Thesis of Dawei Fu​.
+```{figure} https://files.mude.citg.tudelft.nl/ex_4_1.png
+---
+width: 55%
+---
 
 ```
 
-```{admonition} Example 5 - Optimizing monocoque FRP bridges
+```{figure} https://files.mude.citg.tudelft.nl/ex_4_2.png
+---
+width: 40%
+---
+
+```
+
+This example is taken from the MSc Thesis of Dawei Fu​.
+
+````
+
+````{admonition} Example 5 - Optimizing monocoque FRP bridges
 :class: tip, dropdown
 
 **Goal:** identify the optimal geometry and plies layout with consideration of the tradeoff between cost and sustainability. The design must guarantee the structural safety conditions.
 
-<div style="display: block; justify-content: space-between;">
-  <img src="./figs/ex_5.png" style="width: 85%;">
-</div>
-
-This example is taken from the MSc Thesis of Ola Åsbø
+```{figure} https://files.mude.citg.tudelft.nl/ex_5.png
+---
+width: 85%
+---
 
 ```
 
-```{admonition} Example 6 - Optimal component level construction schedule
+This example is taken from the MSc Thesis of Ola Åsbø
+
+````
+
+````{admonition} Example 6 - Optimal component level construction schedule
 :class: tip, dropdown
 
 **Goal:** determine the most efficient process for building components that have physical interdependencies (fulfilling constructive constraints), with consideration of the tradeoff between the cost and construction duration.
 
-<div style="display: block; justify-content: space-between;">
-  <img src="./figs/ex_6.png" style="width: 75%;">
-</div>
+```{figure} https://files.mude.citg.tudelft.nl/ex_6.png
+---
+width: 75%
+---
+
+```
 
 This example is taken from the MSc Thesis of Xinzhi Jiang 
 ​
-```
+````
 
-```{admonition} Example 7 - Optimizing the location of shared mobility hubs
+````{admonition} Example 7 - Optimizing the location of shared mobility hubs
 :class: tip, dropdown
 
 **Goal:** identify the optimal locations of mobility hubs that make available several modes, such as shared bikes, shared cars and cargo bikes maximizing accessibility and minimizing costs with consideration of the demand.
 
-<div style="display: block; justify-content: space-between;">
-  <img src="./figs/ex_7.png" style="width: 75%;">
-</div>
-
-This example is taken from the MSc thesis ​of Stavros Xanthopoulos
+```{figure} https://files.mude.citg.tudelft.nl/ex_7.png
+---
+width: 85%
+---
 
 ```
 
-```{admonition} Example 8 - Designing road networks for automated vehicles
+This example is taken from the MSc thesis ​of Stavros Xanthopoulos
+
+````
+
+````{admonition} Example 8 - Designing road networks for automated vehicles
 :class: tip, dropdown
 
 **Goal:** identify the best location and time for deploying enhanced roads for automated vehicles, minimizing deployment cost and maximizing efficiency and safety given the uncertain evolution path of automated driving technology and the travelers' mode and route choice behavior.
 
-<div style="display: block; justify-content: space-between;">
-  <img src="./figs/ex_8.png" style="width: 95%;">
-  <img src="./figs/ex_8_2.png" style="width: 95%;">
-</div>
+```{figure} https://files.mude.citg.tudelft.nl/ex_8.png
+---
+width: 95%
+---
+
+```
+
+```{figure} https://files.mude.citg.tudelft.nl/ex_8_2.png
+---
+width: 95%
+---
+
+```
 
 This example is taken from the PhD thesis ​of Bahman Madadi​
 
-```
+````
 
 % START-CREDIT
 % source: optimization
