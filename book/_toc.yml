@@ -182,9 +182,8 @@ parts:
       #   sections:
       #   - file: optimization/Project_MILP.ipynb
       #   - file: optimization/Project_GA.ipynb
-      - file: optimization/project_Amsterdam.md
-      
-# START REMOVE-FROM-PUBLISH
+      - file: optimization/project_Amsterdam.md   
+
     - file: ml/overview
       title: Machine Learning
       sections:
@@ -196,7 +195,7 @@ parts:
       - file: ml/mlp
       - file: ml/review
 
-
+# START REMOVE-FROM-PUBLISH
     - file: eva/intro.md
       sections:
       - file: eva/extreme.md
