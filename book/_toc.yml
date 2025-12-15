@@ -191,7 +191,8 @@ parts:
       - file: ml/linear_models_interactive
       - file: ml/ridge_sgd_interactive
       - file: ml/nn_interactive
-      - file: ml/mlp
+        sections:
+        - file: ml/mlp
       - file: ml/review
 
 # START REMOVE-FROM-PUBLISH
