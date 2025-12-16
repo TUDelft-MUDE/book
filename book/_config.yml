@@ -58,8 +58,8 @@ sphinx:
         default_copyright: Delft University of Technology
     nb_execution_mode: "auto"
     nb_execution_includepatterns: 
-       - "matrix.ipynb"
-       - "discrete.ipynb"
+       - "fem/matrix.ipynb"
+       - "fem/discrete.ipynb"
     nb_execution_patterns_method: "only_include"
 
       
