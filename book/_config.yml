@@ -3,7 +3,7 @@ author: MUDE Teachers and the Student Army from Delft University of Technology, 
 logo: https://files.mude.citg.tudelft.nl/MUDE_Logo-small.png
 
 execute:
-  execute_notebooks: "off"
+  execute_notebooks: "auto"
 
 only_build_toc_files: true
 
@@ -19,6 +19,7 @@ sphinx:
     html_last_updated_fmt: '%B %-d, %Y'
     html_js_files:
     - https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js
+    - https://cdn.plot.ly/plotly-2.27.0.min.js
     thebe_config:
       use_thebe_lite: true
       exclude_patterns: ["**/*.JPG", "**/*.PNG", "**/*.bib", "**/*.cpg", "**/*.csv", "**/*.dbf", "**/*.geojson", "**/*.gif", "**/*.html", "**/*.ico", "**/*.ipynb", "**/*.jl", "**/*.jpeg", "**/*.jpg", "**/*.json", "**/*.md", "**/*.npy", "**/*.pdf", "**/*.pptx", "**/*.png", "**/*.prj", "**/*.sbn", "**/*.sbx", "**/*.shp", "**/*.shx", "**/*.svg", "**/*.tif", "**/*.tiff", "**/*.txt", "**/*.webp", "**/*.whl", "**/*.xlsx", "**/*.xml", "**/*.yml", "**/*.zip"]
