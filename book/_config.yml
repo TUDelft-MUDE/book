@@ -56,6 +56,12 @@ sphinx:
       copyright:
         substitute_missing: true
         default_copyright: Delft University of Technology
+    nb_execution_mode: "auto"
+    nb_execution_includepatterns: 
+       - "matrix.ipynb"
+       - "discrete.ipynb"
+    nb_execution_patterns_method: "only_include"
+
       
       
   extra_extensions:
@@ -65,6 +71,7 @@ sphinx:
     - sphinx_inline_tabs
     - sphinx_apa_references
     - sphinx_metadata_figure
+    - sphinx_nb_execution_patterns
 
 bibtex_bibfiles:
   - _bibliography/references.bib
