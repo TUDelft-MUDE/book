@@ -41,7 +41,7 @@ Let's consider a reference element defined from -1 to +1 in a local $\xi$-coordi
 
 ```{figure} https://github.com/TUDelft-MUDE/source-files/raw/main/file/gauss1D/gauss1D.png
 ---
-height: 300px
+width: 600px
 name: gauss1D
 ---
 Gauss integration for exact integration of polynomials of order 0, 1 or 2
