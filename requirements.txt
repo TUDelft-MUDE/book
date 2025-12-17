@@ -1,6 +1,7 @@
 teachbooks
 sphinx-tudelft-theme
 sphinx-inline-tabs
+plotly
 
 git+https://github.com/TeachBooks/TeachBooks-Favourites
 
