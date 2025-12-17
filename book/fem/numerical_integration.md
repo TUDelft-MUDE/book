@@ -1,6 +1,6 @@
 # Numerical integration
 
-In the discrete equations of the finite element method, integrals appear. These need to be evualated 
+In the discrete equations of the finite element method, integrals appear. These need to be evaluated 
 
 ```{video} https://www.youtube.com/embed/XQY8i0e-jUA
 ```
@@ -32,29 +32,30 @@ The following two integration schemes are relevant for Finite Element Analysis:
 
 A Newton-Cotes scheme uses equally spaced integration points. In this scheme, with the appropriate set of weights, $n+1$ integration points are needed to integrate a $n$-th order polynomial exactly. Gauss integration (or *Gauss quadrature*) is more common in finite element analysis. This defines integration locations and weights such that they are optimal in the sense that polynomial functions can be integrated exactly with a minimum number of integration points. 
 
-Let's consider a reference element defined from -1 to +1 in a local $\xi$-coordinate. In the Gauss integration scheme the position and weights are optimised for exactly integrating polynomials to as high order as possible.Let's now look at an example. 
+Let's consider a reference element defined from -1 to +1 in a local $\xi$-coordinate. In the Gauss integration scheme the position and weights are optimised for exactly integrating polynomials to as high order as possible.
 
 - For a O-th order polynomial ($ f= c $) the position of the integration point is not important, as long as the weight is equal to the length of the domain, which in this case is 2.
--  For a 1-st order polynomial ($f= b ξ  +  c$), still we can be exact with one integration point if and only is the integration point is positioned at the centre of ξ-axis.
-- For a 2-nd order polynomial  ($f= aξ^2 + b ξ  +  c$), exact integration is possible with two integration points, located at $\xi=\pm 1/\sqrt{3}$ and weight 1. In fact, this integration scheme is also exact for 3-rd order polynomials.
+-  For a 1-st order polynomial ($f= b \xi  +  c$), still we can be exact with one integration point if and only is the integration point is positioned at the centre of $\xi$-axis.
+- For a 2-nd order polynomial  ($f= a\xi^2 + b \xi  +  c$), exact integration is possible with two integration points, located at $\xi=\pm 1/\sqrt{3}$ and weight 1. In fact, this integration scheme is also exact for 3-rd order polynomials.
+
+
+```{figure} https://github.com/TUDelft-MUDE/source-files/raw/main/file/gauss1D/gauss1D.png
+---
+height: 300px
+name: gauss1D
+---
+Gauss integration for exact integration of polynomials of order 0, 1 or 2
+``` 
 
 The following rule applies, regarding the order of the polynomial $p$
 that can be integrated exactly for a given number of integration points  $ n_{ip} $.
 
 $$ p= 2 n_{ip} -1 $$ 
 
-This information can be summarised in the following manner. 
+Gauss integration schemes with up to 3 points (for integration of polynomials up to the 5-th order) are summarized in the table below.
 
 
-```{figure} https://files.mude.citg.tudelft.nl/numericalIntegration1D.png
----
-height: 300px
-name: 1_8_2
----
-Gauss Integration points
-``` 
-
-| Number of points $n_{ip} $| Position $ξ_i$ | weight | Polynomial order $p$|
+| Number of points $n_{ip} $| Position $xi_i$ | weight | Polynomial order $p$|
 | :---: | :---: | :---: | :---: |
 | $1$ | $0$ | $2$ | $0$ or $1$ |
 | $2$ |   $-\frac{1}{\sqrt{3}} ,  \frac{1}{\sqrt{3}} $ |  $1, 1$ | $2$ or $3$ |
