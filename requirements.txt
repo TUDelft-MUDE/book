@@ -2,6 +2,7 @@ teachbooks
 sphinx-tudelft-theme
 sphinx-inline-tabs
 plotly
+matplotlib
 
 git+https://github.com/TeachBooks/TeachBooks-Favourites
 
