@@ -9,9 +9,9 @@ For example in the 1D Poisson equation it is possible to perform this analytical
 
 $$ \mathbf{K}_e = \int_{x_1}^{x_2} \mathbf{B}^T EA \mathbf{B} \,dx $$
 
-$$\mathbf{B} = \left[\begin{matrix}\ B1 & B2\end{matrix}\right]$$
+$$\mathbf{B} = \left[\begin{matrix}\ B_1 & B_2\end{matrix}\right]$$
 
-$$ Β1= \frac{1}{x_2-x_1}, Β2= \frac{-1}{x_2-x_1} $$
+$$ Β_1= \frac{1}{x_2-x_1},\quad Β_2= \frac{-1}{x_2-x_1} $$
 
 
 $$ \mathbf{K}_e = \frac{v}{x_2-x_1}\left[\begin{matrix}1 & -1 \\ -1 & 1\end{matrix}\right] $$
@@ -20,7 +20,7 @@ $$ \mathbf{K}_e = \frac{v}{x_2-x_1}\left[\begin{matrix}1 & -1 \\ -1 & 1\end{matr
 In practice, however, numerical integration is performed. The idea behind numerical integration is that an integral can be replaced by a weighted sum, as follows:
 
 
-$$ \mathbf{K}_e = \int_{Ω^ε}\ f(x,y)dΩ   \approx  \sum_{i=1}^{n_{ip}} w_i f(x_i,y_i) $$
+$$ \mathbf{K}_e = \int_{Ω^ε}\ f(x,y)dΩ   \approx  \sum_{i=1}^{n_\mathrm{ip}} w_i f(x_i,y_i) $$
 
 The function $f$ can be evaluated at a selected number of points, with coordinates $(x_i, y_i)$ and multiplied by weights $w_i$. 
 The next step involves considering how to perform efficient and accurate numerical integration.  One first requirement that arises is that the sum of all weights within an element should be equal to the integration domain, in this case the length of the element.  Secondly, the number and location of the integration points must be specified, as well as the individual weights. 
@@ -48,14 +48,14 @@ Gauss integration for exact integration of polynomials of order 0, 1 or 2
 ``` 
 
 The following rule applies, regarding the order of the polynomial $p$
-that can be integrated exactly for a given number of integration points  $ n_{ip} $.
+that can be integrated exactly for a given number of integration points  $ n_\mathrm{ip} $.
 
-$$ p= 2 n_{ip} -1 $$ 
+$$ p= 2 n_\mathrm{ip} -1 $$ 
 
 Gauss integration schemes with up to 3 points (for integration of polynomials up to the 5-th order) are summarized in the table below.
 
 
-| Number of points $n_{ip} $| Position $xi_i$ | weight | Polynomial order $p$|
+| Number of points $n_\mathrm{ip} $| Position $xi_i$ | weight | Polynomial order $p$|
 | :---: | :---: | :---: | :---: |
 | $1$ | $0$ | $2$ | $0$ or $1$ |
 | $2$ |   $-\frac{1}{\sqrt{3}} ,  \frac{1}{\sqrt{3}} $ |  $1, 1$ | $2$ or $3$ |
