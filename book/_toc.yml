@@ -195,7 +195,6 @@ parts:
         - file: ml/mlp
       - file: ml/review
 
-# START REMOVE-FROM-PUBLISH
     - file: eva/intro.md
       sections:
       - file: eva/extreme.md
@@ -221,7 +220,8 @@ parts:
         - file: eva/Bernoulli.md
         - file: eva/videos.md
           title: EVA videos 
-
+          
+# START REMOVE-FROM-PUBLISH
     - file: pd/intro.md
       title: Risk Analysis
       # Already in Q1:
