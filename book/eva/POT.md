@@ -31,7 +31,7 @@ The results of our analysis are dependent on the parameters we select. For insta
 
 When introducing the concept of $RT$, we saw that one of the basic assumptions of EVA was that extremes are independent and identically distributed (*iid* conditions). This implies that when sampling our extremes, we need to ensure that they are independent. At this point is where POT requires a bit more work than Block Maxima: we need to select $dl$ so we ensure that the sampled observations are independent. Let's elaborate it a bit more.
 
-A storm is a phenomenom which lasts several hours, so if we take a look at the time series of hourly $H_s$ during a storm (see Figure below) we see how registered $H_s$ goes up, stays around the maximum values for a while and, later, goes down. Therefore, we can say that there is a concentration of extreme values in the storms. For instance, there are 5 observations in a row above $th = 2.5m$. However, these extremes are caused by the same drivers and are thus dependent. If we included all of them in our EVA analysis, we would be violating the basic assumption of EVA of *iid* extremes. This phenomenom of concentration of extremes in time is called **clustering**: we say that extremes cluster in time, since an extreme phenomenom is not composed by a single observation. 
+A storm is a phenomenon which lasts several hours, so if we take a look at the time series of hourly $H_s$ during a storm (see Figure below) we see how registered $H_s$ goes up, stays around the maximum values for a while and, later, goes down. Therefore, we can say that there is a concentration of extreme values in the storms. For instance, there are 5 observations in a row above $th = 2.5m$. However, these extremes are caused by the same drivers and are thus dependent. If we included all of them in our EVA analysis, we would be violating the basic assumption of EVA of *iid* extremes. This phenomenon of concentration of extremes in time is called **clustering**: we say that extremes cluster in time, since an extreme phenomenon is not composed by a single observation. 
 
 ```{figure} https://files.mude.citg.tudelft.nl/clustering.png
 
@@ -49,7 +49,7 @@ And there is where $dl$ joins the party! If we ensure that the sampled extremes 
 
 Advantages:
 - Usually a higher number of sampled extremes. Thus, it is appropriate for shorter time series.
-- Appropriate when there's no clear seasonality in the extremes (physical insight in the phenomenom).
+- Appropriate when there's no clear seasonality in the extremes (physical insight in the phenomenon).
 
 Disadvantages:
 - Further analysis required to ensure that the sampled extremes are *iid*.
