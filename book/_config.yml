@@ -43,6 +43,9 @@ sphinx:
     tud_change_logo: false
     tud_change_titlesize: false
     named_colors_custom_colors: {'attributiongrey':[150,150,150]}
+    git_exclude_patterns:                            # Exclude configuration files to *skip* in git last updated date checking, configuration part of Sphinx-Last-Updated-by-Git (https://github.com/mgeier/sphinx-last-updated-by-git/)
+      - '_config.yml'
+      - '_toc.yml'  
     metadata_figure_settings:
       style: #BUMP
         admonition_class: attribution attributiongrey
