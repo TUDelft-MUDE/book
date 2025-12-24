@@ -49,9 +49,17 @@ sphinx:
       - '_toc.yml'  
     git_author_aliases:
       jdding: Jialei Ding
+      jialeidng: Jialei Ding
+      jin: Jialei Ding
       pmaresnasarre: Patricia Mares Nasarre
       rbjbrinkgreve: Ronald Brinkgreve
       MaxRamgraber: Max Ramgraber
+      jteixeira@tudelft.nl: João Moura Pereira de Lucas Teixeira
+      maxxyvvdb: Max Guichard
+      Lotfi_M: Lotfi Massarweh
+      ctiberius: Christian Tiberius
+      rstular: Rok Štular
+      lucasalvarezn: Lucas Alvarez Navarro
     metadata_figure_settings:
       style: #BUMP
         admonition_class: attribution attributiongrey
