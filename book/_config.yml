@@ -60,6 +60,7 @@ sphinx:
       ctiberius: Christian Tiberius
       rstular: Rok Štular
       lucasalvarezn: Lucas Alvarez Navarro
+      SanneSmith: Sanne Smith
     metadata_figure_settings:
       style: #BUMP
         admonition_class: attribution attributiongrey
