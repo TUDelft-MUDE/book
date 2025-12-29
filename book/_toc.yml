@@ -271,7 +271,7 @@ parts:
 
 # END REMOVE-FROM-PUBLISH
 
-  - caption: Programming
+  - caption: Programming topics Q1
     numbered: 2
     chapters:
     - file: programming/week_1_1
@@ -296,6 +296,9 @@ parts:
       - external: https://github.com/TeachBooks/learn-programming/blob/mude-2025/book/llms/generating-code.ipynb
       - external: https://github.com/TeachBooks/learn-programming/blob/mude-2025/book/llms/debugging-errors.ipynb
       - external: https://github.com/TeachBooks/learn-programming/blob/mude-2025/book/llms/human-in-the-loop.ipynb
+  - caption: Programming topics Q2
+    numbered: 2
+    chapters:
     - file: programming/week_2_1
       sections:
       - external: https://github.com/TeachBooks/learn-programming/blob/mude-2025/book/python/oop/intro.md
