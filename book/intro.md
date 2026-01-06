@@ -1,4 +1,8 @@
-+++
+```{author} John Doe
+```
+```{author} Jane Smith
+```
+
 # Welcome to the MUDE Textbook
 
 Welcome to the MUDE textbook for the 2025-26 academic year. This is where assigned reading is located, along with interactive exercises to practice and study the module material. Material is released according to the course schedule.
