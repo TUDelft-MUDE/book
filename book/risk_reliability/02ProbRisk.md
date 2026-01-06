@@ -1,6 +1,6 @@
 # Probabilistic Risk Analysis
 
-We stablished that a risk analysis answers three questions: (i) What can happen? (ii) How likely is it that that will happen, and (iii) If it does happen what are the consequences? To answer these questions typically a triplet is used $〈s_i,p_i,x_i 〉$. Where $s_i$ is a scenario description, $p_i$ is the probability of the scenario and $x_i$ is the consequence of the scenario. Risk can be defined as a set of triplets  $R={〈s_i,p_i,x_i 〉}$, $i=1,…,N$. Because the possible scenarios in any risk analysis are infinite, and in practice the risk analyst cannot contemplate all these, an N+1 scenario that accounts for all “other” possibilities is often used.  
+We established that a risk analysis answers three questions: (i) What can happen? (ii) How likely is it that that will happen, and (iii) If it does happen what are the consequences? To answer these questions typically a triplet is used $〈s_i,p_i,x_i 〉$. Where $s_i$ is a scenario description, $p_i$ is the probability of the scenario and $x_i$ is the consequence of the scenario. Risk can be defined as a set of triplets  $R={〈s_i,p_i,x_i 〉}$, $i=1,…,N$. Because the possible scenarios in any risk analysis are infinite, and in practice the risk analyst cannot contemplate all these, an N+1 scenario that accounts for all “other” possibilities is often used.  
 The triplets $〈s_i,p_i,x_i 〉$ are often presented in a tabular form  as
 
 <div align="center">
