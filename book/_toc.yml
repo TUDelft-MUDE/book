@@ -100,7 +100,6 @@ parts:
         - file: observation_theory/09_Notebook_Testing.ipynb
         - file: observation_theory/09_Notebook_OMT.ipynb
       - file: observation_theory/99_NotationFormulas
-      
 
   - caption: Q2 Topics
     numbered: 2
@@ -121,8 +120,7 @@ parts:
       - file: fem/shape.md
       - file: fem/numerical_integration.md
       - file: fem/poisson2d.md
-      - file: fem/isoparametric_mapping.md
-
+      - file: fem/isoparametric_mapping.md     
     - file: signal/intro.md
       sections:
       - file: signal/fourier_real
@@ -153,8 +151,8 @@ parts:
       - file: time_series/forecasting.md
         sections:
         - file: time_series/forecasting_example.ipynb
-      - file: time_series/movingAverage.ipynb
-  
+      - file: time_series/movingAverage.ipynb  
+
     - file: optimization/overview
       sections:
       - file: optimization/origins
@@ -162,27 +160,28 @@ parts:
       - file: optimization/taxonomy
       - file: optimization/sand_and_clay
         sections:
-        - file: optimization/claysand.ipynb
+        - file: optimization/claysand_stripped_new.ipynb
       - file: optimization/augmented_form
       - file: optimization/sand_and_clay_simplex
         sections:
         - file: optimization/simplex_exercise
         - file: optimization/airplane_exercise
           sections:
-          - file: optimization/airplane_original.ipynb
+          - file: optimization/airplane_original_stripped.ipynb
       - file: optimization/integer_programming
       - file: optimization/some_constraints
       - file: optimization/genetic_algorithm
-      - file: optimization/airlines.ipynb
+      - file: optimization/airlines_stripped.ipynb
       #- file: optimization/performance
       #  sections:
       #  - file: optimization/airlines_performance.ipynb
       #  - file: optimization/performance_generic_LP.ipynb
       #
-      - file: optimization/project
-        sections:
-        - file: optimization/Project_MILP.ipynb
-        - file: optimization/Project_GA.ipynb
+      # - file: optimization/project
+      #   sections:
+      #   - file: optimization/Project_MILP.ipynb
+      #   - file: optimization/Project_GA.ipynb
+      - file: optimization/project_Amsterdam.md   
 
     - file: ml/overview
       title: Machine Learning
@@ -192,6 +191,8 @@ parts:
       - file: ml/linear_models_interactive
       - file: ml/ridge_sgd_interactive
       - file: ml/nn_interactive
+        sections:
+        - file: ml/mlp
       - file: ml/review
 
     - file: eva/intro.md
@@ -238,7 +239,7 @@ parts:
 
 # END REMOVE-FROM-PUBLISH
 
-  - caption: Programming
+  - caption: Programming topics Q1
     numbered: 2
     chapters:
     - file: programming/week_1_1
@@ -263,6 +264,9 @@ parts:
       - external: https://github.com/TeachBooks/learn-programming/blob/mude-2025/book/llms/generating-code.ipynb
       - external: https://github.com/TeachBooks/learn-programming/blob/mude-2025/book/llms/debugging-errors.ipynb
       - external: https://github.com/TeachBooks/learn-programming/blob/mude-2025/book/llms/human-in-the-loop.ipynb
+  - caption: Programming topics Q2
+    numbered: 2
+    chapters:
     - file: programming/week_2_1
       sections:
       - external: https://github.com/TeachBooks/learn-programming/blob/mude-2025/book/python/oop/intro.md
@@ -271,30 +275,26 @@ parts:
       - external: https://github.com/TeachBooks/learn-programming/blob/mude-2025/book/python/oop/Inheritance.ipynb
       - external: https://github.com/TeachBooks/learn-programming/blob/mude-2025/book/python/oop/Polymorphism.ipynb
       - external: https://github.com/TeachBooks/learn-programming/blob/mude-2025/book/python/oop/exercise.ipynb
-# START REMOVE-FROM-PUBLISH
     - file: programming/week_2_2
       sections:
       - file: programming/week_2_2/assembly
       - file: programming/week_2_2/sparse
       - file: programming/week_2_2/solver.ipynb
-    - file: optimization/gurobi.md
-      title: "Week 2.4: Gurobi installation"
-    - file: programming/week_1_6_old
+    - file: programming/week_2_3
       sections:
-      - file: external/learn-python/book/09/intro.md
-        title: Introduction
-      - file: external/learn-python/book/09/error_types.ipynb
-      - file: external/learn-python/book/09/traceback.ipynb
-      - file: external/learn-python/book/09/raise_errors.ipynb
-      - file: external/learn-python/book/09/handling_errors.ipynb
-        title: Handling Errors
-      - file: external/learn-python/book/09/asserts.ipynb
-    - file: programming/week_1_7
+      - external: https://github.com/TUDelft-books/learn-python/blob/2025/book/errors/error_types.ipynb
+      - external: https://github.com/TUDelft-books/learn-python/blob/2025/book/errors/traceback.ipynb
+      
+    - file: programming/week_2_4
       sections:
-      - file: external/learn-programming/book/python/oop/classes
-    - file: programming/week_1_8
+      - external: https://github.com/TUDelft-books/learn-python/blob/2025/book/errors/asserts.ipynb
+      - external: https://github.com/TUDelft-books/learn-python/blob/2025/book/errors/raise_errors.ipynb
+      - external: https://github.com/TUDelft-books/learn-python/blob/2025/book/errors/handling_errors.ipynb
+      - file: programming/week_2_4/testing.ipynb
+    - file: programming/week_2_5
       sections:
-      - file: external/learn-python/book/08/sympy
+      - file: programming/week_2_5/packaging.md
+# START REMOVE-FROM-PUBLISH
 # END REMOVE-FROM-PUBLISH
   - caption: Miscellaneous
     numbered: false

@@ -4,10 +4,7 @@ The *strong from* of the problem is a Partial Differential Equation (PDE), or a 
 
 The story told below and up to the [discrete form](./discrete.ipynb) section is also presented in this video: 
 
-```{eval-rst}
-.. raw:: html
-
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/VNfRdJdcSKM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+```{video} https://www.youtube.com/embed/VNfRdJdcSKM
 ```
 
 ##  1D Poisson equation
@@ -38,7 +35,8 @@ In the case of heat conduction, for instance, $u$ in the above equation is the t
 Keep in mind that the constitutive relationship always depends on the problem being solved and $ \nu $ can take different meanings. For the heat equation, $\nu$ is the thermal conductivity while for Darcy’s law $ \nu $ is the hydraulic conductivity and for extension of a rod $\nu$ is a measure for the stiffness. 
 
 ## The strong form of a linear elastic rod
-```{figure} https://files.mude.citg.tudelft.nl/barDefinition-1.png
+
+```{figure} https://github.com/TUDelft-MUDE/source-files/raw/main/file/barDefinition-1.png
 ---
 height: 150px
 name: rodDefinition
@@ -69,9 +67,12 @@ $$ (1drodBCs)
 
 As can be seen, the form of equation {eq}`1drod` is exactly the same as the 1D Poisson equation shown above. The only difference is in the physical interpretation of $u$ and $f$ and that instead of the constant $\nu$ we use the constant $EA$ (Young's modulus $E$ times cross section area $A$) to describe the stiffness. The exact same mathematical problem could be interpreted as a heat conduction problem. 
 
-:::{card} Quiz question
-<iframe src="https://tudelft.h5p.com/content/1292102761306552137/embed" aria-label="Boundary conditions for heat equation" width="1088" height="637" frameborder="0" allowfullscreen="allowfullscreen" allow="autoplay *; geolocation *; microphone *; camera *; midi *; encrypted-media *"></iframe><script src="https://tudelft.h5p.com/js/h5p-resizer.js" charset="UTF-8"></script>
-:::
+:::: {card} Quiz question
+
+```{h5p} https://tudelft.h5p.com/content/1292102761306552137/embed
+```
+
+::::
 
 % START-CREDIT
 % source: finite_element_method

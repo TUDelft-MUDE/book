@@ -13,10 +13,7 @@ After introducing the first 2D finite element formulations, it is necessary to g
 
 The basic motivation is that we want to define shape functions and the integration scheme on a so-called *reference element* and that we want to use this same definition of shape functions and integration scheme for any element in a mesh, irrespective of its position and orientation. 
 
-```{eval-rst}
-.. raw:: html
-
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/C_DtidjOPB4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+```{video} https://www.youtube.com/embed/C_DtidjOPB4
 ```
 
 ## Isoparametric mapping on a 3-node line element
@@ -56,7 +53,7 @@ $$
 \int_a^b f(x)\,dx = \int_{-1}^{-1} f(x(\xi)) \left|\pder{x}{\xi}\right|\,d\xi
 $$
 
-Addtionally, for evaluating the derivatives of shape functions, if the shape functions are defined in terms of $\xi$ but we need derivatives with respect to $x$, the operation we need is:
+Additionally, for evaluating the derivatives of shape functions, if the shape functions are defined in terms of $\xi$ but we need derivatives with respect to $x$, the operation we need is:
 
 $$
 \pder{N_i}{x} = \pder{N_i}{\xi}\pder{\xi}{x}

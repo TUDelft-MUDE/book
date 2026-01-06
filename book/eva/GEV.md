@@ -59,7 +59,7 @@ Tail behavior of GEV distribution.
 
 ## Domains of attraction
 
-We said that we can prove that for large $n$ the cumulative distribution function of the values sampled using Block Maxima tend to the Generalized Extreme Value (GEV) family of distributions, regardless the distribution of the $X$ (parent ditribution). However, we can identify domains of attraction between the parent distributions and the type of GEV or asymptotic type.
+We said that we can prove that for large $n$ the cumulative distribution function of the values sampled using Block Maxima tend to the Generalized Extreme Value (GEV) family of distributions, regardless the distribution of the $X$ (parent distribution). However, we can identify domains of attraction between the parent distributions and the type of GEV or asymptotic type.
 
 ```{list-table}
 :header-rows: 1
@@ -126,7 +126,7 @@ Return level using GEV.
 
 ## Let's practice!
 
-An scientist is assessing the concentrations of atmospheric $CO_2$ in a city to see if they fulfill the tolerability limits for the citizens. According to previous studies, a concentration of 40,000 ppm of $CO_2$ is inmediatly harmful for humans. Thus, the scientist wants to assess the probability of exceeding this concentration.
+An scientist is assessing the concentrations of atmospheric $CO_2$ in a city to see if they fulfill the tolerability limits for the citizens. According to previous studies, a concentration of 40,000 ppm of $CO_2$ is immediately harmful for humans. Thus, the scientist wants to assess the probability of exceeding this concentration.
 
 Based on existing studies, the scientist knows that the distribution of yearly maxima of concentration of $CO_2$ follows a Generalized Extreme Value distribution with $\mu=5,000$, $\sigma=250$, and $\xi=5$.
 

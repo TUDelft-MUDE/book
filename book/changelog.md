@@ -2,6 +2,47 @@
 
 [TeachBooks Versioning](https://teachbooks.io/manual/features/versioning.html) is used (a special type of semantic numbering for educational purposes) with generic format `v<academic_year>.<additions>.<errata>`, with an additional `.pre-release` added for incomplete books.
 
+## 2025-01-05: v2025.15.1.pre-release
+- Repair math in FEM pages with interactive plots
+
+## 2025-12-19: v2025.15.0.pre-release
+- Added [](./eva/intro.md)
+
+## 2025-12-17: v2025.14.2.pre-release
+- Minor changes to [](./fem/numerical_integration.md)
+
+## 2025-12-15: v2025.14.1.pre-release
+- Made MLP application page section of NN page
+- Removed references to live code
+
+## 2025-12-12: v2025.14.0.pre-release
+- Added [](./ml/overview.md)
+
+## 2025-12-05: v2025.13.0.pre-release
+- Added [](./optimization/overview.md)
+- Added [](programming/week_2_5)
+
+## 2025-12-02: v2025.12.1.pre-release
+- Fixed two cross-references 
+
+## 2025-11-28: v2025.12.0.pre-release
+- Added [](./time_series/intro.md)
+- Added [](programming/week_2_4)
+
+## 2025-11-21: v2025.11.0.pre-release
+- Added [](./signal/intro.md)
+- Added [](programming/week_2_3)
+
+## 2025-11-18: v2025.10.2.pre-release
+- Fix mistake in box on integration by parts / divergence theorem on [](./fem/poisson2d.md)
+
+## 2025-11-18: v2025.10.1.pre-release
+- Cosmetic change on [](./fem/matrix.ipynb) `EA*np.dot(np.transpose(B), B)*w_i` $\leftarrow$ `EA * B.T @ B * w_i` 
+
+## 2025-11-14: v2025.10.0.pre-release
+- Added [](./fem/intro.md)
+- Added [](programming/week_2_2)
+
 ## 2025-11-07: v2025.9.0.pre-release
 - Added [](./numerical_methods_for_PDEs/overview.md)
 - Added [](programming/week_2_1)

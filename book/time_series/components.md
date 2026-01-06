@@ -186,6 +186,8 @@ where
 - $u_k(t)$ is the Heaviside step function.
 - $\epsilon(t)$ is the i.i.d. random zero mean Gaussian noise, i.e. $\epsilon(t) \sim N(0, \sigma_{\epsilon}^2)$.
 
+:::
+
 % START-CREDIT
 % source: time_series_analysis
 ```{attributiongrey} Attribution

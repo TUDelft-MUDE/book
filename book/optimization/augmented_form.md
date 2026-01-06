@@ -41,25 +41,25 @@ and with $x_j\geq 0$ $(j=1,2,...,n)$ and $b_i\geq 0$ $(i=1,2,...,m)$. $n$ here i
 
 To solve those kind of situations you introduce a **slack variable**, let us say $s_1$, that will convert your constraint into an equality:
 
-$$a_{11}x_1+a_{12}x_2+...+a_{1n}x_n\leq b_1 \to \underbrace{a_{11}x_1+a_{12}x_2+...+a_{1n}x_n}_{\text{consumption of a resource}}+\overbrace{s_1}^{\text{available resources which were not consumed}}=\underbrace{b_1}_{\text{available resources}}$$
+$$a_{11}x_1+a_{12}x_2+...+a_{1n}x_n\leq b_1 \quad\to\quad \underbrace{a_{11}x_1+a_{12}x_2+...+a_{1n}x_n}_{\text{consumption of a resource}}+\overbrace{s_1}^{\hspace{-3cm}\text{available resources which were not consumed}\hspace{-3cm}}=\underbrace{b_1}_{\hspace{-2cm}\text{available resources}\hspace{-2cm}}$$
 
 If, on the other hand, instead of $\leq$ we have an inequality dictated by $\geq$, then we write:
 
-$$a_{11}x_1+a_{12}x_2+...+a_{1n}x_n\geq b_1 \to \underbrace{a_{11}x_1+a_{12}x_2+...+a_{1n}x_n}_{\text{expression of consumption}}-\overbrace{s_1}^{\text{resources consumed above the minimum limit (surplus variable)}}=\underbrace{b_1}_{\text{minimum number to consume}}$$
+$$a_{11}x_1+a_{12}x_2+...+a_{1n}x_n\geq b_1 \quad\to\quad \underbrace{a_{11}x_1+a_{12}x_2+...+a_{1n}x_n}_{\text{expression of consumption}}-\overbrace{s_1}^{\hspace{-4cm}\text{resources consumed above the minimum limit (surplus variable)}\hspace{-4cm}}=\underbrace{b_1}_{\hspace{-2cm}\text{minimum number to consume}\hspace{-2cm}}$$
 
 ### But what if we have negative independent coefficients?
 
 Transform the negative independent coefficients into positive ones:
 
-$$a_{11}x_1+a_{12}x_2+...+a_{1n}x_n=-b_1 \to -a_{11}x_1-a_{12}x_2-...-a_{1n}x_n=b_1$$
+$$a_{11}x_1+a_{12}x_2+...+a_{1n}x_n=-b_1 \quad\to\quad -a_{11}x_1-a_{12}x_2-...-a_{1n}x_n=b_1$$
 
 ### And what if we have variables that can take negative values?
 
-$$x_2\leq 0 \to x_2=-x'_2 (x_2'\geq 0)$$
+$$x_2\leq 0 \quad\to\quad x_2=-x'_2 (x_2'\geq 0)$$
 
 And our equation could be written as:
 
-$$a_{11}x_1+a_{12}x_2+...+a_{1n}x_n\leq b_1 \to a_{11}x_1-a_{12}x'_2+...+a_{1n}x_n\leq b_1$$
+$$a_{11}x_1+a_{12}x_2+...+a_{1n}x_n\leq b_1 \quad\to\quad a_{11}x_1-a_{12}x'_2+...+a_{1n}x_n\leq b_1$$
 
 ```{note}
 
@@ -69,11 +69,11 @@ When one solves the problem, one must not forget to get the original value of $x
 
 ### And, finally, what if we have continuous variables defined in ALL the domain?
 
-$$x_2\in\mathbb{R}\to x_2=(x_2'-x_2'')$$
+$$x_2\in\mathbb{R}\quad\to\quad x_2=(x_2'-x_2'')$$
 
 and, in this case, both $x_2'$ and $x_2''$ will be $\geq 0$. Replacing in our equation would give:
 
-$$a_{11}x_1+a_{12}x_2+...+a_{1n}x_n\leq b_1 \to a_{11}x_1+a_{12}x'_2-a_{12}x_2''+...+a_{1n}x_n\leq b_1$$
+$$a_{11}x_1+a_{12}x_2+...+a_{1n}x_n\leq b_1 \quad\to\quad a_{11}x_1+a_{12}x'_2-a_{12}x_2''+...+a_{1n}x_n\leq b_1$$
 
 ```{note}
 

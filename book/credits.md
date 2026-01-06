@@ -252,7 +252,7 @@ Credits are provided here for chapters and pages that are released under the lic
 
 ### Programming chapters
 
-> The programming chapters are written by Tom van Woudenberg  and Robert Lanzafame
+> The programming chapters are written by Tom van Woudenberg, Robert Lanzafame and Frans van der Meer.
 >
 > Special thanks goes to Stanislaw Ostyk-Narbutt for his contribution with the Large language models chapter
 

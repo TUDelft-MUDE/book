@@ -10,7 +10,7 @@ We want to perform a market study of the prices of sold t-shirts to start a new 
 ---
 
 ---
-Pdf of t-shirts price. Maradona's t-shirt image belongs to Guiness World Records[^source]
+Pdf of t-shirts price. Maradona's t-shirt image belongs to Guinness World Records[^source]
 ```
 
 Based on the above example, we can define an extreme in probability theory as...
