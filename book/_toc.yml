@@ -220,53 +220,22 @@ parts:
         - file: eva/Bernoulli.md
         - file: eva/videos.md
           title: EVA videos 
-          
+
 # START REMOVE-FROM-PUBLISH
-    - file: pd/intro.md
-      title: Risk Analysis
-      # Already in Q1:
-      # - file: pd/prob-design/overview.md
-      #   sections:
-      #   - file: pd/prob-design/01-one-random-variable.md
-      #   - file: pd/prob-design/02-two-random-variables.md
-      #   - file: pd/prob-design/example-river-system.md
+    
+    - file: risk_reliability/00RiskRelIntro.md
+      title: Risk and Reliability
       sections:
-      - file: pd/risk-analysis/overview.md
+      - file: risk_reliability/01QualitativeAspects.md
+      - file: risk_reliability/Risk.md
+        title: Introduction to Risk
         sections:
-        - file: pd/risk-analysis/definition.md
-        - file: pd/risk-analysis/steps.md
-        - file: pd/risk-analysis/risk-curves.md
-      # - file: pd/reliability-component/overview.md
-      #   sections:
-      #   - file: pd/reliability-component/contamination.ipynb
-        # - file: reliability-component/case-two-loads.md
-        # - file: reliability-component/case-r-s.md
-      # - file: pd/reliability-system/overview.md
-        # sections:
-        # - file: reliability-system/system-series.md
-        # - file: reliability-system/system-parallel.md
-        # - file: pd/reliability-system/exercise-simple-city.md
-      - file: pd/risk-evaluation/overview.md
+        - file: risk_reliability/02ProbRisk.md
+        - file: risk_reliability/03BivariateDamages.md
+      - file: risk_reliability/reliability.md
+        title: Introduction to Reliability
         sections:
-        - file: pd/risk-evaluation/decision.md
-        - file: pd/risk-evaluation/cost-benefit.md
-        - file: pd/risk-evaluation/econ-optimization.md
-          sections:
-          - file: pd/risk-evaluation/example-dike-height.md
-            title: Optimization Example
-        - file: pd/risk-evaluation/safety-standards.md
-      - file: pd/exercises/overview.md
-        sections:
-        - file: pd/exercises/exercise-fn-curve.md
-        - file: pd/exercises/exercise-dam.md
-        - file: pd/exercises/exercise-paint.md
-        # - file: pd/exercises/exercise-sample-exam.md
-      # - file: pd/videos.md
-      # - file: pd/notebooks/overview.md
-      #   sections:
-      #   - file: pd/notebooks/flood-risk/Exercise_Flood_Risk_Render.ipynb
-      #   - file: pd/notebooks/contamination/Exercise_Contamination_Render.ipynb
-      #   - file: pd/notebooks/traffic/Exercise_Traffic_Render.ipynb
+        - file: risk_reliability/04LifeDist.md
 
 # END REMOVE-FROM-PUBLISH
 
