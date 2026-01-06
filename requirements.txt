@@ -4,6 +4,6 @@ sphinx-inline-tabs
 plotly
 matplotlib
 
-git+https://github.com/TeachBooks/TeachBooks-Favourites@all_authors+manual #BUMPBUMPBUMPBUMPBUMP
+git+https://github.com/TeachBooks/TeachBooks-Favourites@all_authors+manual #BUMPBUMPBUMPBUMPBUMPBUMP
 
 sphinx-apa-references
