@@ -46,6 +46,22 @@ sphinx:
     git_exclude_patterns:                            # Exclude configuration files to *skip* in git last updated date checking, configuration part of Sphinx-Last-Updated-by-Git (https://github.com/mgeier/sphinx-last-updated-by-git/)
       - '_config.yml'
       - '_toc.yml'  
+    git_show_all_authors: true 
+    git_author_aliases:
+      jdding: Jialei Ding
+      jialeidng: Jialei Ding
+      jin: Jialei Ding
+      pmaresnasarre: Patricia Mares Nasarre
+      rbjbrinkgreve: Ronald Brinkgreve
+      MaxRamgraber: Max Ramgraber
+      jteixeira@tudelft.nl: João Moura Pereira de Lucas Teixeira
+      maxxyvvdb: Max Guichard
+      Lotfi_M: Lotfi Massarweh
+      ctiberius: Christian Tiberius
+      rstular: Rok Štular
+      lucasalvarezn: Lucas Alvarez Navarro
+      SanneSmith: Sanne Smith
+    git_show_manual_author: true
     metadata_figure_settings:
       style: #BUMP
         admonition_class: attribution attributiongrey
