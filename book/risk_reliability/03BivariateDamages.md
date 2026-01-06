@@ -10,7 +10,7 @@ Consider now that we have two damages $(X,Y)$ instead of one. For example, imagi
 Risk surface for the economic consequences in city #1 and city #2: (left) 3D surface, and (right) projection.
 ```
 
-A common representation of a bivariate risk surface is presented in the Table below. The information in this table, which in turn is a summary of the previous figure, can be represented by triples $〈x_i,y_j,P_{i,j} 〉$ where $P_{i,j}=P(X≥x_i  ∩ Y≥y_j  )$. In the previous example, $x_i$ and $y_j$ would be a given value fo the economic consequences in the city #1 and #2, respectively.
+A common representation of a bivariate risk surface is presented in the Table below. The information in this table, which in turn is a summary of the previous figure, can be represented by triples $〈x_i,y_j,P_{i,j} 〉$ where $P_{i,j}=P(X≥x_i  ∩ Y≥y_j  )$. In the previous example, $x_i$ and $y_j$ would be a given value for the economic consequences in the city #1 and #2, respectively.
 
 <div align="center">
 
