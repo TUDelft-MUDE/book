@@ -246,7 +246,7 @@ Credits are provided here for chapters and pages that are released under the lic
 (risk_reliability_credit)=
 ### Chapter: Risk and Reliability
 
-> {ref}`risk_reliability` is written by Patricia Mares Nasarra, Max Ramgraber and Oswaldo Morales Napoles. 
+> {ref}`risk_reliability` is written by Patricia Mares Nasarre, Max Ramgraber and Oswaldo Morales Napoles. 
 
 (programming_credit)=
 
