@@ -1,11 +1,11 @@
 # Limit State Function
 
 
-In reliability analysis we are typically concerned with the probability that a component or system do not perform their purpose adequately. When this happens we typically speak of *failure events*. Failure events in turn are described through mathematical relations in order to be properly described. A function that describes failure events is called a *limit state function*.
+In reliability analysis we are typically concerned with the probability that a component or system does not perform its purpose adequately. When this happens we typically speak of *failure events*. Failure events in turn are described through mathematical relations in order to be properly described. A function that describes failure events is called a *limit state function*.
 
 Let $E_f = \{\, \textbf{x} \in \textbf{X} : g(\textbf{x}) \leq 0 \}$ denote the failure set. Then $g$ is the limit state function. As usual, $\textbf{x}$ are samples or realizations of the random vector $\textbf{X}$. The probability of interest is thus, $P_f = P(E_f) = P\left(g(x) \leq 0\right)$ or $P_f = \int_{E_f} f_\textbf{X}(\textbf{x})\,\mathrm{d}\textbf{x}$.
 
-There are several ways to compute $P_f$. In some basic cases one may use simple properties of the random variables of interest. In particular, for normal distributions and a linear limit state function, the calculation of the failure probability is very straight forward. 
+There are several ways to compute $P_f$. In some basic cases one may use simple properties of the random variables of interest. In particular, for normal distributions and a linear limit state function, the calculation of the failure probability is very straightforward. 
 
 ## Linear Limit State Function and Normal Distributions
 
@@ -73,7 +73,7 @@ Figure below shows the variables transformed to standard normal space. Notice th
 ---
 
 ---
-Graphical representation of the linear limit state and normal variables transformed to standard normal space with ortogonal vector and design point for the calculation of the  reliability of a steel rod.
+Graphical representation of the linear limit state and normal variables transformed to standard normal space with orthogonal vector and design point for the calculation of the  reliability of a steel rod.
 ```
 
 Figure below shows the calculation of the failure probability through Monte Carlo simulation. In this case $\hat{P}_{E_f} = \frac{16}{2\times10^6}=8\times10^{-6}$
