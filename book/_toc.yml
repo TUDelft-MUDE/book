@@ -236,6 +236,7 @@ parts:
       - file: risk_reliability/reliability.md
         title: Introduction to Reliability
         sections:
+        - file: risk_reliability/LimitState.md
         - file: risk_reliability/04LifeDist.md
 
 # END REMOVE-FROM-PUBLISH
