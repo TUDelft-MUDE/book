@@ -50,3 +50,12 @@ $P[X \leq x] = 1 - P[X > x] = 1 - 0.04 = 0.96$
 ```
 
 [^ref]: For a more formal definition of the concept of return period, you can refer to [Serinaldi (2015)](https://link.springer.com/article/10.1007/s00477-014-0916-1) 
+
+
+% START-CREDIT
+% source: extreme_value_analysis
+```{attributiongrey} Attribution
+:class: attribution
+This chapter is written by Patricia Mares Nasarre. {ref}`Find out more here <extreme_value_analysis_credit>`.
+```
+% END-CREDIT

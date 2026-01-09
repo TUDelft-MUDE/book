@@ -31,3 +31,12 @@ When more than two damages are considered, the risk curve becomes a risk surface
 ```{note}
 In the construction that we have followed so far, **we are interested in the joint exceedance probability**, in the bivariate case $P(X_1>x_1 \cap X_2>x_2)$. However, remember that **OR probabilities might also be of interest** if we would be interested in at least one element of the system $X_i$ exceeding a certain damage level.
 ```
+
+
+% START-CREDIT
+% source: risk_reliablity_credit
+```{attributiongrey} Attribution
+:class: attribution
+This chapter is written by Patricia Mares Nasarre, Max Ramgraber and Oswaldo Morales Napoles. {ref}`Find out more here <risk_reliability_credit>`.
+```
+% END-CREDIT

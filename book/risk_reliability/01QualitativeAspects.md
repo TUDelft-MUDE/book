@@ -29,3 +29,12 @@ Because of its broader scope, we will deal mostly with risk analysis. A risk ana
 [^1]: Kaplan, S., and Garrick, B. J. (1981). On the Quantitative Definition of Risk. Risk Analysis 1, 1, 11-27. https://doi.org/10.1111/j.1539-6924.1981.tb01350.x
 
 [^2]: Barlow, R.E., and Proschan F. (1996). Mathematical Theory of Reliability. Society for Industrial and Applied Mathematics (SIAM). https://doi.org/10.1137/1.9781611971194 
+
+
+% START-CREDIT
+% source: risk_reliablity_credit
+```{attributiongrey} Attribution
+:class: attribution
+This chapter is written by Patricia Mares Nasarre, Max Ramgraber and Oswaldo Morales Napoles. {ref}`Find out more here <risk_reliability_credit>`.
+```
+% END-CREDIT
