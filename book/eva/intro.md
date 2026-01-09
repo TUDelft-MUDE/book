@@ -5,7 +5,7 @@
 % source: extreme_value_analysis
 ```{attributiongrey} Attribution
 :class: attribution
-This chapter was written by Patricia Mares Nasarre. {ref}`Find out more here <extreme_value_analysis_credit>`.
+This chapter is written by Patricia Mares Nasarre. {ref}`Find out more here <extreme_value_analysis_credit>`.
 ```
 % END-CREDIT
 
@@ -59,3 +59,12 @@ Boxes such as this are used throughout the chapters to indicate where specific t
 ```
 
 At the end of these chapters you can also find supplementary videos that cover the same material as the book (although there is not a 1-to-1 relationship between pages and videos).
+
+
+% START-CREDIT
+% source: extreme_value_analysis
+```{attributiongrey} Attribution
+:class: attribution
+This chapter is written by Patricia Mares Nasarre. {ref}`Find out more here <extreme_value_analysis_credit>`.
+```
+% END-CREDIT

@@ -98,3 +98,12 @@ Only the first three minutes of this video are within the scope of this course.
 
    <iframe width="560" height="315" src="https://www.youtube.com/embed/iAfmtUEmQFo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 ```
+
+
+% START-CREDIT
+% source: extreme_value_analysis
+```{attributiongrey} Attribution
+:class: attribution
+This chapter is written by Patricia Mares Nasarre. {ref}`Find out more here <extreme_value_analysis_credit>`.
+```
+% END-CREDIT

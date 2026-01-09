@@ -76,3 +76,12 @@ Thus, the non-exceedance probability is
 $P[X \leq x] = 1-0.002 = 0.998$
 
 ```
+
+
+% START-CREDIT
+% source: extreme_value_analysis
+```{attributiongrey} Attribution
+:class: attribution
+This chapter is written by Patricia Mares Nasarre. {ref}`Find out more here <extreme_value_analysis_credit>`.
+```
+% END-CREDIT

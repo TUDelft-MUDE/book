@@ -82,3 +82,12 @@ Is there a significant difference between both approaches?
 In terms of the computed return periods ($RT$), there is not a significant difference. Although Poisson model is formally more correct since it assumes an infinite number of trials, both models can be applied.
 
 ```
+
+
+% START-CREDIT
+% source: extreme_value_analysis
+```{attributiongrey} Attribution
+:class: attribution
+This chapter is written by Patricia Mares Nasarre. {ref}`Find out more here <extreme_value_analysis_credit>`.
+```
+% END-CREDIT

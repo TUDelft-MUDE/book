@@ -36,3 +36,12 @@ For instance, going back to our toy example of the t-shirts, EVA allows us to ge
 In the following sections, you will see how to select extreme observations within a database (timeseries of observations) and select, fit and use probability distribution functions to characterize their uncertainty and infer the needed extreme values for design.
 
 [^source]: https://www.guinnessworldrecords.com/news/2022/5/diego-maradonas-hand-of-god-shirt-breaks-records-at-auction-702926
+
+
+% START-CREDIT
+% source: extreme_value_analysis
+```{attributiongrey} Attribution
+:class: attribution
+This chapter is written by Patricia Mares Nasarre. {ref}`Find out more here <extreme_value_analysis_credit>`.
+```
+% END-CREDIT

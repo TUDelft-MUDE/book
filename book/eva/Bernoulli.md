@@ -95,3 +95,12 @@ Sadly, there is a very low chance that the student can make it without studying!
 $
 P[A_1+A_2+...+A_k] = P[A_1]+P[A_2]+...+P[A_k]
 $
+
+
+% START-CREDIT
+% source: extreme_value_analysis
+```{attributiongrey} Attribution
+:class: attribution
+This chapter is written by Patricia Mares Nasarre. {ref}`Find out more here <extreme_value_analysis_credit>`.
+```
+% END-CREDIT

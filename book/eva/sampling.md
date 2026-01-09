@@ -22,3 +22,12 @@ Once we have the time series, the question arises: which values should I use for
 To this end, we can use two sampling techniques:
 1. Block Maxima (BM)
 2. Peak Over Threshold (POT)
+
+
+% START-CREDIT
+% source: extreme_value_analysis
+```{attributiongrey} Attribution
+:class: attribution
+This chapter is written by Patricia Mares Nasarre. {ref}`Find out more here <extreme_value_analysis_credit>`.
+```
+% END-CREDIT
