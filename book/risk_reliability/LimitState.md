@@ -41,7 +41,7 @@ where $\beta=\frac{\mu_g}{\sigma_g}$ is sometimes called the *reliability index*
 
 ## Example
 
-Consider a steel rod. The rod will fail if the stress applied in the cross sectional area ($a=10$mm$^2$) exceeds the yield strength (the resistance). The yield strength $r$ and the annual stress are uncertain. For simplicity they are assumed to follow independent normal distributions $R$ for resistance and $S$ for solicitation (or load).  The parameters of the normal distributions are $\mu_R = 350$MPa, $\sigma_R=35$MPa, $\mu_S = 1500$N and $\sigma_S=300$N. The limit state function is:
+Consider a steel rod. The rod will fail if the stress applied in the cross sectional area ($a=10$mm$^2$) exceeds the yield strength (the resistance). The yield strength $r$ and the annual stress are uncertain. For simplicity they are assumed to follow independent normal distributions $R$ for resistance and $S$ for solicitation (or load).  The parameters of the normal distributions are $\mu_R = 350 \, \rm{MPa}$, $\sigma_R=35 \, \rm{MPa}$, $\mu_S = 1500 \, \rm{N}$ and $\sigma_S=300 \, \rm{N}$. The limit state function is:
 
 $$
     g(r,s) = ar-s  
@@ -49,9 +49,9 @@ $$
 
 to compute the failure region take $ g(r,s) = 0 \Rightarrow ar = s$. Compute the mean and standard deviation of the normal distribution corresponding to $g$.
 
-The mean is given by: $\mu_g = 10 (350) - 1500 = 2000$N
+The mean is given by: $\mu_g = 10 (350) - 1500 = 2000 \, \rm{N}$
 
-For the standard deviation notice first that the variables are uncorrelated, hence only the terms with the variances remain: $\sigma_g=\sqrt{10^2(35^2)+300^2}$N$\approx460.98$N
+For the standard deviation notice first that the variables are uncorrelated, hence only the terms with the variances remain: $\sigma_g=\sqrt{10^2(35^2)+300^2} \, \rm{N}  \approx460.98 \, \rm{N}$
 
 The relibility index $\beta=\frac{2000}{460.98}\approx4.34$
 
