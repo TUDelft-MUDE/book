@@ -196,3 +196,12 @@ $
 
 
 [^hat]: Note that in mathematics, $\hat{\lambda}$ denotes the estimation of $\lambda$.
+
+
+% START-CREDIT
+% source: extreme_value_analysis
+```{attributiongrey} Attribution
+:class: attribution
+This chapter is written by Patricia Mares Nasarre. {ref}`Find out more here <extreme_value_analysis_credit>`.
+```
+% END-CREDIT

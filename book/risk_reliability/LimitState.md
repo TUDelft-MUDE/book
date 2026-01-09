@@ -85,3 +85,12 @@ Figure below shows the calculation of the failure probability through Monte Carl
 ---
 Graphical representation of the Monte Carlo simulation performed for the calculation of the  reliability of a steel rod.
 ```
+
+
+% START-CREDIT
+% source: risk_reliablity_credit
+```{attributiongrey} Attribution
+:class: attribution
+This chapter is written by Patricia Mares Nasarre, Max Ramgraber and Oswaldo Morales Napoles. {ref}`Find out more here <risk_reliability_credit>`.
+```
+% END-CREDIT

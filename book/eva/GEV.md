@@ -157,3 +157,12 @@ $RT = 1/P[X > 40,000] = 1/0.24 = 4.23 years$
 Thus, the concentration of 40,000 ppm of $CO_2$ is exceeded in average every 4.23 years.
 
 ```
+
+
+% START-CREDIT
+% source: extreme_value_analysis
+```{attributiongrey} Attribution
+:class: attribution
+This chapter is written by Patricia Mares Nasarre. {ref}`Find out more here <extreme_value_analysis_credit>`.
+```
+% END-CREDIT

@@ -108,3 +108,12 @@ for $a$, $b > 0$, $t\geq 0$. $a$ is usually called the scale parameters and $b$,
 Interactively visualize the influence of the parameters in the failure rate for the Exponential, Gamma and Weibull distribution.
 ````
 .
+
+
+% START-CREDIT
+% source: risk_reliablity_credit
+```{attributiongrey} Attribution
+:class: attribution
+This chapter is written by Patricia Mares Nasarre, Max Ramgraber and Oswaldo Morales Napoles. {ref}`Find out more here <risk_reliability_credit>`.
+```
+% END-CREDIT
