@@ -47,10 +47,10 @@ Exponential distribution for $t$: (a) pdf, and (b) failure rate.
 
 ## Gamma failure rate
 
-Given that the lifetime of a component follows an gamma distribution, $X \sim gamma(\lambda, \alpha)$, the failure rate of the variable $X$ is given by 
+Given that the lifetime of a component follows an gamma distribution, $X \sim gamma(\lambda, \alpha)$, the failure rate of the variable $X$ does not have a closed form but it can be computed using $r_X (t)=\frac{f(t)}{1-F(t)}$. The density of the Gamma distribution is given by
 
 $$
-r(t) = \lambda (\lambda t )^{\alpha -1 } \frac{1}{\Gamma(\alpha)}e ^{-\lambda t}
+f(t) = \lambda (\lambda t )^{\alpha -1 } \frac{1}{\Gamma(\alpha)}e ^{-\lambda t}
 $$
 
 for $\lambda$, $\alpha > 0$, $t\geq 0$ and $\Gamma$ being the gamma function. 
@@ -64,12 +64,6 @@ Figure below depicts the influence of the parameters of the gamma distribution ,
 ---
 Gamma distribution for $t$: (a) pdf, and (b) failure rate.
 ```
-
-Notice that a common parameterization for the gamma density is 
-
-$$
-f(t) =  t^{\alpha -1 } \frac{\lambda^{\alpha}}{\Gamma(\alpha)}e ^{-\lambda t}
-$$
 
 ## Weibull failure rate
 
