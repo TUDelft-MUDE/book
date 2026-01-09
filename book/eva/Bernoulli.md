@@ -53,10 +53,10 @@ $
 which is the pmf of the **Binomial distribution**. Thus, we went from the **Bernoulli** distribution to the **Binomial** distribution. The pmf of the Binomial distribution is then defined as
 
 $
-p_Y(y) = P[Y=y|n, p] = \binom{n}{x}p^x(1-p)^{n-x}  \hspace{1cm}  for \ y = 0, 1, ..., n; \ p \in [0,1]$
+p_Y(y) = P[Y=y|n, p] = \binom{n}{x}p^x(1-p)^{n-x}  \hspace{1cm}  \rm{for} \ y = 0, 1, ..., n; \ p \in [0,1]$
 
 $
-p_Y(y) = P[Y=y|n, p] = 0       \hspace{3.3cm}          otherwise
+p_Y(y) = P[Y=y|n, p] = 0       \hspace{3.7cm}          \rm{otherwise}
 $
 
 where
