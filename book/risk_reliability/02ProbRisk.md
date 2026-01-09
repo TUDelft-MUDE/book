@@ -39,7 +39,7 @@ where the consequences here are assessed in terms of economic consequences (€)
 
 ## Risk Curves 
 
-To present a visual idea of risk, we first arrange the scenarios in order of severity. That is such that $x_1 \leq x_2 \leq x_3 \leq ⋯ \leq x_N$. By adding a column to the table above we may compute the cumulative probabilities adding from the bottom 
+To present a visual idea of risk, we first arrange the scenarios in order of severity. That is such that $x_1 \leq x_2 \leq x_3 \leq ⋯ \leq x_N$. By adding a column to the table above we may compute the cumulative probabilities adding from the bottom.
 
 <div align="center">
 
@@ -80,11 +80,11 @@ Going back to the previous example of the bridge, we can order the triplets in d
 
 | Scenario | Probability  | Consequence |Cumulative <br>Probabililty|
 |-------|-------|-------|-------|
-| 1 | $0.04$ | $2 \cdot 10^6$ | $0.04$ |
-| 4 | $0.08$ | $7\cdot 10^5$ | $0.12$ |
-| 2 | $0.03$ | $3\cdot 10^5$ | $0.15$ |
-| 3 | $0.10$ | $5\cdot 10^4$ | $0.25$ |
 | 5 | $1-0.04-0.03-0.10-0.08 = 0.75$ | $0$ | $1.00$ |
+| 3 | $0.10$ | $5\cdot 10^4$ | $0.25$ |
+| 2 | $0.03$ | $3\cdot 10^5$ | $0.15$ |
+| 4 | $0.08$ | $7\cdot 10^5$ | $0.12$ |
+| 1 | $0.04$ | $2 \cdot 10^6$ | $0.04$ |
 
 
 </div> 
