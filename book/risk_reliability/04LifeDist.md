@@ -5,7 +5,7 @@ A failure distribution is a model that describes mathematically the lifetime of 
 In this case, let $X$ be a life variable. An important concept is the _failure rate_ or _hazard rate_ at a time $t$, denoted as $r_X(t)$ and given by
 
 $$
-r_X(t)=\lim_{\Delta\to\infty}\frac{⁡P(X≤t+\Delta|X>t)}{\Delta}
+r_X(t)=\lim_{\Delta\to0}\frac{⁡P(X≤t+\Delta|X>t)}{\Delta t}
 $$
 
 The failure rate is the probability of the component or system failing at a given instant, the probability of “instantaneous” failure. Note that in the denominator of the equation above, we compute for a given time $t$ the probability of the lifetime of the component ($X$) being higher than $t$ but smaller than $t+\Delta$. For small $\Delta>0$, $r_X (t)\approx P(X≤t+\Delta|X>t)$. That is, the probability of observing a failure right after time $t$ given that the component has survived until $t$.
