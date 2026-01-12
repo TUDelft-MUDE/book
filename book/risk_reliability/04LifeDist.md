@@ -5,7 +5,7 @@ A failure distribution is a model that describes mathematically the lifetime of 
 In this case, let $X$ be a life variable. An important concept is the _failure rate_ or _hazard rate_ at a time $t$, denoted as $r_X(t)$ and given by
 
 $$
-r_X(t)=\lim_{\Delta\to\infty}\frac{⁡P(X≤t+\Delta|X>t)}{\Delta}
+r_X(t)=\lim_{\Delta\to 0}\frac{⁡P(t < X ≤t+\Delta t|X>t)}{\Delta t}
 $$
 
 The failure rate is the probability of the component or system failing at a given instant, the probability of “instantaneous” failure. Note that in the denominator of the equation above, we compute for a given time $t$ the probability of the lifetime of the component ($X$) being higher than $t$ but smaller than $t+\Delta$. For small $\Delta>0$, $r_X (t)\approx P(X≤t+\Delta|X>t)$. That is, the probability of observing a failure right after time $t$ given that the component has survived until $t$.
@@ -47,10 +47,10 @@ Exponential distribution for $t$: (a) pdf, and (b) failure rate.
 
 ## Gamma failure rate
 
-Given that the lifetime of a component follows an gamma distribution, $X \sim gamma(\lambda, \alpha)$, the failure rate of the variable $X$ is given by 
+Given that the lifetime of a component follows an gamma distribution, $X \sim gamma(\lambda, \alpha)$, the failure rate of the variable $X$ does not have a closed form but it can be computed using $r_X (t)=\frac{f(t)}{1-F(t)}$. The density of the Gamma distribution is given by
 
 $$
-r(t) = \lambda (\lambda t )^{\alpha -1 } \frac{1}{\Gamma(\alpha)}e ^{-\lambda t}
+f(t) = \lambda (\lambda t )^{\alpha -1 } \frac{1}{\Gamma(\alpha)}e ^{-\lambda t}
 $$
 
 for $\lambda$, $\alpha > 0$, $t\geq 0$ and $\Gamma$ being the gamma function. 
@@ -64,12 +64,6 @@ Figure below depicts the influence of the parameters of the gamma distribution ,
 ---
 Gamma distribution for $t$: (a) pdf, and (b) failure rate.
 ```
-
-Notice that a common parameterization for the gamma density is 
-
-$$
-f(t) =  t^{\alpha -1 } \frac{\lambda^{\alpha}}{\Gamma(\alpha)}e ^{-\lambda t}
-$$
 
 ## Weibull failure rate
 
@@ -114,3 +108,12 @@ for $a$, $b > 0$, $t\geq 0$. $a$ is usually called the scale parameters and $b$,
 Interactively visualize the influence of the parameters in the failure rate for the Exponential, Gamma and Weibull distribution.
 ````
 .
+
+
+% START-CREDIT
+% source: risk_reliablity_credit
+```{attributiongrey} Attribution
+:class: attribution
+This chapter is written by Patricia Mares Nasarre, Max Ramgraber and Oswaldo Morales Napoles. {ref}`Find out more here <risk_reliability_credit>`.
+```
+% END-CREDIT

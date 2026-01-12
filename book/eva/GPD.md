@@ -83,3 +83,12 @@ Influence of scale parameter on pareto distribution.
 ```
 
 [^gpd_ref]: J. Pickands. Statistical inference using extreme order statistics. *the Annals of Statistics*, 119-131, 1975
+
+
+% START-CREDIT
+% source: extreme_value_analysis
+```{attributiongrey} Attribution
+:class: attribution
+This chapter is written by Patricia Mares Nasarre. {ref}`Find out more here <extreme_value_analysis_credit>`.
+```
+% END-CREDIT

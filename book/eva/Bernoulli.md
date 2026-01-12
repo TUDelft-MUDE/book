@@ -53,10 +53,10 @@ $
 which is the pmf of the **Binomial distribution**. Thus, we went from the **Bernoulli** distribution to the **Binomial** distribution. The pmf of the Binomial distribution is then defined as
 
 $
-p_Y(y) = P[Y=y|n, p] = \binom{n}{x}p^x(1-p)^{n-x}  \hspace{1cm}  for \ y = 0, 1, ..., n; \ p \in [0,1]$
+p_Y(y) = P[Y=y|n, p] = \binom{n}{x}p^x(1-p)^{n-x}  \hspace{1cm}  \rm{for} \ y = 0, 1, ..., n; \ p \in [0,1]$
 
 $
-p_Y(y) = P[Y=y|n, p] = 0       \hspace{3.3cm}          otherwise
+p_Y(y) = P[Y=y|n, p] = 0       \hspace{3.7cm}          \rm{otherwise}
 $
 
 where
@@ -95,3 +95,12 @@ Sadly, there is a very low chance that the student can make it without studying!
 $
 P[A_1+A_2+...+A_k] = P[A_1]+P[A_2]+...+P[A_k]
 $
+
+
+% START-CREDIT
+% source: extreme_value_analysis
+```{attributiongrey} Attribution
+:class: attribution
+This chapter is written by Patricia Mares Nasarre. {ref}`Find out more here <extreme_value_analysis_credit>`.
+```
+% END-CREDIT

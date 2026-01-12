@@ -220,8 +220,6 @@ parts:
         - file: eva/Bernoulli.md
         - file: eva/videos.md
           title: EVA videos 
-
-# START REMOVE-FROM-PUBLISH
     
     - file: risk_reliability/00RiskRelIntro.md
       title: Risk and Reliability
@@ -235,8 +233,9 @@ parts:
       - file: risk_reliability/reliability.md
         title: Introduction to Reliability
         sections:
+        - file: risk_reliability/LimitState.md
         - file: risk_reliability/04LifeDist.md
-
+# START REMOVE-FROM-PUBLISH
 # END REMOVE-FROM-PUBLISH
 
   - caption: Programming topics Q1
