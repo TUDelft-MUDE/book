@@ -18,7 +18,7 @@ $\newcommand{\iD}{\boldsymbol{\mathcal{D}}}$
 
 # Poisson equation in 2D
 
-In this section, we will introduce finite element formulations for problems in higher dimensions. Again, we will focus on the Poisson equation, but not in 2D. In this problem, the solution is a field in 2D space. This implies the elements and shape functions need to be different (e.g. triangular, quadrilateral, tetrahedral). 
+In this section, we will introduce finite element formulations for problems in higher dimensions. Again, we will focus on the Poisson equation, but not in 1D. In this problem, the solution is a field in 2D space. This implies the elements and shape functions need to be different (e.g. triangular, quadrilateral, tetrahedral). 
 
 ```{video} https://www.youtube.com/embed/LO26k4ep8pg
 ```
