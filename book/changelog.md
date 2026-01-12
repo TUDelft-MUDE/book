@@ -4,7 +4,7 @@
 
 ## 2025-01-12: v2025.16.1.pre-release
 - Fixed typos in table for risk curve [](./risk_reliability/02ProbRisk.md)
-- Added a few lines on the CSR sparse matrix format [](programming/week_2_2/sparse.html)
+- Added a few lines on the CSR sparse matrix format [](./programming/week_2_2/sparse.html)
 
 ## 2025-01-09: v2025.16.0.pre-release
 - Added [](./risk_reliability/00RiskRelIntro.md)
