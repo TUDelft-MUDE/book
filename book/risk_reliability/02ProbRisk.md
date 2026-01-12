@@ -45,10 +45,10 @@ To present a visual idea of risk, we first arrange the scenarios in order of sev
 
 | Scenario | Probability  | Consequence | Cumulative <br>Probabililty|
 |-------|-------|-------|-------|
-| $S_1$ | $p_1$ | $x_1$ | $P_1 = P2+p_1$ |
-| $S_2$ | $p_2$ | $x_2$ |$P_2 = P3+p_2$ |
+| $S_1$ | $p_1$ | $x_1$ | $P_1 = P_2+p_1$ |
+| $S_2$ | $p_2$ | $x_2$ |$P_2 = P_3+p_2$ |
 | ⋮     |   ⋮    |  ⋮    |  ⋮    |  
-| $S_{N-1}$ | $p_{N-1}$ | $x_N$ | $P_1 = PN+p_{N-1}$ |
+| $S_{N-1}$ | $p_{N-1}$ | $x_{N-1}$ | $P_{N-1} = P_N+p_{N-1}$ |
 | $S_N$ | $p_N$ | $x_N$ |  $P_N = p_N$ |
 
 </div> 
