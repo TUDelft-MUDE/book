@@ -2,6 +2,9 @@
 
 [TeachBooks Versioning](https://teachbooks.io/manual/features/versioning.html) is used (a special type of semantic numbering for educational purposes) with generic format `v<academic_year>.<additions>.<errata>`, with an additional `.pre-release` added for incomplete books.
 
+## 2025-01-13: v2025.16.2.pre-release
+- Fixed typo incorrectly referring to the numerator on [](./risk_reliability/04LifeDist.md)
+
 ## 2025-01-12: v2025.16.1.pre-release
 - Fixed typos in table for risk curve on [](./risk_reliability/02ProbRisk.md)
 - Added a few lines on the CSR sparse matrix format on [](./programming/week_2_2/sparse.ipynb)
