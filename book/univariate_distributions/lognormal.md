@@ -3,7 +3,7 @@
 
 The **lognormal distribution** is the continuous distribution of a random variable whose natural logarithm is normally distributed. This is, if the random variable $X \sim Lognormal$, then the random variable $Y=ln(X) \sim Normal$.
 
-```{figure} https://files.mude.citg.tudelft.nl/Lognormal_Distribution.svg
+```{figure} https://github.com/TUDelft-MUDE/source-files/raw/main/file/Lognormal_Distribution.svg
 Relationship between Lognormal and Normal distribution[^ref].
 ```
 
@@ -59,7 +59,7 @@ Also, the **Lognormal distiribution is bounded in 0**. This is, the random varia
 ````{card} Exercises
 During the design phase of a coastal structure, it is needed to assess if its height is enough to protect the sheltered area from overtopping events (sea water overpassing the structure and reaching the lee side). The distribution of overtopping volumes is known to follow a Lognormal distribution. The engineer has already calculated the parameters of the Lognormal distribution ($\mu$=5.5 and $\sigma$=1.15) and has plotted the CDF for you.
 
-```{figure} https://files.mude.citg.tudelft.nl/logn_ex.png
+```{figure} https://github.com/TUDelft-MUDE/source-files/raw/main/file/logn_ex.png
 PDF and CDF of Lognormal distribution to describe overtopping volumes $V (l/m)$.
 ```
 

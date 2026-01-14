@@ -42,7 +42,7 @@ $$
 
 {numref}`economic_optimum` shows the costs and risks as a function of the accepted failure probability of a system. The economic optimum is found when the total costs are minimal.
 
-```{figure} https://files.mude.citg.tudelft.nl/economic_opt.svg
+```{figure} https://github.com/TUDelft-MUDE/source-files/raw/main/file/economic_opt.svg
 ---
 height: 400px
 name: economic_optimum

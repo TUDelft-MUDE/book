@@ -96,7 +96,7 @@ This is model is linear in $\mathrm{x}$, therefore we refer to it as a linear mo
 ### Step function
 Consider a process with unknown parameter $x_1$ assumed to be constant up till time $t_{i-1}$, and a sudden change (step) at time $t_i$, after which the parameter remains constant at $x_2$. See {numref}`stepfun`.
 
-```{figure} https://files.mude.citg.tudelft.nl/00_step.png
+```{figure} https://github.com/TUDelft-MUDE/source-files/raw/main/file/00_step.png
 ---
 height: 300px
 name: stepfun
@@ -183,7 +183,7 @@ In this part, we will introduce different estimation principles, starting with (
 
 Note that regression analysis is not restricted to linear nor to bivariate cases.
 
-```{figure} https://files.mude.citg.tudelft.nl/01_Regression.png
+```{figure} https://github.com/TUDelft-MUDE/source-files/raw/main/file/01_Regression.png
 ---
 height: 350px
 name: Regres

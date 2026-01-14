@@ -9,7 +9,7 @@ $$
 
 In {numref}`frv_C_F`, an example of the distribution of the average July temperature in a city is illustrated, both in degrees Celsius and degrees Fahrenheit. Due to a simple change of units, the PDF is transformed, the mean is shifted and the variance is ultimately also changed.
 
-```{figure} https://files.mude.citg.tudelft.nl/01_Temp.png
+```{figure} https://github.com/TUDelft-MUDE/source-files/raw/main/file/01_Temp.png
 ---
 height: 300px
 name: frv_C_F

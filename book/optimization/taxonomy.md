@@ -11,7 +11,7 @@ In this section we will discuss the difference between different types of optimi
 
 Below is an overview of the different types of optimization models and their relationship with each other:
 
-![taxonomy](https://files.mude.citg.tudelft.nl/taxonomy.png "taxonomy")
+![taxonomy](https://github.com/TUDelft-MUDE/source-files/raw/main/file/taxonomy.png "taxonomy")
 
 ## Continuous vs Discrete variables
 
@@ -62,7 +62,7 @@ $$\begin{gather*}nC\leq 50M\\ nC_m\leq 0.7M\end{gather*}$$
 
 Agrawal2021
 
-```{figure} https://files.mude.citg.tudelft.nl/convex2.png
+```{figure} https://github.com/TUDelft-MUDE/source-files/raw/main/file/convex2.png
 :name: convex_non_convex
 
 This figure includes content from {cite:t}`Agrawal2021` and {cite:t}`Nogal2021`. {ref}`Find out more here <optimization_credit>`.
