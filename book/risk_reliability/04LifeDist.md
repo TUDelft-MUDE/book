@@ -37,7 +37,7 @@ while the CDF of the exponential distribution is given by
 
 $$ F(t) = 1-e^{-\lambda t} $$
 
-```{figure} https://files.mude.citg.tudelft.nl/expon.png
+```{figure} https://github.com/TUDelft-MUDE/source-files/raw/main/file/expon.png
 
 ---
 
@@ -57,7 +57,7 @@ for $\lambda$, $\alpha > 0$, $t\geq 0$ and $\Gamma$ being the gamma function.
 
 Figure below depicts the influence of the parameters of the gamma distribution , $\lambda$ and $\alpha$ in their corresponding failure rate. When $\alpha=1$, the gamma distribution reduces to the exponential and, thus, the failure rate is constant; $\alpha$ controls the shape of the distribution and, thus, the shape of the failure rate. The gamma distribution has increasing failure rate for $\alpha >1$. To get an intuition of the influence of the parameters $\alpha$ and $\lambda$ in the failure rate, you can play with the interactive element below. 
 
-```{figure} https://files.mude.citg.tudelft.nl/gamma.png
+```{figure} https://github.com/TUDelft-MUDE/source-files/raw/main/file/gamma.png
 
 ---
 
@@ -77,7 +77,7 @@ for $\lambda$, $\alpha > 0$, $t\geq 0$.
 
 Figure below depicts the influence of the parameters of the Weibull distribution , $\lambda$ and $\alpha$ in their corresponding failure rate.
 
-```{figure} https://files.mude.citg.tudelft.nl/weibull_min.png
+```{figure} https://github.com/TUDelft-MUDE/source-files/raw/main/file/weibull_min.png
 
 ---
 

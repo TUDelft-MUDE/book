@@ -41,7 +41,7 @@ This leads to an impractical number of scenarios to test in simulation! This pro
 
 The typical workflow of an optimization process looks like the schematic shown below:
 
-![workflow](https://files.mude.citg.tudelft.nl/workflow.png "workflow")
+![workflow](https://github.com/TUDelft-MUDE/source-files/raw/main/file/workflow.png "workflow")
 
 ### Why optimization?
 
@@ -57,7 +57,7 @@ Optimization techniques have multiple applications as part of other mathematical
 
 ### What is included under the concept of optimization?
 
-```{figure} https://files.mude.citg.tudelft.nl/concept.png
+```{figure} https://github.com/TUDelft-MUDE/source-files/raw/main/file/concept.png
 ---
 width: 90%
 ---
@@ -73,7 +73,7 @@ In this section, you can find a few examples of optimization problems with their
 
 **Goal**: determine the optimal layout of wind turbines to produce the *highest amount of energy at minimum costs*. Considering different types of turbines, their power curves, physical characteristics, wake effect, etc.
 
-```{figure} https://files.mude.citg.tudelft.nl/ex_norway.png
+```{figure} https://github.com/TUDelft-MUDE/source-files/raw/main/file/ex_norway.png
 ---
 width: 90%
 ---
@@ -89,7 +89,7 @@ This example is taken from CME4500 Engineering Systems Optimization, final proje
 
 **Goal**: determine the most economic configuration of areas for wind turbines, solar panels, algae, and battery storage to meet the hourly energy demand in the future for a certain area. Considering the fluctuating demand, climatic conditions, etc.
 
-```{figure} https://files.mude.citg.tudelft.nl/ex_2.png
+```{figure} https://github.com/TUDelft-MUDE/source-files/raw/main/file/ex_2.png
 ---
 width: 75%
 ---
@@ -105,7 +105,7 @@ This example is taken from CME4500 Engineering Systems Optimization, final proje
 
 **Goal**: identify the optimal distribution of charging stations that maximizes the utility accounting for the population density, existence of other charging stations, and other urban elements (e.g. rivers, parks, etc.)
 
-```{figure} https://files.mude.citg.tudelft.nl/ex_3.png
+```{figure} https://github.com/TUDelft-MUDE/source-files/raw/main/file/ex_3.png
 ---
 width: 75%
 ---
@@ -121,14 +121,14 @@ This example is taken from CME4500 Engineering Systems Optimization, final proje
 
 **Goal**: identify the most economic location of EV charging stations to satisfy the users' requirements.
 
-```{figure} https://files.mude.citg.tudelft.nl/ex_4_1.png
+```{figure} https://github.com/TUDelft-MUDE/source-files/raw/main/file/ex_4_1.png
 ---
 width: 55%
 ---
 
 ```
 
-```{figure} https://files.mude.citg.tudelft.nl/ex_4_2.png
+```{figure} https://github.com/TUDelft-MUDE/source-files/raw/main/file/ex_4_2.png
 ---
 width: 40%
 ---
@@ -144,7 +144,7 @@ This example is taken from the MSc Thesis of Dawei Fu​.
 
 **Goal:** identify the optimal geometry and plies layout with consideration of the tradeoff between cost and sustainability. The design must guarantee the structural safety conditions.
 
-```{figure} https://files.mude.citg.tudelft.nl/ex_5.png
+```{figure} https://github.com/TUDelft-MUDE/source-files/raw/main/file/ex_5.png
 ---
 width: 85%
 ---
@@ -160,7 +160,7 @@ This example is taken from the MSc Thesis of Ola Åsbø
 
 **Goal:** determine the most efficient process for building components that have physical interdependencies (fulfilling constructive constraints), with consideration of the tradeoff between the cost and construction duration.
 
-```{figure} https://files.mude.citg.tudelft.nl/ex_6.png
+```{figure} https://github.com/TUDelft-MUDE/source-files/raw/main/file/ex_6.png
 ---
 width: 75%
 ---
@@ -176,7 +176,7 @@ This example is taken from the MSc Thesis of Xinzhi Jiang
 
 **Goal:** identify the optimal locations of mobility hubs that make available several modes, such as shared bikes, shared cars and cargo bikes maximizing accessibility and minimizing costs with consideration of the demand.
 
-```{figure} https://files.mude.citg.tudelft.nl/ex_7.png
+```{figure} https://github.com/TUDelft-MUDE/source-files/raw/main/file/ex_7.png
 ---
 width: 85%
 ---
@@ -192,14 +192,14 @@ This example is taken from the MSc thesis ​of Stavros Xanthopoulos
 
 **Goal:** identify the best location and time for deploying enhanced roads for automated vehicles, minimizing deployment cost and maximizing efficiency and safety given the uncertain evolution path of automated driving technology and the travelers' mode and route choice behavior.
 
-```{figure} https://files.mude.citg.tudelft.nl/ex_8.png
+```{figure} https://github.com/TUDelft-MUDE/source-files/raw/main/file/ex_8.png
 ---
 width: 95%
 ---
 
 ```
 
-```{figure} https://files.mude.citg.tudelft.nl/ex_8_2.png
+```{figure} https://github.com/TUDelft-MUDE/source-files/raw/main/file/ex_8_2.png
 ---
 width: 95%
 ---

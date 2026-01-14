@@ -39,7 +39,7 @@ Your task is to determine:
 
 Opening additional TPs improves proximity and service quality for Horeca businesses but increases investment and operational costs. Routing flow over long distances increases emissions and delivery times. Furthermore, each TP has limited capacity and cannot serve unlimited demand. These competing considerations lead to a trade-off between cost efficiency, environmental performance, and service accessibility.
 
-```{figure} https://files.mude.citg.tudelft.nl/MoA_map.png
+```{figure} https://github.com/TUDelft-MUDE/source-files/raw/main/file/MoA_map.png
 ---
 width: 80%
 ---
@@ -263,7 +263,7 @@ where $v(x)$ represents the magnitude of violation and P is the violation penalt
 ### Summary
 The following figure illustrates the flowchart of steps requierd to be taken to solve this problem with GA.
 
-```{figure} https://files.mude.citg.tudelft.nl/Flowchart.png
+```{figure} https://github.com/TUDelft-MUDE/source-files/raw/main/file/Flowchart.png
 ---
 width: 100%
 ---

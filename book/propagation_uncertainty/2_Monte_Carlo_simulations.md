@@ -69,7 +69,7 @@ $$
 
 Let's now observe how this compares with MC simulations for different number of samples between $10^3$ and $10^7$. In the following plots we observe - for Mean (left) and Standard Deviation (right) - the results based on Taylor (1st order) approximation in red, along with MC results in blue color.  
 
-```{figure} https://files.mude.citg.tudelft.nl/PLOT_BarometricLaw_uncertainty_propagation_1D.png
+```{figure} https://github.com/TUDelft-MUDE/source-files/raw/main/file/PLOT_BarometricLaw_uncertainty_propagation_1D.png
 :align: center
 
 Mean and Standard Deviation computed via Taylor (1st order) approximation and Monte Carlo simulations.
@@ -91,7 +91,7 @@ $$
 
 The results below demonstrates how thanks to Monte Carlo simulations it was possible to identify errors in the Taylor-based approximation, considering that an analytic expression for second derivate was relatively simple for this illustrative example. Moreover, we also saw how a large number of samples is necessary in order to correctly approximate the Mean and Variance of transformed variables, especially if subject to high non linearities. 
 
-```{figure} https://files.mude.citg.tudelft.nl/PLOT_BarometricLaw_uncertainty_propagation_1D_with_MeanCorr.png
+```{figure} https://github.com/TUDelft-MUDE/source-files/raw/main/file/PLOT_BarometricLaw_uncertainty_propagation_1D_with_MeanCorr.png
 :align: center
 
 Mean and Standard Deviation computed via Taylor (2nd order) approximation and Monte Carlo simulations.

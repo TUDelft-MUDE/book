@@ -11,7 +11,7 @@ Here we will formulate the series using real-valued functions (known as the _Rea
 
 *Example:* $x(t)=A\cos(2\pi f_0t+\theta)$
 
-![first_example](https://files.mude.citg.tudelft.nl/first_example.png "first_example")
+![first_example](https://github.com/TUDelft-MUDE/source-files/raw/main/file/first_example.png "first_example")
 
 It is easy to see that, in this case we will have:
 
@@ -27,7 +27,7 @@ $$\theta_t = \frac{\theta}{2\pi f_0}$$
 
 as $x(t)=A\cos(2\pi f_0(t+\theta_t))$
 
-![time_delay](https://files.mude.citg.tudelft.nl/time_delay.png "time_delay")
+![time_delay](https://github.com/TUDelft-MUDE/source-files/raw/main/file/time_delay.png "time_delay")
 
 Cosine and sine can be thought of as originating from an object travelling over a circle; the object is *rotating* at angular frequency $\omega_0$. The unit circle is interpreted as being in the complex plane, with Euler's formula:
 
@@ -39,7 +39,7 @@ The position of the object is described by the complex number $\tilde{x}(t)$, wh
 * $\text{Im}(\tilde{x}(t))=\sin(\omega_0 t)$
 
 
-```{figure} https://files.mude.citg.tudelft.nl/Unitycircle-complex.gif
+```{figure} https://github.com/TUDelft-MUDE/source-files/raw/main/file/Unitycircle-complex.gif
 ---
 height: 300px
 name: unitycircle

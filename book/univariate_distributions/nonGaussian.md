@@ -6,7 +6,7 @@ So far, you have seen that we can use an empirical distribution to model the unc
 
 Asymmetry is a relevant property of a distribution which analyzes its shape. In the Figure below, you have the PDF of a Gaussian distribution.
 
-```{figure} https://files.mude.citg.tudelft.nl/one_gaussian.png
+```{figure} https://github.com/TUDelft-MUDE/source-files/raw/main/file/one_gaussian.png
 
 ---
 

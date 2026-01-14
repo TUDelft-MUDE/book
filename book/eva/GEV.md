@@ -19,7 +19,7 @@ where $-\infty < \mu < \infty$ is the location parameter, $\sigma > 0$ is the sc
 
 In the figure below, you can see the effect of the location parameter, $\mu$. A higher value of $\mu$ leads to a shift towards the right.
 
-```{figure} https://files.mude.citg.tudelft.nl/gev_mu.png
+```{figure} https://github.com/TUDelft-MUDE/source-files/raw/main/file/gev_mu.png
 
 ---
 
@@ -29,7 +29,7 @@ Influence of the location parameter in GEV distribution.
 
 A higher value of the scale parameter, $\sigma$, leads to a wider distribution, as shown below.
 
-```{figure} https://files.mude.citg.tudelft.nl/gev_scale.png
+```{figure} https://github.com/TUDelft-MUDE/source-files/raw/main/file/gev_scale.png
 
 ---
 
@@ -39,7 +39,7 @@ Influence of the scale parameter in GEV distribution.
 
 Finally, the shape parameter, $\xi$, determines the tail of the distribution. This is, the behavior of the distribution at the tail changes based on the value of $\xi$. If $\xi \rightarrow 0$, the GEV is called type I or Gumbel distribution and presents an exponential decay at the tail. If $\xi>0$, the GEV is a type II or Fréchet distribution and the tail presents a polynomial decay. Finally, if $x<0$, the GEV is a type III or Reverse Weibull distribution, and it presents an upper bound.
 
-```{figure} https://files.mude.citg.tudelft.nl/gev_shape.png
+```{figure} https://github.com/TUDelft-MUDE/source-files/raw/main/file/gev_shape.png
 
 ---
 
@@ -49,7 +49,7 @@ Influence of the shape parameter in GEV distribution.
 
 If we plot the exceedance probabilities, we can better see the role of those differences in the tail. Gumbel distribution is said to have a "light tail" since its tail is somewhere in between Reverse Weibull and Frèchet distribution. Small changes in the exceedance probability lead to high differences in the values of the magnitude of interest ($x$ in the plot below) when analyzing the Frèchet distribution. Indeed, we say it has "a heavy tail". Finally, for the Reverse Weibull we can clearly see the upper bound around $x = 8$.
 
-```{figure} https://files.mude.citg.tudelft.nl/tail_gev.png
+```{figure} https://github.com/TUDelft-MUDE/source-files/raw/main/file/tail_gev.png
 
 ---
 
@@ -93,7 +93,7 @@ Now that you are familiar with the GEV, we can perform the whole EVA process usi
 
 Let's see it now step by step applied to our data. First, we fit a GEV using Maximum Loglikelihood Estimator to our 20 sampled extremes using Yearly Maxima.
 
-```{figure} https://files.mude.citg.tudelft.nl/GEV_fit.png
+```{figure} https://github.com/TUDelft-MUDE/source-files/raw/main/file/GEV_fit.png
 
 ---
 
@@ -116,7 +116,7 @@ $
 
 Which leads to $H_{s, RT=100 \ years} \approx  4.5 m$. **Congratulations! You have performed your first Extreme Value Analysis!**
 
-```{figure} https://files.mude.citg.tudelft.nl/GEV_return.png
+```{figure} https://github.com/TUDelft-MUDE/source-files/raw/main/file/GEV_return.png
 
 ---
 

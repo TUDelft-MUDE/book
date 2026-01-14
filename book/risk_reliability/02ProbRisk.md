@@ -55,7 +55,7 @@ To present a visual idea of risk, we first arrange the scenarios in order of sev
 
 A plot of the consequences $x_i$ against the cumulative probabilities $P_i$ looks like shown in the Figure below.
 
-```{figure} https://files.mude.citg.tudelft.nl/risk_curve.png
+```{figure} https://github.com/TUDelft-MUDE/source-files/raw/main/file/risk_curve.png
 
 ---
 
@@ -66,7 +66,7 @@ Example of risk curve.
 
 A common representation is in a log-log scale for both axis in which case the (smoothed risk) curve looks like in the Figure below.
 
-```{figure} https://files.mude.citg.tudelft.nl/risk_curve_log.png
+```{figure} https://github.com/TUDelft-MUDE/source-files/raw/main/file/risk_curve_log.png
 
 ---
 
@@ -91,7 +91,7 @@ Going back to the previous example of the bridge, we can order the triplets in d
 
 Finally, we can represent the risk curve as
 
-```{figure} https://files.mude.citg.tudelft.nl/example_risk_curve.png
+```{figure} https://github.com/TUDelft-MUDE/source-files/raw/main/file/example_risk_curve.png
 
 ---
 
@@ -102,7 +102,7 @@ Risk curve for the bridge example.
 And in log-log scale as
 
 
-```{figure} https://files.mude.citg.tudelft.nl/example_log_curve.png
+```{figure} https://github.com/TUDelft-MUDE/source-files/raw/main/file/example_log_curve.png
 
 ---
 

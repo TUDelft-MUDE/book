@@ -2,7 +2,7 @@
 
 Consider now that we have two damages $(X,Y)$ instead of one. For example, imagine a flood event that affect two cities and generates economic losses in both. $(X,Y)$ would represent the losses in the cities. In this case, the (smoothed) risk curve becomes a risk surface, as shown in the left panel in Figure below.
 
-```{figure} https://files.mude.citg.tudelft.nl/bivar_both_consequences.png
+```{figure} https://github.com/TUDelft-MUDE/source-files/raw/main/file/bivar_both_consequences.png
 
 ---
 

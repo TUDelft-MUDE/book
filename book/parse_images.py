@@ -5,7 +5,7 @@ Description:
 This script processes Markdown (.md) and Jupyter Notebook (.ipynb) files listed in a `_toc.yml` file.
 It identifies local image references (including MyST `figure` syntax) in these files, copies the images
 to a specified folder (`new_images`), and replaces the local image paths with a public URL
-(e.g., `https://files.mude.citg.tudelft.nl/<image_name>`).
+(e.g., `https://github.com/TUDelft-MUDE/source-files/raw/main/file/<image_name>`).
 
 Key Features:
 - Parses `_toc.yml` to extract all Markdown and Notebook files.
@@ -46,7 +46,7 @@ import json
 
 # Define the folder where images will be copied
 output_folder = "new_images"
-base_url = "https://files.mude.citg.tudelft.nl/"
+base_url = "https://github.com/TUDelft-MUDE/source-files/raw/main/file/"
 
 # Ensure the output folder exists
 os.makedirs(output_folder, exist_ok=True)

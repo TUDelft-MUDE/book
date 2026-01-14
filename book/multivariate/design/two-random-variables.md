@@ -62,7 +62,7 @@ $$
 
 It considers the simultaneous occurrence of *both* rivers exceeding a design discharge with probability 0.01. This is a joint probability of occurrence, $P[Q_1>q_{1,design},Q_2>q_{2,design}]$, which can be evaluated with a multivariate probability distribution (or the marginal distributions in the independent case). The scenario is equivalent to observing two sixes after tossing two dice simultaneously: if the dice are fair, the probability is $1/36$. Thus, for this incorrect case the probability $P[Q_1>q_{1,design},Q_2>q_{2,design}]$ is not 0.01, it's actualy 0.01$^2$=0.0001, illustrated in the figure below.
 
-```{figure} https://files.mude.citg.tudelft.nl/design_2_rv_error_1.svg
+```{figure} https://github.com/TUDelft-MUDE/source-files/raw/main/file/design_2_rv_error_1.svg
 ---
 height: 400px
 name: design_2_rv_error_1
@@ -82,7 +82,7 @@ $$
 q_{1,\mathrm{design}}=q_{2,\mathrm{design}}=F_{Q}^{-1}(1-0.1)=126\:\text{m}^3\text{/s} \;\rightarrow\; q_{design}=252\:\text{m}^3\text{/s} 
 $$
 
-```{figure} https://files.mude.citg.tudelft.nl/design_2_rv_error_2a.svg
+```{figure} https://github.com/TUDelft-MUDE/source-files/raw/main/file/design_2_rv_error_2a.svg
 ---
 height: 400px
 name: design_2_rv_error_2a
@@ -102,7 +102,7 @@ $$
 
 which results in a totally different dike height.
 
-```{figure} https://files.mude.citg.tudelft.nl/design_2_rv_error_2b.svg
+```{figure} https://github.com/TUDelft-MUDE/source-files/raw/main/file/design_2_rv_error_2b.svg
 ---
 height: 400px
 name: design_2_rv_error_2b
@@ -132,7 +132,7 @@ $$
 q_{1,\mathrm{design}}=q_{2,\mathrm{design}}=F_{Q}^{-1}(0.995)=163\:\text{m}^3\text{/s} \;\rightarrow\; q_{design}=326\:\text{m}^3\text{/s} 
 $$
 
-```{figure} https://files.mude.citg.tudelft.nl/design_2_rv_error_3.svg
+```{figure} https://github.com/TUDelft-MUDE/source-files/raw/main/file/design_2_rv_error_3.svg
 ---
 height: 400px
 name: design_2_rv_error_3
@@ -154,7 +154,7 @@ $$
 
 This is equivalent to integrating the joint probability distribution of $Q_1$ and $Q_2$ over the region $\Omega$ where $q>275\:\text{m}^3\text{/s}$, illustrated in the figure below, along with the contours of joint probability density.
 
-```{figure} https://files.mude.citg.tudelft.nl/design_2_rv_correct.svg
+```{figure} https://github.com/TUDelft-MUDE/source-files/raw/main/file/design_2_rv_correct.svg
 ---
 height: 400px
 name: design_2_rv_correct

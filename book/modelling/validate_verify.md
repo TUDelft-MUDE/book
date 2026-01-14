@@ -10,7 +10,7 @@ We have already discussed that, when building a model, we have to make some deci
 
 Let us consider two different models, the mass-spring system and a building described by a complex numerical model, making using of the Finite Element Method.
 
-```{figure} https://files.mude.citg.tudelft.nl/two-models.png 
+```{figure} https://github.com/TUDelft-MUDE/source-files/raw/main/file/two-models.png 
 :height: 400px
 :name: two different models
 :align: center

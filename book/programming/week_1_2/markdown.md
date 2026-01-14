@@ -29,7 +29,7 @@ Many more tips are available here: https://www.markdownguide.org/basic-syntax/
 
 If you are viewing this file inside the book, all the markup has been converted properly. If you download the file and open it in a text-editor, you'll see the raw source code. To make your life easier, there are many tools available to render the markdown live. In VS code, this can be done by clicking 'Open preview to the side' in the toolbar (shortcut `CTRL` + `K` --> `V` ):
 
-![Markdown preview VS code](https://files.mude.citg.tudelft.nl/markdown_preview.png)
+![Markdown preview VS code](https://github.com/TUDelft-MUDE/source-files/raw/main/file/markdown_preview.png)
 
 Later on, you'll upload your assignments to GitHub, which by default renders all your markdown files. Please note that there are many different flavours of markdown, so it's best to stick to the main markdown syntax to make sure it's properly formatted wherever the file is opened.
 
@@ -67,7 +67,7 @@ You can also add figures in Markdown, using the following syntax:  `![My image](
 - an image located in the working directory `![My image](./imagename.ext)` (where `ext` is any image extension).
 - an image located in a sub-directory called "images": `![My image](./images/imagename.ext)`
 - an image with a space in the file name: `![My image](./images/my%20image.png)`
-- instead of a local image, you can also reference an image online: `![MUDE logo](https://files.mude.citg.tudelft.nl/MUDE_Logo-small.png)` gives you the MUDE logo!
+- instead of a local image, you can also reference an image online: `![MUDE logo](https://github.com/TUDelft-MUDE/source-files/raw/main/file/MUDE_Logo-small.png)` gives you the MUDE logo!
 
 When using Markdown to include an image, the square brackets is a text tag that is displayed in case the image does not load. Do not include a dot in the square brackets; i.e., do _not_ do this: `![my image.](./image.svg)`.
 
