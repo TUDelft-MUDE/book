@@ -3,15 +3,15 @@
 
 You can refer to the most recent version of this book as:
 
-> Lanzafame, R., van Woudenberg, T., Verhagen, S. (Eds.) (n.d.), Modelling, Uncertainty and Data for Engineers (MUDE) Textbook, Delft University of Technology. https://mude.citg.tudelft.nl/book, CC BY 4.0.
+> Ding, J. Lanzafame, R., van der Meer, F. van Woudenberg, T., Verhagen, S. (Eds.) (n.d.), Modelling, Uncertainty and Data for Engineers (MUDE) Textbook, Delft University of Technology. https://mude.citg.tudelft.nl/book, CC BY 4.0.
 
 The introduction, structure of the book and formatting of contents is done under direction of the Editors, in collaboration with a large team of co-authors and student assistants. Some chapters and pages have additional primary authors who are identified within the book either at the bottom of the first page in a chapter, or at the bottom of an individual page, as necessary. If an author is not listed on a particular chapter or page, the editors may be attributed as the authors. Furthermore, as contents of this book may change each academic year, we cannot guarantee that chapter titles and URL's will remain static indefinitely. Therefore, if it is important for you to reference a specific location within the book, we recommend including the complete URL and version in your reference:
 
-> `<Primary Authors>`, `<Title of Chapter or Page>`. In Lanzafame et al. (n.d.), _Modelling, Uncertainty and Data for Engineers (MUDE) Textbook._ Delft University of Technology. https://mude.citg.tudelft.nl/book/`<year>/<...>`, version `<version_number>`, CC BY 4.0.
+> `<Primary Authors>`, `<Title of Chapter or Page>`. In Ding et al. (n.d.), _Modelling, Uncertainty and Data for Engineers (MUDE) Textbook._ Delft University of Technology. https://mude.citg.tudelft.nl/book/`<year>/<...>`, version `<version_number>`, CC BY 4.0.
 
 The book in its entirety is available in the 2025 edition (2026 edition will follow in spring 2027), please note that only for complete versions of the book a DOI is created. Refer to this version as follows:
 
-> Lanzafame, R., van Woudenberg, T., Verhagen, S. (Eds.) (2025), Modelling, Uncertainty and Data for Engineers (MUDE) Textbook, Delft University of Technology. https://mude.citg.tudelft.nl/book/2025, version v2025.16.4, CC BY 4.0. [doi:10.5281/zenodo.18241273](https://doi.org/10.5281/zenodo.18241273).
+> Ding, J. Lanzafame, R., van der Meer, F. van Woudenberg, T., Verhagen, S. (Eds.) (2025), Modelling, Uncertainty and Data for Engineers (MUDE) Textbook, Delft University of Technology. https://mude.citg.tudelft.nl/book/2025, version v2025.16.6, CC BY 4.0. [doi:10.5281/zenodo.18241273](https://doi.org/10.5281/zenodo.18241273).
 
 ````{admonition} BibTeX Citation
 :class: tip, dropdown
@@ -21,7 +21,7 @@ If you would like to refer to the MUDE Textbook with BibTeX (e.g., in a TeachBoo
 ```bibtex
 @book{mude_most_recent,
   title={Modelling, {U}ncertainty and {D}ata for {E}ngineers ({MUDE}) {T}extbook},
-  editor={Lanzafame, Robert and van Woudenberg, Tom and Verhagen, Sandra},
+  editor={Ding, Jialei and Lanzafame, Robert and van der Meer, Frans and van Woudenberg, Tom and Verhagen, Sandra},
   year={n.d.},
   publisher={Delft University of Technology},
   note={{s://mude.citg.tudelft.nl/book} CC BY 4.0}
@@ -33,7 +33,7 @@ or including a specific location and version (URL and version number to be adapt
 ```bibtex
 @book{mude_most_recent,
   title={Modelling, {U}ncertainty and {D}ata for {E}ngineers ({MUDE}) {T}extbook},
-  editor={Lanzafame, Robert and van Woudenberg, Tom and Verhagen, Sandra},
+  editor={Ding, Jialei and Lanzafame, Robert and van der Meer, Frans and van Woudenberg, Tom and Verhagen, Sandra},
   year={n.d.},
   publisher={Delft University of Technology},
   note={{s://mude.citg.tudelft.nl/book/`<year>/<...>`},version `<version_number>`, CC BY 4.0}
@@ -47,10 +47,10 @@ Or for the complete 2025 edition:
 ```bibtex
 @book{mude2025,
   title={Modelling, {U}ncertainty and {D}ata for {E}ngineers ({MUDE}) {T}extbook},
-  editor={Lanzafame, Robert and van Woudenberg, Tom and Verhagen, Sandra},
+  editor={Ding, Jialei and Lanzafame, Robert and van der Meer, Frans and van Woudenberg, Tom and Verhagen, Sandra},
   year={2025},
   publisher={Delft University of Technology},
-  edition={v2025.16.4},
+  edition={v2025.16.6},
   note={{s://mude.citg.tudelft.nl/book/2025} CC BY 4.0},
   doi={10.5281/zenodo.18241273}
 }
