@@ -215,12 +215,12 @@ Credits are provided here for chapters and pages that are released under the lic
 (optimization_credit)=
 ### Chapter: Optimization
 
-> {ref}`Optimization <optimization>` is written by Gonçalo Homem de Almeida Correia, Maria Nogal Macho, Jie Gao and Bahman Ahmadi.
+> {ref}`Optimization <optimization>` is written by Nadia Pourmohammadzia, Gonçalo Homem de Almeida Correia, Maria Nogal Macho, Jie Gao and Bahman Ahmadi.
 >
 > _Gonçalo Homem de Almeida Correia created most of the material. Maria Nogal Macho and Bahman Ahmadi made contributions to various parts. Bahman Ahmadi developed the exercises in Python and Jupyter notebooks. Jie Gao created the genetic algorithm material._
 >
 > Special thanks goes to:
-> - Jialei Ding and Nadia Pourmohammadzia, who reviewed material and made improvements to the traffic exercise.
+> - Jialei Ding, who reviewed material and made improvements to the traffic exercise.
 > - Tom van Woudenberg, who edited text and improved content and structure for online interactive textbook format.
 > - João Moura Pereira de Lucas Teixeira, who created first draft of pages from powerpoint slides.
 >
