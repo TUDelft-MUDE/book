@@ -9,9 +9,9 @@ The introduction, structure of the book and formatting of contents is done under
 
 > `<Primary Authors>`, `<Title of Chapter or Page>`. In Lanzafame et al. (n.d.), _Modelling, Uncertainty and Data for Engineers (MUDE) Textbook._ Delft University of Technology. https://mude.citg.tudelft.nl/book/`<year>/<...>`, version `<version_number>`, CC BY 4.0.
 
-The book in its entirety is available in the 2024 edition (2025 edition will follow in spring 2026), please note that only for complete versions of the book a DOI is created. Refer to this version as follows:
+The book in its entirety is available in the 2025 edition (2026 edition will follow in spring 2027), please note that only for complete versions of the book a DOI is created. Refer to this version as follows:
 
-> Lanzafame, R., van Woudenberg, T., Verhagen, S. (Eds.) (2024), Modelling, Uncertainty and Data for Engineers (MUDE) Textbook, Delft University of Technology. https://mude.citg.tudelft.nl/book/2024, version v2024.1.0, CC BY 4.0. [doi:10.5281/zenodo.16236358](https://doi.org/10.5281/zenodo.16236358).
+> Lanzafame, R., van Woudenberg, T., Verhagen, S. (Eds.) (2025), Modelling, Uncertainty and Data for Engineers (MUDE) Textbook, Delft University of Technology. https://mude.citg.tudelft.nl/book/2025, version v2025.16.4, CC BY 4.0. [doi:10.5281/zenodo.18241273](https://doi.org/10.5281/zenodo.18241273).
 
 ````{admonition} BibTeX Citation
 :class: tip, dropdown
@@ -42,21 +42,21 @@ or including a specific location and version (URL and version number to be adapt
 
 The text citation is {cite:t}`mude_most_recent` and the parenthetical citation is {cite:p}`mude_most_recent`.
 
-Or for the complete 2024 edition:
+Or for the complete 2025 edition:
 
 ```bibtex
-@book{mude2024,
+@book{mude2025,
   title={Modelling, {U}ncertainty and {D}ata for {E}ngineers ({MUDE}) {T}extbook},
   editor={Lanzafame, Robert and van Woudenberg, Tom and Verhagen, Sandra},
-  year={2024},
+  year={2025},
   publisher={Delft University of Technology},
-  edition={v2024.1.0},
-  note={{s://mude.citg.tudelft.nl/book/2024} CC BY 4.0},
-  doi={10.5281/zenodo.16236358}
+  edition={v2025.16.4},
+  note={{s://mude.citg.tudelft.nl/book/2025} CC BY 4.0},
+  doi={10.5281/zenodo.18241273}
 }
 ```
 
-The text citation is {cite:t}`mude2024` and the parenthetical citation is {cite:p}`mude2024`.
+The text citation is {cite:t}`mude2025` and the parenthetical citation is {cite:p}`mude2025`.
 
 ````
 
