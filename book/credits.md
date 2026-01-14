@@ -11,7 +11,7 @@ The introduction, structure of the book and formatting of contents is done under
 
 The book in its entirety is available in the 2025 edition (2026 edition will follow in spring 2027), please note that only for complete versions of the book a DOI is created. Refer to this version as follows:
 
-> Ding, J. Lanzafame, R., van der Meer, F. van Woudenberg, T., Verhagen, S. (Eds.) (2025), Modelling, Uncertainty and Data for Engineers (MUDE) Textbook, Delft University of Technology. https://mude.citg.tudelft.nl/book/2025, version v2025.16.6, CC BY 4.0. [doi:10.5281/zenodo.18241273](https://doi.org/10.5281/zenodo.18241273).
+> Ding, J. Lanzafame, R., van der Meer, F. van Woudenberg, T., Verhagen, S. (Eds.) (2025), Modelling, Uncertainty and Data for Engineers (MUDE) Textbook, Delft University of Technology. https://mude.citg.tudelft.nl/book/2025, version v2025.16.6, CC BY 4.0. [doi:10.5281/zenodo.18241869](https://doi.org/10.5281/zenodo.18241869).
 
 ````{admonition} BibTeX Citation
 :class: tip, dropdown
@@ -52,7 +52,7 @@ Or for the complete 2025 edition:
   publisher={Delft University of Technology},
   edition={v2025.16.6},
   note={{s://mude.citg.tudelft.nl/book/2025} CC BY 4.0},
-  doi={10.5281/zenodo.18241273}
+  doi={10.5281/zenodo.18241869}
 }
 ```
 
