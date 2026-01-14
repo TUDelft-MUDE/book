@@ -11,7 +11,7 @@ This chapter was written by Sandra Verhagen and Lotfi Massarweh. {ref}`Find out 
 
 Most quantities we estimate in engineering and sciences are *functions of uncertain inputs*. For a given stochastic input $Y$ and a generic transformation $q: \mathbb{R} \rightarrow \mathbb{R}$, also the output $X = q(Y)$ is expected to be random. However, if we know the distribution of the input data $Y$, it is in general non-trivial to fully define the distribution of the output data $X$ (see {numref}`functions_RV`). The **propagation of the uncertainty** allows us to indeed acquire information on the transformed distribution, nonetheless this is not always simple and some approximations might be needed.
 
-```{figure} https://files.mude.citg.tudelft.nl/01_Functions.png
+```{figure} https://github.com/TUDelft-MUDE/source-files/raw/main/file/01_Functions.png
 ---
 height: 150px
 name: functions_RV

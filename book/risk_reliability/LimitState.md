@@ -57,7 +57,7 @@ The relibility index $\beta=\frac{2000}{460.98}\approx4.34$
 
 Hence the probability of failure $P_{E_f}=\Phi(-4.34)\approx7.12\times10^{-6}$ in a cross sectional area.  The graphical representation is presented in the Figure below.
 
-```{figure} https://files.mude.citg.tudelft.nl/failure_region_RS.jpg
+```{figure} https://github.com/TUDelft-MUDE/source-files/raw/main/file/failure_region_RS.jpg
 
 ---
 
@@ -68,7 +68,7 @@ Graphical representation of the linear limit state and normal variables for the 
 
 Figure below shows the variables transformed to standard normal space. Notice that $\beta$ is an orthogonal vector to the limit state in the standard normal space. The point in $g$ with the smallest distance to the origin in standard normal space is sometimes called the *design point*. 
 
-```{figure} https://files.mude.citg.tudelft.nl/failure_region_Zspace.jpg
+```{figure} https://github.com/TUDelft-MUDE/source-files/raw/main/file/failure_region_Zspace.jpg
 
 ---
 
@@ -78,7 +78,7 @@ Graphical representation of the linear limit state and normal variables transfor
 
 Figure below shows the calculation of the failure probability through Monte Carlo simulation. In this case $\hat{P}_{E_f} = \frac{16}{2\times10^6}=8\times10^{-6}$
 
-```{figure} https://files.mude.citg.tudelft.nl/MC_original_space_RS.jpg
+```{figure} https://github.com/TUDelft-MUDE/source-files/raw/main/file/MC_original_space_RS.jpg
 
 ---
 

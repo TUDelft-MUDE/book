@@ -22,7 +22,7 @@ $$\underbrace{\sum_i^n F_i}_{\text{sum of all external forces}} = \overbrace{m\t
 Let us consider the mass-spring system as a first example.
 
 
-```{figure} https://files.mude.citg.tudelft.nl/mass-spring-system.png 
+```{figure} https://github.com/TUDelft-MUDE/source-files/raw/main/file/mass-spring-system.png 
 :height: 400px
 :name: mass-spring system
 :align: center
@@ -55,7 +55,7 @@ In linear models, the relationships between variables can be modelled using line
 
 **Let's see an example.**
 
-```{figure} https://files.mude.citg.tudelft.nl/pendulum0.png 
+```{figure} https://github.com/TUDelft-MUDE/source-files/raw/main/file/pendulum0.png 
 :height: 300px
 :alt: pendulum
 

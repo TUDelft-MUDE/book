@@ -64,7 +64,7 @@ $$
 
 The figure below shows both the CDF and the complementary CDF.
 
-```{figure} https://files.mude.citg.tudelft.nl/survival.png
+```{figure} https://github.com/TUDelft-MUDE/source-files/raw/main/file/survival.png
 ---
 name: survival gaussian
 ---

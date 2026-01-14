@@ -117,7 +117,7 @@ We can determine the dominant frequency $f_1$ by analysing the power spectral de
 
 {numref}`ls-psd` shows on the left the original time series as well as the estimated linear trend and seasonal signal. The sine wave has a period ($T=1/f$) of 100. Indeed the PSD as function of period on the right shows a peak at a period of 100. Mind that the PSD is shown here as a function of period $T$ in seconds, rather than frequency $f$ in Hertz.
 
-```{figure} https://files.mude.citg.tudelft.nl/ls-psd.png
+```{figure} https://github.com/TUDelft-MUDE/source-files/raw/main/file/ls-psd.png
 :name: ls-psd
 :width: 600px
 :align: center

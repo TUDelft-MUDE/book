@@ -9,7 +9,7 @@ A time series results from observing a stochastic process. A stochastic process 
 
 Would we observe it as a continuous function of time, then $Y(t)$ is a random variable which depends on time, and hence the probability density function (PDF) of $Y(t)$ would carry also time $t$ as an argument, $f_{Y(t)}(y,t)$, modelling the variability in the outcomes of $Y(t)$.
 
-```{figure} https://files.mude.citg.tudelft.nl/randomprocess_threerealizations.svg
+```{figure} https://github.com/TUDelft-MUDE/source-files/raw/main/file/randomprocess_threerealizations.svg
 ---
 name: randomprocess_threerealizations
 ---
@@ -79,7 +79,7 @@ The **detrended $\hat{\epsilon}$ is assumed to be stationary** for further **sto
 
 Let us take a look into an example:
 
-```{figure} https://files.mude.citg.tudelft.nl/least_squares.png 
+```{figure} https://github.com/TUDelft-MUDE/source-files/raw/main/file/least_squares.png 
 ---
 height: 300px
 name: least_squares
@@ -111,7 +111,7 @@ The time series of the residuals $\hat{\epsilon} = Y-A\hat{X}$ (left graph) is i
 
 Which of the four options is a stationary time series?
 
-```{figure} https://files.mude.citg.tudelft.nl/stat_question.png
+```{figure} https://github.com/TUDelft-MUDE/source-files/raw/main/file/stat_question.png
 ---
 height: 300px
 name: stationary_example
