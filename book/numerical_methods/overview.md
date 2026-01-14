@@ -25,7 +25,7 @@ This figure was made by Amgad Omer of Deltares. {ref}`Find out more here <numeri
 ````
 % END-CREDIT
 
-```{figure} https://files.mude.citg.tudelft.nl/NumericalMethodsRiver.gif
+```{figure} https://github.com/TUDelft-MUDE/source-files/raw/main/file/NumericalMethodsRiver.gif
 :name: NumericalMethodsRiver
 
 Cool numerical model of the Jamuna river. Included here with permission of Amgad Omer of Deltares. {ref}`Find out more here <numerical_modelling_credit>`

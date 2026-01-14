@@ -48,7 +48,7 @@ Examples are shown in {numref}`correlation`, for an example with a large number 
 
 Generally it is quite difficult to find cases in which $\rho=\pm 1$ or even $\rho=0$. In fact it is more likely to have values of $\rho$ that range between $-1$ and $1$ and, based on this value, we can determine the strength of the linear dependence.
 
-```{figure} https://files.mude.citg.tudelft.nl/01_correlation.png
+```{figure} https://github.com/TUDelft-MUDE/source-files/raw/main/file/01_correlation.png
 ---
 height: 350px
 name: correlation

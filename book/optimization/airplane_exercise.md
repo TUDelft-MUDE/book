@@ -109,7 +109,7 @@ What is the distribution of cargo for the optimal solution?
 ````{admonition} Solution
 :class: tip, dropdown
 
-```{figure} https://files.mude.citg.tudelft.nl/airplane1.png
+```{figure} https://github.com/TUDelft-MUDE/source-files/raw/main/file/airplane1.png
 ---
 height: 300px
 ---
@@ -148,7 +148,7 @@ What is the distribution of cargo for the optimal solution?
 ````{admonition} Solution
 :class: tip, dropdown
 
-```{figure} https://files.mude.citg.tudelft.nl/airplane2.png
+```{figure} https://github.com/TUDelft-MUDE/source-files/raw/main/file/airplane2.png
 ---
 height: 300px
 ---
@@ -180,7 +180,7 @@ What is the distribution of cargo for the optimal solution?
 ````{admonition} Solution
 :class: tip, dropdown
 
-```{figure} https://files.mude.citg.tudelft.nl/airplane3.png
+```{figure} https://github.com/TUDelft-MUDE/source-files/raw/main/file/airplane3.png
 ---
 height: 300px
 ---
@@ -212,7 +212,7 @@ What is the distribution of cargo for the optimal solution?
 ````{admonition} Solution
 :class: tip, dropdown
 
-```{figure} https://files.mude.citg.tudelft.nl/airplane4.png
+```{figure} https://github.com/TUDelft-MUDE/source-files/raw/main/file/airplane4.png
 ---
 height: 300px
 ---

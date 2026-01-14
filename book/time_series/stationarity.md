@@ -54,7 +54,7 @@ The **detrended $\hat{\epsilon}$ is assumed to be stationary** for further **sto
 
 Let us take a look into an example:
 
-```{figure} https://files.mude.citg.tudelft.nl/least_squares.png 
+```{figure} https://github.com/TUDelft-MUDE/source-files/raw/main/file/least_squares.png 
 ---
 height: 300px
 name: least_squares
@@ -86,7 +86,7 @@ The time series of residuals (left panel) is indeed a stationary time series.
 
 Which of the four options is a stationary time series?
 
-```{figure} https://files.mude.citg.tudelft.nl/stat_question.png
+```{figure} https://github.com/TUDelft-MUDE/source-files/raw/main/file/stat_question.png
 ---
 height: 300px
 name: stationary_example

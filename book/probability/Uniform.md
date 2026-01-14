@@ -13,7 +13,7 @@ $$
 
 Note that all values in the distribution are between the lower limit $a$ and the higher limit $b$ and are equally likely to occur. The left pannel of the figure below, shows an example of a uniform PDF with $a=-1$ and $b=1$.
 
-```{figure} https://files.mude.citg.tudelft.nl/uniform.png
+```{figure} https://github.com/TUDelft-MUDE/source-files/raw/main/file/uniform.png
 
 ---
 

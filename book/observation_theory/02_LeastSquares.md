@@ -28,7 +28,7 @@ $$
 
 {numref}`LSfit` shows the observations, together with a fitted linear trend line. Obviously, it is impossible to fit a line that perfectly matches all observations due the small measurement errors, which are assumed to be random.
 
-```{figure} https://files.mude.citg.tudelft.nl/02_LeastSquares_fit.png
+```{figure} https://github.com/TUDelft-MUDE/source-files/raw/main/file/02_LeastSquares_fit.png
 ---
 height: 300px
 name: LSfit
@@ -124,7 +124,7 @@ $$
 
 {numref}`LSsol` visualizes the least-squares solution based on a linear trend model.
 
-```{figure} https://files.mude.citg.tudelft.nl/02_LeastSquares_sol.png
+```{figure} https://github.com/TUDelft-MUDE/source-files/raw/main/file/02_LeastSquares_sol.png
 ---
 height: 350px
 name: LSsol

@@ -3,7 +3,7 @@
 
 In the previous chapter, we saw the Peak Over Threshold (POT) technique to sample extremes and we applied it to our time series. We used a threshold $th = 2.5m$ and a declustering time $dl = 48h$, obtaining the figure below. However, no justification was given for those parameters. In this section, we will start giving insight on how to select $th$ and $dl$, which is inherently a verification and validation process for our chosen distribution.
 
-```{figure} https://files.mude.citg.tudelft.nl/POT.png
+```{figure} https://github.com/TUDelft-MUDE/source-files/raw/main/file/POT.png
 
 ---
 
@@ -19,7 +19,7 @@ We already applied POT with $th = 2.5m$ and $dl=48h$ to our example dataset. Let
 
 First step is to calculate the number of excesses we have per year and, with it, the empirical pmf and the empirical cdf. Remember that the pmf gives us $P[X=x]$ and the cdf, $P[X \leq x]$. 
 
-```{figure} https://files.mude.citg.tudelft.nl/nexcess.png
+```{figure} https://github.com/TUDelft-MUDE/source-files/raw/main/file/nexcess.png
 
 ---
 
@@ -35,7 +35,7 @@ We can fit such distribution using [Moments method](prob_moments), which consist
 
 Once we have fitted the Poisson distribution, we can visually check the fit, as shown below. The figure on the left shows the supperposition of the empirical and fitted cdf. The figure on the right shows the empirical and estimated probabilities for number of excesses = 1, 2, ... 5, namely the PP-plot. The fitting seems reasonable.
 
-```{figure} https://files.mude.citg.tudelft.nl/gof_poisson.png
+```{figure} https://github.com/TUDelft-MUDE/source-files/raw/main/file/gof_poisson.png
 
 ---
 
@@ -49,7 +49,7 @@ In order to further support our decision, we can perform a goodness-of-fit hypot
 
 A scientist is analyzing the extreme precipitation rate events in a city and decided to apply POT to sample the extreme events. The scientist has chosen a threshold $th=100 \ mm/h$ and declustering time $dl= 2$ min. The following figure shows part of the timeseries together with the sampled extremes and the threshold.
 
-```{figure} https://files.mude.citg.tudelft.nl/sampling_exercise.png
+```{figure} https://github.com/TUDelft-MUDE/source-files/raw/main/file/sampling_exercise.png
 
 ---
 

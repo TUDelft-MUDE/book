@@ -11,7 +11,7 @@ This chapter was written by Sandra Verhagen. {ref}`Find out more here <uncertain
 
 In engineering and sciences we often work with functions of random variables, since when estimating or modelling something, the output is a function of the random input variables, see {numref}`functions_RV`
 
-```{figure} https://files.mude.citg.tudelft.nl/01_Functions.png
+```{figure} https://github.com/TUDelft-MUDE/source-files/raw/main/file/01_Functions.png
 ---
 height: 150px
 name: functions_RV
@@ -28,7 +28,7 @@ Some simple examples are:
 
 {numref}`frv_C_F` shows an example of the distribution of the average July temperature in a city, both in degrees Celsius and degrees Fahrenheit. Due to the change of units, the PDF is transformed, the mean is shifted and the variance changed.
 
-```{figure} https://files.mude.citg.tudelft.nl/01_Temp.png
+```{figure} https://github.com/TUDelft-MUDE/source-files/raw/main/file/01_Temp.png
 ---
 height: 300px
 name: frv_C_F

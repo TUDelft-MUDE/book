@@ -87,7 +87,7 @@ sources:
         name_ref: NumericalMethodsRiver
         what: animated figure (gif)
         where: book\numerical_methods\overview.md
-        source: https://files.mude.citg.tudelft.nl/NumericalMethodsRiver.gif
+        source: https://github.com/TUDelft-MUDE/source-files/raw/main/file/NumericalMethodsRiver.gif
         license: unclear
         copyright: Deltares
         note: Original caption from Jaime "Cool numerical model of the Jamuna river. Thanks to Amgad Omer (Deltares).""
@@ -214,7 +214,7 @@ sources:
       - name: unitycircle
         what: animated figure
         filename: unitycircle.gif
-        filepath: https://files.mude.citg.tudelft.nl/
+        filepath: https://github.com/TUDelft-MUDE/source-files/raw/main/file/
         where: book/2024/signal_processing/fourier_real.md
         source_url: https://commons.wikimedia.org/wiki/File:Unitycircle-complex.gif
         bibtex_key: BFD
@@ -239,7 +239,7 @@ sources:
         what: figure
         filename: tsa_cover.png
         bibtex: ipcc2018
-        filepath: https://files.mude.citg.tudelft.nl/
+        filepath: https://github.com/TUDelft-MUDE/source-files/raw/main/file/
         where: book/2024/time_series/intro.md
         source_url: https://www.researchgate.net/publication/330090901_Sustainable_development_poverty_eradication_and_reducing_inequalities_In_Global_warming_of_15C_An_IPCC_Special_Report
         note: |
@@ -248,7 +248,7 @@ sources:
         bibtex: csiro
         what: figure
         filename: trend.png
-        filepath: https://files.mude.citg.tudelft.nl/
+        filepath: https://github.com/TUDelft-MUDE/source-files/raw/main/file/
         where: book/2024/time_series/components.md
         source_url: https://www.cmar.csiro.au/sealevel/sl_hist_last_decades.html
 

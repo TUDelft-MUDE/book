@@ -21,7 +21,7 @@ $$\underbrace{\sum_i^n F_i}_{\text{sum of all external forces}} = \overbrace{m\t
 
 Let us consider the mass-spring system as a first example.
 
-![mass-spring](https://files.mude.citg.tudelft.nl/mass-spring-system.png "mass-spring")
+![mass-spring](https://github.com/TUDelft-MUDE/source-files/raw/main/file/mass-spring-system.png "mass-spring")
 
 For this system, Newton's equations of motion sketch as:
 
@@ -50,9 +50,9 @@ In linear models, the relationships between variables can be modelled using line
 
 Let us consider one of the most typical Physics examples: the simple pendulum. 
 
-%![pendulum](https://files.mude.citg.tudelft.nl/pendulum.png "pendulum") https://edurev.in/chapter/questions/46463/63808/Simple-Harmonic-Motion--SHM-
+%![pendulum](https://github.com/TUDelft-MUDE/source-files/raw/main/file/pendulum.png "pendulum") https://edurev.in/chapter/questions/46463/63808/Simple-Harmonic-Motion--SHM-
 
-![](https://files.mude.citg.tudelft.nl/replacement.svg)
+![](https://github.com/TUDelft-MUDE/source-files/raw/main/file/replacement.svg)
 
 The moment equation around the pivot point corresponds to a nonlinear dynamic model:
 
