@@ -2,30 +2,33 @@
 
 [TeachBooks Versioning](https://teachbooks.io/manual/features/versioning.html) is used (a special type of semantic numbering for educational purposes) with generic format `v<academic_year>.<additions>.<errata>`, with an additional `.pre-release` added for incomplete books.
 
-## 2025-01-14: v2025.16.6
+## 2026-01-20: v2025.16.7
+- Added Frans and Jailei to cff file
+
+## 2026-01-14: v2025.16.6
 - Added Frans and Jailei as editors
 - Moved figures to GitHub LFS repository
 
-## 2025-01-14: v2025.16.5
+## 2026-01-14: v2025.16.5
 - Updated [](credits.md)
 
-## 2025-01-13: v2025.16.4
+## 2026-01-13: v2025.16.4
 - Updated [](credits.md)
 
-## 2025-01-13: v2025.16.3
+## 2026-01-13: v2025.16.3
 - Tag for complete book for 2025-2026 edition
 
-## 2025-01-13: v2025.16.2.pre-release
+## 2026-01-13: v2025.16.2.pre-release
 - Fixed typo incorrectly referring to the numerator on [](./risk_reliability/04LifeDist.md)
 
-## 2025-01-12: v2025.16.1.pre-release
+## 2026-01-12: v2025.16.1.pre-release
 - Fixed typos in table for risk curve on [](./risk_reliability/02ProbRisk.md)
 - Added a few lines on the CSR sparse matrix format on [](./programming/week_2_2/sparse.ipynb)
 
-## 2025-01-09: v2025.16.0.pre-release
+## 2026-01-09: v2025.16.0.pre-release
 - Added [](./risk_reliability/00RiskRelIntro.md)
 
-## 2025-01-05: v2025.15.1.pre-release
+## 2026-01-05: v2025.15.1.pre-release
 - Repair math in FEM pages with interactive plots
 
 ## 2025-12-19: v2025.15.0.pre-release
