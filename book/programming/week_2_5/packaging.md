@@ -120,7 +120,7 @@ if __name__ == "__main__":
     print(result)
 ```
 
-Now, if someone imports your modeul `greet` to their script, the `print()` statement won't execute, but the function definition will be available for them to use. Running the `greet.py` diretly will print out the statement. This is the standard practice in Python packaging and will save you from many headaches when building and testing your package.
+Now, if someone imports your modeul `greet` to their script, the `print()` statement won't execute, but the function definition will be available for them to use. Running the `greet.py` directly will print out the statement. This is the standard practice in Python packaging and will save you from many headaches when building and testing your package.
 
 ## Building your package
 
