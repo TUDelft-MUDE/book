@@ -15,7 +15,7 @@ To qualify as a probability distribution, the function must satisfy the conditio
 It’s important to realize that while the PDF describes the distribution of probability across all values of the random variable, probability density is not equivalent to probability, just like the density of iron is not equivalent to the mass of a block of iron. The equation below illustrates the mathematical relationship between the CDF (denoted here as $F(x)$) and the PDF (denoted as $f(x)$):
 
 $$
-F(x) = \int_{-\infty}^{x}f(x)dx
+F(x) = \int_{-\infty}^{x}f(v)dv
 $$
 
 The definition of the CDF includes an integral that begins at negative infinity and continues to a specific value, $x$, which defines the interval over which the probability is computing. In other words, **the CDF gives the probability that the random variable 
