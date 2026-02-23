@@ -3,6 +3,7 @@ root: intro
 
 
 parts:
+# START REMOVE-FROM-PUBLISH
   - caption: Q1 Topics
     numbered: 2
     chapters: 
@@ -53,28 +54,12 @@ parts:
       - file: multivariate/variables
       - file: multivariate/Correlation_and_Covariance.md
       - file: multivariate/Bivariate.md
-        #sections:
-        #- file: multivariate/design/overview.md
-        #  title: Example Application
-        #  sections:
-        #  - file: multivariate/design/one-random-variable.md
-        #  - file: multivariate/design/two-random-variables.md
-        #  - file: multivariate/design/exercise.md
-        #  - file: multivariate/design/exercise_solutions.ipynb
-        #- file: multivariate/test_pyvinecopulib.ipynb
-        #- file: multivariate/test_bivariate.ipynb
     - file: propagation_uncertainty/overview
       sections:
       - file: propagation_uncertainty/0_Transforming_random_variables.md
       - file: propagation_uncertainty/1_Mean_and_Variance_propagation.md
       - file: propagation_uncertainty/1b_Mean_and_Variance_propagation_linear_case.md
       - file: propagation_uncertainty/2_Monte_Carlo_simulations.md
-      
-      # - file: propagation_uncertainty/00a_CovCorr.md
-      # - file: propagation_uncertainty/00b_MultivariateNormal
-      # - file: propagation_uncertainty/01_ErrorPropagation.md
-      # - file: propagation_uncertainty/02_LinearPropagation.md
-      
 
     - file: observation_theory/overview.md
       sections:
@@ -173,15 +158,6 @@ parts:
       - file: optimization/some_constraints
       - file: optimization/genetic_algorithm
       - file: optimization/airlines_stripped.ipynb
-      #- file: optimization/performance
-      #  sections:
-      #  - file: optimization/airlines_performance.ipynb
-      #  - file: optimization/performance_generic_LP.ipynb
-      #
-      # - file: optimization/project
-      #   sections:
-      #   - file: optimization/Project_MILP.ipynb
-      #   - file: optimization/Project_GA.ipynb
       - file: optimization/project_Amsterdam.md   
 
     - file: ml/overview
@@ -236,8 +212,6 @@ parts:
         sections:
         - file: risk_reliability/LimitState.md
         - file: risk_reliability/04LifeDist.md
-# START REMOVE-FROM-PUBLISH
-# END REMOVE-FROM-PUBLISH
 
   - caption: Programming topics Q1
     numbered: 2
@@ -294,7 +268,6 @@ parts:
     - file: programming/week_2_5
       sections:
       - file: programming/week_2_5/packaging.md
-# START REMOVE-FROM-PUBLISH
 # END REMOVE-FROM-PUBLISH
   - caption: Miscellaneous
     numbered: false

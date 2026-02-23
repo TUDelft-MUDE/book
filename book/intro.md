@@ -1,9 +1,9 @@
 +++
 # Welcome to the MUDE Textbook
 
-Welcome to the MUDE textbook for the 2025-26 academic year. This is where assigned reading is located, along with interactive exercises to practice and study the module material. Material is released according to the course schedule.
+Welcome to the MUDE textbook for the 2026-27 academic year. This is where assigned reading is located, along with interactive exercises to practice and study the module material. Material is released according to the course schedule.
 
-The most recent complete book is the 2025-26 book, which is the book you're currently looking at.
+The most recent complete book is the 2025-26 book, which is avaiable [here](https://mude.citg.tudelft.nl/book/).
 
 ## How to use this book?
 

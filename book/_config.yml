@@ -8,7 +8,7 @@ execute:
 only_build_toc_files: true
 
 html:
-  baseurl :  "https://mude.citg.tudelft.nl/book/2025/"
+  baseurl :  "https://mude.citg.tudelft.nl/book/2026-draft/"
   use_multitoc_numbering: false
 
 sphinx:
@@ -28,7 +28,7 @@ sphinx:
         link: "https://mude.citg.tudelft.nl/"
       repository_url: "https://github.com/TUDelft-MUDE/book"
       path_to_docs: "book"
-      repository_branch: "2025"
+      repository_branch: "2026-draft"
       use_edit_page_button: true
       use_repository_button: true
       use_issues_button : true
