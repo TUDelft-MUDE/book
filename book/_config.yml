@@ -32,8 +32,14 @@ sphinx:
       use_edit_page_button: true
       use_repository_button: true
       use_issues_button : true
+# START REMOVE-FROM-PUBLISH
+      announcement: "<p>This book is under construction. The version currently shared with students: <a href='https://mude.citg.tudelft.nl/book' style='color: cyan;'>mude.citg.tudelft.nl/book</a></p>"
+# END REMOVE-FROM-PUBLISH
       launch_buttons:
         thebe: true
+# START REMOVE-FROM-PUBLISH
+    keep_warnings: true
+# END REMOVE-FROM-PUBLISH
     tud_change_logo: false
     tud_change_titlesize: false
     named_colors_custom_colors: {'attributiongrey':[150,150,150]}
