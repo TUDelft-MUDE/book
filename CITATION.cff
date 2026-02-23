@@ -8,11 +8,16 @@ title: >-
 message: >-
   This record preserves the source code for the MUDE Textbook
   and is updated automatically by Zenodo. See the README
-  and/or record https://doi.org/10.5281/zenodo.16236358.
+  and/or record https://doi.org/10.5281/zenodo.16223061.
 type: software
 authors:
+  - given-names: Jialei
+    family-names: Ding
   - given-names: Robert
     family-names: Lanzafame
+  - given-names: Frans
+    family-names: Meer
+    name-particle: van der
   - given-names: Tom
     family-names: Woudenberg
     name-particle: van
@@ -20,7 +25,7 @@ authors:
     family-names: Verhagen
 identifiers:
   - type: doi
-    value: 10.5281/zenodo.16236358
+    value: 10.5281/zenodo.16223061
     description: Zenodo DOI for the book (not the source code)
   - type: doi
     value: 10.5281/zenodo.16227601
