@@ -13,7 +13,7 @@ In this chapter, we introduce the components to describe a time series: trend, s
 
 Next, we consider stationary time series, meaning that the statistical properties do not depend on the time when the time series was observed. A stationary time series represents an underlying stochastic process, which can then be modelled, for instance using an Autoregressive (AR) model. The final goal is to use the time series for estimating components such as trend and seasonality, as well as to predict future values, for which we do need to take into account also the stochastic process.
 
-```{figure} https://www.ipcc.ch/site/assets/uploads/sites/2/2019/02/SPM1_figure-final-947x1024.png
+```{figure} https://github.com/TUDelft-MUDE/source-files/raw/main/file/SPM1_figure-final.png
 :name: cover
 :align: center
 :author: Masson-Delmotte, V., P. Zhai, H.-O. Pörtner, D. Roberts, J. Skea, P.R. Shukla, A. Pirani, W. Moufouma-Okia, C. Péan, R. Pidcock, S. Connors, J.B.R. Matthews, Y. Chen, X. Zhou, M.I. Gomis, E. Lonnoy, T. Maycock,  M. Tignor, and T. Waterfield (eds.)
