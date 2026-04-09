@@ -1,7 +1,6 @@
 format: jb-book
 root: intro
 
-
 parts:
 # START REMOVE-FROM-PUBLISH
   - caption: Q1 Topics
