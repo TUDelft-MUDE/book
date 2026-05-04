@@ -50,8 +50,6 @@ sphinx:
       style: #BUMP
         admonition_class: attribution attributiongrey
       license:
-        summaries: true
-        strict_check: true
         substitute_missing: true
       author:
         substitute_missing: true
