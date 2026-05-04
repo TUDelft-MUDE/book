@@ -16,38 +16,10 @@ parts:
       - file: modelling/gof
     - file: numerical_methods/overview
       sections:
-      - file: numerical_methods/1-revision-of-concepts.ipynb
-      - file: numerical_methods/2-derivative.ipynb
-      - file: numerical_methods/3-fdm-introduction.ipynb
-      - file: numerical_methods/4-taylor-series-expansion.ipynb
-        sections:
-        - file: numerical_methods/taylor-series-exercise.ipynb
-      - file: numerical_methods/5-numerical-integration.ipynb
       - file: numerical_methods/6-initial-value-problem-singlestep.ipynb
       - file: numerical_methods/7-implicit_methods_nonlinear_ode.ipynb
       - file: numerical_methods/8-multistep_and_multistage_methods.ipynb
       - file: numerical_methods/9-boundary-value-problem.ipynb
-
-    - file: univariate_distributions/overview
-      sections:
-      - file: univariate_distributions/PDF_CDF
-      - file: univariate_distributions/empirical
-      - file: univariate_distributions/nonGaussian.md
-      - file: univariate_distributions/parametric.md
-        sections: 
-        - file: univariate_distributions/uniform.md
-        - file: univariate_distributions/gaussian.md
-        - file: univariate_distributions/lognormal.md
-        - file: univariate_distributions/gumbel.md
-        - file: univariate_distributions/exponential.md
-        - file: univariate_distributions/beta.md
-        - file: univariate_distributions/summary.md
-      - file: univariate_distributions/parameterization.ipynb
-      - file: univariate_distributions/fitting.md
-        sections: 
-        - file: univariate_distributions/moments.md
-        - file: univariate_distributions/MLE.md
-        - file: univariate_distributions/GOF.md
     - file: multivariate/overview
       sections:
       - file: multivariate/events
@@ -268,6 +240,39 @@ parts:
     - file: programming/week_2_5
       sections:
       - file: programming/week_2_5/packaging.md
+  - caption: Appendix
+    numbered: 2
+    style: [romanupper,romanlower]
+    chapters:
+    - file: numerical_methods/appendix_overview.md
+      sections:
+      - file: numerical_methods/1-revision-of-concepts.ipynb
+      - file: numerical_methods/2-derivative.ipynb
+      - file: numerical_methods/3-fdm-introduction.ipynb
+      - file: numerical_methods/4-taylor-series-expansion.ipynb
+        sections:
+        - file: numerical_methods/taylor-series-exercise.ipynb
+      - file: numerical_methods/5-numerical-integration.ipynb
+    - file: univariate_distributions/appendix_overview.md
+      sections:
+      - file: univariate_distributions/PDF_CDF
+      - file: univariate_distributions/empirical
+      - file: univariate_distributions/nonGaussian.md
+      - file: univariate_distributions/parametric.md
+        sections: 
+        - file: univariate_distributions/uniform.md
+        - file: univariate_distributions/gaussian.md
+        - file: univariate_distributions/lognormal.md
+        - file: univariate_distributions/gumbel.md
+        - file: univariate_distributions/exponential.md
+        - file: univariate_distributions/beta.md
+        - file: univariate_distributions/summary.md
+      - file: univariate_distributions/parameterization.ipynb
+      - file: univariate_distributions/fitting.md
+        sections: 
+        - file: univariate_distributions/moments.md
+        - file: univariate_distributions/MLE.md
+        - file: univariate_distributions/GOF.md
 # END REMOVE-FROM-PUBLISH
   - caption: Miscellaneous
     numbered: false
