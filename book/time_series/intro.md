@@ -17,7 +17,7 @@ Next, we consider stationary time series, meaning that the statistical propertie
 :name: cover
 :align: center
 :author: Masson-Delmotte, V., P. Zhai, H.-O. Pörtner, D. Roberts, J. Skea, P.R. Shukla, A. Pirani, W. Moufouma-Okia, C. Péan, R. Pidcock, S. Connors, J.B.R. Matthews, Y. Chen, X. Zhou, M.I. Gomis, E. Lonnoy, T. Maycock,  M. Tignor, and T. Waterfield (eds.)
-:date: 2018
+:date: 2018-01-01
 :license: All Rights Reserved
 :source: [IPCC website](https://www.ipcc.ch/sr15/)
 :copyright: 2019 Intergovernmental Panel on Climate Change

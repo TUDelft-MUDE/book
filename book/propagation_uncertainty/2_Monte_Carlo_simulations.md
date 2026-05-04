@@ -1,4 +1,4 @@
-(01_errorprop)=
+(01_monte_carlo_propagation)=
 # Monte Carlo simulations for uncertainty propagation
 
 In the previous parts we learned how a transformation of random variables lead to random outputs with a different distribution. Moreover, we also saw how to propagate **means** and **(co)variances** via linearization, including the exact linear case. Alternatively, Monte Carlo (MC) simulations are very effective tools when models are highly non-linear, or when inputs are non-Gaussian, or when we need the **full distribution** rather than just principal moments. 

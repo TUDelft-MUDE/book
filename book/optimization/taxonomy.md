@@ -58,10 +58,6 @@ $$\begin{gather*}nC\leq 50M\\ nC_m\leq 0.7M\end{gather*}$$
 **Definition:** A convex optimization problem is a problem where all the constraints and the objective are convex functions.
 
 
-![taxonomy]( "taxonomy")
-
-Agrawal2021
-
 ```{figure} https://github.com/TUDelft-MUDE/source-files/raw/main/file/convex2.png
 :name: convex_non_convex
 

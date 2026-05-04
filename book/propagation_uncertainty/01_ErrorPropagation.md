@@ -1,4 +1,4 @@
-(01_errorprop)=
+(01_errorprop_legacy)=
 ## Mean and variance propagation laws
 
 Here, will only consider the propagation of the mean (= expectation) and (co-)variances, and not the transformation of the full PDF or CDF.

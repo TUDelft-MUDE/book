@@ -96,7 +96,7 @@ Model the problem in Python using Gurobi.
 ````{admonition} Solution
 :class: tip, dropdown
 
-The implementation is shown [here](./airplane_original.ipynb).
+The implementation is shown [here](./airplane_original_stripped.ipynb).
 
 ````
 
