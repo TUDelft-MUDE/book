@@ -180,7 +180,7 @@ If you need to refresh the concept of covariance and correlation and want to see
 ```{video} https://youtube.com/embed/zyXp_oysuW4
 ```
 
-[^note]: You can check the definition of covariance [here](Correlation_and_Covariance.md#covariance-matrix).
+[^note]: You can check the definition of covariance [here](./Correlation_and_Covariance.md#covariance-matrix-def).
 
 
 ## Your turn now!

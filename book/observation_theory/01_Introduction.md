@@ -152,7 +152,7 @@ $$
 Where $Y_i$ is the distance measurement to satellite $i$. Note that the functional model is non-linear in $\mathrm{x}$, since the unknown parameters appear inside a square root.
 
 ## Redundancy
-Later we will see that the *redundancy* of our model plays an important role regarding the precision of our estimated parameters. For a model with $m$ observables and $n$ unknown parameters, the [redundancy](#redundancy) is given by:
+Later we will see that the *redundancy* of our model plays an important role regarding the precision of our estimated parameters. For a model with $m$ observables and $n$ unknown parameters, the redundancy is given by:
 
 $$
 \text{redundancy} = m-n

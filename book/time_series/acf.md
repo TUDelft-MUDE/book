@@ -213,7 +213,7 @@ $$
 T = \frac{\hat{\rho}_1}{\sigma_{\hat{\rho}_1}} \sim N(0,1)
 $$
 
-where we would reject $\mathcal{H}_0$ if $|T|>k_{\alpha}$. With a false alarm rate of $\alpha = 0.01$, we find that the critical value can be obtained from the [table of the standard normal distribution](../fundamentals/prob_tables/normal.ipynb#table_standardnormal). Note that we have a 2-sided critical region, hence we need to look up the value for $0.5\alpha$.
+where we would reject $\mathcal{H}_0$ if $|T|>k_{\alpha}$. With a false alarm rate of $\alpha = 0.01$, we find that the critical value can be obtained from the {ref}`table of the standard normal distribution <table_standardnormal>`. Note that we have a 2-sided critical region, hence we need to look up the value for $0.5\alpha$.
 
 In this example, we obtain:
 

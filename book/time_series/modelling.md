@@ -161,7 +161,7 @@ Given $\hat{X}$ and $\Sigma_{\hat{X}}$, we can obtain the [confidence region](co
 
 $$\hat{r}\pm k\sigma_{\hat{r}}$$
 
-where $\sigma_{\hat{r}} = \sqrt{(\Sigma_{\hat{X}})_{22}}$ is the standard deviation of $\hat{r}$ and $k=2.58$ is the critical value obtained from the [standard normal distribution](../fundamentals/prob_tables/normal.ipynb#table_standardnormal) (using $0.5\alpha$).
+where $\sigma_{\hat{r}} = \sqrt{(\Sigma_{\hat{X}})_{22}}$ is the standard deviation of $\hat{r}$ and $k=2.58$ is the critical value obtained from the {ref}`standard normal distribution <table_standardnormal>` (using $0.5\alpha$).
 
 In many practical applications, the covariance matrix $\Sigma_{Y}$ is not known. In such cases we can estimate $\mathrm{x}$ using the [unweighted least squares](../observation_theory/02_LeastSquares.md), as then knowledge of the covariance is not needed. Alternatively, it is possible to estimate the variance matrix, or components/parameters of it, based on the observed data through variance component estimation techniques, which are beyond the scope of the MUDE.
 
