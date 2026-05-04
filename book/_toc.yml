@@ -245,6 +245,7 @@ parts:
     style: romanupper
     chapters:
     - file: numerical_methods/appendix_overview.md
+      sections:
       - file: numerical_methods/1-revision-of-concepts.ipynb
       - file: numerical_methods/2-derivative.ipynb
       - file: numerical_methods/3-fdm-introduction.ipynb
