@@ -240,7 +240,7 @@ parts:
     - file: programming/week_2_5
       sections:
       - file: programming/week_2_5/packaging.md
-  - caption: Appendix (not part of exam)
+  - caption: Appendix
     numbered: 2
     style: [romanupper,romanlower]
     chapters:
