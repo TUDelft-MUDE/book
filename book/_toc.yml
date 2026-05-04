@@ -243,7 +243,7 @@ parts:
   - caption: Appendix (not part of exam)
     numbered: 2
     style: romanupper
-    sections:
+    chapters:
     - file: numerical_methods/appendix_overview.md
       - file: numerical_methods/1-revision-of-concepts.ipynb
       - file: numerical_methods/2-derivative.ipynb
