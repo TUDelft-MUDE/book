@@ -153,16 +153,6 @@ Credits are provided here for chapters and pages that are released under the lic
 > - The books _Adjustment theory: an introduction_ {cite:p}`adjustment_theory` and _Testing theory: an introduction_ {cite:p}`testing_theory` which provided the framework for this chapter.
 > - Sophie Keemink, Caspar Jungbacker and Thirza Feenstra, who provided feedback and helped develop exercises.
 
-(finite_volume_method_credit)=
-### Chapter: PDEs and the Finite Volume Method
-
-> [PDEs and the Finite Volume Method](./fvm/intro.md) is written by Robert Lanzafame and Jaime Arriaga Garcia.
->
-> Special thanks goes to:
-> - Isabel Slingerland and Mona Devos for critical feedback and development of exercises, figures and related content.
-> - Dhruv Mehta for providing a first draft of the chapter structure and contents.
-
-
 (numerical_methods_for_pdes_credit)=
 ### Chapter: Numerical Methods for PDEs
 
