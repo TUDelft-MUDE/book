@@ -1,3 +1,4 @@
+(cont_dist_2)=
 # Univariate Continuous Distributions
 
 % START-CREDIT
