@@ -38,10 +38,10 @@ N_3(\xi) &= \frac12\xi^2+\frac12\xi \\
 $$
 
 :::{card} Exercise
-Show that the shape functions given above satisfy the partition of unity property and the Kronecker delta property (see [chapter 1](TODO))
+Show that the shape functions given above satisfy the partition of unity property and the Kronecker delta property (see [chapter 1](./shape.md)).
 :::
 
-Note that the weights given for numerical integration in [chapter 1](TODO), for instance with two point Gauss integration at $\xi = -1/\sqrt{3}$ and $\xi = 1/\sqrt{3}$ with $w_1=w_2=1$ is directly suitable for this reference element. However, in a finite element model, where we have multiple elements, we need to perform integration over the actual domain of the elements. Moreover, in most models we will need the derivatives of the shape functions, and these are derivatives with respect to global coordinates. 
+Note that the weights given for numerical integration in [chapter 1](./shape.md), for instance with two point Gauss integration at $\xi = -1/\sqrt{3}$ and $\xi = 1/\sqrt{3}$ with $w_1=w_2=1$ is directly suitable for this reference element. However, in a finite element model, where we have multiple elements, we need to perform integration over the actual domain of the elements. Moreover, in most models we will need the derivatives of the shape functions, and these are derivatives with respect to global coordinates. 
 
 ### Requirements for the mapping
 

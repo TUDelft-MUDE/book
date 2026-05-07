@@ -127,7 +127,7 @@ and this is actually the **power density** [W/Hz].
 Returning to a voltage signal $x(t)$, or its sampled, discrete time version $x_n$, we have, see the previous chapter on the DFT,
 that $X_k$ is in [Vs] or equivalently in [V/Hz]. Then the unit of $S$ equals [V<sup>2</sup> s], which equals, with the above exposition on the 1 Ohm resistor, [W/Hz].
 
-#### Periodogram
+### Periodogram
 
 This turns out to be an *estimate* for the power spectral density (PSD), and it is referred to as a **periodogram** (estimate may be indicated by a hat-symbol, hence $\hat{S}$).
 

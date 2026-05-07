@@ -46,7 +46,7 @@ Our model will be based on a series of assumptions depending on the problem we a
 Imagine you want to predict what would be the choice made by a rational individual to travel from Delft to Paris (i.e. given origin and destination). Would he choose to go by car or by train?
 
 ```{figure} https://github.com/TUDelft-MUDE/source-files/raw/main/file/train_vs_car.png
-:name: Modelling workflow
+:name: Modelling workflow travel
 :align: center
 
 Plannig a trip from Delft to Paris. 

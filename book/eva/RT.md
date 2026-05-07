@@ -13,7 +13,7 @@ In short, $RT$ is the expected time between two exceedances of extreme events. T
 
 We want to estimate the time, on average, at which an event higher than a given value or threshold (design value, $z_q$) occurs, and we know that the exceedance probability is $P[X>z_q]=p$. We will assume that the process is stationary, so $p$ remains constant.
 
-So, for each time unit (trial), we check if the observed value exceeds our design value (success) or not (failure). Does it ring the bell? [**It's a Bernoulli process!**](Bernoulli)
+So, for each time unit (trial), we check if the observed value exceeds our design value (success) or not (failure). Does it ring the bell? [**It's a Bernoulli process!**](./Bernoulli.md)
 
 The probability that an event $z_0$ higher that $z_q$ occurs at a generic year $t$ is calculated as follows. We don't exceed the threshold in $t-1$ trials, so we have to multiply by $(1-p)(1-p)...$ $t-1$ times. We exceed the design value at time $t$, so we multiply by $p$. Note that we are assuming that each trial is independent, so exceeding the threshold in time $t$ is not dependent on the previous trials.
 

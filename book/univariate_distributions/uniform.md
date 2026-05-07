@@ -32,7 +32,7 @@ If we make $a=0$ and $b=1$, we obtain the standard or unity uniform distribution
 Below, you can see the PDF and CDF of a uniform distribution. Adjust the parameters and observe how the PDF's and CDF's shapes change in response.
 
 ````{iframe-figure} ../_static/elements/element_uniform_pdf.html
-:name: Gaussian_pdf
+:name: uniform_pdf
 :aspectratio: 1.5 / 1
 
 Interactively visualize the relationship between the PDF and the CDF of a uniform distribution.

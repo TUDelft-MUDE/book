@@ -62,13 +62,13 @@ The text citation is {cite:t}`mude2025` and the parenthetical citation is {cite:
 
 ## How the book is made
 
-This book is created using open source tools: it is a Jupyter Book that uses a number of features from [TeachBooks](s://teachbooks.io/) and is written using Markdown, Jupyter notebooks and Python files to generate some figures. The source files are stored on a public GitHub repository [github.com/TUDelft-MUDE/book](s://github.com/tudelft-mude/book/). Zenodo is used to archive all open versions of the book (beginning with the 2024-25 academic year) and to provide a DOI ([10.5281/zenodo.16223061](s://doi.org/10.5281/zenodo.16223061)).  View the repository README file or contact the editors for additional and up-to-date information.
+This book is created using open source tools: it is a Jupyter Book that uses a number of features from [TeachBooks](https://teachbooks.io/) and is written using Markdown, Jupyter notebooks and Python files to generate some figures. The source files are stored on a public GitHub repository [github.com/TUDelft-MUDE/book](https://github.com/tudelft-mude/book/). Zenodo is used to archive all open versions of the book (beginning with the 2024-25 academic year) and to provide a DOI ([10.5281/zenodo.16223061](https://doi.org/10.5281/zenodo.16223061)).  View the repository README file or contact the editors for additional and up-to-date information.
 
 ## Acknowledgements
 
 This book has many contributors, many of whom are also key members of the MUDE Team, as well as critical feedback from MUDE students. The sections below list the primary authors and contributors for each chapter, buit is unfortunately not possible to list all of the small contributions from various people from within and outside Delft University of Technology, not list all contributions in detail. A special note should go to the MUDE management team, which take a lead in organizing the module and keeping this book up-to-date with the latest course developments.
 
-A better way to see the contributions is to check the [Contributors Page](s://github.com/TUDelft-MUDE/book/graphs/contributors) of the GitHub repository.
+A better way to see the contributions is to check the [Contributors Page](https://github.com/TUDelft-MUDE/book/graphs/contributors) of the GitHub repository.
 
 A big "thank you" is also due to the Educational Management Team of the Civil Engineering and Geosciences Faculty at Delft University of Technology for giving the MUDE Team financial and organizational support during the early years of MUDE (especially 2022-2024), in particular Hans Welleman, Director of Education of the faculty. Without the freedom and support to experiment with new tools, this book (and [TeachBooks](https://teachbooks.io/) as well!) would not exist!
 
@@ -90,7 +90,7 @@ Parts of this book are taken from other external resources and reused in various
 (credits_not_cc_by)=
 ### Resources _not_ under CC BY
 
-CC BY conditions are _not_ applicable to some resources included in this book which resources cannot be reused without explicit permission from the original copyright holder. In some cases, external resources are provided under their own permissive license (e.g., CC BY), in which case permission and instructions for use are already explicitly provided by the copyright holder; however this is not always the case. All resources that are _not_ included in the CC BY license of this book are listed individually in the sections below, either: within the summary of each chapter or page, or as entire chapters or pages in {ref}`external_resources_credits`.
+CC BY conditions are _not_ applicable to some resources included in this book which resources cannot be reused without explicit permission from the original copyright holder. In some cases, external resources are provided under their own permissive license (e.g., CC BY), in which case permission and instructions for use are already explicitly provided by the copyright holder; however this is not always the case. All resources that are _not_ included in the CC BY license of this book are listed individually in the sections below, either: within the summary of each chapter or page, or as entire chapters or pages in {ref}`external_resources`.
 
 (internal_resources)=
 ## Individual Chapters and Pages
@@ -120,7 +120,7 @@ Credits are provided here for chapters and pages that are released under the lic
 (distributions_credit)=
 ### Chapter: Univariate Continuous Distributions
 
-> {ref}`Univariate Continuous Distributions <cont_dist>` is written by Patricia Mares Nasarre, Robert Lanzafame and Max Ramgraber.
+> [Univariate Continuous Distributions](./univariate_distributions/appendix_overview.md) is written by Patricia Mares Nasarre, Robert Lanzafame and Max Ramgraber.
 >
 > Special thanks goes to Oswaldo Morales Napoles and Elisa Ragno for suggestions on the theoretical and didactic framework, as well as critical feedback and review.
 >
@@ -153,16 +153,6 @@ Credits are provided here for chapters and pages that are released under the lic
 > - The books _Adjustment theory: an introduction_ {cite:p}`adjustment_theory` and _Testing theory: an introduction_ {cite:p}`testing_theory` which provided the framework for this chapter.
 > - Sophie Keemink, Caspar Jungbacker and Thirza Feenstra, who provided feedback and helped develop exercises.
 
-(finite_volume_method_credit)=
-### Chapter: PDEs and the Finite Volume Method
-
-> {ref}`PDEs and the Finite Volume Method <fvm>` is written by Robert Lanzafame and Jaime Arriaga Garcia.
->
-> Special thanks goes to:
-> - Isabel Slingerland and Mona Devos for critical feedback and development of exercises, figures and related content.
-> - Dhruv Mehta for providing a first draft of the chapter structure and contents.
-
-
 (numerical_methods_for_pdes_credit)=
 ### Chapter: Numerical Methods for PDEs
 
@@ -177,7 +167,7 @@ Credits are provided here for chapters and pages that are released under the lic
 
 > {ref}`Finite Element Method <finite_element_method>` is written by Frans van der Meer. 
 >
-> _The material in this chapter is also incorporated in an in-depth book "Finite Elements in Civil Engineering and Geosciences" by Oriol Colomés, Iuri Rocha, Frans van der Meer and Martin Lesueur which can be found [here](interactivetextbooks.citg.tudelft.nl/computational-modelling)._
+> _The material in this chapter is also incorporated in an in-depth book "Finite Elements in Civil Engineering and Geosciences" by Oriol Colomés, Iuri Rocha, Frans van der Meer and Martin Lesueur which can be found [here](https://interactivetextbooks.citg.tudelft.nl/computational-modelling)._
 >
 > Special thanks goes to Lex Niessen who greatly assisted in developing material on the finite element method for the first edition of MUDE, which was the starting point for this chapter. 
 

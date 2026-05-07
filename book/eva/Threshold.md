@@ -15,7 +15,7 @@ We also discussed previously that extreme observations tend to cluster in time a
 
 There are several techniques in the literature to support the decision-making process of selecting $th$ and $dl$ for POT. Here, we will start with the basic one (application of properties of Poisson distribution and hypothesis testing to check whether the number of excesses per year follows a Poisson distribution) which is the underlying assumption below the more complex techniques that we will see in subsequent sections.
 
-We already applied POT with $th = 2.5m$ and $dl=48h$ to our example dataset. Let's check whether those parameters are appropriate or we should change them. To do so, we are going to check if the number of excesses per year follows a [Poisson distribution](Poisson).
+We already applied POT with $th = 2.5m$ and $dl=48h$ to our example dataset. Let's check whether those parameters are appropriate or we should change them. To do so, we are going to check if the number of excesses per year follows a [Poisson distribution](./Poisson.md).
 
 First step is to calculate the number of excesses we have per year and, with it, the empirical pmf and the empirical cdf. Remember that the pmf gives us $P[X=x]$ and the cdf, $P[X \leq x]$. 
 

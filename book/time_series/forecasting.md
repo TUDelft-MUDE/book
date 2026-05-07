@@ -3,7 +3,7 @@
 
 Time series analysis focuses on examining data points collected over time to extract meaningful patterns, such as trends, seasonal cycles, and other temporal components. Very often we do so in order to be able to predict future values based on the previously observed ones, which is referred to as **forecasting**.
 
-In this part of the book, you first learned about the components that can be distinguished ([Chapter 4.1](components)) in a time series. Some of the components relate to the *signal-of-interest* and others with the *noise* ([Chapter 4.2](noise)). Modelling and estimating the signal-of-interest was explained in [Chapter 4.3](modelling_tsa), using the concepts of [Observation Theory](ObsTheory).
+In this part of the book, you first learned about the components that can be distinguished ([Chapter 4.1](./components.md)) in a time series. Some of the components relate to the *signal-of-interest* and others with the *noise* ([Chapter 4.2](./noise.ipynb)). Modelling and estimating the signal-of-interest was explained in [Chapter 4.3](./modelling.md), using the concepts of [Observation Theory](../observation_theory/01_Introduction.md).
 
 To be able to estimate future values of the time series (forecasting), we need to first estimate the functional model components of the time series. Additionally, the remaining time series needs to be *stationary*, i.e., the statistical properties do not change over time ([Chapter 4.4](stationary)). We considered a white noise time series, and the AR(1) process with $|\phi| < 1$. To turn a time series into a stationary one, we can detrend it and use the residuals from a least-squares fit for stochastic noise modelling.
 
