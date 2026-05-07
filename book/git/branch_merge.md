@@ -2,7 +2,7 @@
 
 A key feature of git is the ability to create and manage multiple version called branches, allowing you to work on different versions of your code simultaneously. Usually, the primary version is called main. In practice when collaborating with Git, everyone will work on a separate branch, whose progress you will later merge with main.
 
-Commits in git have a graph structure, where every node is a commit and edges represent the transition (flow) between commits. Branches can be thought of as pointers to commits, whereas HEAD points to the current commit that you're looking at. When you switch between branches, you can think of HEAD as the most recent commit on that branch.
+Commits (the 'states' or 'saves' of your files) in git have a graph structure, where every node is a commit and edges represent the transition (flow) between commits. Branches can be thought of as pointers to commits, whereas HEAD points to the current commit that you're looking at. When you switch between branches, you can think of HEAD as the most recent commit on that branch.
 
 The graph below shows the commit history of a repo with two commits:
 

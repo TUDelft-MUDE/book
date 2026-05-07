@@ -11,7 +11,10 @@ In a nutshell, **version control** is a process that is concerned with the manag
 
 While working on personal or university projects, without a doubt you have come across the following situation: You have finished drafting a report and believe you are done with it and save the file as `report.doc`. However, later you decide to experiment and make some changes, but you still want to keep your old working version, so you make a new file called `report-final.doc`. Now imagine that you send the file to a friend of yours to proofread and make some comments on it and they send it back. Next, you incorporate their feedback and end up naming the new one `report-final-2.doc`.
 
-What you have been doing is called version control. Version control systems start with a base version of the document and then record changes you make each step of the way. You can think of it as a recording of your progress: you can rewind to start at the base document and play back each change you made, eventually arriving at your most recent version, as shown in figure {numref}`intro1`:
+
+### Linear version control
+
+What you have been doing is called version control in a linear fashion. Version control systems start with a base version of the document and then record changes you make each step of the way. You can think of it as a recording of your progress: you can rewind to start at the base document and play back each change you made, eventually arriving at your most recent version, as shown in figure {numref}`intro1`:
 
 ```{figure} https://github.com/TUDelft-MUDE/source-files/raw/main/file/intro1.png
 ---
@@ -21,7 +24,9 @@ name: intro1
 Consecutive file changes
 ```
 
-Once you think of changes as separate from the document itself, you can then think about "playing back" different sets of changes on the base document, resulting in different versions of that document. For example, two users can make independent sets of changes on the same document, resulting in 2 independent versions ({numref}`intro2`).
+### Branching version control
+
+Once you think of changes as separate from the document itself, you can then think about branching different sets of changes on the base document, resulting in different versions of that document. For example, two users can make independent sets of changes on the same document, resulting in 2 independent versions ({numref}`intro2`).
 
 ```{figure} https://github.com/TUDelft-MUDE/source-files/raw/main/file/intro2.png
 ---
@@ -31,7 +36,7 @@ name: intro2
 Parallel file changes
 ```
 
-Unless multiple users make changes to the same section of the document - a conflict - you can incorporate two sets of changes into the same base document ({numref}`intro3`).
+Unless multiple users make changes to the same section of the document - a conflict - you can incorporate two sets of branched changes into the same base document ({numref}`intro3`).
 
 ```{figure} https://github.com/TUDelft-MUDE/source-files/raw/main/file/intro3.png
 ---
@@ -41,7 +46,9 @@ name: intro3
 Merge of changes
 ```
 
-Git as a version control system allows for these separate sets of changes to be made and merged together, as well as providing tools to resolve conflicts when they arise. This is a very different appearance than what you are used to with traditional backup software, for example, Microsoft Word auto-save, or cloud-based services like OneDrive, Dropbox or even Visual Studio Code Share. All of these platforms are set up in a user-friendly way that is focused on a single version of a file in every moment in term. This works fine when we are writing a report like a thesis. However, it does **not** work well when it comes to computer programs, because in addition to the files themselves, the contents of the file become critical. As we will see, git is a version control software that allows us to compare and track changes in every character of text within a file, and doing that independent of changes made by others. This is very useful when writing code, as well as working with a distributed team of collaborators.
+### Comparison
+
+Git as a version control system allows for separate sets of changes to be branched and merged together, as well as providing tools to resolve conflicts when they arise. This is a very different appearance than what you are used to with traditional linear backup software, for example, Microsoft Word auto-save, or cloud-based services like OneDrive and Google Drive. All of these platforms are set up in a user-friendly way that is focused on a single version of a file in every moment in term. This works fine when we are writing a report like a thesis. However, it does **not** work well when it comes to computer programs, because in addition to the files themselves, the contents of the file become critical. As we will see, git is a version control software that allows us to compare and track changes in every character of text within a file, and doing that independent of changes made by others. This is very useful when writing code, as well as working with a distributed team of collaborators.
 
 ## File types: text versus binary
 
@@ -50,7 +57,7 @@ Version control systems oriented towards software development and programming ar
 * Examples of common text-based file extensions are: `txt`, `md`, `csv`, `ipynb`, `py`, `html`, etc.
 * Examples of common binary files are: `pdf`, `ppt`, `xlsx`, `docx`, etc.
 
-```{Exercise}
+```{exercise}
 :nonumber: true
 
 Try exploring a few files on your computer to confirm wether they are text-based or binary by opening them up in a text editor. You will easily be able to distinguish the difference because one is readable, the other not.

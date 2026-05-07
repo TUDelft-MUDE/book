@@ -1,4 +1,4 @@
-# Files and Folders
+# Files and folders
 
 How to work with files and folders is a fundamental skill which many of you have probably been doing for years without even thinking about it. However, when dealing with coding, this may be the first time you have ever had to consciously interact with the file system on your computer. If you are used to opening single file using software applications like OneDrive on your laptop, you don't have to interact with the file system directly. However, when working with code, you will often need to navigate and manipulate files and folders programmatically. If you work primarily on a tablet or mobile phone, you probably _never_ have to interact with the file system on your device.
 

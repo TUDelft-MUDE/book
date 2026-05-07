@@ -1,5 +1,5 @@
 (environments)=
-# Environments and Environment Managers
+# Environments and environment managers
 
 This is a brief introduction to _computing environments,_ with a focus on the Python programming language for scientific computing applications.
 
@@ -23,29 +23,7 @@ An environment manager ensures that an environment can be set up and used for a 
 
 In a more simple definition, an environment is simply a directory on your computer that contains the source code that has been selected by an environment manager to be compatible with the operating system and hardware on your computer, as well as the source code of the other packages in that same environment. The compatibility between these pieces of software is referred to as _dependency,_ and tools that identify the proper versions of software are called _dependency solvers._ One commonly used example is 'conda'.
 
-### How to Create an Environment?
-
-In many applications it is sufficient to determine a specific version of Python (e.g., version 3.12) and a list of the software you would like to use, then as an environment manager to download compatible versions and set up an environment. In a simplified view, this is roughly equivalent to downloading source code and putting it in a directory on your computer.
-
-If one were using the 'conda' environment manager, this could be done by listing the desired software in a `environment.yml` file (a simple text-based file) and running the following command:
-
-```
-conda env create -f environment.yml
-```
-
-Where `-f environment.yml` instructs `conda` which file contains the list of desired software, which contains, for example, Python 3.12 and a number of commonly used Python packages for scientific computing:
-
-```yaml
-name: my_environment_name
-dependencies:
-  - python=3.12
-  - numpy
-  - scipy
-  - pandas
-  - matplotlib
-```
-
-## Why is an Environment Manager Necessary?
+## Why is an environment manager necessary?
 
 Environments and environment managers make it very easy to share projects between collaborators without the need to make computer-specific versions that are compatible with a wide variety of hardware and operating systems. This is illustrated schematically in the following figure, where multiple environment managers can be used to run projects on different computers. Depending on the requirements of a project or computer, a wide number of environment managers could be considered by the user.
 
@@ -57,8 +35,6 @@ name: environments_complex
 There are many types of environment managers that can be selected depending on a particular project, operating system or environment type.
 ```
 
-## Examples of Environment Managers
-
 One of the most common environment managers for scientific computing is 'conda'; this popular command line tool is available many software distributions, for example, Anaconda or Miniconda.
 
 Another popular environment manager is Python itself, via it's own virtual environment module ('venv'). Perhaps unsurprisingly, Python's 'venv' is limited to the management of Python packages (primarily via 'pip'), unlike 'conda', which can manage software packages and environments that use a wide variety of languages (for example, the R language, or LaTeX and Pandoc software).
@@ -67,11 +43,17 @@ Another popular environment manager is Python itself, via it's own virtual envir
 
 If you are a student, chances are the choice of environment manager has already been made for you. At TU Delft conda is used for creating a consistent python environment on TU Delft computers. Therefore, in many courses this same environment is used.
 
-The use of Python virtual environments ('venv') should be seen as an alternative to 'conda' (especially if you installed Anaconda or Miniconda). If you are working primarily with Python packages available on 'conda-forge' or PyPI, a 'conda' environments will most likely work the same (and can also be easily selected from within VS Code). However, Python virtual environments ('venv') can be created much more quickly than 'conda' environments, and may enable you to manage your Python packages more efficiently in future projects.
+The use of Python virtual environments ('venv') should be seen as an alternative to 'conda'. If you are working primarily with Python packages available on 'conda-forge' or PyPI, a 'conda' environments will most likely work the same. However, Python virtual environments ('venv') can be created much more quickly than 'conda' environments, and may enable you to manage your Python packages more efficiently in future projects.
 
 However, note that 'conda' comes with its own set of advantages, for example, in addition to support beyond Python packages, it has an improved ability to solve for package dependencies, which provides more reliability when distributing more complex software.
 
-## Environment Variables
+## How to create an environment?
+
+In many applications it is sufficient to determine a specific version of Python (e.g., version 3.12) and a list of the software you would like to use, then as an environment manager to download compatible versions and set up an environment. In a simplified view, this is roughly equivalent to downloading source code and putting it in a directory on your computer.
+
+If one were using the 'conda' environment manager, this could be done by listing the desired software in a `environment.yml` file: a simple text-based file contains the software and, if required, their versions. If on the other hand, you were using Python's virtual environment module ('venv'), you would create a new environment using a `requirements.txt` file and then use the 'pip' package manager to install the desired software. In either case, the environment manager will download the compatible versions of the software and set up an environment on your computer that can be used for your project.
+
+## Environment variables
 
 Modern computers have _environment variables_, which are used to define the behavior of your operating system (which is itself a type of computing environment). These variables are generally not important for most applications covered in this book, as we will focus on computing environments that are more distant from the operating system (for example, a Python environment; not the operating system directly).
 
