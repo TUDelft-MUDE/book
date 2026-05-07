@@ -120,7 +120,7 @@ Credits are provided here for chapters and pages that are released under the lic
 (distributions_credit)=
 ### Chapter: Univariate Continuous Distributions
 
-> [Univariate Continuous Distributions](./univariate_distributions/overview.md) is written by Patricia Mares Nasarre, Robert Lanzafame and Max Ramgraber.
+> [Univariate Continuous Distributions](./univariate_distributions/appendix_overview.md) is written by Patricia Mares Nasarre, Robert Lanzafame and Max Ramgraber.
 >
 > Special thanks goes to Oswaldo Morales Napoles and Elisa Ragno for suggestions on the theoretical and didactic framework, as well as critical feedback and review.
 >

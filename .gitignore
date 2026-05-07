@@ -138,3 +138,6 @@ dmypy.json
 _build/
 
 book/_config.yml.bak
+book/_git
+book/_toc_with_local_paths.yml
+book/conf.py
