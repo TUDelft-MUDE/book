@@ -54,6 +54,7 @@ In that expression, we can see that the covariance is the expectation of a produ
 Geometric interpretation of the covariance: (a) some of the areas that represent the term $[X_{1,i}-\mathbb{E}(X_1)][X_{2,i}-\mathbb{E}(X_2)]$, and (b) average area.
 ```
 
+(covariance-matrix-def)=
 ## Covariance matrix
 
 When considering a set of random variables, $X_1, X_2, \ldots, X_m$, we can 'collect' all covariances in the so-called *covariance matrix*:

@@ -52,7 +52,7 @@ And now you can compute the design $RT$ based on the $DL$ and $p_{f,DL}$ recomme
 
 An scientist is designing a *thingamajig*. According to the recommendations, any *thingamajig* should be designed for a lifespan of 25 years with a probability of failure along the design life of $p_{f,DL}=0.05$.
 
-What is the design return period using the [Binomial model](Bernoulli)?
+What is the design return period using the [Binomial model](./Bernoulli.md)?
 
 ```{admonition} Answer
 :class: tip, dropdown

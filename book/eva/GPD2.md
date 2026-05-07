@@ -65,7 +65,7 @@ Therefore, if we want to calculate the return level associated with a return per
 
 **But how can we compute the probability of being above the threshold and, thus, observing an excess, $P[X>th] = \zeta_{th}$?**
 
-You have already seen how the [Poisson distribution](Poisson) helps us modelling the number of excesses over a threshold when performing POT. Here, we will use this distribution to compute the probability of being above the threshold $P[X>th] = \zeta_{th}$ and, thus, the return levels based on a GPD distribution.
+You have already seen how the [Poisson distribution](./Poisson.md) helps us modelling the number of excesses over a threshold when performing POT. Here, we will use this distribution to compute the probability of being above the threshold $P[X>th] = \zeta_{th}$ and, thus, the return levels based on a GPD distribution.
 
 ## Computing $N$-years return levels
 

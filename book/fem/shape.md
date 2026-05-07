@@ -147,7 +147,7 @@ $$
 :::{card}
 ```{figure} https://github.com/TUDelft-MUDE/source-files/raw/main/file/quadFuncs-2.png
 ---
-name: quad4Funcs
+name: quad9Funcs
 ---
 The 9-node quadrilateral element
 ```

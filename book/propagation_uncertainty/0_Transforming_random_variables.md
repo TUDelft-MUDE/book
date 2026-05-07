@@ -1,4 +1,4 @@
-(01_errorprop)=
+(01_transforming_random_variables)=
 # Transforming random variables
 
 Let us take the simple example of converting temperature measurements taken in degrees Celsius to degrees Fahrenheit. This transformation is represented by a simple linear function 

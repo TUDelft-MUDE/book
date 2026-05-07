@@ -18,4 +18,4 @@ That can happen, let us know how we can make it work for you! Send an email to <
 
 ## Credits and Additional Information
 
-For more information about the Editors and Authors, how this book is made and how to reuse the material yourself, see the [credits and license page](#credits).
+For more information about the Editors and Authors, how this book is made and how to reuse the material yourself, see the [credits and license page](./credits.md).
