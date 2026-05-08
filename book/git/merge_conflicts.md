@@ -24,6 +24,89 @@ In this situatie, it is attempted to merge main in a conflicting branch. The con
 
 Merging the main branch into the conflicting branch first allows you to resolve conflicts in a controlled environment. After that you can thoroughly test the merged changes in the conflicting branch before integrating them into the main branch, reducing the risk of introducing bugs.
 
+``````{exercise}
+:nonumber: true
+
+Given is the following file `poem.md` which is stored in the 'main' branch of your repository:
+
+```md
+Roses are red,
+Violets are blue,
+Sugar is sweet,
+And so are you.
+```
+
+You and your friend want to improve this poem.
+
+:::::{grid} 1 2 2 2
+
+::::{grid-item}
+:columns: 12 12 6 6
+
+You edit the file in your new branch 'Q2':
+
+```md
+Roses are red,
+Violets are blue,
+Sugar is sweet,
+Glad I made Q1 through.
+```
+
+::::
+
+::::{grid-item}
+:columns: 12 12 6 6
+
+Your friend edits the file in his branch 'love':
+
+```md
+Roses are red,
+Violets are blue,
+Sugar is sweet,
+And my love for MUDE is true.
+```
+
+::::
+
+:::::
+
+:::{question}
+:type: no-input
+:nocaption:
+:showanswer:
+
+What would happen when you merge the branch 'love' from your friend?
+---
+= The fourth line in the 'main' branch of your repository will be replaced with the new line from your friend
+---
+:::
+
+:::{question}
+:type: no-input
+:nocaption:
+:showanswer:
+
+What would happen when you merge your branch 'Q2' into 'main' after merging the branch 'love' from your friend? Why does that happen? How do you solve that?
+---
+= A merge conflict arises because now there are two conflicting changes for the fourth line of the poem. Git will not know which change to keep and will mark the conflict in the file.
+
+To fix this conflict, you will have to open the file and manually edit the fourth line to keep the change you want.
+---
+:::
+
+:::{question}
+:type: no-input
+:nocaption:
+:showanswer:
+
+As instead of merging 'Q2' into 'main', after merging the branch 'love' from your friend, you first merge 'main' into 'Q2', what would happen when you merge 'Q2' into main? How would that be different from the previous question?
+---
+= You will still have a merge conflict, but now you will have already resolved the conflict in 'Q2'. If this would have been code, you could have tested the resolved conflict. Therefore, when you merge 'Q2' into 'main', you can be confident that the changes are correct and won't introduce bugs.
+---
+:::
+
+``````
+
 ## Collaborating with branches
 
 When working together on a single branch (so in the same version), it is important to coordinate with your team to avoid conflicts and ensure smooth collaboration. Here are some best practices:

@@ -39,6 +39,21 @@ One of the most common environment managers for scientific computing is 'conda';
 
 Another popular environment manager is Python itself, via it's own virtual environment module ('venv'). Perhaps unsurprisingly, Python's 'venv' is limited to the management of Python packages (primarily via 'pip'), unlike 'conda', which can manage software packages and environments that use a wide variety of languages (for example, the R language, or LaTeX and Pandoc software).
 
+:::{question} Exercise
+:type: no-input
+:nocaption:
+:admonition:
+:showanswer:
+:class: exercise
+
+You are part of a programming project in which you are developing a tool to calculate the snow-cover thickness based on weather data. You were provided a conda environment specification by one of your project members.
+
+Explain the need for the conda environment specification
+---
+= The conda environment specification allows all users to define acceptable versions of various code to enable a project to run successfully. Otherwise you may not be able to execute the tool on your computer.
+---
+:::
+
 ### Choosing an Environment Manager
 
 If you are a student, chances are the choice of environment manager has already been made for you. At TU Delft conda is used for creating a consistent python environment on TU Delft computers. Therefore, in many courses this same environment is used.
@@ -47,11 +62,80 @@ The use of Python virtual environments ('venv') should be seen as an alternative
 
 However, note that 'conda' comes with its own set of advantages, for example, in addition to support beyond Python packages, it has an improved ability to solve for package dependencies, which provides more reliability when distributing more complex software.
 
+::::{question} Exercise
+:type: multiple-choice
+:variant: single-select
+:nocaption:
+:showanswer:
+:admonition:
+:class: exercise
+
+You execute a cell with python code:
+
+```python
+import awesome
+```
+
+The following error is returned:
+
+```
+-----------------------------------------------------------
+ModuleNotFoundError       Traceback (most recent call last)
+----> 1 import awesome
+
+ModuleNotFoundError: No module named 'awesome'
+```
+
+Which of the following is NOT a plausible explanation for the shown error
+---
+[ ] You have not installed the package yet
+[x] The package is only available via PyPi, not conda
+[ ] You activated the wrong conda environment
+[ ] The file 'awesome.py' does not exist in your working directory
+---
+
+::::
+
 ## How to create an environment?
 
 In many applications it is sufficient to determine a specific version of Python (e.g., version 3.12) and a list of the software you would like to use, then as an environment manager to download compatible versions and set up an environment. In a simplified view, this is roughly equivalent to downloading source code and putting it in a directory on your computer.
 
 If one were using the 'conda' environment manager, this could be done by listing the desired software in a `environment.yml` file: a simple text-based file contains the software and, if required, their versions. If on the other hand, you were using Python's virtual environment module ('venv'), you would create a new environment using a `requirements.txt` file and then use the 'pip' package manager to install the desired software. In either case, the environment manager will download the compatible versions of the software and set up an environment on your computer that can be used for your project.
+
+:::{question} Exercise
+:type: no-input
+:nocaption:
+:showanswer:
+:admonition:
+:class: exercise
+
+Again, you are part of a programming project in which you are developing a tool to calculate the snow-cover thickness based on weather data. You were provided a conda environment specification by one of your project members.
+Provide an example of what an environment specification could look like.
+---
+= Any list of software depencencies with our without version numbers
+---
+
+:::
+
+::::{question} Exercise
+:type: multiple-choice
+:variant: single-select
+:nocaption:
+:showanswer:
+:admonition:
+:class: exercise
+
+A colleague approaches you with a Python problem, telling you that they have two packages that are not compatible. Which of the following would be a reasonable approach to address this?
+
+---
+[ ] Reinstall conda
+[ ] Restart your computer
+[ ] Delete your changes and redownload the code
+[ ] Reactivate your environment
+[x] Create a new environment
+---
+
+::::
 
 ## Environment variables
 
