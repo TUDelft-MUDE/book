@@ -14,6 +14,10 @@ Git and GitHub assist you in solving these conflicts, as seen in the figure belo
 ```{figure} https://github.com/TUDelft-MUDE/source-files/raw/main/file/mconflict3.png
 ---
 height: 400px
+copyright: © 2018-2024 The Carpentries
+license: CC BY 4.0
+placement: margin
+show: license, copyright
 ---
 Merge conflict
 ```

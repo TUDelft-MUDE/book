@@ -20,6 +20,10 @@ What you have been doing is called version control in a linear fashion. Version 
 ---
 height: 200px
 name: intro1
+copyright: © 2018-2024 The Carpentries
+license: CC BY 4.0
+placement: margin
+show: license, copyright
 ---
 Consecutive file changes
 ```
@@ -32,6 +36,10 @@ Once you think of changes as separate from the document itself, you can then thi
 ---
 height: 300px
 name: intro2
+copyright: © 2018-2024 The Carpentries
+license: CC BY 4.0
+placement: margin
+show: license, copyright
 ---
 Parallel file changes
 ```
@@ -42,6 +50,10 @@ Unless multiple users make changes to the same section of the document - a confl
 ---
 height: 300px
 name: intro3
+copyright: © 2018-2024 The Carpentries
+license: CC BY 4.0
+placement: margin
+show: license, copyright
 ---
 Merge of changes
 ```
