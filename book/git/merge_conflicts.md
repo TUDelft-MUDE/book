@@ -120,9 +120,11 @@ When working together on a single branch (so in the same version), it is importa
 - Make small, frequent commits with clear messages. This makes it easier to track changes and resolve conflicts.
 - If conflicts arise, communicate with your team directly to resolve them before proceeding.
 
-## Why notebooks causes conflicts all the time
+```{admonition} Why notebooks causes conflicts all the time
+:class: danger
 
 Yeah, this is really annoying. The JSON structure of a notebook causes the issue, as explained [here](./notebooks.ipynb).
+```
 
 % START-CREDIT
 % source: finite_element_method
