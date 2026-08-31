@@ -1,9 +1,13 @@
 (ACF)=
 # Autocovariance function
 
-Before we can look into the modelling of a stochastic process for instance using an Autoregressive (AR) model, we first need to introduce the autocovariance function (ACF) for a stationary time series, and describe the relationship between the ACF and the power spectral density (PSD).
+Before we can look into the modelling of a stochastic process for instance using an Autoregressive (AR) model, we first need to introduce the autocovariance function (ACF) for a stationary time series as to reveal statistical properties of the process, and describe the relationship between the ACF and the power spectral density (PSD).
 
 As in [Observation theory](../observation_theory/01_Introduction.md), the variance component is often determined based on the precision of an observable (at a given epoch), and the covariance components quantitatively indicate the statistical dependence between observables. In this case, dependence is inherently introduced by the physical process that produces the time series, and in fact our time series methods seek to (mathematically) account for this.
+
+```{note}
+In this chapter we focus on **auto** covariance and correlation, where 'auto' means 'of, or, in the process itself'. These concepts also apply to two stochastic processes, and are then referred to as **cross** covariance and correlation (then looking at statistical dependence between these two processes).
+```
 
 ## Autocovariance and autocorrelation
 
@@ -70,6 +74,8 @@ $$ Cov(S_t, S_{t-\tau}) = Cov(S_{t+\tau}, S_t)$$
 
 and $c_{\tau} = c_{-\tau}$.
 
+The autocovariance is an even function of lag $\tau$; it is symmetric about the origin $\tau=0$.
+
 ````
 :::
 
@@ -129,7 +135,7 @@ Here we use capitals for $\hat{C}_{\tau}$ and $\hat{R}_{\tau}$ since **estimator
 ```
 
 ```{note}
-If mean $\mu$ is not known, it can be replaced in practice by the empirical mean in the above expressions for the empirical autocovariance function.
+If mean $\mu$ is not known, it can be replaced in practice by the empirical mean in the above expressions for the empirical autocovariance function. The above least-squares estimator for the autocovariance function is then asymptotically unbiased.
 ```
 
 ### Covariance matrix based on autocovariance
