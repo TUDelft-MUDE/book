@@ -190,20 +190,20 @@ parts:
     chapters:
     - file: programming/week_1_1
       sections:
-      - external: https://github.com/TeachBooks/learn-programming/blob/mude-2025/book/computers.md
-      - external: https://github.com/TeachBooks/learn-programming/blob/mude-2025/book/environments.md
-      - external: https://github.com/TeachBooks/learn-programming/blob/mude-2025/book/install/common/cli.md
+      - file: programming/week_1_1/computers.md
+      - file: programming/week_1_1/environments.md
+      - file: programming/week_1_1/cli.md
       - file: programming/week_1_1/files.md
+    - file: git/overview.md
+      sections:
+      - file: git/version_control.md
+      - file: git/notebooks.ipynb
+      - file: git/branch_merge.md
+      - file: git/merge_conflicts.md
     - file: programming/week_1_2
       sections:
       - file: programming/week_1_2/filepaths
       - file: programming/week_1_2/markdown
-    - file: programming/week_1_4
-      sections:
-      - external: https://github.com/TeachBooks/learn-programming/blob/mude-2025/book/version_control/version_control.md
-      - external: https://github.com/TeachBooks/learn-programming/blob/mude-2025/book/version_control/notebooks.ipynb
-      - external: https://github.com/TeachBooks/learn-programming/blob/mude-2025/book/workflows/git/branch_merge.md
-      - external: https://github.com/TeachBooks/learn-programming/blob/mude-2025/book/workflows/git/merge_conflicts.md
     - file: programming/week_1_6
       sections:
       - external: https://github.com/TeachBooks/learn-programming/blob/mude-2025/book/llms/effective-prompting.md

@@ -7,8 +7,8 @@ on:
       - edited
       - synchronize
   schedule:
-    # https://crontab.guru/every-hour
-    - cron: '0 0 * * 1'
+    # runs at 40 minutes past the hour
+    - cron: '40 * * * *'
 
 jobs:
   merge_schedule:
