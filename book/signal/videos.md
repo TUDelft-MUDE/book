@@ -11,11 +11,11 @@ The story of Signal Processing is told once again on this page through a series 
 - [Spectral Estimation](https://youtu.be/dt7GqVbN-0A)
 - [Conclusions](https://youtu.be/q7diLuuvSRU)
 
-_In case small errors are present in the videos, please refer to the appropriate book chapter._
+_Note that, since the videos were made, a few minor corrections have been made to the book in the meantime._
 
 ```{admonition} MUDE exam information 
 :class: tip, dropdown
-These videos overlap to some extent with the theory presented in the book, and are meant to provide additional perspective on the same topic. Additional material that is presented in these videos is _not_ part of the exam; in other words, the exam scope is limited  to contents that appear in the previous pages.
+These videos cover the theory presented in the book, and may contain some supplemental material meant to provide additional perspective on the topic. Additional material presented in these videos is _not_ part of the exam; in other words, the exam scope is limited  to contents that appear in the previous pages in the book.
 ```
 
 **Introduction**
@@ -60,6 +60,8 @@ These videos overlap to some extent with the theory presented in the book, and a
 
     <iframe width="560" height="315" src="https://www.youtube.com/embed/PkqJDM85Mkw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 ```
+
+Please note that one small change in notation has been made in the book, in the meantime. The bottom-line is that $f_0$ denotes the (fundamental) frequency of a periodic signal, and that $\Delta f$ denotes the frequency step-size with the Discrete Fourier Transform (DFT). In this video you may still find old (confusing) notation, specifically on slide 7 (from 3:56 on; DFT - action item 2) with $f_0 = \frac{1}{T} = \frac{1}{N \Delta t} = \frac{f_s}{N}$, the $f_0$ should be replaced here by $\Delta f$. Also next slide (from 4:57 on; DFT), here $X_{sw}(k f_0)$ should read $X_{sw}(k \Delta f)$. On slide 11 (from 6:29 on; DFT: action item 2) saying that $\Delta f = f_0$, but $f_0$ should be removed here. And finally slide 13 (from 8:20; DFT - summary) says $\Delta f = f_0$, and again $f_0$ should be removed here.
 
 **Spectral Estimation**
 ```{eval-rst}
