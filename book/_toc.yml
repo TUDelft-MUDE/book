@@ -7,13 +7,6 @@ parts:
   - caption: Q1 Topics
     numbered: 2
     chapters: 
-    - file: modelling/overview
-      sections:
-      - file: modelling/classification
-      - file: modelling/decisions
-      - file: propagation_uncertainty/uncertainty.md
-      - file: modelling/validate_verify
-      - file: modelling/gof
     - file: numerical_methods/overview
       sections:
       - file: numerical_methods/6-initial-value-problem-singlestep.ipynb
@@ -185,6 +178,8 @@ parts:
         - file: risk_reliability/LimitState.md
         - file: risk_reliability/04LifeDist.md
 
+# END REMOVE-FROM-PUBLISH
+
   - caption: Programming topics Q1
     numbered: 2
     chapters:
@@ -200,6 +195,7 @@ parts:
       - file: git/notebooks.ipynb
       - file: git/branch_merge.md
       - file: git/merge_conflicts.md
+# START REMOVE-FROM-PUBLISH
     - file: programming/week_1_2
       sections:
       - file: programming/week_1_2/filepaths
@@ -240,10 +236,21 @@ parts:
     - file: programming/week_2_5
       sections:
       - file: programming/week_2_5/packaging.md
+
+# END REMOVE-FROM-PUBLISH
   - caption: Appendix
     numbered: 2
     style: [romanupper,romanlower]
     chapters:
+    - file: modelling/overview
+      sections:
+      - file: modelling/classification
+      - file: modelling/decisions
+      - file: propagation_uncertainty/uncertainty.md
+      - file: modelling/validate_verify
+      - file: modelling/gof
+
+# START REMOVE-FROM-PUBLISH
     - file: numerical_methods/appendix_overview.md
       sections:
       - file: numerical_methods/1-revision-of-concepts.ipynb
