@@ -17,17 +17,35 @@ This is still a **continuous function** of frequency $f$ ($f\in\mathbb{R}$), per
 
 In the example below we use $x(t)=\textrm{sinc}^{2}(t)$ as an arbitrary, but very convenient signal, to demonstrate the impact of sampling on the Fourier transform of a signal.
 
-![sinc2signal](https://github.com/TUDelft-MUDE/source-files/raw/main/file/EngineeringSignalAnalysis_Figure9_3.png "sinc2signal")
+```{figure} https://github.com/TUDelft-MUDE/source-files/raw/main/file/EngineeringSignalAnalysis_Figure9_3.png
+:name: cover
+:align: center
+:bib: Tiberius_Mulder_2026
+:placement: margin
+
+```
 
 This figure shows (continuous-time) signal $x(t)$ at left, and the corresponding Fourier transform $X(f)$ at right (in this case, very convenient, the Fourier transform is a real-valued function, not complex). Next, signal $x(t)$ is sampled, and the resulting $x_s(t)$ is shown below by the stems. The same range for the horizontal axis is used as before, but it has been stretched for better visibility. The sampling frequency is $f_s = 3$ Hz.
 
-![sinc2sampled](https://github.com/TUDelft-MUDE/source-files/raw/main/file/EngineeringSignalAnalysis_Figure9_5.png "sinc2sampled")
+```{figure} https://github.com/TUDelft-MUDE/source-files/raw/main/file/EngineeringSignalAnalysis_Figure9_5.png
+:name: cover
+:align: center
+:bib: Tiberius_Mulder_2026
+:placement: margin
+
+```
 
 Finally the Fourier transform $X_s(f)$ of sampled signal $x_s(t)$ is shown below. One can clearly see that the Fourier transform $X_s(f)$ consists of many copies of the original Fourier transform $X(f)$; these copies occur every integer multiple of the sampling frequency $f_s$ (here $f_s=3$ Hz). Acknowledging this finding, one would, in practice, need to consider only one period of this particular function (the rest consists of repetitions anyway); so for instance consider just the frequency range $[0,f_s)$ or $[-\frac{f_s}{2},\frac{f_s}{2})$. We will meet these particular choices again below, with the Discrete Fourier Transform (DFT).
 
-![spectrumsinc2sampled](https://github.com/TUDelft-MUDE/source-files/raw/main/file/EngineeringSignalAnalysis_Figure9_6.png "spectrumsinc2sampled")
+```{figure} https://github.com/TUDelft-MUDE/source-files/raw/main/file/EngineeringSignalAnalysis_Figure9_6.png
+:name: cover
+:align: center
+:bib: Tiberius_Mulder_2026
+:placement: margin
 
-The above three figures of the example have been taken from the TU Delft Open Book 'Engineering Signal Analysis'. Further information and derivation of the example can be found there.
+```
+
+The above three figures of the example have been taken from the TU Delft Open Book 'Engineering Signal Analysis' {cite:ts}`Tiberius_Mulder_2026`. Further information and derivation of the example can be found there.
 
 ## Discrete Fourier Transform (DFT)
 
