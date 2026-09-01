@@ -7,8 +7,8 @@ on:
       - edited
       - synchronize
   schedule:
-    # https://crontab.guru/every-hour
-    - cron: '0 * * * *'
+    # runs at 40 minutes past the hour
+    - cron: '40 * * * *'
 
 jobs:
   merge_schedule:
@@ -30,7 +30,7 @@ jobs:
           time_zone: 'Europe/Amsterdam'
           # Require all pull request statuses to be successful before
           # merging. Default is `false`.
-          require_statuses_success: 'true'
+          require_statuses_success: 'false'
           # Label to apply to the pull request if the merge fails. Default is
           # `automerge-fail`.
           automerge_fail_label: 'merge-schedule-failed'
