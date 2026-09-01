@@ -18,7 +18,7 @@ This is still a **continuous function** of frequency $f$ ($f\in\mathbb{R}$), per
 In the example below we use $x(t)=\textrm{sinc}^{2}(t)$ as an arbitrary, but very convenient signal, to demonstrate the impact of sampling on the Fourier transform of a signal.
 
 ```{figure} https://github.com/TUDelft-MUDE/source-files/raw/main/file/EngineeringSignalAnalysis_Figure9_3.png
-:name: cover
+:name: sinc2signal
 :align: center
 :bib: Tiberius_Mulder_2026
 :placement: margin
@@ -28,7 +28,7 @@ In the example below we use $x(t)=\textrm{sinc}^{2}(t)$ as an arbitrary, but ver
 This figure shows (continuous-time) signal $x(t)$ at left, and the corresponding Fourier transform $X(f)$ at right (in this case, very convenient, the Fourier transform is a real-valued function, not complex). Next, signal $x(t)$ is sampled, and the resulting $x_s(t)$ is shown below by the stems. The same range for the horizontal axis is used as before, but it has been stretched for better visibility. The sampling frequency is $f_s = 3$ Hz.
 
 ```{figure} https://github.com/TUDelft-MUDE/source-files/raw/main/file/EngineeringSignalAnalysis_Figure9_5.png
-:name: cover
+:name: sinc2sampled
 :align: center
 :bib: Tiberius_Mulder_2026
 :placement: margin
@@ -38,7 +38,7 @@ This figure shows (continuous-time) signal $x(t)$ at left, and the corresponding
 Finally the Fourier transform $X_s(f)$ of sampled signal $x_s(t)$ is shown below. One can clearly see that the Fourier transform $X_s(f)$ consists of many copies of the original Fourier transform $X(f)$; these copies occur every integer multiple of the sampling frequency $f_s$ (here $f_s=3$ Hz). Acknowledging this finding, one would, in practice, need to consider only one period of this particular function (the rest consists of repetitions anyway); so for instance consider just the frequency range $[0,f_s)$ or $[-\frac{f_s}{2},\frac{f_s}{2})$. We will meet these particular choices again below, with the Discrete Fourier Transform (DFT).
 
 ```{figure} https://github.com/TUDelft-MUDE/source-files/raw/main/file/EngineeringSignalAnalysis_Figure9_6.png
-:name: cover
+:name: spectrumsinc2sampled
 :align: center
 :bib: Tiberius_Mulder_2026
 :placement: margin
