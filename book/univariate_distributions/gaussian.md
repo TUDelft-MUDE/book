@@ -33,6 +33,8 @@ Interactively visualize the relationship between the PDF and the CDF of a Gaussi
 
 Observe that as we increase or decrease the mean $\mu$, the function moves to the right or left, respectively, since the reference point for the distance calculation shifts. Likewise, increasing the standard deviation $\sigma$ flattens the distribution, since a larger denominator within the exponent reduces the magnitude of the fraction within the exponent.
 
+The probabilities belonging to the standard ($\mu = 0$, $\sigma = 1$) Gaussian/Normal distribution are evaluated for many values, allowing you evaluate the CDF easily: {ref}`table of the standard normal distribution <table_standardnormal>`.
+
 ## Interesting Properties
 
 The mean, median and mode of the Normal distribution are each equal to $\mu$. The variance is $\sigma^2$. Note that Normal distribution is a symmetric distribution and presents 0 skewness. It is also sometimes known as the *maximum entropy* distribution, that is to say, the distribution which imposes the least structure on the pdf for a given finite standard deviation $\sigma$. Gaussian distributions have a number of highly attractive properties in higher dimensions that will play a significant role in the week on **multivariate probability distributions**.
