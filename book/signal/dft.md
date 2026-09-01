@@ -45,7 +45,7 @@ Finally the Fourier transform $X_s(f)$ of sampled signal $x_s(t)$ is shown below
 
 ```
 
-The above three figures of the example have been taken from the TU Delft Open Book 'Engineering Signal Analysis' {cite:ts}`Tiberius_Mulder_2026`. Further information and derivation of the example can be found there.
+The above three figures of the example have been taken from the TU Delft Open Book 'Engineering Signal Analysis' from {cite:ts}`Tiberius_Mulder_2026`. Further information and derivation of the example can be found there.
 
 ## Discrete Fourier Transform (DFT)
 
