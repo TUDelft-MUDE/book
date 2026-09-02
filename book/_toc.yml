@@ -195,11 +195,11 @@ parts:
       - file: git/notebooks.ipynb
       - file: git/branch_merge.md
       - file: git/merge_conflicts.md
-# START REMOVE-FROM-PUBLISH
     - file: programming/week_1_2
       sections:
       - file: programming/week_1_2/filepaths
       - file: programming/week_1_2/markdown
+# START REMOVE-FROM-PUBLISH
     - file: programming/week_1_6
       sections:
       - external: https://github.com/TeachBooks/learn-programming/blob/mude-2025/book/llms/effective-prompting.md
