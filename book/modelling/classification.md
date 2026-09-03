@@ -1,5 +1,5 @@
 (modelclass)=
-# Model classification
+# Model Classification
 
 ## What is a Model?
 
