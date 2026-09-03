@@ -9,10 +9,12 @@ parts:
     chapters: 
     - file: numerical_methods/overview
       sections:
-      - file: numerical_methods/6-initial-value-problem-singlestep.ipynb
-      - file: numerical_methods/7-implicit_methods_nonlinear_ode.ipynb
-      - file: numerical_methods/8-multistep_and_multistage_methods.ipynb
-      - file: numerical_methods/9-boundary-value-problem.ipynb
+      - file: numerical_methods/0-approximating-derivatives.ipynb
+      - file: numerical_methods/1-initial-value-problem-singlestep.ipynb
+      - file: numerical_methods/2-error-analysis-stability.ipynb
+      - file: numerical_methods/3-implicit_methods_nonlinear_ode.ipynb
+      - file: numerical_methods/4-multistep_and_multistage_methods.ipynb
+      - file: numerical_methods/5-boundary-value-problem.ipynb
     - file: multivariate/overview
       sections:
       - file: multivariate/events
@@ -253,13 +255,12 @@ parts:
 # START REMOVE-FROM-PUBLISH
     - file: numerical_methods/appendix_overview.md
       sections:
-      - file: numerical_methods/1-revision-of-concepts.ipynb
-      - file: numerical_methods/2-derivative.ipynb
-      - file: numerical_methods/3-fdm-introduction.ipynb
-      - file: numerical_methods/4-taylor-series-expansion.ipynb
+      - file: numerical_methods/A1-revision-of-concepts.ipynb
+      - file: numerical_methods/A3-fdm-introduction.ipynb
+      - file: numerical_methods/A4-taylor-series-expansion.ipynb
         sections:
         - file: numerical_methods/taylor-series-exercise.ipynb
-      - file: numerical_methods/5-numerical-integration.ipynb
+      - file: numerical_methods/A5-numerical-integration.ipynb
     - file: univariate_distributions/appendix_overview.md
       sections:
       - file: univariate_distributions/PDF_CDF
