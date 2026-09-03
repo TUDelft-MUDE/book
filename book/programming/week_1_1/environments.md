@@ -1,5 +1,5 @@
 (environments)=
-# Environments and environment managers
+# Environments and Environment Managers
 
 This is a brief introduction to _computing environments,_ with a focus on the Python programming language for scientific computing applications.
 
