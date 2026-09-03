@@ -1,5 +1,5 @@
 (modelling_concepts)=
-# Modelling concepts
+# Modelling Concepts
 
 % START-CREDIT
 % source: modelling_concepts
