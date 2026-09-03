@@ -256,7 +256,7 @@ parts:
     - file: numerical_methods/appendix_overview.md
       sections:
       - file: numerical_methods/A1-revision-of-concepts.ipynb
-      - file: numerical_methods/A3-fdm-introduction.ipynb
+      # - file: numerical_methods/A3-fdm-introduction.ipynb
       - file: numerical_methods/A4-taylor-series-expansion.ipynb
         sections:
         - file: numerical_methods/taylor-series-exercise.ipynb
