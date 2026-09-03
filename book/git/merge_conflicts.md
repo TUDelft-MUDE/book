@@ -1,4 +1,4 @@
-# Merge conflicts
+# Merge Conflicts
 
 Merge conflicts arise when people on separate branches modify the same parts of one (or multiple) files. Since Git does not know how to handle that and whose changes to consider, it prompts the user to decide instead.
 
