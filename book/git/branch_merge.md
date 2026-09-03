@@ -1,4 +1,4 @@
-# Branching and merging
+# Branching and Merging
 
 A key feature of git is the ability to create and manage multiple version called branches, allowing you to work on different versions of your code simultaneously. Usually, the primary version is called main. In practice when collaborating with Git, everyone will work on a separate branch, whose progress you will later merge with main.
 
