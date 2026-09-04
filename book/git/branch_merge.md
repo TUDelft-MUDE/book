@@ -24,9 +24,9 @@ Commit graph of a complex repository
 
 In the commit graph above you see three branches (`main`, `dev` and `dev2`). The `HEAD` is at the commit `Restructure content`, so if you're looking at the files in repository, you see the stated of all the files after that commit. E.g. the changes from `Updated README`, `Added new feature` and `Merge dev into dev2` are not visible. So it's not only possible to change branch, but also to go back in time with `head`!
 
-The `dev branch` was created from the state of the `main` branch at `initial commit` and after two commits `Added new feature` and `Fixed new features`, the changes from `Restructure content` and `Update README` have been merged into that branch in commit `Merge main into dev`.
+The `dev branch` was created from the state of the `main` branch at `initial commit` and after two commits `Added new feature` and `Fixed new features`, the changes from `Restructure content` and `Update README` have been merged into that branch in merge commit `Merge main into dev`.
 
-The `dev2` branch was created from the state of `main` at `Updated README`, while after one commit `Added another new feature`, the changes from `dev` brnach were included into the `dev2` branch with commit `merge dev into dev 2`. After that, it is merged into `main` at `merge dev2 into main`, effectively merging the `dev` into `main`.
+The `dev2` branch was created from the state of `main` at `Updated README`, while after one commit `Added another new feature`, the changes from `dev` branch were included into the `dev2` branch with merge commit `merge dev into dev 2`. After that, it is merged into `main` at `merge dev2 into main`, effectively merging the `dev` into `main`.
 
 % START-CREDIT
 % source: finite_element_method
