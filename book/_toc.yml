@@ -3,7 +3,6 @@ root: intro
 
 
 parts:
-# START REMOVE-FROM-PUBLISH
   - caption: Q1 Topics
     numbered: 2
     chapters: 
@@ -15,6 +14,7 @@ parts:
       - file: numerical_methods/3-implicit_methods_nonlinear_ode.ipynb
       - file: numerical_methods/4-multistep_and_multistage_methods.ipynb
       - file: numerical_methods/5-boundary-value-problem.ipynb
+# START REMOVE-FROM-PUBLISH
     - file: multivariate/overview
       sections:
       - file: multivariate/events
@@ -252,7 +252,6 @@ parts:
       - file: modelling/validate_verify
       - file: modelling/gof
 
-# START REMOVE-FROM-PUBLISH
     - file: numerical_methods/appendix_overview.md
       sections:
       - file: numerical_methods/A1-revision-of-concepts.ipynb
@@ -261,6 +260,8 @@ parts:
         sections:
         - file: numerical_methods/taylor-series-exercise.ipynb
       - file: numerical_methods/A5-numerical-integration.ipynb
+
+# START REMOVE-FROM-PUBLISH
     - file: univariate_distributions/appendix_overview.md
       sections:
       - file: univariate_distributions/PDF_CDF
