@@ -1,5 +1,5 @@
 (cli)=
-# Command line interface
+# Command Line Interface
 
 A _command line interface_ (CLI) is a method of interacting with a computer that involves individual lines of text. These so-called _command lines_ can be entered manually by the user, as well as written in a text-based file and passed on to a computer or application for automatic entry and execution. The alternative to a CLI is a _graphical user interface_ (GUI).
 
