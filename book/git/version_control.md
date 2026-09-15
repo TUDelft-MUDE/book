@@ -96,7 +96,8 @@ Here we present a list of the terminology we may use when referring to version c
 - **Pulling:** retrieving new commits from the remote repository. To prevent issues, always fetch and pull from the remote repository before starting a work session on your computer.
 - **Conflict:** when changes made by multiple users to the same file are incompatible, you can get into a conflict. Helping users resolve those conflicts is one of the key advantages of version control systems.
 - **Branch:** development (time) line. The main development line is often called `main`.
-- **Merge:** combining the commits of two branches, for example, changes on a development branch are merged into the `main` branch.
+- **Merge:** combining the commits of two branches, for example, changes on a development branch are merged into the `main` branch.]
+- **Merge commit:** the result of a merge, a commit which has typically no new content, except for the result of solving merge conflicts.
 - **Fork:** a separate version of someone else's repository on your own GitHub account. You could see this as a branch you own yourself instead of the original owner of the repository. The original repository is generally called *upstream*, which could be added as an additional *remote* to a local repository.
 - **Pull request:** proposal on github to merge a branch or fork into another one. This proposal provides a space for feedback.
 
