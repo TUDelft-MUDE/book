@@ -2,15 +2,20 @@
 
 [TeachBooks Versioning](https://teachbooks.io/manual/features/versioning.html) is used (a special type of semantic numbering for educational purposes) with generic format `v<academic_year>.<additions>.<errata>`, with an additional `.pre-release` added for incomplete books.
 
+## 2026-09-04: v2026.1.0.pre-release
+- Added numerical modelling chapters
+- Added appendix to numerical modelling chapters
+- Added updated week 1.2 programming chapters
+
 ## 2026-08-31: v2026.0.0.pre-release
 - Added modelling concepts chapter unchanged
 - Added updated programming chapters on getting started and version control
 
 ## 2026-01-20: v2025.16.7
-- Added Frans and Jailei to cff file
+- Added Frans and Jialei to cff file
 
 ## 2026-01-14: v2025.16.6
-- Added Frans and Jailei as editors
+- Added Frans and Jialei as editors
 - Moved figures to GitHub LFS repository
 
 ## 2026-01-14: v2025.16.5
