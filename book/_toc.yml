@@ -283,6 +283,12 @@ parts:
         - file: univariate_distributions/MLE.md
         - file: univariate_distributions/GOF.md
     - file: time_series/normal.ipynb
+    - file: observation_theory/appendix_overview.md
+      sections:
+      - file: observation_theory/A_VectorMatrix.md
+      - file: observation_theory/A_VectorSpaces.md
+      - file: observation_theory/A_LinearSystems.md
+      - file: observation_theory/MVdiff.md
 # END REMOVE-FROM-PUBLISH
   - caption: Miscellaneous
     numbered: false

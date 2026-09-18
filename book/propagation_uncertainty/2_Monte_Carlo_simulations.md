@@ -28,9 +28,9 @@ which refer to the sample mean and the sample variance, respectively. The standa
 
 
 ## Comparing Taylor approximation and MC simulations
-At this point, we can look at a numerical example where we aim to compute the sample mean and variance for a given non-linear transformation $X = q(\mathbf{Y})$, where $q: \mathbb{R}^n \rightarrow \mathbb{R}$. Then, we will find the mean and variance of $X$ based on a Taylor expansion, as well as Monte Carlo simulations. In the latter case we will adopt the following procedure:
-1. Generate $N$ samples from $\mathbf{Y} \sim \mathcal{N}(\boldsymbol\mu_Y,\boldsymbol\Sigma_Y)$, e.g. assumed to be normally distributed;
-2. Propagate each sample $\mathbf{Y}_i$ via this non-linear transformation, i.e. $X_i = q(\mathbf{Y}_i)$;
+At this point, we can look at a numerical example where we aim to compute the sample mean and variance for a given non-linear transformation $X = q(Y)$, where $q: \mathbb{R}^n \rightarrow \mathbb{R}$. Then, we will find the mean and variance of $X$ based on a Taylor expansion, as well as Monte Carlo simulations. In the latter case we will adopt the following procedure:
+1. Generate $N$ samples from $Y \sim \mathcal{N}(\boldsymbol\mu_Y,\boldsymbol\Sigma_Y)$, e.g. assumed to be normally distributed;
+2. Propagate each sample $Y_i$ via this non-linear transformation, i.e. $X_i = q(Y_i)$;
 3. Compute sample mean and variance from $X_i,\forall i=1...N,$ using the aforementioned expressions.
 
 ### Barometric formula for an adiabatic atmosphere
