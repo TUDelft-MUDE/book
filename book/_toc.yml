@@ -17,6 +17,7 @@ parts:
 # START REMOVE-FROM-PUBLISH
     - file: multivariate/overview
       sections:
+      - file: multivariate/contingency_tables.md
       - file: multivariate/events
       - file: multivariate/variables
       - file: multivariate/Correlation_and_Covariance.md

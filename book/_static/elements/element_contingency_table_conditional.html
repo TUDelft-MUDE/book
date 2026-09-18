@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="Conditional probability" content="an interactive example showing conditioning in a contingency table">
+  <title>Conditional probability</title>
+  <script src="https://unpkg.com/mathjs/lib/browser/math.js"></script>
+  <script src="https://d3js.org/d3.v4.min.js"></script>
+  <style>
+    body { overflow: hidden; font-family: Helvetica, sans-serif; margin: 0; }
+    .interactive { cursor: pointer; }
+  </style>
+</head>
+<body>
+  <div id="my_dataviz">
+    <svg id="click" xmlns="http://www.w3.org/2000/svg"></svg>
+  </div>
+<script>
+// ===================================================
+// Set up basic viewport options (same proportions as
+// the joint/marginal contingency-table figure)
+// ===================================================
+const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
+const vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0);
+const aspect = 2;
+
+if (vw/aspect < vh) {
+  var width = vw;
+  var height = vw/aspect;
+} else {
+  var width = vh*aspect;
+  var height = vh;
+}
+
+var svg = d3.select("#click")
+  .attr("width", width)
+  .attr("height", height);
+
+var xrange = [0,1];
+var yrange = [1,0];
+window_x = [width*0.1/aspect,width*0.7/aspect];
+window_y = [height*0.1,height*0.7];
+
+svg.append("polygon")
+  .attr("points", array_to_string([
+    values_to_pixels([0,0]), values_to_pixels([0,1]),
+    values_to_pixels([1,1]), values_to_pixels([1,0])]))
+  .style("fill", "none")
+  .style("stroke", "black")
+  .attr("id", "rect1");
+
+// ===================================================
+// Data
+// ===================================================
+const data = [
+  [68,119,26,7],
+  [15,54,14,10],
+  [5,29,14,16],
+  [20,84,17,94]
+];
+const total = math.sum(data);
+const eye_marginals = [220,93,64,215];
+const hair_marginals = [108,286,71,127];
+const eye_marginals_normalized = math.divide(eye_marginals, math.sum(eye_marginals)*2.5);
+const hair_marginals_normalized = math.divide(hair_marginals, math.sum(hair_marginals)*2.5);
+
+svg.append("text")
+  .attr("x", width*0.05/aspect)
+  .attr("y", height*0.035)
+  .text("total")
+  .attr("font-size", height*0.05)
+  .attr("text-anchor", "middle");
+svg.append("text")
+  .attr("x", width*0.05/aspect)
+  .attr("y", height*0.08)
+  .text(total.toString())
+  .attr("font-size", height*0.05)
+  .attr("text-anchor", "middle");
+
+// Same eye and hair SVG paths as the joint/marginal figure.
+const eye_path = "m211.11,222c-59.32,0-112.36-28.95-146.42-53.24C28.05,142.64,5.51,116.83,4.57,115.74l-4.57-5.27,4.59-5.25c.94-1.08,23.49-26.64,60.13-52.51C98.77,28.67,151.81,0,211.11,0s112.34,28.67,146.39,52.72c36.64,25.88,59.19,51.44,60.13,52.51l4.59,5.25-4.57,5.27c-.94,1.08-23.49,26.89-60.12,53.02-34.06,24.29-87.1,53.24-146.42,53.24ZM21.54,110.53c8.39,8.77,27.15,27.21,52.76,45.43,32.08,22.83,81.86,50.04,136.81,50.04,91.65,0,169.71-74.76,189.58-95.48-8.4-8.7-27.15-26.93-52.74-44.96-32.09-22.61-81.87-49.56-136.84-49.56-91.63,0-169.66,73.97-189.58,94.53Z";
+const hair_path = "m67.64,429.62c-43.05-44.18-50.55-198.68-50.55-198.68l-15.5,15.5C-10.41,134.43,47.59,88.43,104.09,80.93,107.59,8.43,205.78,1.21,227.56,0c-1.26.5-6.98,2.95-9.97,9.43-2.67,5.8-2.39,13.25-1.03,12.57,61.03-30.57,110.03-21.57,176.03,4.43-24.25-2.64-62.05,5.92-61,9,96,10,176,97,181,246-7-22-14-32-14-32,12.47,50.08-27.67,162.08-37,159,0,0-1.33-170.77-67-198-41-17-70,30-143.69,31.41-65.3,1.25-120.99-29.3-133.42-41.46-51.9,23.05-84.9,85.05-49.85,229.23Z";
+const lock_path = "m211.99,92.5C211.59,41.43,169.92,0,118.75,0S25.91,41.43,25.51,92.5H0v198h237V92.5h-25.01Zm-76.99,95l11,61h-56l11-61h1.05c-7.58-5.18-12.55-13.88-12.55-23.75,0-15.88,12.87-28.75,28.75-28.75s28.75,12.87,28.75,28.75c0,9.87-4.97,18.57-12.55,23.75h.55ZM60.52,92.5c.4-31.77,26.36-57.5,58.23-57.5s57.83,25.73,58.23,57.5H60.52Z";
+
+const colors_eye = ["#653700","#ac7434","#15b01a","#0343df"];
+const colors_hair = ["#000000","#836539","#ff9408","#fbdd7e"];
+
+// Conditioning state. Match the older figure: green eyes are locked initially.
+var selected = "row2";
+var activeCell = null;
+
+// ===================================================
+// Table labels, lock selectors, marginals and cells
+// ===================================================
+for (let row = 0; row < 4; row++) {
+  // Eye icon (same drawing and proportions as joint/marginal figure)
+  svg.append("path")
+    .attr("d", eye_path)
+    .style("fill", "black")
+    .attr("id", "eye"+row)
+    .attr("class", "eyeCategory eye"+row);
+  const eye_box = d3.select("#eye"+row).node().getBoundingClientRect();
+  d3.select("#eye"+row)
+    .attr("transform", "translate("+(width*0.00)+","+(values_to_pixels(row/4,"x")+height*0.048)+") scale("+(0.09*height/eye_box.width)+", "+(0.05*height/eye_box.height)+")")
+    .lower();
+
+  svg.append("circle")
+    .attr("cx", height*0.046)
+    .attr("cy", values_to_pixels(row/4,"x")+height*0.0725)
+    .attr("r", height*0.02)
+    .style("fill", colors_eye[row])
+    .attr("class", "eyeCategory eye"+row);
+  svg.append("circle")
+    .attr("cx", height*0.046)
+    .attr("cy", values_to_pixels(row/4,"x")+height*0.0725)
+    .attr("r", height*0.011)
+    .attr("class", "eyeCategory eye"+row);
+
+  // Row lock: a compact selector immediately to the left of the table.
+  svg.append("circle")
+    .attr("cx", height*0.082)
+    .attr("cy", values_to_pixels((row+0.5)/4,"y"))
+    .attr("r", height*0.020)
+    .style("fill", "white")
+    .style("stroke", "black")
+    .style("stroke-width", height*0.003)
+    .attr("class", "interactive")
+    .attr("id", "eye_lock"+row)
+    .on("click", function() { set_condition("row"+row); });
+
+  svg.append("path")
+    .attr("d", lock_path)
+    .style("fill", "black")
+    .style("opacity", 0)
+    .style("pointer-events", "none")
+    .attr("id", "lock_eye"+row);
+  const lockEyeBox = d3.select("#lock_eye"+row).node().getBoundingClientRect();
+  d3.select("#lock_eye"+row)
+    .attr("transform", "translate("+(height*0.066)+","+(values_to_pixels((row+0.5)/4,"y")-height*0.016)+") scale("+(0.032*height/lockEyeBox.width)+", "+(0.032*height/lockEyeBox.height)+")");
+
+  // Hair icon (same drawing and proportions as joint/marginal figure)
+  svg.append("path")
+    .attr("d", hair_path)
+    .style("stroke-width", height*0.025)
+    .style("stroke", "black")
+    .style("fill", colors_hair[row])
+    .attr("id", "hair"+row)
+    .attr("class", "hairCategory hair"+row);
+  const hair_box = d3.select("#hair"+row).node().getBoundingClientRect();
+  d3.select("#hair"+row)
+    .attr("transform", "translate("+(values_to_pixels(row/4,"x")+height*0.0325)+",0) scale("+(0.085*height/hair_box.width)+", "+(0.09*height/hair_box.height)+")")
+    .lower();
+
+  // Column lock just above the table, below the hair icon.
+  svg.append("circle")
+    .attr("cx", values_to_pixels((row+0.5)/4,"x"))
+    .attr("cy", height*0.075)
+    .attr("r", height*0.020)
+    .style("fill", "white")
+    .style("stroke", "black")
+    .style("stroke-width", height*0.003)
+    .attr("class", "interactive")
+    .attr("id", "hair_lock"+row)
+    .on("click", function() { set_condition("col"+row); });
+
+  svg.append("path")
+    .attr("d", lock_path)
+    .style("fill", "black")
+    .style("opacity", 0)
+    .style("pointer-events", "none")
+    .attr("id", "lock_hair"+row);
+  const lockHairBox = d3.select("#lock_hair"+row).node().getBoundingClientRect();
+  d3.select("#lock_hair"+row)
+    .attr("transform", "translate("+(values_to_pixels((row+0.5)/4,"x")-height*0.016)+","+(height*0.059)+") scale("+(0.032*height/lockHairBox.width)+", "+(0.032*height/lockHairBox.height)+")");
+
+  if (row < 3) {
+    svg.append("line")
+      .style("stroke", "black")
+      .attr("x1", values_to_pixels(0,"x"))
+      .attr("y1", values_to_pixels((row+1)/4,"y"))
+      .attr("x2", values_to_pixels(1,"x"))
+      .attr("y2", values_to_pixels((row+1)/4,"y"));
+    svg.append("line")
+      .style("stroke", "black")
+      .attr("x1", values_to_pixels((row+1)/4,"x"))
+      .attr("y1", values_to_pixels(0,"y"))
+      .attr("x2", values_to_pixels((row+1)/4,"x"))
+      .attr("y2", values_to_pixels(1,"y"));
+  }
+
+  draw_marginal(row,"x");
+  draw_marginal(row,"y");
+
+  for (let col = 0; col < 4; col++) {
+    svg.append("text")
+      .text(data[row][col].toString())
+      .attr("x", values_to_pixels((col+0.5)/4,"x"))
+      .attr("y", values_to_pixels((row+0.5)/4,"y")+height*0.02)
+      .attr("font-size", height*0.05)
+      .attr("value", data[row][col])
+      .attr("id", "text"+row+col)
+      .attr("text-anchor", "middle");
+
+    svg.append("text")
+      .text(data[row][col].toString())
+      .attr("x", values_to_pixels((col+0.5)/4,"x"))
+      .attr("y", values_to_pixels((row+0.5)/4,"y")+height*0.06)
+      .attr("font-size", height*0.03)
+      .attr("id", "subtext"+row+col)
+      .style("opacity", 0)
+      .attr("text-anchor", "middle");
+
+    svg.append("polygon")
+      .attr("points", array_to_string([
+        values_to_pixels([col/4,row/4]),
+        values_to_pixels([(col+1)/4,row/4]),
+        values_to_pixels([(col+1)/4,(row+1)/4]),
+        values_to_pixels([col/4,(row+1)/4])]))
+      .style("fill", "white")
+      .style("stroke", "none")
+      .attr("row", row)
+      .attr("col", col)
+      .attr("id", "square"+row+col)
+      .attr("class", "interactive")
+      .lower()
+      .on("mouseover", function() {
+        selector(+d3.select(this).attr("row"), +d3.select(this).attr("col"));
+      })
+      .on("click", function() {
+        selector(+d3.select(this).attr("row"), +d3.select(this).attr("col"));
+      });
+  }
+}
+
+// ===================================================
+// Conditional-probability equation panel
+// ===================================================
+const eqY = height*0.42;
+svg.append("text")
+  .text("p(")
+  .attr("x", width*0.49)
+  .attr("y", eqY)
+  .attr("font-size", height*0.055);
+
+// Dynamic target hair icon
+svg.append("path")
+  .attr("d", hair_path)
+  .style("fill", "white")
+  .style("stroke-width", height*0.025)
+  .style("stroke", "black")
+  .attr("id", "eq_target_hair")
+  .attr("class", "eqTargetHair");
+const eqTargetHairBox = d3.select("#eq_target_hair").node().getBoundingClientRect();
+d3.select("#eq_target_hair")
+  .attr("transform", "translate("+(width*0.520)+","+(height*0.365)+") scale("+(0.085*height/eqTargetHairBox.width*0.70)+", "+(0.09*height/eqTargetHairBox.height*0.70)+")");
+
+// Dynamic target eye icon (hidden initially)
+svg.append("path")
+  .attr("d", eye_path)
+  .style("fill", "black")
+  .attr("id", "eq_target_eye")
+  .style("opacity", 0);
+const eqTargetEyeBox = d3.select("#eq_target_eye").node().getBoundingClientRect();
+d3.select("#eq_target_eye")
+  .attr("transform", "translate("+(width*0.5125)+","+(height*0.380)+") scale("+(0.09*height/eqTargetEyeBox.width)+", "+(0.05*height/eqTargetEyeBox.height)+")");
+svg.append("circle")
+  .attr("cx", width*0.535)
+  .attr("cy", height*0.405)
+  .attr("r", height*0.0175)
+  .style("fill", "white")
+  .style("stroke", "black")
+  .attr("class", "eqTargetEyePart")
+  .style("opacity", 0);
+svg.append("circle")
+  .attr("cx", width*0.535)
+  .attr("cy", height*0.405)
+  .attr("r", height*0.009)
+  .style("fill", "black")
+  .attr("class", "eqTargetEyePart")
+  .style("opacity", 0);
+
+svg.append("text")
+  .text("|")
+  .attr("x", width*0.572)
+  .attr("y", eqY)
+  .attr("font-size", height*0.06)
+  .attr("text-anchor", "middle");
+
+// Dynamic conditioning eye icon (visible initially)
+svg.append("path")
+  .attr("d", eye_path)
+  .style("fill", "black")
+  .attr("id", "eq_condition_eye");
+const eqCondEyeBox = d3.select("#eq_condition_eye").node().getBoundingClientRect();
+d3.select("#eq_condition_eye")
+  .attr("transform", "translate("+(width*0.5865)+","+(height*0.380)+") scale("+(0.09*height/eqCondEyeBox.width)+", "+(0.05*height/eqCondEyeBox.height)+")");
+svg.append("circle")
+  .attr("cx", width*0.609)
+  .attr("cy", height*0.405)
+  .attr("r", height*0.0175)
+  .style("fill", colors_eye[2])
+  .style("stroke", "black")
+  .attr("class", "eqConditionEyePart");
+svg.append("circle")
+  .attr("cx", width*0.609)
+  .attr("cy", height*0.405)
+  .attr("r", height*0.009)
+  .style("fill", "black")
+  .attr("class", "eqConditionEyePart");
+
+// Dynamic conditioning hair icon (hidden initially)
+svg.append("path")
+  .attr("d", hair_path)
+  .style("fill", "white")
+  .style("stroke-width", height*0.025)
+  .style("stroke", "black")
+  .attr("id", "eq_condition_hair")
+  .style("opacity", 0);
+const eqCondHairBox = d3.select("#eq_condition_hair").node().getBoundingClientRect();
+d3.select("#eq_condition_hair")
+  .attr("transform", "translate("+(width*0.594)+","+(height*0.365)+") scale("+(0.085*height/eqCondHairBox.width*0.70)+", "+(0.09*height/eqCondHairBox.height*0.70)+")");
+
+svg.append("text")
+  .text(")")
+  .attr("x", width*0.647)
+  .attr("y", eqY)
+  .attr("font-size", height*0.055);
+svg.append("text")
+  .text("=")
+  .attr("x", width*0.678)
+  .attr("y", eqY+height*0.01)
+  .attr("font-size", height*0.075)
+  .attr("text-anchor", "middle");
+
+svg.append("text")
+  .text("?")
+  .attr("x", width*0.755)
+  .attr("y", eqY-height*0.055)
+  .attr("font-size", height*0.05)
+  .attr("text-anchor", "middle")
+  .attr("id", "eq_numerator");
+svg.append("line")
+  .style("stroke", "black")
+  .style("stroke-width", height*0.0075)
+  .attr("x1", width*0.70)
+  .attr("y1", eqY-height*0.015)
+  .attr("x2", width*0.81)
+  .attr("y2", eqY-height*0.015);
+svg.append("text")
+  .text(eye_marginals[2].toString())
+  .attr("x", width*0.755)
+  .attr("y", eqY+height*0.065)
+  .attr("font-size", height*0.05)
+  .attr("text-anchor", "middle")
+  .attr("id", "eq_denominator");
+svg.append("text")
+  .text("=")
+  .attr("x", width*0.84)
+  .attr("y", eqY+height*0.01)
+  .attr("font-size", height*0.075)
+  .attr("text-anchor", "middle");
+svg.append("text")
+  .text("?")
+  .attr("x", width*0.88)
+  .attr("y", eqY)
+  .attr("font-size", height*0.055)
+  .attr("id", "eq_result");
+
+// Initialize the lock and table state.
+update_condition_visuals();
+
+// ===================================================
+// Interaction
+// ===================================================
+function set_condition(newSelected) {
+  selected = newSelected;
+  activeCell = null;
+  reset_labels();
+  update_condition_visuals();
+  update_equation(null, null);
+}
+
+function selector(row, col) {
+  // Only the free dimension matters. Moving anywhere in a column while a
+  // row is locked selects that column within the locked row, and vice versa.
+  let r, c;
+  if (selected.slice(0,3) === "row") {
+    r = +selected.slice(3);
+    c = col;
+  } else {
+    r = row;
+    c = +selected.slice(3);
+  }
+  activeCell = [r,c];
+  reset_labels();
+  update_condition_visuals();
+
+  const denom = selected.slice(0,3) === "row" ? eye_marginals[r] : hair_marginals[c];
+  const conditional = data[r][c] / denom;
+
+  d3.select("#square"+r+c)
+    .transition().duration(100)
+    .style("fill", "grey")
+    .style("opacity", 1);
+  d3.select("#text"+r+c)
+    .transition().duration(100)
+    .style("opacity", 1)
+    .text((conditional*100).toFixed(1)+"%");
+  d3.select("#subtext"+r+c)
+    .transition().duration(100)
+    .style("opacity", 1)
+    .text(data[r][c].toString());
+
+  update_equation(r,c);
+}
+
+function update_condition_visuals() {
+  const type = selected.slice(0,3);
+  const idx = +selected.slice(3);
+
+  // Locks
+  for (let i=0; i<4; i++) {
+    d3.select("#lock_eye"+i).style("opacity", type === "row" && i === idx ? 1 : 0);
+    d3.select("#lock_hair"+i).style("opacity", type === "col" && i === idx ? 1 : 0);
+  }
+
+  // Table: the conditioned row/column is grey, everything else is white.
+  for (let r=0; r<4; r++) {
+    for (let c=0; c<4; c++) {
+      const inCondition = (type === "row" && r === idx) || (type === "col" && c === idx);
+      d3.select("#square"+r+c)
+        .transition().duration(100)
+        .style("fill", inCondition ? "#cccccc" : "white")
+        .style("opacity", inCondition ? 1 : 0.25);
+      d3.select("#text"+r+c)
+        .transition().duration(100)
+        .style("opacity", inCondition ? 1 : 0.25);
+    }
+  }
+
+  // Category icons: keep the conditioned category prominent; leave the free
+  // dimension available for inspection.
+  for (let i=0; i<4; i++) {
+    d3.selectAll(".eye"+i)
+      .transition().duration(100)
+      .style("opacity", type === "row" ? (i === idx ? 1 : 0.25) : 1);
+    d3.selectAll(".hair"+i)
+      .transition().duration(100)
+      .style("opacity", type === "col" ? (i === idx ? 1 : 0.25) : 1);
+
+    d3.select("#marg_row"+i)
+      .transition().duration(100)
+      .style("opacity", type === "row" && i === idx ? 1 : 0.25);
+    d3.select("#text_marg_row"+i)
+      .transition().duration(100)
+      .style("opacity", type === "row" && i === idx ? 1 : 0.25);
+    d3.select("#marg_col"+i)
+      .transition().duration(100)
+      .style("opacity", type === "col" && i === idx ? 1 : 0.25);
+    d3.select("#text_marg_col"+i)
+      .transition().duration(100)
+      .style("opacity", type === "col" && i === idx ? 1 : 0.25);
+  }
+
+  // If a cell is active, restore its darker highlight after the base state.
+  if (activeCell) {
+    d3.select("#square"+activeCell[0]+activeCell[1]).style("fill", "grey").style("opacity", 1);
+  }
+}
+
+function update_equation(row, col) {
+  const type = selected.slice(0,3);
+  const idx = +selected.slice(3);
+
+  if (type === "row") {
+    // p(hair | eye)
+    d3.select("#eq_target_hair").style("opacity",1)
+      .style("fill", col === null ? "white" : colors_hair[col]);
+    d3.select("#eq_target_eye").style("opacity",0);
+    d3.selectAll(".eqTargetEyePart").style("opacity",0);
+
+    d3.select("#eq_condition_eye").style("opacity",1);
+    d3.selectAll(".eqConditionEyePart").style("opacity",1);
+    d3.selectAll(".eqConditionEyePart").filter(function(d,i) { return i===0; })
+      .style("fill", colors_eye[idx]);
+    d3.select("#eq_condition_hair").style("opacity",0);
+    d3.select("#eq_denominator").text(eye_marginals[idx]);
+  } else {
+    // p(eye | hair)
+    d3.select("#eq_target_hair").style("opacity",0);
+    d3.select("#eq_target_eye").style("opacity",1);
+    d3.selectAll(".eqTargetEyePart").style("opacity",1);
+    d3.selectAll(".eqTargetEyePart").filter(function(d,i) { return i===0; })
+      .style("fill", row === null ? "white" : colors_eye[row]);
+
+    d3.select("#eq_condition_eye").style("opacity",0);
+    d3.selectAll(".eqConditionEyePart").style("opacity",0);
+    d3.select("#eq_condition_hair").style("opacity",1).style("fill", colors_hair[idx]);
+    d3.select("#eq_denominator").text(hair_marginals[idx]);
+  }
+
+  if (row === null || col === null) {
+    d3.select("#eq_numerator").text("?");
+    d3.select("#eq_result").text("?");
+  } else {
+    const denom = type === "row" ? eye_marginals[idx] : hair_marginals[idx];
+    d3.select("#eq_numerator").text(data[row][col]);
+    d3.select("#eq_result").text((data[row][col]/denom).toFixed(3));
+  }
+}
+
+// ===================================================
+// Utility functions
+// ===================================================
+function reset_labels() {
+  for (let r=0; r<4; r++) {
+    for (let c=0; c<4; c++) {
+      d3.select("#text"+r+c).text(data[r][c]);
+      d3.select("#subtext"+r+c).style("opacity",0).text(data[r][c]);
+    }
+  }
+}
+
+function values_to_pixels(values,axis) {
+  axis = (typeof axis === "undefined") ? "xy" : axis;
+  if (axis === "x") {
+    return (values-xrange[0])/(xrange[1]-xrange[0])*(window_x[1]-window_x[0])+window_x[0];
+  } else if (axis === "y") {
+    return (1-(values-yrange[0])/(yrange[1]-yrange[0]))*(window_y[1]-window_y[0])+window_y[0];
+  }
+  return [
+    (values[0]-xrange[0])/(xrange[1]-xrange[0])*(window_x[1]-window_x[0])+window_x[0],
+    (1-(values[1]-yrange[0])/(yrange[1]-yrange[0]))*(window_y[1]-window_y[0])+window_y[0]
+  ];
+}
+
+function array_to_string(array) {
+  var string = "";
+  for (let row=0; row<array.length; row++) {
+    string += array[row][0].toString()+","+array[row][1].toString()+" ";
+  }
+  return string;
+}
+
+function draw_marginal(index,dimension) {
+  if (dimension === "x") {
+    svg.append("polygon")
+      .attr("points", array_to_string([
+        values_to_pixels([1,index/4+0.025]),
+        values_to_pixels([1+eye_marginals_normalized[index],index/4+0.025]),
+        values_to_pixels([1+eye_marginals_normalized[index],(index+1)/4-0.025]),
+        values_to_pixels([1,(index+1)/4-0.025])]))
+      .style("fill", colors_eye[index])
+      .style("stroke", "black")
+      .attr("id", "marg_row"+index)
+      .lower();
+    svg.append("text")
+      .text(eye_marginals[index].toString())
+      .attr("font-size", height*0.05)
+      .attr("text-anchor", "middle")
+      .attr("transform", "translate("+values_to_pixels(1+eye_marginals_normalized[index]+0.025,"x")+","+values_to_pixels((index+0.5)/4,"y")+") rotate(90)")
+      .attr("id", "text_marg_row"+index);
+  } else {
+    svg.append("polygon")
+      .attr("points", array_to_string([
+        values_to_pixels([index/4+0.025,1]),
+        values_to_pixels([(index+1)/4-0.025,1]),
+        values_to_pixels([(index+1)/4-0.025,1+hair_marginals_normalized[index]]),
+        values_to_pixels([index/4+0.025,1+hair_marginals_normalized[index]])]))
+      .style("fill", colors_hair[index])
+      .style("stroke", "black")
+      .attr("id", "marg_col"+index)
+      .lower();
+    svg.append("text")
+      .text(hair_marginals[index].toString())
+      .attr("font-size", height*0.05)
+      .attr("text-anchor", "middle")
+      .attr("transform", "translate("+values_to_pixels((index+0.5)/4,"x")+","+values_to_pixels(1+hair_marginals_normalized[index]+0.08,"y")+")")
+      .attr("id", "text_marg_col"+index);
+  }
+}
+</script>
+</body>
+</html>

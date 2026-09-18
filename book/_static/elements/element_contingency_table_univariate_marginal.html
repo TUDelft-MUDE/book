@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta name="Marginal probability" content="A small interactive example.">
+    <script src="https://unpkg.com/mathjs/lib/browser/math.js"></script>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+
+    <style>
+        body{
+          margin: 0; overflow: hidden; ;
+          font-family: Helvetica, sans-serif;
+        }
+    </style>
+  </head>
+
+
+
+    <!-- Create a div where the graph will take place -->
+  <div id="my_dataviz">
+    <svg id="click" xmlns="http://www.w3.org/2000/svg" ></svg>
+  </div>
+
+<!-- Create a div where the graph will take place -->
+
+  <body>
+    <script>
+
+    // ===================================================
+    // Set up basic viewport options
+    // ===================================================
+    const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0)
+    const vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0)
+
+    // Define aspect
+    const aspect 	= 2;
+
+		// Define width and height
+    if (vw/aspect < vh) {
+
+      // Viewport width is limiting
+      var width 	= vw;
+      var height 	= vw/aspect;
+
+    } else {
+
+      // Viewport height is limiting
+      var width 	= vh*aspect;
+      var height 	= vh;
+
+    }
+
+		// Define the svg variable
+    var svg = d3.select("#click") // This selects the div
+      .attr("width", width) // This defines the canvas' width
+      .attr("height", height) // This defines the canvas' height
+    //  .style("background-color","#ff0000")
+
+		// =============================================================================
+    var xrange 	= [0,1];
+    var yrange 	= [1,0];
+
+    x_limits = xrange
+    y_limits = yrange
+
+    window_x = [width*0.3,width];
+    window_y = [height*0.75,height*0.1];
+
+    // This function converts pixels to values
+    function pixels_to_values(coords,axis) {
+    	axis = (typeof axis === 'undefined') ? 'xy' : axis;
+    	if (axis == 'x') {
+      	res = (coords-window_x[0])/(window_x[1]-window_x[0]) * (xrange[1]-xrange[0]) + xrange[0]
+      } else if (axis == 'y') {
+      	res = (1.-(coords-window_y[0])/(window_y[1]-window_y[0])) * (yrange[1]-yrange[0]) + yrange[0]
+      } else {
+      	res = [(coords[0]-window_x[0])/(window_x[1]-window_x[0]) * (xrange[1]-xrange[0]) + xrange[0],(1.-(coords[1]-window_y[0])/(window_y[1]-window_y[0])) * (yrange[1]-yrange[0]) + yrange[0]]
+      }
+     	return res;
+    }
+
+		// This function converts values to pixels
+    function values_to_pixels(values,axis) {
+    	axis = (typeof axis === 'undefined') ? 'xy' : axis;
+    	if (axis == 'x') {
+      	res = (values-xrange[0])/(xrange[1]-xrange[0])*(window_x[1]-window_x[0])+window_x[0];
+      } else if (axis == 'y') {
+      	res = (1-(values-yrange[0])/(yrange[1]-yrange[0]))*(window_y[1]-window_y[0])+window_y[0];
+      } else {
+      	res = [(values[0]-xrange[0])/(xrange[1]-xrange[0])*(window_x[1]-window_x[0])+window_x[0],(1-(values[1]-yrange[0])/(yrange[1]-yrange[0]))*(window_y[1]-window_y[0])+window_y[0]];
+      }
+     	return res;
+    }
+
+    // Load the hair path
+    const hair_path = "m67.64,429.62c-43.05-44.18-50.55-198.68-50.55-198.68l-15.5,15.5C-10.41,134.43,47.59,88.43,104.09,80.93,107.59,8.43,205.78,1.21,227.56,0c-1.26.5-6.98,2.95-9.97,9.43-2.67,5.8-2.39,13.25-1.03,12.57,61.03-30.57,110.03-21.57,176.03,4.43-24.25-2.64-62.05,5.92-61,9,96,10,176,97,181,246-7-22-14-32-14-32,12.47,50.08-27.67,162.08-37,159,0,0-1.33-170.77-67-198-41-17-70,30-143.69,31.41-65.3,1.25-120.99-29.3-133.42-41.46-51.9,23.05-84.9,85.05-49.85,229.23Z";
+
+    const colors_hair = ["#000000","#836539","#ff9408","#fbdd7e"];
+
+    const hair_marginals = [108, 286,  71, 127];
+
+    const percentages = ["18.2%","48.3%","12.0%","21.5%"];
+    const piechart_colors = ["white","black","black","black"]
+
+
+    const hair_marginals_normalized = math.divide(hair_marginals,math.sum(hair_marginals)*2.5);
+
+    // Highlight one category across the icons, bars, counts, and pie chart.
+    function highlight_hair(number) {
+      for (let j = 0; j < 4; j++) {
+        d3.selectAll(".hair"+j.toString())
+          .transition()
+          .duration(500)
+          .style("opacity", j == number ? 1.0 : 0.5);
+      }
+    }
+
+    // Restore the original state after hover.
+    function reset_hair() {
+      for (let j = 0; j < 4; j++) {
+        d3.selectAll(".hair"+j.toString())
+          .transition()
+          .duration(500)
+          .style("opacity",1.0);
+      }
+    }
+
+    for (let row = 0; row < hair_marginals.length; row++) {
+
+      // Create the hair color icons
+      svg.append("path")
+        .attr("d", hair_path)
+        .style("stroke-width",10)
+        .style("fill",colors_hair[row])
+        .style("stroke","black")
+        .attr("id","hair"+row.toString())
+        .attr("number",row)
+        .attr("class","hair"+row.toString())
+        .on('mouseover', function (d, i) {
+          highlight_hair(d3.select(this).attr("number"));
+        })
+        .on('click', function (d, i) {
+          highlight_hair(d3.select(this).attr("number"));
+        })
+        .on('mouseout', function (d, i) {
+          reset_hair();
+        });
+      const hair_box = d3.select('#hair'+row.toString()).node().getBoundingClientRect();
+      d3.select("#hair"+row.toString())
+        .attr("transform", "translate("+(values_to_pixels((row+1)/5 - 0.06,"x")).toString()+","+(values_to_pixels(-0.075,"y")).toString()+") scale("+(0.085*2*height/hair_box.width).toString()+", "+(0.09*2*height/hair_box.height).toString()+")")
+        .lower()
+
+        svg.append("polygon")
+          .attr("points",array_to_string([
+            values_to_pixels([(row+0.65)/5,0]),
+            values_to_pixels([(row+1.35)/5,0]),
+            values_to_pixels([(row+1.35)/5,hair_marginals[row]/300]),
+            values_to_pixels([(row+0.65)/5,hair_marginals[row]/300])]))
+          .style("fill", colors_hair[row]) // ffffc2 #4794c1 047495 516572
+          .style("stroke", "black")
+          .attr("row",row)
+          .attr("col",row)
+          .attr("number",row)
+          .attr("class","hair"+row.toString())
+          .lower()
+					.on('mouseover', function (d, i) {
+            highlight_hair(d3.select(this).attr("number"));
+          })
+          .on('click', function (d, i) {
+            highlight_hair(d3.select(this).attr("number"));
+          })
+					.on('mouseout', function (d, i) {
+            reset_hair();
+          });
+
+          values_to_pixels([(row+1.35)/5,hair_marginals[row]/300])
+
+        // Add the count
+        svg.append("text")
+        	.text(hair_marginals[row].toString())
+          .attr("font-size",height*0.05)
+          .attr("text-anchor", "middle")
+          .attr("transform","translate("+values_to_pixels((row+1)/5,"x").toString()+","+values_to_pixels(hair_marginals[row]/300+0.05,"y").toString()+")")
+          .attr("number",row)
+          .attr("class","hair"+row.toString())
+
+    }
+
+
+
+
+
+
+const radius = Math.min(width, height) / 3.25;
+
+const pie = d3.pie();
+
+
+
+// shape helper to build arcs:
+var arcGenerator = d3.arc()
+  .innerRadius(0)
+  .outerRadius(radius)
+
+// Build the pie chart: Basically, each part of the pie is a path that we build using the arc function.
+svg
+  .selectAll('mySlices')
+  .data(pie(hair_marginals))
+  .enter()
+  .append('path')
+    .attr('d', arcGenerator)
+    .attr('fill', (d, i) => colors_hair[i])
+    .attr("transform","translate(" + (width * 0.2).toString() + "," + (height/2).toString() + ")")
+    .attr("number",(d, i) => i)
+    .attr("class",(d, i) => "hair"+i.toString())
+    .on('mouseover', function (d, i) {
+      highlight_hair(d3.select(this).attr("number"));
+    })
+    .on('click', function (d, i) {
+      highlight_hair(d3.select(this).attr("number"));
+    })
+    .on('mouseout', function (d, i) {
+      reset_hair();
+    });
+
+// Now add the annotation. Use the centroid method to get the best coordinates
+svg
+  .selectAll('mySlices')
+  .data(pie(hair_marginals))
+  .enter()
+  .append('text')
+    .text((d, i) => percentages[i])
+    .attr("transform", function(d) { console.log(arcGenerator.centroid(d)); return "translate("  + [width * 0.2 + arcGenerator.centroid(d)[0],height/2 + arcGenerator.centroid(d)[1]] + ")";  })
+    .attr("dominant-baseline", "central")
+    .style("text-anchor", "middle")
+    .style("font-size", height*0.05)
+    .style("fill",(d, i) => piechart_colors[i])
+    .attr("number",(d, i) => i)
+    .attr("class",(d, i) => "hair"+i.toString())
+    .on('mouseover', function (d, i) {
+      highlight_hair(d3.select(this).attr("number"));
+    })
+    .on('click', function (d, i) {
+      highlight_hair(d3.select(this).attr("number"));
+    })
+    .on('mouseout', function (d, i) {
+      reset_hair();
+    });
+
+
+      function array_to_string(array) {
+        var string = "";
+        for (let row = 0; row < array.length; row++) {
+          string += array[row][0].toString()+","+array[row][1].toString()+" ";
+        }
+        return string
+      }
+
+    </script>
+  </body>
+
+</html>
