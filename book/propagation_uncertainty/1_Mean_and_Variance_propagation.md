@@ -6,13 +6,13 @@ Now, will only consider the propagation of the mean (= expectation) and variance
 The general form of our problem is given as follows. Consider the single function of $m$ random variables
 
 $$
-X = q(\mathbf{Y})=q(Y_1,\ldots,Y_m)
+X = q(Y)=q(Y_1,\ldots,Y_m)
 $$
 
-with the mean and covariance matrix of $\mathbf{Y}$ known:
+with the mean and covariance matrix of $Y$ known:
 
 $$
-\mathbb{E}(\mathbf{Y})=\boldsymbol\mu_Y, \quad \mathbb{D}(\mathbf{Y})=\boldsymbol\Sigma_Y
+\mathbb{E}(Y)=\boldsymbol\mu_Y, \quad \mathbb{D}(Y)=\boldsymbol\Sigma_Y
 $$
 
 
@@ -31,16 +31,16 @@ In this video the first part of this chapter is explained. You can also first re
 Let's start with the mean for the case that the function is linear: 
 
 $$
-q(\mathbf{Y})=a_1 Y_1+ a_2 Y_2 +\cdots+ a_m Y_m + c
+q(Y)=a_1 Y_1+ a_2 Y_2 +\cdots+ a_m Y_m + c
 $$
 
 with the $a_i$ and $c$ deterministic constants. Since the expectation operator is a linear operator, we have:
 
 $$
-\mathbb{E}(q(\mathbf{Y}))=\mathbb{E}(a_1 Y_1+ a_2 Y_2 +\cdots a_m Y_m + c)= a_1 \mathbb{E}(Y_1)+\cdots+ a_m \mathbb{E}(Y_m)+c
+\mathbb{E}(q(Y))=\mathbb{E}(a_1 Y_1+ a_2 Y_2 +\cdots a_m Y_m + c)= a_1 \mathbb{E}(Y_1)+\cdots+ a_m \mathbb{E}(Y_m)+c
 $$
 
-But what if the function is non-linear? Then we can use the [Taylor series](taylor-series) approximation of $q(\mathbf{Y})$. 
+But what if the function is non-linear? Then we can use the [Taylor series](taylor-series) approximation of $q(Y)$. 
 
 ## Function of one random variable 
 
@@ -89,10 +89,10 @@ $$
 :::
 
 ## Function of two random variables 
-Let's consider the case that we have one function of two random variables, $\mathbf{Y} = [Y_1\; \;Y_2]^T$ with known mean and covariance matrix:
+Let's consider the case that we have one function of two random variables, $Y = [Y_1\; \;Y_2]^T$ with known mean and covariance matrix:
 
 $$
-\mathbb{E}(\mathbf{Y})=\boldsymbol\mu_Y =\begin{bmatrix}\mu_1\\ \mu_2 \end{bmatrix}, \quad \boldsymbol\Sigma_Y= \begin{bmatrix}\sigma_1^2 & \mathrm{Cov}(Y_1,Y_2)\\ \mathrm{Cov}(Y_1,Y_2)&\sigma_2^2 \end{bmatrix}
+\mathbb{E}(Y)=\boldsymbol\mu_Y =\begin{bmatrix}\mu_1\\ \mu_2 \end{bmatrix}, \quad \boldsymbol\Sigma_Y= \begin{bmatrix}\sigma_1^2 & \mathrm{Cov}(Y_1,Y_2)\\ \mathrm{Cov}(Y_1,Y_2)&\sigma_2^2 \end{bmatrix}
 $$
 
 The Taylor series approximations of $X=q(Y_1,Y_2)$ follow as:
@@ -159,7 +159,7 @@ $$
 
 Assume $A$, $P$, and $C_d$ are independent random variables.
 
-What is the covariance matrix of the random vector $\mathbf{Y}=[A, P, C_d]^T$? 
+What is the covariance matrix of the random vector $Y=[A, P, C_d]^T$? 
 
 ```{admonition} Solution
 :class: tip, dropdown

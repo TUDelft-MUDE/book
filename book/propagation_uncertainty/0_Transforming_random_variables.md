@@ -72,26 +72,26 @@ which shows in a general way how the PDF of $Z$ can be obtained from the PDF of 
 
 ## Remark on the multivariate case
 
-In the multivariate case this is also possible, but this same analytic procedure becomes more complicated and involves continuous partial derivatives with non-vanishing Jacobian on $A$ and requires $f_{X}(\mathbf{x})$ being continuous on $A$. This however goes beyond the scope of this course, therefore in the following sections we will focus on propagation of principal moments of the distribution, thus looking at propagation laws for Mean (first _raw_ moment) and Variance (second _central_ moment).
+In the multivariate case this is also possible, but this same analytic procedure becomes more complicated and involves continuous partial derivatives with non-vanishing Jacobian on $A$ and requires $f_{X}(X)$ being continuous on $A$. This however goes beyond the scope of this course, therefore in the following sections we will focus on propagation of principal moments of the distribution, thus looking at propagation laws for Mean (first _raw_ moment) and Variance (second _central_ moment).
 
 
 ## Theorem (Expectation law)
 
-For $\mathbf{X} \in \mathbb{R}^n$ being an $n$-dimensional random vector with continuous PDF $f_{\mathbf{X}}(\mathbf{x})$, we consider $\mathbf{Z} = \mathbf{g}(\mathbf{X})$, where $\mathbf{g}: \mathbb{R}^n \rightarrow \mathbb{R}^m$ has continuous first partial derivatives. Then the expectation of $\mathbf{Z}$ is
+For $X \in \mathbb{R}^n$ being an $n$-dimensional random vector with continuous PDF $f_{X}(X)$, we consider $Z = \mathbf{g}(X)$, where $\mathbf{g}: \mathbb{R}^n \rightarrow \mathbb{R}^m$ has continuous first partial derivatives. Then the expectation of $Z$ is
 
 $$
-\mathbb{E}(\mathbf{Z}) = \mathbb{E}( \mathbf{g}(\mathbf{X}) ) = \int_{\mathbb{R}^n} \mathbf{g}(x) f_{\mathbf{X}}(x) dx
+\mathbb{E}(Z) = \mathbb{E}( \mathbf{g}(X) ) = \int_{\mathbb{R}^n} \mathbf{g}(x) f_{X}(x) dx
 $$
 
 ## Corollary (Variance law)
 
-Under the same assumptions, the variance of $\mathbf{Z}$ is
+Under the same assumptions, the variance of $Z$ is
 
 $$
-\mathrm{Var}(\mathbf{Z}) = \mathrm{Var}( \mathbf{g}(\mathbf{X}) ) = \int_{\mathbb{R}^n} [\mathbf{g}(\mathbf{x}) - \boldsymbol\mu_z][\mathbf{g}(\mathbf{x}) - \boldsymbol\mu_z]^T f_{\mathbf{X}}(\mathbf{x}) d\mathbf{x}
+\mathrm{Var}(Z) = \mathrm{Var}( \mathbf{g}(X) ) = \int_{\mathbb{R}^n} [\mathbf{g}(X) - \boldsymbol\mu_z][\mathbf{g}(X) - \boldsymbol\mu_z]^T f_{X}(X) dX
 $$
 
-where $\boldsymbol\mu_z = \mathbb{E}( \mathbf{g}(\mathbf{X}) )$, which is described in the previous Theorem.
+where $\boldsymbol\mu_z = \mathbb{E}( \mathbf{g}(X) )$, which is described in the previous Theorem.
 
 
 At this point, we proceed in the following part by showing how such expressions can be simplified, e.g., via a linearization of the non-linear transformation.  
