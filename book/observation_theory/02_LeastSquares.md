@@ -10,6 +10,7 @@ $$
 \mathrm{y = Ax}.
 $$
 
+(exc_sol)=
 :::{card} Exercise: can we find a solution?
 
 Let's consider the following three examples, where we collected 2 or 3 measurements and want to fit a linear trend line. Your task is to estimate $\mathrm{x}$
@@ -18,10 +19,10 @@ $$
 a)\quad \underset{\mathrm{y}}{\underbrace{\begin{bmatrix} 3 \\ 5  \end{bmatrix}}} = \underset{\mathrm{A}}{\underbrace{\begin{bmatrix} 1 & 1 \\ 1 & 2  \end{bmatrix}}}\underset{\mathrm{x}}{\underbrace{\begin{bmatrix} x_1 \\ x_2 \end{bmatrix}}}
 $$
 $$
-b)\quad \underset{\mathrm{y}}{\underbrace{\begin{bmatrix} 4 \\ 5 \\ 6 \end{bmatrix}}} = \underset{\mathrm{A}}{\underbrace{\begin{bmatrix} 1 & 1 \\ 1 & 2 \\ 1 & 3 \end{bmatrix}}}\underset{\mathrm{x}}{\underbrace{\begin{bmatrix} x_1 \\ x_2 \end{bmatrix}}}
+b)\quad \underset{\mathrm{y}}{\underbrace{\begin{bmatrix} 3 \\ 5 \\ 6 \end{bmatrix}}} = \underset{\mathrm{A}}{\underbrace{\begin{bmatrix} 1 & 1 \\ 1 & 2 \\ 1 & 3 \end{bmatrix}}}\underset{\mathrm{x}}{\underbrace{\begin{bmatrix} x_1 \\ x_2 \end{bmatrix}}}
 $$
 $$
-c)\quad \underset{\mathrm{y}}{\underbrace{\begin{bmatrix} 3 \\ 5 \\ 6 \end{bmatrix}}} = \underset{\mathrm{A}}{\underbrace{\begin{bmatrix} 1 & 1 \\ 1 & 2 \\ 1 & 3 \end{bmatrix}}}\underset{\mathrm{x}}{\underbrace{\begin{bmatrix} x_1 \\ x_2 \end{bmatrix}}}
+c)\quad \underset{\mathrm{y}}{\underbrace{\begin{bmatrix} 4 \\ 5 \\ 6 \end{bmatrix}}} = \underset{\mathrm{A}}{\underbrace{\begin{bmatrix} 1 & 1 \\ 1 & 2 \\ 1 & 3 \end{bmatrix}}}\underset{\mathrm{x}}{\underbrace{\begin{bmatrix} x_1 \\ x_2 \end{bmatrix}}}
 $$
 
 
@@ -145,6 +146,8 @@ If it is possible to compute the inverse of the normal matrix, the normal equati
 $$
 \mathrm{\hat{x}= (A^T A)^{-1} A^T y}
 $$
+
+Check yourself that you can indeed use this to find the solution for model $c)$ in the [exercise](exc_sol) above.
 
 ## Summary
 
