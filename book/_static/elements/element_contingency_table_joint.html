@@ -210,6 +210,10 @@
           .on('mouseover', function (d, i) {
           	selector(
             	d3.select(this).attr("row"),
+              d3.select(this).attr("col") ) } )
+          .on('click', function (d, i) {
+          	selector(
+            	d3.select(this).attr("row"),
               d3.select(this).attr("col") ) } );
           
       }
