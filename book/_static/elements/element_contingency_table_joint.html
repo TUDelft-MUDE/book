@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta name="Change of variables" content="an interactive example showing the change of variables">
+    <title>Change of variables</title>
+    <script src="https://unpkg.com/mathjs/lib/browser/math.js"></script>
+    
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script src="https://d3js.org/d3-hsv.v0.1.min.js"></script>
+    
+    <style>
+        body{
+          overflow: hidden;
+          font-family: Helvetica, sans-serif;
+        }
+    </style>
+  </head>
+
+
+  
+    <!-- Create a div where the graph will take place -->
+  <div id="my_dataviz">
+    <svg id="click" xmlns="http://www.w3.org/2000/svg" >
+        <defs>
+            <g id="pointer">
+                <circle cx="0" cy="0" r="20" id="dragcircle" />
+            </g>
+        </defs>
+    </svg>
+  </div>
+
+<!-- Create a div where the graph will take place -->
+
+  <body>
+    <script>
+    
+    // ===================================================
+    // Set up basic viewport options
+    // ===================================================
+    const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0)
+    const vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0)
+      
+    const aspect 	= 2;
+
+    if (vw/aspect < vh) {
+      // Viewport width is limiting
+      var width 	= vw;
+      var height 	= vw/aspect;
+    } else {
+      // Viewport height is limiting
+      var width 	= vh*aspect;
+      var height 	= vh;
+    }
+
+    var svg = d3.select("#click") // This selects the div
+      .attr("width", width) // This defines the canvas' width
+      .attr("height", height) // This defines the canvas' height
+    
+    var xrange 	= [0,1];
+    var yrange 	= [1,0];
+
+    x_limits = xrange
+    y_limits = yrange
+
+    window_x = [width*0.1/aspect,width*0.7/aspect];
+    window_y = [height*0.1,height*0.7];
+    
+
+      
+    
+    svg.append("polygon")
+      .attr("points",array_to_string([values_to_pixels([0,0]),values_to_pixels([0,1]),values_to_pixels([1,1]),values_to_pixels([1,0])]))
+      .style("fill", "None") // ffffc2 #4794c1 047495 516572
+      .style("stroke", "black")
+      .attr("id","rect1");
+    
+    // Load in the data
+    const data = [
+    	[ 68, 119,  26,   7],
+      [ 15,  54,  14,  10],
+      [  5,  29,  14,  16],
+      [ 20,  84,  17,  94]]
+    const total = math.sum(data);
+      
+    // Plot the sample count in the top right corner
+    svg.append("text")
+    	.attr("x", width*0.05/aspect)
+      .attr("y", height*0.035)
+      .text("total")
+      .attr("font-size",height*0.05)
+      .attr("text-anchor", "middle");
+    svg.append("text")
+    	.attr("x", width*0.05/aspect)
+      .attr("y", height*0.08)
+      .text(total.toString())
+      .attr("font-size",height*0.05)
+      .attr("text-anchor", "middle");
+      
+    // Load the eye path
+    const eye_path = "m211.11,222c-59.32,0-112.36-28.95-146.42-53.24C28.05,142.64,5.51,116.83,4.57,115.74l-4.57-5.27,4.59-5.25c.94-1.08,23.49-26.64,60.13-52.51C98.77,28.67,151.81,0,211.11,0s112.34,28.67,146.39,52.72c36.64,25.88,59.19,51.44,60.13,52.51l4.59,5.25-4.57,5.27c-.94,1.08-23.49,26.89-60.12,53.02-34.06,24.29-87.1,53.24-146.42,53.24ZM21.54,110.53c8.39,8.77,27.15,27.21,52.76,45.43,32.08,22.83,81.86,50.04,136.81,50.04,91.65,0,169.71-74.76,189.58-95.48-8.4-8.7-27.15-26.93-52.74-44.96-32.09-22.61-81.87-49.56-136.84-49.56-91.63,0-169.66,73.97-189.58,94.53Z";
+    
+    // Load the hair path
+    const hair_path = "m67.64,429.62c-43.05-44.18-50.55-198.68-50.55-198.68l-15.5,15.5C-10.41,134.43,47.59,88.43,104.09,80.93,107.59,8.43,205.78,1.21,227.56,0c-1.26.5-6.98,2.95-9.97,9.43-2.67,5.8-2.39,13.25-1.03,12.57,61.03-30.57,110.03-21.57,176.03,4.43-24.25-2.64-62.05,5.92-61,9,96,10,176,97,181,246-7-22-14-32-14-32,12.47,50.08-27.67,162.08-37,159,0,0-1.33-170.77-67-198-41-17-70,30-143.69,31.41-65.3,1.25-120.99-29.3-133.42-41.46-51.9,23.05-84.9,85.05-49.85,229.23Z";
+    
+		var eyebound
+    
+    const colors_eye = ["#653700","#ac7434","#15b01a","#0343df"];
+    const colors_hair = ["#000000","#836539","#ff9408","#fbdd7e"];
+    
+    const eye_marginals = [220,  93,  64, 215];
+    const eye_marginals_normalized = math.divide(eye_marginals,math.sum(eye_marginals)*2.5);
+    const hair_marginals = [108, 286,  71, 127];
+    const hair_marginals_normalized = math.divide(hair_marginals,math.sum(hair_marginals)*2.5);
+    
+    var last_updated = ["0","0"];
+    
+    // Go through all data rows
+    for (let row = 0; row < 4; row++) {
+    	
+      // Create the eye color icons
+			svg.append("path")
+    		.attr("d", eye_path)
+        .style('fill', "black")
+        .attr("id","eye"+row.toString())
+        .attr("class","eye"+row.toString())
+      const eye_box = d3.select('#eye'+row.toString()).node().getBoundingClientRect();
+      d3.select("#eye"+row.toString())
+        .attr("transform", "translate("+(width*0.00).toString()+","+(values_to_pixels((row)/4,"x")+height*0.048).toString()+") scale("+(0.09*height/eye_box.width).toString()+", "+(0.05*height/eye_box.height).toString()+")")
+        .lower()
+        
+      svg.append("circle")
+      	.attr("cx",height*0.046)
+        .attr("cy",values_to_pixels((row)/4,"x")+height*0.0725)
+        .attr("r",height*0.02)
+        .style('fill', colors_eye[row])
+        .attr("class","eye"+row.toString())
+        
+      svg.append("circle")
+      	.attr("cx",height*0.046)
+        .attr("cy",values_to_pixels((row)/4,"x")+height*0.0725)
+        .attr("r",height*0.011)
+        .attr("class","eye"+row.toString())
+        
+			// Create the hair color icons
+			svg.append("path")
+    		.attr("d", hair_path)
+          .style("stroke-width",height*0.025)
+          .style("stroke","black")
+          .style("fill",colors_hair[row])
+        .attr("id","hair"+row.toString())
+      const hair_box = d3.select('#hair'+row.toString()).node().getBoundingClientRect();
+      d3.select("#hair"+row.toString())
+        .attr("transform", "translate("+(values_to_pixels((row)/4,"x")+height*0.0325).toString()+","+(0.0).toString()+") scale("+(0.085*height/hair_box.width).toString()+", "+(0.09*height/hair_box.height).toString()+")")
+        .lower()
+    
+    	// Add the internal grid
+    	if (row < 3) {
+        svg.append('line')
+            .style("stroke", "black")
+            .attr("x1", values_to_pixels(0,"x"))
+            .attr("y1", values_to_pixels((row+1)/4,"y"))
+            .attr("x2", values_to_pixels(1,"x"))
+            .attr("y2", values_to_pixels((row+1)/4,"y")); 
+        svg.append('line')
+            .style("stroke", "black")
+            .attr("x1", values_to_pixels((row+1)/4,"x"))
+            .attr("y1", values_to_pixels(0,"y"))
+            .attr("x2", values_to_pixels((row+1)/4,"x"))
+            .attr("y2", values_to_pixels(1,"y")); 
+      }
+
+			
+			// Add the eye marginals
+			draw_marginal(row,"x");
+      draw_marginal(row,"y");
+      
+    
+    	// Go through all data columns
+      for (let col = 0; col < 4; col++) {
+      
+        svg.append("text")
+        	.text(data[row][col].toString())
+          .attr("x", values_to_pixels((col+0.5)/4,"x"))
+          .attr("y", values_to_pixels((row+0.5)/4,"y")+height*0.02)
+          .attr("font-size",height*0.05)
+          .attr("value",data[row][col])
+          .attr("id","text"+row.toString()+col.toString())
+          .attr("text-anchor", "middle");
+          
+        svg.append("text")
+        	.text(data[row][col].toString())
+          .attr("x", values_to_pixels((col+0.5)/4,"x"))
+          .attr("y", values_to_pixels((row+0.5)/4,"y")+height*0.06)
+          .attr("font-size",height*0.03)
+          .attr("value",data[row][col])
+          .attr("id","subtext"+row.toString()+col.toString())
+          .style("opacity",0.)
+          .attr("text-anchor", "middle");
+          
+        svg.append("polygon")
+          .attr("points",array_to_string([values_to_pixels([col/4,(row)/4]),values_to_pixels([(col+1)/4,(row)/4]),values_to_pixels([(col+1)/4,(row+1)/4]),values_to_pixels([(col)/4,(row+1)/4])]))
+          .style("fill", "white") // ffffc2 #4794c1 047495 516572
+          .style("stroke", "None")
+          .attr("class","row"+row.toString()+" "+"col"+col.toString())
+          .attr("row",row)
+          .attr("col",col)
+          .attr("id","square"+row.toString()+col.toString())
+          .lower()
+          .on('mouseover', function (d, i) {
+          	selector(
+            	d3.select(this).attr("row"),
+              d3.select(this).attr("col") ) } );
+          
+      }
+      
+    }
+    
+    
+    // Marginal for the eyes
+    svg.append("text")
+      .text("p(")
+      .attr("x", width*0.4)
+      .attr("y", height*0.425)
+      .attr("font-size",height*0.05)
+      .attr("text-anchor", "left");
+    svg.append("path")
+      .attr("d", eye_path)
+      .style('fill', "black")
+      .attr("id","eye_a")
+    const eye_box_a = d3.select('#eye_a').node().getBoundingClientRect();
+    d3.select("#eye_a")
+      .attr("transform", "translate("+(width*0.8475/2).toString()+","+(height*0.395).toString()+") scale("+(0.07*height/eye_box_a.width).toString()+", "+(0.04*height/eye_box_a.height).toString()+")")
+      .lower()
+    svg.append("text")
+      .text(")")
+      .attr("x", width*0.46)
+      .attr("y", height*0.425)
+      .attr("font-size",height*0.05)
+      .attr("text-anchor", "left");
+      
+    svg.append("circle")
+      .attr("cx",height*0.8825)
+      .attr("cy",height*0.415)
+      .attr("r",height*0.015)
+      .style("stroke","black")
+      .style('fill', "white")
+      .attr("class","iris_selected")
+
+    svg.append("circle")
+      .attr("cx",height*0.8825)
+      .attr("cy",height*0.415)
+      .attr("r",height*0.008)
+      .style("fill","black")
+      
+      
+    // Marginal for the hair
+    svg.append("text")
+      .text("p(")
+      .attr("x", width*0.1505)
+      .attr("y", height*0.93)
+      .attr("font-size",height*0.05)
+      .attr("text-anchor", "left");
+    svg.append("path")
+      .attr("d", hair_path)
+      .style('fill', "white")
+      .style("stroke-width",height*0.025)
+      .style("stroke","black")
+      .attr("id","hair_a")
+      .attr("class","hair_selected")
+    const hair_box_a = d3.select('#hair_a').node().getBoundingClientRect();
+    d3.select("#hair_a")
+      .attr("transform", "translate("+(width*0.1825).toString()+","+(height*0.88).toString()+") scale("+(0.1*height/hair_box_a.width*0.75).toString()+", "+(0.1*height/hair_box_a.height*0.75).toString()+")")
+      .lower()
+    svg.append("text")
+      .text(")")
+      .attr("x", width*0.225)
+      .attr("y", height*0.93)
+      .attr("font-size",height*0.05)
+      .attr("text-anchor", "left");
+    
+    
+    
+    
+    
+    
+    
+    
+    function selector(row,col) {
+    
+      d3.selectAll(".iris_selected")  
+        .transition()
+          .duration(100)
+          .style("fill",colors_eye[row])
+      d3.selectAll(".hair_selected")  
+        .transition()
+          .duration(100)
+          .style("fill",colors_hair[col])
+          
+      d3.select("#numerator_hair")  
+        .text(hair_marginals[col])
+      d3.select("#result_hair")  
+        .text((hair_marginals[col]/total).toFixed(3).toString())
+          
+      d3.select("#numerator_eye")  
+        .text(eye_marginals[row])
+      d3.select("#result_eye")  
+        .text((eye_marginals[row]/total).toFixed(3).toString())
+      
+      d3.select("#numerator_joint")  
+        .text(data[row][col])
+      d3.select("#result_joint")  
+        .text((data[row][col]/total).toFixed(3).toString())
+      
+      for (let i = 0; i < 4; i ++) {
+      	if (i == row) {
+          d3.select(".marg_row"+row)
+            .style("opacity",1);
+          d3.select("#"+"text_marg_row"+row)
+            .transition()
+              .duration(100)
+              .style("opacity",1)
+              .text((eye_marginals[row]/total*100).toFixed(1).toString()+"%");
+        } else {
+          d3.select(".marg_row"+i)
+            .style("opacity",0.25);
+         d3.select("#"+"text_marg_row"+i)
+            .transition()
+              .duration(100)
+              .style("opacity",0.25)
+              .text(eye_marginals[i]);
+        }
+      }
+
+      for (let i = 0; i < 4; i ++) {
+      	if (i == col) {
+          d3.select(".marg_col"+col)
+            .style("opacity",1);
+          d3.select("#"+"text_marg_col"+col)
+            .transition()
+              .duration(100)
+              .style("opacity",1)
+              .text((hair_marginals[col]/total*100).toFixed(1).toString()+"%");
+        } else {
+          d3.select(".marg_col"+i)
+            .style("opacity",0.25);
+         d3.select("#"+"text_marg_col"+i)
+            .transition()
+              .duration(100)
+              .style("opacity",0.25)
+              .text(hair_marginals[i]);
+        }
+      }
+
+
+      for (let i = 0; i < data.length; i++) {
+				if (i.toString() != row) {
+        	d3.selectAll(".eye"+i.toString())      	
+            .transition()
+              .duration(100)
+              .style("opacity",0.25)
+        } else {
+        	d3.selectAll(".eye"+i.toString())
+          	.transition()
+        		.duration(100)
+            .style("opacity",1.0)
+        }
+				if (i.toString() != col) {
+        	d3.select("#"+"hair"+i.toString())
+						.transition()
+        		.duration(100)
+            .style("opacity",0.25)
+        } else {
+        	d3.select("#"+"hair"+i.toString())
+            .transition()
+              .duration(100)
+              .style("opacity",1.0)
+        }
+      }
+      
+      
+      for (let r = 0; r < data.length; r++) {
+      	for (let c = 0; c < data.length; c++) {
+        	if ((r == row) && (c == col)) {
+            d3.select("#square"+r.toString()+c.toString())
+              .transition()
+              .duration(100)
+              .style("opacity",1)
+              .style("fill","#cccccc")
+            d3.select("#"+"text"+r.toString()+c.toString())
+              .transition()
+              .duration(100)
+              .style("opacity",1)
+              .text((data[r][c]/total*100).toFixed(1).toString()+"%");
+            d3.select("#"+"subtext"+r.toString()+c.toString())
+              .transition()
+              .duration(100)
+              .style("opacity",1);
+          } else {
+            d3.select("#square"+r.toString()+c.toString())
+              .transition()
+              .duration(100)
+              .style("opacity",0.25)
+              .style("fill","white")
+            d3.select("#"+"text"+r.toString()+c.toString())
+              .transition()
+              .duration(100)
+              .style("opacity",0.25)
+              .text(data[r][c].toString());
+            d3.select("#"+"subtext"+r.toString()+c.toString())
+              .transition()
+              .duration(100)
+              .style("opacity",0);
+          }
+        }
+      }
+    }
+    
+    
+    // =====================================================================
+    
+    // Marginal for the hair
+    svg.append("text")
+      .text("p(")
+      .attr("x", width*0.55)
+      .attr("y", height*0.2)
+      .attr("font-size",height*0.05)
+      .attr("text-anchor", "left");
+    svg.append("path")
+      .attr("d", hair_path)
+      .style('fill', "white")
+      .style("stroke-width",height*0.025)
+      .style("stroke","black")
+      .attr("id","hair_b")
+      .attr("class","hair_selected")
+    const hair_box_b = d3.select('#hair_b').node().getBoundingClientRect();
+    d3.select("#hair_b")
+      .attr("transform", "translate("+(width*0.58).toString()+","+(height*0.15).toString()+") scale("+(0.1*height/hair_box_b.width*0.75).toString()+", "+(0.1*height/hair_box_b.height*0.75).toString()+")")
+      .lower()
+    svg.append("text")
+      .text(")")
+      .attr("x", width*0.6225)
+      .attr("y", height*0.2)
+      .attr("font-size",height*0.05)
+      .attr("text-anchor", "left");
+
+
+      svg.append("text")
+        .text("=")
+        .attr("font-size",height*0.075)
+        .attr("text-anchor", "middle")
+        .attr("transform","translate("+(width*0.65).toString()+","+(height*0.21).toString()+")")
+
+     svg.append("text")
+        .text("?")
+        .attr("font-size",height*0.05)
+        .attr("text-anchor", "middle")
+        .attr("transform","translate("+(width*0.75).toString()+","+(height*0.15).toString()+")")
+        .attr("id","numerator_hair")
+
+      svg.append("line")
+        .style("stroke", "black")
+        .style("stroke-width",height*0.0075)
+        .attr("x1",width*0.675)
+        .attr("y1",height*0.185)
+        .attr("x2",width*0.825)
+        .attr("y2",height*0.185)
+
+     svg.append("text")
+        .text(total.toString())
+        .attr("font-size",height*0.05)
+        .attr("text-anchor", "middle")
+        .attr("transform","translate("+(width*0.75).toString()+","+(height*0.25).toString()+")")
+    
+      svg.append("text")
+        .text("=")
+        .attr("font-size",height*0.075)
+        .attr("text-anchor", "left")
+        .attr("transform","translate("+(width*0.845).toString()+","+(height*0.21).toString()+")")
+    
+      svg.append("text")
+        .text("?")
+        .attr("font-size",height*0.05)
+        .attr("text-anchor", "left")
+        .attr("transform","translate("+(width*0.88).toString()+","+(height*0.2).toString()+")")
+        .attr("id","result_hair")
+    
+    
+    // =====================================================================
+    
+    // Marginal for the eye
+    svg.append("text")
+      .text("p(")
+      .attr("x", width*0.55)
+      .attr("y", height*0.5)
+      .attr("font-size",height*0.05)
+      .attr("text-anchor", "left");
+      
+    svg.append("path")
+      .attr("d", eye_path)
+      .style('fill', "black")
+      .attr("id","eye_b")
+    const eye_box_b = d3.select('#eye_b').node().getBoundingClientRect();
+    d3.select("#eye_b")
+      .attr("transform", "translate("+(width*0.575).toString()+","+(height*0.46).toString()+") scale("+(0.09*height/eye_box_b.width).toString()+", "+(0.05*height/eye_box_b.height).toString()+")")
+      .lower()
+      
+    svg.append("circle")
+      .attr("cx",width*0.5975)
+      .attr("cy",height*0.485)
+      .attr("r",height*0.0175)
+      .style("stroke","black")
+      .style('fill', "white")
+      .attr("class","iris_selected")
+
+    svg.append("circle")
+      .attr("cx",width*0.5975)
+      .attr("cy",height*0.485)
+      .attr("r",height*0.009)
+      .style("fill","black")
+   
+    svg.append("text")
+      .text(")")
+      .attr("x", width*0.6225)
+      .attr("y", height*0.5)
+      .attr("font-size",height*0.05)
+      .attr("text-anchor", "left");
+
+
+      svg.append("text")
+        .text("=")
+        .attr("font-size",height*0.075)
+        .attr("text-anchor", "middle")
+        .attr("transform","translate("+(width*0.65).toString()+","+(height*0.51).toString()+")")
+
+     svg.append("text")
+        .text("?")
+        .attr("font-size",height*0.05)
+        .attr("text-anchor", "middle")
+        .attr("transform","translate("+(width*0.75).toString()+","+(height*0.45).toString()+")")
+        .attr("id","numerator_eye")
+
+      svg.append("line")
+        .style("stroke", "black")
+        .style("stroke-width",height*0.0075)
+        .attr("x1",width*0.675)
+        .attr("y1",height*0.485)
+        .attr("x2",width*0.825)
+        .attr("y2",height*0.485)
+
+     svg.append("text")
+        .text(total.toString())
+        .attr("font-size",height*0.05)
+        .attr("text-anchor", "middle")
+        .attr("transform","translate("+(width*0.75).toString()+","+(height*0.55).toString()+")")
+    
+      svg.append("text")
+        .text("=")
+        .attr("font-size",height*0.075)
+        .attr("text-anchor", "left")
+        .attr("transform","translate("+(width*0.845).toString()+","+(height*0.51).toString()+")")
+    
+      svg.append("text")
+        .text("?")
+        .attr("font-size",height*0.05)
+        .attr("text-anchor", "left")
+        .attr("transform","translate("+(width*0.88).toString()+","+(height*0.5).toString()+")")
+        .attr("id","result_eye")
+    
+    // =====================================================================
+    
+    // Marginal for the joint
+    svg.append("text")
+      .text("p(")
+      .attr("x", width*0.5)
+      .attr("y", height*0.8)
+      .attr("font-size",height*0.05)
+      .attr("text-anchor", "left");
+      
+    svg.append("path")
+      .attr("d", hair_path)
+      .style('fill', "white")
+      .style("stroke-width",height*0.025)
+      .style("stroke","black")
+      .attr("id","hair_c")
+      .attr("class","hair_selected")
+    const hair_box_c = d3.select('#hair_c').node().getBoundingClientRect();
+    d3.select("#hair_c")
+      .attr("transform", "translate("+(width*0.5275).toString()+","+(height*0.75).toString()+") scale("+(0.1*height/hair_box_c.width*0.75).toString()+", "+(0.1*height/hair_box_c.height*0.75).toString()+")")
+      .lower()
+      
+    svg.append("text")
+      .text(",")
+      .attr("x", width*0.565)
+      .attr("y", height*0.8)
+      .attr("font-size",height*0.05)
+      .attr("text-anchor", "left");
+      
+    svg.append("path")
+      .attr("d", eye_path)
+      .style('fill', "black")
+      .attr("id","eye_c")
+    const eye_box_c = d3.select('#eye_c').node().getBoundingClientRect();
+    d3.select("#eye_c")
+      .attr("transform", "translate("+(width*0.575).toString()+","+(height*0.76).toString()+") scale("+(0.09*height/eye_box_c.width).toString()+", "+(0.05*height/eye_box_c.height).toString()+")")
+      .lower()
+      
+    svg.append("circle")
+      .attr("cx",width*0.5975)
+      .attr("cy",height*0.785)
+      .attr("r",height*0.0175)
+      .style("stroke","black")
+      .style('fill', "white")
+      .attr("class","iris_selected")
+
+    svg.append("circle")
+      .attr("cx",width*0.5975)
+      .attr("cy",height*0.785)
+      .attr("r",height*0.009)
+      .style("fill","black")
+   
+    svg.append("text")
+      .text(")")
+      .attr("x", width*0.6225)
+      .attr("y", height*0.8)
+      .attr("font-size",height*0.05)
+      .attr("text-anchor", "left");
+
+
+      svg.append("text")
+        .text("=")
+        .attr("font-size",height*0.075)
+        .attr("text-anchor", "middle")
+        .attr("transform","translate("+(width*0.65).toString()+","+(height*0.81).toString()+")")
+
+     svg.append("text")
+        .text("?")
+        .attr("font-size",height*0.05)
+        .attr("text-anchor", "middle")
+        .attr("transform","translate("+(width*0.75).toString()+","+(height*0.75).toString()+")")
+        .attr("id","numerator_joint")
+
+      svg.append("line")
+        .style("stroke", "black")
+        .style("stroke-width",height*0.0075)
+        .attr("x1",width*0.675)
+        .attr("y1",height*0.785)
+        .attr("x2",width*0.825)
+        .attr("y2",height*0.785)
+
+     svg.append("text")
+        .text(total.toString())
+        .attr("font-size",height*0.05)
+        .attr("text-anchor", "middle")
+        .attr("transform","translate("+(width*0.75).toString()+","+(height*0.85).toString()+")")
+    
+      svg.append("text")
+        .text("=")
+        .attr("font-size",height*0.075)
+        .attr("text-anchor", "left")
+        .attr("transform","translate("+(width*0.845).toString()+","+(height*0.81).toString()+")")
+    
+      svg.append("text")
+        .text("?")
+        .attr("font-size",height*0.05)
+        .attr("text-anchor", "left")
+        .attr("transform","translate("+(width*0.88).toString()+","+(height*0.8).toString()+")")
+        .attr("id","result_joint")
+    
+    
+    
+    //////////////////////////////////////////////////////////
+    
+    // This function converts pixels to values
+    function pixels_to_values(coords,axis) {
+    	axis = (typeof axis === 'undefined') ? 'xy' : axis;
+    	if (axis == 'x') {
+      	res = (coords-window_x[0])/(window_x[1]-window_x[0]) * (xrange[1]-xrange[0]) + xrange[0]
+      } else if (axis == 'y') {
+      	res = (1.-(coords-window_y[0])/(window_y[1]-window_y[0])) * (yrange[1]-yrange[0]) + yrange[0]
+      } else {
+      	res = [(coords[0]-window_x[0])/(window_x[1]-window_x[0]) * (xrange[1]-xrange[0]) + xrange[0],(1.-(coords[1]-window_y[0])/(window_y[1]-window_y[0])) * (yrange[1]-yrange[0]) + yrange[0]]
+      }
+     	return res;
+    }
+
+		// This function converts values to pixels
+    function values_to_pixels(values,axis) {
+    	axis = (typeof axis === 'undefined') ? 'xy' : axis;
+    	if (axis == 'x') {
+      	res = (values-xrange[0])/(xrange[1]-xrange[0])*(window_x[1]-window_x[0])+window_x[0];
+      } else if (axis == 'y') {
+      	res = (1-(values-yrange[0])/(yrange[1]-yrange[0]))*(window_y[1]-window_y[0])+window_y[0];
+      } else {
+      	res = [(values[0]-xrange[0])/(xrange[1]-xrange[0])*(window_x[1]-window_x[0])+window_x[0],(1-(values[1]-yrange[0])/(yrange[1]-yrange[0]))*(window_y[1]-window_y[0])+window_y[0]];
+      }
+     	return res;
+    }
+    
+		function array_to_string(array) {
+    	var string = "";
+      for (let row = 0; row < array.length; row++) {
+      	string += array[row][0].toString()+","+array[row][1].toString()+" ";
+      }
+      return string
+    }
+    
+    function draw_marginal(index,dimension) {
+    	if (dimension == "x") {
+      	// Draw the histogram
+        svg.append("polygon")
+          .attr("points",array_to_string([values_to_pixels([1,(index)/4+0.025]),values_to_pixels([1+eye_marginals_normalized[index],(index)/4+0.025]),values_to_pixels([1+eye_marginals_normalized[index],(index+1)/4-0.025]),values_to_pixels([1,(index+1)/4-0.025])]))
+          .style("fill", colors_eye[index]) // ffffc2 #4794c1 047495 516572
+          .style("stroke", "black")
+          .attr("class","marg_row"+index.toString())
+          .lower();
+          
+        // Add the count
+        svg.append("text")
+        	.text(eye_marginals[index].toString())
+          .attr("font-size",height*0.05)
+          .attr("text-anchor", "middle")
+          .attr("transform","translate("+values_to_pixels(1+eye_marginals_normalized[index]+0.025,"x").toString()+","+values_to_pixels((index+0.5)/4,"y").toString()+") rotate(90)")
+          .attr("id","text_marg_row"+index.toString())
+          .attr("class","marg_row"+index.toString());
+        
+      } else if (dimension == "y") {
+        svg.append("polygon")
+          .attr("points",array_to_string([values_to_pixels([(index)/4+0.025,1]),values_to_pixels([(index+1)/4-0.025,1]),values_to_pixels([(index+1)/4-0.025,1+hair_marginals_normalized[index]]),values_to_pixels([(index)/4+0.025,1+hair_marginals_normalized[index]])]))
+          .style("fill", colors_hair[index]) // ffffc2 #4794c1 047495 516572
+          .style("stroke", "black")
+          .attr("class","marg_col"+index.toString())
+          .lower();
+          
+        // Add the count
+        svg.append("text")
+        	.text(hair_marginals[index].toString())
+          .attr("font-size",height*0.05)
+          .attr("text-anchor", "middle")
+          .attr("transform","translate("+values_to_pixels((index+0.5)/4,"x").toString()+","+values_to_pixels(1+hair_marginals_normalized[index]+0.08,"y").toString()+")")
+          .attr("id","text_marg_col"+index.toString())
+          .attr("class","marg_col"+index.toString());
+      }
+    }
+    
+    function percentRound(ipt, precision) {
+    		// I took this function from https://www.npmjs.com/package/percent-round
+        if (!precision) {
+            precision = 0;
+        }
+        if (!Array.isArray(ipt)) {
+            throw new Error('percentRound input should be an Array');
+        }
+        const iptPercents = ipt.slice();
+        const length = ipt.length;
+        const out = new Array(length);
+
+        let total = 0;
+        for (let i = length - 1; i >= 0; i--) {
+            if (typeof iptPercents[i] === "string") {
+                iptPercents[i] = Number.parseFloat(iptPercents[i]);
+            }
+            total += iptPercents[i] * 1;
+        }
+        if (isNaN(total)) {
+            throw new Error('percentRound invalid input');
+        }
+
+        if (total === 0) {
+            out.fill(0);
+        } else {
+            const powPrecision = Math.pow(10, precision);
+            const pow100 = 100 * powPrecision;
+            let check100 = 0;
+            for (let i = length - 1; i >= 0; i--) {
+                iptPercents[i] = 100 * iptPercents[i] / total;
+                check100 += out[i] = Math.round(iptPercents[i] * powPrecision);
+            }
+
+            if (check100 !== pow100) {
+                const totalDiff = (check100 - pow100) ;
+                const roundGrain = 1;
+                let grainCount = Math.abs(totalDiff);
+                const diffs = new Array(length);
+
+                for (let i = 0; i < length; i++) {
+                    diffs[i] = Math.abs(out[i] - iptPercents[i] * powPrecision);
+                }
+
+                while (grainCount > 0) {
+                    let idx = 0;
+                    let maxDiff = diffs[0];
+                    for (let i = 1; i < length; i++) {
+                        if (maxDiff < diffs[i]) {
+                            // avoid negative result
+                            if (check100 > pow100 && out[i] - roundGrain < 0) {
+                                continue;
+                            }
+                            idx = i;
+                            maxDiff = diffs[i];
+                        }
+                    }
+                    if (check100 > pow100) {
+                        out[idx] -= roundGrain;
+                    } else {
+                        out[idx] += roundGrain;
+                    }
+                    diffs[idx] -= roundGrain;
+                    grainCount--;
+                }
+            }
+
+            if (powPrecision > 1) {
+                for (let i = 0; i < length; i++) {
+                    out[i] = out[i] / powPrecision;
+                }
+            }
+        }
+
+        return out;
+    }
+
+    function findIndexOfLowestValue(arr) {
+      if (arr.length === 0) {
+        return -1; // Handle the case where the array is empty.
+      }
+
+      return arr.reduce((lowestIndex, currentValue, currentIndex, array) => {
+        return currentValue < array[lowestIndex] ? currentIndex : lowestIndex;
+      }, 0);
+    }
+    
+    
+    </script>
+  </body>
+
+</html>
