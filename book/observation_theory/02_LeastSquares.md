@@ -10,7 +10,7 @@ $$
 \mathrm{y = Ax}.
 $$
 
-If all the observations would fit perfectly to this model, this system is called [consistent](https://mude.citg.tudelft.nl/fundamental-concepts/2025/fundamentals/00_01c_PreMath.html#consistent-systems-at-least-one-solution-exists). This is only possible if the number of observations $m$ is equal to (or smaller than) the number of unknowns $n$, i.e. if the system is [determined](https://mude.citg.tudelft.nl/fundamental-concepts/2025/fundamentals/00_01c_PreMath.html#determined-overdetermined-and-underdetermined-systems).
+If all the observations would fit perfectly to this model, this system is called [consistent](https://mude.citg.tudelft.nl/fundamental-concepts/2025/fundamentals/00_01c_PreMath.html#consistent-systems-at-least-one-solution-exists). 
 
 If the number of observations is greater than the number of unknowns (and the design matrix $\mathrm{A}$ is of full column rank), it is very unlikely that the system is consistent. Physical reality would need to be perfectly described by the conceptual mathematical model. It is evident that in real life this is never the case, since (i) our observations are always contaminated by some form of noise, and (ii) physical reality is often more complex than can be described with a simplified mathematical model.
 
