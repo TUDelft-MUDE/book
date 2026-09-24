@@ -17,11 +17,11 @@ parts:
     - file: multivariate/overview
       sections:
       - file: multivariate/contingency_tables.md
-# START REMOVE-FROM-PUBLISH
       - file: multivariate/events
       - file: multivariate/variables
       - file: multivariate/Correlation_and_Covariance.md
       - file: multivariate/Bivariate.md
+# START REMOVE-FROM-PUBLISH
     - file: propagation_uncertainty/overview
       sections:
       - file: propagation_uncertainty/0_Transforming_random_variables.md
