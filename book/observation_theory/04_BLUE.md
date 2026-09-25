@@ -22,7 +22,7 @@ This makes sense intuitively: suppose the observables are all independent and th
 
 Taking this particular weight matrix, i.e., $\mathrm{W}=\Sigma_Y^{-1}$, has a special meaning. It has the “Best” property. This means that using this particular weight matrix, we obtain a linear unbiased estimator which has minimal variance. In other words, with this particular weight matrix we get the best possible estimator among all linear unbiased estimators, where ‘best’ represents optimal precision or minimal variance.
 
-Given the BLU-estimator for $\hat{X}$, we can also find the BLU-estimators for $\hat{Y} =\mathrm{A}\hat{X}$,and for $\hat{\epsilon} =  Y-\hat{Y} $,
+Given the BLU-estimator for $\hat{X}$, we can also find the BLU-estimators for $\hat{Y} =\mathrm{A}\hat{X}$, and for $\hat{\epsilon} =  Y-\hat{Y} $,
 
 $$
 \hat{Y}= \mathrm{A}(\mathrm{A^T} \Sigma_Y^{-1} \mathrm{A})^{-1} \mathrm{A^T} \Sigma_Y^{-1} Y
@@ -106,8 +106,8 @@ The precision of the estimator is expressed by its covariance matrix. For the �
 
 $$
 \begin{align*}
-\Sigma_{\hat{X}} &= \mathrm{L^T} \Sigma_Y \mathrm{L} \\ &= (\mathrm{A^T} \Sigma_Y^{-1} \mathrm{A})^{-1}\mathrm{A^T} \Sigma_Y^{-1} \cdot \Sigma_Y \cdot \Sigma_Y^{-1} \mathrm{A} (\mathrm{A^T} \Sigma_Y^{-1} \mathrm{A})^{-1}\\ &=(\mathrm{A^T} \Sigma_Y^{-1} \mathrm{A})^{-1}\mathrm{A^T} \Sigma_Y^{-1} \mathrm{A} (\mathrm{A^T} \Sigma_Y^{-1} \mathrm{A})^{-1}\\ &= (\mathrm{A^T} \Sigma_Y^{-1} \mathrm{A})^{-1}\\ \\ \Sigma_{\hat{Y}} &=\mathrm{A}\Sigma_{\hat{X}} \mathrm{A^T} \\ &=\mathrm{A} (\mathrm{A^T} \Sigma_Y^{-1} \mathrm{A})^{-1} \mathrm{A^T} \\ \\
-\Sigma_{\hat{\epsilon}} &= (\mathrm{I}_m - \mathrm{A} (\mathrm{A^T} \Sigma_Y^{-1} \mathrm{A})^{-1}\mathrm{A^T} \Sigma_Y^{-1}) \cdot \Sigma_Y \cdot (\mathrm{I}_m - \mathrm{A} (\mathrm{A^T} \Sigma_Y^{-1} \mathrm{A})^{-1}\mathrm{A^T} \Sigma_Y^{-1})^T \\ &= (\Sigma_Y - \mathrm{A}(\mathrm{A^T} \Sigma_Y^{-1} \mathrm{A})^{-1}\mathrm{A^T}) (\mathrm{I}_m -\Sigma_Y^{-1}\mathrm{A} (\mathrm{A^T} \Sigma_Y^{-1} \mathrm{A})^{-1}\mathrm{A^T})\\ &= \Sigma_Y - \Sigma_{\hat{Y}}-\Sigma_{\hat{Y}}+\Sigma_{\hat{Y}}\\ &= \Sigma_Y - \Sigma_{\hat{Y}}\end{align*}
+\Sigma_{\hat{X}} &= \mathrm{L^T} \Sigma_Y \mathrm{L} \\ &= (\mathrm{A^T} \Sigma_Y^{-1} \mathrm{A})^{-1}\mathrm{A^T} \Sigma_Y^{-1} \cdot \Sigma_Y \cdot \Sigma_Y^{-1} \mathrm{A} (\mathrm{A^T} \Sigma_Y^{-1} \mathrm{A})^{-1}\\ &=(\mathrm{A^T} \Sigma_Y^{-1} \mathrm{A})^{-1}\mathrm{A^T} \Sigma_Y^{-1} \mathrm{A} (\mathrm{A^T} \Sigma_Y^{-1} \mathrm{A})^{-1}\\ &= (\mathrm{A^T} \Sigma_Y^{-1} \mathrm{A})^{-1}\\ \\ \Sigma_{\hat{Y}} &=\mathrm{A}\Sigma_{\hat{X}} \mathrm{A^T}  \\ \\
+\Sigma_{\hat{\epsilon}} &= \Sigma_Y - \Sigma_{\hat{Y}}\end{align*}
 $$
 
 In summary, by applying the BLUE method, we obtain the best estimator among all linear unbiased estimators, where ‘best’ is quantitatively expressed via the covariance matrix.
