@@ -71,9 +71,9 @@ In this small demo you can create plots of the bivariate normal PDF, including a
 Interactively change the means, standard deviations and correlation coefficient for the bivariate Gaussian PDF and visualize how the density contours, samples and covariance matrix change. [^ref].
 ````
 
-## Conditionalizing a bivariate Gaussian distribution
+## Conditioning a bivariate Gaussian distribution
 
-Multivariate Gaussian distributions are convenient because we can derive results analytically. Here, we are going to conditionalize a bivariate Gaussian distribution to exemplify it.
+Multivariate Gaussian distributions are convenient because we can derive results analytically. Here, we are going to condition a bivariate Gaussian distribution to exemplify it.
 
 _Given that we are modelling the joint probability distribution of $X_1$ and $X_2$ using a bivariate Gaussian distribution and we know $x_2=a$, what is the expected distribution for $X_1$?_
 
@@ -123,7 +123,7 @@ Distribution of $Q_1$ and conditional distribution of $Q_1$ given $Q_2$. .
 
 Often in the fields of Civil Engineering and Geosciences, we want to model more than two variables. Sometimes even tens or hundreds of variables. Thus, we need to find flexible models that account for the probabilistic dependence between them the best way possible. One option is to extend the bivariate Gaussian distribution to a multivariate Gaussian distribution with the desired number of random variables. Note that this implies that all the random variables are Gaussian-distributed.
 
-We can extend the analytical equation to conditionalize the bivariate Gaussian distribution to the 3D multivariate Gaussian distribution to compute $(x_1, x_2|x_3=a)\sim N(\hat{\mu}, \hat{\Sigma})$ as
+We can extend the analytical equation to condition the bivariate Gaussian distribution to the 3D multivariate Gaussian distribution to compute $(x_1, x_2|x_3=a)\sim N(\hat{\mu}, \hat{\Sigma})$ as
 
 $$
 \hat{\mu} = \begin{pmatrix} \mu_1 \\ \mu_2 \end{pmatrix} + \begin{pmatrix} \Sigma_{13} \\ \Sigma_{23} \end{pmatrix} \Sigma_{33}^{-1} (a - \mu_3)
@@ -142,7 +142,7 @@ $$
 $$
 \boldsymbol{\Sigma} = \begin{pmatrix} 41^2 & 1000 & 475 \\ 1000 & 35^2 & 520\\ 475 & 520 & 27^2\end{pmatrix}$$
 
-Now we want to make use of the multivariate Gaussian distribution to see what is the distribution of the discharges in the river if today is raining $p = 22mm/h$. This is, we are going to conditionalize the 3D multivariate Gaussian on one variable, $P$, to obtain a conditional bivariate Gaussian distribution of $Q_1$ and $Q_2$. In mathematical terms, $(q_1, q_2|p=22mm/h)\sim N(\hat{\mu}, \hat{\Sigma})$. We would do it as
+Now we want to make use of the multivariate Gaussian distribution to see what is the distribution of the discharges in the river if today is raining $p = 22mm/h$. This is, we are going to condition the 3D multivariate Gaussian on one variable, $P$, to obtain a conditional bivariate Gaussian distribution of $Q_1$ and $Q_2$. In mathematical terms, $(q_1, q_2|p=22mm/h)\sim N(\hat{\mu}, \hat{\Sigma})$. We would do it as
 
 $$
 \hat{\mu} = \begin{pmatrix} 94 \\ 78 \end{pmatrix} + \begin{pmatrix} 475 \\ 520 \end{pmatrix} (27^2)^{-1} (22 - 12) = \begin{pmatrix} 100.5 \\ 85.1 \end{pmatrix} 
@@ -152,7 +152,7 @@ $$
 \hat{\Sigma} = \begin{pmatrix} 41^2 & 1000 \\ 1000 & 35^2 \end{pmatrix} - \begin{pmatrix} 475 \\ 520 \end{pmatrix} (27^2)^{-1} \begin{pmatrix} 475 & 520\end{pmatrix} = \begin{pmatrix} 41^2 & 1000 \\ 1000 & 35^2 \end{pmatrix} - \begin{pmatrix} 309.5 & 338.8 \\ 338.8 & 370.9 \end{pmatrix} = \begin{pmatrix} 1372.5 & 661.2 \\ 661.2 &  854.1 \end{pmatrix}
 $$
 
-We can see that the means of the random variables $Q_1$ and $Q_2$ have increased while $\mathrm{Cov}(Q_1, Q_2)$ has been reduced from 1000 to 661.2. The figure below displays the difference between the univariate distributions of $Q_1$ and $Q_2$ without and with conditionalizing.
+We can see that the means of the random variables $Q_1$ and $Q_2$ have increased while $\mathrm{Cov}(Q_1, Q_2)$ has been reduced from 1000 to 661.2. The figure below displays the difference between the univariate distributions of $Q_1$ and $Q_2$ without and with conditioning.
 
 ```{figure} https://github.com/TUDelft-MUDE/source-files/raw/main/file/two_conditionals_gaussian.png
 
@@ -162,7 +162,7 @@ We can see that the means of the random variables $Q_1$ and $Q_2$ have increased
 Unconditional and conditional Gaussian distributions given $P$: (left) $Q_1$, and (right) $Q_2$.
 ```
 
-We can also compare the bivariate Gaussian distribution of $Q_1$ and $Q_2$ without and with the conditionalization, as shown in the Figure below. You can see how the mode of the distribution (point of maximum density) has moved towards the upper right side of the plot and become slightly narrower  when conditionalizing. This is because the three variables are positively correlated and we have conditionalized on a value of precipitation higher than the mean.
+We can also compare the bivariate Gaussian distribution of $Q_1$ and $Q_2$ without and with the conditioning, as shown in the Figure below. You can see how the mode of the distribution (point of maximum density) has moved towards the upper right side of the plot and become slightly narrower  when conditioning. This is because the three variables are positively correlated and we have conditioned on a value of precipitation higher than the mean.
 
 ```{figure} https://github.com/TUDelft-MUDE/source-files/raw/main/file/joint_prob_conditional.png
 
@@ -234,7 +234,7 @@ $$
 $$
 \boldsymbol{\Sigma} = \begin{pmatrix} 600^2 & 336000 &  2835 \\ 336000 & 850^2 &  3748.5\\  2835 &  3748.5 & 6.3^2\end{pmatrix}$$
 
-If we know that $T_{clean}$ = 7 days, we can conditionalize the multivariate Gaussian distribution as:
+If we know that $T_{clean}$ = 7 days, we can condition the multivariate Gaussian distribution as:
 
 $$
 \hat{\mu} = \begin{pmatrix} 1700 \\ 1300 \end{pmatrix} + \begin{pmatrix}  2835 \\ 3748.5 \end{pmatrix} (6.3^2)^{-1} (7 - 12) = \begin{pmatrix} 1342.6 \\ 827.8 \end{pmatrix} 
