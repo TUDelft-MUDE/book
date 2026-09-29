@@ -10,7 +10,7 @@ If you spot a mistake, you can click on {octicon}`mark-github`, login with your 
 
 ## Have a question / answer?
 
-If you have a question regarding any content, look at [https://​answers​.citg​.tudelft​.nl/](https://answers.citg.tudelft.nl/) to see if it’s already there. If not, ask a new question! Your teachers and TAs will look into it soon! If you have an answer to one of the question posted there, you’re welcome to answer questions yourself!
+If you have a question regarding any content, look at [https://​answers​.citg​.tudelft​.nl](https://answers.citg.tudelft.nl) to see if it’s already there. If not, ask a new question! Your teachers and TAs will look into it soon! If you have an answer to one of the question posted there, you’re welcome to answer questions yourself!
 
 ## Confused?
 
