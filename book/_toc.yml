@@ -21,14 +21,13 @@ parts:
       - file: multivariate/variables
       - file: multivariate/Correlation_and_Covariance.md
       - file: multivariate/Bivariate.md
-# START REMOVE-FROM-PUBLISH
     - file: propagation_uncertainty/overview
       sections:
       - file: propagation_uncertainty/0_Transforming_random_variables.md
       - file: propagation_uncertainty/1_Mean_and_Variance_propagation.md
       - file: propagation_uncertainty/1b_Mean_and_Variance_propagation_linear_case.md
       - file: propagation_uncertainty/2_Monte_Carlo_simulations.md
-
+# START REMOVE-FROM-PUBLISH
     - file: observation_theory/overview.md
       sections:
       - file: observation_theory/01_Introduction.md
