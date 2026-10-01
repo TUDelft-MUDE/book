@@ -1,26 +1,26 @@
 (01_LinearProp)=
 # Linear propagation of mean and covariance
 
-On this page, we will limit ourselves to linear functions, but expand from one equation $X=q(\mathbf{Y})$ to a linear system of equations $\mathbf{X} = \mathbf{AY}+\mathbf{c}$. Then the uncertainty in $\mathbf{Y}$ needs to be propagated to a covariance matrix for $\mathbf{X}$ as well. 
+On this page, we will limit ourselves to linear functions, but expand from one equation $X=q(Y)$ to a linear system of equations $X= \mathbf{A}Y+\mathbf{c}$. Then the uncertainty in $Y$ needs to be propagated to a covariance matrix for $X$ as well. 
 
 ## Linear function of two random variables
 
 Consider first a linear function of two random variables
 
 $$
-X = q(\mathbf{Y})=a_1 Y_1+ a_2 Y_2 + c
+X = q(Y)=a_1 Y_1+ a_2 Y_2 + c
 $$
 
-We can now show that $\mathbb{E}(q(\mathbf{Y}))= a_1 \mathbb{E}(Y_1)+a_2 \mathbb{E}(Y_2)+c$ using our Taylor approximations. The first-order partial derivatives namely follow as
+We can now show that $\mathbb{E}(q(Y))= a_1 \mathbb{E}(Y_1)+a_2 \mathbb{E}(Y_2)+c$ using our Taylor approximations. The first-order partial derivatives namely follow as
 
 $$
 \frac{\partial q}{\partial Y_1}= a_1, \; \frac{\partial q}{\partial Y_2}= a_2
 $$
 
-and all the higher-order derivatives are zero, and consequently all higher-order terms in the Taylor series will be zero. The expectation of $q(\mathbf{Y})$ follows therefore as
+and all the higher-order derivatives are zero, and consequently all higher-order terms in the Taylor series will be zero. The expectation of $q(Y)$ follows therefore as
 
 $$
-\mathbb{E}(q(\mathbf{Y}))= q(\mu_1,\mu_2)=a_1 \mu_1 + a_2\mu_2 + c
+\mathbb{E}(q(Y))= q(\mu_1,\mu_2)=a_1 \mu_1 + a_2\mu_2 + c
 $$
 
 which is exact (i.e., not an approximation anymore).
@@ -45,21 +45,21 @@ Note that it does not depend on the deterministic constant $c$.
 Note that the linear function of two random variables can also be written as 
 
 $$
-X = q(\mathbf{Y}) = \begin{bmatrix} a_1 & a_2\end{bmatrix}\begin{bmatrix}Y_1 \\ Y_2\end{bmatrix}+\mathbf{c}
+X = q(Y) = \begin{bmatrix} a_1 & a_2\end{bmatrix}\begin{bmatrix}Y_1 \\ Y_2\end{bmatrix}+\mathbf{c}
 $$
 
-We will now generalize to the case where we compute a vector $\mathbf{X}\in\mathbb{R}^m$ with $m$ linear functions of $n$ variables, which can be written as a linear system of equations:
+We will now generalize to the case where we compute a vector $X\in\mathbb{R}^m$ with $m$ linear functions of $n$ variables, which can be written as a linear system of equations:
 
 $$ 
-\mathbf{X}= \begin{bmatrix} X_1\\ X_2 \\ \vdots \\ X_m \end{bmatrix}= \begin{bmatrix} a_{11}&a_{12}&\dots&a_{1n}\\a_{21}&a_{22}&\dots&a_{2n} \\ \vdots&\vdots&\vdots&\vdots \\ a_{m1}&a_{m2}&\dots&a_{mn} \end{bmatrix} \begin{bmatrix} Y_1\\ Y_2 \\ \vdots \\ Y_n \end{bmatrix} +\begin{bmatrix} c_1\\ c_2 \\ \vdots \\ c_m \end{bmatrix}=\mathbf{AY}+\mathbf{c}
+X= \begin{bmatrix} X_1\\ X_2 \\ \vdots \\ X_m \end{bmatrix}= \begin{bmatrix} a_{11}&a_{12}&\dots&a_{1n}\\a_{21}&a_{22}&\dots&a_{2n} \\ \vdots&\vdots&\vdots&\vdots \\ a_{m1}&a_{m2}&\dots&a_{mn} \end{bmatrix} \begin{bmatrix} Y_1\\ Y_2 \\ \vdots \\ Y_n \end{bmatrix} +\begin{bmatrix} c_1\\ c_2 \\ \vdots \\ c_m \end{bmatrix}=\mathbf{A}Y+\mathbf{c}
 $$
 
-with known $\mathbb{E}(\mathbf{Y})$ and covariance matrix $\boldsymbol\Sigma_Y$, and $\mathbf{c}$ a vector with deterministic variables.
+with known $\mathbb{E}(Y)$ and covariance matrix $\boldsymbol\Sigma_Y$, and $\mathbf{c}$ a vector with deterministic variables.
 
 The linear propagation laws of the mean and covariance matrix are given by
 
 $$
-\mathbb{E}(\mathbf{X}) = \mathbf{A}\mathbb{E}(\mathbf{Y})+\mathbf{c}
+\mathbb{E}(X) = \mathbf{A}\mathbb{E}(Y)+\mathbf{c}
 $$ 
 
 $$
@@ -81,7 +81,7 @@ $$
 \boldsymbol\mu_Y = \begin{bmatrix}0 \\ 0\end{bmatrix},\; \boldsymbol\Sigma_Y= \begin{bmatrix}3&0 \\ 0&3\end{bmatrix}
 $$
 
-Apply the linear propagation laws to find $\mathbb{E}(\mathbf{X})=\boldsymbol\mu_X$ and $\boldsymbol\Sigma_X$.
+Apply the linear propagation laws to find $\mathbb{E}(X)=\boldsymbol\mu_X$ and $\boldsymbol\Sigma_X$.
 
  ```{admonition} Solution
 :class: tip, dropdown
@@ -103,7 +103,7 @@ You want to measure out 1.5$l$ of concrete in a bucket, but only have a bucket o
 
 You do something similar to achieve 4.5$l$ ($Y_2 = V_a - V_c$) and 1$l$ ($Y_3 = V_a-2V_b$). Compute the covariance matrix of $[Y_1 \ Y_2 \ Y_3]^T$.
 
-Hint: first find the $\mathbf{A}$ matrix of the linear system $\mathbf{Y}=\mathbf{A}\cdot \mathbf{V}$.
+Hint: first find the $\mathbf{A}$ matrix of the linear system $Y=\mathbf{A}\cdot \mathbf{V}$.
 
  ```{admonition} Solution
 :class: tip, dropdown

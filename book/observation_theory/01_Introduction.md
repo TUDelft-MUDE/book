@@ -1,7 +1,18 @@
 (ObsTheory)=
 # Introduction
 
-From experience we know that various uncertain phenomena can be modeled as a random variable (or a random vector), say $Y$. In this part the random variables are measurements (e.g., sensor readings), which are uncertain due to random errors. We will refer to these random variables (our input data) $Y$ as the *observables*.
+The goal of estimation is the estimate *model parameters* from a set of observations. In civil and environmental engineering, and Earth sciences this is needed in many monitoring and sensing applications, such as:
+* Sea level rise
+* Land subsidence / uplift
+* Air quality
+* Settlement of soils 
+* Tunnel deformation
+* Bridge motions
+* Traffic flow rates
+* Water vapor content for numerical weather prediction
+* Ground water level
+
+From experience we know that various uncertain phenomena can be modeled as a random variable (or a random vector), say $Y$. In this part the random variables are observations or measurements (e.g., sensor readings), which are uncertain due to random errors. We will refer to these random variables (our input data) $Y$ as the *observables*.
 
 The unknown model parameters will be denoted as $\mathrm{x}$. The ingredients for this part on sensing and observation theory can then be summarized as follows:
 * a model to describe the relation between observables $Y$ and parameters of interest $\mathrm{x}$
@@ -21,47 +32,7 @@ $$
 where $\mathrm{x}$ is a vector with the unknown model parameters, and $\mathrm{A}$ is referred to as the *design matrix*. $\mathbb{E}(.)$ is the expectation operator. The random errors are given by $\epsilon$ and are assumed to have zero mean: $\mathbb{E}(\epsilon)=0$.
 ```
 
-A functional model can be mechanistic, phenomological or even data-driven, see the [Model classification section](modelclass).
-
-:::{card} Exercise
-
-Show that the two expressions for the functional model are indeed equivalent.
-
-```{admonition} Solution
-:class: tip, dropdown
-
-$$
-\mathbb{E}(Y)=\mathbb{E}(\mathrm{Ax+\epsilon})=\mathrm{Ax}+\mathbb{E}(\epsilon)=\mathrm{Ax}
-$$
-
-Recall that the unknown parameters are deterministic.
-```
-:::
-
-Next, we will develop the principles and underlying theory of (1) Least-squares estimation, (2) Best linear unbiased estimation, and (3) Maximum likelihood estimation. 
-
-Special attention is then given to how the uncertainty in the measurements propagates into parameter estimation results, such that we can assess the precision of the estimated parameters. For that purpose we need the stochastic model.
-
-```{admonition} Definition
-*Precision* and *accuracy* are two terms that are often confused. Precision refers to the spread of a set of measurements (i.e., the standard deviation), whereas accuracy refers to the closeness of a measurement to the true value (i.e., absence of bias). ([Wiki](https://en.wikipedia.org/wiki/Accuracy_and_precision))
-```
-
-```{admonition} Definition
-The *stochastic model* describes the uncertainty of the observables in the form of the covariance matrix $\Sigma_Y=\Sigma_{\epsilon}$.
-```
-
-This covariance matrix is assumed to be known here. In practice, it can be determined based on a calibration campaign: taking repeated measurements and calculate the empirical (co-)variances. Note that the uncertainty in the observations is fully attributed to the random errors, therefore we have that the covariance matrix of the observables is equal to that of the random errors.
-
-:::{card} Quiz question
-<iframe src="https://tudelft.h5p.com/content/1292060553773045247/embed" aria-label="Quiz_precision" width="1088" height="637" frameborder="0" allowfullscreen="allowfullscreen" allow="autoplay *; geolocation *; microphone *; camera *; midi *; encrypted-media *"></iframe><script src="https://tudelft.h5p.com/js/h5p-resizer.js" charset="UTF-8"></script>
-:::
-
-Parameter estimation requires specification of the underlying functional and stochastic models. It may happen, however, that some parts of the models are misspecified, thereby invalidating the results of estimation. Some measurements, for instance, may be corrupted by blunders (which are not random!), or the chosen model may fail to give an adequate description of physical reality. Testing for such misspecifications is the topic of the last sections of this chapter.
-
-(01_funcmodel)=
-## Functional model: examples
-
-### Linear trend model 
+### Example: Linear trend model 
 The unknown parameters are the intercept $x_1$ and rate of change (velocity) $x_2$. The observation equation of a single observable $Y_i$ is:
 
 $$
@@ -69,6 +40,16 @@ $$
 $$
 
 where the observation times, or epochs, $t_i$ are assumed to be known and therefore deterministic.
+
+{numref}`LinTrend` shows an example with a set of observations at different times, together with a fitted linear trend line. Note that due to small random measurement errors, the observations actually fluctuate around the trend line.
+
+```{figure} https://github.com/TUDelft-MUDE/source-files/raw/main/file/02_LeastSquares_fit.png
+---
+height: 300px
+name: LinTrend
+---
+Linear trend line fitted to a set of $m$ observations affected by random errors.
+```
 
 The linear functional model for $m$ observables becomes:
 
@@ -92,6 +73,46 @@ $$
 This is model is linear in $\mathrm{x}$, therefore we refer to it as a linear model.
 ```
 :::
+
+:::{card} Exercise
+
+Show that the two expressions for the functional model are indeed equivalent.
+
+```{admonition} Solution
+:class: tip, dropdown
+
+$$
+\mathbb{E}(Y)=\mathbb{E}(\mathrm{Ax+\epsilon})=\mathrm{Ax}+\mathbb{E}(\epsilon)=\mathrm{Ax}
+$$
+
+Recall that the unknown parameters are deterministic.
+```
+:::
+
+In the following sections, we will develop the principles and underlying theory of (1) Least-squares estimation, (2) Best linear unbiased estimation, and (3) Maximum likelihood estimation.
+
+## Uncertainty in our observations
+
+Special attention is then given to how the uncertainty in the measurements propagates into parameter estimation results, such that we can assess the precision of the estimated parameters. For that purpose we need the stochastic model.
+
+```{admonition} Definition
+*Precision* and *accuracy* are two terms that are often confused. Precision refers to the spread of a set of measurements (i.e., the standard deviation), whereas accuracy refers to the closeness of a measurement to the true value (i.e., absence of bias). ([Wiki](https://en.wikipedia.org/wiki/Accuracy_and_precision))
+```
+
+```{admonition} Definition
+The *stochastic model* describes the uncertainty of the observables in the form of the covariance matrix $\Sigma_Y=\Sigma_{\epsilon}$.
+```
+
+This covariance matrix is assumed to be known here. In practice, it can be determined based on a calibration campaign: taking repeated measurements and calculate the empirical (co-)variances. Note that the uncertainty in the observations is fully attributed to the random errors, therefore we have that the covariance matrix of the observables is equal to that of the random errors.
+
+:::{card} Quiz question
+<iframe src="https://tudelft.h5p.com/content/1292060553773045247/embed" aria-label="Quiz_precision" width="1088" height="637" frameborder="0" allowfullscreen="allowfullscreen" allow="autoplay *; geolocation *; microphone *; camera *; midi *; encrypted-media *"></iframe><script src="https://tudelft.h5p.com/js/h5p-resizer.js" charset="UTF-8"></script>
+:::
+
+Parameter estimation requires specification of the underlying functional and stochastic models. It may happen, however, that some parts of the models are misspecified, thereby invalidating the results of estimation. Some measurements, for instance, may be corrupted by blunders (which are not random!), or the chosen model may fail to give an adequate description of physical reality. Testing for such misspecifications is the topic of the last sections of this chapter.
+
+(01_funcmodel)=
+## Functional model: more examples
 
 ### Step function
 Consider a process with unknown parameter $x_1$ assumed to be constant up till time $t_{i-1}$, and a sudden change (step) at time $t_i$, after which the parameter remains constant at $x_2$. See {numref}`stepfun`.
@@ -161,17 +182,6 @@ $$
 this is true since we assume to work with $\mathrm{A}$-matrices (size $m\times n$) that have full column rank: $rank(\mathrm{A})=n$.
 
 ## Estimation and linear regression
-
-The goal of estimation is the estimate *model parameters* from a set of observations. In Civil Engineering, Applied Earth Sciences and Environmental Engineering this is needed in many monitoring and sensing applications, such as:
-* Sea level rise
-* Land subsidence / uplift
-* Air quality
-* Settlement of soils 
-* Tunnel deformation
-* Bridge motions
-* Traffic flow rates
-* Water vapor content for numerical weather prediction
-* Ground water level
 
 In this part, we will introduce different estimation principles, starting with (weighted) least-squares. Next, Best Linear Unbiased estimation and Maximum Likelihood estimation will be introduced, providing the probabilistic framework  for estimating *model* parameters from *uncertain data*.
 

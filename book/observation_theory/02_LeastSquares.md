@@ -10,11 +10,52 @@ $$
 \mathrm{y = Ax}.
 $$
 
-If all the observations would fit perfectly to this model, this system is called [consistent](https://mude.citg.tudelft.nl/fundamental-concepts/2025/fundamentals/00_01c_PreMath.html#consistent-systems-at-least-one-solution-exists). This is only possible if the number of observations $m$ is equal to (or smaller than) the number of unknowns $n$, i.e. if the system is [determined](https://mude.citg.tudelft.nl/fundamental-concepts/2025/fundamentals/00_01c_PreMath.html#determined-overdetermined-and-underdetermined-systems).
+(exc_sol)=
+:::{card} Exercise: can we find a solution?
 
-If the number of observations is greater than the number of unknowns (and the design matrix $\mathrm{A}$ is of full column rank), it is very unlikely that the system is consistent. Physical reality would need to be perfectly described by the conceptual mathematical model. It is evident that in real life this is never the case, since (i) our observations are always contaminated by some form of noise, and (ii) physical reality is often more complex than can be described with a simplified mathematical model.
+Let's consider the following three examples, where we collected 2 or 3 measurements and want to fit a linear trend line. Your task is to estimate $\mathrm{x}$
 
-Thus, in the case in which there are more observations than unknowns (and design matrix $\mathrm{A}$ is of full column rank) the $\mathrm{y=Ax}$ system of equations has no solution, this is referred to as an [overdetermined system](https://mude.citg.tudelft.nl/fundamental-concepts/2025/fundamentals/00_01c_PreMath.html#determined-overdetermined-and-underdetermined-systems). In other words; every 'solution' would be wrong, since the model would not perfectly 'fit' the data.
+$$
+a)\quad \underset{\mathrm{y}}{\underbrace{\begin{bmatrix} 3 \\ 5  \end{bmatrix}}} = \underset{\mathrm{A}}{\underbrace{\begin{bmatrix} 1 & 1 \\ 1 & 2  \end{bmatrix}}}\underset{\mathrm{x}}{\underbrace{\begin{bmatrix} x_1 \\ x_2 \end{bmatrix}}}
+$$
+$$
+b)\quad \underset{\mathrm{y}}{\underbrace{\begin{bmatrix} 3 \\ 5 \\ 6 \end{bmatrix}}} = \underset{\mathrm{A}}{\underbrace{\begin{bmatrix} 1 & 1 \\ 1 & 2 \\ 1 & 3 \end{bmatrix}}}\underset{\mathrm{x}}{\underbrace{\begin{bmatrix} x_1 \\ x_2 \end{bmatrix}}}
+$$
+$$
+c)\quad \underset{\mathrm{y}}{\underbrace{\begin{bmatrix} 4 \\ 5 \\ 6 \end{bmatrix}}} = \underset{\mathrm{A}}{\underbrace{\begin{bmatrix} 1 & 1 \\ 1 & 2 \\ 1 & 3 \end{bmatrix}}}\underset{\mathrm{x}}{\underbrace{\begin{bmatrix} x_1 \\ x_2 \end{bmatrix}}}
+$$
+
+
+
+
+```{admonition} Solution
+:class: tip, dropdown
+
+The notation $\mathrm{\hat{x}}$ is used to indicate that it is the *estimate* of the unknown $\mathrm{x}$.
+
+$$
+a)\quad \mathrm{\hat{x}} = \begin{bmatrix} 1 & 1 \\ 1 & 2  \end{bmatrix}^{-1} \begin{bmatrix} 3 \\ 5  \end{bmatrix} = \begin{bmatrix} 1 \\ 2  \end{bmatrix} 
+$$
+Since $\mathrm{A}$ is an invertible matrix, we can find the solution.
+
+For $b)$ it is not possible to find a solution ...
+
+$$
+c)\quad \mathrm{\hat{x}} = \begin{bmatrix} 3 \\ 1  \end{bmatrix} 
+$$
+Here it is not possible to invert $\mathrm{A}$, but you can check that the solution is indeed correct. 
+
+```
+
+:::
+
+From the examples above, you can see that if matrix $\mathrm{A}$ is invertible, or more precisely, if $rank{}=m=n$, it is always possible to find a (unique) solution. If, on the other hand, you would have more observations than unknowns, it depends on the entries of vector $\mathrm{y}$ whether a solution can be found.
+
+If all observations would fit perfectly to the linear model, the system of equations is called [consistent](LinearSystems). 
+
+If the number of observations is greater than the number of unknowns (and the design matrix $\mathrm{A}$ is of full column rank), in practice it is very unlikely that the system is consistent. Physical reality would need to be perfectly described by the conceptual mathematical model. It is evident that in real life this is never the case, since (i) our observations are always contaminated by some form of noise, and (ii) physical reality is often more complex than can be described with a simplified mathematical model.
+
+Thus, in the case in which there are more observations than unknowns the $\mathrm{y=Ax}$ system of equations has no solution, this is referred to as an [overdetermined system](determined). In other words; every 'solution' would be wrong, since the model would not perfectly 'fit' the data.
 
 The *redundancy* of the system is equal to $m-n$, i.e., the 'additional' number of observations compared to the minimum required to solve the system of equations.
 
@@ -105,6 +146,8 @@ If it is possible to compute the inverse of the normal matrix, the normal equati
 $$
 \mathrm{\hat{x}= (A^T A)^{-1} A^T y}
 $$
+
+Check yourself that you can indeed use this to find the solution for model $c)$ in the [exercise](exc_sol) above.
 
 ## Summary
 
