@@ -22,7 +22,7 @@ $F(x_2)-F(x_1)$. When working with a finite set of samples, we can compute the d
     read observations
 
     #Assume the bin size
-    bin_size = 2
+    bin_size = 5
 
     #Calculate the number of bins and the bin edges given the bin size
     min_value = minimum value of observations
