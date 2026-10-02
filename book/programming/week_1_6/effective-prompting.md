@@ -41,3 +41,11 @@ When prompting an LLM, it is essential to be clear and specific about what you w
 :class: tip    
 These skills apply to any LLM interaction, not just coding assistants. Next time you are using a personal assistant like ChatGPT, remember that specific prompts with context will yield better results! 
 ``` 
+
+% START-CREDIT
+% source: programming
+```{attributiongrey} Attribution
+:class: attribution
+This chapter reuses material from _Learn Programming for Engineers_. {ref}`Find out more here <programming_credit>` and is written by Stanislaw Ostyk-Narbutt.
+```
+% END-CREDIT
