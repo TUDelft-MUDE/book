@@ -77,7 +77,7 @@ parts:
       - file: programming/week_1_2/markdown
     - file: programming/week_1_6
       sections:
-      - file: programming/week_1_5/effective-prompting.md
+      - file: programming/week_1_6/effective-prompting.md
       - file: programming/week_1_6/generating-code.ipynb
       - file: programming/week_1_6/debugging-errors.ipynb
       - file: programming/week_1_6/human-in-the-loop.ipynb
