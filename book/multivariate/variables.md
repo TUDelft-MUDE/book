@@ -218,7 +218,7 @@ We can now extend the univariate non-exceedance probability for the bivariate ca
 The **joint non-exceedance probability**, $P[\Omega_{ne}]$, is:
 
 $$
-P[\Omega_{e}] = P[X \leq x^*, Y \leq y^*] = F_{X,Y}(x^*, y^*)
+P[\Omega_{ne}] = P[X \leq x^*, Y \leq y^*] = F_{X,Y}(x^*, y^*)
 $$
 
 where
