@@ -54,6 +54,36 @@ parts:
         - file: observation_theory/09_Notebook_OMT.ipynb
       - file: observation_theory/99_NotationFormulas
 
+# END REMOVE-FROM-PUBLISH
+
+  - caption: Programming topics Q1
+    numbered: 2
+    chapters:
+    - file: programming/week_1_1
+      sections:
+      - file: programming/week_1_1/computers.md
+      - file: programming/week_1_1/environments.md
+      - file: programming/week_1_1/cli.md
+      - file: programming/week_1_1/files.md
+    - file: git/overview.md
+      sections:
+      - file: git/version_control.md
+      - file: git/notebooks.ipynb
+      - file: git/branch_merge.md
+      - file: git/merge_conflicts.md
+    - file: programming/week_1_2
+      sections:
+      - file: programming/week_1_2/filepaths
+      - file: programming/week_1_2/markdown
+    - file: programming/week_1_6
+      sections:
+      - file: programming/week_1_5/effective-prompting.md
+      - file: programming/week_1_6/generating-code.ipynb
+      - file: programming/week_1_6/debugging-errors.ipynb
+      - file: programming/week_1_6/human-in-the-loop.ipynb
+
+# START REMOVE-FROM-PUBLISH
+
   - caption: Q2 Topics
     numbered: 2
     chapters:
@@ -179,35 +209,6 @@ parts:
         sections:
         - file: risk_reliability/LimitState.md
         - file: risk_reliability/04LifeDist.md
-
-# END REMOVE-FROM-PUBLISH
-
-  - caption: Programming topics Q1
-    numbered: 2
-    chapters:
-    - file: programming/week_1_1
-      sections:
-      - file: programming/week_1_1/computers.md
-      - file: programming/week_1_1/environments.md
-      - file: programming/week_1_1/cli.md
-      - file: programming/week_1_1/files.md
-    - file: git/overview.md
-      sections:
-      - file: git/version_control.md
-      - file: git/notebooks.ipynb
-      - file: git/branch_merge.md
-      - file: git/merge_conflicts.md
-    - file: programming/week_1_2
-      sections:
-      - file: programming/week_1_2/filepaths
-      - file: programming/week_1_2/markdown
-# START REMOVE-FROM-PUBLISH
-    - file: programming/week_1_6
-      sections:
-      - external: https://github.com/TeachBooks/learn-programming/blob/mude-2025/book/llms/effective-prompting.md
-      - external: https://github.com/TeachBooks/learn-programming/blob/mude-2025/book/llms/generating-code.ipynb
-      - external: https://github.com/TeachBooks/learn-programming/blob/mude-2025/book/llms/debugging-errors.ipynb
-      - external: https://github.com/TeachBooks/learn-programming/blob/mude-2025/book/llms/human-in-the-loop.ipynb
   - caption: Programming topics Q2
     numbered: 2
     chapters:
