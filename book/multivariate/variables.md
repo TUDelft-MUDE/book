@@ -414,7 +414,7 @@ Assuming that the complement of the multivariate CDF is equal to the joint excee
 
 ````{admonition} Exercise
 
-Using only empirical probabilities for the marginal random variables and the joint CDF, apply the graphical approach illustrated in the preceding section to find the joint exceedance probability $p=P[q_1 > 100  \;\textrm{m}^3\textrm{/s} \;\cap\;  q_2 > 120  \;\textrm{m}^3\textrm{/s}]$, the area illustrated here:
+Using only empirical probabilities for the marginal random variables and the joint CDF, apply the graphical approach illustrated in the preceding section to find the joint exceedance probability $p=P[q_1 > 100  \;\textrm{m}^3\textrm{/s} \;\cap\;  q_2 > 75  \;\textrm{m}^3\textrm{/s}]$, the area illustrated here:
 
 ```{figure} https://github.com/TUDelft-MUDE/source-files/raw/main/file/and_exceed_exercise.svg
 ---
