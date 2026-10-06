@@ -176,7 +176,7 @@ Credits are provided here for chapters and pages that are released under the lic
 
 > {ref}`Signal processing <signal_processing>` is written by Christiaan Tiberius.
 >
-> _The material in this chapter is related to an in-depth book "Engineering signal analysis - from Fourier to filtering" by Christiaan Tiberius and Max Mulder (TU Delft Open Publishing, 2025)._
+> _The material in this chapter is closely related to an in-depth book: Tiberius, C., & Mulder, M. (2026). Engineering Signal Analysis: From Fourier to filtering: Theory. TU Delft OPEN Books. [doi:10.59490/mt.247](https://doi.org/10.59490/mt.247)._
 >
 > Special thanks goes to:
 > - Max Mulder for being a signal processing soul-mate, sparring-partner and TU Delft colleague of the author who co-shaped the material, indirectly, through collaboration since early 2000's.
