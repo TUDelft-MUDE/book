@@ -4,7 +4,7 @@ As you can imagine, it is also possible to define a PDF and a CDF based on obser
 
 ## Step 1: Analyzing the data
 
-As an example, let us consider a dataset of wind speeds in Delft. The figure below shows wind speed estimates in Delft at 10m height over the past year[^ref]. To the right of the time series is a **histogram** of the wind speeds. Observe how some wind speeds are more common than 
+As an example, let us consider a dataset of wind speeds in Delft. The figure below shows wind speed estimates in Delft at 10m height over the past year[^ref]. To the right of the time series is a **histogram** of the wind speeds. Observe how some wind speeds are more common than others:
 
 ````{iframe-figure} ../_static/elements/element_empirical_wind_speed.html
 :name: empirical_wind_speed
@@ -22,7 +22,7 @@ $F(x_2)-F(x_1)$. When working with a finite set of samples, we can compute the d
     read observations
 
     #Assume the bin size
-    bin_size = 2
+    bin_size = 5
 
     #Calculate the number of bins and the bin edges given the bin size
     min_value = minimum value of observations

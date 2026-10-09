@@ -207,9 +207,7 @@ sources:
       - id: other_book
         public: true
         text: |
-          The material in this chapter is closely related to an in-depth book "Engineering signal analysis - from Fourier to filtering" by Christiaan Tiberius and Max Mulder (TU Delft Open Publishing, 2025).
-      - text: |
-          Note from Christian about the chapter and Max Mulder: I would consider one more person here, namely prof Max Mulder from Aerospace Engineering, as my signal processing soul-mate, sparring-partner and TU Delft colleague...Long time ago we developed and taught a course on this subject together, at Aerospace. We kept in touch (and as you know, we’re actually preparing, together, an Open Textbook on just this subject, hopefully appearing by the end of this year). So, directly his contribution is zero, but indirectly, he co-shaped this material. To say, my way of approaching and teaching signal processing has been determined in a large part by our joint teaching at that time (20 years ago).
+          The material in this chapter is closely related to an in-depth book: Tiberius, C., & Mulder, M. (2026). *Engineering Signal Analysis: From Fourier to filtering: Theory*. TU Delft OPEN Books. [doi](https://doi.org/10.59490/mt.247).
       - text: |
           Robert went through the figures quickly but asked Christian to double-check via [Issue 45](https://github.com/TUDelft-MUDE/book/issues/45)
     resources:

@@ -2,6 +2,17 @@
 
 [TeachBooks Versioning](https://teachbooks.io/manual/features/versioning.html) is used (a special type of semantic numbering for educational purposes) with generic format `v<academic_year>.<additions>.<errata>`, with an additional `.pre-release` added for incomplete books.
 
+## 2026-10-02: v2026.4.0.pre-release
+- Added uncertainty propagation chapters
+- Added week 1.6 programming chapters
+
+## 2026-09-24: v2026.3.0.pre-release
+- Added multivariate chapters
+
+## 2026-09-18: v2026.2.0.pre-release
+- Added contingency tables in multivariate chapters
+- Added appendix to distribution chapters
+ 
 ## 2026-09-04: v2026.1.0.pre-release
 - Added numerical modelling chapters
 - Added appendix to numerical modelling chapters

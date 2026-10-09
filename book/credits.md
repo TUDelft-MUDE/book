@@ -133,7 +133,7 @@ Credits are provided here for chapters and pages that are released under the lic
 >
 > Special thanks goes to Oswaldo Morales Napoles and Elisa Ragno for suggestions on the theoretical and didactic framework, as well as critical feedback and review.
 >
-> {ref}`This <element_correlation_correlation>` and {ref}`this <2D_Gaussian>` interactive figures are created by Max Ramgraber ([maxramgraber.com/interactive](https://www.maxramgraber.com/interactive)), published with a CC BY license and included in this book without modification. 
+> {ref}`This <element_correlation_correlation>`, {ref}`this <2D_Gaussian>`, {ref}`this <contingency_table_univariate_marginal>`, {ref}`this <element_contingency_table_joint>`, and {ref}`this <element_contingency_table_conditional>` interactive figures as well as the {ref}`Contingency Table <contingency_tables>` are created by Max Ramgraber ([maxramgraber.com/interactive](https://www.maxramgraber.com/interactive)), published with a CC BY license and included in this book without modification. 
 
 (uncertainty_propagation_credit)=
 ### Chapter: Uncertainty Propagation
@@ -176,7 +176,7 @@ Credits are provided here for chapters and pages that are released under the lic
 
 > {ref}`Signal processing <signal_processing>` is written by Christiaan Tiberius.
 >
-> _The material in this chapter is related to an in-depth book "Engineering signal analysis - from Fourier to filtering" by Christiaan Tiberius and Max Mulder (TU Delft Open Publishing, 2025)._
+> _The material in this chapter is closely related to an in-depth book: Tiberius, C., & Mulder, M. (2026). Engineering Signal Analysis: From Fourier to filtering: Theory. TU Delft OPEN Books. [doi:10.59490/mt.247](https://doi.org/10.59490/mt.247)._
 >
 > Special thanks goes to:
 > - Max Mulder for being a signal processing soul-mate, sparring-partner and TU Delft colleague of the author who co-shaped the material, indirectly, through collaboration since early 2000's.

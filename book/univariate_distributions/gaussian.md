@@ -33,7 +33,7 @@ Interactively visualize the relationship between the PDF and the CDF of a Gaussi
 
 Observe that as we increase or decrease the mean $\mu$, the function moves to the right or left, respectively, since the reference point for the distance calculation shifts. Likewise, increasing the standard deviation $\sigma$ flattens the distribution, since a larger denominator within the exponent reduces the magnitude of the fraction within the exponent.
 
-The probabilities belonging to the standard ($\mu = 0$, $\sigma = 1$) Gaussian/Normal distribution are evaluated for many values, allowing you evaluate the CDF easily: {ref}`table of the standard normal distribution <table_standardnormal>`.
+The probabilities belonging to the standard ($\mu = 0$, $\sigma = 1$) Gaussian/Normal distribution are evaluated for many values, allowing you to evaluate the CDF easily: {ref}`table of the standard normal distribution <table_standardnormal>`.
 
 ## Interesting Properties
 
