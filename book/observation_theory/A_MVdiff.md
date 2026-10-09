@@ -2,7 +2,7 @@
 
 (PM_gradient)=
 ## Gradient vector
-For a multivariate function $f(\mathrm{x})$  where $\mathrm{x}=\begin{bmatrix} x_1\\ \vdots\\x_n \end{bmatrix}$, the vector with enteries as partial derivatives with respect to $x_1,x_2,\dots,$ and $x_n$ is called the gradient vector and it is denoted as:
+For a multivariate function $f(\mathrm{x})$  where $\mathrm{x}=\begin{bmatrix} x_1\\ \vdots\\x_n \end{bmatrix}$, the vector with entries as partial derivatives with respect to $x_1,x_2,\dots,$ and $x_n$ is called the gradient vector and it is denoted as:
 
 $$
 \partial_{\mathrm{x}} f= \begin{bmatrix} \partial f/\partial x_1\\ \vdots\\ \partial f/\partial x_n \end{bmatrix}.

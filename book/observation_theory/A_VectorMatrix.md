@@ -40,7 +40,7 @@ $$
 A= \left[ \begin{array}{cccc} 1 & 0& 0& 0 \\ 0 & 2& 0& 0 \\ 0 & 0& 5& 0 \\ 0 & 0& 0& 3 \\ \end{array} \right].  
 $$
 
-*Identity matrices*: A diagonal matrix is called an  identity matrix if all of its diagonal entries equal $1$. An identity matrix of size $m \times m$ will be written as $A=I_{m}$ or sometimes simply as $A=I$. Examples of identity metrices are: 
+*Identity matrices*: A diagonal matrix is called an  identity matrix if all of its diagonal entries equal $1$. An identity matrix of size $m \times m$ will be written as $A=I_{m}$ or sometimes simply as $A=I$. Examples of identity matrices are: 
 
 $$
 I_{1}=1, ~ ~ ~ ~ I_{2}= \left[ \begin{array}{cc}  1&0\\0&1 \end{array} \right], ~ ~ ~ ~ I_{3}=\left[ \begin{array}{ccc}  1&0&0\\0&1&0\\0&0&1 \end{array} \right], ~ ~ ~ ~   I_{4}=\left[ \begin{array}{cccc}  1&0&0&0\\0&1&0&0\\0&0&1&0\\0&0&0&1 \end{array} \right].  

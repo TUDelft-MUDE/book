@@ -22,7 +22,7 @@ $$
 \begin{bmatrix}1\\0\\0 \end{bmatrix}, ~~~ \begin{bmatrix}0\\1\\0 \end{bmatrix}, ~~~ \begin{bmatrix}0\\0\\1 \end{bmatrix}. 
 $$
 
-That is all the vectors in  $\mathbb{R}^3$ can be written as linear combination of these three unit vectors. For example, the arbitrary three dimentional  vector $ \begin{bmatrix} 4\\3\\5 \end{bmatrix} $ can be written as the linear combination:
+That is all the vectors in  $\mathbb{R}^3$ can be written as linear combination of these three unit vectors. For example, the arbitrary three dimensional  vector $ \begin{bmatrix} 4\\3\\5 \end{bmatrix} $ can be written as the linear combination:
 
 $$
 \begin{bmatrix} 4\\3\\5 \end{bmatrix}=4\begin{bmatrix}1\\0\\0 \end{bmatrix}+3\begin{bmatrix}0\\1\\0 \end{bmatrix}+5\begin{bmatrix}0\\0\\1 \end{bmatrix}. 
@@ -39,7 +39,7 @@ $$
 \begin{bmatrix} 1\\1\\1 \end{bmatrix}, ~ \text{and} ~ \begin{bmatrix} 1\\2\\3 \end{bmatrix}. 
 $$ 
 
-In this example, the dimension of $\mathcal{R}(A)$ is 2 becouse $A$ has two independent columns. 
+In this example, the dimension of $\mathcal{R}(A)$ is 2 because $A$ has two independent columns. 
 
 ## Inner product of two vectors 
 Inner product of two vectors $x$ and $ y$ denoted by $(x,y)$, is defined as: 
