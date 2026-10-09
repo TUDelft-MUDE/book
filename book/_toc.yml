@@ -27,7 +27,6 @@ parts:
       - file: propagation_uncertainty/1_Mean_and_Variance_propagation.md
       - file: propagation_uncertainty/1b_Mean_and_Variance_propagation_linear_case.md
       - file: propagation_uncertainty/2_Monte_Carlo_simulations.md
-# START REMOVE-FROM-PUBLISH
     - file: observation_theory/overview.md
       sections:
       - file: observation_theory/01_Introduction.md
@@ -43,6 +42,7 @@ parts:
       - file: observation_theory/05_Precision.md
         sections:
         - file: observation_theory/05_Notebook_ConfInt.ipynb 
+  # START REMOVE-FROM-PUBLISH
       - file: observation_theory/06_MLE.md
       - file: observation_theory/07_NLSQ.md
         sections:
