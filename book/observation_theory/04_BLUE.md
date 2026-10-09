@@ -71,10 +71,10 @@ $$
 
 In BLUE, Best Linear Unbiased Estimation, the parts of the acronym ‘B’, ‘L’, and ‘U’ refer to specific properties.
 
-*Linear* means that there is a linear (matrix) relation between the variables. Such linear relations imply that if we have a normally distributed vector $Y\sim N(\mathrm{Ax},\Sigma_Y)$, which is multiplied with a matrix $\mathrm{L}$, this product will be normally distributed as well:
+*Linear* means that there is a linear (matrix) relation between the variables. Such linear relations imply that if we have a normally distributed vector $Y\sim \mathcal{N}(\mathrm{Ax},\Sigma_Y)$, which is multiplied with a matrix $\mathrm{L}$, this product will be normally distributed as well:
 
 $$
-\hat{X}=\mathrm{L^T}Y\sim N(\mathrm{L^T Ax},\mathrm{L^T} \Sigma_Y \mathrm{L})
+\hat{X}=\mathrm{L^T}Y\sim \mathcal{N}(\mathrm{L^T Ax},\mathrm{L^T} \Sigma_Y \mathrm{L})
 $$
 
 where we use the linear propagation laws of the mean and covariance.
@@ -94,12 +94,12 @@ $$
 *Best* means that the estimator has minimum variance (best precision), when compared to all other possible linear estimators:
 
 $$
-\text{trace}(\Sigma_{\hat{X}}) = \sum_{i=1}^m \sigma^2_{\hat{X}_i} = \text{minimum}
+\text{trace}(\Sigma_{\hat{X}}) = \sum_{i=1}^m \sigma^2_{\hat{X}_i} 
 $$
 
 (Note that this is equivalent to "minimum mean squared errors" $\mathbb{E}(\|\hat{X}-\mathrm{x}\|^2)$. )
 
-(04_cov)=
+
 ## Covariance matrices of BLUE
 
 The precision of the estimator is expressed by its covariance matrix. For the ‘best linear unbiased’ estimator of $\hat{X}$, $\hat{Y}$  and $\hat{\epsilon}$ we obtain (by applying the [linear covariance propagation laws](99_proplaw)):
