@@ -100,7 +100,7 @@ $$
 (Note that this is equivalent to "minimum mean squared errors" $\mathbb{E}(\|\hat{X}-\mathrm{x}\|^2)$. )
 
 (04_cov)=
-## Covariance matrices of the BLU estimators
+## Covariance matrices of BLUE
 
 The precision of the estimator is expressed by its covariance matrix. For the ‘best linear unbiased’ estimator of $\hat{X}$, $\hat{Y}$  and $\hat{\epsilon}$ we obtain (by applying the [linear covariance propagation laws](99_proplaw)):
 
@@ -239,7 +239,7 @@ In the last term, the same simplification as in step 2 gives $\mathrm{A}(\mathrm
 :::
 
 
-In summary, the covariance matrices of the BLU estimators are:
+In summary, the covariance matrices of BLUE are:
 
 $$
 \begin{align*}
