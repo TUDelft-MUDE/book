@@ -22,7 +22,7 @@ This makes sense intuitively: suppose the observables are all independent and th
 
 Taking this particular weight matrix, i.e., $\mathrm{W}=\Sigma_Y^{-1}$, has a special meaning. It has the “Best” property. This means that using this particular weight matrix, we obtain a linear unbiased estimator which has minimal variance. In other words, with this particular weight matrix we get the best possible estimator among all linear unbiased estimators, where ‘best’ represents optimal precision or minimal variance.
 
-Given the BLU-estimator for $\hat{X}$, we can also find the BLU-estimators for $\hat{Y} =\mathrm{A}\hat{X}$,and for $\hat{\epsilon} =  Y-\hat{Y} $,
+Given the BLU-estimator for $\hat{X}$, we can also find the BLU-estimators for $\hat{Y} =\mathrm{A}\hat{X}$, and for $\hat{\epsilon} =  Y-\hat{Y} $,
 
 $$
 \hat{Y}= \mathrm{A}(\mathrm{A^T} \Sigma_Y^{-1} \mathrm{A})^{-1} \mathrm{A^T} \Sigma_Y^{-1} Y
@@ -71,10 +71,10 @@ $$
 
 In BLUE, Best Linear Unbiased Estimation, the parts of the acronym ‘B’, ‘L’, and ‘U’ refer to specific properties.
 
-*Linear* means that there is a linear (matrix) relation between the variables. Such linear relations imply that if we have a normally distributed vector $Y\sim N(\mathrm{Ax},\Sigma_Y)$, which is multiplied with a matrix $\mathrm{L}$, this product will be normally distributed as well:
+*Linear* means that there is a linear (matrix) relation between the variables. Such linear relations imply that if we have a normally distributed vector $Y\sim \mathcal{N}(\mathrm{Ax},\Sigma_Y)$, which is multiplied with a matrix $\mathrm{L}$, this product will be normally distributed as well:
 
 $$
-\hat{X}=\mathrm{L^T}Y\sim N(\mathrm{L^T Ax},\mathrm{L^T} \Sigma_Y \mathrm{L})
+\hat{X}=\mathrm{L^T}Y\sim \mathcal{N}(\mathrm{L^T Ax},\mathrm{L^T} \Sigma_Y \mathrm{L})
 $$
 
 where we use the linear propagation laws of the mean and covariance.
@@ -94,23 +94,163 @@ $$
 *Best* means that the estimator has minimum variance (best precision), when compared to all other possible linear estimators:
 
 $$
-\text{trace}(\Sigma_{\hat{X}}) = \sum_{i=1}^m \sigma^2_{\hat{X}_i} = \text{minimum}
+\text{trace}(\Sigma_{\hat{X}}) = \sum_{i=1}^m \sigma^2_{\hat{X}_i} 
 $$
 
 (Note that this is equivalent to "minimum mean squared errors" $\mathbb{E}(\|\hat{X}-\mathrm{x}\|^2)$. )
 
-(04_cov)=
-## Covariance matrices of the BLU estimators
+
+## Covariance matrices of BLUE
 
 The precision of the estimator is expressed by its covariance matrix. For the ‘best linear unbiased’ estimator of $\hat{X}$, $\hat{Y}$  and $\hat{\epsilon}$ we obtain (by applying the [linear covariance propagation laws](99_proplaw)):
 
+:::{card} Exercise: covariance matrices of the BLU estimators
+
+Recall the [linear propagation laws](99_proplaw): if an estimator can be written as $\hat{X} = \mathrm{L^T} Y$, then
+
 $$
-\begin{align*}
-\Sigma_{\hat{X}} &= \mathrm{L^T} \Sigma_Y \mathrm{L} \\ &= (\mathrm{A^T} \Sigma_Y^{-1} \mathrm{A})^{-1}\mathrm{A^T} \Sigma_Y^{-1} \cdot \Sigma_Y \cdot \Sigma_Y^{-1} \mathrm{A} (\mathrm{A^T} \Sigma_Y^{-1} \mathrm{A})^{-1}\\ &=(\mathrm{A^T} \Sigma_Y^{-1} \mathrm{A})^{-1}\mathrm{A^T} \Sigma_Y^{-1} \mathrm{A} (\mathrm{A^T} \Sigma_Y^{-1} \mathrm{A})^{-1}\\ &= (\mathrm{A^T} \Sigma_Y^{-1} \mathrm{A})^{-1}\\ \\ \Sigma_{\hat{Y}} &=\mathrm{A}\Sigma_{\hat{X}} \mathrm{A^T} \\ &=\mathrm{A} (\mathrm{A^T} \Sigma_Y^{-1} \mathrm{A})^{-1} \mathrm{A^T} \\ \\
-\Sigma_{\hat{\epsilon}} &= (\mathrm{I}_m - \mathrm{A} (\mathrm{A^T} \Sigma_Y^{-1} \mathrm{A})^{-1}\mathrm{A^T} \Sigma_Y^{-1}) \cdot \Sigma_Y \cdot (\mathrm{I}_m - \mathrm{A} (\mathrm{A^T} \Sigma_Y^{-1} \mathrm{A})^{-1}\mathrm{A^T} \Sigma_Y^{-1})^T \\ &= (\Sigma_Y - \mathrm{A}(\mathrm{A^T} \Sigma_Y^{-1} \mathrm{A})^{-1}\mathrm{A^T}) (\mathrm{I}_m -\Sigma_Y^{-1}\mathrm{A} (\mathrm{A^T} \Sigma_Y^{-1} \mathrm{A})^{-1}\mathrm{A^T})\\ &= \Sigma_Y - \Sigma_{\hat{Y}}-\Sigma_{\hat{Y}}+\Sigma_{\hat{Y}}\\ &= \Sigma_Y - \Sigma_{\hat{Y}}\end{align*}
+\mathbb{E}(\hat{X}) = \mathrm{L^T}\mathbb{E}(Y) \quad \text{and} \quad \Sigma_{\hat{X}} = \mathrm{L^T}\Sigma_Y \mathrm{L}
 $$
 
-In summary, by applying the BLUE method, we obtain the best estimator among all linear unbiased estimators, where ‘best’ is quantitatively expressed via the covariance matrix.
+In this exercise you use the covariance propagation law to derive the covariance matrices of $\hat{X}$, $\hat{Y}$ and $\hat{\epsilon}$. Each step works the same way:
+
+1. Write the estimator as $\mathrm{L^T} Y$ and identify $\mathrm{L^T}$.
+2. Transpose to find $\mathrm{L}$.
+3. Substitute into $\Sigma = \mathrm{L^T}\Sigma_Y \mathrm{L}$ and simplify.
+
+**Step 1:** The BLU estimator of $\mathrm{x}$ is
+
+$$
+\hat{X} = (\mathrm{A^T} \Sigma_Y^{-1} \mathrm{A})^{-1} \mathrm{A^T} \Sigma_Y^{-1} Y
+$$
+
+Find $\mathrm{L}$, and use it to derive $\Sigma_{\hat{X}}$.
+
+```{admonition} Solution step 1
+:class: tip, dropdown
+
+Compare $\hat{X}$ with $\hat{X} = \mathrm{L^T} Y$:
+
+$$
+\begin{align*}
+\hat{X} &= \underline{\mathrm{L^T}} \, Y \\
+\hat{X} &= \underline{(\mathrm{A^T} \Sigma_Y^{-1} \mathrm{A})^{-1} \mathrm{A^T} \Sigma_Y^{-1}} \, Y
+\end{align*}
+$$
+
+The underlined part is $\mathrm{L^T}$. Transpose it, using that $\Sigma_Y^{-1}$ and $(\mathrm{A^T} \Sigma_Y^{-1} \mathrm{A})^{-1}$ are symmetric:
+
+$$
+\mathrm{L} = \Sigma_Y^{-1} \mathrm{A} (\mathrm{A^T} \Sigma_Y^{-1} \mathrm{A})^{-1}
+$$
+
+Substitute into the covariance propagation law:
+
+$$
+\begin{align*}
+\Sigma_{\hat{X}} &= \mathrm{L^T} \, \Sigma_Y \, \mathrm{L} \\
+&= (\mathrm{A^T} \Sigma_Y^{-1} \mathrm{A})^{-1}\mathrm{A^T} \Sigma_Y^{-1} \cdot \Sigma_Y \cdot \Sigma_Y^{-1} \mathrm{A} (\mathrm{A^T} \Sigma_Y^{-1} \mathrm{A})^{-1}\\
+&= (\mathrm{A^T} \Sigma_Y^{-1} \mathrm{A})^{-1}\mathrm{A^T} \Sigma_Y^{-1} \mathrm{A} (\mathrm{A^T} \Sigma_Y^{-1} \mathrm{A})^{-1}\\
+&= (\mathrm{A^T} \Sigma_Y^{-1} \mathrm{A})^{-1}
+\end{align*}
+$$
+
+We used $\Sigma_Y^{-1}\Sigma_Y = \mathrm{I}_m$ and $\mathrm{A^T} \Sigma_Y^{-1} \mathrm{A}(\mathrm{A^T} \Sigma_Y^{-1} \mathrm{A})^{-1} = \mathrm{I}_n$.
+```
+
+**Step 2:** The BLU estimator of the observations is $\hat{Y} = \mathrm{A}\hat{X}$.
+
+Write out $\hat{Y}$, find $\mathrm{L}$, and use it to derive $\Sigma_{\hat{Y}}$.
+
+```{admonition} Solution step 2
+:class: tip, dropdown
+
+Substitute $\hat{X}$ and compare with $\hat{Y} = \mathrm{L^T} Y$:
+
+$$
+\begin{align*}
+\hat{Y} &= \underline{\mathrm{L^T}} \, Y \\
+\hat{Y} &= \mathrm{A}\hat{X} = \underline{\mathrm{A}(\mathrm{A^T} \Sigma_Y^{-1} \mathrm{A})^{-1} \mathrm{A^T} \Sigma_Y^{-1}} \, Y
+\end{align*}
+$$
+
+The underlined part is $\mathrm{L^T}$. Transpose it:
+
+$$
+\mathrm{L} = \Sigma_Y^{-1} \mathrm{A} (\mathrm{A^T} \Sigma_Y^{-1} \mathrm{A})^{-1} \mathrm{A^T}
+$$
+
+Substitute into the covariance propagation law:
+
+$$
+\begin{align*}
+\Sigma_{\hat{Y}} &= \mathrm{L^T} \, \Sigma_Y \, \mathrm{L} \\
+&= \mathrm{A}(\mathrm{A^T} \Sigma_Y^{-1} \mathrm{A})^{-1} \mathrm{A^T} \Sigma_Y^{-1} \cdot \Sigma_Y \cdot \Sigma_Y^{-1} \mathrm{A} (\mathrm{A^T} \Sigma_Y^{-1} \mathrm{A})^{-1} \mathrm{A^T} \\
+&= \mathrm{A}(\mathrm{A^T} \Sigma_Y^{-1} \mathrm{A})^{-1} \mathrm{A^T} \Sigma_Y^{-1} \mathrm{A} (\mathrm{A^T} \Sigma_Y^{-1} \mathrm{A})^{-1} \mathrm{A^T} \\
+&= \mathrm{A}(\mathrm{A^T} \Sigma_Y^{-1} \mathrm{A})^{-1} \mathrm{A^T}
+\end{align*}
+$$
+
+The simplifications are the same as in step 1. Note that this equals $\mathrm{A}\,\Sigma_{\hat{X}}\,\mathrm{A^T}$.
+```
+
+**Step 3:** The BLU estimator of the residuals is $\hat{\epsilon} = Y - \hat{Y}$.
+
+Write out $\hat{\epsilon}$, find $\mathrm{L}$, and use it to derive $\Sigma_{\hat{\epsilon}}$. Express your answer in terms of $\Sigma_Y$ and $\Sigma_{\hat{Y}}$.
+
+```{admonition} Hint step 3
+:class: dropdown
+Write $Y$ as $\mathrm{I}_m Y$ so that you can factor out $Y$. At the end, look for the expression for $\Sigma_{\hat{Y}}$ from step 2.
+```
+
+```{admonition} Solution step 3
+:class: tip, dropdown
+
+Substitute $\hat{Y}$ and compare with $\hat{\epsilon} = \mathrm{L^T} Y$:
+
+$$
+\begin{align*}
+\hat{\epsilon} &= \underline{\mathrm{L^T}} \, Y \\
+\hat{\epsilon} &= Y - \mathrm{A}(\mathrm{A^T} \Sigma_Y^{-1} \mathrm{A})^{-1} \mathrm{A^T} \Sigma_Y^{-1} Y = \underline{\left(\mathrm{I}_m - \mathrm{A}(\mathrm{A^T} \Sigma_Y^{-1} \mathrm{A})^{-1} \mathrm{A^T} \Sigma_Y^{-1}\right)} \, Y
+\end{align*}
+$$
+
+The underlined part is $\mathrm{L^T}$. Transpose it:
+
+$$
+\mathrm{L} = \mathrm{I}_m - \Sigma_Y^{-1} \mathrm{A} (\mathrm{A^T} \Sigma_Y^{-1} \mathrm{A})^{-1} \mathrm{A^T}
+$$
+
+Substitute into the covariance propagation law:
+
+$$
+\begin{align*}
+\Sigma_{\hat{\epsilon}} &= \mathrm{L^T} \, \Sigma_Y \, \mathrm{L} \\
+&= \left(\mathrm{I}_m - \mathrm{A}(\mathrm{A^T} \Sigma_Y^{-1} \mathrm{A})^{-1} \mathrm{A^T} \Sigma_Y^{-1}\right) \cdot \Sigma_Y \cdot \left(\mathrm{I}_m - \Sigma_Y^{-1} \mathrm{A} (\mathrm{A^T} \Sigma_Y^{-1} \mathrm{A})^{-1} \mathrm{A^T}\right) \\
+&= \left(\Sigma_Y - \mathrm{A}(\mathrm{A^T} \Sigma_Y^{-1} \mathrm{A})^{-1} \mathrm{A^T}\right) \left(\mathrm{I}_m - \Sigma_Y^{-1} \mathrm{A} (\mathrm{A^T} \Sigma_Y^{-1} \mathrm{A})^{-1} \mathrm{A^T}\right) \\
+&= \Sigma_Y - \mathrm{A}(\mathrm{A^T} \Sigma_Y^{-1} \mathrm{A})^{-1} \mathrm{A^T} - \mathrm{A}(\mathrm{A^T} \Sigma_Y^{-1} \mathrm{A})^{-1} \mathrm{A^T} + \mathrm{A}(\mathrm{A^T} \Sigma_Y^{-1} \mathrm{A})^{-1} \mathrm{A^T} \Sigma_Y^{-1} \mathrm{A} (\mathrm{A^T} \Sigma_Y^{-1} \mathrm{A})^{-1} \mathrm{A^T} \\
+&= \Sigma_Y - \Sigma_{\hat{Y}} - \Sigma_{\hat{Y}} + \Sigma_{\hat{Y}} \\
+&= \Sigma_Y - \Sigma_{\hat{Y}}
+\end{align*}
+$$
+
+In the last term, the same simplification as in step 2 gives $\mathrm{A}(\mathrm{A^T} \Sigma_Y^{-1} \mathrm{A})^{-1} \mathrm{A^T} = \Sigma_{\hat{Y}}$.
+```
+:::
+
+
+In summary, the covariance matrices of BLUE are:
+
+$$
+\begin{align*}
+\Sigma_{\hat{X}} &= (\mathrm{A^T} \Sigma_Y^{-1} \mathrm{A})^{-1}\\ \\
+\Sigma_{\hat{Y}} &= \mathrm{A} (\mathrm{A^T} \Sigma_Y^{-1} \mathrm{A})^{-1} \mathrm{A^T} \\ \\
+\Sigma_{\hat{\epsilon}} &= \Sigma_Y - \Sigma_{\hat{Y}}
+\end{align*}
+$$
+
+
+By applying the BLUE method, we obtain the best estimator among all linear unbiased estimators, where ‘best’ is quantitatively expressed via the covariance matrix.
 
 ## Additional note on the linearity condition of BLUE
 
