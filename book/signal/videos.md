@@ -53,6 +53,7 @@ These videos cover the theory presented in the book, and may contain some supple
 
     <iframe width="560" height="315" src="https://www.youtube.com/embed/9_l6FBwXhJY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 ```
+One small mistake, at 23m33s the video says: but has a frequency of 5 Hz, whereas this should read: but has a frequency of 2 Hz.
 
 **Discrete Fourier Transform**
 ```{eval-rst}
