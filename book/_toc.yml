@@ -42,7 +42,7 @@ parts:
       - file: observation_theory/05_Precision.md
         sections:
         - file: observation_theory/05_Notebook_ConfInt.ipynb 
-  # START REMOVE-FROM-PUBLISH
+
       - file: observation_theory/06_MLE.md
       - file: observation_theory/07_NLSQ.md
         sections:
@@ -53,8 +53,6 @@ parts:
         - file: observation_theory/09_Notebook_Testing.ipynb
         - file: observation_theory/09_Notebook_OMT.ipynb
       - file: observation_theory/99_NotationFormulas
-
-# END REMOVE-FROM-PUBLISH
 
   - caption: Programming topics Q1
     numbered: 2
