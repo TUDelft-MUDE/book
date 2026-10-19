@@ -44,7 +44,7 @@ Observed deformation rates above a magma chamber.
 For the linearization we need the [first-order Taylor polynomial](https://mude.citg.tudelft.nl/fundamental-concepts/2025/fundamentals/00_03_PreMath.html#first-order-taylor-polynomial-for-linearizing-a-function-of-n-variables), which gives the linear approximation of for instance the first observable $Y_1 = q_1(\mathrm{x})$ at $\mathrm{x}=\mathrm{x}_{[0]}$ as:
 
 $$
-Y_1\approx q_1( \mathrm{x}_{[0]})+ \partial_{x_1} q_1(\mathrm{x}_{[0]})\Delta \mathrm{x}_{[0]}+ \partial_{x_2} q_1(\mathrm{x}_{[0]})\Delta \mathrm{x}_{[0]}+ \ldots + \partial_{x_n} q_1(\mathrm{x}_{[0]})\Delta \mathrm{x}_{[0]}
+Y_1\approx q_1( \mathrm{x}_{[0]})+ \partial_{x_1} q_1(\mathrm{x}_{[0]})\Delta x_{1,[0]}+ \partial_{x_2} q_1(\mathrm{x}_{[0]})\Delta x_{2,[0]}+ \ldots + \partial_{x_n} q_1(\mathrm{x}_{[0]})\Delta x_{n,[0]}
 $$
 
 where $\Delta \mathrm{x}_{[0]} = \mathrm{x}- \mathrm{x}_{[0]}$ and $\mathrm{x}_{[0]}$ is the initial guess of $\mathrm{x}$. Note that for now we ignore the random errors in the equations.
