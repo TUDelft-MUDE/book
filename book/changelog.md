@@ -4,6 +4,7 @@
 
 ## 2026-10-23: v2026.7.0.pre-release
 - Added observation theory chapters appendix
+  
 ## 2026-10-19: v2026.6.1.pre-release
 - Fixed equation for linearization on non-linear least squares page
 
