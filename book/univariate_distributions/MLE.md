@@ -19,7 +19,7 @@ $$
 In practice, taking a product of many entries can quickly lead to numerical underflow issues. In consequence, it is more common to use the log-likelihood, which is the natural logarithm of the likelihood function:
 
 $$
-\ln (L(\theta \mid \mathbf{x})) = \ln (\prod_{i=1}^{n} f(x_i \mid \theta)) = \sum{i=1}^{n} \ln f(x_i \mid \theta),
+\ln (L(\theta \mid \mathbf{x})) = \ln (\prod_{i=1}^{n} f(x_i \mid \theta)) = \sum_{i=1}^{n} \ln f(x_i \mid \theta),
 $$ 
 
 where the product becomes a sum. To find the maximum likelihood estimate $\hat{\theta}$, the following steps should be taken:
