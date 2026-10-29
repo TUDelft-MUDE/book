@@ -1,5 +1,13 @@
+::::{margin}
+```{admonition} MUDE exam information
+:class: tip
+This topic is not part of the MUDE exam.
+```
+:::
+
 (06_MLE)=
 # Maximum Likelihood Estimation
+
 Maximum likelihood estimation is yet another estimation principle. In contrast to (weighted) least-squares and Best Linear Unbiased estimation, it relies on the probability distribution of the observables. Recall that for BLUE, we need to know the first two moments, given by the functional and stochastic model, respectively:
 
 $$
