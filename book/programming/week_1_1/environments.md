@@ -112,7 +112,30 @@ If one were using the 'conda' environment manager, this could be done by listing
 Again, you are part of a programming project in which you are developing a tool to calculate the snow-cover thickness based on weather data. You were provided a conda environment specification by one of your project members.
 Provide an example of what an environment specification could look like.
 ---
-= Any list of software depencencies with our without version numbers
+= For example
+
+```ymal
+name: mude-base-2026
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.13.12
+  - numpy
+  - scipy
+  - pandas
+  - matplotlib
+  - jupyter
+  - ipykernel
+  - pip
+  - highspy
+  - pymoo
+  - pyomo
+  - statsmodels
+  - scikit-learn
+```
+
+Syntax is not grading, any list of software depencencies with our without version numbers is sufficient.
 ---
 
 :::
