@@ -8,4 +8,4 @@ git+https://github.com/TeachBooks/TeachBooks-Favourites #BUMPBUMP
 
 sphinx-apa-references
 
-git+https://github.com/TeachBooks/sphinxcontrib-katex
+git+https://github.com/TeachBooks/sphinxcontrib-katex #BUMP
