@@ -111,6 +111,68 @@ As instead of merging 'Q2' into 'main', after merging the branch 'love' from you
 
 ``````
 
+``````{exercise}
+:nonumber: true
+
+Imagine the following time-line of event of Krisje and Reinier collaborating with Git to solve a coding challenge:
+
+1. Krisje creates a git repository with a `README.md` on *main* and shares it with Reinier.
+2. Krisje adds a file `code.py` on *main* with just two lines of code.
+3. Reinier adds three lines of code to `code.py` in a new branch from *main* with the name *update*.
+4. Reinier opens a pull request for *update* into *main*
+5. Krisje adds five lines of code to `code.py` in a new branch from *main* called *feature*.
+6. Krisje tries to merge *feature* into *update* but gets a merge conflict
+7. Krisje solves the merge conflict and commits those changes to *update* while merging *feature* into *update*
+8. Krisje merges *update* into *main*
+
+:::{question}
+:type: no-input
+:nocaption:
+:showanswer:
+
+Draw the final git history graph of the repository of Krisje and Reinier
+---
+= 
+```{figure} https://github.com/TUDelft-MUDE/source-files/raw/main/file/git_exam_mude.png
+:number:
+```
+---
+:::
+
+:::{question}
+:type: no-input
+:nocaption:
+:showanswer:
+
+Explain what exactly Krisje might have done to solve the merge conflict in step 7.
+---
+= 
+Both branches changed `code.py` starting from the same two lines. update added three lines and feature added five lines, and both sets of lines are in the same place in the file. Git cannot decide which version to keep, so it stops the merge and reports a conflict.
+Krisje porbably manually edited the file to the intended final content. This could be keeping both sets of lines, combining them, or choosing one. She then deleted the conflict markers and continued with the merge.
+---
+:::
+
+:::{question}
+:type: no-input
+:nocaption:
+:showanswer:
+
+How could Krisje and Reinier have avoided the conflict by communicating or working differently? Use coding and git terminology in your answer.
+---
+= 
+Any of the following:
+
+- Agree beforehand who works on which part of the code, so they don't edit the same lines.
+- Split the code into separate files or functions. Each person then works in their own file, and changes rarely overlap.
+- Merge update into main (or main into feature) soon, so differences stay small.
+- Krisje could have reviewed the PR before starting related work. Reinier's open PR for update signals that the same file was already being changed.
+
+---
+:::
+
+
+``````
+
 ## Collaborating with branches
 
 When working together on a single branch (so in the same version), it is important to coordinate with your team to avoid conflicts and ensure smooth collaboration. Here are some best practices:
