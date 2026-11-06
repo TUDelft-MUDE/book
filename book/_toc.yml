@@ -80,8 +80,6 @@ parts:
       - file: programming/week_1_6/debugging-errors.ipynb
       - file: programming/week_1_6/human-in-the-loop.ipynb
 
-# START REMOVE-FROM-PUBLISH
-
   - caption: Q2 Topics
     numbered: 2
     chapters:
@@ -92,6 +90,7 @@ parts:
       - file: numerical_methods_for_PDEs/advection_equation.md
       - file: numerical_methods_for_PDEs/advection_diffusion_eq.ipynb
 
+# START REMOVE-FROM-PUBLISH
     - file: fem/intro.md
       sections:
       - file: fem/strong.md
@@ -102,6 +101,7 @@ parts:
       - file: fem/numerical_integration.md
       - file: fem/poisson2d.md
       - file: fem/isoparametric_mapping.md     
+      
     - file: signal/intro.md
       sections:
       - file: signal/fourier_real
