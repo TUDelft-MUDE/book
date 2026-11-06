@@ -207,6 +207,8 @@ parts:
         sections:
         - file: risk_reliability/LimitState.md
         - file: risk_reliability/04LifeDist.md
+
+# END REMOVE-FROM-PUBLISH
   - caption: Programming topics Q2
     numbered: 2
     chapters:
@@ -218,6 +220,7 @@ parts:
       - external: https://github.com/TeachBooks/learn-programming/blob/mude-2025/book/python/oop/Inheritance.ipynb
       - external: https://github.com/TeachBooks/learn-programming/blob/mude-2025/book/python/oop/Polymorphism.ipynb
       - external: https://github.com/TeachBooks/learn-programming/blob/mude-2025/book/python/oop/exercise.ipynb
+# START REMOVE-FROM-PUBLISH
     - file: programming/week_2_2
       sections:
       - file: programming/week_2_2/assembly
