@@ -114,7 +114,7 @@ Provide an example of what an environment specification could look like.
 ---
 = For example
 
-```ymal
+```yml
 name: mude-base-2026
 channels:
   - conda-forge
