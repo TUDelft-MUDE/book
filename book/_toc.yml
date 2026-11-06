@@ -80,8 +80,6 @@ parts:
       - file: programming/week_1_6/debugging-errors.ipynb
       - file: programming/week_1_6/human-in-the-loop.ipynb
 
-# START REMOVE-FROM-PUBLISH
-
   - caption: Q2 Topics
     numbered: 2
     chapters:
@@ -92,6 +90,7 @@ parts:
       - file: numerical_methods_for_PDEs/advection_equation.md
       - file: numerical_methods_for_PDEs/advection_diffusion_eq.ipynb
 
+# START REMOVE-FROM-PUBLISH
     - file: fem/intro.md
       sections:
       - file: fem/strong.md
@@ -102,6 +101,7 @@ parts:
       - file: fem/numerical_integration.md
       - file: fem/poisson2d.md
       - file: fem/isoparametric_mapping.md     
+      
     - file: signal/intro.md
       sections:
       - file: signal/fourier_real
@@ -207,6 +207,8 @@ parts:
         sections:
         - file: risk_reliability/LimitState.md
         - file: risk_reliability/04LifeDist.md
+
+# END REMOVE-FROM-PUBLISH
   - caption: Programming topics Q2
     numbered: 2
     chapters:
@@ -218,6 +220,7 @@ parts:
       - external: https://github.com/TeachBooks/learn-programming/blob/mude-2025/book/python/oop/Inheritance.ipynb
       - external: https://github.com/TeachBooks/learn-programming/blob/mude-2025/book/python/oop/Polymorphism.ipynb
       - external: https://github.com/TeachBooks/learn-programming/blob/mude-2025/book/python/oop/exercise.ipynb
+# START REMOVE-FROM-PUBLISH
     - file: programming/week_2_2
       sections:
       - file: programming/week_2_2/assembly
