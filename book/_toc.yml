@@ -291,7 +291,6 @@ parts:
       - file: observation_theory/A_VectorMatrix.md
       - file: observation_theory/A_VectorSpaces.md
       - file: observation_theory/A_LinearSystems.md
-      - file: observation_theory/MVdiff.md
 
   - caption: Miscellaneous
     numbered: false
