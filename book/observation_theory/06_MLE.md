@@ -3,7 +3,7 @@
 :class: tip
 This topic is not part of the MUDE exam.
 ```
-:::
+::::
 
 (06_MLE)=
 # Maximum Likelihood Estimation
