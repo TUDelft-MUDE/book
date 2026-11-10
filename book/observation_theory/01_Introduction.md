@@ -32,7 +32,7 @@ $$
 where $\mathrm{x}$ is a vector with the unknown model parameters, and $\mathrm{A}$ is referred to as the *design matrix*. $\mathbb{E}(.)$ is the expectation operator. The random errors are given by $\epsilon$ and are assumed to have zero mean: $\mathbb{E}(\epsilon)=0$.
 ```
 
-### Example: Linear trend model 
+## Example: Linear trend model 
 The unknown parameters are the intercept $x_1$ and rate of change (velocity) $x_2$. The observation equation of a single observable $Y_i$ is:
 
 $$
