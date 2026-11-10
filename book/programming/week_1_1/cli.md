@@ -15,7 +15,7 @@ There is a long history of CLI's and many different types; a brief overview and 
 
 ## Definitions and terms
 
-There are various terms to be aware of, but we will only give a brief explanation here (see [this tutorial](https://www.tutorialspoint.com/difference-between-terminal-console-shell-and-command-line#:~:text=To%20summarize%2C%20a%20terminal%20is,textual%20commands%20into%20the%20shell.) for a more detailed explanation):
+There are various terms to be aware of, but we will only give a brief explanation here (see [this tutorial](https://www.tutorialspoint.com/difference-between-terminal-console-shell-and-command-line) for a more detailed explanation):
 
 - **Terminal**: a piece of hardware for entering data into a computer. How we did it in the "old days" (the [Wikipedia page](https://en.wikipedia.org/wiki/Computer_terminal) has a few examples).
 - **Console**: similar to a terminal, but adds hardware, interaction and a few other things (if you want to understand the difference, [try reading this](https://en.wikipedia.org/wiki/Computer_terminal#System_console))

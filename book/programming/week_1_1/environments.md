@@ -91,7 +91,7 @@ Which of the following is NOT a plausible explanation for the shown error
 [ ] You have not installed the package yet
 [x] The package is only available via PyPi, not conda
 [ ] You activated the wrong conda environment
-[ ] The file 'awesome.py' does not exist in your working directory
+[ ] The file `awesome.py` does not exist in your working directory
 ---
 
 ::::
