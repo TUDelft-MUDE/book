@@ -59,12 +59,8 @@ sphinx:
        - "fem/matrix.ipynb"
        - "fem/discrete.ipynb"
     nb_execution_patterns_method: "only_include"
-# START REMOVE-FROM-RELEASE
-    html_linkcheck_enabled: true 
-# END REMOVE-FROM-RELEASE
+    html_linkcheck_enabled: false
     nitpicky: true
-
-      
       
   extra_extensions:
     - teachbooks_favourites
@@ -75,10 +71,8 @@ sphinx:
     - sphinx_metadata_figure
     - sphinx_nb_execution_patterns
 
-# START REMOVE-FROM-RELEASE
   local_extensions:
     html_linkcheck: _ext/
-# END REMOVE-FROM-RELEASE
 
 bibtex_bibfiles:
   - _bibliography/references.bib
