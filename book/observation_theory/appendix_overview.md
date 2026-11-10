@@ -4,7 +4,7 @@
 % source: observation_theory
 ```{attributiongrey} Attribution
 :class: attribution
-This chapter is written by Sandra Verhagen and Sami Samiei Esfahany. {ref}`Find out more here <observation_theory_creditt>`.
+This chapter is written by Sandra Verhagen and Sami Samiei Esfahany. {ref}`Find out more here <observation_theory_credit>`.
 ```
 % END-CREDIT
 

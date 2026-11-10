@@ -59,6 +59,8 @@ sphinx:
        - "fem/matrix.ipynb"
        - "fem/discrete.ipynb"
     nb_execution_patterns_method: "only_include"
+    html_linkcheck_enabled: true 
+    nitpicky: true
 
       
       
@@ -70,6 +72,8 @@ sphinx:
     - sphinx_apa_references
     - sphinx_metadata_figure
     - sphinx_nb_execution_patterns
+  local_extensions:
+    html_linkcheck: _ext/
 
 bibtex_bibfiles:
   - _bibliography/references.bib

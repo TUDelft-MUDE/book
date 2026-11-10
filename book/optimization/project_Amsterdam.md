@@ -7,7 +7,7 @@
 % source: optimization
 ```{attributiongrey} Attribution
 :class: attribution
-This section of the optimization chapter incorporates content from [Nadia Pourmohammad-Zia (2024)](https://www.sciencedirect.com/science/article/pii/S2210670724001628#sec0011).
+This section of the optimization chapter incorporates content from [Nadia Pourmohammad-Zia (2024)](https://doi.org/10.1016/j.scs.2024.105334).
 ```
 % END-CREDIT
 

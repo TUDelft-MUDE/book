@@ -1,4 +1,4 @@
-
+(multi_dist)=
 # Multivariate Distributions
 
 % START-CREDIT
