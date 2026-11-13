@@ -220,12 +220,12 @@ parts:
       - external: https://github.com/TeachBooks/learn-programming/blob/mude-2025/book/python/oop/Inheritance.ipynb
       - external: https://github.com/TeachBooks/learn-programming/blob/mude-2025/book/python/oop/Polymorphism.ipynb
       - external: https://github.com/TeachBooks/learn-programming/blob/mude-2025/book/python/oop/exercise.ipynb
-# START REMOVE-FROM-PUBLISH
     - file: programming/week_2_2
       sections:
       - file: programming/week_2_2/assembly
       - file: programming/week_2_2/sparse
       - file: programming/week_2_2/solver.ipynb
+# START REMOVE-FROM-PUBLISH
     - file: programming/week_2_3
       sections:
       - external: https://github.com/TUDelft-books/learn-python/blob/2025/book/errors/error_types.ipynb
