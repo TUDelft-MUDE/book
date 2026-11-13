@@ -2,6 +2,9 @@
 
 [TeachBooks Versioning](https://teachbooks.io/manual/features/versioning.html) is used (a special type of semantic numbering for educational purposes) with generic format `v<academic_year>.<additions>.<errata>`, with an additional `.pre-release` added for incomplete books.
 
+## 2026-11-13: v2026.10.0.pre-release
+- Added Finite Element Methods Chapter
+
 ## 2026-11-13: v2026.9.0.pre-release
 - Added [](./programming/week_2_2.md)
 
