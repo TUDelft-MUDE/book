@@ -2,8 +2,8 @@
 # Getting Started!
 
 % START-CREDIT
-:::::{grid}
-:columns: auto
+:::::{grid} 1 1 2 2
+:outline:
 
 ::::{grid-item}
 ```{article-info}
@@ -22,6 +22,7 @@
 ::::
 
 ::::{grid-item}
+:columns: 12
 ```{article-info}
 :avatar: TUD_favicon.svg
 :avatar-link: https://teachbooks.io/learn-programming
