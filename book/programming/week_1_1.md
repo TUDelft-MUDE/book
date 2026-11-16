@@ -3,7 +3,6 @@
 
 % START-CREDIT
 :::::{grid} 1 1 2 2
-:outline:
 
 ::::{grid-item}
 ```{article-info}
