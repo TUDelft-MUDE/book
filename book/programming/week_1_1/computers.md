@@ -14,7 +14,7 @@
 ```
 
 ```{article-info}
-:avatar: TUD_favicon.svg
+:avatar: ../TUD_favicon.svg
 :avatar-link: https://teachbooks.io/learn-programming
 :author: Content from _Learn Programming_ {cite:yearpar}`learn-programming` is used. {ref}`Find out more here <programming_credit>`.
 ```
