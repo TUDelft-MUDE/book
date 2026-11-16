@@ -2,9 +2,17 @@
 # Getting Started!
 
 % START-CREDIT
-```{attributiongrey} Attribution
-:class: attribution
-This chapter is written by Tom van Woudenberg and Robert Lanzafame. Furthermore, content from  _Learn Programming for Engineers_ {cite:p}`learn-programming` is used. {ref}`Find out more here <programming_credit>`.
+```{article-info}
+:avatar: https://github.com/TUDelft-MUDE/source-files/raw/main/file/Tom.jpg
+:avatar-link: https://www.tudelft.nl/en/staff/t.r.vanwoudenberg/
+:avatar-outline: muted
+:author: Tom van Woudenberg
+```
+
+```{article-info}
+:avatar: https://github.com/TUDelft-MUDE/source-files/raw/main/file/Robert.jpg
+:avatar-link: https://www.linkedin.com/in/robert-lanzafame
+:author: Robert Lanzafame
 ```
 % END-CREDIT
 
