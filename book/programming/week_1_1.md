@@ -31,7 +31,6 @@
 ::::
 
 :::::
-
 % END-CREDIT
 
 The purpose of this chapter is to get software installed and be prepared to work with Python code and Jupyter Notebooks. This includes some programming "theory" to help you understand what your computer is capable of and an (maybe old-fashioned, but) advanced way of interacting with it using the command line interface.

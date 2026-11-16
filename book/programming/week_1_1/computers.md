@@ -1,3 +1,26 @@
+% START-CREDIT
+::::::{margin}
+
+```{article-info}
+:avatar: https://github.com/TUDelft-MUDE/source-files/raw/main/file/Tom.jpg
+:avatar-link: https://www.tudelft.nl/en/staff/t.r.vanwoudenberg/
+:author: Tom van Woudenberg
+```
+
+```{article-info}
+:avatar: https://github.com/TUDelft-MUDE/source-files/raw/main/file/Robert.jpg
+:avatar-link: https://www.linkedin.com/in/robert-lanzafame
+:author: Robert Lanzafame
+```
+
+```{article-info}
+:avatar: TUD_favicon.svg
+:avatar-link: https://teachbooks.io/learn-programming
+:author: Content from _Learn Programming_ {cite:yearpar}`learn-programming` is used. {ref}`Find out more here <programming_credit>`.
+```
+::::::
+% END-CREDIT
+
 (computers)=
 # Computers
 
