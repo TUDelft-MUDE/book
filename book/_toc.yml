@@ -100,8 +100,7 @@ parts:
       - file: fem/numerical_integration.md
       - file: fem/poisson2d.md
       - file: fem/isoparametric_mapping.md     
-
-# START REMOVE-FROM-PUBLISH      
+      
     - file: signal/intro.md
       sections:
       - file: signal/fourier_real
@@ -113,7 +112,7 @@ parts:
       - file: signal/dft
       - file: signal/spectral_est
       - file: signal/videos
-
+# START REMOVE-FROM-PUBLISH
     - file: time_series/intro.md
       sections:
       - file: time_series/components.md
@@ -225,12 +224,12 @@ parts:
       - file: programming/week_2_2/assembly
       - file: programming/week_2_2/sparse
       - file: programming/week_2_2/solver.ipynb
-# START REMOVE-FROM-PUBLISH
     - file: programming/week_2_3
       sections:
       - external: https://github.com/TUDelft-books/learn-python/blob/2025/book/errors/error_types.ipynb
       - external: https://github.com/TUDelft-books/learn-python/blob/2025/book/errors/traceback.ipynb
-      
+# START REMOVE-FROM-PUBLISH
+
     - file: programming/week_2_4
       sections:
       - external: https://github.com/TUDelft-books/learn-python/blob/2025/book/errors/asserts.ipynb
