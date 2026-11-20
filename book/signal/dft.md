@@ -113,7 +113,7 @@ $$X_{sw}(f)=\sum_{n=0}^{N-1}\Delta t\,x_ne^{-j2\pi fn\Delta t}$$
 
 **Action item 2**:
 
-Finally, we 'sample' the frequency spectrum, turning $X_{sw}(f)$ into $X_{sws}(f)$ by considering only $f=k\Delta f$ with $\Delta f=\frac{1}{T}=\frac{1}{N\Delta t}=\frac{f_s}{n}$ and $k=0,1,...,N-1$:
+Finally, we 'sample' the frequency spectrum, turning $X_{sw}(f)$ into $X_{sws}(f)$ by considering only $f=k\Delta f$ with $\Delta f=\frac{1}{T}=\frac{1}{N\Delta t}=\frac{f_s}{N}$ and $k=0,1,...,N-1$:
 
 $$X_{sws}(k\Delta f)=\Delta t\sum_{n=0}^{N-1}x_ne^{-j2\pi k\Delta fn\Delta t}=\Delta t\sum_{n=0}^{N-1}x_ne^{-j\frac{2\pi}{N}kn},\hspace{5px}\text{with }k\in\mathbb{Z}$$
 
