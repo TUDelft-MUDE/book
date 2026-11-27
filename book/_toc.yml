@@ -112,7 +112,6 @@ parts:
       - file: signal/dft
       - file: signal/spectral_est
       - file: signal/videos
-# START REMOVE-FROM-PUBLISH
     - file: time_series/intro.md
       sections:
       - file: time_series/components.md
@@ -132,7 +131,7 @@ parts:
         sections:
         - file: time_series/forecasting_example.ipynb
       - file: time_series/movingAverage.ipynb  
-
+# START REMOVE-FROM-PUBLISH
     - file: optimization/overview
       sections:
       - file: optimization/origins
@@ -228,14 +227,13 @@ parts:
       sections:
       - external: https://github.com/TUDelft-books/learn-python/blob/2025/book/errors/error_types.ipynb
       - external: https://github.com/TUDelft-books/learn-python/blob/2025/book/errors/traceback.ipynb
-# START REMOVE-FROM-PUBLISH
-
     - file: programming/week_2_4
       sections:
       - external: https://github.com/TUDelft-books/learn-python/blob/2025/book/errors/asserts.ipynb
       - external: https://github.com/TUDelft-books/learn-python/blob/2025/book/errors/raise_errors.ipynb
       - external: https://github.com/TUDelft-books/learn-python/blob/2025/book/errors/handling_errors.ipynb
       - file: programming/week_2_4/testing.ipynb
+# START REMOVE-FROM-PUBLISH
     - file: programming/week_2_5
       sections:
       - file: programming/week_2_5/packaging.md
